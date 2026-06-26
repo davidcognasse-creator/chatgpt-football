@@ -37,6 +37,7 @@ jobs:
           FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }} # forme + face-à-face
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}      # buzz X (sinon Wikipédia)
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}          # presse GNews (sinon GDELT)
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}    # face-à-face (sinon football-data)
         run: node robot/update.mjs --mode "${{ github.event.inputs.mode || 'live' }}"
 
       - name: Committer les données mises à jour

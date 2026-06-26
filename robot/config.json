@@ -21,6 +21,10 @@
       "h2hScan": 50,
       "minGapMs": 6500
     },
+    "apiFootball": {
+      "h2hLast": 20,
+      "minGapMs": 6500
+    },
     "scorers": true,
     "scorersTop": 6,
     "wcOnly": true,
