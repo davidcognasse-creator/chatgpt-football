@@ -30,7 +30,9 @@ async function get(ctx, path) {
 export async function teamId(ctx, name) {
   const key = (name || "").toLowerCase();
   if (idCache.has(key)) return idCache.get(key);
-  const j = await get(ctx, `/teams?search=${encodeURIComponent(name)}`);
+  // Le champ search n'accepte que [alphanumérique + espaces] (pas de "&", etc.).
+  const search = (name || "").replace(/[^A-Za-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+  const j = await get(ctx, `/teams?search=${encodeURIComponent(search)}`);
   const arr = j.response || [];
   if (!arr.length) {
     idCache.set(key, null);
@@ -42,8 +44,9 @@ export async function teamId(ctx, name) {
   return id;
 }
 
-/** Confrontations passées entre deux équipes (fixtures terminés). */
-export async function headToHead(ctx, id1, id2, last = 20) {
-  const j = await get(ctx, `/fixtures/headtohead?h2h=${id1}-${id2}&last=${last}`);
+/** Confrontations passées entre deux équipes (fixtures terminés).
+ *  NB : le paramètre "last" est réservé aux plans payants → on ne l'envoie pas. */
+export async function headToHead(ctx, id1, id2) {
+  const j = await get(ctx, `/fixtures/headtohead?h2h=${id1}-${id2}`);
   return j.response || [];
 }

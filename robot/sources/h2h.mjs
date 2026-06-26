@@ -12,8 +12,7 @@ const FINISHED = new Set(["FT", "AET", "PEN"]);
 async function viaApiFootball(ctx, homeName, awayName) {
   const [hid, aid] = await Promise.all([afTeamId(ctx, homeName), afTeamId(ctx, awayName)]);
   if (!hid || !aid) throw new Error("équipe inconnue (API-Football)");
-  const last = ctx.config?.live?.apiFootball?.h2hLast || 20;
-  const fixtures = await headToHead(ctx, hid, aid, last);
+  const fixtures = await headToHead(ctx, hid, aid);
   const counts = { home: 0, draw: 0, away: 0 };
   for (const f of fixtures) {
     if (!FINISHED.has(f.fixture?.status?.short)) continue;
