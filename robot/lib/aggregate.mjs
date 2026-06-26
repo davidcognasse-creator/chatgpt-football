@@ -1,0 +1,107 @@
+// Agrégation des trois sources (paris, presse, X) en une prédiction unique.
+import { normalize } from "./odds.mjs";
+
+/** Convertit des comptes {home,draw,away} en probabilités lissées par un prior. */
+export function countsToProbs(counts, alpha = 0.05) {
+  const total = counts.home + counts.draw + counts.away;
+  const a = alpha * total || alpha; // lissage proportionnel au volume
+  return normalize({
+    home: counts.home + a,
+    draw: counts.draw + a,
+    away: counts.away + a,
+  });
+}
+
+const KEYS = ["home", "draw", "away"];
+
+/** Distance de variation totale entre deux vecteurs de probabilités (0–1). */
+function tvDistance(a, b) {
+  return 0.5 * KEYS.reduce((s, k) => s + Math.abs(a[k] - b[k]), 0);
+}
+
+/** Issue la plus probable d'un vecteur. */
+export function favoredOutcome(p) {
+  if (p.home >= p.draw && p.home >= p.away) return "home";
+  if (p.away >= p.draw && p.away >= p.home) return "away";
+  return "draw";
+}
+
+/**
+ * Combine des sources pondérées en une prédiction.
+ * sources = [{ key, weight, probs }]. Les poids sont renormalisés sur les
+ * sources réellement disponibles.
+ */
+export function aggregate(sources, xg) {
+  const avail = sources.filter((s) => s.probs);
+  const wsum = avail.reduce((s, x) => s + x.weight, 0) || 1;
+
+  const probs = normalize(
+    avail.reduce(
+      (acc, s) => {
+        const w = s.weight / wsum;
+        acc.home += w * s.probs.home;
+        acc.draw += w * s.probs.draw;
+        acc.away += w * s.probs.away;
+        return acc;
+      },
+      { home: 0, draw: 0, away: 0 }
+    )
+  );
+
+  // Accord entre sources : 1 - distance moyenne au consensus (0–1).
+  let agreement = 1;
+  if (avail.length > 1) {
+    const avgDist =
+      avail.reduce((s, x) => s + tvDistance(x.probs, probs), 0) / avail.length;
+    agreement = 1 - avgDist;
+  }
+
+  // Confiance : concentration de la prédiction + accord des sources.
+  const maxProb = Math.max(probs.home, probs.draw, probs.away);
+  const confidence = Math.round(
+    Math.min(95, Math.max(35, maxProb * 100 * 0.6 + agreement * 100 * 0.4))
+  );
+
+  // Score attendu dérivé des expected goals (arrondi).
+  const predictedScore = {
+    home: Math.max(0, Math.round(xg.home)),
+    away: Math.max(0, Math.round(xg.away)),
+  };
+
+  return { probs, confidence, predictedScore, agreement };
+}
+
+const PCT = (x) => Math.round(x * 100);
+
+/** Génère une analyse en français à partir des chiffres et des sources. */
+export function buildAnalysis(match, prediction, sources) {
+  const sideName = (k) =>
+    k === "home" ? match.home.name : k === "away" ? match.away.name : "le nul";
+  const fav = favoredOutcome(prediction.probs);
+
+  const betting = sources.find((s) => s.key === "betting");
+  const press = sources.find((s) => s.key === "press");
+  const social = sources.find((s) => s.key === "social");
+
+  const parts = [];
+  parts.push(
+    `${sideName(fav) === "le nul" ? "Le nul" : sideName(fav)} tient la corde (${PCT(
+      prediction.probs[fav]
+    )}% au global).`
+  );
+  if (betting?.probs) {
+    parts.push(
+      `Les marchés de paris donnent ${PCT(betting.probs[favoredOutcome(betting.probs)])}% à ${sideName(
+        favoredOutcome(betting.probs)
+      )}.`
+    );
+  }
+  if (press?.probs) {
+    parts.push(`La presse penche vers ${sideName(favoredOutcome(press.probs))}.`);
+  }
+  if (social?.probs) {
+    parts.push(`Sur X, le volume favorise ${sideName(favoredOutcome(social.probs))}.`);
+  }
+  if (match.note) parts.push(match.note);
+  return parts.join(" ");
+}

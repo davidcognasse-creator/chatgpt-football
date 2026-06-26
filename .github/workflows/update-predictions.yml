@@ -1,0 +1,50 @@
+name: Actualiser les pronostics
+
+# Le robot régénère data.json / data.js à partir des sources (paris, presse, X)
+# puis committe les changements. Planifié toutes les 3 h + déclenchement manuel.
+on:
+  schedule:
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Mode du robot (fixtures = démo, live = vraies API)"
+        required: false
+        default: "fixtures"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-predictions
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Lancer le robot
+        env:
+          # En mode live, renseignez ces secrets dans Settings → Secrets :
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+        run: node robot/update.mjs --mode "${{ github.event.inputs.mode || 'fixtures' }}"
+
+      - name: Committer les données mises à jour
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          if ! git diff --quiet -- data.json data.js; then
+            git add data.json data.js
+            git commit -m "chore(robot): actualisation des pronostics [skip ci]"
+            git push
+          else
+            echo "Aucun changement de pronostics."
+          fi

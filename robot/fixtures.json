@@ -1,0 +1,205 @@
+{
+  "_comment": "Entrées brutes consommées par le robot. En mode 'fixtures' (démo), ce fichier tient lieu de sources. En mode 'live', les adaptateurs robot/sources/*.mjs vont chercher ces mêmes champs auprès des vraies API (paris, presse, X). market.odds = cotes décimales par bookmaker; press.leans = nb d'analyses penchant pour chaque issue; social.mentions = volume X par issue.",
+  "tournament": "Coupe du Monde 2026",
+  "matches": [
+    {
+      "id": "r16-1", "stage": "Huitièmes", "projected": false,
+      "datetime": "2026-06-28T19:00:00Z", "venue": "MetLife Stadium, New York",
+      "home": { "name": "France", "flag": "🇫🇷", "code": "FRA" },
+      "away": { "name": "Sénégal", "flag": "🇸🇳", "code": "SEN" },
+      "market": { "xg": { "home": 1.9, "away": 1.0 }, "books": [
+        { "name": "Bet365", "odds": { "home": 1.75, "draw": 3.6, "away": 4.5 } },
+        { "name": "Pinnacle", "odds": { "home": 1.78, "draw": 3.55, "away": 4.4 } },
+        { "name": "Betclic", "odds": { "home": 1.72, "draw": 3.7, "away": 4.6 } }
+      ] },
+      "press": { "outlets": 18, "leans": { "home": 12, "draw": 4, "away": 2 }, "sentiment": "France favorite, vigilance sur le pressing sénégalais" },
+      "social": { "mentions": { "home": 5400, "draw": 1200, "away": 2100 }, "sentiment": "engouement bleu, respect pour les Lions" },
+      "note": "Match à élimination directe serré jusqu'au dernier tiers."
+    },
+    {
+      "id": "r16-2", "stage": "Huitièmes", "projected": false,
+      "datetime": "2026-06-28T22:30:00Z", "venue": "SoFi Stadium, Los Angeles",
+      "home": { "name": "Argentine", "flag": "🇦🇷", "code": "ARG" },
+      "away": { "name": "Japon", "flag": "🇯🇵", "code": "JPN" },
+      "market": { "xg": { "home": 1.8, "away": 0.8 }, "books": [
+        { "name": "Bet365", "odds": { "home": 1.62, "draw": 3.8, "away": 5.2 } },
+        { "name": "Pinnacle", "odds": { "home": 1.6, "draw": 3.9, "away": 5.4 } }
+      ] },
+      "press": { "outlets": 16, "leans": { "home": 12, "draw": 3, "away": 1 }, "sentiment": "tenante du titre solide, Japon discipliné" },
+      "social": { "mentions": { "home": 6100, "draw": 900, "away": 1700 }, "sentiment": "Messi-mania, sympathie pour le Japon" },
+      "note": "Le Japon peut contenir le jeu mais manque de réussite face aux blocs bas."
+    },
+    {
+      "id": "r16-3", "stage": "Huitièmes", "projected": false,
+      "datetime": "2026-06-29T18:00:00Z", "venue": "AT&T Stadium, Dallas",
+      "home": { "name": "Brésil", "flag": "🇧🇷", "code": "BRA" },
+      "away": { "name": "Croatie", "flag": "🇭🇷", "code": "CRO" },
+      "market": { "xg": { "home": 1.5, "away": 1.1 }, "books": [
+        { "name": "Bet365", "odds": { "home": 1.95, "draw": 3.3, "away": 4.0 } },
+        { "name": "Pinnacle", "odds": { "home": 1.98, "draw": 3.25, "away": 3.9 } }
+      ] },
+      "press": { "outlets": 15, "leans": { "home": 8, "draw": 5, "away": 2 }, "sentiment": "revanche 2022, Croatie redoutable dans les matchs fermés" },
+      "social": { "mentions": { "home": 4800, "draw": 1500, "away": 1900 }, "sentiment": "doute sur la défense brésilienne" },
+      "note": "Issue indécise pouvant filer en prolongation et tirs au but."
+    },
+    {
+      "id": "r16-4", "stage": "Huitièmes", "projected": false,
+      "datetime": "2026-06-29T21:30:00Z", "venue": "Estadio Azteca, Mexico",
+      "home": { "name": "Mexique", "flag": "🇲🇽", "code": "MEX" },
+      "away": { "name": "Pays-Bas", "flag": "🇳🇱", "code": "NED" },
+      "market": { "xg": { "home": 1.0, "away": 1.4 }, "books": [
+        { "name": "Bet365", "odds": { "home": 3.1, "draw": 3.2, "away": 2.35 } },
+        { "name": "Pinnacle", "odds": { "home": 3.0, "draw": 3.25, "away": 2.4 } }
+      ] },
+      "press": { "outlets": 14, "leans": { "home": 4, "draw": 4, "away": 6 }, "sentiment": "ferveur Azteca contre maîtrise néerlandaise" },
+      "social": { "mentions": { "home": 5200, "draw": 1100, "away": 2600 }, "sentiment": "public mexicain en fusion" },
+      "note": "La profondeur de banc fait pencher légèrement la balance pour les Oranje."
+    },
+    {
+      "id": "r16-5", "stage": "Huitièmes", "projected": false,
+      "datetime": "2026-06-30T19:00:00Z", "venue": "Mercedes-Benz Stadium, Atlanta",
+      "home": { "name": "Angleterre", "flag": "🏴", "code": "ENG" },
+      "away": { "name": "Belgique", "flag": "🇧🇪", "code": "BEL" },
+      "market": { "xg": { "home": 1.6, "away": 1.2 }, "books": [
+        { "name": "Bet365", "odds": { "home": 2.1, "draw": 3.3, "away": 3.5 } },
+        { "name": "Pinnacle", "odds": { "home": 2.05, "draw": 3.35, "away": 3.6 } }
+      ] },
+      "press": { "outlets": 17, "leans": { "home": 9, "draw": 5, "away": 3 }, "sentiment": "collectif anglais contre talents belges" },
+      "social": { "mentions": { "home": 5000, "draw": 1300, "away": 2200 }, "sentiment": "confiance mesurée côté anglais" },
+      "note": "Les phases arrêtées pourraient départager deux équipes proches."
+    },
+    {
+      "id": "r16-6", "stage": "Huitièmes", "projected": false,
+      "datetime": "2026-06-30T22:30:00Z", "venue": "Lumen Field, Seattle",
+      "home": { "name": "Espagne", "flag": "🇪🇸", "code": "ESP" },
+      "away": { "name": "Maroc", "flag": "🇲🇦", "code": "MAR" },
+      "market": { "xg": { "home": 1.5, "away": 1.0 }, "books": [
+        { "name": "Bet365", "odds": { "home": 1.9, "draw": 3.3, "away": 4.2 } },
+        { "name": "Pinnacle", "odds": { "home": 1.92, "draw": 3.3, "away": 4.1 } }
+      ] },
+      "press": { "outlets": 16, "leans": { "home": 8, "draw": 5, "away": 3 }, "sentiment": "souvenir de 2022, bloc marocain solide" },
+      "social": { "mentions": { "home": 4600, "draw": 1400, "away": 3100 }, "sentiment": "vague de soutien au Maroc" },
+      "note": "Le gardien marocain peut rééditer l'exploit; le modèle reste prudent."
+    },
+    {
+      "id": "r16-7", "stage": "Huitièmes", "projected": false,
+      "datetime": "2026-07-01T18:00:00Z", "venue": "Hard Rock Stadium, Miami",
+      "home": { "name": "Portugal", "flag": "🇵🇹", "code": "POR" },
+      "away": { "name": "Uruguay", "flag": "🇺🇾", "code": "URU" },
+      "market": { "xg": { "home": 1.6, "away": 1.1 }, "books": [
+        { "name": "Bet365", "odds": { "home": 1.95, "draw": 3.3, "away": 4.0 } },
+        { "name": "Pinnacle", "odds": { "home": 1.97, "draw": 3.3, "away": 3.9 } }
+      ] },
+      "press": { "outlets": 15, "leans": { "home": 9, "draw": 4, "away": 2 }, "sentiment": "génération portugaise contre Uruguay rugueux" },
+      "social": { "mentions": { "home": 5300, "draw": 1100, "away": 1800 }, "sentiment": "hype autour des jeunes portugais" },
+      "note": "L'efficacité sur coups de pied arrêtés pourrait faire la différence."
+    },
+    {
+      "id": "r16-8", "stage": "Huitièmes", "projected": false,
+      "datetime": "2026-07-01T21:30:00Z", "venue": "BMO Field, Toronto",
+      "home": { "name": "Allemagne", "flag": "🇩🇪", "code": "GER" },
+      "away": { "name": "États-Unis", "flag": "🇺🇸", "code": "USA" },
+      "market": { "xg": { "home": 1.7, "away": 1.1 }, "books": [
+        { "name": "Bet365", "odds": { "home": 1.85, "draw": 3.4, "away": 4.2 } },
+        { "name": "Pinnacle", "odds": { "home": 1.88, "draw": 3.35, "away": 4.1 } }
+      ] },
+      "press": { "outlets": 16, "leans": { "home": 10, "draw": 4, "away": 2 }, "sentiment": "Allemagne conquérante, USA en plein essor à domicile" },
+      "social": { "mentions": { "home": 4400, "draw": 1200, "away": 4000 }, "sentiment": "ferveur populaire côté hôte" },
+      "note": "Les États-Unis ont les armes pour bousculer la hiérarchie."
+    },
+
+    {
+      "id": "qf-1", "stage": "Quarts", "projected": true,
+      "datetime": "2026-07-04T19:00:00Z", "venue": "MetLife Stadium, New York",
+      "home": { "name": "France", "flag": "🇫🇷", "code": "FRA" },
+      "away": { "name": "Brésil", "flag": "🇧🇷", "code": "BRA" },
+      "market": { "xg": { "home": 1.4, "away": 1.3 }, "books": [
+        { "name": "Bet365", "odds": { "home": 2.4, "draw": 3.2, "away": 2.9 } },
+        { "name": "Pinnacle", "odds": { "home": 2.42, "draw": 3.2, "away": 2.85 } }
+      ] },
+      "press": { "outlets": 20, "leans": { "home": 8, "draw": 6, "away": 6 }, "sentiment": "affiche de gala, équilibre total" },
+      "social": { "mentions": { "home": 7200, "draw": 1600, "away": 6800 }, "sentiment": "match le plus attendu du tableau" },
+      "note": "Choc projeté: deux favoris au sommet, scénario ouvert."
+    },
+    {
+      "id": "qf-2", "stage": "Quarts", "projected": true,
+      "datetime": "2026-07-04T22:30:00Z", "venue": "SoFi Stadium, Los Angeles",
+      "home": { "name": "Argentine", "flag": "🇦🇷", "code": "ARG" },
+      "away": { "name": "Angleterre", "flag": "🏴", "code": "ENG" },
+      "market": { "xg": { "home": 1.4, "away": 1.2 }, "books": [
+        { "name": "Bet365", "odds": { "home": 2.3, "draw": 3.2, "away": 3.1 } },
+        { "name": "Pinnacle", "odds": { "home": 2.28, "draw": 3.25, "away": 3.15 } }
+      ] },
+      "press": { "outlets": 19, "leans": { "home": 9, "draw": 5, "away": 5 }, "sentiment": "revanche historique, léger avantage Albiceleste" },
+      "social": { "mentions": { "home": 6900, "draw": 1500, "away": 5800 }, "sentiment": "tensions et passions des deux côtés" },
+      "note": "Match projeté à forte charge historique."
+    },
+    {
+      "id": "qf-3", "stage": "Quarts", "projected": true,
+      "datetime": "2026-07-05T19:00:00Z", "venue": "AT&T Stadium, Dallas",
+      "home": { "name": "Espagne", "flag": "🇪🇸", "code": "ESP" },
+      "away": { "name": "Allemagne", "flag": "🇩🇪", "code": "GER" },
+      "market": { "xg": { "home": 1.4, "away": 1.3 }, "books": [
+        { "name": "Bet365", "odds": { "home": 2.45, "draw": 3.2, "away": 2.85 } },
+        { "name": "Pinnacle", "odds": { "home": 2.5, "draw": 3.2, "away": 2.8 } }
+      ] },
+      "press": { "outlets": 18, "leans": { "home": 7, "draw": 6, "away": 5 }, "sentiment": "duel de possession, marges minimes" },
+      "social": { "mentions": { "home": 5600, "draw": 1700, "away": 5200 }, "sentiment": "classique européen relancé" },
+      "note": "Affrontement projeté très serré entre écoles de jeu."
+    },
+    {
+      "id": "qf-4", "stage": "Quarts", "projected": true,
+      "datetime": "2026-07-05T22:30:00Z", "venue": "Hard Rock Stadium, Miami",
+      "home": { "name": "Pays-Bas", "flag": "🇳🇱", "code": "NED" },
+      "away": { "name": "Portugal", "flag": "🇵🇹", "code": "POR" },
+      "market": { "xg": { "home": 1.3, "away": 1.4 }, "books": [
+        { "name": "Bet365", "odds": { "home": 2.9, "draw": 3.2, "away": 2.4 } },
+        { "name": "Pinnacle", "odds": { "home": 2.95, "draw": 3.2, "away": 2.38 } }
+      ] },
+      "press": { "outlets": 17, "leans": { "home": 5, "draw": 6, "away": 8 }, "sentiment": "léger avantage au Portugal projeté" },
+      "social": { "mentions": { "home": 4200, "draw": 1500, "away": 5500 }, "sentiment": "élan portugais" },
+      "note": "Rencontre projetée équilibrée, avantage offensif lusitanien."
+    },
+
+    {
+      "id": "sf-1", "stage": "Demies", "projected": true,
+      "datetime": "2026-07-08T22:00:00Z", "venue": "AT&T Stadium, Dallas",
+      "home": { "name": "France", "flag": "🇫🇷", "code": "FRA" },
+      "away": { "name": "Argentine", "flag": "🇦🇷", "code": "ARG" },
+      "market": { "xg": { "home": 1.3, "away": 1.3 }, "books": [
+        { "name": "Bet365", "odds": { "home": 2.6, "draw": 3.1, "away": 2.7 } },
+        { "name": "Pinnacle", "odds": { "home": 2.62, "draw": 3.1, "away": 2.68 } }
+      ] },
+      "press": { "outlets": 22, "leans": { "home": 8, "draw": 7, "away": 7 }, "sentiment": "remake de la finale 2022, équilibre parfait" },
+      "social": { "mentions": { "home": 9000, "draw": 2000, "away": 9200 }, "sentiment": "affiche planétaire" },
+      "note": "Demi-finale projetée: remake de la finale 2022."
+    },
+    {
+      "id": "sf-2", "stage": "Demies", "projected": true,
+      "datetime": "2026-07-09T22:00:00Z", "venue": "MetLife Stadium, New York",
+      "home": { "name": "Espagne", "flag": "🇪🇸", "code": "ESP" },
+      "away": { "name": "Portugal", "flag": "🇵🇹", "code": "POR" },
+      "market": { "xg": { "home": 1.4, "away": 1.2 }, "books": [
+        { "name": "Bet365", "odds": { "home": 2.25, "draw": 3.2, "away": 3.2 } },
+        { "name": "Pinnacle", "odds": { "home": 2.28, "draw": 3.2, "away": 3.15 } }
+      ] },
+      "press": { "outlets": 20, "leans": { "home": 9, "draw": 6, "away": 5 }, "sentiment": "derby ibérique, léger avantage à la Roja" },
+      "social": { "mentions": { "home": 6800, "draw": 1900, "away": 6200 }, "sentiment": "ferveur péninsulaire" },
+      "note": "Derby ibérique projeté pour une place en finale."
+    },
+
+    {
+      "id": "final", "stage": "Finale", "projected": true,
+      "datetime": "2026-07-12T19:00:00Z", "venue": "MetLife Stadium, New York",
+      "home": { "name": "France", "flag": "🇫🇷", "code": "FRA" },
+      "away": { "name": "Espagne", "flag": "🇪🇸", "code": "ESP" },
+      "market": { "xg": { "home": 1.3, "away": 1.3 }, "books": [
+        { "name": "Bet365", "odds": { "home": 2.55, "draw": 3.1, "away": 2.75 } },
+        { "name": "Pinnacle", "odds": { "home": 2.58, "draw": 3.1, "away": 2.72 } }
+      ] },
+      "press": { "outlets": 24, "leans": { "home": 9, "draw": 7, "away": 8 }, "sentiment": "finale d'anthologie projetée, équilibre maximal" },
+      "social": { "mentions": { "home": 12000, "draw": 2500, "away": 11500 }, "sentiment": "le monde entier branché" },
+      "note": "Finale projetée: deux nations championnes du monde récentes."
+    }
+  ]
+}

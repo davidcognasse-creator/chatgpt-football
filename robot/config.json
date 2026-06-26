@@ -1,0 +1,15 @@
+{
+  "weights": {
+    "betting": 0.6,
+    "press": 0.2,
+    "social": 0.2
+  },
+  "prior": {
+    "alpha": 0.05
+  },
+  "output": {
+    "json": "../data.json",
+    "js": "../data.js"
+  },
+  "mode": "fixtures"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "wc2026-predictions-robot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Robot d'actualisation des pronostics IA (paris, presse, X) pour la CDM 2026.",
+  "scripts": {
+    "update": "node update.mjs",
+    "update:live": "node update.mjs --mode live"
+  }
+}
