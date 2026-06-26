@@ -134,8 +134,8 @@ window.WC_DATA = {
       },
       "away": {
         "name": "Iraq",
-        "flag": "🏳️",
-        "code": "IRA"
+        "flag": "🇮🇶",
+        "code": "IRQ"
       },
       "probs": {
         "home": 60,
@@ -238,8 +238,8 @@ window.WC_DATA = {
       "venue": "",
       "home": {
         "name": "Cape Verde",
-        "flag": "🏳️",
-        "code": "CAP"
+        "flag": "🇨🇻",
+        "code": "CPV"
       },
       "away": {
         "name": "Saudi Arabia",
@@ -1001,12 +1001,12 @@ window.WC_DATA = {
       "venue": "",
       "home": {
         "name": "DR Congo",
-        "flag": "🏳️",
-        "code": "DR "
+        "flag": "🇨🇩",
+        "code": "COD"
       },
       "away": {
         "name": "Uzbekistan",
-        "flag": "🏳️",
+        "flag": "🇺🇿",
         "code": "UZB"
       },
       "probs": {
@@ -1219,7 +1219,7 @@ window.WC_DATA = {
       "venue": "",
       "home": {
         "name": "Jordan",
-        "flag": "🏳️",
+        "flag": "🇯🇴",
         "code": "JOR"
       },
       "away": {
@@ -1328,8 +1328,8 @@ window.WC_DATA = {
       "venue": "",
       "home": {
         "name": "South Africa",
-        "flag": "🏳️",
-        "code": "SOU"
+        "flag": "🇿🇦",
+        "code": "RSA"
       },
       "away": {
         "name": "Canada",
@@ -1660,8 +1660,8 @@ window.WC_DATA = {
       },
       "away": {
         "name": "Bosnia & Herzegovina",
-        "flag": "🏳️",
-        "code": "BOS"
+        "flag": "🇧🇦",
+        "code": "BIH"
       },
       "probs": {
         "home": 63,

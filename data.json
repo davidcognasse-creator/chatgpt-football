@@ -132,8 +132,8 @@
       },
       "away": {
         "name": "Iraq",
-        "flag": "🏳️",
-        "code": "IRA"
+        "flag": "🇮🇶",
+        "code": "IRQ"
       },
       "probs": {
         "home": 60,
@@ -236,8 +236,8 @@
       "venue": "",
       "home": {
         "name": "Cape Verde",
-        "flag": "🏳️",
-        "code": "CAP"
+        "flag": "🇨🇻",
+        "code": "CPV"
       },
       "away": {
         "name": "Saudi Arabia",
@@ -999,12 +999,12 @@
       "venue": "",
       "home": {
         "name": "DR Congo",
-        "flag": "🏳️",
-        "code": "DR "
+        "flag": "🇨🇩",
+        "code": "COD"
       },
       "away": {
         "name": "Uzbekistan",
-        "flag": "🏳️",
+        "flag": "🇺🇿",
         "code": "UZB"
       },
       "probs": {
@@ -1217,7 +1217,7 @@
       "venue": "",
       "home": {
         "name": "Jordan",
-        "flag": "🏳️",
+        "flag": "🇯🇴",
         "code": "JOR"
       },
       "away": {
@@ -1326,8 +1326,8 @@
       "venue": "",
       "home": {
         "name": "South Africa",
-        "flag": "🏳️",
-        "code": "SOU"
+        "flag": "🇿🇦",
+        "code": "RSA"
       },
       "away": {
         "name": "Canada",
@@ -1658,8 +1658,8 @@
       },
       "away": {
         "name": "Bosnia & Herzegovina",
-        "flag": "🏳️",
-        "code": "BOS"
+        "flag": "🇧🇦",
+        "code": "BIH"
       },
       "probs": {
         "home": 63,
