@@ -51,6 +51,17 @@ export async function teamIndex(ctx) {
   return idx;
 }
 
+let compMatchesCache = null;
+
+/** Matchs du calendrier de la compétition (mémoïsé). Sert au filtre WC strict. */
+export async function competitionMatches(ctx) {
+  if (compMatchesCache) return compMatchesCache;
+  const comp = ctx.config?.live?.footballData?.competition || "WC";
+  const data = await get(ctx, `/competitions/${comp}/matches`);
+  compMatchesCache = data.matches || [];
+  return compMatchesCache;
+}
+
 /** Identifiant football-data d'une équipe à partir de son nom (avec alias). */
 export async function teamId(ctx, name) {
   const idx = await teamIndex(ctx);

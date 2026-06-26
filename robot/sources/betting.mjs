@@ -2,7 +2,9 @@
 // En mode live, fournit AUSSI la liste des matchs réels à venir (The Odds API).
 import { marketConsensus } from "../lib/odds.mjs";
 import { team } from "../lib/teams.mjs";
-import { teamId } from "../lib/footballdata.mjs";
+import { teamId, competitionMatches } from "../lib/footballdata.mjs";
+
+const pairKey = (a, b) => [a, b].sort((x, y) => x - y).join("-");
 
 const UA = "wc2026-predictions-robot/1.0 (+github actions)";
 
@@ -25,25 +27,44 @@ export async function fetchLiveEvents(ctx, config) {
   if (!res.ok) throw new Error(`Odds API HTTP ${res.status}: ${await res.text()}`);
   let events = await res.json();
 
-  // Filtre Coupe du Monde : ne garder que les matchs entre deux équipes de la
-  // compétition WC (exclut les amicaux). Désactivable via live.wcOnly = false.
+  // Filtre Coupe du Monde STRICT : ne garder que les matchs présents au
+  // calendrier officiel WC (exclut les amicaux entre équipes qualifiées).
+  // Repli sur l'appartenance WC si le calendrier est indisponible.
+  // Désactivable via live.wcOnly = false.
   if (live.wcOnly !== false && ctx.env.FOOTBALL_DATA_KEY) {
+    let wcPairs = null;
+    try {
+      const ms = await competitionMatches(ctx);
+      const set = new Set();
+      for (const m of ms) {
+        if (m.homeTeam?.id && m.awayTeam?.id) set.add(pairKey(m.homeTeam.id, m.awayTeam.id));
+      }
+      if (set.size) wcPairs = set;
+      else console.warn("[wc-filter] calendrier WC vide — repli sur appartenance WC");
+    } catch (e) {
+      console.warn(`[wc-filter] calendrier WC indisponible (${e.message}) — repli sur appartenance WC`);
+    }
+
     const kept = [];
     for (const ev of events) {
       try {
-        const [h, a] = await Promise.all([
-          teamId(ctx, ev.home_team),
-          teamId(ctx, ev.away_team),
-        ]);
-        if (h && a) kept.push(ev);
-        else console.log(`[wc-filter] exclu (hors WC) : ${ev.home_team} - ${ev.away_team}`);
+        const [h, a] = await Promise.all([teamId(ctx, ev.home_team), teamId(ctx, ev.away_team)]);
+        if (!h || !a) {
+          console.log(`[wc-filter] exclu (équipe non WC) : ${ev.home_team} - ${ev.away_team}`);
+          continue;
+        }
+        if (wcPairs && !wcPairs.has(pairKey(h, a))) {
+          console.log(`[wc-filter] exclu (hors calendrier WC) : ${ev.home_team} - ${ev.away_team}`);
+          continue;
+        }
+        kept.push(ev);
       } catch (e) {
         console.warn(`[wc-filter] vérif impossible (${e.message}) — match conservé`);
         kept.push(ev);
       }
     }
     events = kept;
-    console.log(`[wc-filter] ${events.length} matchs WC retenus`);
+    console.log(`[wc-filter] ${events.length} matchs retenus (${wcPairs ? "calendrier WC" : "appartenance WC"})`);
   }
 
   return events
