@@ -15,8 +15,8 @@
     "predicted": {
       "probs": {
         "home": 25,
-        "draw": 23,
-        "away": 52
+        "draw": 24,
+        "away": 51
       },
       "score": {
         "home": 1,
@@ -40,9 +40,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 61,
+        "home": 64,
         "draw": 19,
-        "away": 20
+        "away": 17
       },
       "score": {
         "home": 2,
@@ -66,9 +66,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 39,
-        "draw": 28,
-        "away": 33
+        "home": 37,
+        "draw": 27,
+        "away": 36
       },
       "score": {
         "home": 1,
@@ -92,9 +92,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 20,
+        "home": 19,
         "draw": 26,
-        "away": 54
+        "away": 55
       },
       "score": {
         "home": 0,
@@ -118,9 +118,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 14,
-        "draw": 18,
-        "away": 68
+        "home": 15,
+        "draw": 20,
+        "away": 65
       },
       "score": {
         "home": 0,
@@ -144,9 +144,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 39,
-        "draw": 32,
-        "away": 29
+        "home": 35,
+        "draw": 31,
+        "away": 34
       },
       "score": {
         "home": 1,
@@ -170,12 +170,12 @@
     },
     "predicted": {
       "probs": {
-        "home": 42,
+        "home": 48,
         "draw": 28,
-        "away": 30
+        "away": 24
       },
       "score": {
-        "home": 1,
+        "home": 2,
         "away": 1
       },
       "favored": "home"
@@ -196,9 +196,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 6,
-        "draw": 18,
-        "away": 76
+        "home": 7,
+        "draw": 19,
+        "away": 74
       },
       "score": {
         "home": 0,
@@ -222,9 +222,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 26,
+        "home": 27,
         "draw": 26,
-        "away": 48
+        "away": 47
       },
       "score": {
         "home": 1,
@@ -248,9 +248,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 49,
+        "home": 46,
         "draw": 25,
-        "away": 26
+        "away": 29
       },
       "score": {
         "home": 2,
@@ -274,9 +274,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 27,
-        "draw": 36,
-        "away": 37
+        "home": 31,
+        "draw": 34,
+        "away": 35
       },
       "score": {
         "home": 1,
@@ -300,9 +300,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 6,
-        "draw": 18,
-        "away": 76
+        "home": 11,
+        "draw": 20,
+        "away": 69
       },
       "score": {
         "home": 0,
@@ -326,12 +326,12 @@
     },
     "predicted": {
       "probs": {
-        "home": 24,
+        "home": 17,
         "draw": 26,
-        "away": 50
+        "away": 57
       },
       "score": {
-        "home": 1,
+        "home": 0,
         "away": 2
       },
       "favored": "away"
@@ -352,9 +352,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 50,
+        "home": 52,
         "draw": 26,
-        "away": 24
+        "away": 22
       },
       "score": {
         "home": 2,
@@ -378,9 +378,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 41,
-        "draw": 28,
-        "away": 31
+        "home": 40,
+        "draw": 27,
+        "away": 33
       },
       "score": {
         "home": 1,
@@ -404,9 +404,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 62,
-        "draw": 23,
-        "away": 15
+        "home": 63,
+        "draw": 24,
+        "away": 13
       },
       "score": {
         "home": 2,
