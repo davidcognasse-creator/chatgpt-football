@@ -89,11 +89,17 @@
   }
 
   /* ---------- bloc sources ---------- */
+  const SRC_HINTS = {
+    Forme: "5 derniers matchs, du plus récent au plus ancien — V victoire · N nul · D défaite",
+    "Face-à-face": "Bilan des confrontations passées — V victoires · N nuls · D défaites",
+  };
+
   function sourceRow(m, src) {
     const w = Math.round(src.weight * 100);
+    const hint = SRC_HINTS[src.label] ? ` title="${SRC_HINTS[src.label]}"` : "";
     if (!src.probs) {
       return `
-      <div class="src-row src-off">
+      <div class="src-row src-off"${hint}>
         <span class="src-name">${src.label}</span>
         <div class="src-bar"></div>
         <span class="src-pick">indisponible</span>
@@ -103,7 +109,7 @@
     const fav = src.favored;
     const pct = src.probs[fav];
     return `
-      <div class="src-row">
+      <div class="src-row"${hint}>
         <span class="src-name">${src.label}</span>
         <div class="src-bar"><div class="src-fill" style="width:${pct}%"></div></div>
         <span class="src-pick">${sideLabel(m, fav)} <b>${pct}%</b></span>
@@ -111,13 +117,60 @@
       </div>`;
   }
 
+  function scorerItem(s) {
+    return `
+      <li class="scorer">
+        <span class="scorer-name">${s.name}</span>
+        <span class="scorer-prob"><span class="scorer-fill" style="width:${s.prob}%"></span><b>${s.prob}%</b></span>
+      </li>`;
+  }
+
+  function scorersBlock(m) {
+    const sc = m.scorers;
+    if (!sc) return "";
+    // Format par équipe { home:[], away:[] } ou liste combinée { combined:[] }.
+    if (sc.combined && sc.combined.length) {
+      return `
+        <div class="scorers">
+          <div class="scorers-head">⚽ Buteurs probables</div>
+          <ul class="scorer-list">${sc.combined.map(scorerItem).join("")}</ul>
+        </div>`;
+    }
+    if ((sc.home && sc.home.length) || (sc.away && sc.away.length)) {
+      return `
+        <div class="scorers">
+          <div class="scorers-head">⚽ Buteurs probables</div>
+          <div class="scorers-grid">
+            <div>
+              <div class="scorers-team">${m.home.flag} ${m.home.code}</div>
+              <ul class="scorer-list">${(sc.home || []).map(scorerItem).join("")}</ul>
+            </div>
+            <div>
+              <div class="scorers-team">${m.away.flag} ${m.away.code}</div>
+              <ul class="scorer-list">${(sc.away || []).map(scorerItem).join("")}</ul>
+            </div>
+          </div>
+        </div>`;
+    }
+    return "";
+  }
+
   function sourcesBlock(m) {
     if (!m.sources) return "";
     const order = ["betting", "form", "h2h", "press", "social"];
+    const hasFormOrH2h = m.sources.form || m.sources.h2h;
+    const legend = hasFormOrH2h
+      ? `<p class="src-legend">
+           <b>Forme</b> = 5 derniers matchs (du plus récent au plus ancien) ·
+           <b>Face-à-face</b> = bilan des confrontations passées.
+           <span class="src-legend-keys"><b>V</b> victoire · <b>N</b> nul · <b>D</b> défaite</span>
+         </p>`
+      : "";
     return `
       <details class="sources">
         <summary>Détail des sources agrégées</summary>
         ${order.map((k) => (m.sources[k] ? sourceRow(m, m.sources[k]) : "")).join("")}
+        ${legend}
       </details>`;
   }
 
@@ -167,6 +220,7 @@
         </div>
 
         <p class="analysis">${m.analysis}</p>
+        ${scorersBlock(m)}
         ${sourcesBlock(m)}
         ${m.venue ? `<div class="venue">${pinIcon}<span>${m.venue}</span></div>` : ""}
       </article>`;

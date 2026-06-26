@@ -42,6 +42,7 @@ export async function fetchLiveEvents(ctx, config) {
       if (books.length === 0) return null;
       return {
         id: ev.id || `${ev.home_team}-${ev.away_team}-${ev.commence_time}`,
+        eventId: ev.id,
         stage: live.stageLabel || "À venir",
         projected: false,
         datetime: ev.commence_time,

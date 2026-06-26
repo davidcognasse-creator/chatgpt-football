@@ -76,6 +76,36 @@
         "home": 2,
         "draw": 1,
         "away": 0
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "K. Mbappé",
+            "prob": 55
+          },
+          {
+            "name": "M. Thuram",
+            "prob": 34
+          },
+          {
+            "name": "O. Dembélé",
+            "prob": 28
+          }
+        ],
+        "away": [
+          {
+            "name": "N. Jackson",
+            "prob": 38
+          },
+          {
+            "name": "I. Sarr",
+            "prob": 30
+          },
+          {
+            "name": "H. Diallo",
+            "prob": 22
+          }
+        ]
       }
     },
     {
@@ -144,6 +174,36 @@
         "home": 1,
         "draw": 0,
         "away": 0
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "L. Messi",
+            "prob": 48
+          },
+          {
+            "name": "J. Álvarez",
+            "prob": 45
+          },
+          {
+            "name": "L. Martínez",
+            "prob": 40
+          }
+        ],
+        "away": [
+          {
+            "name": "K. Mitoma",
+            "prob": 30
+          },
+          {
+            "name": "T. Kubo",
+            "prob": 28
+          },
+          {
+            "name": "A. Ueda",
+            "prob": 24
+          }
+        ]
       }
     },
     {
@@ -212,6 +272,36 @@
         "home": 1,
         "draw": 2,
         "away": 1
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "Vinícius Jr",
+            "prob": 50
+          },
+          {
+            "name": "Rodrygo",
+            "prob": 38
+          },
+          {
+            "name": "Endrick",
+            "prob": 33
+          }
+        ],
+        "away": [
+          {
+            "name": "A. Kramarić",
+            "prob": 34
+          },
+          {
+            "name": "A. Budimir",
+            "prob": 28
+          },
+          {
+            "name": "L. Majer",
+            "prob": 20
+          }
+        ]
       }
     },
     {
@@ -280,6 +370,36 @@
         "home": 1,
         "draw": 1,
         "away": 2
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "S. Giménez",
+            "prob": 40
+          },
+          {
+            "name": "R. Jiménez",
+            "prob": 36
+          },
+          {
+            "name": "H. Lozano",
+            "prob": 30
+          }
+        ],
+        "away": [
+          {
+            "name": "C. Gakpo",
+            "prob": 44
+          },
+          {
+            "name": "M. Depay",
+            "prob": 38
+          },
+          {
+            "name": "B. Brobbey",
+            "prob": 30
+          }
+        ]
       }
     },
     {
@@ -348,6 +468,36 @@
         "home": 2,
         "draw": 1,
         "away": 1
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "H. Kane",
+            "prob": 56
+          },
+          {
+            "name": "J. Bellingham",
+            "prob": 40
+          },
+          {
+            "name": "B. Saka",
+            "prob": 35
+          }
+        ],
+        "away": [
+          {
+            "name": "R. Lukaku",
+            "prob": 45
+          },
+          {
+            "name": "J. Doku",
+            "prob": 32
+          },
+          {
+            "name": "L. Openda",
+            "prob": 30
+          }
+        ]
       }
     },
     {
@@ -416,6 +566,36 @@
         "home": 1,
         "draw": 1,
         "away": 1
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "L. Yamal",
+            "prob": 42
+          },
+          {
+            "name": "Á. Morata",
+            "prob": 40
+          },
+          {
+            "name": "N. Williams",
+            "prob": 34
+          }
+        ],
+        "away": [
+          {
+            "name": "Y. En-Nesyri",
+            "prob": 38
+          },
+          {
+            "name": "H. Ziyech",
+            "prob": 28
+          },
+          {
+            "name": "B. Diaz",
+            "prob": 26
+          }
+        ]
       }
     },
     {
@@ -484,6 +664,36 @@
         "home": 1,
         "draw": 1,
         "away": 1
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "C. Ronaldo",
+            "prob": 46
+          },
+          {
+            "name": "R. Leão",
+            "prob": 38
+          },
+          {
+            "name": "G. Ramos",
+            "prob": 35
+          }
+        ],
+        "away": [
+          {
+            "name": "D. Núñez",
+            "prob": 42
+          },
+          {
+            "name": "F. Valverde",
+            "prob": 30
+          },
+          {
+            "name": "M. Araújo",
+            "prob": 22
+          }
+        ]
       }
     },
     {
@@ -552,6 +762,36 @@
         "home": 2,
         "draw": 1,
         "away": 1
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "K. Havertz",
+            "prob": 42
+          },
+          {
+            "name": "J. Musiala",
+            "prob": 40
+          },
+          {
+            "name": "N. Füllkrug",
+            "prob": 36
+          }
+        ],
+        "away": [
+          {
+            "name": "C. Pulisic",
+            "prob": 40
+          },
+          {
+            "name": "F. Balogun",
+            "prob": 36
+          },
+          {
+            "name": "R. Aaronson",
+            "prob": 26
+          }
+        ]
       }
     },
     {
@@ -620,6 +860,36 @@
         "home": 1,
         "draw": 1,
         "away": 1
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "K. Mbappé",
+            "prob": 52
+          },
+          {
+            "name": "O. Dembélé",
+            "prob": 30
+          },
+          {
+            "name": "M. Thuram",
+            "prob": 30
+          }
+        ],
+        "away": [
+          {
+            "name": "Vinícius Jr",
+            "prob": 48
+          },
+          {
+            "name": "Rodrygo",
+            "prob": 36
+          },
+          {
+            "name": "Endrick",
+            "prob": 30
+          }
+        ]
       }
     },
     {
@@ -688,6 +958,36 @@
         "home": 2,
         "draw": 1,
         "away": 2
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "L. Messi",
+            "prob": 46
+          },
+          {
+            "name": "J. Álvarez",
+            "prob": 44
+          },
+          {
+            "name": "L. Martínez",
+            "prob": 40
+          }
+        ],
+        "away": [
+          {
+            "name": "H. Kane",
+            "prob": 54
+          },
+          {
+            "name": "J. Bellingham",
+            "prob": 40
+          },
+          {
+            "name": "B. Saka",
+            "prob": 34
+          }
+        ]
       }
     },
     {
@@ -756,6 +1056,36 @@
         "home": 1,
         "draw": 2,
         "away": 1
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "L. Yamal",
+            "prob": 42
+          },
+          {
+            "name": "Á. Morata",
+            "prob": 40
+          },
+          {
+            "name": "N. Williams",
+            "prob": 34
+          }
+        ],
+        "away": [
+          {
+            "name": "K. Havertz",
+            "prob": 42
+          },
+          {
+            "name": "J. Musiala",
+            "prob": 40
+          },
+          {
+            "name": "N. Füllkrug",
+            "prob": 34
+          }
+        ]
       }
     },
     {
@@ -824,6 +1154,36 @@
         "home": 1,
         "draw": 1,
         "away": 1
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "C. Gakpo",
+            "prob": 44
+          },
+          {
+            "name": "M. Depay",
+            "prob": 38
+          },
+          {
+            "name": "B. Brobbey",
+            "prob": 30
+          }
+        ],
+        "away": [
+          {
+            "name": "C. Ronaldo",
+            "prob": 46
+          },
+          {
+            "name": "R. Leão",
+            "prob": 38
+          },
+          {
+            "name": "G. Ramos",
+            "prob": 34
+          }
+        ]
       }
     },
     {
@@ -892,6 +1252,36 @@
         "home": 1,
         "draw": 1,
         "away": 1
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "K. Mbappé",
+            "prob": 52
+          },
+          {
+            "name": "O. Dembélé",
+            "prob": 30
+          },
+          {
+            "name": "M. Thuram",
+            "prob": 30
+          }
+        ],
+        "away": [
+          {
+            "name": "L. Messi",
+            "prob": 46
+          },
+          {
+            "name": "J. Álvarez",
+            "prob": 44
+          },
+          {
+            "name": "L. Martínez",
+            "prob": 40
+          }
+        ]
       }
     },
     {
@@ -960,6 +1350,36 @@
         "home": 1,
         "draw": 2,
         "away": 1
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "L. Yamal",
+            "prob": 42
+          },
+          {
+            "name": "Á. Morata",
+            "prob": 40
+          },
+          {
+            "name": "N. Williams",
+            "prob": 34
+          }
+        ],
+        "away": [
+          {
+            "name": "C. Ronaldo",
+            "prob": 46
+          },
+          {
+            "name": "R. Leão",
+            "prob": 38
+          },
+          {
+            "name": "G. Ramos",
+            "prob": 34
+          }
+        ]
       }
     },
     {
@@ -1028,6 +1448,36 @@
         "home": 1,
         "draw": 1,
         "away": 1
+      },
+      "scorers": {
+        "home": [
+          {
+            "name": "K. Mbappé",
+            "prob": 52
+          },
+          {
+            "name": "O. Dembélé",
+            "prob": 32
+          },
+          {
+            "name": "M. Thuram",
+            "prob": 30
+          }
+        ],
+        "away": [
+          {
+            "name": "L. Yamal",
+            "prob": 42
+          },
+          {
+            "name": "Á. Morata",
+            "prob": 40
+          },
+          {
+            "name": "N. Williams",
+            "prob": 34
+          }
+        ]
       }
     }
   ]

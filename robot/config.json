@@ -19,7 +19,9 @@
       "competition": "WC",
       "formLast": 5,
       "h2hScan": 50
-    }
+    },
+    "scorers": false,
+    "scorersTop": 6
   },
   "output": {
     "json": "../data.json",

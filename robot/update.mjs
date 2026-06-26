@@ -14,6 +14,7 @@ import { fetchPress } from "./sources/press.mjs";
 import { fetchSocial } from "./sources/social.mjs";
 import { fetchForm } from "./sources/form.mjs";
 import { fetchH2H } from "./sources/h2h.mjs";
+import { fetchScorers } from "./sources/scorers.mjs";
 import { aggregate, buildAnalysis, favoredOutcome } from "./lib/aggregate.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -43,12 +44,13 @@ async function main() {
   const W = config.weights;
   const matches = [];
   for (const m of inputMatches) {
-    const [betting, form, h2h, press, social] = await Promise.all([
+    const [betting, form, h2h, press, social, scorers] = await Promise.all([
       fetchBetting(m, ctx),
       fetchForm(m, ctx),
       fetchH2H(m, ctx),
       fetchPress(m, ctx),
       fetchSocial(m, ctx),
+      fetchScorers(m, ctx),
     ]);
 
     if (!betting.probs) {
@@ -91,6 +93,7 @@ async function main() {
       predictedScore: prediction.predictedScore,
       confidence: prediction.confidence,
       analysis,
+      scorers: scorers || null,
       sources: {
         betting: srcBlock("Paris", W.betting, betting, `${betting.sampleSize} bookmakers`),
         form: srcBlock("Forme", W.form, form, form.detail || "5 derniers matchs"),

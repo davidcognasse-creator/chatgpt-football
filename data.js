@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-06-26T12:09:45.323Z",
+  "updatedAt": "2026-06-26T12:49:58.891Z",
   "mode": "fixtures",
   "weights": {
     "betting": 0.42,
@@ -39,6 +39,36 @@ window.WC_DATA = {
       },
       "confidence": 69,
       "analysis": "France tient la corde (54% au global). Les marchés de paris donnent 53% à France. La forme récente avantage France. L'historique des confrontations penche pour France. La presse penche vers France. Le public suit surtout France. Match à élimination directe serré jusqu'au dernier tiers.",
+      "scorers": {
+        "home": [
+          {
+            "name": "K. Mbappé",
+            "prob": 55
+          },
+          {
+            "name": "M. Thuram",
+            "prob": 34
+          },
+          {
+            "name": "O. Dembélé",
+            "prob": 28
+          }
+        ],
+        "away": [
+          {
+            "name": "N. Jackson",
+            "prob": 38
+          },
+          {
+            "name": "I. Sarr",
+            "prob": 30
+          },
+          {
+            "name": "H. Diallo",
+            "prob": 22
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -60,7 +90,7 @@ window.WC_DATA = {
             "away": 32
           },
           "favored": "home",
-          "detail": "WWDWW vs WDWLW"
+          "detail": "VVNVV vs VNVDV"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -124,6 +154,36 @@ window.WC_DATA = {
       },
       "confidence": 72,
       "analysis": "Argentine tient la corde (60% au global). Les marchés de paris donnent 58% à Argentine. La forme récente avantage Argentine. L'historique des confrontations penche pour Argentine. La presse penche vers Argentine. Le public suit surtout Argentine. Le Japon peut contenir le jeu mais manque de réussite face aux blocs bas.",
+      "scorers": {
+        "home": [
+          {
+            "name": "L. Messi",
+            "prob": 48
+          },
+          {
+            "name": "J. Álvarez",
+            "prob": 45
+          },
+          {
+            "name": "L. Martínez",
+            "prob": 40
+          }
+        ],
+        "away": [
+          {
+            "name": "K. Mitoma",
+            "prob": 30
+          },
+          {
+            "name": "T. Kubo",
+            "prob": 28
+          },
+          {
+            "name": "A. Ueda",
+            "prob": 24
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -145,7 +205,7 @@ window.WC_DATA = {
             "away": 32
           },
           "favored": "home",
-          "detail": "WWWDW vs WWDWL"
+          "detail": "VVVNV vs VVNVD"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -209,6 +269,36 @@ window.WC_DATA = {
       },
       "confidence": 63,
       "analysis": "Brésil tient la corde (45% au global). Les marchés de paris donnent 48% à Brésil. La forme récente avantage Brésil. L'historique des confrontations penche pour le nul. La presse penche vers Brésil. Le public suit surtout Brésil. Issue indécise pouvant filer en prolongation et tirs au but.",
+      "scorers": {
+        "home": [
+          {
+            "name": "Vinícius Jr",
+            "prob": 50
+          },
+          {
+            "name": "Rodrygo",
+            "prob": 38
+          },
+          {
+            "name": "Endrick",
+            "prob": 33
+          }
+        ],
+        "away": [
+          {
+            "name": "A. Kramarić",
+            "prob": 34
+          },
+          {
+            "name": "A. Budimir",
+            "prob": 28
+          },
+          {
+            "name": "L. Majer",
+            "prob": 20
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -230,7 +320,7 @@ window.WC_DATA = {
             "away": 33
           },
           "favored": "home",
-          "detail": "WDWWL vs DWDWL"
+          "detail": "VNVVD vs NVNVD"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -294,6 +384,36 @@ window.WC_DATA = {
       },
       "confidence": 61,
       "analysis": "Pays-Bas tient la corde (41% au global). Les marchés de paris donnent 40% à Pays-Bas. La forme récente avantage Pays-Bas. L'historique des confrontations penche pour Pays-Bas. La presse penche vers Pays-Bas. Le public suit surtout Mexique. La profondeur de banc fait pencher légèrement la balance pour les Oranje.",
+      "scorers": {
+        "home": [
+          {
+            "name": "S. Giménez",
+            "prob": 40
+          },
+          {
+            "name": "R. Jiménez",
+            "prob": 36
+          },
+          {
+            "name": "H. Lozano",
+            "prob": 30
+          }
+        ],
+        "away": [
+          {
+            "name": "C. Gakpo",
+            "prob": 44
+          },
+          {
+            "name": "M. Depay",
+            "prob": 38
+          },
+          {
+            "name": "B. Brobbey",
+            "prob": 30
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -315,7 +435,7 @@ window.WC_DATA = {
             "away": 47
           },
           "favored": "away",
-          "detail": "WLDWL vs WWDWW"
+          "detail": "VDNVD vs VVNVV"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -379,6 +499,36 @@ window.WC_DATA = {
       },
       "confidence": 65,
       "analysis": "Angleterre tient la corde (46% au global). Les marchés de paris donnent 45% à Angleterre. La forme récente avantage Angleterre. L'historique des confrontations penche pour Angleterre. La presse penche vers Angleterre. Le public suit surtout Angleterre. Les phases arrêtées pourraient départager deux équipes proches.",
+      "scorers": {
+        "home": [
+          {
+            "name": "H. Kane",
+            "prob": 56
+          },
+          {
+            "name": "J. Bellingham",
+            "prob": 40
+          },
+          {
+            "name": "B. Saka",
+            "prob": 35
+          }
+        ],
+        "away": [
+          {
+            "name": "R. Lukaku",
+            "prob": 45
+          },
+          {
+            "name": "J. Doku",
+            "prob": 32
+          },
+          {
+            "name": "L. Openda",
+            "prob": 30
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -400,7 +550,7 @@ window.WC_DATA = {
             "away": 37
           },
           "favored": "home",
-          "detail": "WWDWL vs WDWWL"
+          "detail": "VVNVD vs VNVVD"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -464,6 +614,36 @@ window.WC_DATA = {
       },
       "confidence": 63,
       "analysis": "Espagne tient la corde (44% au global). Les marchés de paris donnent 49% à Espagne. La forme récente avantage Maroc. L'historique des confrontations penche pour Espagne. La presse penche vers Espagne. Le public suit surtout Espagne. Le gardien marocain peut rééditer l'exploit; le modèle reste prudent.",
+      "scorers": {
+        "home": [
+          {
+            "name": "L. Yamal",
+            "prob": 42
+          },
+          {
+            "name": "Á. Morata",
+            "prob": 40
+          },
+          {
+            "name": "N. Williams",
+            "prob": 34
+          }
+        ],
+        "away": [
+          {
+            "name": "Y. En-Nesyri",
+            "prob": 38
+          },
+          {
+            "name": "H. Ziyech",
+            "prob": 28
+          },
+          {
+            "name": "B. Diaz",
+            "prob": 26
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -485,7 +665,7 @@ window.WC_DATA = {
             "away": 39
           },
           "favored": "away",
-          "detail": "WWWDL vs WDWWD"
+          "detail": "VVVND vs VNVVN"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -549,6 +729,36 @@ window.WC_DATA = {
       },
       "confidence": 66,
       "analysis": "Portugal tient la corde (49% au global). Les marchés de paris donnent 48% à Portugal. La forme récente avantage Portugal. L'historique des confrontations penche pour Portugal. La presse penche vers Portugal. Le public suit surtout Portugal. L'efficacité sur coups de pied arrêtés pourrait faire la différence.",
+      "scorers": {
+        "home": [
+          {
+            "name": "C. Ronaldo",
+            "prob": 46
+          },
+          {
+            "name": "R. Leão",
+            "prob": 38
+          },
+          {
+            "name": "G. Ramos",
+            "prob": 35
+          }
+        ],
+        "away": [
+          {
+            "name": "D. Núñez",
+            "prob": 42
+          },
+          {
+            "name": "F. Valverde",
+            "prob": 30
+          },
+          {
+            "name": "M. Araújo",
+            "prob": 22
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -570,7 +780,7 @@ window.WC_DATA = {
             "away": 29
           },
           "favored": "home",
-          "detail": "WWDWW vs WDLWD"
+          "detail": "VVNVV vs VNDVN"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -634,6 +844,36 @@ window.WC_DATA = {
       },
       "confidence": 65,
       "analysis": "Allemagne tient la corde (48% au global). Les marchés de paris donnent 50% à Allemagne. La forme récente avantage Allemagne. L'historique des confrontations penche pour Allemagne. La presse penche vers Allemagne. Le public suit surtout Allemagne. Les États-Unis ont les armes pour bousculer la hiérarchie.",
+      "scorers": {
+        "home": [
+          {
+            "name": "K. Havertz",
+            "prob": 42
+          },
+          {
+            "name": "J. Musiala",
+            "prob": 40
+          },
+          {
+            "name": "N. Füllkrug",
+            "prob": 36
+          }
+        ],
+        "away": [
+          {
+            "name": "C. Pulisic",
+            "prob": 40
+          },
+          {
+            "name": "F. Balogun",
+            "prob": 36
+          },
+          {
+            "name": "R. Aaronson",
+            "prob": 26
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -655,7 +895,7 @@ window.WC_DATA = {
             "away": 37
           },
           "favored": "home",
-          "detail": "WDWWL vs WWLDW"
+          "detail": "VNVVD vs VVDNV"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -719,6 +959,36 @@ window.WC_DATA = {
       },
       "confidence": 61,
       "analysis": "France tient la corde (39% au global). Les marchés de paris donnent 39% à France. La forme récente avantage France. L'historique des confrontations penche pour France. La presse penche vers France. Le public suit surtout France. Choc projeté: deux favoris au sommet, scénario ouvert.",
+      "scorers": {
+        "home": [
+          {
+            "name": "K. Mbappé",
+            "prob": 52
+          },
+          {
+            "name": "O. Dembélé",
+            "prob": 30
+          },
+          {
+            "name": "M. Thuram",
+            "prob": 30
+          }
+        ],
+        "away": [
+          {
+            "name": "Vinícius Jr",
+            "prob": 48
+          },
+          {
+            "name": "Rodrygo",
+            "prob": 36
+          },
+          {
+            "name": "Endrick",
+            "prob": 30
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -740,7 +1010,7 @@ window.WC_DATA = {
             "away": 32
           },
           "favored": "home",
-          "detail": "WWDWW vs WDWWL"
+          "detail": "VVNVV vs VNVVD"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -804,6 +1074,36 @@ window.WC_DATA = {
       },
       "confidence": 63,
       "analysis": "Argentine tient la corde (42% au global). Les marchés de paris donnent 41% à Argentine. La forme récente avantage Argentine. L'historique des confrontations penche pour Argentine. La presse penche vers Argentine. Le public suit surtout Argentine. Match projeté à forte charge historique.",
+      "scorers": {
+        "home": [
+          {
+            "name": "L. Messi",
+            "prob": 46
+          },
+          {
+            "name": "J. Álvarez",
+            "prob": 44
+          },
+          {
+            "name": "L. Martínez",
+            "prob": 40
+          }
+        ],
+        "away": [
+          {
+            "name": "H. Kane",
+            "prob": 54
+          },
+          {
+            "name": "J. Bellingham",
+            "prob": 40
+          },
+          {
+            "name": "B. Saka",
+            "prob": 34
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -825,7 +1125,7 @@ window.WC_DATA = {
             "away": 32
           },
           "favored": "home",
-          "detail": "WWWDW vs WWDWL"
+          "detail": "VVVNV vs VVNVD"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -889,6 +1189,36 @@ window.WC_DATA = {
       },
       "confidence": 59,
       "analysis": "Espagne tient la corde (37% au global). Les marchés de paris donnent 38% à Espagne. La forme récente avantage Espagne. L'historique des confrontations penche pour le nul. La presse penche vers Espagne. Le public suit surtout Espagne. Affrontement projeté très serré entre écoles de jeu.",
+      "scorers": {
+        "home": [
+          {
+            "name": "L. Yamal",
+            "prob": 42
+          },
+          {
+            "name": "Á. Morata",
+            "prob": 40
+          },
+          {
+            "name": "N. Williams",
+            "prob": 34
+          }
+        ],
+        "away": [
+          {
+            "name": "K. Havertz",
+            "prob": 42
+          },
+          {
+            "name": "J. Musiala",
+            "prob": 40
+          },
+          {
+            "name": "N. Füllkrug",
+            "prob": 34
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -910,7 +1240,7 @@ window.WC_DATA = {
             "away": 37
           },
           "favored": "home",
-          "detail": "WWWDL vs WDWWL"
+          "detail": "VVVND vs VNVVD"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -974,6 +1304,36 @@ window.WC_DATA = {
       },
       "confidence": 61,
       "analysis": "Portugal tient la corde (39% au global). Les marchés de paris donnent 39% à Portugal. La forme récente avantage Pays-Bas. L'historique des confrontations penche pour Pays-Bas. La presse penche vers Portugal. Le public suit surtout Portugal. Rencontre projetée équilibrée, avantage offensif lusitanien.",
+      "scorers": {
+        "home": [
+          {
+            "name": "C. Gakpo",
+            "prob": 44
+          },
+          {
+            "name": "M. Depay",
+            "prob": 38
+          },
+          {
+            "name": "B. Brobbey",
+            "prob": 30
+          }
+        ],
+        "away": [
+          {
+            "name": "C. Ronaldo",
+            "prob": 46
+          },
+          {
+            "name": "R. Leão",
+            "prob": 38
+          },
+          {
+            "name": "G. Ramos",
+            "prob": 34
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -995,7 +1355,7 @@ window.WC_DATA = {
             "away": 37
           },
           "favored": "home",
-          "detail": "WWDWW vs WWDWW"
+          "detail": "VVNVV vs VVNVV"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -1059,6 +1419,36 @@ window.WC_DATA = {
       },
       "confidence": 60,
       "analysis": "France tient la corde (37% au global). Les marchés de paris donnent 36% à France. La forme récente avantage France. L'historique des confrontations penche pour France. La presse penche vers France. Le public suit surtout Argentine. Demi-finale projetée: remake de la finale 2022.",
+      "scorers": {
+        "home": [
+          {
+            "name": "K. Mbappé",
+            "prob": 52
+          },
+          {
+            "name": "O. Dembélé",
+            "prob": 30
+          },
+          {
+            "name": "M. Thuram",
+            "prob": 30
+          }
+        ],
+        "away": [
+          {
+            "name": "L. Messi",
+            "prob": 46
+          },
+          {
+            "name": "J. Álvarez",
+            "prob": 44
+          },
+          {
+            "name": "L. Martínez",
+            "prob": 40
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -1080,7 +1470,7 @@ window.WC_DATA = {
             "away": 37
           },
           "favored": "home",
-          "detail": "WWDWW vs WWWDW"
+          "detail": "VVNVV vs VVVNV"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -1144,6 +1534,36 @@ window.WC_DATA = {
       },
       "confidence": 59,
       "analysis": "Espagne tient la corde (39% au global). Les marchés de paris donnent 41% à Espagne. La forme récente avantage Portugal. L'historique des confrontations penche pour le nul. La presse penche vers Espagne. Le public suit surtout Espagne. Derby ibérique projeté pour une place en finale.",
+      "scorers": {
+        "home": [
+          {
+            "name": "L. Yamal",
+            "prob": 42
+          },
+          {
+            "name": "Á. Morata",
+            "prob": 40
+          },
+          {
+            "name": "N. Williams",
+            "prob": 34
+          }
+        ],
+        "away": [
+          {
+            "name": "C. Ronaldo",
+            "prob": 46
+          },
+          {
+            "name": "R. Leão",
+            "prob": 38
+          },
+          {
+            "name": "G. Ramos",
+            "prob": 34
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -1165,7 +1585,7 @@ window.WC_DATA = {
             "away": 42
           },
           "favored": "away",
-          "detail": "WWWDL vs WWDWW"
+          "detail": "VVVND vs VVNVV"
         },
         "h2h": {
           "label": "Face-à-face",
@@ -1229,6 +1649,36 @@ window.WC_DATA = {
       },
       "confidence": 60,
       "analysis": "France tient la corde (38% au global). Les marchés de paris donnent 36% à France. La forme récente avantage France. L'historique des confrontations penche pour France. La presse penche vers France. Le public suit surtout France. Finale projetée: deux nations championnes du monde récentes.",
+      "scorers": {
+        "home": [
+          {
+            "name": "K. Mbappé",
+            "prob": 52
+          },
+          {
+            "name": "O. Dembélé",
+            "prob": 32
+          },
+          {
+            "name": "M. Thuram",
+            "prob": 30
+          }
+        ],
+        "away": [
+          {
+            "name": "L. Yamal",
+            "prob": 42
+          },
+          {
+            "name": "Á. Morata",
+            "prob": 40
+          },
+          {
+            "name": "N. Williams",
+            "prob": 34
+          }
+        ]
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -1250,7 +1700,7 @@ window.WC_DATA = {
             "away": 32
           },
           "favored": "home",
-          "detail": "WWDWW vs WWWDL"
+          "detail": "VVNVV vs VVVND"
         },
         "h2h": {
           "label": "Face-à-face",

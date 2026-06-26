@@ -5,6 +5,9 @@ import { twoSidedProbs } from "../lib/aggregate.mjs";
 import { teamId, finishedMatches } from "../lib/footballdata.mjs";
 
 const POINTS = { W: 3, D: 1, L: 0 };
+// Affichage en français : V victoire · N nul · D défaite.
+const FR = { W: "V", D: "N", L: "D" };
+const toFr = (s) => [...(s || "")].map((c) => FR[c] || c).join("");
 
 /** Force de forme dans [0,1] à partir d'une chaîne de résultats type "WWDLW". */
 function strengthFromString(s) {
@@ -46,7 +49,7 @@ export async function fetchForm(match, ctx) {
     }
     return {
       probs: twoSidedProbs(strengthFromString(hs) + 0.05, strengthFromString(as) + 0.05),
-      detail: `${hs || "—"} vs ${as || "—"}`,
+      detail: `${toFr(hs) || "—"} vs ${toFr(as) || "—"}`,
     };
   } catch (e) {
     console.warn(`[form] indisponible pour ${match.home.name}-${match.away.name}: ${e.message}`);
