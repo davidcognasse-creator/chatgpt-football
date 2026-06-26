@@ -37,7 +37,7 @@
     new Date(iso).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
 
   const sideLabel = (m, key) =>
-    key === "home" ? m.home.code : key === "away" ? m.away.code : "Nul";
+    key === "home" ? m.home.flag : key === "away" ? m.away.flag : "Nul";
 
   const favoredName = (m) => {
     const { home, draw, away } = m.probs;
@@ -208,9 +208,9 @@
           <div class="prob-seg away" style="width:${away}%"></div>
         </div>
         <div class="prob-legend">
-          <span class="lg home"><b>${home}%</b>&nbsp;${m.home.code}</span>
+          <span class="lg home"><b>${home}%</b>&nbsp;${m.home.flag}</span>
           <span class="lg draw"><b>${draw}%</b>&nbsp;Nul</span>
-          <span class="lg away"><b>${away}%</b>&nbsp;${m.away.code}</span>
+          <span class="lg away"><b>${away}%</b>&nbsp;${m.away.flag}</span>
         </div>
 
         <div class="confidence">

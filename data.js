@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-06-26T13:23:58.374Z",
+  "updatedAt": "2026-06-26T13:34:53.350Z",
   "mode": "fixtures",
   "weights": {
     "betting": 0.42,
@@ -480,7 +480,7 @@ window.WC_DATA = {
       "venue": "Mercedes-Benz Stadium, Atlanta",
       "home": {
         "name": "Angleterre",
-        "flag": "🏴",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "code": "ENG"
       },
       "away": {
@@ -1060,7 +1060,7 @@ window.WC_DATA = {
       },
       "away": {
         "name": "Angleterre",
-        "flag": "🏴",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "code": "ENG"
       },
       "probs": {

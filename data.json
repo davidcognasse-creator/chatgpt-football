@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-06-26T13:23:58.374Z",
+  "updatedAt": "2026-06-26T13:34:53.350Z",
   "mode": "fixtures",
   "weights": {
     "betting": 0.42,
@@ -478,7 +478,7 @@
       "venue": "Mercedes-Benz Stadium, Atlanta",
       "home": {
         "name": "Angleterre",
-        "flag": "🏴",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "code": "ENG"
       },
       "away": {
@@ -1058,7 +1058,7 @@
       },
       "away": {
         "name": "Angleterre",
-        "flag": "🏴",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "code": "ENG"
       },
       "probs": {

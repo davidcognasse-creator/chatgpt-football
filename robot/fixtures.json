@@ -410,7 +410,7 @@
       "venue": "Mercedes-Benz Stadium, Atlanta",
       "home": {
         "name": "Angleterre",
-        "flag": "🏴",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "code": "ENG"
       },
       "away": {
@@ -905,7 +905,7 @@
       },
       "away": {
         "name": "Angleterre",
-        "flag": "🏴",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "code": "ENG"
       },
       "market": {

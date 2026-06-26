@@ -5,7 +5,7 @@ const TEAMS = {
   "Argentina": { flag: "🇦🇷", code: "ARG" },
   "France": { flag: "🇫🇷", code: "FRA" },
   "Brazil": { flag: "🇧🇷", code: "BRA" },
-  "England": { flag: "🏴", code: "ENG" },
+  "England": { flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", code: "ENG" },
   "Spain": { flag: "🇪🇸", code: "ESP" },
   "Portugal": { flag: "🇵🇹", code: "POR" },
   "Netherlands": { flag: "🇳🇱", code: "NED" },
@@ -53,8 +53,8 @@ const TEAMS = {
   "Panama": { flag: "🇵🇦", code: "PAN" },
   "Jamaica": { flag: "🇯🇲", code: "JAM" },
   "New Zealand": { flag: "🇳🇿", code: "NZL" },
-  "Scotland": { flag: "🏴", code: "SCO" },
-  "Wales": { flag: "🏴", code: "WAL" },
+  "Scotland": { flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", code: "SCO" },
+  "Wales": { flag: "🏴󠁧󠁢󠁷󠁬󠁳󠁿", code: "WAL" },
 };
 
 /** Crée un code à 3 lettres et un drapeau générique pour un nom inconnu. */
