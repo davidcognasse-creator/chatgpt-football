@@ -20,7 +20,7 @@
       "formLast": 5,
       "h2hScan": 50
     },
-    "scorers": false,
+    "scorers": true,
     "scorersTop": 6
   },
   "output": {
