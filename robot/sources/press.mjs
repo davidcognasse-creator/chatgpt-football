@@ -1,13 +1,26 @@
 // Adaptateur "presse".
 //  - fixtures : penchants éditoriaux pré-remplis.
-//  - live     : GDELT (gratuit, sans clé) — volume + tonalité des articles par
-//               équipe, convertis en probabilités.
+//  - live     : GNews (clé NEWS_API_KEY, fonctionne en CI) — volume d'articles
+//               par équipe ; repli sur GDELT (sans clé) si pas de clé ou erreur.
 import { countsToProbs, twoSidedProbs } from "../lib/aggregate.mjs";
 import { throttle } from "../lib/throttle.mjs";
 
 const UA = "wc2026-predictions-robot/1.0 (+github actions)";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** Nombre total d'articles GNews (gnews.io) pour une équipe. */
+async function gnewsVolume(term, ctx) {
+  const key = ctx.env.NEWS_API_KEY;
+  const q = encodeURIComponent(`"${term}" (football OR soccer)`);
+  const url = `https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&sortby=publishedAt&apikey=${key}`;
+  return throttle("gnews", 1500, async () => {
+    const res = await fetch(url, { headers: { "User-Agent": UA } });
+    if (!res.ok) throw new Error(`GNews HTTP ${res.status}`);
+    const data = await res.json();
+    return Number(data.totalArticles ?? (data.articles ? data.articles.length : 0));
+  });
+}
 
 /** Volume et tonalité moyenne GDELT pour une requête sur les N dernières heures. */
 async function gdeltTone(queryTerm, hours, gapMs = 8000) {
@@ -54,7 +67,23 @@ export async function fetchPress(match, ctx) {
     };
   }
 
-  // Mode live : GDELT.
+  // Mode live : GNews en priorité (fonctionne en CI), sinon repli GDELT.
+  if (ctx.env.NEWS_API_KEY) {
+    try {
+      const [vh, va] = await Promise.all([
+        gnewsVolume(match.home.name, ctx),
+        gnewsVolume(match.away.name, ctx),
+      ]);
+      return {
+        probs: twoSidedProbs(vh + 1, va + 1),
+        sampleSize: vh + va,
+        sentiment: `GNews ${vh}/${va} articles`,
+      };
+    } catch (e) {
+      console.warn(`[press] GNews indisponible (${e.message}) — repli GDELT`);
+    }
+  }
+
   try {
     const hours = ctx.config?.live?.newsLookbackHours || 72;
     const [h, a] = await Promise.all([
