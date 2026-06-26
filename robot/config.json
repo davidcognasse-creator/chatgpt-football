@@ -37,7 +37,8 @@
     "historyJs": "../history.js"
   },
   "state": {
-    "pending": "state/pending.json"
+    "pending": "state/pending.json",
+    "apifootballCache": "state/apifootball-cache.json"
   },
   "mode": "live"
 }

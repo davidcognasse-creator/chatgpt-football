@@ -47,26 +47,39 @@ async function viaFootballData(ctx, homeName, awayName) {
 }
 
 async function liveH2H(ctx, homeName, awayName) {
+  const pk = `${homeName}|${awayName}`.toLowerCase();
+  const store = (ctx.cache && (ctx.cache.h2h || (ctx.cache.h2h = {}))) || {};
+
   if (ctx.env.APIFOOTBALL_KEY) {
     try {
-      return await viaApiFootball(ctx, homeName, awayName);
+      const counts = await viaApiFootball(ctx, homeName, awayName);
+      store[pk] = { ...counts, ts: new Date().toISOString() }; // mémorise pour plus tard
+      return { counts, source: "api" };
     } catch (e) {
+      // Plus de crédit / erreur : on réutilise le cache si on l'a déjà vu.
+      if (store[pk]) {
+        console.log(`[h2h] API-Football KO (${e.message}) — cache réutilisé pour ${homeName}-${awayName}`);
+        const { ts, ...counts } = store[pk];
+        return { counts, source: "cache" };
+      }
       console.warn(`[h2h] API-Football indisponible (${e.message}) — repli football-data`);
     }
   }
-  return viaFootballData(ctx, homeName, awayName);
+  return { counts: await viaFootballData(ctx, homeName, awayName), source: "footballdata" };
 }
 
 export async function fetchH2H(match, ctx) {
   try {
-    let counts;
     if (ctx.mode === "live") {
-      counts = await liveH2H(ctx, match.home.name, match.away.name);
-    } else {
-      counts = match.h2h;
-      if (!counts || counts.home + counts.draw + counts.away === 0)
-        return { probs: null, detail: "indisponible" };
+      const { counts, source } = await liveH2H(ctx, match.home.name, match.away.name);
+      return {
+        probs: countsToProbs(counts, 0.15),
+        detail: `${counts.home}V ${counts.draw}N ${counts.away}D${source === "cache" ? " (caché)" : ""}`,
+      };
     }
+    const counts = match.h2h;
+    if (!counts || counts.home + counts.draw + counts.away === 0)
+      return { probs: null, detail: "indisponible" };
     return {
       probs: countsToProbs(counts, 0.15),
       detail: `${counts.home}V ${counts.draw}N ${counts.away}D`,

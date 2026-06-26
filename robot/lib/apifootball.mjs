@@ -30,17 +30,23 @@ async function get(ctx, path) {
 export async function teamId(ctx, name) {
   const key = (name || "").toLowerCase();
   if (idCache.has(key)) return idCache.get(key);
+  // Cache persistant (évite de reconsommer des requêtes pour les mêmes équipes).
+  const persisted = ctx.cache?.teams;
+  if (persisted && persisted[key] != null) {
+    idCache.set(key, persisted[key]);
+    return persisted[key];
+  }
   // Le champ search n'accepte que [alphanumérique + espaces] (pas de "&", etc.).
   const search = (name || "").replace(/[^A-Za-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
   const j = await get(ctx, `/teams?search=${encodeURIComponent(search)}`);
   const arr = j.response || [];
   if (!arr.length) {
-    idCache.set(key, null);
     throw new Error(`API-Football: 0 résultat pour "${name}" (results=${j.results}, params=${JSON.stringify(j.parameters || {})})`);
   }
   const national = arr.find((x) => x.team && x.team.national);
   const id = (national || arr[0]).team.id;
   idCache.set(key, id);
+  if (persisted) persisted[key] = id;
   return id;
 }
 

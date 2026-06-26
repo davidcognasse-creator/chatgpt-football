@@ -35,6 +35,13 @@ async function main() {
   const mode = arg("mode", config.mode || "fixtures");
   const ctx = { mode, env: process.env, alpha: config.prior?.alpha ?? 0.05, config };
 
+  // Cache persistant API-Football (équipes + face-à-face), réutilisé si le
+  // crédit de l'API est épuisé.
+  const cachePath = here(config.state.apifootballCache);
+  ctx.cache = (await readJSONSafe(cachePath)) || {};
+  if (!ctx.cache.teams) ctx.cache.teams = {};
+  if (!ctx.cache.h2h) ctx.cache.h2h = {};
+
   // Liste des matchs : The Odds API en live, fichier fixtures sinon.
   const inputMatches =
     mode === "live" ? await fetchLiveEvents(ctx, config) : fixtures.matches;
@@ -131,6 +138,10 @@ async function main() {
   // Historique : uniquement en mode live (snapshot des pronostics + règlement).
   if (mode === "live") {
     await updateHistory(ctx, config, matches);
+    await writeFile(cachePath, JSON.stringify(ctx.cache, null, 2) + "\n", "utf8");
+    console.log(
+      `[cache] ${Object.keys(ctx.cache.teams).length} équipes · ${Object.keys(ctx.cache.h2h).length} face-à-face mémorisés`
+    );
   }
 }
 
