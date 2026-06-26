@@ -2,108 +2,106 @@
 
 Site statique au design moderne affichant les **pronostics IA** des matchs à venir
 du Mondial 2026. Les prédictions proviennent d'un **fichier de données (`data.json`)**
-qu'un **robot actualise** en agrégeant trois signaux : les **cotes des plateformes
-de paris**, le **sentiment de la presse** et celui de **X**.
+qu'un **robot actualise** en agrégeant **5 sources** pondérées.
 
 ```
- fixtures / API  ──►  robot/update.mjs  ──►  data.json + data.js  ──►  site (index.html)
- (paris·presse·X)     (agrégation pondérée)   (fichier canonique)       (affichage)
+ sources  ──►  robot/update.mjs  ──►  data.json + data.js  ──►  site (index.html)
+              (agrégation pondérée)    (fichier canonique)        (affichage)
 ```
 
-## Fonctionnalités
+## Les 5 sources agrégées
 
-- 🎯 Carte par match : probabilités **Victoire / Nul / Défaite**, score IA, confiance
-- 🧩 **Détail des sources** dépliable : ce que disent les paris, la presse et X + leur pondération
-- 🏆 Toutes les phases : **huitièmes → quarts → demies → finale** (tours futurs marqués « Projeté »)
+| Source | Signal | Poids | Données (mode live) | Clé |
+|--------|--------|:-----:|---------------------|-----|
+| **Paris** | cotes des bookmakers (dévignées, consensus) | 0.42 | The Odds API | `ODDS_API_KEY` (gratuit) |
+| **Forme** | 5 derniers résultats de chaque équipe | 0.18 | football-data.org | `FOOTBALL_DATA_KEY` (gratuit) |
+| **Face-à-face** | historique des confrontations | 0.12 | football-data.org | `FOOTBALL_DATA_KEY` (gratuit) |
+| **Presse** | volume + tonalité des articles | 0.16 | GDELT | aucune |
+| **Public** | buzz / intérêt par équipe | 0.12 | API X *ou* pages vues Wikipédia | `X_BEARER_TOKEN` (option) |
+
+Les 5 vecteurs `{victoire, nul, défaite}` sont combinés par **moyenne pondérée**
+(poids dans `robot/config.json`). Les poids se **renormalisent** sur les sources
+réellement disponibles : si une source manque (pas de clé, API en erreur), elle est
+simplement ignorée. La **confiance** mesure la concentration de la prédiction et
+l'**accord entre sources** ; le **score** vient des *expected goals* (ou, à défaut,
+des probabilités).
+
+## Fonctionnalités du site
+
+- 🎯 Probabilités **Victoire / Nul / Défaite**, score IA et confiance par match
+- 🧩 **Détail des 5 sources** dépliable (ce que dit chacune + sa pondération)
+- 🏆 Toutes les phases : **huitièmes → quarts → demies → finale** (« Projeté » si à venir)
 - 🔎 Filtrage par phase + recherche par équipe
 - 📱 Responsive, thème sombre, sans dépendance front (HTML/CSS/JS pur)
 
 ## Lancer le site en local
 
-`data.json` est chargé via `fetch`, donc servez le dossier (l'ouverture directe en
-`file://` fonctionne aussi grâce au miroir `data.js`) :
-
 ```bash
 python3 -m http.server 8000   # puis http://localhost:8000
 ```
 
-## Le robot d'actualisation
-
-Le robot lit les sources, agrège une prédiction par match et écrit `data.json`
-(canonique) + `data.js` (miroir pour `file://`).
+## Le robot
 
 ```bash
-node robot/update.mjs              # mode démo (fixtures)
-node robot/update.mjs --mode live  # vraies API (voir ci-dessous)
+node robot/update.mjs              # mode démo (fixtures) — données d'exemple
+node robot/update.mjs --mode live  # vraies données (voir clés ci-dessous)
 ```
 
-### Comment fonctionne l'agrégation
+- **Mode `fixtures`** (par défaut) : les entrées brutes (cotes, forme, h2h, presse,
+  buzz) viennent de `robot/fixtures.json`. Tout le calcul est réel ; seules les
+  entrées sont des exemples.
+- **Mode `live`** : la liste des matchs et les cotes viennent de The Odds API ; la
+  forme et le face-à-face de football-data.org ; la presse de GDELT ; le buzz de
+  l'API X (si `X_BEARER_TOKEN` valide) sinon des pages vues Wikipédia.
 
-1. **Paris** (`robot/sources/betting.mjs`) — convertit les cotes décimales de
-   plusieurs bookmakers en probabilités, retire la marge ("de-vig") et fait le consensus.
-2. **Presse** (`robot/sources/press.mjs`) — transforme les penchants éditoriaux
-   (nb d'analyses par issue) en probabilités lissées.
-3. **X** (`robot/sources/social.mjs`) — transforme le volume de mentions par issue
-   en probabilités lissées.
+### Clés API (mode live)
 
-Les trois vecteurs sont combinés par **moyenne pondérée** (poids dans
-`robot/config.json`, par défaut paris 60 % / presse 20 % / X 20 %). La **confiance**
-mesure la concentration de la prédiction et l'**accord entre sources** ; le **score**
-est dérivé des *expected goals*.
+| Variable d'env | Service | Coût | Effet si absente |
+|---|---|---|---|
+| `ODDS_API_KEY` | the-odds-api.com | gratuit (~500 req/mois) | **requis** (pas de matchs ni de cotes) |
+| `FOOTBALL_DATA_KEY` | football-data.org | gratuit | sources Forme + Face-à-face ignorées |
+| `X_BEARER_TOKEN` | API X (Twitter) v2 | — | repli automatique sur Wikipédia |
 
-### Passer en mode « live » (vraies données)
-
-Les adaptateurs `robot/sources/*.mjs` contiennent des emplacements `TODO live`.
-Branchez vos API et fournissez les clés via variables d'environnement :
-
-| Source | Variable d'env  | Exemple d'API           |
-|--------|-----------------|-------------------------|
-| Paris  | `ODDS_API_KEY`  | The Odds API            |
-| Presse | `NEWS_API_KEY`  | NewsAPI / GDELT / RSS   |
-| X      | `X_BEARER_TOKEN`| API X (recherche récente) |
-
-Le format de sortie reste identique : seul l'intérieur des adaptateurs change.
+> ℹ️ **À propos de X** : le *Bearer token* du palier **gratuit** de l'API X ne donne
+> généralement **pas** accès à la recherche/au comptage de tweets (réservé aux
+> paliers payants). Le robot tente l'appel et, en cas de refus, **se replie
+> automatiquement** sur les pages vues Wikipédia — aucun abonnement requis.
 
 ## Automatisation (GitHub Actions)
 
-- **`.github/workflows/update-predictions.yml`** — exécute le robot toutes les 3 h
-  (et à la demande), puis committe `data.json` / `data.js` si changement. En mode
-  live, ajoutez les secrets `ODDS_API_KEY`, `NEWS_API_KEY`, `X_BEARER_TOKEN`.
-- **`.github/workflows/deploy-pages.yml`** — déploie le site sur **GitHub Pages**
-  à chaque mise à jour.
-
-### Activer GitHub Pages
-
-Le workflow tente d'activer Pages automatiquement (`enablement: true`). Si besoin,
-dans **Settings → Pages**, choisissez **Source : GitHub Actions**. L'URL publique
-apparaît ensuite dans l'onglet *Actions* (job « Déployer ») et dans Settings → Pages.
+- **`update-predictions.yml`** — lance le robot toutes les 3 h et committe
+  `data.json` / `data.js` si changement. Ajoute les clés dans
+  *Settings → Secrets and variables → Actions*.
+- **`deploy-pages.yml`** — publie le site sur **GitHub Pages** à chaque mise à jour.
 
 ## Format des données (`data.json`)
 
 ```jsonc
 {
-  "updatedAt": "2026-06-26T10:57:30Z",
-  "weights": { "betting": 0.6, "press": 0.2, "social": 0.2 },
+  "updatedAt": "2026-06-26T12:09:45Z",
+  "weights": { "betting": 0.42, "form": 0.18, "h2h": 0.12, "press": 0.16, "social": 0.12 },
   "matches": [{
     "id": "r16-1", "stage": "Huitièmes", "projected": false,
     "datetime": "2026-06-28T19:00:00Z", "venue": "MetLife Stadium, New York",
     "home": { "name": "France", "flag": "🇫🇷", "code": "FRA" },
     "away": { "name": "Sénégal", "flag": "🇸🇳", "code": "SEN" },
-    "probs": { "home": 56, "draw": 24, "away": 20 },
+    "probs": { "home": 54, "draw": 25, "away": 21 },
     "predictedScore": { "home": 2, "away": 1 },
-    "confidence": 72,
+    "confidence": 69,
     "analysis": "…",
     "sources": {
-      "betting": { "label": "Paris", "weight": 0.6, "probs": {…}, "favored": "home", "detail": "3 bookmakers" },
-      "press":   { "label": "Presse", "weight": 0.2, "probs": {…}, "favored": "home", "detail": "18 médias" },
-      "social":  { "label": "X", "weight": 0.2, "probs": {…}, "favored": "home", "detail": "8.7k mentions" }
+      "betting": { "label": "Paris", "weight": 0.42, "probs": {…}, "favored": "home", "detail": "3 bookmakers" },
+      "form":    { "label": "Forme", "weight": 0.18, "probs": {…}, "favored": "home", "detail": "WWDWW vs WDWLW" },
+      "h2h":     { "label": "Face-à-face", "weight": 0.12, "probs": {…}, "favored": "home", "detail": "2V 1N 0D" },
+      "press":   { "label": "Presse", "weight": 0.16, "probs": {…}, "favored": "home", "detail": "18 articles" },
+      "social":  { "label": "Public", "weight": 0.12, "probs": {…}, "favored": "home", "detail": "Wikipédia · …" }
     }
   }]
 }
 ```
 
 > Ne modifiez pas `data.json` / `data.js` à la main : ils sont régénérés par le robot.
-> Les entrées brutes (cotes, presse, X) vivent dans `robot/fixtures.json`.
+> Les entrées brutes de démo vivent dans `robot/fixtures.json`.
 
 ## Avertissement
 

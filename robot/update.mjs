@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Robot d'actualisation des pronostics.
-// Lit les sources (paris / presse / X), agrège une prédiction par match,
-// puis écrit data.json (canonique) et data.js (miroir pour ouverture file://).
+// Agrège 5 sources (paris / forme / face-à-face / presse / public) en une
+// prédiction par match, puis écrit data.json (canonique) et data.js (miroir).
 //
 // Usage : node robot/update.mjs [--mode fixtures|live]
 
@@ -9,9 +9,11 @@ import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 
-import { fetchBetting } from "./sources/betting.mjs";
+import { fetchBetting, fetchLiveEvents } from "./sources/betting.mjs";
 import { fetchPress } from "./sources/press.mjs";
 import { fetchSocial } from "./sources/social.mjs";
+import { fetchForm } from "./sources/form.mjs";
+import { fetchH2H } from "./sources/h2h.mjs";
 import { aggregate, buildAnalysis, favoredOutcome } from "./lib/aggregate.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -30,25 +32,39 @@ async function main() {
   const config = await readJSON(here("config.json"));
   const fixtures = await readJSON(here("fixtures.json"));
   const mode = arg("mode", config.mode || "fixtures");
-  const ctx = { mode, env: process.env, alpha: config.prior?.alpha ?? 0.05 };
+  const ctx = { mode, env: process.env, alpha: config.prior?.alpha ?? 0.05, config };
 
-  console.log(`[robot] mode=${mode} — ${fixtures.matches.length} matchs`);
+  // Liste des matchs : The Odds API en live, fichier fixtures sinon.
+  const inputMatches =
+    mode === "live" ? await fetchLiveEvents(ctx, config) : fixtures.matches;
 
+  console.log(`[robot] mode=${mode} — ${inputMatches.length} matchs`);
+
+  const W = config.weights;
   const matches = [];
-  for (const m of fixtures.matches) {
-    const [betting, press, social] = await Promise.all([
+  for (const m of inputMatches) {
+    const [betting, form, h2h, press, social] = await Promise.all([
       fetchBetting(m, ctx),
+      fetchForm(m, ctx),
+      fetchH2H(m, ctx),
       fetchPress(m, ctx),
       fetchSocial(m, ctx),
     ]);
 
+    if (!betting.probs) {
+      console.warn(`[robot] match ignoré (pas de cotes) : ${m.home.name}-${m.away.name}`);
+      continue;
+    }
+
     const sources = [
-      { key: "betting", weight: config.weights.betting, probs: betting.probs },
-      { key: "press", weight: config.weights.press, probs: press.probs },
-      { key: "social", weight: config.weights.social, probs: social.probs },
+      { key: "betting", weight: W.betting, probs: betting.probs },
+      { key: "form", weight: W.form, probs: form.probs },
+      { key: "h2h", weight: W.h2h, probs: h2h.probs },
+      { key: "press", weight: W.press, probs: press.probs },
+      { key: "social", weight: W.social, probs: social.probs },
     ];
 
-    const prediction = aggregate(sources, m.market?.xg || { home: 1, away: 1 });
+    const prediction = aggregate(sources, m.market?.xg || null);
     const analysis = buildAnalysis(m, prediction, sources);
 
     const pct = (p) => ({
@@ -56,6 +72,12 @@ async function main() {
       draw: Math.round(p.draw * 100),
       away: Math.round(p.away * 100),
     });
+
+    // Construit un bloc source seulement si la source est disponible.
+    const srcBlock = (label, weight, r, detail) =>
+      r.probs
+        ? { label, weight, probs: pct(r.probs), favored: favoredOutcome(r.probs), detail }
+        : { label, weight, probs: null, favored: null, detail: "indisponible" };
 
     matches.push({
       id: m.id,
@@ -70,27 +92,11 @@ async function main() {
       confidence: prediction.confidence,
       analysis,
       sources: {
-        betting: {
-          label: "Paris",
-          weight: config.weights.betting,
-          probs: pct(betting.probs),
-          favored: favoredOutcome(betting.probs),
-          detail: `${betting.sampleSize} bookmakers`,
-        },
-        press: {
-          label: "Presse",
-          weight: config.weights.press,
-          probs: pct(press.probs),
-          favored: favoredOutcome(press.probs),
-          detail: `${press.sampleSize} médias`,
-        },
-        social: {
-          label: "X",
-          weight: config.weights.social,
-          probs: pct(social.probs),
-          favored: favoredOutcome(social.probs),
-          detail: `${formatCount(social.sampleSize)} mentions`,
-        },
+        betting: srcBlock("Paris", W.betting, betting, `${betting.sampleSize} bookmakers`),
+        form: srcBlock("Forme", W.form, form, form.detail || "5 derniers matchs"),
+        h2h: srcBlock("Face-à-face", W.h2h, h2h, h2h.detail || "historique"),
+        press: srcBlock("Presse", W.press, press, `${press.sampleSize} articles`),
+        social: srcBlock("Public", W.social, social, social.detail || `${formatCount(social.sampleSize)} signaux`),
       },
     });
   }

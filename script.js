@@ -55,11 +55,12 @@
       matches.reduce((s, m) => s + m.confidence, 0) / matches.length
     );
     const next = matches.find((m) => new Date(m.datetime) >= new Date()) || matches[0];
+    const nSources = matches[0] && matches[0].sources ? Object.keys(matches[0].sources).length : 0;
     const stats = [
       { value: matches.length, label: "Matchs analysés" },
       { value: avgConf + "%", label: "Confiance moyenne" },
       { value: next ? favoredName(next) : "—", label: "Prochain favori" },
-      { value: "3", label: "Sources agrégées" },
+      { value: String(nSources), label: "Sources agrégées" },
     ];
     heroStatsEl.innerHTML = stats
       .map(
@@ -89,9 +90,18 @@
 
   /* ---------- bloc sources ---------- */
   function sourceRow(m, src) {
+    const w = Math.round(src.weight * 100);
+    if (!src.probs) {
+      return `
+      <div class="src-row src-off">
+        <span class="src-name">${src.label}</span>
+        <div class="src-bar"></div>
+        <span class="src-pick">indisponible</span>
+        <span class="src-meta">pond. ${w}%</span>
+      </div>`;
+    }
     const fav = src.favored;
     const pct = src.probs[fav];
-    const w = Math.round(src.weight * 100);
     return `
       <div class="src-row">
         <span class="src-name">${src.label}</span>
@@ -103,7 +113,7 @@
 
   function sourcesBlock(m) {
     if (!m.sources) return "";
-    const order = ["betting", "press", "social"];
+    const order = ["betting", "form", "h2h", "press", "social"];
     return `
       <details class="sources">
         <summary>Détail des sources agrégées</summary>
@@ -158,7 +168,7 @@
 
         <p class="analysis">${m.analysis}</p>
         ${sourcesBlock(m)}
-        <div class="venue">${pinIcon}<span>${m.venue}</span></div>
+        ${m.venue ? `<div class="venue">${pinIcon}<span>${m.venue}</span></div>` : ""}
       </article>`;
   }
 

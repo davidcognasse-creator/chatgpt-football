@@ -2,12 +2,14 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-06-26T11:34:21.442Z",
+  "updatedAt": "2026-06-26T12:09:45.323Z",
   "mode": "fixtures",
   "weights": {
-    "betting": 0.6,
-    "press": 0.2,
-    "social": 0.2
+    "betting": 0.42,
+    "form": 0.18,
+    "h2h": 0.12,
+    "press": 0.16,
+    "social": 0.12
   },
   "matches": [
     {
@@ -27,20 +29,20 @@ window.WC_DATA = {
         "code": "SEN"
       },
       "probs": {
-        "home": 56,
-        "draw": 24,
-        "away": 20
+        "home": 54,
+        "draw": 25,
+        "away": 21
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 72,
-      "analysis": "France tient la corde (56% au global). Les marchés de paris donnent 53% à France. La presse penche vers France. Sur X, le volume favorise France. Match à élimination directe serré jusqu'au dernier tiers.",
+      "confidence": 69,
+      "analysis": "France tient la corde (54% au global). Les marchés de paris donnent 53% à France. La forme récente avantage France. L'historique des confrontations penche pour France. La presse penche vers France. Le public suit surtout France. Match à élimination directe serré jusqu'au dernier tiers.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 53,
             "draw": 26,
@@ -49,27 +51,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "3 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 42,
+            "draw": 26,
+            "away": 32
+          },
+          "favored": "home",
+          "detail": "WWDWW vs WDWLW"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 56,
+            "draw": 33,
+            "away": 10
+          },
+          "favored": "home",
+          "detail": "2V 1N 0D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 62,
             "draw": 24,
             "away": 14
           },
           "favored": "home",
-          "detail": "18 médias"
+          "detail": "18 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 58,
             "draw": 16,
             "away": 25
           },
           "favored": "home",
-          "detail": "8.7k mentions"
+          "detail": "8700 mentions"
         }
       }
     },
@@ -90,20 +114,20 @@ window.WC_DATA = {
         "code": "JPN"
       },
       "probs": {
-        "home": 62,
+        "home": 60,
         "draw": 21,
-        "away": 17
+        "away": 19
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 74,
-      "analysis": "Argentine tient la corde (62% au global). Les marchés de paris donnent 58% à Argentine. La presse penche vers Argentine. Sur X, le volume favorise Argentine. Le Japon peut contenir le jeu mais manque de réussite face aux blocs bas.",
+      "confidence": 72,
+      "analysis": "Argentine tient la corde (60% au global). Les marchés de paris donnent 58% à Argentine. La forme récente avantage Argentine. L'historique des confrontations penche pour Argentine. La presse penche vers Argentine. Le public suit surtout Argentine. Le Japon peut contenir le jeu mais manque de réussite face aux blocs bas.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 58,
             "draw": 24,
@@ -112,27 +136,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 42,
+            "draw": 26,
+            "away": 32
+          },
+          "favored": "home",
+          "detail": "WWWDW vs WWDWL"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 79,
+            "draw": 10,
+            "away": 10
+          },
+          "favored": "home",
+          "detail": "1V 0N 0D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 70,
             "draw": 21,
             "away": 10
           },
           "favored": "home",
-          "detail": "16 médias"
+          "detail": "16 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 65,
             "draw": 13,
             "away": 21
           },
           "favored": "home",
-          "detail": "8.7k mentions"
+          "detail": "8700 mentions"
         }
       }
     },
@@ -153,20 +199,20 @@ window.WC_DATA = {
         "code": "CRO"
       },
       "probs": {
-        "home": 50,
-        "draw": 28,
-        "away": 22
+        "home": 45,
+        "draw": 30,
+        "away": 25
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 68,
-      "analysis": "Brésil tient la corde (50% au global). Les marchés de paris donnent 48% à Brésil. La presse penche vers Brésil. Sur X, le volume favorise Brésil. Issue indécise pouvant filer en prolongation et tirs au but.",
+      "confidence": 63,
+      "analysis": "Brésil tient la corde (45% au global). Les marchés de paris donnent 48% à Brésil. La forme récente avantage Brésil. L'historique des confrontations penche pour le nul. La presse penche vers Brésil. Le public suit surtout Brésil. Issue indécise pouvant filer en prolongation et tirs au but.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 48,
             "draw": 29,
@@ -175,27 +221,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 41,
+            "draw": 26,
+            "away": 33
+          },
+          "favored": "home",
+          "detail": "WDWWL vs DWDWL"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 28,
+            "draw": 45,
+            "away": 28
+          },
+          "favored": "draw",
+          "detail": "1V 2N 1D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 51,
             "draw": 33,
             "away": 16
           },
           "favored": "home",
-          "detail": "15 médias"
+          "detail": "15 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 55,
             "draw": 20,
             "away": 24
           },
           "favored": "home",
-          "detail": "8.2k mentions"
+          "detail": "8200 mentions"
         }
       }
     },
@@ -216,20 +284,20 @@ window.WC_DATA = {
         "code": "NED"
       },
       "probs": {
-        "home": 35,
-        "draw": 26,
-        "away": 39
+        "home": 32,
+        "draw": 27,
+        "away": 41
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
-      "confidence": 59,
-      "analysis": "Pays-Bas tient la corde (38% au global). Les marchés de paris donnent 40% à Pays-Bas. La presse penche vers Pays-Bas. Sur X, le volume favorise Mexique. La profondeur de banc fait pencher légèrement la balance pour les Oranje.",
+      "confidence": 61,
+      "analysis": "Pays-Bas tient la corde (41% au global). Les marchés de paris donnent 40% à Pays-Bas. La forme récente avantage Pays-Bas. L'historique des confrontations penche pour Pays-Bas. La presse penche vers Pays-Bas. Le public suit surtout Mexique. La profondeur de banc fait pencher légèrement la balance pour les Oranje.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 31,
             "draw": 29,
@@ -238,27 +306,49 @@ window.WC_DATA = {
           "favored": "away",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 27,
+            "draw": 26,
+            "away": 47
+          },
+          "favored": "away",
+          "detail": "WLDWL vs WWDWW"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 28,
+            "draw": 28,
+            "away": 45
+          },
+          "favored": "away",
+          "detail": "1V 1N 2D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 29,
             "draw": 29,
             "away": 42
           },
           "favored": "away",
-          "detail": "14 médias"
+          "detail": "14 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 55,
             "draw": 15,
             "away": 30
           },
           "favored": "home",
-          "detail": "8.9k mentions"
+          "detail": "8900 mentions"
         }
       }
     },
@@ -279,20 +369,20 @@ window.WC_DATA = {
         "code": "BEL"
       },
       "probs": {
-        "home": 49,
-        "draw": 26,
-        "away": 25
+        "home": 46,
+        "draw": 27,
+        "away": 27
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 67,
-      "analysis": "Angleterre tient la corde (48% au global). Les marchés de paris donnent 45% à Angleterre. La presse penche vers Angleterre. Sur X, le volume favorise Angleterre. Les phases arrêtées pourraient départager deux équipes proches.",
+      "confidence": 65,
+      "analysis": "Angleterre tient la corde (46% au global). Les marchés de paris donnent 45% à Angleterre. La forme récente avantage Angleterre. L'historique des confrontations penche pour Angleterre. La presse penche vers Angleterre. Le public suit surtout Angleterre. Les phases arrêtées pourraient départager deux équipes proches.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 45,
             "draw": 28,
@@ -301,27 +391,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 37,
+            "draw": 26,
+            "away": 37
+          },
+          "favored": "home",
+          "detail": "WWDWL vs WDWWL"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 45,
+            "draw": 28,
+            "away": 28
+          },
+          "favored": "home",
+          "detail": "2V 1N 1D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 50,
             "draw": 30,
             "away": 20
           },
           "favored": "home",
-          "detail": "17 médias"
+          "detail": "17 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 55,
             "draw": 18,
             "away": 27
           },
           "favored": "home",
-          "detail": "8.5k mentions"
+          "detail": "8500 mentions"
         }
       }
     },
@@ -342,20 +454,20 @@ window.WC_DATA = {
         "code": "MAR"
       },
       "probs": {
-        "home": 49,
-        "draw": 27,
-        "away": 24
+        "home": 44,
+        "draw": 28,
+        "away": 28
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 67,
-      "analysis": "Espagne tient la corde (49% au global). Les marchés de paris donnent 49% à Espagne. La presse penche vers Espagne. Sur X, le volume favorise Espagne. Le gardien marocain peut rééditer l'exploit; le modèle reste prudent.",
+      "confidence": 63,
+      "analysis": "Espagne tient la corde (44% au global). Les marchés de paris donnent 49% à Espagne. La forme récente avantage Maroc. L'historique des confrontations penche pour Espagne. La presse penche vers Espagne. Le public suit surtout Espagne. Le gardien marocain peut rééditer l'exploit; le modèle reste prudent.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 49,
             "draw": 28,
@@ -364,27 +476,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 35,
+            "draw": 26,
+            "away": 39
+          },
+          "favored": "away",
+          "detail": "WWWDL vs WDWWD"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 33,
+            "draw": 33,
+            "away": 33
+          },
+          "favored": "home",
+          "detail": "1V 1N 1D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 48,
             "draw": 32,
             "away": 21
           },
           "favored": "home",
-          "detail": "16 médias"
+          "detail": "16 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 48,
             "draw": 18,
             "away": 34
           },
           "favored": "home",
-          "detail": "9.1k mentions"
+          "detail": "9100 mentions"
         }
       }
     },
@@ -405,20 +539,20 @@ window.WC_DATA = {
         "code": "URU"
       },
       "probs": {
-        "home": 52,
-        "draw": 26,
-        "away": 22
+        "home": 48,
+        "draw": 27,
+        "away": 25
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 69,
-      "analysis": "Portugal tient la corde (52% au global). Les marchés de paris donnent 48% à Portugal. La presse penche vers Portugal. Sur X, le volume favorise Portugal. L'efficacité sur coups de pied arrêtés pourrait faire la différence.",
+      "confidence": 66,
+      "analysis": "Portugal tient la corde (49% au global). Les marchés de paris donnent 48% à Portugal. La forme récente avantage Portugal. L'historique des confrontations penche pour Portugal. La presse penche vers Portugal. Le public suit surtout Portugal. L'efficacité sur coups de pied arrêtés pourrait faire la différence.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 48,
             "draw": 28,
@@ -427,27 +561,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 45,
+            "draw": 26,
+            "away": 29
+          },
+          "favored": "home",
+          "detail": "WWDWW vs WDLWD"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 33,
+            "draw": 33,
+            "away": 33
+          },
+          "favored": "home",
+          "detail": "1V 1N 1D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 57,
             "draw": 28,
             "away": 16
           },
           "favored": "home",
-          "detail": "15 médias"
+          "detail": "15 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 61,
             "draw": 16,
             "away": 23
           },
           "favored": "home",
-          "detail": "8.2k mentions"
+          "detail": "8200 mentions"
         }
       }
     },
@@ -468,20 +624,20 @@ window.WC_DATA = {
         "code": "USA"
       },
       "probs": {
-        "home": 50,
-        "draw": 25,
-        "away": 25
+        "home": 47,
+        "draw": 26,
+        "away": 27
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 67,
-      "analysis": "Allemagne tient la corde (51% au global). Les marchés de paris donnent 50% à Allemagne. La presse penche vers Allemagne. Sur X, le volume favorise Allemagne. Les États-Unis ont les armes pour bousculer la hiérarchie.",
+      "confidence": 65,
+      "analysis": "Allemagne tient la corde (48% au global). Les marchés de paris donnent 50% à Allemagne. La forme récente avantage Allemagne. L'historique des confrontations penche pour Allemagne. La presse penche vers Allemagne. Le public suit surtout Allemagne. Les États-Unis ont les armes pour bousculer la hiérarchie.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 50,
             "draw": 28,
@@ -490,27 +646,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 37,
+            "draw": 26,
+            "away": 37
+          },
+          "favored": "home",
+          "detail": "WDWWL vs WWLDW"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 45,
+            "draw": 28,
+            "away": 28
+          },
+          "favored": "home",
+          "detail": "2V 1N 1D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 59,
             "draw": 26,
             "away": 15
           },
           "favored": "home",
-          "detail": "16 médias"
+          "detail": "16 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 44,
             "draw": 15,
             "away": 41
           },
           "favored": "home",
-          "detail": "9.6k mentions"
+          "detail": "9600 mentions"
         }
       }
     },
@@ -532,19 +710,19 @@ window.WC_DATA = {
       },
       "probs": {
         "home": 40,
-        "draw": 26,
-        "away": 34
+        "draw": 27,
+        "away": 33
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
       "confidence": 61,
-      "analysis": "France tient la corde (40% au global). Les marchés de paris donnent 39% à France. La presse penche vers France. Sur X, le volume favorise France. Choc projeté: deux favoris au sommet, scénario ouvert.",
+      "analysis": "France tient la corde (39% au global). Les marchés de paris donnent 39% à France. La forme récente avantage France. L'historique des confrontations penche pour France. La presse penche vers France. Le public suit surtout France. Choc projeté: deux favoris au sommet, scénario ouvert.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 39,
             "draw": 29,
@@ -553,27 +731,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 42,
+            "draw": 26,
+            "away": 32
+          },
+          "favored": "home",
+          "detail": "WWDWW vs WDWWL"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 33,
+            "draw": 33,
+            "away": 33
+          },
+          "favored": "home",
+          "detail": "1V 1N 1D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 39,
             "draw": 30,
             "away": 30
           },
           "favored": "home",
-          "detail": "20 médias"
+          "detail": "20 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 44,
             "draw": 13,
             "away": 42
           },
           "favored": "home",
-          "detail": "15.6k mentions"
+          "detail": "15600 mentions"
         }
       }
     },
@@ -594,20 +794,20 @@ window.WC_DATA = {
         "code": "ENG"
       },
       "probs": {
-        "home": 43,
+        "home": 42,
         "draw": 26,
-        "away": 31
+        "away": 32
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
       "confidence": 63,
-      "analysis": "Argentine tient la corde (43% au global). Les marchés de paris donnent 41% à Argentine. La presse penche vers Argentine. Sur X, le volume favorise Argentine. Match projeté à forte charge historique.",
+      "analysis": "Argentine tient la corde (42% au global). Les marchés de paris donnent 41% à Argentine. La forme récente avantage Argentine. L'historique des confrontations penche pour Argentine. La presse penche vers Argentine. Le public suit surtout Argentine. Match projeté à forte charge historique.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 41,
             "draw": 29,
@@ -616,27 +816,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 42,
+            "draw": 26,
+            "away": 32
+          },
+          "favored": "home",
+          "detail": "WWWDW vs WWDWL"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 38,
+            "draw": 24,
+            "away": 38
+          },
+          "favored": "home",
+          "detail": "2V 1N 2D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 46,
             "draw": 27,
             "away": 27
           },
           "favored": "home",
-          "detail": "19 médias"
+          "detail": "19 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 47,
             "draw": 14,
             "away": 40
           },
           "favored": "home",
-          "detail": "14.2k mentions"
+          "detail": "14200 mentions"
         }
       }
     },
@@ -657,20 +879,20 @@ window.WC_DATA = {
         "code": "GER"
       },
       "probs": {
-        "home": 39,
-        "draw": 27,
-        "away": 34
+        "home": 37,
+        "draw": 30,
+        "away": 33
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
-      "confidence": 61,
-      "analysis": "Espagne tient la corde (39% au global). Les marchés de paris donnent 38% à Espagne. La presse penche vers Espagne. Sur X, le volume favorise Espagne. Affrontement projeté très serré entre écoles de jeu.",
+      "confidence": 59,
+      "analysis": "Espagne tient la corde (37% au global). Les marchés de paris donnent 38% à Espagne. La forme récente avantage Espagne. L'historique des confrontations penche pour le nul. La presse penche vers Espagne. Le public suit surtout Espagne. Affrontement projeté très serré entre écoles de jeu.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 38,
             "draw": 29,
@@ -679,27 +901,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 37,
+            "draw": 26,
+            "away": 37
+          },
+          "favored": "home",
+          "detail": "WWWDL vs WDWWL"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 28,
+            "draw": 45,
+            "away": 28
+          },
+          "favored": "draw",
+          "detail": "1V 2N 1D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 38,
             "draw": 33,
             "away": 29
           },
           "favored": "home",
-          "detail": "18 médias"
+          "detail": "18 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 43,
             "draw": 16,
             "away": 41
           },
           "favored": "home",
-          "detail": "12.5k mentions"
+          "detail": "12500 mentions"
         }
       }
     },
@@ -720,20 +964,20 @@ window.WC_DATA = {
         "code": "POR"
       },
       "probs": {
-        "home": 32,
-        "draw": 27,
-        "away": 41
+        "home": 33,
+        "draw": 28,
+        "away": 39
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
-      "confidence": 62,
-      "analysis": "Portugal tient la corde (41% au global). Les marchés de paris donnent 39% à Portugal. La presse penche vers Portugal. Sur X, le volume favorise Portugal. Rencontre projetée équilibrée, avantage offensif lusitanien.",
+      "confidence": 61,
+      "analysis": "Portugal tient la corde (39% au global). Les marchés de paris donnent 39% à Portugal. La forme récente avantage Pays-Bas. L'historique des confrontations penche pour Pays-Bas. La presse penche vers Portugal. Le public suit surtout Portugal. Rencontre projetée équilibrée, avantage offensif lusitanien.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 32,
             "draw": 29,
@@ -742,27 +986,49 @@ window.WC_DATA = {
           "favored": "away",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 37,
+            "draw": 26,
+            "away": 37
+          },
+          "favored": "home",
+          "detail": "WWDWW vs WWDWW"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 33,
+            "draw": 33,
+            "away": 33
+          },
+          "favored": "home",
+          "detail": "1V 1N 1D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 27,
             "draw": 32,
             "away": 41
           },
           "favored": "away",
-          "detail": "17 médias"
+          "detail": "17 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 37,
             "draw": 16,
             "away": 47
           },
           "favored": "away",
-          "detail": "11.2k mentions"
+          "detail": "11200 mentions"
         }
       }
     },
@@ -783,20 +1049,20 @@ window.WC_DATA = {
         "code": "ARG"
       },
       "probs": {
-        "home": 37,
-        "draw": 27,
+        "home": 36,
+        "draw": 28,
         "away": 36
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
-      "confidence": 59,
-      "analysis": "France tient la corde (37% au global). Les marchés de paris donnent 36% à France. La presse penche vers France. Sur X, le volume favorise Argentine. Demi-finale projetée: remake de la finale 2022.",
+      "confidence": 60,
+      "analysis": "France tient la corde (37% au global). Les marchés de paris donnent 36% à France. La forme récente avantage France. L'historique des confrontations penche pour France. La presse penche vers France. Le public suit surtout Argentine. Demi-finale projetée: remake de la finale 2022.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 36,
             "draw": 30,
@@ -805,27 +1071,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 37,
+            "draw": 26,
+            "away": 37
+          },
+          "favored": "home",
+          "detail": "WWDWW vs WWWDW"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 33,
+            "draw": 33,
+            "away": 33
+          },
+          "favored": "home",
+          "detail": "1V 1N 1D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 36,
             "draw": 32,
             "away": 32
           },
           "favored": "home",
-          "detail": "22 médias"
+          "detail": "22 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 43,
             "draw": 13,
             "away": 44
           },
           "favored": "away",
-          "detail": "20.2k mentions"
+          "detail": "20200 mentions"
         }
       }
     },
@@ -846,20 +1134,20 @@ window.WC_DATA = {
         "code": "POR"
       },
       "probs": {
-        "home": 42,
-        "draw": 27,
-        "away": 31
+        "home": 39,
+        "draw": 29,
+        "away": 32
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
-      "confidence": 63,
-      "analysis": "Espagne tient la corde (42% au global). Les marchés de paris donnent 41% à Espagne. La presse penche vers Espagne. Sur X, le volume favorise Espagne. Derby ibérique projeté pour une place en finale.",
+      "confidence": 59,
+      "analysis": "Espagne tient la corde (39% au global). Les marchés de paris donnent 41% à Espagne. La forme récente avantage Portugal. L'historique des confrontations penche pour le nul. La presse penche vers Espagne. Le public suit surtout Espagne. Derby ibérique projeté pour une place en finale.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 41,
             "draw": 29,
@@ -868,27 +1156,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 32,
+            "draw": 26,
+            "away": 42
+          },
+          "favored": "away",
+          "detail": "WWWDL vs WWDWW"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 28,
+            "draw": 45,
+            "away": 28
+          },
+          "favored": "draw",
+          "detail": "1V 2N 1D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 43,
             "draw": 30,
             "away": 26
           },
           "favored": "home",
-          "detail": "20 médias"
+          "detail": "20 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 44,
             "draw": 15,
             "away": 41
           },
           "favored": "home",
-          "detail": "14.9k mentions"
+          "detail": "14900 mentions"
         }
       }
     },
@@ -909,20 +1219,20 @@ window.WC_DATA = {
         "code": "ESP"
       },
       "probs": {
-        "home": 38,
-        "draw": 26,
-        "away": 36
+        "home": 37,
+        "draw": 28,
+        "away": 35
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
       "confidence": 60,
-      "analysis": "France tient la corde (38% au global). Les marchés de paris donnent 36% à France. La presse penche vers France. Sur X, le volume favorise France. Finale projetée: deux nations championnes du monde récentes.",
+      "analysis": "France tient la corde (38% au global). Les marchés de paris donnent 36% à France. La forme récente avantage France. L'historique des confrontations penche pour France. La presse penche vers France. Le public suit surtout France. Finale projetée: deux nations championnes du monde récentes.",
       "sources": {
         "betting": {
           "label": "Paris",
-          "weight": 0.6,
+          "weight": 0.42,
           "probs": {
             "home": 36,
             "draw": 30,
@@ -931,27 +1241,49 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "2 bookmakers"
         },
+        "form": {
+          "label": "Forme",
+          "weight": 0.18,
+          "probs": {
+            "home": 42,
+            "draw": 26,
+            "away": 32
+          },
+          "favored": "home",
+          "detail": "WWDWW vs WWWDL"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.12,
+          "probs": {
+            "home": 33,
+            "draw": 33,
+            "away": 33
+          },
+          "favored": "home",
+          "detail": "1V 1N 1D"
+        },
         "press": {
           "label": "Presse",
-          "weight": 0.2,
+          "weight": 0.16,
           "probs": {
             "home": 37,
             "draw": 30,
             "away": 33
           },
           "favored": "home",
-          "detail": "24 médias"
+          "detail": "24 articles"
         },
         "social": {
-          "label": "X",
-          "weight": 0.2,
+          "label": "Public",
+          "weight": 0.12,
           "probs": {
             "home": 44,
             "draw": 13,
             "away": 43
           },
           "favored": "home",
-          "detail": "26k mentions"
+          "detail": "26000 mentions"
         }
       }
     }

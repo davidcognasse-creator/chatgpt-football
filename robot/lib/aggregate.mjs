@@ -62,13 +62,38 @@ export function aggregate(sources, xg) {
     Math.min(95, Math.max(35, maxProb * 100 * 0.6 + agreement * 100 * 0.4))
   );
 
-  // Score attendu dérivé des expected goals (arrondi).
-  const predictedScore = {
-    home: Math.max(0, Math.round(xg.home)),
-    away: Math.max(0, Math.round(xg.away)),
-  };
+  // Score attendu : à partir des expected goals si fournis, sinon dérivé des probas.
+  const predictedScore = xg
+    ? { home: Math.max(0, Math.round(xg.home)), away: Math.max(0, Math.round(xg.away)) }
+    : scoreFromProbs(probs);
 
   return { probs, confidence, predictedScore, agreement };
+}
+
+/** Score plausible déduit des probabilités quand aucun xG n'est disponible. */
+export function scoreFromProbs(p) {
+  if (p.draw >= p.home && p.draw >= p.away) return { home: 1, away: 1 };
+  const margin = Math.abs(p.home - p.away);
+  let fav = 1,
+    dog = 1;
+  if (margin > 0.3) { fav = 2; dog = 0; }
+  else if (margin > 0.15) { fav = 2; dog = 1; }
+  return p.home >= p.away ? { home: fav, away: dog } : { home: dog, away: fav };
+}
+
+/**
+ * Probabilités à deux forces : répartit la masse hors-nul entre domicile et
+ * extérieur au prorata de leurs scores de force, le nul gardant un prior fixe.
+ */
+export function twoSidedProbs(strengthHome, strengthAway, drawPrior = 0.26) {
+  const a = strengthHome + 1e-6;
+  const b = strengthAway + 1e-6;
+  const remain = 1 - drawPrior;
+  return normalize({
+    home: (remain * a) / (a + b),
+    draw: drawPrior,
+    away: (remain * b) / (a + b),
+  });
 }
 
 const PCT = (x) => Math.round(x * 100);
@@ -79,9 +104,12 @@ export function buildAnalysis(match, prediction, sources) {
     k === "home" ? match.home.name : k === "away" ? match.away.name : "le nul";
   const fav = favoredOutcome(prediction.probs);
 
-  const betting = sources.find((s) => s.key === "betting");
-  const press = sources.find((s) => s.key === "press");
-  const social = sources.find((s) => s.key === "social");
+  const find = (k) => sources.find((s) => s.key === k);
+  const betting = find("betting");
+  const form = find("form");
+  const h2h = find("h2h");
+  const press = find("press");
+  const social = find("social");
 
   const parts = [];
   parts.push(
@@ -96,11 +124,17 @@ export function buildAnalysis(match, prediction, sources) {
       )}.`
     );
   }
+  if (form?.probs) {
+    parts.push(`La forme récente avantage ${sideName(favoredOutcome(form.probs))}.`);
+  }
+  if (h2h?.probs) {
+    parts.push(`L'historique des confrontations penche pour ${sideName(favoredOutcome(h2h.probs))}.`);
+  }
   if (press?.probs) {
     parts.push(`La presse penche vers ${sideName(favoredOutcome(press.probs))}.`);
   }
   if (social?.probs) {
-    parts.push(`Sur X, le volume favorise ${sideName(favoredOutcome(social.probs))}.`);
+    parts.push(`Le public suit surtout ${sideName(favoredOutcome(social.probs))}.`);
   }
   if (match.note) parts.push(match.note);
   return parts.join(" ");

@@ -1,11 +1,25 @@
 {
   "weights": {
-    "betting": 0.6,
-    "press": 0.2,
-    "social": 0.2
+    "betting": 0.42,
+    "form": 0.18,
+    "h2h": 0.12,
+    "press": 0.16,
+    "social": 0.12
   },
   "prior": {
     "alpha": 0.05
+  },
+  "live": {
+    "sport": "soccer_fifa_world_cup",
+    "regions": "eu,uk",
+    "stageLabel": "À venir",
+    "newsLookbackHours": 72,
+    "wikiLookbackDays": 3,
+    "footballData": {
+      "competition": "WC",
+      "formLast": 5,
+      "h2hScan": 50
+    }
   },
   "output": {
     "json": "../data.json",

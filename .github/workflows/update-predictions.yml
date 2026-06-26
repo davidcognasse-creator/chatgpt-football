@@ -32,9 +32,9 @@ jobs:
       - name: Lancer le robot
         env:
           # En mode live, renseignez ces secrets dans Settings → Secrets :
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
-          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}          # paris (requis)
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }} # forme + face-à-face
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}      # buzz X (sinon Wikipédia)
         run: node robot/update.mjs --mode "${{ github.event.inputs.mode || 'fixtures' }}"
 
       - name: Committer les données mises à jour
