@@ -1,10 +1,10 @@
 {
   "weights": {
-    "betting": 0.42,
-    "form": 0.18,
-    "h2h": 0.12,
-    "press": 0.16,
-    "social": 0.12
+    "betting": 0.55,
+    "form": 0.13,
+    "h2h": 0.1,
+    "press": 0.12,
+    "social": 0.1
   },
   "prior": {
     "alpha": 0.05

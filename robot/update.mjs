@@ -157,8 +157,11 @@ async function updateHistory(ctx, config, matches) {
   const history = (await readJSONSafe(historyPath)) || { entries: [] };
   if (!Array.isArray(history.entries)) history.entries = [];
 
-  // 1) Snapshot du dernier pronostic d'avant-match.
+  // 1) Snapshot du dernier pronostic d'avant-match (+ probas par source pour
+  //    pouvoir ré-optimiser les poids sur les vrais résultats — voir robot/tune.mjs).
   for (const m of matches) {
+    const srcProbs = {};
+    for (const [k, v] of Object.entries(m.sources || {})) srcProbs[k] = v.probs || null;
     pending[m.id] = {
       id: m.id,
       datetime: m.datetime,
@@ -173,6 +176,7 @@ async function updateHistory(ctx, config, matches) {
           away: m.probs.away,
         }),
       },
+      sources: srcProbs,
     };
   }
 
@@ -191,6 +195,7 @@ async function updateHistory(ctx, config, matches) {
         home: p.home,
         away: p.away,
         predicted: p.predicted,
+        sources: p.sources || null,
         actual: { home: r.scoreHome, away: r.scoreAway, outcome: r.outcome },
         correctOutcome: p.predicted.favored === r.outcome,
         correctScore:
