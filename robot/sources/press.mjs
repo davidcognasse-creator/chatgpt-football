@@ -8,8 +8,6 @@ import { throttle } from "../lib/throttle.mjs";
 
 const UA = "wc2026-predictions-robot/1.0 (+github actions)";
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
 /** Nombre total d'articles GNews (gnews.io) pour une équipe. */
 async function gnewsVolume(term, ctx) {
   const key = ctx.env.NEWS_API_KEY;
@@ -24,26 +22,17 @@ async function gnewsVolume(term, ctx) {
 }
 
 /** Volume et tonalité moyenne GDELT pour une requête sur les N dernières heures. */
-async function gdeltTone(queryTerm, hours, gapMs = 8000) {
+async function gdeltTone(queryTerm, hours, gapMs = 3000) {
   const query = `"${queryTerm}" (football OR soccer OR "world cup")`;
   const url =
     `https://api.gdeltproject.org/api/v2/doc/doc?query=${encodeURIComponent(query)}` +
     `&mode=tonechart&format=json&timespan=${hours}h`;
-  // GDELT bride fortement les IP partagées (CI) : espacement large + réessais.
+  // GDELT est souvent bloqué en CI : 1 seul essai rapide (8s) pour ne pas
+  // ralentir tout le run. S'il échoue, la presse est simplement ignorée.
   const data = await throttle("gdelt", gapMs, async () => {
-    let lastErr;
-    for (let attempt = 0; attempt < 3; attempt++) {
-      try {
-        const res = await fetchT(url, { headers: { "User-Agent": UA } });
-        if (res.status === 429) throw new Error("GDELT HTTP 429");
-        if (!res.ok) throw new Error(`GDELT HTTP ${res.status}`);
-        return await res.json();
-      } catch (e) {
-        lastErr = e;
-        await sleep(4000 * (attempt + 1));
-      }
-    }
-    throw lastErr;
+    const res = await fetchT(url, { headers: { "User-Agent": UA } }, 8000);
+    if (!res.ok) throw new Error(`GDELT HTTP ${res.status}`);
+    return res.json();
   });
   let volume = 0;
   let toneSum = 0;
