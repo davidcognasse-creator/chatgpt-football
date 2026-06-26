@@ -1,1 +1,418 @@
-{}
+{
+  "b86b4d60f773e9e3c46c00e9a6496e79": {
+    "id": "b86b4d60f773e9e3c46c00e9a6496e79",
+    "datetime": "2026-06-26T19:00:00Z",
+    "home": {
+      "name": "Norway",
+      "flag": "🇳🇴",
+      "code": "NOR"
+    },
+    "away": {
+      "name": "France",
+      "flag": "🇫🇷",
+      "code": "FRA"
+    },
+    "predicted": {
+      "probs": {
+        "home": 25,
+        "draw": 23,
+        "away": 52
+      },
+      "score": {
+        "home": 1,
+        "away": 2
+      },
+      "favored": "away"
+    }
+  },
+  "7e6aee294ea1a4792c59558791084528": {
+    "id": "7e6aee294ea1a4792c59558791084528",
+    "datetime": "2026-06-26T19:00:00Z",
+    "home": {
+      "name": "Senegal",
+      "flag": "🇸🇳",
+      "code": "SEN"
+    },
+    "away": {
+      "name": "Iraq",
+      "flag": "🏳️",
+      "code": "IRA"
+    },
+    "predicted": {
+      "probs": {
+        "home": 61,
+        "draw": 19,
+        "away": 20
+      },
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "favored": "home"
+    }
+  },
+  "e07b1926be5a4d515c7eb108dbcee9c5": {
+    "id": "e07b1926be5a4d515c7eb108dbcee9c5",
+    "datetime": "2026-06-27T00:00:00Z",
+    "home": {
+      "name": "Cape Verde",
+      "flag": "🏳️",
+      "code": "CAP"
+    },
+    "away": {
+      "name": "Saudi Arabia",
+      "flag": "🇸🇦",
+      "code": "KSA"
+    },
+    "predicted": {
+      "probs": {
+        "home": 39,
+        "draw": 28,
+        "away": 33
+      },
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "favored": "home"
+    }
+  },
+  "dcff2e31c0bce001a4db5caaf4fa8822": {
+    "id": "dcff2e31c0bce001a4db5caaf4fa8822",
+    "datetime": "2026-06-27T00:00:00Z",
+    "home": {
+      "name": "Uruguay",
+      "flag": "🇺🇾",
+      "code": "URU"
+    },
+    "away": {
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "code": "ESP"
+    },
+    "predicted": {
+      "probs": {
+        "home": 20,
+        "draw": 26,
+        "away": 54
+      },
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "favored": "away"
+    }
+  },
+  "581691da05dcd75b5c6d3be91ee9d2ab": {
+    "id": "581691da05dcd75b5c6d3be91ee9d2ab",
+    "datetime": "2026-06-27T03:00:00Z",
+    "home": {
+      "name": "New Zealand",
+      "flag": "🇳🇿",
+      "code": "NZL"
+    },
+    "away": {
+      "name": "Belgium",
+      "flag": "🇧🇪",
+      "code": "BEL"
+    },
+    "predicted": {
+      "probs": {
+        "home": 14,
+        "draw": 18,
+        "away": 68
+      },
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "favored": "away"
+    }
+  },
+  "3e3b5fa2b3c963e74cf044c60db0b573": {
+    "id": "3e3b5fa2b3c963e74cf044c60db0b573",
+    "datetime": "2026-06-27T03:00:00Z",
+    "home": {
+      "name": "Egypt",
+      "flag": "🇪🇬",
+      "code": "EGY"
+    },
+    "away": {
+      "name": "Iran",
+      "flag": "🇮🇷",
+      "code": "IRN"
+    },
+    "predicted": {
+      "probs": {
+        "home": 39,
+        "draw": 32,
+        "away": 29
+      },
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "favored": "home"
+    }
+  },
+  "537c0997cd899394f47f16545b7068b2": {
+    "id": "537c0997cd899394f47f16545b7068b2",
+    "datetime": "2026-06-27T21:00:00Z",
+    "home": {
+      "name": "Croatia",
+      "flag": "🇭🇷",
+      "code": "CRO"
+    },
+    "away": {
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "code": "GHA"
+    },
+    "predicted": {
+      "probs": {
+        "home": 42,
+        "draw": 28,
+        "away": 30
+      },
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "favored": "home"
+    }
+  },
+  "4be17c8e1ccfecb0f2a5ef79e045c415": {
+    "id": "4be17c8e1ccfecb0f2a5ef79e045c415",
+    "datetime": "2026-06-27T21:00:00Z",
+    "home": {
+      "name": "Panama",
+      "flag": "🇵🇦",
+      "code": "PAN"
+    },
+    "away": {
+      "name": "England",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "code": "ENG"
+    },
+    "predicted": {
+      "probs": {
+        "home": 6,
+        "draw": 18,
+        "away": 76
+      },
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "favored": "away"
+    }
+  },
+  "67ae5751c401a98409b8566ae4897069": {
+    "id": "67ae5751c401a98409b8566ae4897069",
+    "datetime": "2026-06-27T23:30:00Z",
+    "home": {
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "code": "COL"
+    },
+    "away": {
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "code": "POR"
+    },
+    "predicted": {
+      "probs": {
+        "home": 26,
+        "draw": 26,
+        "away": 48
+      },
+      "score": {
+        "home": 1,
+        "away": 2
+      },
+      "favored": "away"
+    }
+  },
+  "13eab94a136b9c264ba974cf437a5f71": {
+    "id": "13eab94a136b9c264ba974cf437a5f71",
+    "datetime": "2026-06-27T23:30:00Z",
+    "home": {
+      "name": "DR Congo",
+      "flag": "🏳️",
+      "code": "DR "
+    },
+    "away": {
+      "name": "Uzbekistan",
+      "flag": "🏳️",
+      "code": "UZB"
+    },
+    "predicted": {
+      "probs": {
+        "home": 49,
+        "draw": 25,
+        "away": 26
+      },
+      "score": {
+        "home": 2,
+        "away": 1
+      },
+      "favored": "home"
+    }
+  },
+  "8756200e539155e571557c4f2e0d7f05": {
+    "id": "8756200e539155e571557c4f2e0d7f05",
+    "datetime": "2026-06-28T02:00:00Z",
+    "home": {
+      "name": "Algeria",
+      "flag": "🇩🇿",
+      "code": "ALG"
+    },
+    "away": {
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "code": "AUT"
+    },
+    "predicted": {
+      "probs": {
+        "home": 27,
+        "draw": 36,
+        "away": 37
+      },
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "favored": "away"
+    }
+  },
+  "54697f453437ab26276d773be1d72e9b": {
+    "id": "54697f453437ab26276d773be1d72e9b",
+    "datetime": "2026-06-28T02:00:00Z",
+    "home": {
+      "name": "Jordan",
+      "flag": "🏳️",
+      "code": "JOR"
+    },
+    "away": {
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "code": "ARG"
+    },
+    "predicted": {
+      "probs": {
+        "home": 6,
+        "draw": 18,
+        "away": 76
+      },
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "favored": "away"
+    }
+  },
+  "def55b09ef3d6854e3c01e74b5c63415": {
+    "id": "def55b09ef3d6854e3c01e74b5c63415",
+    "datetime": "2026-06-28T19:00:00Z",
+    "home": {
+      "name": "South Africa",
+      "flag": "🏳️",
+      "code": "SOU"
+    },
+    "away": {
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "code": "CAN"
+    },
+    "predicted": {
+      "probs": {
+        "home": 24,
+        "draw": 26,
+        "away": 50
+      },
+      "score": {
+        "home": 1,
+        "away": 2
+      },
+      "favored": "away"
+    }
+  },
+  "4f3d72fba877939d36a5315618184093": {
+    "id": "4f3d72fba877939d36a5315618184093",
+    "datetime": "2026-06-29T17:00:00Z",
+    "home": {
+      "name": "Brazil",
+      "flag": "🇧🇷",
+      "code": "BRA"
+    },
+    "away": {
+      "name": "Japan",
+      "flag": "🇯🇵",
+      "code": "JPN"
+    },
+    "predicted": {
+      "probs": {
+        "home": 50,
+        "draw": 26,
+        "away": 24
+      },
+      "score": {
+        "home": 2,
+        "away": 1
+      },
+      "favored": "home"
+    }
+  },
+  "5a34afe2de99513ba48360b983cfe80c": {
+    "id": "5a34afe2de99513ba48360b983cfe80c",
+    "datetime": "2026-06-30T01:00:00Z",
+    "home": {
+      "name": "Netherlands",
+      "flag": "🇳🇱",
+      "code": "NED"
+    },
+    "away": {
+      "name": "Morocco",
+      "flag": "🇲🇦",
+      "code": "MAR"
+    },
+    "predicted": {
+      "probs": {
+        "home": 41,
+        "draw": 28,
+        "away": 31
+      },
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "favored": "home"
+    }
+  },
+  "9eeb4876001f5a52ce3c3641bd5f1f2f": {
+    "id": "9eeb4876001f5a52ce3c3641bd5f1f2f",
+    "datetime": "2026-07-02T00:00:00Z",
+    "home": {
+      "name": "USA",
+      "flag": "🇺🇸",
+      "code": "USA"
+    },
+    "away": {
+      "name": "Bosnia & Herzegovina",
+      "flag": "🏳️",
+      "code": "BOS"
+    },
+    "predicted": {
+      "probs": {
+        "home": 62,
+        "draw": 23,
+        "away": 15
+      },
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "favored": "home"
+    }
+  }
+}
