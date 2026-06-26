@@ -32,8 +32,12 @@ export async function teamId(ctx, name) {
   if (idCache.has(key)) return idCache.get(key);
   const j = await get(ctx, `/teams?search=${encodeURIComponent(name)}`);
   const arr = j.response || [];
+  if (!arr.length) {
+    idCache.set(key, null);
+    throw new Error(`API-Football: 0 résultat pour "${name}" (results=${j.results}, params=${JSON.stringify(j.parameters || {})})`);
+  }
   const national = arr.find((x) => x.team && x.team.national);
-  const id = (national && national.team.id) || (arr[0] && arr[0].team && arr[0].team.id) || null;
+  const id = (national || arr[0]).team.id;
   idCache.set(key, id);
   return id;
 }
