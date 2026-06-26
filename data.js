@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-06-26T14:15:52.903Z",
+  "updatedAt": "2026-06-26T14:58:56.309Z",
   "mode": "live",
   "weights": {
     "betting": 0.42,
@@ -29,29 +29,29 @@ window.WC_DATA = {
         "code": "FRA"
       },
       "probs": {
-        "home": 25,
+        "home": 22,
         "draw": 24,
-        "away": 51
+        "away": 54
       },
       "predictedScore": {
-        "home": 1,
+        "home": 0,
         "away": 2
       },
-      "confidence": 66,
-      "analysis": "France tient la corde (51% au global). Les marchés de paris donnent 58% à France. La forme récente avantage Norway. La presse penche vers France. Le public suit surtout Norway.",
+      "confidence": 69,
+      "analysis": "France tient la corde (54% au global). Les marchés de paris donnent 59% à France. La forme récente avantage Norway. La presse penche vers France. Le public suit surtout France.",
       "scorers": {
         "combined": [
           {
             "name": "Michael Olise",
-            "prob": 73
+            "prob": 75
           },
           {
             "name": "Ousmane Dembele",
-            "prob": 72
+            "prob": 74
           },
           {
             "name": "Erling Braut Haaland",
-            "prob": 63
+            "prob": 66
           },
           {
             "name": "Kylian Mbappe",
@@ -63,7 +63,7 @@ window.WC_DATA = {
           },
           {
             "name": "Marcus Thuram",
-            "prob": 42
+            "prob": 44
           }
         ]
       },
@@ -72,9 +72,9 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.42,
           "probs": {
-            "home": 21,
+            "home": 20,
             "draw": 21,
-            "away": 58
+            "away": 59
           },
           "favored": "away",
           "detail": "41 bookmakers"
@@ -106,18 +106,18 @@ window.WC_DATA = {
             "away": 62
           },
           "favored": "away",
-          "detail": "3789 articles"
+          "detail": "3791 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 39,
+            "home": 20,
             "draw": 26,
-            "away": 35
+            "away": 54
           },
-          "favored": "home",
-          "detail": "Wikipédia · 90358/81839 vues"
+          "favored": "away",
+          "detail": "X · 8924/23677 mentions"
         }
       }
     },
@@ -138,16 +138,16 @@ window.WC_DATA = {
         "code": "IRA"
       },
       "probs": {
-        "home": 61,
+        "home": 60,
         "draw": 20,
-        "away": 19
+        "away": 20
       },
       "predictedScore": {
         "home": 2,
         "away": 0
       },
-      "confidence": 70,
-      "analysis": "Senegal tient la corde (61% au global). Les marchés de paris donnent 78% à Senegal. La forme récente avantage Senegal. La presse penche vers Senegal. Le public suit surtout Senegal.",
+      "confidence": 69,
+      "analysis": "Senegal tient la corde (60% au global). Les marchés de paris donnent 78% à Senegal. La forme récente avantage Senegal. La presse penche vers Senegal. Le public suit surtout Senegal.",
       "scorers": {
         "combined": [
           {
@@ -155,11 +155,11 @@ window.WC_DATA = {
             "prob": 87
           },
           {
-            "name": "Nicolas Jackson",
-            "prob": 62
+            "name": "Sadio Mane",
+            "prob": 64
           },
           {
-            "name": "Sadio Mane",
+            "name": "Nicolas Jackson",
             "prob": 62
           },
           {
@@ -221,12 +221,12 @@ window.WC_DATA = {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 45,
+            "home": 39,
             "draw": 26,
-            "away": 29
+            "away": 35
           },
           "favored": "home",
-          "detail": "Wikipédia · 41671/27154 vues"
+          "detail": "X · 6487/5792 mentions"
         }
       }
     },
@@ -247,16 +247,16 @@ window.WC_DATA = {
         "code": "KSA"
       },
       "probs": {
-        "home": 37,
+        "home": 34,
         "draw": 27,
-        "away": 36
+        "away": 39
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
-      "confidence": 56,
-      "analysis": "Cape Verde tient la corde (36% au global). Les marchés de paris donnent 36% à Cape Verde. La forme récente avantage Cape Verde. La presse penche vers Saudi Arabia. Le public suit surtout Cape Verde.",
+      "confidence": 58,
+      "analysis": "Saudi Arabia tient la corde (39% au global). Les marchés de paris donnent 36% à Cape Verde. La forme récente avantage Cape Verde. La presse penche vers Saudi Arabia. Le public suit surtout Cape Verde.",
       "scorers": {
         "combined": [
           {
@@ -330,12 +330,12 @@ window.WC_DATA = {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 57,
+            "home": 40,
             "draw": 26,
-            "away": 17
+            "away": 34
           },
           "favored": "home",
-          "detail": "Wikipédia · 51487/15271 vues"
+          "detail": "X · 6447/5574 mentions"
         }
       }
     },
@@ -356,16 +356,16 @@ window.WC_DATA = {
         "code": "ESP"
       },
       "probs": {
-        "home": 19,
+        "home": 18,
         "draw": 26,
-        "away": 55
+        "away": 56
       },
       "predictedScore": {
         "home": 0,
         "away": 2
       },
-      "confidence": 69,
-      "analysis": "Spain tient la corde (55% au global). Les marchés de paris donnent 57% à Spain. La forme récente avantage Spain. La presse penche vers Spain. Le public suit surtout Spain.",
+      "confidence": 71,
+      "analysis": "Spain tient la corde (56% au global). Les marchés de paris donnent 57% à Spain. La forme récente avantage Spain. La presse penche vers Spain. Le public suit surtout Spain.",
       "scorers": {
         "combined": [
           {
@@ -382,7 +382,7 @@ window.WC_DATA = {
           },
           {
             "name": "Lamine Yamal",
-            "prob": 70
+            "prob": 72
           },
           {
             "name": "Mikel Oyarzabal",
@@ -439,12 +439,12 @@ window.WC_DATA = {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 33,
+            "home": 24,
             "draw": 26,
-            "away": 41
+            "away": 50
           },
           "favored": "away",
-          "detail": "Wikipédia · 34067/41231 vues"
+          "detail": "X · 7859/16393 mentions"
         }
       }
     },
@@ -465,16 +465,16 @@ window.WC_DATA = {
         "code": "BEL"
       },
       "probs": {
-        "home": 15,
+        "home": 18,
         "draw": 20,
-        "away": 65
+        "away": 62
       },
       "predictedScore": {
         "home": 0,
         "away": 2
       },
-      "confidence": 72,
-      "analysis": "Belgium tient la corde (65% au global). Les marchés de paris donnent 81% à Belgium. La forme récente avantage Belgium. La presse penche vers Belgium. Le public suit surtout Belgium.",
+      "confidence": 71,
+      "analysis": "Belgium tient la corde (63% au global). Les marchés de paris donnent 81% à Belgium. La forme récente avantage Belgium. La presse penche vers Belgium. Le public suit surtout Belgium.",
       "scorers": {
         "combined": [
           {
@@ -509,7 +509,7 @@ window.WC_DATA = {
           "weight": 0.42,
           "probs": {
             "home": 7,
-            "draw": 13,
+            "draw": 12,
             "away": 81
           },
           "favored": "away",
@@ -548,12 +548,12 @@ window.WC_DATA = {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 0,
+            "home": 22,
             "draw": 26,
-            "away": 74
+            "away": 52
           },
           "favored": "away",
-          "detail": "Wikipédia · 174/25724 vues"
+          "detail": "X · 3292/7800 mentions"
         }
       }
     },
@@ -574,16 +574,16 @@ window.WC_DATA = {
         "code": "IRN"
       },
       "probs": {
-        "home": 35,
+        "home": 34,
         "draw": 31,
-        "away": 34
+        "away": 35
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
       "confidence": 55,
-      "analysis": "Egypt tient la corde (35% au global). Les marchés de paris donnent 39% à Egypt. La forme récente avantage Egypt. La presse penche vers Iran. Le public suit surtout Iran.",
+      "analysis": "Iran tient la corde (35% au global). Les marchés de paris donnent 38% à Egypt. La forme récente avantage Egypt. La presse penche vers Iran. Le public suit surtout Iran.",
       "scorers": {
         "combined": [
           {
@@ -617,7 +617,7 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.42,
           "probs": {
-            "home": 39,
+            "home": 38,
             "draw": 36,
             "away": 25
           },
@@ -651,18 +651,18 @@ window.WC_DATA = {
             "away": 63
           },
           "favored": "away",
-          "detail": "3479 articles"
+          "detail": "3481 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 35,
+            "home": 28,
             "draw": 26,
-            "away": 39
+            "away": 46
           },
           "favored": "away",
-          "detail": "Wikipédia · 23908/26870 vues"
+          "detail": "X · 6279/10228 mentions"
         }
       }
     },
@@ -683,16 +683,16 @@ window.WC_DATA = {
         "code": "GHA"
       },
       "probs": {
-        "home": 44,
+        "home": 43,
         "draw": 28,
-        "away": 28
+        "away": 29
       },
       "predictedScore": {
-        "home": 2,
+        "home": 1,
         "away": 1
       },
-      "confidence": 61,
-      "analysis": "Croatia tient la corde (44% au global). Les marchés de paris donnent 54% à Croatia. La forme récente avantage Ghana. La presse penche vers Croatia. Le public suit surtout Ghana.",
+      "confidence": 60,
+      "analysis": "Croatia tient la corde (43% au global). Les marchés de paris donnent 54% à Croatia. La forme récente avantage Ghana. La presse penche vers Croatia. Le public suit surtout Ghana.",
       "scorers": {
         "combined": [
           {
@@ -766,12 +766,12 @@ window.WC_DATA = {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 20,
+            "home": 15,
             "draw": 26,
-            "away": 54
+            "away": 59
           },
           "favored": "away",
-          "detail": "Wikipédia · 54777/145503 vues"
+          "detail": "X · 4563/18419 mentions"
         }
       }
     },
@@ -793,15 +793,15 @@ window.WC_DATA = {
       },
       "probs": {
         "home": 5,
-        "draw": 18,
-        "away": 77
+        "draw": 19,
+        "away": 76
       },
       "predictedScore": {
         "home": 0,
         "away": 2
       },
-      "confidence": 83,
-      "analysis": "England tient la corde (77% au global). Les marchés de paris donnent 82% à England. La forme récente avantage England. La presse penche vers England.",
+      "confidence": 82,
+      "analysis": "England tient la corde (76% au global). Les marchés de paris donnent 82% à England. La forme récente avantage England. La presse penche vers England. Le public suit surtout England.",
       "scorers": {
         "combined": [
           {
@@ -874,9 +874,13 @@ window.WC_DATA = {
         "social": {
           "label": "Public",
           "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
+          "probs": {
+            "home": 8,
+            "draw": 26,
+            "away": 66
+          },
+          "favored": "away",
+          "detail": "X · 3515/29971 mentions"
         }
       }
     },
@@ -897,16 +901,16 @@ window.WC_DATA = {
         "code": "POR"
       },
       "probs": {
-        "home": 27,
+        "home": 25,
         "draw": 26,
-        "away": 47
+        "away": 49
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
       "confidence": 65,
-      "analysis": "Portugal tient la corde (47% au global). Les marchés de paris donnent 51% à Portugal. La forme récente avantage Colombia. La presse penche vers Portugal. Le public suit surtout Portugal.",
+      "analysis": "Portugal tient la corde (49% au global). Les marchés de paris donnent 51% à Portugal. La forme récente avantage Colombia. La presse penche vers Portugal. Le public suit surtout Portugal.",
       "scorers": {
         "combined": [
           {
@@ -980,12 +984,12 @@ window.WC_DATA = {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 28,
+            "home": 12,
             "draw": 26,
-            "away": 46
+            "away": 62
           },
           "favored": "away",
-          "detail": "Wikipédia · 68615/115425 vues"
+          "detail": "X · 4677/25010 mentions"
         }
       }
     },
@@ -1006,16 +1010,16 @@ window.WC_DATA = {
         "code": "UZB"
       },
       "probs": {
-        "home": 46,
+        "home": 45,
         "draw": 25,
-        "away": 29
+        "away": 30
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 61,
-      "analysis": "DR Congo tient la corde (46% au global). Les marchés de paris donnent 54% à DR Congo. La forme récente avantage DR Congo. La presse penche vers Uzbekistan. Le public suit surtout Uzbekistan.",
+      "confidence": 60,
+      "analysis": "DR Congo tient la corde (45% au global). Les marchés de paris donnent 54% à DR Congo. La forme récente avantage DR Congo. La presse penche vers Uzbekistan. Le public suit surtout Uzbekistan.",
       "scorers": {
         "combined": [
           {
@@ -1089,12 +1093,12 @@ window.WC_DATA = {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 22,
+            "home": 17,
             "draw": 26,
-            "away": 52
+            "away": 57
           },
           "favored": "away",
-          "detail": "Wikipédia · 68202/159810 vues"
+          "detail": "X · 2456/8558 mentions"
         }
       }
     },
@@ -1115,16 +1119,16 @@ window.WC_DATA = {
         "code": "AUT"
       },
       "probs": {
-        "home": 31,
+        "home": 28,
         "draw": 34,
-        "away": 35
+        "away": 38
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
-      "confidence": 57,
-      "analysis": "Austria tient la corde (35% au global). Les marchés de paris donnent 43% à le nul. La forme récente avantage Algeria. La presse penche vers Austria. Le public suit surtout Algeria.",
+      "confidence": 59,
+      "analysis": "Austria tient la corde (38% au global). Les marchés de paris donnent 43% à le nul. La forme récente avantage Algeria. La presse penche vers Austria. Le public suit surtout Austria.",
       "scorers": {
         "combined": [
           {
@@ -1133,11 +1137,7 @@ window.WC_DATA = {
           },
           {
             "name": "Michael Gregoritsch",
-            "prob": 31
-          },
-          {
-            "name": "Marcel Sabitzer",
-            "prob": 27
+            "prob": 30
           },
           {
             "name": "Amine Gouiri",
@@ -1149,6 +1149,10 @@ window.WC_DATA = {
           },
           {
             "name": "Mohamed El Amine Amoura",
+            "prob": 27
+          },
+          {
+            "name": "Ahmed Nadhir Benbouali",
             "prob": 27
           }
         ]
@@ -1192,18 +1196,18 @@ window.WC_DATA = {
             "away": 44
           },
           "favored": "away",
-          "detail": "641 articles"
+          "detail": "643 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 44,
+            "home": 24,
             "draw": 26,
-            "away": 30
+            "away": 50
           },
-          "favored": "home",
-          "detail": "Wikipédia · 52544/35612 vues"
+          "favored": "away",
+          "detail": "X · 4543/9504 mentions"
         }
       }
     },
@@ -1225,15 +1229,15 @@ window.WC_DATA = {
       },
       "probs": {
         "home": 9,
-        "draw": 19,
-        "away": 72
+        "draw": 20,
+        "away": 71
       },
       "predictedScore": {
         "home": 0,
         "away": 2
       },
       "confidence": 78,
-      "analysis": "Argentina tient la corde (72% au global). Les marchés de paris donnent 81% à Argentina. La forme récente avantage Argentina. La presse penche vers Argentina.",
+      "analysis": "Argentina tient la corde (71% au global). Les marchés de paris donnent 81% à Argentina. La forme récente avantage Argentina. La presse penche vers Argentina. Le public suit surtout Argentina.",
       "scorers": {
         "combined": [
           {
@@ -1301,14 +1305,18 @@ window.WC_DATA = {
             "away": 51
           },
           "favored": "away",
-          "detail": "4583 articles"
+          "detail": "4584 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
+          "probs": {
+            "home": 12,
+            "draw": 26,
+            "away": 62
+          },
+          "favored": "away",
+          "detail": "X · 5520/29820 mentions"
         }
       }
     },
@@ -1329,16 +1337,16 @@ window.WC_DATA = {
         "code": "CAN"
       },
       "probs": {
-        "home": 19,
+        "home": 20,
         "draw": 26,
-        "away": 55
+        "away": 54
       },
       "predictedScore": {
         "home": 0,
         "away": 2
       },
       "confidence": 68,
-      "analysis": "Canada tient la corde (54% au global). Les marchés de paris donnent 56% à Canada. La forme récente avantage South Africa. La presse penche vers Canada.",
+      "analysis": "Canada tient la corde (54% au global). Les marchés de paris donnent 56% à Canada. La forme récente avantage South Africa. La presse penche vers Canada. Le public suit surtout Canada.",
       "scorers": {
         "combined": [
           {
@@ -1411,9 +1419,13 @@ window.WC_DATA = {
         "social": {
           "label": "Public",
           "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
+          "probs": {
+            "home": 24,
+            "draw": 26,
+            "away": 50
+          },
+          "favored": "away",
+          "detail": "X · 5899/12153 mentions"
         }
       }
     },
@@ -1434,16 +1446,16 @@ window.WC_DATA = {
         "code": "JPN"
       },
       "probs": {
-        "home": 52,
+        "home": 51,
         "draw": 26,
-        "away": 22
+        "away": 23
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 70,
-      "analysis": "Brazil tient la corde (52% au global). Les marchés de paris donnent 55% à Brazil. La forme récente avantage Brazil. La presse penche vers Brazil. Le public suit surtout Brazil.",
+      "confidence": 68,
+      "analysis": "Brazil tient la corde (51% au global). Les marchés de paris donnent 55% à Brazil. La forme récente avantage Brazil. La presse penche vers Brazil. Le public suit surtout Brazil.",
       "scorers": {
         "combined": [
           {
@@ -1511,18 +1523,18 @@ window.WC_DATA = {
             "away": 21
           },
           "favored": "home",
-          "detail": "4528 articles"
+          "detail": "4530 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 52,
+            "home": 44,
             "draw": 26,
-            "away": 22
+            "away": 30
           },
           "favored": "home",
-          "detail": "Wikipédia · 126079/52910 vues"
+          "detail": "X · 24302/16269 mentions"
         }
       }
     },
@@ -1543,16 +1555,16 @@ window.WC_DATA = {
         "code": "MAR"
       },
       "probs": {
-        "home": 40,
+        "home": 41,
         "draw": 27,
-        "away": 33
+        "away": 32
       },
       "predictedScore": {
         "home": 1,
         "away": 1
       },
-      "confidence": 61,
-      "analysis": "Netherlands tient la corde (40% au global). Les marchés de paris donnent 45% à Netherlands. La forme récente avantage Netherlands. La presse penche vers Morocco. Le public suit surtout Morocco.",
+      "confidence": 62,
+      "analysis": "Netherlands tient la corde (40% au global). Les marchés de paris donnent 45% à Netherlands. La forme récente avantage Netherlands. La presse penche vers Morocco. Le public suit surtout Netherlands.",
       "scorers": {
         "combined": [
           {
@@ -1572,12 +1584,12 @@ window.WC_DATA = {
             "prob": 29
           },
           {
-            "name": "Donyell Malen",
+            "name": "Ismael Saibari",
             "prob": 29
           },
           {
-            "name": "Ismael Saibari",
-            "prob": 29
+            "name": "Donyell Malen",
+            "prob": 28
           }
         ]
       },
@@ -1620,18 +1632,18 @@ window.WC_DATA = {
             "away": 39
           },
           "favored": "away",
-          "detail": "2430 articles"
+          "detail": "2432 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.12,
           "probs": {
-            "home": 34,
+            "home": 38,
             "draw": 26,
-            "away": 40
+            "away": 36
           },
-          "favored": "away",
-          "detail": "Wikipédia · 41918/50265 vues"
+          "favored": "home",
+          "detail": "X · 12574/12024 mentions"
         }
       }
     },
@@ -1652,16 +1664,16 @@ window.WC_DATA = {
         "code": "BOS"
       },
       "probs": {
-        "home": 62,
-        "draw": 23,
-        "away": 15
+        "home": 63,
+        "draw": 24,
+        "away": 13
       },
       "predictedScore": {
         "home": 2,
         "away": 0
       },
-      "confidence": 72,
-      "analysis": "USA tient la corde (62% au global). Les marchés de paris donnent 65% à USA. La forme récente avantage USA. La presse penche vers USA.",
+      "confidence": 74,
+      "analysis": "USA tient la corde (64% au global). Les marchés de paris donnent 66% à USA. La forme récente avantage USA. La presse penche vers USA. Le public suit surtout USA.",
       "scorers": {
         "combined": [
           {
@@ -1695,12 +1707,12 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.42,
           "probs": {
-            "home": 65,
+            "home": 66,
             "draw": 21,
             "away": 13
           },
           "favored": "home",
-          "detail": "37 bookmakers"
+          "detail": "38 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -1729,14 +1741,18 @@ window.WC_DATA = {
             "away": 1
           },
           "favored": "home",
-          "detail": "2837 articles"
+          "detail": "2840 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
+          "probs": {
+            "home": 73,
+            "draw": 26,
+            "away": 1
+          },
+          "favored": "home",
+          "detail": "X · 40081/510 mentions"
         }
       }
     }
