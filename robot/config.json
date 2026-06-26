@@ -18,7 +18,8 @@
     "footballData": {
       "competition": "WC",
       "formLast": 5,
-      "h2hScan": 50
+      "h2hScan": 50,
+      "minGapMs": 6500
     },
     "scorers": true,
     "scorersTop": 6

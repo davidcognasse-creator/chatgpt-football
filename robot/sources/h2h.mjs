@@ -3,14 +3,13 @@
 //  - live     : football-data.org — on scanne les matchs terminés d'une équipe
 //               et on retient ceux contre l'adversaire (clé FOOTBALL_DATA_KEY).
 import { countsToProbs } from "../lib/aggregate.mjs";
-import { teamId, finishedMatches } from "../lib/footballdata.mjs";
+import { teamId, teamMatches } from "../lib/footballdata.mjs";
 
 /** Tally W/D/L vu du côté de l'équipe à domicile du match courant. */
 async function liveH2H(ctx, homeName, awayName) {
   const [hid, aid] = await Promise.all([teamId(ctx, homeName), teamId(ctx, awayName)]);
   if (!hid || !aid) throw new Error("équipe inconnue");
-  const scan = ctx.config?.live?.footballData?.h2hScan || 50;
-  const ms = await finishedMatches(ctx, hid, scan);
+  const ms = await teamMatches(ctx, hid);
   const counts = { home: 0, draw: 0, away: 0 };
   for (const m of ms) {
     const opp = m.homeTeam?.id === hid ? m.awayTeam?.id : m.homeTeam?.id;

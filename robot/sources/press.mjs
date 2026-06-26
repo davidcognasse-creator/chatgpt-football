@@ -3,6 +3,7 @@
 //  - live     : GDELT (gratuit, sans clé) — volume + tonalité des articles par
 //               équipe, convertis en probabilités.
 import { countsToProbs, twoSidedProbs } from "../lib/aggregate.mjs";
+import { throttle } from "../lib/throttle.mjs";
 
 const UA = "wc2026-predictions-robot/1.0 (+github actions)";
 
@@ -12,9 +13,11 @@ async function gdeltTone(queryTerm, hours) {
   const url =
     `https://api.gdeltproject.org/api/v2/doc/doc?query=${encodeURIComponent(query)}` +
     `&mode=tonechart&format=json&timespan=${hours}h`;
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!res.ok) throw new Error(`GDELT HTTP ${res.status}`);
-  const data = await res.json();
+  const data = await throttle("gdelt", 5000, async () => {
+    const res = await fetch(url, { headers: { "User-Agent": UA } });
+    if (!res.ok) throw new Error(`GDELT HTTP ${res.status}`);
+    return res.json();
+  });
   let volume = 0;
   let toneSum = 0;
   for (const b of data.tonechart || []) {

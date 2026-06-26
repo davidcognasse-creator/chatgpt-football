@@ -2,7 +2,7 @@
 //  - fixtures : chaîne de résultats pré-remplie, ex. "WWDLW" (récent -> ancien).
 //  - live     : football-data.org (clé gratuite FOOTBALL_DATA_KEY), sinon skip.
 import { twoSidedProbs } from "../lib/aggregate.mjs";
-import { teamId, finishedMatches } from "../lib/footballdata.mjs";
+import { teamId, teamMatches } from "../lib/footballdata.mjs";
 
 const POINTS = { W: 3, D: 1, L: 0 };
 // Affichage en français : V victoire · N nul · D défaite.
@@ -30,8 +30,8 @@ async function liveFormString(ctx, name) {
   const id = await teamId(ctx, name);
   if (!id) throw new Error(`équipe inconnue: ${name}`);
   const last = ctx.config?.live?.footballData?.formLast || 5;
-  const ms = await finishedMatches(ctx, id, last);
-  return ms.map((m) => resultFor(m, id)).join("");
+  const ms = await teamMatches(ctx, id);
+  return ms.slice(0, last).map((m) => resultFor(m, id)).join("");
 }
 
 export async function fetchForm(match, ctx) {
