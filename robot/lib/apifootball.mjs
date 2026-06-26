@@ -17,7 +17,12 @@ async function get(ctx, path) {
   return throttle("apifootball", gap, async () => {
     const res = await fetch(BASE + path, { headers: headers(ctx) });
     if (!res.ok) throw new Error(`API-Football HTTP ${res.status} sur ${path}`);
-    return res.json();
+    const j = await res.json();
+    // api-sports renvoie 200 même en cas d'erreur (clé, quota, plan) -> on remonte.
+    const errs = j.errors;
+    const hasErr = Array.isArray(errs) ? errs.length > 0 : errs && Object.keys(errs).length > 0;
+    if (hasErr) throw new Error(`API-Football errors: ${JSON.stringify(errs)}`);
+    return j;
   });
 }
 
