@@ -1,5 +1,6 @@
 // Adaptateur "paris" : cotes des bookmakers -> probabilités.
 // En mode live, fournit AUSSI la liste des matchs réels à venir (The Odds API).
+import { fetchT } from "../lib/http.mjs";
 import { marketConsensus } from "../lib/odds.mjs";
 import { team } from "../lib/teams.mjs";
 import { teamId, competitionMatches } from "../lib/footballdata.mjs";
@@ -23,7 +24,7 @@ export async function fetchLiveEvents(ctx, config) {
     `https://api.the-odds-api.com/v4/sports/${sport}/odds` +
     `?regions=${encodeURIComponent(regions)}&markets=h2h&oddsFormat=decimal&apiKey=${key}`;
 
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
+  const res = await fetchT(url, { headers: { "User-Agent": UA } });
   if (!res.ok) throw new Error(`Odds API HTTP ${res.status}: ${await res.text()}`);
   let events = await res.json();
 

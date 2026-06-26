@@ -2,6 +2,7 @@
 //  - fixtures : penchants éditoriaux pré-remplis.
 //  - live     : GNews (clé NEWS_API_KEY, fonctionne en CI) — volume d'articles
 //               par équipe ; repli sur GDELT (sans clé) si pas de clé ou erreur.
+import { fetchT } from "../lib/http.mjs";
 import { countsToProbs, twoSidedProbs } from "../lib/aggregate.mjs";
 import { throttle } from "../lib/throttle.mjs";
 
@@ -15,7 +16,7 @@ async function gnewsVolume(term, ctx) {
   const q = encodeURIComponent(`"${term}" (football OR soccer)`);
   const url = `https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&sortby=publishedAt&apikey=${key}`;
   return throttle("gnews", 1500, async () => {
-    const res = await fetch(url, { headers: { "User-Agent": UA } });
+    const res = await fetchT(url, { headers: { "User-Agent": UA } });
     if (!res.ok) throw new Error(`GNews HTTP ${res.status}`);
     const data = await res.json();
     return Number(data.totalArticles ?? (data.articles ? data.articles.length : 0));
@@ -33,7 +34,7 @@ async function gdeltTone(queryTerm, hours, gapMs = 8000) {
     let lastErr;
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        const res = await fetch(url, { headers: { "User-Agent": UA } });
+        const res = await fetchT(url, { headers: { "User-Agent": UA } });
         if (res.status === 429) throw new Error("GDELT HTTP 429");
         if (!res.ok) throw new Error(`GDELT HTTP ${res.status}`);
         return await res.json();

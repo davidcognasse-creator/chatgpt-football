@@ -1,3 +1,4 @@
+import { fetchT } from "../lib/http.mjs";
 // Récupère les scores des matchs terminés (endpoint "scores" de The Odds API),
 // pour confronter les pronostics archivés aux résultats réels (page Historique).
 const UA = "wc2026-predictions-robot/1.0 (+github actions)";
@@ -13,7 +14,7 @@ export async function fetchResults(ctx) {
   const url =
     `https://api.the-odds-api.com/v4/sports/${live.sport || "soccer_fifa_world_cup"}/scores/` +
     `?daysFrom=${live.scoresDaysFrom || 3}&apiKey=${key}`;
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
+  const res = await fetchT(url, { headers: { "User-Agent": UA } });
   if (!res.ok) throw new Error(`Odds API (scores) HTTP ${res.status}`);
   const events = await res.json();
 

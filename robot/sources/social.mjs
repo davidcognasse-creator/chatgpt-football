@@ -2,6 +2,7 @@
 //  - fixtures : volume de mentions pré-rempli.
 //  - live     : essaie l'API X (si X_BEARER_TOKEN fourni et autorisé), sinon
 //               se replie sur les pages vues Wikipédia (gratuit, sans clé).
+import { fetchT } from "../lib/http.mjs";
 import { countsToProbs, twoSidedProbs } from "../lib/aggregate.mjs";
 import { wikiTitle } from "../lib/teams.mjs";
 
@@ -12,7 +13,7 @@ const yyyymmdd = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");
 async function xMentions(token, term) {
   const query = encodeURIComponent(`"${term}" (football OR soccer OR worldcup) -is:retweet`);
   const url = `https://api.twitter.com/2/tweets/counts/recent?query=${query}&granularity=day`;
-  const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+  const res = await fetchT(url, { headers: { Authorization: `Bearer ${token}` } });
   if (!res.ok) throw new Error(`X API HTTP ${res.status}`);
   const data = await res.json();
   return data.meta?.total_tweet_count ?? 0;
@@ -39,7 +40,7 @@ async function wikiViews(title, days) {
     "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia.org/" +
     `all-access/all-agents/${encodeURIComponent(title.replace(/ /g, "_"))}/daily/` +
     `${yyyymmdd(start)}/${yyyymmdd(end)}`;
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
+  const res = await fetchT(url, { headers: { "User-Agent": UA } });
   if (!res.ok) throw new Error(`Wikipedia HTTP ${res.status}`);
   const data = await res.json();
   return (data.items || []).reduce((s, it) => s + (it.views || 0), 0);

@@ -1,6 +1,7 @@
 // Client minimal API-Football (api-sports.io) — utilisé pour le face-à-face.
 // Clé gratuite (100 req/jour) : APIFOOTBALL_KEY. Endpoint H2H dédié, couvre
 // bien l'historique des sélections nationales. Throttle (free = 10 req/min).
+import { fetchT } from "./http.mjs";
 import { throttle } from "./throttle.mjs";
 
 const BASE = "https://v3.football.api-sports.io";
@@ -15,7 +16,7 @@ function headers(ctx) {
 async function get(ctx, path) {
   const gap = ctx.config?.live?.apiFootball?.minGapMs ?? 6500;
   return throttle("apifootball", gap, async () => {
-    const res = await fetch(BASE + path, { headers: headers(ctx) });
+    const res = await fetchT(BASE + path, { headers: headers(ctx) });
     if (!res.ok) throw new Error(`API-Football HTTP ${res.status} sur ${path}`);
     const j = await res.json();
     // api-sports renvoie 200 même en cas d'erreur (clé, quota, plan) -> on remonte.

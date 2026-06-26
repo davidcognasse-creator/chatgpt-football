@@ -5,6 +5,7 @@
 // Le palier gratuit limite à ~10 requêtes/min : on sérialise les appels (throttle)
 // et on ne récupère qu'UNE fois les matchs de chaque équipe (cache), la forme et
 // le face-à-face étant tous deux dérivés de cette même liste.
+import { fetchT } from "./http.mjs";
 import { throttle } from "./throttle.mjs";
 
 const BASE = "https://api.football-data.org/v4";
@@ -30,7 +31,7 @@ function headers(ctx) {
 async function get(ctx, path) {
   const gap = ctx.config?.live?.footballData?.minGapMs ?? 6500;
   return throttle("football-data", gap, async () => {
-    const res = await fetch(BASE + path, { headers: headers(ctx) });
+    const res = await fetchT(BASE + path, { headers: headers(ctx) });
     if (!res.ok) throw new Error(`football-data HTTP ${res.status} sur ${path}`);
     return res.json();
   });
