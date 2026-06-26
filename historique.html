@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historique · IA Pronostics CDM 2026</title>
+  <meta name="description" content="Historique des pronostics IA confrontés aux résultats réels des matchs de la Coupe du Monde 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 16.9 7.2 18l.9-5.4L4.2 8.7l5.4-.8z" />
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">IA Pronostics</span>
+        <span class="brand-sub">Coupe du Monde 2026</span>
+      </div>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">Pronostics</a>
+      <a href="historique.html" class="nav-link active">Historique</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Pronostics vs résultats réels</p>
+      <h1>Historique &amp; précision</h1>
+      <p class="hero-lede">
+        Chaque pronostic IA d'avant-match est archivé, puis confronté au score réel.
+        Voici le bilan, match par match.
+      </p>
+      <div class="hero-stats" id="histStats"></div>
+    </section>
+
+    <section class="history-list" id="historyList" aria-live="polite"></section>
+    <p class="empty-state" id="emptyState" hidden>Aucun match réglé pour l'instant.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <strong>Avertissement.</strong> Pronostics générés automatiquement à des fins
+      d'illustration. Ils ne constituent pas un conseil de pari.
+    </p>
+    <p class="footer-credit">Précision calculée sur les matchs terminés · CDM 2026</p>
+  </footer>
+
+  <script src="history.js"></script>
+  <script src="historique.js"></script>
+</body>
+</html>

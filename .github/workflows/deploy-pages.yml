@@ -8,10 +8,14 @@ on:
       - main
     paths:
       - "index.html"
+      - "historique.html"
       - "styles.css"
       - "script.js"
+      - "historique.js"
       - "data.json"
       - "data.js"
+      - "history.json"
+      - "history.js"
       - "CNAME"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
@@ -42,7 +46,8 @@ jobs:
       - name: Préparer l'artefact du site
         run: |
           mkdir -p _site
-          cp index.html styles.css script.js data.json data.js _site/
+          cp index.html historique.html styles.css script.js historique.js _site/
+          cp data.json data.js history.json history.js _site/
           cp CNAME _site/   # déclare le domaine personnalisé à GitHub Pages
 
       - name: Téléverser l'artefact

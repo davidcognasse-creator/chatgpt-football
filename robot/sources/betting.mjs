@@ -2,6 +2,7 @@
 // En mode live, fournit AUSSI la liste des matchs réels à venir (The Odds API).
 import { marketConsensus } from "../lib/odds.mjs";
 import { team } from "../lib/teams.mjs";
+import { teamId } from "../lib/footballdata.mjs";
 
 const UA = "wc2026-predictions-robot/1.0 (+github actions)";
 
@@ -22,7 +23,28 @@ export async function fetchLiveEvents(ctx, config) {
 
   const res = await fetch(url, { headers: { "User-Agent": UA } });
   if (!res.ok) throw new Error(`Odds API HTTP ${res.status}: ${await res.text()}`);
-  const events = await res.json();
+  let events = await res.json();
+
+  // Filtre Coupe du Monde : ne garder que les matchs entre deux équipes de la
+  // compétition WC (exclut les amicaux). Désactivable via live.wcOnly = false.
+  if (live.wcOnly !== false && ctx.env.FOOTBALL_DATA_KEY) {
+    const kept = [];
+    for (const ev of events) {
+      try {
+        const [h, a] = await Promise.all([
+          teamId(ctx, ev.home_team),
+          teamId(ctx, ev.away_team),
+        ]);
+        if (h && a) kept.push(ev);
+        else console.log(`[wc-filter] exclu (hors WC) : ${ev.home_team} - ${ev.away_team}`);
+      } catch (e) {
+        console.warn(`[wc-filter] vérif impossible (${e.message}) — match conservé`);
+        kept.push(ev);
+      }
+    }
+    events = kept;
+    console.log(`[wc-filter] ${events.length} matchs WC retenus`);
+  }
 
   return events
     .map((ev) => {

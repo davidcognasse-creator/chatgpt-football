@@ -22,11 +22,18 @@
       "minGapMs": 6500
     },
     "scorers": true,
-    "scorersTop": 6
+    "scorersTop": 6,
+    "wcOnly": true,
+    "scoresDaysFrom": 3
   },
   "output": {
     "json": "../data.json",
-    "js": "../data.js"
+    "js": "../data.js",
+    "history": "../history.json",
+    "historyJs": "../history.js"
+  },
+  "state": {
+    "pending": "state/pending.json"
   },
   "mode": "live"
 }

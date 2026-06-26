@@ -127,6 +127,92 @@ async function main() {
 
   console.log(`[robot] écrit ${rel(jsonPath)} et ${rel(jsPath)}`);
   console.log(`[robot] mis à jour : ${out.updatedAt}`);
+
+  // Historique : uniquement en mode live (snapshot des pronostics + règlement).
+  if (mode === "live") {
+    await updateHistory(ctx, config, matches);
+  }
+}
+
+/**
+ * Archive le pronostic de chaque match à venir puis, dès qu'un match est
+ * terminé, le déplace dans history.json avec le résultat réel (bon / raté).
+ */
+async function updateHistory(ctx, config, matches) {
+  const pendingPath = here(config.state.pending);
+  const historyPath = here(config.output.history);
+
+  const pending = (await readJSONSafe(pendingPath)) || {};
+  const history = (await readJSONSafe(historyPath)) || { entries: [] };
+  if (!Array.isArray(history.entries)) history.entries = [];
+
+  // 1) Snapshot du dernier pronostic d'avant-match.
+  for (const m of matches) {
+    pending[m.id] = {
+      id: m.id,
+      datetime: m.datetime,
+      home: m.home,
+      away: m.away,
+      predicted: {
+        probs: m.probs,
+        score: m.predictedScore,
+        favored: favoredOutcome({
+          home: m.probs.home,
+          draw: m.probs.draw,
+          away: m.probs.away,
+        }),
+      },
+    };
+  }
+
+  // 2) Règlement à partir des résultats des matchs terminés.
+  let settled = 0;
+  try {
+    const { fetchResults } = await import("./sources/results.mjs");
+    const results = await fetchResults(ctx);
+    const known = new Set(history.entries.map((e) => e.id));
+    for (const r of results) {
+      const p = pending[r.id];
+      if (!p || known.has(r.id)) continue;
+      history.entries.push({
+        id: r.id,
+        datetime: p.datetime,
+        home: p.home,
+        away: p.away,
+        predicted: p.predicted,
+        actual: { home: r.scoreHome, away: r.scoreAway, outcome: r.outcome },
+        correctOutcome: p.predicted.favored === r.outcome,
+        correctScore:
+          p.predicted.score.home === r.scoreHome && p.predicted.score.away === r.scoreAway,
+      });
+      delete pending[r.id];
+      settled++;
+    }
+  } catch (e) {
+    console.warn(`[history] résultats indisponibles : ${e.message}`);
+  }
+
+  history.entries.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
+  history.updatedAt = new Date().toISOString();
+
+  const hjson = JSON.stringify(history, null, 2);
+  await writeFile(historyPath, hjson + "\n", "utf8");
+  await writeFile(
+    here(config.output.historyJs),
+    "// Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.\n" +
+      `window.WC_HISTORY = ${hjson};\n`,
+    "utf8"
+  );
+  await writeFile(pendingPath, JSON.stringify(pending, null, 2) + "\n", "utf8");
+  console.log(`[history] ${settled} match(s) réglé(s) · ${history.entries.length} au total`);
+}
+
+async function readJSONSafe(p) {
+  try {
+    return JSON.parse(await readFile(p, "utf8"));
+  } catch {
+    return null;
+  }
 }
 
 // Corrige les arrondis pour que home+draw+away = 100.
