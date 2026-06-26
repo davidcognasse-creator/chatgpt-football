@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA Pronostics · Coupe du Monde 2026</title>
+  <meta name="description" content="Pronostics générés par intelligence artificielle pour les matchs à venir de la Coupe du Monde 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 16.9 7.2 18l.9-5.4L4.2 8.7l5.4-.8z" />
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">IA Pronostics</span>
+        <span class="brand-sub">Coupe du Monde 2026</span>
+      </div>
+    </div>
+    <nav class="header-meta">
+      <span class="pill"><span class="dot"></span> Modèle mis à jour</span>
+      <span class="updated" id="lastUpdated">—</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Prédictions par intelligence artificielle</p>
+      <h1>Les pronostics IA<br />des prochains matchs</h1>
+      <p class="hero-lede">
+        Probabilités de victoire, scores attendus et indice de confiance générés par un
+        modèle prédictif pour chaque rencontre à venir du Mondial 2026.
+      </p>
+      <div class="hero-stats" id="heroStats"></div>
+    </section>
+
+    <section class="controls">
+      <div class="filters" id="stageFilters" role="tablist" aria-label="Filtrer par phase"></div>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" />
+        </svg>
+        <input type="search" id="searchInput" placeholder="Rechercher une équipe…" aria-label="Rechercher une équipe" />
+      </div>
+    </section>
+
+    <section class="matches" id="matchList" aria-live="polite"></section>
+
+    <p class="empty-state" id="emptyState" hidden>Aucun match ne correspond à votre recherche.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <strong>Avertissement.</strong> Ces pronostics sont générés automatiquement à des fins
+      d'illustration et de divertissement. Ils ne constituent pas un conseil de pari.
+    </p>
+    <p class="footer-credit">Modèle prédictif · données de démonstration · CDM 2026</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
