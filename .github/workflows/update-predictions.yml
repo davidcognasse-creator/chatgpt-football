@@ -10,7 +10,7 @@ on:
       mode:
         description: "Mode du robot (fixtures = démo, live = vraies API)"
         required: false
-        default: "fixtures"
+        default: "live"
 
 permissions:
   contents: write
@@ -35,7 +35,7 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}          # paris (requis)
           FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }} # forme + face-à-face
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}      # buzz X (sinon Wikipédia)
-        run: node robot/update.mjs --mode "${{ github.event.inputs.mode || 'fixtures' }}"
+        run: node robot/update.mjs --mode "${{ github.event.inputs.mode || 'live' }}"
 
       - name: Committer les données mises à jour
         run: |
@@ -43,7 +43,7 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           if ! git diff --quiet -- data.json data.js; then
             git add data.json data.js
-            git commit -m "chore(robot): actualisation des pronostics [skip ci]"
+            git commit -m "chore(robot): actualisation des pronostics"
             git push
           else
             echo "Aucun changement de pronostics."

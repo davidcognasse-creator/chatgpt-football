@@ -25,5 +25,5 @@
     "json": "../data.json",
     "js": "../data.js"
   },
-  "mode": "fixtures"
+  "mode": "live"
 }
