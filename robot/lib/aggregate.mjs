@@ -70,15 +70,15 @@ export function aggregate(sources, xg) {
   return { probs, confidence, predictedScore, agreement };
 }
 
-/** Score plausible déduit des probabilités quand aucun xG n'est disponible. */
+/** Score plausible déduit des probabilités, COHÉRENT avec l'issue favorite. */
 export function scoreFromProbs(p) {
-  if (p.draw >= p.home && p.draw >= p.away) return { home: 1, away: 1 };
+  const fav = favoredOutcome(p); // home / draw / away (= argmax)
+  if (fav === "draw") return { home: 1, away: 1 };
+  // L'équipe favorite gagne ; l'ampleur dépend de l'écart de probabilités.
   const margin = Math.abs(p.home - p.away);
-  let fav = 1,
-    dog = 1;
-  if (margin > 0.3) { fav = 2; dog = 0; }
-  else if (margin > 0.15) { fav = 2; dog = 1; }
-  return p.home >= p.away ? { home: fav, away: dog } : { home: dog, away: fav };
+  const win = margin > 0.3 ? 3 : 2;
+  const lose = margin > 0.3 ? 0 : 1;
+  return fav === "home" ? { home: win, away: lose } : { home: lose, away: win };
 }
 
 /**

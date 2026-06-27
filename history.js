@@ -22,7 +22,7 @@ window.WC_HISTORY = {
           "away": 28
         },
         "score": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "favored": "home"
@@ -52,7 +52,7 @@ window.WC_HISTORY = {
         "outcome": "draw"
       },
       "correctOutcome": false,
-      "correctScore": true
+      "correctScore": false
     },
     {
       "id": "581691da05dcd75b5c6d3be91ee9d2ab",
@@ -75,7 +75,7 @@ window.WC_HISTORY = {
         },
         "score": {
           "home": 0,
-          "away": 2
+          "away": 3
         },
         "favored": "away"
       },
@@ -126,7 +126,7 @@ window.WC_HISTORY = {
           "away": 34
         },
         "score": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "favored": "home"
@@ -179,7 +179,7 @@ window.WC_HISTORY = {
         },
         "score": {
           "home": 0,
-          "away": 2
+          "away": 3
         },
         "favored": "away"
       },
@@ -231,7 +231,7 @@ window.WC_HISTORY = {
         },
         "score": {
           "home": 0,
-          "away": 2
+          "away": 3
         },
         "favored": "away"
       },
@@ -282,7 +282,7 @@ window.WC_HISTORY = {
           "away": 16
         },
         "score": {
-          "home": 2,
+          "home": 3,
           "away": 0
         },
         "favored": "home"
@@ -334,7 +334,7 @@ window.WC_HISTORY = {
           "away": 26
         },
         "score": {
-          "home": 1,
+          "home": 2,
           "away": 1
         },
         "favored": "home"
@@ -367,8 +367,8 @@ window.WC_HISTORY = {
           "away": 17
         },
         "score": {
-          "home": 2,
-          "away": 1
+          "home": 3,
+          "away": 0
         },
         "favored": "home"
       },
@@ -378,7 +378,7 @@ window.WC_HISTORY = {
         "outcome": "home"
       },
       "correctOutcome": true,
-      "correctScore": true
+      "correctScore": false
     },
     {
       "id": "h-grp-8",
@@ -400,7 +400,7 @@ window.WC_HISTORY = {
           "away": 18
         },
         "score": {
-          "home": 2,
+          "home": 3,
           "away": 0
         },
         "favored": "home"
@@ -466,7 +466,7 @@ window.WC_HISTORY = {
           "away": 11
         },
         "score": {
-          "home": 2,
+          "home": 3,
           "away": 0
         },
         "favored": "home"
@@ -477,7 +477,7 @@ window.WC_HISTORY = {
         "outcome": "home"
       },
       "correctOutcome": true,
-      "correctScore": false
+      "correctScore": true
     },
     {
       "id": "h-grp-5",
@@ -532,8 +532,8 @@ window.WC_HISTORY = {
           "away": 12
         },
         "score": {
-          "home": 2,
-          "away": 1
+          "home": 3,
+          "away": 0
         },
         "favored": "home"
       },
@@ -543,7 +543,7 @@ window.WC_HISTORY = {
         "outcome": "home"
       },
       "correctOutcome": true,
-      "correctScore": true
+      "correctScore": false
     },
     {
       "id": "h-grp-3",
@@ -598,7 +598,7 @@ window.WC_HISTORY = {
           "away": 14
         },
         "score": {
-          "home": 2,
+          "home": 3,
           "away": 0
         },
         "favored": "home"
@@ -609,7 +609,7 @@ window.WC_HISTORY = {
         "outcome": "home"
       },
       "correctOutcome": true,
-      "correctScore": true
+      "correctScore": false
     },
     {
       "id": "h-grp-1",
@@ -631,8 +631,8 @@ window.WC_HISTORY = {
           "away": 10
         },
         "score": {
-          "home": 2,
-          "away": 1
+          "home": 3,
+          "away": 0
         },
         "favored": "home"
       },

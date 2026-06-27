@@ -144,7 +144,7 @@ window.WC_DATA = {
       },
       "predictedScore": {
         "home": 0,
-        "away": 2
+        "away": 3
       },
       "confidence": 83,
       "analysis": "England tient la corde (78% au global). Les marchés de paris donnent 83% à England. La forme récente avantage England. L'historique des confrontations penche pour England. La presse penche vers England. Le public suit surtout England.",
@@ -475,7 +475,7 @@ window.WC_DATA = {
       },
       "predictedScore": {
         "home": 1,
-        "away": 1
+        "away": 2
       },
       "confidence": 58,
       "analysis": "Le nul tient la corde (37% au global). Les marchés de paris donnent 45% à le nul. La forme récente avantage Algeria. La presse penche vers Austria. Le public suit surtout Austria.",
@@ -584,7 +584,7 @@ window.WC_DATA = {
       },
       "predictedScore": {
         "home": 0,
-        "away": 2
+        "away": 3
       },
       "confidence": 79,
       "analysis": "Argentina tient la corde (75% au global). Les marchés de paris donnent 83% à Argentina. La forme récente avantage Argentina. La presse penche vers Argentina. Le public suit surtout Argentina.",
@@ -693,7 +693,7 @@ window.WC_DATA = {
       },
       "predictedScore": {
         "home": 0,
-        "away": 2
+        "away": 3
       },
       "confidence": 68,
       "analysis": "Canada tient la corde (54% au global). Les marchés de paris donnent 56% à Canada. La forme récente avantage South Africa. La presse penche vers Canada. Le public suit surtout Canada.",
@@ -801,7 +801,7 @@ window.WC_DATA = {
         "away": 23
       },
       "predictedScore": {
-        "home": 2,
+        "home": 3,
         "away": 0
       },
       "confidence": 68,
@@ -1027,7 +1027,7 @@ window.WC_DATA = {
         "away": 11
       },
       "predictedScore": {
-        "home": 2,
+        "home": 3,
         "away": 0
       },
       "confidence": 75,
