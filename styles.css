@@ -970,6 +970,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 .site-footer strong { color: var(--muted); }
 .footer-credit { margin-top: 8px; font-size: 0.74rem; opacity: 0.7; }
 .footer-update { margin-top: 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+/* la date reprend exactement la police/couleur de « Modèle mis à jour » */
+.footer-update .pill .updated { color: inherit; font-size: inherit; }
 
 @media (max-width: 560px) {
   .site-header { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px; }
