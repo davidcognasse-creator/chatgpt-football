@@ -28,7 +28,7 @@
 
   /* ---------- helpers ---------- */
   const t = (k, v) => (window.t ? window.t(k, v) : k);
-  const LOC = { fr: "fr-FR", en: "en-GB", es: "es-ES", pt: "pt-PT", de: "de-DE", it: "it-IT", sw: "sw-KE" };
+  const LOC = { fr: "fr-FR", en: "en-GB", es: "es-ES", pt: "pt-PT", de: "de-DE", it: "it-IT", sw: "sw-KE", ar: "ar" };
   const locale = () => LOC[window.getLang ? window.getLang() : "fr"] || "fr-FR";
 
   const fmtDate = (iso) =>

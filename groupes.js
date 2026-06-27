@@ -19,7 +19,7 @@ const configured = CFG.apiKey && !String(CFG.apiKey).startsWith("À_REMPLIR");
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const t = (k, v) => (window.t ? window.t(k, v) : k);
-const LOC = { fr: "fr-FR", en: "en-GB", es: "es-ES", pt: "pt-PT", de: "de-DE", it: "it-IT", sw: "sw-KE" };
+const LOC = { fr: "fr-FR", en: "en-GB", es: "es-ES", pt: "pt-PT", de: "de-DE", it: "it-IT", sw: "sw-KE", ar: "ar" };
 const locale = () => LOC[window.getLang ? window.getLang() : "fr"] || "fr-FR";
 const fmtDate = (iso) => new Date(iso).toLocaleDateString(locale(),
   { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });

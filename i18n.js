@@ -14,6 +14,7 @@
     { code: "de", label: "Deutsch", flag: "🇩🇪" },
     { code: "it", label: "Italiano", flag: "🇮🇹" },
     { code: "sw", label: "Kiswahili", flag: "🇹🇿" },
+    { code: "ar", label: "العربية", flag: "🇸🇦" },
   ];
 
   const T = {
@@ -547,6 +548,81 @@
       g_invite_subject: "Mwaliko kwa kikundi cha ubashiri “{name}”",
       g_invite_body: "Habari!\n\nNakualika ujiunge na kikundi changu cha ubashiri “{name}” kwenye Chat Game Prediction Technology ⚽\n\nBofya kiungo hiki kushiriki:\n{link}\n\nKila la heri 🏆",
     },
+    ar: {
+      nav_predictions: "التوقعات", nav_winner: "الفائز", nav_groups: "المجموعات", nav_history: "السجل",
+      brand_sub: "كأس العالم 2026",
+      foot_disclaimer_label: "تنبيه.", foot_updated: "تم تحديث النموذج",
+      idx_eyebrow: "توقعات بالذكاء الاصطناعي",
+      idx_lede: "احتمالات الفوز والنتائج المتوقعة والهدّافون المحتملون، مولّدة بالذكاء الاصطناعي لكل مباراة قادمة في كأس العالم 2026.",
+      idx_pitch: "🎯 <b>شارك توقعاتك مع أصدقائك</b> وتسلّق الترتيب&nbsp;!",
+      idx_pitchbot: "🤖 <b>روبوت الموقع يلعب أيضًا&nbsp;!</b> هل سيتغلب عليك&nbsp;؟",
+      idx_cta_group: "👥 أنشئ مجموعة مع الأصدقاء", idx_cta_winner: "🏆 مَن سيفوز؟",
+      idx_search_ph: "ابحث عن فريق…", idx_empty: "لا توجد مباراة تطابق بحثك.",
+      idx_foot_disclaimer: "تُولَّد هذه التوقعات تلقائيًا لأغراض توضيحية وترفيهية. وهي ليست نصيحة للمراهنة.",
+      idx_foot_credit: "نموذج تنبّؤي · بيانات حقيقية مجمّعة (الرهانات · الأداء · الصحافة · X) · كأس 2026",
+      st_analyzed: "مباريات محلَّلة", st_accuracy: "الدقة ({n} مباراة)", st_avgconf: "متوسط الثقة",
+      st_nextfav: "المرشّح القادم", st_sources: "مصادر مجمّعة",
+      card_scoreia: "نتيجة الذكاء الاصطناعي", card_conf: "الثقة", card_draw: "تعادل",
+      card_projected: "متوقَّع", card_projected_title: "مباراة متوقَّعة حسب التوقعات",
+      src_summary: "تفاصيل المصادر المجمّعة",
+      scorers_head: "⚽ الهدّافون المحتملون", filter_all: "الكل",
+      updated_at: "الساعة {time} بتاريخ {date}", load_error: "تعذّر تحميل التوقعات.",
+      sim_eyebrow: "تقدير الفائز", sim_h1: "مَن سيفوز<br />بكأس العالم&nbsp;؟",
+      sim_lede: "احتمالات اللقب مقدَّرة من الأسواق المجمّعة، تُعاد حسابها بعد كل مباراة.",
+      sim_title: "🏆 احتمالات اللقب",
+      sim_foot_disclaimer: "تقديرات تُولَّد تلقائيًا لأغراض توضيحية. وهي ليست نصيحة للمراهنة.",
+      sim_foot_credit: "احتمالات اللقب = أسواق مجمّعة · كأس 2026",
+      sim_fav_label: "المرشّح للقب · {p}%", sim_updated: "آخر تحديث {d}", sim_unavailable: "تقدير اللقب غير متاح.",
+      his_eyebrow: "التوقعات مقابل النتائج الحقيقية", his_h1: "السجل والدقة",
+      his_lede: "يُؤرشَف كل توقع للذكاء الاصطناعي قبل المباراة، ثم يُقارَن بالنتيجة الحقيقية. إليك الحصيلة، مباراة بمباراة.",
+      his_empty: "لا توجد مباراة منتهية بعد.",
+      his_foot_disclaimer: "توقعات تُولَّد تلقائيًا لأغراض توضيحية. وهي ليست نصيحة للمراهنة.",
+      his_foot_credit: "الدقة محسوبة على المباريات المنتهية · كأس 2026",
+      his_stat_accuracy: "الدقة (1X2)", his_stat_good: "توقعات صحيحة", his_stat_finished: "مباريات منتهية",
+      his_verdict_ok: "✓ توقع صحيح", his_verdict_ko: "✗ خطأ", his_exact: "نتيجة مطابقة",
+      his_pred_label: "توقع الذكاء الاصطناعي", his_pred_prob_title: "الاحتمال الذي قدّره الذكاء الاصطناعي لهذا التوقع (الأعلى بين الاحتمالات الثلاثة 1·X·2)",
+      his_real_label: "النتيجة الحقيقية", his_draw: "تعادل", his_unavailable: "تعذّر تحميل السجل.",
+      his_insight_title_perfect: "عندما يكون الذكاء الاصطناعي واثقًا، فإنه لا يخطئ",
+      his_insight_title_good: "كلما زادت ثقة الذكاء الاصطناعي، زادت إصابته",
+      his_insight_perfect: "في <b>{n} مباراة</b> قدّر فيها احتمالًا <b>أكثر من 50&nbsp;%</b>، كان توقعه <b>صحيحًا في كل مرة</b>.",
+      his_insight_good: "في <b>{n} مباراة</b> قدّر فيها احتمالًا <b>أكثر من 50&nbsp;%</b>، كان توقعه <b>صحيحًا {k} من {n}</b>.",
+      his_insight_cap: "نسبة النجاح",
+      grp_eyebrow: "بين الأصدقاء", grp_h1: "المجموعات والترتيب",
+      grp_lede: "أنشئ مجموعة، وادعُ أصدقاءك، وتوقّع كل مباراة قادمة وتسلّق الترتيب، 🤖 روبوت الموقع يلعب أيضًا!",
+      grp_loading: "جارٍ التحميل…",
+      grp_foot_disclaimer: "لعبة توقعات بين الأصدقاء، لأغراض الترفيه.",
+      grp_foot_credit: "الحسابات والبيانات: Firebase · كأس 2026",
+      g_logout: "تسجيل الخروج", g_profile: "⚙️ الملف الشخصي", g_back: "← رجوع", g_new_group: "➕ مجموعة جديدة",
+      g_tab_pred: "⚽ توقعاتي", g_tab_rank: "🏆 الترتيب", g_tab_forum: "💬 المنتدى",
+      g_invite_copy: "🔗 نسخ رابط الدعوة", g_invite_copied: "✅ تم نسخ الرابط!", g_invite_email: "✉️ دعوة بالبريد",
+      g_create_title: "➕ أنشئ مجموعة", g_create_ph: "اسم المجموعة (مثلاً: الأصدقاء)", g_create_btn: "إنشاء",
+      g_join_title: "🔗 انضم إلى مجموعة", g_join_text: "هل تلقّيت رابط دعوة؟ افتحه فقط، ستُضاف تلقائيًا.",
+      g_members: "عضو/أعضاء", g_score: "النتيجة", g_saved: "✅ تم الحفظ", g_locked: "🔒 بدأت المباراة، التوقع مقفل",
+      g_no_upcoming: "لا توجد مباراة قادمة حاليًا.",
+      g_rules: "📜 القواعد",
+      g_rule1: "🎯 <b>نتيجة مطابقة</b> = <b>3 نقاط</b> · ✅ <b>نتيجة صحيحة</b> (1X2) = <b>نقطتان</b> · ❌ خطأ = 0",
+      g_rule2: "⏱️ تُحتسب فقط المباريات <b>من تاريخ إنشاء المجموعة</b>.",
+      g_rule3: "🔒 يُقفل التوقع عند <b>انطلاق المباراة</b>.",
+      g_lb_note: "{n} مباراة محتسبة منذ إنشاء المجموعة",
+      g_lb_player: "لاعب", g_lb_played: "لعبها", g_lb_exact: "مطابقة", g_lb_points: "نقاط", g_bot: "روبوت الموقع",
+      g_forum_ph: "اكتب رسالة إلى المجموعة…", g_forum_send: "إرسال",
+      g_forum_empty: "لا توجد رسائل بعد. ابدأ النقاش! 💬", g_forum_unavailable: "المنتدى غير متاح.",
+      g_remove_member: "إزالة هذا العضو من المجموعة؟",
+      g_profile_title: "⚙️ ملفي الشخصي", g_p_name: "الاسم", g_p_email: "البريد الإلكتروني", g_p_conn: "تسجيل الدخول", g_p_groups: "المجموعات",
+      g_p_via_google: "Google", g_p_via_email: "البريد / كلمة المرور", g_p_email_none: "غير مُدخل",
+      g_danger: "منطقة الخطر", g_delete_btn: "🗑️ حذف حسابي",
+      g_delete_warn: "حذف حسابك <b>نهائي</b>: ستُزال من جميع مجموعاتك وستُمحى توقعاتك.",
+      g_delete_confirm: "حذف حسابك نهائيًا؟ هذا الإجراء لا يمكن التراجع عنه.", g_deleting: "جارٍ الحذف…",
+      g_pwd_prompt: "للتأكيد، أدخل كلمة المرور:",
+      g_auth_title: "تسجيل الدخول / إنشاء حساب", g_signin: "تسجيل الدخول", g_signup: "إنشاء حساب",
+      g_email: "البريد الإلكتروني", g_password: "كلمة المرور", g_name: "اسمك (لقب)",
+      g_google: "المتابعة باستخدام Google", g_or: "أو",
+      g_auth_no_account: "ليس لديك حساب بعد؟", g_auth_have_account: "لديك حساب بالفعل؟", g_pwd_ph: "كلمة المرور (6 أحرف على الأقل)", g_signup_do: "إنشاء حسابي", g_auth_title_login: "تسجيل الدخول",
+      g_err_badcred: "البريد الإلكتروني أو كلمة المرور غير صحيحة.", g_err_inuse: "هذا البريد لديه حساب بالفعل.",
+      g_err_weak: "كلمة المرور قصيرة جدًا (6 أحرف على الأقل).", g_err_email: "بريد إلكتروني غير صالح.", g_err_popup: "تم إغلاق نافذة Google.",
+      g_invite_subject: "دعوة إلى مجموعة التوقعات «{name}»",
+      g_invite_body: "مرحبًا!\n\nأدعوك للانضمام إلى مجموعة التوقعات «{name}» على Chat Game Prediction Technology ⚽\n\nانقر على هذا الرابط للمشاركة:\n{link}\n\nبالتوفيق 🏆",
+    },
   };
 
   function detect() {
@@ -578,6 +654,7 @@
       });
     });
     document.documentElement.lang = cur;
+    document.documentElement.dir = (cur === "ar") ? "rtl" : "ltr";
   }
   window.applyI18n = apply;
 
@@ -628,6 +705,9 @@
       // english
       GB: "en", US: "en", IE: "en", AU: "en", NZ: "en", CA: "en", ZA: "en", NG: "en",
       GH: "en", IN: "en", PK: "en", PH: "en", SG: "en", JM: "en", TT: "en",
+      // العربية (Golfe, مصر، المشرق)
+      SA: "ar", AE: "ar", EG: "ar", IQ: "ar", JO: "ar", KW: "ar", QA: "ar", BH: "ar",
+      OM: "ar", YE: "ar", SY: "ar", LB: "ar", LY: "ar", SD: "ar", PS: "ar",
     };
     return M[cc] || null;
   }

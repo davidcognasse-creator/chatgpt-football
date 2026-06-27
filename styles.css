@@ -253,6 +253,11 @@ h1, h2, h3, .brand-title { font-family: "Sora", "Inter", sans-serif; }
   border: 1px solid var(--card-border); border-radius: 999px; padding: 6px 10px; cursor: pointer;
 }
 .lang-sel option { background-color: #0d1426; color: #eaf0ff; }
+
+/* arabe (droite-à-gauche) */
+[dir="rtl"] .auth-toggle, [dir="rtl"] .profile-info dd { text-align: right; }
+[dir="rtl"] .src-meta, [dir="rtl"] .scorer-name { text-align: right; }
+@media (max-width: 560px) { [dir="rtl"] .lang-sel { margin-left: 0; margin-right: auto; } }
 .btn-ghost, .btn-soft {
   font: inherit; font-size: 0.82rem; font-weight: 600; color: var(--muted);
   background: rgba(255,255,255,0.03); border: 1px solid var(--card-border);
