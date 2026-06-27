@@ -283,8 +283,16 @@ async function wireGroup(group) {
 
   // invitation WhatsApp
   const waMsg = `Rejoins mon groupe de pronostics « ${group.name} » sur Chat Game Prediction Technology ⚽ : ${inviteLink}`;
-  document.getElementById("btnWhats").href =
-    `https://wa.me/?text=${encodeURIComponent(waMsg)}`;
+  const btnWhats = document.getElementById("btnWhats");
+  // Repli : lien wa.me (mobile surtout) avec le message pré-rempli.
+  btnWhats.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(waMsg)}`;
+  btnWhats.onclick = (ev) => {
+    // Sur mobile, le partage natif ouvre WhatsApp avec le message déjà rempli.
+    if (navigator.share) {
+      ev.preventDefault();
+      navigator.share({ title: `Pronostics · ${group.name}`, text: waMsg }).catch(() => {});
+    }
+  };
 
   // tabs
   appEl.querySelectorAll(".tab").forEach((t) => {
