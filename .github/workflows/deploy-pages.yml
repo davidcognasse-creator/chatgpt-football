@@ -9,13 +9,17 @@ on:
     paths:
       - "index.html"
       - "historique.html"
+      - "simulateur.html"
       - "styles.css"
       - "script.js"
       - "historique.js"
+      - "simulateur.js"
       - "data.json"
       - "data.js"
       - "history.json"
       - "history.js"
+      - "winner.json"
+      - "winner.js"
       - "CNAME"
       - ".github/workflows/deploy-pages.yml"
   # Redéploie après chaque run du robot (ses commits via GITHUB_TOKEN ne
@@ -50,8 +54,8 @@ jobs:
       - name: Préparer l'artefact du site
         run: |
           mkdir -p _site
-          cp index.html historique.html styles.css script.js historique.js _site/
-          cp data.json data.js history.json history.js _site/
+          cp index.html historique.html simulateur.html styles.css script.js historique.js simulateur.js _site/
+          cp data.json data.js history.json history.js winner.json winner.js _site/
           cp CNAME _site/   # déclare le domaine personnalisé à GitHub Pages
 
       - name: Téléverser l'artefact

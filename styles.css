@@ -145,6 +145,62 @@ h1, h2, h3, .brand-title { font-family: "Sora", "Inter", sans-serif; }
   box-shadow: 0 12px 26px -8px rgba(163, 107, 255, 0.85);
 }
 
+/* ---------- simulateur page ---------- */
+.sim-block { margin: 8px 0 34px; }
+.sim-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+.sim-note { font-size: 0.76rem; color: var(--muted-soft); margin-top: 12px; }
+
+.champ-hero { display: flex; align-items: center; gap: 14px; text-align: left; min-width: 260px; }
+.champ-hero-flag { font-size: 2.6rem; line-height: 1; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.45)); }
+
+.champ-list { display: flex; flex-direction: column; gap: 8px; }
+.champ-row {
+  display: grid;
+  grid-template-columns: 24px 28px 1fr 2fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+}
+.champ-row:nth-child(1) { border-color: rgba(244, 192, 73, 0.5); }
+.champ-rank { font-family: "Sora", sans-serif; font-weight: 700; color: var(--muted); font-size: 0.85rem; text-align: center; }
+.champ-flag { font-size: 1.4rem; }
+.champ-name { font-weight: 600; font-size: 0.92rem; }
+.champ-bar { height: 8px; border-radius: 999px; background: rgba(255,255,255,0.05); overflow: hidden; }
+.champ-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.champ-row:nth-child(1) .champ-fill { background: linear-gradient(90deg, var(--draw), #e0a82e); }
+.champ-prob { font-family: "Sora", sans-serif; font-weight: 700; font-size: 0.9rem; min-width: 48px; text-align: right; }
+
+.proj-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.proj-row {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+.proj-match {
+  display: flex; align-items: center; justify-content: space-between;
+  font-weight: 600; font-size: 0.92rem; margin-bottom: 10px;
+}
+.proj-score {
+  font-family: "Sora", sans-serif; font-weight: 800; font-size: 1.1rem;
+  padding: 1px 10px; border-radius: 8px; background: rgba(255,255,255,0.05);
+}
+.proj-outcome { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.proj-pick { font-size: 0.86rem; color: var(--win); font-weight: 600; }
+.proj-conf {
+  font-size: 0.8rem; font-weight: 700; color: var(--text);
+  background: rgba(91,140,255,0.12); border: 1px solid rgba(91,140,255,0.3);
+  padding: 2px 9px; border-radius: 999px;
+}
+.proj-date { font-size: 0.72rem; color: var(--muted-soft); margin-top: 8px; }
+
 /* ---------- history page ---------- */
 .history-list {
   display: grid;

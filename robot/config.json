@@ -11,6 +11,7 @@
   },
   "live": {
     "sport": "soccer_fifa_world_cup",
+    "winnerSport": "soccer_fifa_world_cup_winner",
     "regions": "eu,uk",
     "stageLabel": "À venir",
     "newsLookbackHours": 72,
@@ -35,7 +36,9 @@
     "json": "../data.json",
     "js": "../data.js",
     "history": "../history.json",
-    "historyJs": "../history.js"
+    "historyJs": "../history.js",
+    "winner": "../winner.json",
+    "winnerJs": "../winner.js"
   },
   "state": {
     "pending": "state/pending.json",

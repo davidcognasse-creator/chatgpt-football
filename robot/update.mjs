@@ -135,13 +135,38 @@ async function main() {
   console.log(`[robot] écrit ${rel(jsonPath)} et ${rel(jsPath)}`);
   console.log(`[robot] mis à jour : ${out.updatedAt}`);
 
-  // Historique : uniquement en mode live (snapshot des pronostics + règlement).
+  // Historique + vainqueur estimé : uniquement en mode live.
   if (mode === "live") {
     await updateHistory(ctx, config, matches);
     await writeFile(cachePath, JSON.stringify(ctx.cache, null, 2) + "\n", "utf8");
     console.log(
       `[cache] ${Object.keys(ctx.cache.teams).length} équipes · ${Object.keys(ctx.cache.h2h).length} face-à-face mémorisés`
     );
+    await updateWinner(ctx, config);
+  }
+}
+
+/** Écrit winner.json (probabilités de titre) depuis les cotes outright. */
+async function updateWinner(ctx, config) {
+  try {
+    const { fetchWinner } = await import("./sources/winner.mjs");
+    const teams = await fetchWinner(ctx);
+    if (!teams || !teams.length) {
+      console.warn("[winner] indisponible (pas de cotes outright)");
+      return;
+    }
+    const out = { updatedAt: new Date().toISOString(), teams };
+    const json = JSON.stringify(out, null, 2);
+    await writeFile(here(config.output.winner), json + "\n", "utf8");
+    await writeFile(
+      here(config.output.winnerJs),
+      "// Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.\n" +
+        `window.WC_WINNER = ${json};\n`,
+      "utf8"
+    );
+    console.log(`[winner] ${teams.length} équipes · favori : ${teams[0].name} (${teams[0].prob}%)`);
+  } catch (e) {
+    console.warn(`[winner] échec : ${e.message}`);
   }
 }
 

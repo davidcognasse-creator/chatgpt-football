@@ -45,7 +45,7 @@ jobs:
         run: |
           git config user.name "predictions-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data.json data.js history.json history.js robot/state/pending.json robot/state/apifootball-cache.json
+          git add data.json data.js history.json history.js winner.json winner.js robot/state/pending.json robot/state/apifootball-cache.json
           if ! git diff --cached --quiet; then
             git commit -m "chore(robot): actualisation des pronostics"
             git push

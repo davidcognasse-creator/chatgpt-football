@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Historique · IA Pronostics CDM 2026</title>
-  <meta name="description" content="Historique des pronostics IA confrontés aux résultats réels des matchs de la Coupe du Monde 2026." />
+  <title>Simulateur · IA Pronostics CDM 2026</title>
+  <meta name="description" content="Vainqueur estimé de la Coupe du Monde 2026 et issues projetées des prochains matchs par l'IA." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -29,35 +29,40 @@
     </a>
     <nav class="header-nav">
       <a href="index.html" class="nav-link">Pronostics</a>
-      <a href="simulateur.html" class="nav-link">Simulateur</a>
-      <a href="historique.html" class="nav-link active">Historique</a>
+      <a href="simulateur.html" class="nav-link active">Simulateur</a>
+      <a href="historique.html" class="nav-link">Historique</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <p class="eyebrow">Pronostics vs résultats réels</p>
-      <h1>Historique &amp; précision</h1>
+      <p class="eyebrow">Estimation du vainqueur</p>
+      <h1>Qui va gagner<br />la Coupe du Monde&nbsp;?</h1>
       <p class="hero-lede">
-        Chaque pronostic IA d'avant-match est archivé, puis confronté au score réel.
-        Voici le bilan, match par match.
+        Probabilités de titre estimées à partir des marchés agrégés — recalculées
+        après chaque match joué — et issues projetées par l'IA pour les prochaines rencontres.
       </p>
-      <div class="hero-stats" id="histStats"></div>
+      <div class="hero-stats" id="champStat"></div>
     </section>
 
-    <section class="history-list" id="historyList" aria-live="polite"></section>
-    <p class="empty-state" id="emptyState" hidden>Aucun match réglé pour l'instant.</p>
+    <section class="sim-block">
+      <h2 class="sim-title">🏆 Probabilités de titre</h2>
+      <div class="champ-list" id="champList"></div>
+      <p class="sim-note" id="winnerUpdated"></p>
+    </section>
+
+    <section class="sim-block">
+      <h2 class="sim-title">⚽ Prochains matchs — vainqueur projeté par l'IA</h2>
+      <div class="proj-list" id="projList"></div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p>
-      <strong>Avertissement.</strong> Pronostics générés automatiquement à des fins
-      d'illustration. Ils ne constituent pas un conseil de pari.
-    </p>
-    <p class="footer-credit">Précision calculée sur les matchs terminés · CDM 2026</p>
+    <p><strong>Avertissement.</strong> Estimations générées automatiquement à des fins d'illustration. Ne constituent pas un conseil de pari.</p>
+    <p class="footer-credit">Probabilités de titre = marchés outright agrégés · CDM 2026</p>
   </footer>
 
-  <script src="history.js"></script>
-  <script src="historique.js"></script>
+  <script src="winner.js"></script>
+  <script src="simulateur.js"></script>
 </body>
 </html>
