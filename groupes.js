@@ -171,6 +171,22 @@ async function tryJoinFromUrl() {
 
 const myName = () => me.displayName || (me.email ? me.email.split("@")[0] : "Joueur");
 
+// Date de création du groupe (Timestamp Firestore -> Date), défaut = maintenant.
+function groupCreatedDate(group) {
+  const c = group && group.createdAt;
+  if (c && typeof c.toDate === "function") return c.toDate();
+  if (c && c.seconds) return new Date(c.seconds * 1000);
+  return new Date();
+}
+const hasStarted = (m) => new Date(m.datetime).getTime() <= Date.now();
+
+// Verrouille une ligne de pronostic : plus aucune modification possible.
+function lockRow(row) {
+  if (!row) return;
+  row.classList.add("locked");
+  row.querySelectorAll(".pick, .sc").forEach((c) => { c.disabled = true; });
+}
+
 async function createGroup(name) {
   const token = Math.random().toString(36).slice(2, 10);
   const ref = await addDoc(collection(db, "groups"), {
@@ -242,7 +258,10 @@ function renderGroup(group) {
         <div class="group-name">${esc(group.name)}</div>
         <div class="group-meta">${Object.keys(group.members || {}).length} membre(s)</div>
       </div>
-      <button class="btn-soft" id="btnInvite">🔗 Copier le lien d'invitation</button>
+      <div class="invite-actions">
+        <button class="btn-soft" id="btnInvite">🔗 Copier le lien</button>
+        <a class="btn-wa" id="btnWhats" target="_blank" rel="noopener">💬 Inviter sur WhatsApp</a>
+      </div>
     </div>
     <div class="tabs">
       <button class="tab active" data-tab="pred">⚽ Mes pronostics</button>
@@ -254,13 +273,18 @@ function renderGroup(group) {
 
 async function wireGroup(group) {
   // lien d'invitation
+  const inviteLink = `${location.origin}/groupes.html?g=${group.id}&t=${group.inviteToken}`;
   document.getElementById("btnInvite").onclick = async () => {
-    const link = `${location.origin}/groupes.html?g=${group.id}&t=${group.inviteToken}`;
-    try { await navigator.clipboard.writeText(link); } catch {}
+    try { await navigator.clipboard.writeText(inviteLink); } catch {}
     const b = document.getElementById("btnInvite");
     b.textContent = "✅ Lien copié !";
-    setTimeout(() => (b.textContent = "🔗 Copier le lien d'invitation"), 2000);
+    setTimeout(() => (b.textContent = "🔗 Copier le lien"), 2000);
   };
+
+  // invitation WhatsApp
+  const waMsg = `Rejoins mon groupe de pronostics « ${group.name} » sur Chat Game Prediction Technology ⚽ : ${inviteLink}`;
+  document.getElementById("btnWhats").href =
+    `https://wa.me/?text=${encodeURIComponent(waMsg)}`;
 
   // tabs
   appEl.querySelectorAll(".tab").forEach((t) => {
@@ -298,16 +322,19 @@ async function renderPredictions(group) {
     const btn = (k, lbl) => `<button class="pick ${p.pick === k ? "on" : ""}" data-m="${m.id}" data-k="${k}">${lbl}</button>`;
     return `
       <div class="pred-row" data-m="${m.id}">
-        <div class="pred-top">
-          <span class="pred-teams">${m.home.flag} ${esc(m.home.name)} <span class="muted">vs</span> ${esc(m.away.name)} ${m.away.flag}</span>
-          <span class="pred-date">${fmtDate(m.datetime)}</span>
+        <div class="pred-head">
+          <div class="pteam"><span class="pflag">${m.home.flag}</span><span class="pname">${esc(m.home.name)}</span></div>
+          <span class="pvs">VS</span>
+          <div class="pteam right"><span class="pname">${esc(m.away.name)}</span><span class="pflag">${m.away.flag}</span></div>
         </div>
+        <div class="pdate">🕐 ${fmtDate(m.datetime)}</div>
         <div class="pred-controls">
-          <div class="picks">${btn("home", "1")}${btn("draw", "N")}${btn("away", "2")}</div>
+          <div class="picks" role="group" aria-label="Résultat">${btn("home", "1")}${btn("draw", "N")}${btn("away", "2")}</div>
           <div class="score-in">
-            <input type="number" min="0" max="20" class="sc" data-m="${m.id}" data-s="sh" value="${p.sh ?? ""}" placeholder="-" />
-            <span>–</span>
-            <input type="number" min="0" max="20" class="sc" data-m="${m.id}" data-s="sa" value="${p.sa ?? ""}" placeholder="-" />
+            <span class="score-lbl">Score</span>
+            <input type="number" min="0" max="20" class="sc" data-m="${m.id}" data-s="sh" value="${p.sh ?? ""}" placeholder="–" />
+            <span class="dash">–</span>
+            <input type="number" min="0" max="20" class="sc" data-m="${m.id}" data-s="sa" value="${p.sa ?? ""}" placeholder="–" />
           </div>
           <span class="pred-saved" data-m="${m.id}"></span>
         </div>
@@ -316,12 +343,19 @@ async function renderPredictions(group) {
 
   const savePred = async (matchId) => {
     const row = el.querySelector(`.pred-row[data-m="${matchId}"]`);
+    const tag = row.querySelector(".pred-saved");
+    // Verrouillage : plus de modification après le coup d'envoi.
+    const m = matches.find((x) => x.id === matchId);
+    if (m && hasStarted(m)) {
+      lockRow(row);
+      tag.textContent = "🔒 match commencé — pronostic verrouillé";
+      return;
+    }
     const pickEl = row.querySelector(".pick.on");
     const sh = row.querySelector('.sc[data-s="sh"]').value;
     const sa = row.querySelector('.sc[data-s="sa"]').value;
     const pick = pickEl ? pickEl.dataset.k : null;
     if (!pick && sh === "" && sa === "") return;
-    const tag = row.querySelector(".pred-saved");
     tag.textContent = "…";
     try {
       await setDoc(doc(db, "groups", group.id, "preds", `${me.uid}__${matchId}`), {
@@ -349,8 +383,11 @@ async function renderPredictions(group) {
 /* ---------- classement ---------- */
 async function renderLeaderboard(group) {
   const el = document.getElementById("tabRank");
-  const settled = history.filter((e) => e.actual);
-  const byId = new Map(settled.map((e) => [e.id, e]));
+
+  // Équité : on ne compte que les matchs dont le coup d'envoi est APRÈS la
+  // création du groupe → le bot démarre en même temps que les membres.
+  const created = groupCreatedDate(group);
+  const settled = history.filter((e) => e.actual && new Date(e.datetime) >= created);
 
   // toutes les prédictions du groupe
   const snap = await getDocs(collection(db, "groups", group.id, "preds"));
@@ -373,7 +410,7 @@ async function renderLeaderboard(group) {
     }
     rows.push({ name: info.name || "Joueur", pts, exact, played, bot: false });
   }
-  // bot
+  // bot — sur les MÊMES matchs (depuis la création du groupe)
   let bpts = 0, bexact = 0;
   for (const e of settled) {
     const botPred = { pick: e.predicted.favored, sh: e.predicted.score.home, sa: e.predicted.score.away };
@@ -385,7 +422,15 @@ async function renderLeaderboard(group) {
   rows.sort((a, b) => b.pts - a.pts || b.exact - a.exact);
 
   el.innerHTML = `
-    <div class="lb-note">${settled.length} match(s) réglé(s) · score exact = 3 pts · bon résultat = 1 pt</div>
+    <div class="rules-card">
+      <b>📜 Règles</b>
+      <ul>
+        <li>🎯 <b>Score exact</b> = <b>3 pts</b> · ✅ <b>bon résultat</b> (1N2) = <b>1 pt</b> · ❌ raté = 0</li>
+        <li>⏱️ Seuls comptent les matchs <b>à partir de la création du groupe</b> — le 🤖 bot démarre <b>en même temps que vous</b>, sans avance.</li>
+        <li>🔒 Un pronostic se verrouille au <b>coup d'envoi</b> du match.</li>
+      </ul>
+    </div>
+    <div class="lb-note">${settled.length} match(s) comptabilisé(s) depuis la création du groupe</div>
     <div class="lb">
       <div class="lb-h"><span>#</span><span>Joueur</span><span>Joués</span><span>Exacts</span><span>Points</span></div>
       ${rows.map((r, i) => `
