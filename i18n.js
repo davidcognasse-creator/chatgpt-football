@@ -18,7 +18,7 @@
 
   const T = {
     fr: {
-      nav_predictions: "Pronostics", nav_winner: "Qui va gagner ?", nav_groups: "Groupes", nav_history: "Historique",
+      nav_predictions: "Pronostics", nav_winner: "Vainqueur", nav_groups: "Groupes", nav_history: "Historique",
       brand_sub: "Coupe du Monde 2026",
       foot_disclaimer_label: "Avertissement.", foot_updated: "Modèle mis à jour",
       // accueil
@@ -98,7 +98,7 @@
       g_invite_body: "Salut !\n\nJe t'invite à rejoindre mon groupe de pronostics « {name} » sur Chat Game Prediction Technology ⚽\n\nClique sur ce lien pour participer :\n{link}\n\nÀ toi de jouer 🏆",
     },
     en: {
-      nav_predictions: "Predictions", nav_winner: "Who will win?", nav_groups: "Groups", nav_history: "History",
+      nav_predictions: "Predictions", nav_winner: "Winner", nav_groups: "Groups", nav_history: "History",
       brand_sub: "World Cup 2026",
       foot_disclaimer_label: "Disclaimer.", foot_updated: "Model updated",
       idx_eyebrow: "Predictions powered by artificial intelligence",
@@ -173,7 +173,7 @@
       g_invite_body: "Hi!\n\nI'm inviting you to join my prediction group “{name}” on Chat Game Prediction Technology ⚽\n\nClick this link to take part:\n{link}\n\nGood luck 🏆",
     },
     es: {
-      nav_predictions: "Pronósticos", nav_winner: "¿Quién ganará?", nav_groups: "Grupos", nav_history: "Historial",
+      nav_predictions: "Pronósticos", nav_winner: "Ganador", nav_groups: "Grupos", nav_history: "Historial",
       brand_sub: "Mundial 2026",
       foot_disclaimer_label: "Aviso.", foot_updated: "Modelo actualizado",
       idx_eyebrow: "Predicciones con inteligencia artificial",
@@ -248,7 +248,7 @@
       g_invite_body: "¡Hola!\n\nTe invito a unirte a mi grupo de pronósticos «{name}» en Chat Game Prediction Technology ⚽\n\nHaz clic en este enlace para participar:\n{link}\n\n¡Suerte! 🏆",
     },
     pt: {
-      nav_predictions: "Palpites", nav_winner: "Quem vai ganhar?", nav_groups: "Grupos", nav_history: "Histórico",
+      nav_predictions: "Palpites", nav_winner: "Vencedor", nav_groups: "Grupos", nav_history: "Histórico",
       brand_sub: "Copa do Mundo 2026",
       foot_disclaimer_label: "Aviso.", foot_updated: "Modelo atualizado",
       idx_eyebrow: "Previsões por inteligência artificial",
@@ -323,7 +323,7 @@
       g_invite_body: "Oi!\n\nEstou te convidando para entrar no meu grupo de palpites “{name}” no Chat Game Prediction Technology ⚽\n\nClique neste link para participar:\n{link}\n\nBoa sorte 🏆",
     },
     de: {
-      nav_predictions: "Tipps", nav_winner: "Wer gewinnt?", nav_groups: "Gruppen", nav_history: "Verlauf",
+      nav_predictions: "Tipps", nav_winner: "Sieger", nav_groups: "Gruppen", nav_history: "Verlauf",
       brand_sub: "Weltmeisterschaft 2026",
       foot_disclaimer_label: "Hinweis.", foot_updated: "Modell aktualisiert",
       idx_eyebrow: "Vorhersagen mit künstlicher Intelligenz",
@@ -398,7 +398,7 @@
       g_invite_body: "Hallo!\n\nIch lade dich in meine Tippgruppe „{name}“ auf Chat Game Prediction Technology ein ⚽\n\nKlicke auf diesen Link, um mitzumachen:\n{link}\n\nViel Erfolg 🏆",
     },
     it: {
-      nav_predictions: "Pronostici", nav_winner: "Chi vincerà?", nav_groups: "Gruppi", nav_history: "Storico",
+      nav_predictions: "Pronostici", nav_winner: "Vincitore", nav_groups: "Gruppi", nav_history: "Storico",
       brand_sub: "Mondiali 2026",
       foot_disclaimer_label: "Avviso.", foot_updated: "Modello aggiornato",
       idx_eyebrow: "Previsioni con intelligenza artificiale",
@@ -473,7 +473,7 @@
       g_invite_body: "Ciao!\n\nTi invito a unirti al mio gruppo di pronostici “{name}” su Chat Game Prediction Technology ⚽\n\nClicca questo link per partecipare:\n{link}\n\nIn bocca al lupo 🏆",
     },
     sw: {
-      nav_predictions: "Ubashiri", nav_winner: "Nani atashinda?", nav_groups: "Vikundi", nav_history: "Historia",
+      nav_predictions: "Ubashiri", nav_winner: "Mshindi", nav_groups: "Vikundi", nav_history: "Historia",
       brand_sub: "Kombe la Dunia 2026",
       foot_disclaimer_label: "Tahadhari.", foot_updated: "Modeli imesasishwa",
       idx_eyebrow: "Ubashiri kwa akili bandia",

@@ -112,12 +112,13 @@ h1, h2, h3, .brand-title { font-family: "Sora", "Inter", sans-serif; }
 @keyframes pulse { 50% { opacity: 0.45; } }
 .updated { font-size: 0.78rem; color: var(--muted-soft); }
 
-.header-nav { display: flex; align-items: center; gap: 8px; }
+.header-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
 .nav-link {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--muted);
   text-decoration: none;
+  white-space: nowrap;
   padding: 7px 14px;
   border-radius: 999px;
   border: 1px solid var(--card-border);
@@ -549,7 +550,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 }
 .hero h1 {
   margin: 0 0 16px;
-  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-size: clamp(1.75rem, 6vw, 3.4rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.05;
@@ -966,8 +967,16 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 .footer-update { margin-top: 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
 @media (max-width: 560px) {
-  .site-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .site-header { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px; }
   .header-meta { width: 100%; justify-content: space-between; }
-  .controls { flex-direction: column; align-items: stretch; }
-  .search-wrap { max-width: none; }
+  .header-nav { width: 100%; gap: 6px; justify-content: flex-start; }
+  .nav-link { font-size: 0.78rem; padding: 6px 12px; }
+  .lang-sel { font-size: 0.78rem; padding: 5px 8px; margin-left: auto; }
+  .hero { padding: 22px 0 16px; }
+  .hero-stats { margin-top: 18px; gap: 10px; }
+  .stat { flex: 1 1 calc(50% - 5px); min-width: 0; padding: 14px 12px; }
+  /* champ de recherche : éviter que flex-basis 220px devienne une hauteur en mode colonne */
+  .controls { flex-direction: column; align-items: stretch; gap: 12px; margin: 8px 0 16px; }
+  .search-wrap { flex: none; width: 100%; max-width: none; }
+  .matches { grid-template-columns: 1fr; gap: 14px; }
 }
