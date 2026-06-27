@@ -4,10 +4,11 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/fireba
 import {
   getAuth, onAuthStateChanged, createUserWithEmailAndPassword,
   signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, updateProfile,
+  deleteUser, reauthenticateWithCredential, reauthenticateWithPopup, EmailAuthProvider,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import {
   getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, addDoc,
-  collection, getDocs, query, where, arrayUnion, serverTimestamp,
+  collection, getDocs, query, where, arrayUnion, arrayRemove, deleteField, serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const appEl = document.getElementById("app");
@@ -47,6 +48,7 @@ let matches = [];       // matchs (data.json)
 let history = [];       // résultats (history.json)
 let myGroups = [];      // groupes de l'utilisateur
 let activeGroupId = null;
+let showProfile = false; // affiche l'onglet Profil à la place du contenu groupe
 
 /* ---------- données du site ---------- */
 async function loadSiteData() {
@@ -212,19 +214,113 @@ async function renderApp() {
         `<option value="${g.id}" ${g.id === activeGroupId ? "selected" : ""}>${esc(g.name)}</option>`).join("")}</select>`
     : "";
 
+  const body = showProfile
+    ? renderProfile()
+    : group ? renderGroup(group) : renderNoGroup();
+
   appEl.innerHTML = `
     <div class="userbar">
       <div class="user-id">👤 <b>${esc(myName())}</b></div>
-      <div class="userbar-actions">${groupPicker}<button class="btn-ghost" id="btnLogout">Déconnexion</button></div>
+      <div class="userbar-actions">${showProfile ? "" : groupPicker}<button class="btn-ghost" id="btnProfile">${showProfile ? "← Retour" : "⚙️ Profil"}</button><button class="btn-ghost" id="btnLogout">Déconnexion</button></div>
     </div>
-    ${group ? renderGroup(group) : renderNoGroup()}`;
+    ${body}`;
 
   document.getElementById("btnLogout").onclick = () => signOut(auth);
+  document.getElementById("btnProfile").onclick = () => { showProfile = !showProfile; renderApp(); };
   const sel = document.getElementById("groupSel");
   if (sel) sel.onchange = () => { activeGroupId = sel.value; renderApp(); };
 
-  if (!group) wireNoGroup();
+  if (showProfile) wireProfile();
+  else if (!group) wireNoGroup();
   else await wireGroup(group);
+}
+
+/* ---------- profil ---------- */
+function renderProfile() {
+  const provider = (me.providerData && me.providerData[0] && me.providerData[0].providerId) || "";
+  const via = provider === "google.com" ? "Google" : "E-mail / mot de passe";
+  return `
+    <div class="panel profile-panel">
+      <h3>⚙️ Mon profil</h3>
+      <dl class="profile-info">
+        <div><dt>Nom</dt><dd>${esc(myName())}</dd></div>
+        <div><dt>E-mail</dt><dd>${esc(me.email || "—")}</dd></div>
+        <div><dt>Connexion</dt><dd>${via}</dd></div>
+        <div><dt>Groupes</dt><dd>${myGroups.length}</dd></div>
+      </dl>
+      <div class="danger-zone">
+        <h4>Zone de danger</h4>
+        <p class="muted">La suppression de ton compte est <b>définitive</b> : tu es retiré de tous tes groupes et tes pronostics sont effacés.</p>
+        <button class="btn-danger" id="btnDeleteAccount">🗑️ Supprimer mon compte</button>
+        <span class="del-status" id="delStatus"></span>
+      </div>
+    </div>`;
+}
+function wireProfile() {
+  const btn = document.getElementById("btnDeleteAccount");
+  const status = document.getElementById("delStatus");
+  btn.onclick = async () => {
+    if (!confirm("Supprimer définitivement ton compte ? Cette action est irréversible.")) return;
+    btn.disabled = true;
+    status.textContent = "Suppression…";
+    try {
+      await deleteAccount();
+      // onAuthStateChanged renverra vers l'écran de connexion.
+    } catch (e) {
+      btn.disabled = false;
+      status.textContent = "❌ " + (e && e.message ? e.message : e);
+    }
+  };
+}
+
+// Supprime le compte Firebase (avec ré-authentification si nécessaire) après
+// avoir nettoyé au mieux les données Firestore (groupes, pronostics, profil).
+async function deleteAccount() {
+  const user = auth.currentUser;
+  if (!user) throw new Error("Aucun utilisateur connecté.");
+  try {
+    await cleanupUserData(user.uid);
+    await deleteUser(user);
+  } catch (e) {
+    if (e && e.code === "auth/requires-recent-login") {
+      await reauthenticate(user);
+      await cleanupUserData(user.uid);
+      await deleteUser(user);
+    } else {
+      throw e;
+    }
+  }
+}
+
+async function reauthenticate(user) {
+  const provider = (user.providerData && user.providerData[0] && user.providerData[0].providerId) || "";
+  if (provider === "google.com") {
+    await reauthenticateWithPopup(user, new GoogleAuthProvider());
+  } else {
+    const pwd = prompt("Pour confirmer, saisis ton mot de passe :");
+    if (!pwd) throw new Error("Mot de passe requis pour la suppression.");
+    await reauthenticateWithCredential(user, EmailAuthProvider.credential(user.email, pwd));
+  }
+}
+
+// Best-effort : on ne bloque pas la suppression du compte si une étape échoue
+// (les règles Firestore peuvent restreindre certaines écritures).
+async function cleanupUserData(uid) {
+  for (const g of myGroups) {
+    try {
+      const preds = await getDocs(collection(db, "groups", g.id, "preds"));
+      for (const d of preds.docs) {
+        if (d.data().uid === uid) { try { await deleteDoc(d.ref); } catch {} }
+      }
+    } catch {}
+    try {
+      await updateDoc(doc(db, "groups", g.id), {
+        [`members.${uid}`]: deleteField(),
+        memberUids: arrayRemove(uid),
+      });
+    } catch {}
+  }
+  try { await deleteDoc(doc(db, "users", uid)); } catch {}
 }
 
 function renderNoGroup() {
@@ -453,6 +549,7 @@ async function renderLeaderboard(group) {
   await loadSiteData();
   onAuthStateChanged(auth, async (user) => {
     me = user;
+    showProfile = false;
     if (!user) return renderAuth();
     // upsert profil
     try {

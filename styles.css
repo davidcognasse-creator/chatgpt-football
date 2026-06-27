@@ -176,6 +176,23 @@ h1, h2, h3, .brand-title { font-family: "Sora", "Inter", sans-serif; }
 }
 .btn-primary:hover { transform: translateY(-1px); }
 .btn-primary:disabled { opacity: 0.6; cursor: default; }
+
+/* profil */
+.profile-panel { max-width: 560px; }
+.profile-info { margin: 0 0 8px; display: grid; gap: 2px; }
+.profile-info > div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--card-border); }
+.profile-info dt { color: var(--muted); font-size: 0.85rem; margin: 0; }
+.profile-info dd { margin: 0; font-weight: 600; text-align: right; word-break: break-word; }
+.danger-zone { margin-top: 22px; padding: 16px; border: 1px solid rgba(255,90,110,0.35); border-radius: 12px; background: rgba(255,90,110,0.06); }
+.danger-zone h4 { margin: 0 0 8px; font-size: 0.9rem; color: #ff8a98; }
+.btn-danger {
+  font: inherit; font-weight: 700; font-size: 0.9rem; color: #fff;
+  background: linear-gradient(135deg, #e23b54, #b3293e); border: none;
+  border-radius: 10px; padding: 11px 16px; cursor: pointer; margin-top: 6px;
+}
+.btn-danger:hover { filter: brightness(1.06); }
+.btn-danger:disabled { opacity: 0.6; cursor: default; }
+.del-status { display: block; margin-top: 10px; font-size: 0.82rem; color: var(--muted); }
 .btn-google {
   width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
   font: inherit; font-weight: 600; color: #1f2330; background: #fff; border: none;

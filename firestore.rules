@@ -30,6 +30,15 @@ service cloud.firestore {
           uid() in request.resource.data.memberUids &&
           request.resource.data.memberUids.size() == resource.data.memberUids.size() + 1
         )
+        // ... ou un membre se retire LUI-MÊME (suppression de compte).
+        || (
+          request.resource.data.ownerUid == resource.data.ownerUid &&
+          request.resource.data.inviteToken == resource.data.inviteToken &&
+          request.resource.data.name == resource.data.name &&
+          uid() in resource.data.memberUids &&
+          !(uid() in request.resource.data.memberUids) &&
+          request.resource.data.memberUids.size() == resource.data.memberUids.size() - 1
+        )
       );
 
       allow delete: if signedIn() && resource.data.ownerUid == uid();
@@ -38,9 +47,11 @@ service cloud.firestore {
       // et l'id du doc doit être "<uid>__<matchId>".
       match /preds/{pid} {
         allow read: if signedIn();
-        allow write: if signedIn()
+        allow create, update: if signedIn()
           && request.resource.data.uid == uid()
           && pid == uid() + '__' + request.resource.data.matchId;
+        // Chacun peut supprimer ses propres pronostics (suppression de compte).
+        allow delete: if signedIn() && resource.data.uid == uid();
       }
     }
   }
