@@ -1,12 +1,12 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_WINNER = {
-  "updatedAt": "2026-06-27T16:56:47.675Z",
+  "updatedAt": "2026-06-27T23:29:47.389Z",
   "teams": [
     {
       "name": "France",
       "flag": "🇫🇷",
       "code": "FRA",
-      "prob": 19.9
+      "prob": 20
     },
     {
       "name": "Argentina",
@@ -18,25 +18,25 @@ window.WC_WINNER = {
       "name": "Spain",
       "flag": "🇪🇸",
       "code": "ESP",
-      "prob": 11.7
+      "prob": 11.6
     },
     {
       "name": "England",
       "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
       "code": "ENG",
-      "prob": 11
+      "prob": 10.6
     },
     {
       "name": "Portugal",
       "flag": "🇵🇹",
       "code": "POR",
-      "prob": 8.3
+      "prob": 8.8
     },
     {
       "name": "Brazil",
       "flag": "🇧🇷",
       "code": "BRA",
-      "prob": 6.1
+      "prob": 6
     },
     {
       "name": "Netherlands",
@@ -54,7 +54,7 @@ window.WC_WINNER = {
       "name": "USA",
       "flag": "🇺🇸",
       "code": "USA",
-      "prob": 2.5
+      "prob": 2.6
     },
     {
       "name": "Norway",
@@ -72,7 +72,7 @@ window.WC_WINNER = {
       "name": "Morocco",
       "flag": "🇲🇦",
       "code": "MAR",
-      "prob": 1.6
+      "prob": 1.7
     },
     {
       "name": "Japan",
@@ -99,15 +99,15 @@ window.WC_WINNER = {
       "prob": 1.1
     },
     {
-      "name": "Ecuador",
-      "flag": "🇪🇨",
-      "code": "ECU",
-      "prob": 0.6
-    },
-    {
       "name": "Senegal",
       "flag": "🇸🇳",
       "code": "SEN",
+      "prob": 0.6
+    },
+    {
+      "name": "Ecuador",
+      "flag": "🇪🇨",
+      "code": "ECU",
       "prob": 0.6
     },
     {
@@ -141,21 +141,15 @@ window.WC_WINNER = {
       "prob": 0.3
     },
     {
-      "name": "Egypt",
-      "flag": "🇪🇬",
-      "code": "EGY",
-      "prob": 0.3
-    },
-    {
       "name": "Austria",
       "flag": "🇦🇹",
       "code": "AUT",
       "prob": 0.3
     },
     {
-      "name": "Ghana",
-      "flag": "🇬🇭",
-      "code": "GHA",
+      "name": "Egypt",
+      "flag": "🇪🇬",
+      "code": "EGY",
       "prob": 0.2
     },
     {
@@ -165,15 +159,21 @@ window.WC_WINNER = {
       "prob": 0.2
     },
     {
-      "name": "Bosnia & Herzegovina",
-      "flag": "🇧🇦",
-      "code": "BIH",
-      "prob": 0.1
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "code": "GHA",
+      "prob": 0.2
     },
     {
       "name": "Algeria",
       "flag": "🇩🇿",
       "code": "ALG",
+      "prob": 0.1
+    },
+    {
+      "name": "Bosnia & Herzegovina",
+      "flag": "🇧🇦",
+      "code": "BIH",
       "prob": 0.1
     },
     {
@@ -195,12 +195,6 @@ window.WC_WINNER = {
       "prob": 0.1
     },
     {
-      "name": "Scotland",
-      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      "code": "SCO",
-      "prob": 0.1
-    },
-    {
       "name": "Cape Verde",
       "flag": "🇨🇻",
       "code": "CPV",
@@ -216,6 +210,12 @@ window.WC_WINNER = {
       "name": "DR Congo",
       "flag": "🇨🇩",
       "code": "COD",
+      "prob": 0.1
+    },
+    {
+      "name": "Scotland",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "code": "SCO",
       "prob": 0.1
     }
   ]

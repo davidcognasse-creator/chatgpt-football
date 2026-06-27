@@ -1,106 +1,4 @@
 {
-  "537c0997cd899394f47f16545b7068b2": {
-    "id": "537c0997cd899394f47f16545b7068b2",
-    "datetime": "2026-06-27T21:00:00Z",
-    "home": {
-      "name": "Croatia",
-      "flag": "🇭🇷",
-      "code": "CRO"
-    },
-    "away": {
-      "name": "Ghana",
-      "flag": "🇬🇭",
-      "code": "GHA"
-    },
-    "predicted": {
-      "probs": {
-        "home": 44,
-        "draw": 29,
-        "away": 27
-      },
-      "score": {
-        "home": 2,
-        "away": 1
-      },
-      "favored": "home"
-    },
-    "sources": {
-      "betting": {
-        "home": 50,
-        "draw": 31,
-        "away": 19
-      },
-      "form": {
-        "home": 32,
-        "draw": 26,
-        "away": 42
-      },
-      "h2h": null,
-      "press": {
-        "home": 50,
-        "draw": 26,
-        "away": 24
-      },
-      "social": {
-        "home": 16,
-        "draw": 26,
-        "away": 58
-      }
-    }
-  },
-  "4be17c8e1ccfecb0f2a5ef79e045c415": {
-    "id": "4be17c8e1ccfecb0f2a5ef79e045c415",
-    "datetime": "2026-06-27T21:00:00Z",
-    "home": {
-      "name": "Panama",
-      "flag": "🇵🇦",
-      "code": "PAN"
-    },
-    "away": {
-      "name": "England",
-      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "code": "ENG"
-    },
-    "predicted": {
-      "probs": {
-        "home": 6,
-        "draw": 16,
-        "away": 78
-      },
-      "score": {
-        "home": 0,
-        "away": 3
-      },
-      "favored": "away"
-    },
-    "sources": {
-      "betting": {
-        "home": 6,
-        "draw": 11,
-        "away": 83
-      },
-      "form": {
-        "home": 5,
-        "draw": 26,
-        "away": 69
-      },
-      "h2h": {
-        "home": 10,
-        "draw": 10,
-        "away": 79
-      },
-      "press": {
-        "home": 2,
-        "draw": 26,
-        "away": 72
-      },
-      "social": {
-        "home": 10,
-        "draw": 26,
-        "away": 64
-      }
-    }
-  },
   "67ae5751c401a98409b8566ae4897069": {
     "id": "67ae5751c401a98409b8566ae4897069",
     "datetime": "2026-06-27T23:30:00Z",
@@ -116,9 +14,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 27,
+        "home": 25,
         "draw": 25,
-        "away": 48
+        "away": 50
       },
       "score": {
         "home": 1,
@@ -128,9 +26,9 @@
     },
     "sources": {
       "betting": {
-        "home": 27,
-        "draw": 25,
-        "away": 48
+        "home": 24,
+        "draw": 24,
+        "away": 52
       },
       "form": {
         "home": 44,
@@ -144,9 +42,9 @@
         "away": 57
       },
       "social": {
-        "home": 14,
+        "home": 16,
         "draw": 26,
-        "away": 60
+        "away": 58
       }
     }
   },
@@ -177,9 +75,9 @@
     },
     "sources": {
       "betting": {
-        "home": 57,
+        "home": 58,
         "draw": 25,
-        "away": 19
+        "away": 18
       },
       "form": {
         "home": 60,
@@ -214,9 +112,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 27,
-        "draw": 39,
-        "away": 34
+        "home": 29,
+        "draw": 38,
+        "away": 33
       },
       "score": {
         "home": 1,
@@ -226,9 +124,9 @@
     },
     "sources": {
       "betting": {
-        "home": 25,
+        "home": 27,
         "draw": 46,
-        "away": 29
+        "away": 26
       },
       "form": {
         "home": 37,
@@ -242,9 +140,9 @@
         "away": 44
       },
       "social": {
-        "home": 23,
+        "home": 24,
         "draw": 26,
-        "away": 51
+        "away": 50
       }
     }
   },
@@ -277,7 +175,7 @@
       "betting": {
         "home": 5,
         "draw": 11,
-        "away": 84
+        "away": 85
       },
       "form": {
         "home": 3,
@@ -291,9 +189,9 @@
         "away": 51
       },
       "social": {
-        "home": 12,
+        "home": 13,
         "draw": 26,
-        "away": 62
+        "away": 61
       }
     }
   },
@@ -312,9 +210,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 20,
-        "draw": 27,
-        "away": 53
+        "home": 19,
+        "draw": 26,
+        "away": 55
       },
       "score": {
         "home": 0,
@@ -324,9 +222,9 @@
     },
     "sources": {
       "betting": {
-        "home": 18,
+        "home": 17,
         "draw": 27,
-        "away": 55
+        "away": 56
       },
       "form": {
         "home": 37,
@@ -414,8 +312,8 @@
     },
     "predicted": {
       "probs": {
-        "home": 45,
-        "draw": 27,
+        "home": 46,
+        "draw": 26,
         "away": 28
       },
       "score": {
@@ -428,7 +326,7 @@
       "betting": {
         "home": 45,
         "draw": 30,
-        "away": 26
+        "away": 25
       },
       "form": {
         "home": 37,
@@ -446,9 +344,9 @@
         "away": 39
       },
       "social": {
-        "home": 44,
+        "home": 35,
         "draw": 26,
-        "away": 30
+        "away": 39
       }
     }
   },
@@ -479,7 +377,7 @@
     },
     "sources": {
       "betting": {
-        "home": 69,
+        "home": 70,
         "draw": 20,
         "away": 11
       },
@@ -495,9 +393,9 @@
         "away": 1
       },
       "social": {
-        "home": 73,
+        "home": 72,
         "draw": 26,
-        "away": 1
+        "away": 2
       }
     }
   }

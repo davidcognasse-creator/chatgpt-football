@@ -1,7 +1,123 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_HISTORY = {
-  "updatedAt": "2026-06-27T16:56:47.641Z",
+  "updatedAt": "2026-06-27T23:29:47.272Z",
   "entries": [
+    {
+      "id": "537c0997cd899394f47f16545b7068b2",
+      "datetime": "2026-06-27T21:00:00Z",
+      "home": {
+        "name": "Croatia",
+        "flag": "🇭🇷",
+        "code": "CRO"
+      },
+      "away": {
+        "name": "Ghana",
+        "flag": "🇬🇭",
+        "code": "GHA"
+      },
+      "predicted": {
+        "probs": {
+          "home": 44,
+          "draw": 29,
+          "away": 27
+        },
+        "score": {
+          "home": 2,
+          "away": 1
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 50,
+          "draw": 31,
+          "away": 19
+        },
+        "form": {
+          "home": 32,
+          "draw": 26,
+          "away": 42
+        },
+        "h2h": null,
+        "press": {
+          "home": 50,
+          "draw": 26,
+          "away": 24
+        },
+        "social": {
+          "home": 16,
+          "draw": 26,
+          "away": 58
+        }
+      },
+      "actual": {
+        "home": 2,
+        "away": 1,
+        "outcome": "home"
+      },
+      "correctOutcome": true,
+      "correctScore": true
+    },
+    {
+      "id": "4be17c8e1ccfecb0f2a5ef79e045c415",
+      "datetime": "2026-06-27T21:00:00Z",
+      "home": {
+        "name": "Panama",
+        "flag": "🇵🇦",
+        "code": "PAN"
+      },
+      "away": {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "code": "ENG"
+      },
+      "predicted": {
+        "probs": {
+          "home": 6,
+          "draw": 16,
+          "away": 78
+        },
+        "score": {
+          "home": 0,
+          "away": 3
+        },
+        "favored": "away"
+      },
+      "sources": {
+        "betting": {
+          "home": 6,
+          "draw": 11,
+          "away": 83
+        },
+        "form": {
+          "home": 5,
+          "draw": 26,
+          "away": 69
+        },
+        "h2h": {
+          "home": 10,
+          "draw": 10,
+          "away": 79
+        },
+        "press": {
+          "home": 2,
+          "draw": 26,
+          "away": 72
+        },
+        "social": {
+          "home": 10,
+          "draw": 26,
+          "away": 64
+        }
+      },
+      "actual": {
+        "home": 0,
+        "away": 2,
+        "outcome": "away"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "3e3b5fa2b3c963e74cf044c60db0b573",
       "datetime": "2026-06-27T03:00:00Z",
