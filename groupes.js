@@ -50,6 +50,7 @@ let history = [];       // résultats (history.json)
 let myGroups = [];      // groupes de l'utilisateur
 let activeGroupId = null;
 let showProfile = false; // affiche l'onglet Profil à la place du contenu groupe
+let showCreate = false;  // affiche l'écran de création/ajout de groupe
 let forumUnsub = null;   // désabonnement du flux temps réel du forum
 
 /* ---------- données du site ---------- */
@@ -202,6 +203,7 @@ async function createGroup(name) {
     createdAt: serverTimestamp(),
   });
   activeGroupId = ref.id;
+  showCreate = false;
   await refreshGroups();
   renderApp();
 }
@@ -217,29 +219,49 @@ async function renderApp() {
     try { if (await pruneDeletedMembers(group)) { await refreshGroups(); group = myGroups.find((g) => g.id === activeGroupId) || group; } } catch {}
   }
 
-  const groupPicker = myGroups.length > 1
+  // Un membre peut avoir plusieurs groupes : on bascule via le sélecteur,
+  // et on en crée d'autres via « ➕ Nouveau groupe ».
+  const inGroup = !showProfile && !showCreate && group;
+
+  const groupPicker = (inGroup && myGroups.length > 1)
     ? `<select id="groupSel" class="group-sel">${myGroups.map((g) =>
         `<option value="${g.id}" ${g.id === activeGroupId ? "selected" : ""}>${esc(g.name)}</option>`).join("")}</select>`
     : "";
 
+  // Boutons d'action selon la vue
+  let actions = groupPicker;
+  if (showProfile) {
+    actions += `<button class="btn-ghost" id="btnProfile">← Retour</button>`;
+  } else if (showCreate) {
+    actions += `<button class="btn-ghost" id="btnNew">← Retour</button>`;
+  } else {
+    if (group) actions += `<button class="btn-soft" id="btnNew">➕ Nouveau groupe</button>`;
+    actions += `<button class="btn-ghost" id="btnProfile">⚙️ Profil</button>`;
+  }
+  actions += `<button class="btn-ghost" id="btnLogout">Déconnexion</button>`;
+
   const body = showProfile
     ? renderProfile()
-    : group ? renderGroup(group) : renderNoGroup();
+    : (showCreate || !group) ? renderNoGroup()
+    : renderGroup(group);
 
   appEl.innerHTML = `
     <div class="userbar">
       <div class="user-id">👤 <b>${esc(myName())}</b></div>
-      <div class="userbar-actions">${showProfile ? "" : groupPicker}<button class="btn-ghost" id="btnProfile">${showProfile ? "← Retour" : "⚙️ Profil"}</button><button class="btn-ghost" id="btnLogout">Déconnexion</button></div>
+      <div class="userbar-actions">${actions}</div>
     </div>
     ${body}`;
 
   document.getElementById("btnLogout").onclick = () => signOut(auth);
-  document.getElementById("btnProfile").onclick = () => { showProfile = !showProfile; renderApp(); };
+  const btnProfile = document.getElementById("btnProfile");
+  if (btnProfile) btnProfile.onclick = () => { showProfile = !showProfile; showCreate = false; renderApp(); };
+  const btnNew = document.getElementById("btnNew");
+  if (btnNew) btnNew.onclick = () => { showCreate = !showCreate; renderApp(); };
   const sel = document.getElementById("groupSel");
   if (sel) sel.onchange = () => { activeGroupId = sel.value; renderApp(); };
 
   if (showProfile) wireProfile();
-  else if (!group) wireNoGroup();
+  else if (showCreate || !group) wireNoGroup();
   else await wireGroup(group);
 }
 
@@ -673,6 +695,7 @@ async function renderLeaderboard(group) {
   onAuthStateChanged(auth, async (user) => {
     me = user;
     showProfile = false;
+    showCreate = false;
     if (!user) return renderAuth();
     // upsert profil
     try {
