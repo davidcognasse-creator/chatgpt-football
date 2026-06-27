@@ -1,4 +1,4 @@
-# IA Pronostics · Coupe du Monde 2026
+# Chat Game Prediction Technology · Coupe du Monde 2026
 
 Site statique au design moderne affichant les **pronostics IA** des matchs à venir
 du Mondial 2026. Les prédictions proviennent d'un **fichier de données (`data.json`)**
