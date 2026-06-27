@@ -39,14 +39,12 @@
   const sideLabel = (m, key) =>
     key === "home" ? flagHTML(m.home, 14) : key === "away" ? flagHTML(m.away, 14) : "Nul";
 
-  // « il y a 3 h » plutôt qu'une date brute.
-  function relativeTime(iso) {
-    const mins = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
-    if (mins < 1) return "à l'instant";
-    if (mins < 60) return `il y a ${mins} min`;
-    const h = Math.round(mins / 60);
-    if (h < 24) return `il y a ${h} h`;
-    return `il y a ${Math.round(h / 24)} j`;
+  // « à 11:27 le 27 juin »
+  function updatedLabel(iso) {
+    const d = new Date(iso);
+    const heure = d.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+    const date = d.toLocaleDateString("fr-FR", { day: "numeric", month: "long" });
+    return `à ${heure} le ${date}`;
   }
 
   // Précision du modèle calculée sur l'historique (history.js → window.WC_HISTORY).
@@ -281,7 +279,7 @@
       );
 
       if (data.updatedAt) {
-        updatedEl.textContent = "Mis à jour " + relativeTime(data.updatedAt);
+        updatedEl.textContent = updatedLabel(data.updatedAt);
         updatedEl.title = new Date(data.updatedAt).toLocaleString("fr-FR");
       }
 
