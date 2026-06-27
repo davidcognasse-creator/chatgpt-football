@@ -1,0 +1,47 @@
+rules_version = '2';
+// Règles Firestore — à coller dans Console Firebase → Firestore → Règles.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function uid() { return request.auth.uid; }
+
+    // Profil : chacun lit, mais n'écrit que le sien.
+    match /users/{u} {
+      allow read: if signedIn();
+      allow write: if uid() == u;
+    }
+
+    match /groups/{gid} {
+      // Lecture autorisée à tout utilisateur connecté (nécessaire pour rejoindre
+      // via lien et afficher le classement). Acceptable pour un jeu entre amis.
+      allow read: if signedIn();
+
+      // Création : seulement par son propriétaire déclaré.
+      allow create: if signedIn() && request.resource.data.ownerUid == uid();
+
+      // Mise à jour : le propriétaire fait ce qu'il veut ; un autre membre ne peut
+      // QUE s'ajouter lui-même (rejoindre), sans toucher au nom/propriétaire/token.
+      allow update: if signedIn() && (
+        resource.data.ownerUid == uid()
+        || (
+          request.resource.data.ownerUid == resource.data.ownerUid &&
+          request.resource.data.inviteToken == resource.data.inviteToken &&
+          request.resource.data.name == resource.data.name &&
+          uid() in request.resource.data.memberUids &&
+          request.resource.data.memberUids.size() == resource.data.memberUids.size() + 1
+        )
+      );
+
+      allow delete: if signedIn() && resource.data.ownerUid == uid();
+
+      // Pronostics : lisibles par les connectés ; chacun n'écrit que les siens,
+      // et l'id du doc doit être "<uid>__<matchId>".
+      match /preds/{pid} {
+        allow read: if signedIn();
+        allow write: if signedIn()
+          && request.resource.data.uid == uid()
+          && pid == uid() + '__' + request.resource.data.matchId;
+      }
+    }
+  }
+}

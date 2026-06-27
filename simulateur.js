@@ -4,7 +4,6 @@
   const champStatEl = document.getElementById("champStat");
   const champListEl = document.getElementById("champList");
   const winnerUpdatedEl = document.getElementById("winnerUpdated");
-  const projListEl = document.getElementById("projList");
 
   async function loadJSON(url, fallbackGlobal) {
     try {
@@ -16,15 +15,6 @@
       return null;
     }
   }
-
-  const sideName = (m, key) =>
-    key === "home" ? m.home.name : key === "away" ? m.away.name : "Match nul";
-  const sideFlag = (m, key) =>
-    key === "home" ? m.home.flag : key === "away" ? m.away.flag : "🤝";
-  const favored = (p) =>
-    p.home >= p.draw && p.home >= p.away ? "home" : p.away >= p.draw ? "away" : "draw";
-  const fmtDate = (iso) =>
-    new Date(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
 
   /* ---------- Probabilités de titre ---------- */
   function renderWinner(winner) {
@@ -63,49 +53,5 @@
     }
   }
 
-  /* ---------- Issues projetées des prochains matchs ---------- */
-  function renderProjections(data) {
-    if (!data || !data.matches) {
-      projListEl.innerHTML = '<p class="empty-state">Aucun match à venir.</p>';
-      return;
-    }
-    const now = new Date();
-    const upcoming = data.matches
-      .filter((m) => new Date(m.datetime) >= now)
-      .sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
-    const list = upcoming.length ? upcoming : data.matches;
-    if (!list.length) {
-      projListEl.innerHTML = '<p class="empty-state">Aucun match à venir.</p>';
-      return;
-    }
-
-    projListEl.innerHTML = list
-      .map((m) => {
-        const fav = favored(m.probs);
-        const pct = m.probs[fav];
-        const issue = fav === "draw" ? "Match nul" : `Victoire ${sideName(m, fav)}`;
-        return `
-          <div class="proj-row">
-            <div class="proj-match">
-              <span>${m.home.flag} ${m.home.code}</span>
-              <span class="proj-score">${m.predictedScore.home}–${m.predictedScore.away}</span>
-              <span>${m.away.code} ${m.away.flag}</span>
-            </div>
-            <div class="proj-outcome">
-              <span class="proj-pick">${sideFlag(m, fav)} ${issue}</span>
-              <span class="proj-conf">${pct}%</span>
-            </div>
-            <div class="proj-date">${fmtDate(m.datetime)}</div>
-          </div>`;
-      })
-      .join("");
-  }
-
-  Promise.all([
-    loadJSON("winner.json", "WC_WINNER"),
-    loadJSON("data.json", "WC_DATA"),
-  ]).then(([winner, data]) => {
-    renderWinner(winner);
-    renderProjections(data);
-  });
+  loadJSON("winner.json", "WC_WINNER").then(renderWinner);
 })();

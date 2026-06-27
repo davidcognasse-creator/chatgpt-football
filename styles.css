@@ -151,6 +151,122 @@ h1, h2, h3, .brand-title { font-family: "Sora", "Inter", sans-serif; }
   box-shadow: 0 12px 26px -8px rgba(163, 107, 255, 0.85);
 }
 
+/* ---------- groupes page ---------- */
+.app-shell { max-width: 760px; margin: 0 auto; }
+.app-shell .muted { color: var(--muted); font-size: 0.88rem; }
+.app-shell code { background: rgba(255,255,255,0.06); padding: 1px 6px; border-radius: 6px; font-size: 0.85em; }
+.app-shell input[type="email"], .app-shell input[type="password"], .app-shell input[type="text"] {
+  width: 100%; font: inherit; font-size: 0.95rem; color: var(--text);
+  background: rgba(255,255,255,0.04); border: 1px solid var(--card-border);
+  border-radius: 10px; padding: 11px 14px; outline: none; margin-bottom: 10px;
+}
+.app-shell input:focus { border-color: var(--accent); }
+
+.auth-card, .panel {
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: var(--radius); padding: 22px; backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+.auth-card { max-width: 420px; margin: 0 auto; }
+.auth-card h2 { margin: 0 0 16px; font-size: 1.2rem; }
+.btn-primary {
+  width: 100%; font: inherit; font-weight: 700; font-size: 0.95rem; color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)); border: none;
+  border-radius: 10px; padding: 12px; cursor: pointer; transition: transform 0.15s ease;
+}
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-primary:disabled { opacity: 0.6; cursor: default; }
+.btn-google {
+  width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
+  font: inherit; font-weight: 600; color: #1f2330; background: #fff; border: none;
+  border-radius: 10px; padding: 11px; cursor: pointer; margin-bottom: 14px;
+}
+.auth-sep { display: flex; align-items: center; gap: 10px; color: var(--muted-soft); font-size: 0.78rem; margin: 4px 0 14px; }
+.auth-sep::before, .auth-sep::after { content: ""; flex: 1; height: 1px; background: var(--card-border); }
+.auth-err { color: var(--loss); font-size: 0.84rem; margin: 0 0 10px; }
+.auth-toggle { text-align: center; font-size: 0.84rem; color: var(--muted); margin: 14px 0 0; }
+.auth-toggle a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.setup-steps { color: var(--muted); font-size: 0.88rem; line-height: 1.7; padding-left: 20px; }
+
+.userbar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin-bottom: 18px; flex-wrap: wrap;
+}
+.user-id { font-size: 0.95rem; }
+.userbar-actions { display: flex; align-items: center; gap: 8px; }
+.group-sel {
+  font: inherit; font-size: 0.85rem; color: var(--text); background: rgba(255,255,255,0.04);
+  border: 1px solid var(--card-border); border-radius: 999px; padding: 7px 12px;
+}
+.btn-ghost, .btn-soft {
+  font: inherit; font-size: 0.82rem; font-weight: 600; color: var(--muted);
+  background: rgba(255,255,255,0.03); border: 1px solid var(--card-border);
+  border-radius: 999px; padding: 8px 14px; cursor: pointer;
+}
+.btn-soft { color: var(--text); }
+.btn-ghost:hover, .btn-soft:hover { border-color: rgba(120,150,220,0.4); color: var(--text); }
+
+.cards-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.panel h3 { margin: 0 0 14px; font-size: 1rem; }
+
+.group-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  flex-wrap: wrap; margin-bottom: 16px;
+}
+.group-name { font-family: "Sora", sans-serif; font-weight: 800; font-size: 1.25rem; }
+.group-meta { font-size: 0.8rem; color: var(--muted); }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.tab {
+  font: inherit; font-size: 0.88rem; font-weight: 600; color: var(--muted);
+  background: rgba(255,255,255,0.03); border: 1px solid var(--card-border);
+  border-radius: 999px; padding: 9px 16px; cursor: pointer;
+}
+.tab.active { color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-2)); border-color: transparent; }
+
+.pred-row {
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: 14px; padding: 14px 16px; margin-bottom: 10px;
+}
+.pred-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.pred-teams { font-weight: 600; font-size: 0.92rem; }
+.pred-date { font-size: 0.72rem; color: var(--muted-soft); white-space: nowrap; }
+.pred-controls { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.picks { display: flex; gap: 6px; }
+.pick {
+  width: 40px; height: 38px; font: inherit; font-weight: 700; font-size: 0.95rem;
+  color: var(--muted); background: rgba(255,255,255,0.04); border: 1px solid var(--card-border);
+  border-radius: 10px; cursor: pointer; transition: all 0.15s ease;
+}
+.pick.on { color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-2)); border-color: transparent; }
+.score-in { display: flex; align-items: center; gap: 6px; }
+.score-in .sc {
+  width: 46px; text-align: center; font: inherit; color: var(--text);
+  background: rgba(255,255,255,0.04); border: 1px solid var(--card-border);
+  border-radius: 8px; padding: 7px 4px; margin: 0;
+}
+.pred-saved { font-size: 0.76rem; color: var(--win); }
+
+.lb-note { font-size: 0.78rem; color: var(--muted); margin-bottom: 12px; }
+.lb { border: 1px solid var(--card-border); border-radius: 14px; overflow: hidden; }
+.lb-h, .lb-row {
+  display: grid; grid-template-columns: 36px 1fr 64px 64px 70px; align-items: center;
+  gap: 6px; padding: 11px 14px;
+}
+.lb-h { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; background: rgba(255,255,255,0.03); }
+.lb-h span:nth-child(n+3), .lb-row span:nth-child(n+3) { text-align: right; }
+.lb-row { border-top: 1px solid var(--card-border); font-size: 0.9rem; }
+.lb-row.is-bot { background: rgba(91,140,255,0.1); }
+.lb-rank { font-family: "Sora", sans-serif; font-weight: 700; color: var(--muted); }
+.lb-name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lb-num { color: var(--muted); font-size: 0.85rem; }
+.lb-pts { font-family: "Sora", sans-serif; font-weight: 800; color: var(--text); }
+.lb-row:nth-child(2) .lb-pts { color: var(--draw); }
+
+@media (max-width: 560px) {
+  .cards-2 { grid-template-columns: 1fr; }
+}
+
 /* ---------- simulateur page ---------- */
 .sim-block { margin: 8px 0 34px; }
 .sim-title {
