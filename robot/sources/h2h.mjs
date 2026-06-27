@@ -8,6 +8,18 @@ import { teamId as afTeamId, headToHead } from "../lib/apifootball.mjs";
 
 const FINISHED = new Set(["FT", "AET", "PEN"]);
 
+// Nations "majeures" : seules ces affiches déclenchent un appel API-Football
+// (économie du quota). Les autres utilisent le cache ou football-data.
+const TOP_NATIONS = new Set([
+  "France", "Brazil", "Argentina", "England", "Spain", "Portugal", "Germany",
+  "Netherlands", "Italy", "Belgium", "Croatia", "Uruguay", "Colombia", "Mexico",
+  "United States", "USA", "Morocco", "Japan", "Senegal", "Switzerland", "Denmark",
+  "Serbia", "Poland", "South Korea", "Korea Republic", "Nigeria", "Ivory Coast",
+  "Ghana", "Cameroon", "Ecuador",
+]);
+
+const isBigMatch = (home, away) => TOP_NATIONS.has(home) && TOP_NATIONS.has(away);
+
 /** H2H via API-Football (endpoint dédié). */
 async function viaApiFootball(ctx, homeName, awayName) {
   const [hid, aid] = await Promise.all([afTeamId(ctx, homeName), afTeamId(ctx, awayName)]);
@@ -50,18 +62,21 @@ async function liveH2H(ctx, homeName, awayName) {
   const pk = `${homeName}|${awayName}`.toLowerCase();
   const store = (ctx.cache && (ctx.cache.h2h || (ctx.cache.h2h = {}))) || {};
 
-  if (ctx.env.APIFOOTBALL_KEY) {
+  // Cache d'abord (gratuit, et survit à l'épuisement du quota).
+  if (store[pk]) {
+    const { ts, ...counts } = store[pk];
+    return { counts, source: "cache" };
+  }
+
+  // API-Football uniquement pour les grosses affiches (sauf si désactivé).
+  const topOnly = ctx.config?.live?.h2hTopOnly !== false;
+  const useApi = ctx.env.APIFOOTBALL_KEY && (!topOnly || isBigMatch(homeName, awayName));
+  if (useApi) {
     try {
       const counts = await viaApiFootball(ctx, homeName, awayName);
       store[pk] = { ...counts, ts: new Date().toISOString() }; // mémorise pour plus tard
       return { counts, source: "api" };
     } catch (e) {
-      // Plus de crédit / erreur : on réutilise le cache si on l'a déjà vu.
-      if (store[pk]) {
-        console.log(`[h2h] API-Football KO (${e.message}) — cache réutilisé pour ${homeName}-${awayName}`);
-        const { ts, ...counts } = store[pk];
-        return { counts, source: "cache" };
-      }
       console.warn(`[h2h] API-Football indisponible (${e.message}) — repli football-data`);
     }
   }

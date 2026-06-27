@@ -25,6 +25,7 @@
       "h2hLast": 20,
       "minGapMs": 6500
     },
+    "h2hTopOnly": true,
     "scorers": true,
     "scorersTop": 6,
     "wcOnly": true,
