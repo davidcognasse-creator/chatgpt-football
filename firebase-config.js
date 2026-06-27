@@ -1,10 +1,11 @@
-// ⚙️ Config Firebase — À REMPLIR avec les valeurs de TON projet.
-// Console Firebase → ⚙️ Paramètres du projet → "Tes applications" → app Web → SDK config.
-// Ces valeurs sont PUBLIQUES (clé côté client) : c'est normal et sans risque,
-// la sécurité est assurée par les règles Firestore (voir firestore.rules).
+// Config Firebase du projet "ChatGPT-fooball".
+// Valeurs PUBLIQUES (clé côté client) : c'est normal et sans risque, la sécurité
+// vient des règles Firestore (firestore.rules).
 window.FIREBASE_CONFIG = {
-  apiKey: "À_REMPLIR",
-  authDomain: "À_REMPLIR.firebaseapp.com",
-  projectId: "À_REMPLIR",
-  appId: "À_REMPLIR",
+  apiKey: "AIzaSyA9zukdsy0XEbhcXNAQ9mDxUqLA94bS0mw",
+  authDomain: "chatgpt-fooball.firebaseapp.com",
+  projectId: "chatgpt-fooball",
+  storageBucket: "chatgpt-fooball.firebasestorage.app",
+  messagingSenderId: "1023187591441",
+  appId: "1:1023187591441:web:d3524e2319b94d461b6cb0",
 };
