@@ -18,6 +18,11 @@ on:
       - "history.js"
       - "CNAME"
       - ".github/workflows/deploy-pages.yml"
+  # Redéploie après chaque run du robot (ses commits via GITHUB_TOKEN ne
+  # déclenchent pas le trigger 'push', d'où ce workflow_run).
+  workflow_run:
+    workflows: ["Actualiser les pronostics"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
