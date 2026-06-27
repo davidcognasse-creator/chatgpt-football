@@ -27,24 +27,28 @@
   }
 
   /* ---------- helpers ---------- */
+  const t = (k, v) => (window.t ? window.t(k, v) : k);
+  const LOC = { fr: "fr-FR", en: "en-GB", es: "es-ES", pt: "pt-PT", de: "de-DE", it: "it-IT", sw: "sw-KE" };
+  const locale = () => LOC[window.getLang ? window.getLang() : "fr"] || "fr-FR";
+
   const fmtDate = (iso) =>
-    new Date(iso).toLocaleDateString("fr-FR", {
+    new Date(iso).toLocaleDateString(locale(), {
       weekday: "short",
       day: "numeric",
       month: "short",
     });
   const fmtTime = (iso) =>
-    new Date(iso).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+    new Date(iso).toLocaleTimeString(locale(), { hour: "2-digit", minute: "2-digit" });
 
   const sideLabel = (m, key) =>
-    key === "home" ? flagHTML(m.home, 14) : key === "away" ? flagHTML(m.away, 14) : "Nul";
+    key === "home" ? flagHTML(m.home, 14) : key === "away" ? flagHTML(m.away, 14) : t("card_draw");
 
-  // « à 11:27 le 27 juin »
+  // « à 11:27 le 27 juin » (traduit + locale courante)
   function updatedLabel(iso) {
     const d = new Date(iso);
-    const heure = d.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
-    const date = d.toLocaleDateString("fr-FR", { day: "numeric", month: "long" });
-    return `à ${heure} le ${date}`;
+    const time = d.toLocaleTimeString(locale(), { hour: "2-digit", minute: "2-digit" });
+    const date = d.toLocaleDateString(locale(), { day: "numeric", month: "long" });
+    return t("updated_at", { time, date });
   }
 
   // Précision du modèle calculée sur l'historique (history.js → window.WC_HISTORY).
@@ -60,7 +64,7 @@
     const { home, draw, away } = m.probs;
     if (home >= draw && home >= away) return m.home.name;
     if (away >= draw && away >= home) return m.away.name;
-    return "Nul";
+    return t("card_draw");
   };
 
   const pinIcon =
@@ -74,11 +78,11 @@
     const next = matches.find((m) => new Date(m.datetime) >= new Date()) || matches[0];
     const nSources = matches[0] && matches[0].sources ? Object.keys(matches[0].sources).length : 0;
     const acc = histAccuracy();
-    const stats = [{ value: matches.length, label: "Matchs analysés" }];
-    if (acc) stats.push({ value: acc.pct + "%", label: `Précision (${acc.total} matchs)` });
-    stats.push({ value: avgConf + "%", label: "Confiance moyenne" });
-    stats.push({ value: next ? favoredName(next) : "…", label: "Prochain favori" });
-    if (!acc) stats.push({ value: String(nSources), label: "Sources agrégées" });
+    const stats = [{ value: matches.length, label: t("st_analyzed") }];
+    if (acc) stats.push({ value: acc.pct + "%", label: t("st_accuracy", { n: acc.total }) });
+    stats.push({ value: avgConf + "%", label: t("st_avgconf") });
+    stats.push({ value: next ? favoredName(next) : "…", label: t("st_nextfav") });
+    if (!acc) stats.push({ value: String(nSources), label: t("st_sources") });
     heroStatsEl.innerHTML = stats
       .map(
         (s) =>
@@ -102,7 +106,7 @@
     filtersEl.innerHTML = stages
       .map(
         (s) =>
-          `<button class="filter-btn${s === activeStage ? " active" : ""}" data-stage="${s}" role="tab">${s}</button>`
+          `<button class="filter-btn${s === activeStage ? " active" : ""}" data-stage="${s}" role="tab">${s === "Tous" ? t("filter_all") : s}</button>`
       )
       .join("");
     filtersEl.querySelectorAll(".filter-btn").forEach((btn) => {
@@ -158,14 +162,14 @@
     if (sc.combined && sc.combined.length) {
       return `
         <div class="scorers">
-          <div class="scorers-head">⚽ Buteurs probables</div>
+          <div class="scorers-head">${t("scorers_head")}</div>
           <ul class="scorer-list">${sc.combined.map(scorerItem).join("")}</ul>
         </div>`;
     }
     if ((sc.home && sc.home.length) || (sc.away && sc.away.length)) {
       return `
         <div class="scorers">
-          <div class="scorers-head">⚽ Buteurs probables</div>
+          <div class="scorers-head">${t("scorers_head")}</div>
           <div class="scorers-grid">
             <div>
               <div class="scorers-team">${flagHTML(m.home, 15)} ${m.home.name}</div>
@@ -194,7 +198,7 @@
       : "";
     return `
       <details class="sources">
-        <summary>Détail des sources agrégées</summary>
+        <summary>${t("src_summary")}</summary>
         ${order.map((k) => (m.sources[k] ? sourceRow(m, m.sources[k]) : "")).join("")}
         ${legend}
       </details>`;
@@ -204,7 +208,7 @@
   function card(m) {
     const { home, draw, away } = m.probs;
     const projected = m.projected
-      ? '<span class="badge-proj" title="Affiche projetée selon les pronostics">Projeté</span>'
+      ? `<span class="badge-proj" title="${t("card_projected_title")}">${t("card_projected")}</span>`
       : "";
     return `
       <article class="match-card${m.projected ? " is-projected" : ""}">
@@ -219,7 +223,7 @@
             <span class="tname">${m.home.name}</span>
           </div>
           <div class="score-pred">
-            <span class="vs">Score IA</span>
+            <span class="vs">${t("card_scoreia")}</span>
             <span class="score">${m.predictedScore.home} – ${m.predictedScore.away}</span>
           </div>
           <div class="team">
@@ -235,12 +239,12 @@
         </div>
         <div class="prob-legend">
           <span class="lg home"><b>${home}%</b>&nbsp;${flagHTML(m.home, 13)}</span>
-          <span class="lg draw"><b>${draw}%</b>&nbsp;Nul</span>
+          <span class="lg draw"><b>${draw}%</b>&nbsp;${t("card_draw")}</span>
           <span class="lg away"><b>${away}%</b>&nbsp;${flagHTML(m.away, 13)}</span>
         </div>
 
         <div class="confidence">
-          <span class="confidence-label">Confiance</span>
+          <span class="confidence-label">${t("card_conf")}</span>
           <div class="confidence-track"><div class="confidence-fill" style="width:${m.confidence}%"></div></div>
           <span class="confidence-pct">${m.confidence}%</span>
         </div>
@@ -272,28 +276,36 @@
   }
 
   /* ---------- init ---------- */
+  let lastUpdatedISO = null;
+
+  function renderAll() {
+    if (lastUpdatedISO) {
+      updatedEl.textContent = updatedLabel(lastUpdatedISO);
+      updatedEl.title = new Date(lastUpdatedISO).toLocaleString(locale());
+    }
+    renderHeroStats();
+    renderFilters();
+    renderMatches();
+  }
+
   loadData()
     .then((data) => {
       matches = (data.matches || []).slice().sort(
         (a, b) => new Date(a.datetime) - new Date(b.datetime)
       );
-
-      if (data.updatedAt) {
-        updatedEl.textContent = updatedLabel(data.updatedAt);
-        updatedEl.title = new Date(data.updatedAt).toLocaleString("fr-FR");
-      }
+      lastUpdatedISO = data.updatedAt || null;
 
       searchEl.addEventListener("input", (e) => {
         query = e.target.value;
         renderMatches();
       });
 
-      renderHeroStats();
-      renderFilters();
-      renderMatches();
+      renderAll();
+      // re-render quand la langue change
+      document.addEventListener("i18n:changed", renderAll);
     })
     .catch(() => {
       listEl.innerHTML =
-        '<p class="empty-state">Impossible de charger les pronostics (data.json).</p>';
+        `<p class="empty-state">${t("load_error")}</p>`;
     });
 })();

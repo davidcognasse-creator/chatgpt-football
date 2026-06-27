@@ -18,7 +18,10 @@ const configured = CFG.apiKey && !String(CFG.apiKey).startsWith("À_REMPLIR");
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const fmtDate = (iso) => new Date(iso).toLocaleDateString("fr-FR",
+const t = (k, v) => (window.t ? window.t(k, v) : k);
+const LOC = { fr: "fr-FR", en: "en-GB", es: "es-ES", pt: "pt-PT", de: "de-DE", it: "it-IT", sw: "sw-KE" };
+const locale = () => LOC[window.getLang ? window.getLang() : "fr"] || "fr-FR";
+const fmtDate = (iso) => new Date(iso).toLocaleDateString(locale(),
   { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
 
 /* ---------- garde : config absente ---------- */
@@ -77,20 +80,20 @@ function points(pred, actual) {
 function renderAuth() {
   appEl.innerHTML = `
     <div class="auth-card">
-      <h2 id="authTitle">Connexion</h2>
+      <h2 id="authTitle">${t("g_auth_title_login")}</h2>
       <button class="btn-google" id="btnGoogle">
         <svg viewBox="0 0 48 48" width="18" height="18"><path fill="#FFC107" d="M43.6 20.5h-1.9V20H24v8h11.3C33.7 32.6 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.1 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 19.5-8 19.5-20 0-1.3-.1-2.3-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.1 29.5 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 10-2 13.6-5.2l-6.3-5.3C29.2 35 26.7 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.5 5C9.6 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H24v8h11.3c-.8 2.2-2.2 4.1-4 5.5l6.3 5.3C41.4 36.9 44 31 44 24c0-1.3-.1-2.3-.4-3.5z"/></svg>
-        Continuer avec Google
+        ${t("g_google")}
       </button>
-      <div class="auth-sep"><span>ou</span></div>
-      <input type="email" id="email" placeholder="E-mail" autocomplete="email" />
-      <input type="password" id="password" placeholder="Mot de passe (6+ caractères)" autocomplete="current-password" />
-      <input type="text" id="displayName" placeholder="Ton pseudo" style="display:none" />
+      <div class="auth-sep"><span>${t("g_or")}</span></div>
+      <input type="email" id="email" placeholder="${t("g_email")}" autocomplete="email" />
+      <input type="password" id="password" placeholder="${t("g_pwd_ph")}" autocomplete="current-password" />
+      <input type="text" id="displayName" placeholder="${t("g_name")}" style="display:none" />
       <p class="auth-err" id="authErr" hidden></p>
-      <button class="btn-primary" id="btnSubmit">Se connecter</button>
+      <button class="btn-primary" id="btnSubmit">${t("g_signin")}</button>
       <p class="auth-toggle">
-        <span id="toggleText">Pas encore de compte ?</span>
-        <a href="#" id="toggleLink">Créer un compte</a>
+        <span id="toggleText">${t("g_auth_no_account")}</span>
+        <a href="#" id="toggleLink">${t("g_signup")}</a>
       </p>
     </div>`;
 
@@ -101,11 +104,11 @@ function renderAuth() {
   $("toggleLink").onclick = (ev) => {
     ev.preventDefault();
     mode = mode === "login" ? "signup" : "login";
-    $("authTitle").textContent = mode === "login" ? "Connexion" : "Créer un compte";
-    $("btnSubmit").textContent = mode === "login" ? "Se connecter" : "Créer mon compte";
+    $("authTitle").textContent = mode === "login" ? t("g_auth_title_login") : t("g_signup");
+    $("btnSubmit").textContent = mode === "login" ? t("g_signin") : t("g_signup_do");
     $("displayName").style.display = mode === "signup" ? "block" : "none";
-    $("toggleText").textContent = mode === "login" ? "Pas encore de compte ?" : "Déjà inscrit ?";
-    $("toggleLink").textContent = mode === "login" ? "Créer un compte" : "Se connecter";
+    $("toggleText").textContent = mode === "login" ? t("g_auth_no_account") : t("g_auth_have_account");
+    $("toggleLink").textContent = mode === "login" ? t("g_signup") : t("g_signin");
     err("");
   };
 
@@ -134,12 +137,12 @@ function renderAuth() {
 function humanizeAuthError(e) {
   const c = e.code || "";
   if (c.includes("invalid-credential") || c.includes("wrong-password") || c.includes("user-not-found"))
-    return "E-mail ou mot de passe incorrect.";
-  if (c.includes("email-already-in-use")) return "Cet e-mail a déjà un compte.";
-  if (c.includes("weak-password")) return "Mot de passe trop court (6 caractères min).";
-  if (c.includes("invalid-email")) return "E-mail invalide.";
-  if (c.includes("popup-closed")) return "Fenêtre Google fermée.";
-  return "Erreur : " + (e.message || c);
+    return t("g_err_badcred");
+  if (c.includes("email-already-in-use")) return t("g_err_inuse");
+  if (c.includes("weak-password")) return t("g_err_weak");
+  if (c.includes("invalid-email")) return t("g_err_email");
+  if (c.includes("popup-closed")) return t("g_err_popup");
+  return "Error: " + (e.message || c);
 }
 
 /* ================= GROUPES ================= */
@@ -231,14 +234,14 @@ async function renderApp() {
   // Boutons d'action selon la vue
   let actions = groupPicker;
   if (showProfile) {
-    actions += `<button class="btn-ghost" id="btnProfile">← Retour</button>`;
+    actions += `<button class="btn-ghost" id="btnProfile">${t("g_back")}</button>`;
   } else if (showCreate) {
-    actions += `<button class="btn-ghost" id="btnNew">← Retour</button>`;
+    actions += `<button class="btn-ghost" id="btnNew">${t("g_back")}</button>`;
   } else {
-    if (group) actions += `<button class="btn-soft" id="btnNew">➕ Nouveau groupe</button>`;
-    actions += `<button class="btn-ghost" id="btnProfile">⚙️ Profil</button>`;
+    if (group) actions += `<button class="btn-soft" id="btnNew">${t("g_new_group")}</button>`;
+    actions += `<button class="btn-ghost" id="btnProfile">${t("g_profile")}</button>`;
   }
-  actions += `<button class="btn-ghost" id="btnLogout">Déconnexion</button>`;
+  actions += `<button class="btn-ghost" id="btnLogout">${t("g_logout")}</button>`;
 
   const body = showProfile
     ? renderProfile()
@@ -289,20 +292,20 @@ async function pruneDeletedMembers(group) {
 /* ---------- profil ---------- */
 function renderProfile() {
   const provider = (me.providerData && me.providerData[0] && me.providerData[0].providerId) || "";
-  const via = provider === "google.com" ? "Google" : "E-mail / mot de passe";
+  const via = provider === "google.com" ? t("g_p_via_google") : t("g_p_via_email");
   return `
     <div class="panel profile-panel">
-      <h3>⚙️ Mon profil</h3>
+      <h3>${t("g_profile_title")}</h3>
       <dl class="profile-info">
-        <div><dt>Nom</dt><dd>${esc(myName())}</dd></div>
-        <div><dt>E-mail</dt><dd>${esc(me.email || "non renseigné")}</dd></div>
-        <div><dt>Connexion</dt><dd>${via}</dd></div>
-        <div><dt>Groupes</dt><dd>${myGroups.length}</dd></div>
+        <div><dt>${t("g_p_name")}</dt><dd>${esc(myName())}</dd></div>
+        <div><dt>${t("g_p_email")}</dt><dd>${esc(me.email || t("g_p_email_none"))}</dd></div>
+        <div><dt>${t("g_p_conn")}</dt><dd>${via}</dd></div>
+        <div><dt>${t("g_p_groups")}</dt><dd>${myGroups.length}</dd></div>
       </dl>
       <div class="danger-zone">
-        <h4>Zone de danger</h4>
-        <p class="muted">La suppression de ton compte est <b>définitive</b> : tu es retiré de tous tes groupes et tes pronostics sont effacés.</p>
-        <button class="btn-danger" id="btnDeleteAccount">🗑️ Supprimer mon compte</button>
+        <h4>${t("g_danger")}</h4>
+        <p class="muted">${t("g_delete_warn")}</p>
+        <button class="btn-danger" id="btnDeleteAccount">${t("g_delete_btn")}</button>
         <span class="del-status" id="delStatus"></span>
       </div>
     </div>`;
@@ -311,9 +314,9 @@ function wireProfile() {
   const btn = document.getElementById("btnDeleteAccount");
   const status = document.getElementById("delStatus");
   btn.onclick = async () => {
-    if (!confirm("Supprimer définitivement ton compte ? Cette action est irréversible.")) return;
+    if (!confirm(t("g_delete_confirm"))) return;
     btn.disabled = true;
-    status.textContent = "Suppression…";
+    status.textContent = t("g_deleting");
     try {
       await deleteAccount();
       // onAuthStateChanged renverra vers l'écran de connexion.
@@ -348,8 +351,8 @@ async function reauthenticate(user) {
   if (provider === "google.com") {
     await reauthenticateWithPopup(user, new GoogleAuthProvider());
   } else {
-    const pwd = prompt("Pour confirmer, saisis ton mot de passe :");
-    if (!pwd) throw new Error("Mot de passe requis pour la suppression.");
+    const pwd = prompt(t("g_pwd_prompt"));
+    if (!pwd) throw new Error(t("g_pwd_prompt"));
     await reauthenticateWithCredential(user, EmailAuthProvider.credential(user.email, pwd));
   }
 }
@@ -378,13 +381,13 @@ function renderNoGroup() {
   return `
     <div class="cards-2">
       <div class="panel">
-        <h3>➕ Créer un groupe</h3>
-        <input type="text" id="newGroupName" placeholder="Nom du groupe (ex. Les potes)" />
-        <button class="btn-primary" id="btnCreate">Créer</button>
+        <h3>${t("g_create_title")}</h3>
+        <input type="text" id="newGroupName" placeholder="${t("g_create_ph")}" />
+        <button class="btn-primary" id="btnCreate">${t("g_create_btn")}</button>
       </div>
       <div class="panel">
-        <h3>🔗 Rejoindre un groupe</h3>
-        <p class="muted">Tu as reçu un <b>lien d'invitation</b> ? Ouvre-le simplement, tu seras ajouté automatiquement.</p>
+        <h3>${t("g_join_title")}</h3>
+        <p class="muted">${t("g_join_text")}</p>
       </div>
     </div>`;
 }
@@ -394,7 +397,7 @@ function wireNoGroup() {
     const name = document.getElementById("newGroupName").value.trim();
     if (!name) return;
     btn.disabled = true;
-    try { await createGroup(name); } catch (e) { alert("Erreur : " + (e.message || e)); btn.disabled = false; }
+    try { await createGroup(name); } catch (e) { alert("Error: " + (e.message || e)); btn.disabled = false; }
   };
 }
 
@@ -403,17 +406,17 @@ function renderGroup(group) {
     <div class="group-head">
       <div>
         <div class="group-name">${esc(group.name)}</div>
-        <div class="group-meta">${Object.keys(group.members || {}).length} membre(s)</div>
+        <div class="group-meta">${Object.keys(group.members || {}).length} ${t("g_members")}</div>
       </div>
       <div class="invite-actions">
-        <button class="btn-soft" id="btnInvite">🔗 Copier le lien d'invitation</button>
-        <a class="btn-soft" id="btnEmail">✉️ Inviter par e-mail</a>
+        <button class="btn-soft" id="btnInvite">${t("g_invite_copy")}</button>
+        <a class="btn-soft" id="btnEmail">${t("g_invite_email")}</a>
       </div>
     </div>
     <div class="tabs">
-      <button class="tab active" data-tab="pred">⚽ Mes pronostics</button>
-      <button class="tab" data-tab="rank">🏆 Classement</button>
-      <button class="tab" data-tab="forum">💬 Forum</button>
+      <button class="tab active" data-tab="pred">${t("g_tab_pred")}</button>
+      <button class="tab" data-tab="rank">${t("g_tab_rank")}</button>
+      <button class="tab" data-tab="forum">${t("g_tab_forum")}</button>
     </div>
     <div id="tabPred"></div>
     <div id="tabRank" hidden></div>
@@ -426,26 +429,23 @@ async function wireGroup(group) {
   document.getElementById("btnInvite").onclick = async () => {
     try { await navigator.clipboard.writeText(inviteLink); } catch {}
     const b = document.getElementById("btnInvite");
-    b.textContent = "✅ Lien copié !";
-    setTimeout(() => (b.textContent = "🔗 Copier le lien d'invitation"), 2000);
+    b.textContent = t("g_invite_copied");
+    setTimeout(() => (b.textContent = t("g_invite_copy")), 2000);
   };
 
   // invitation par e-mail (ouvre le client mail avec un message pré-rempli)
-  const subject = `Invitation au groupe de pronostics « ${group.name} »`;
-  const body =
-    `Salut !\n\nJe t'invite à rejoindre mon groupe de pronostics « ${group.name} » ` +
-    `sur Chat Game Prediction Technology ⚽\n\nClique sur ce lien pour participer :\n${inviteLink}\n\n` +
-    `À toi de jouer 🏆`;
+  const subject = t("g_invite_subject", { name: group.name });
+  const body = t("g_invite_body", { name: group.name, link: inviteLink });
   document.getElementById("btnEmail").href =
     `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   // tabs
-  appEl.querySelectorAll(".tab").forEach((t) => {
-    t.onclick = () => {
-      appEl.querySelectorAll(".tab").forEach((x) => x.classList.toggle("active", x === t));
-      document.getElementById("tabPred").hidden = t.dataset.tab !== "pred";
-      document.getElementById("tabRank").hidden = t.dataset.tab !== "rank";
-      document.getElementById("tabForum").hidden = t.dataset.tab !== "forum";
+  appEl.querySelectorAll(".tab").forEach((tab) => {
+    tab.onclick = () => {
+      appEl.querySelectorAll(".tab").forEach((x) => x.classList.toggle("active", x === tab));
+      document.getElementById("tabPred").hidden = tab.dataset.tab !== "pred";
+      document.getElementById("tabRank").hidden = tab.dataset.tab !== "rank";
+      document.getElementById("tabForum").hidden = tab.dataset.tab !== "forum";
     };
   });
 
@@ -459,11 +459,11 @@ function renderForum(group) {
   const el = document.getElementById("tabForum");
   el.innerHTML = `
     <div class="forum">
-      <div class="forum-list" id="forumList"><p class="empty-state">Chargement…</p></div>
+      <div class="forum-list" id="forumList"><p class="empty-state">${t("grp_loading")}</p></div>
       <form class="forum-form" id="forumForm">
         <input type="text" id="forumInput" maxlength="500" autocomplete="off"
-          placeholder="Écris un message au groupe…" />
-        <button type="submit" class="btn-primary forum-send">Envoyer</button>
+          placeholder="${t("g_forum_ph")}" />
+        <button type="submit" class="btn-primary forum-send">${t("g_forum_send")}</button>
       </form>
     </div>`;
 
@@ -483,7 +483,7 @@ function renderForum(group) {
       });
     } catch (err) {
       input.value = text;
-      alert("Message non envoyé : " + (err.message || err));
+      alert((err.message || err));
     }
   };
 
@@ -493,7 +493,7 @@ function renderForum(group) {
   forumUnsub = onSnapshot(qy,
     (snap) => {
       if (snap.empty) {
-        listEl.innerHTML = `<p class="empty-state">Aucun message. Lance la discussion ! 💬</p>`;
+        listEl.innerHTML = `<p class="empty-state">${t("g_forum_empty")}</p>`;
         return;
       }
       const atBottom = listEl.scrollHeight - listEl.scrollTop - listEl.clientHeight < 80;
@@ -501,13 +501,13 @@ function renderForum(group) {
         const m = d.data();
         const mine = m.uid === me.uid;
         const time = m.ts && m.ts.toDate
-          ? m.ts.toDate().toLocaleString("fr-FR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })
+          ? m.ts.toDate().toLocaleString(locale(), { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })
           : "…";
         const canDel = mine || (group.ownerUid === me.uid);
         return `
           <div class="msg ${mine ? "mine" : ""}" data-id="${d.id}">
             <div class="msg-meta">
-              <span class="msg-author">${esc(m.name || "Joueur")}</span>
+              <span class="msg-author">${esc(m.name || t("g_lb_player"))}</span>
               <span class="msg-time">${time}</span>
               ${canDel ? `<button class="msg-del" data-id="${d.id}" title="Supprimer">✕</button>` : ""}
             </div>
@@ -521,7 +521,7 @@ function renderForum(group) {
       });
       if (atBottom) listEl.scrollTop = listEl.scrollHeight;
     },
-    () => { listEl.innerHTML = `<p class="empty-state">Forum indisponible.</p>`; }
+    () => { listEl.innerHTML = `<p class="empty-state">${t("g_forum_unavailable")}</p>`; }
   );
 }
 
@@ -539,7 +539,7 @@ async function renderPredictions(group) {
   mineSnap.forEach((d) => { const v = d.data(); if (v.uid === me.uid) mine[v.matchId] = v; });
 
   if (!upcoming.length) {
-    el.innerHTML = `<p class="empty-state">Aucun match à venir pour le moment.</p>`;
+    el.innerHTML = `<p class="empty-state">${t("g_no_upcoming")}</p>`;
     return;
   }
 
@@ -557,7 +557,7 @@ async function renderPredictions(group) {
         <div class="pred-controls">
           <div class="picks" role="group" aria-label="Résultat">${btn("home", "1")}${btn("draw", "N")}${btn("away", "2")}</div>
           <div class="score-in">
-            <span class="score-lbl">Score</span>
+            <span class="score-lbl">${t("g_score")}</span>
             <input type="number" min="0" max="20" class="sc" data-m="${m.id}" data-s="sh" value="${p.sh ?? ""}" placeholder="–" />
             <span class="dash">–</span>
             <input type="number" min="0" max="20" class="sc" data-m="${m.id}" data-s="sa" value="${p.sa ?? ""}" placeholder="–" />
@@ -574,7 +574,7 @@ async function renderPredictions(group) {
     const m = matches.find((x) => x.id === matchId);
     if (m && hasStarted(m)) {
       lockRow(row);
-      tag.textContent = "🔒 match commencé, pronostic verrouillé";
+      tag.textContent = t("g_locked");
       return;
     }
     const pickEl = row.querySelector(".pick.on");
@@ -591,7 +591,7 @@ async function renderPredictions(group) {
         sa: sa === "" ? null : Number(sa),
         ts: serverTimestamp(),
       });
-      tag.textContent = "✅ enregistré";
+      tag.textContent = t("g_saved");
       setTimeout(() => (tag.textContent = ""), 1500);
     } catch (e) { tag.textContent = "❌"; }
   };
@@ -635,7 +635,7 @@ async function renderLeaderboard(group) {
       const p = points(pr, e.actual);
       pts += p; if (p === 3) exact++;
     }
-    rows.push({ uid, name: info.name || "Joueur", pts, exact, played, bot: false });
+    rows.push({ uid, name: info.name || t("g_lb_player"), pts, exact, played, bot: false });
   }
   // bot — sur les MÊMES matchs (depuis la création du groupe)
   let bpts = 0, bexact = 0;
@@ -644,28 +644,28 @@ async function renderLeaderboard(group) {
     const p = points(botPred, e.actual);
     bpts += p; if (p === 3) bexact++;
   }
-  rows.push({ name: "Bot du site", pts: bpts, exact: bexact, played: settled.length, bot: true });
+  rows.push({ name: t("g_bot"), pts: bpts, exact: bexact, played: settled.length, bot: true });
 
   rows.sort((a, b) => b.pts - a.pts || b.exact - a.exact);
 
   el.innerHTML = `
     <div class="rules-card">
-      <b>📜 Règles</b>
+      <b>${t("g_rules")}</b>
       <ul>
-        <li>🎯 <b>Score exact</b> = <b>3 pts</b> · ✅ <b>bon résultat</b> (1N2) = <b>2 pts</b> · ❌ raté = 0</li>
-        <li>⏱️ Seuls comptent les matchs <b>à partir de la création du groupe</b>.</li>
-        <li>🔒 Un pronostic se verrouille au <b>coup d'envoi</b> du match.</li>
+        <li>${t("g_rule1")}</li>
+        <li>${t("g_rule2")}</li>
+        <li>${t("g_rule3")}</li>
       </ul>
     </div>
-    <div class="lb-note">${settled.length} match(s) comptabilisé(s) depuis la création du groupe</div>
+    <div class="lb-note">${t("g_lb_note", { n: settled.length })}</div>
     <div class="lb">
-      <div class="lb-h"><span>#</span><span>Joueur</span><span>Joués</span><span>Exacts</span><span>Points</span></div>
+      <div class="lb-h"><span>#</span><span>${t("g_lb_player")}</span><span>${t("g_lb_played")}</span><span>${t("g_lb_exact")}</span><span>${t("g_lb_points")}</span></div>
       ${rows.map((r, i) => {
         const canRemove = isOwner && !r.bot && r.uid !== me.uid;
         return `
         <div class="lb-row ${r.bot ? "is-bot" : ""}">
           <span class="lb-rank">${i + 1}</span>
-          <span class="lb-name">${r.bot ? "🤖 " : ""}${esc(r.name)}${canRemove ? `<button class="lb-del" data-uid="${r.uid}" title="Retirer ${esc(r.name)} du groupe">✕</button>` : ""}</span>
+          <span class="lb-name">${r.bot ? "🤖 " : ""}${esc(r.name)}${canRemove ? `<button class="lb-del" data-uid="${r.uid}" title="${esc(r.name)}">✕</button>` : ""}</span>
           <span class="lb-num">${r.played}</span>
           <span class="lb-num">${r.exact}</span>
           <span class="lb-pts">${r.pts}</span>
@@ -676,7 +676,7 @@ async function renderLeaderboard(group) {
   el.querySelectorAll(".lb-del").forEach((b) => {
     b.onclick = async () => {
       const uid = b.dataset.uid;
-      if (!confirm("Retirer ce membre du groupe ?")) return;
+      if (!confirm(t("g_remove_member"))) return;
       try {
         await updateDoc(doc(db, "groups", group.id), {
           [`members.${uid}`]: deleteField(),
@@ -684,7 +684,7 @@ async function renderLeaderboard(group) {
         });
         if (group.members) delete group.members[uid];
         await renderLeaderboard(group);
-      } catch (e) { alert("Retrait impossible : " + (e.message || e)); }
+      } catch (e) { alert((e.message || e)); }
     };
   });
 }
@@ -704,5 +704,11 @@ async function renderLeaderboard(group) {
     } catch {}
     await tryJoinFromUrl();
     await renderApp();
+  });
+
+  // re-render quand la langue change
+  document.addEventListener("i18n:changed", () => {
+    if (!auth.currentUser) renderAuth();
+    else renderApp();
   });
 })();

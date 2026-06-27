@@ -25,6 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="i18n.js"></script>
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -40,35 +41,36 @@
       </div>
       <div class="brand-text">
         <span class="brand-title">Chat Game<br />Prediction Technology</span>
-        <span class="brand-sub">Coupe du Monde 2026</span>
+        <span class="brand-sub" data-i18n="brand_sub">Coupe du Monde 2026</span>
       </div>
     </a>
     <nav class="header-nav">
-      <a href="index.html" class="nav-link">Pronostics</a>
-      <a href="simulateur.html" class="nav-link">Qui va gagner&nbsp;?</a>
-      <a href="groupes.html" class="nav-link active">Groupes</a>
-      <a href="historique.html" class="nav-link">Historique</a>
+      <a href="index.html" class="nav-link" data-i18n="nav_predictions">Pronostics</a>
+      <a href="simulateur.html" class="nav-link" data-i18n="nav_winner">Qui va gagner&nbsp;?</a>
+      <a href="groupes.html" class="nav-link active" data-i18n="nav_groups">Groupes</a>
+      <a href="historique.html" class="nav-link" data-i18n="nav_history">Historique</a>
+      <span class="lang-switch" data-lang-switcher></span>
     </nav>
   </header>
 
   <main>
     <section class="hero" style="padding-bottom:18px">
-      <p class="eyebrow">Entre amis</p>
-      <h1>Groupes &amp; classement</h1>
-      <p class="hero-lede">
+      <p class="eyebrow" data-i18n="grp_eyebrow">Entre amis</p>
+      <h1 data-i18n="grp_h1">Groupes &amp; classement</h1>
+      <p class="hero-lede" data-i18n="grp_lede">
         Crée un groupe, invite tes amis, pronostique chaque match à venir et
         grimpe au classement, le 🤖 bot du site joue aussi !
       </p>
     </section>
 
     <section id="app" class="app-shell" aria-live="polite">
-      <p class="empty-state">Chargement…</p>
+      <p class="empty-state" data-i18n="grp_loading">Chargement…</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p><strong>Avertissement.</strong> Jeu de pronostics entre amis, à but de divertissement.</p>
-    <p class="footer-credit">Comptes &amp; données : Firebase · CDM 2026</p>
+    <p><strong data-i18n="foot_disclaimer_label">Avertissement.</strong> <span data-i18n="grp_foot_disclaimer">Jeu de pronostics entre amis, à but de divertissement.</span></p>
+    <p class="footer-credit" data-i18n="grp_foot_credit">Comptes &amp; données : Firebase · CDM 2026</p>
   </footer>
 
   <script src="firebase-config.js"></script>

@@ -35,6 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="i18n.js"></script>
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -50,34 +51,35 @@
       </div>
       <div class="brand-text">
         <span class="brand-title">Chat Game<br />Prediction Technology</span>
-        <span class="brand-sub">Coupe du Monde 2026</span>
+        <span class="brand-sub" data-i18n="brand_sub">Coupe du Monde 2026</span>
       </div>
     </a>
     <nav class="header-nav">
-      <a href="index.html" class="nav-link active">Pronostics</a>
-      <a href="simulateur.html" class="nav-link">Qui va gagner&nbsp;?</a>
-      <a href="groupes.html" class="nav-link">Groupes</a>
-      <a href="historique.html" class="nav-link">Historique</a>
+      <a href="index.html" class="nav-link active" data-i18n="nav_predictions">Pronostics</a>
+      <a href="simulateur.html" class="nav-link" data-i18n="nav_winner">Qui va gagner&nbsp;?</a>
+      <a href="groupes.html" class="nav-link" data-i18n="nav_groups">Groupes</a>
+      <a href="historique.html" class="nav-link" data-i18n="nav_history">Historique</a>
+      <span class="lang-switch" data-lang-switcher></span>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <p class="eyebrow">Prédictions par intelligence artificielle</p>
+      <p class="eyebrow" data-i18n="idx_eyebrow">Prédictions par intelligence artificielle</p>
       <h1>Chat Game<br />Prediction Technology</h1>
-      <p class="hero-lede">
+      <p class="hero-lede" data-i18n="idx_lede">
         Probabilités de victoire, scores attendus et buteurs probables générés par l'IA
         pour chaque match à venir du Mondial 2026.
       </p>
-      <p class="hero-pitch">
+      <p class="hero-pitch" data-i18n-html="idx_pitch">
         🎯 <b>Partage tes pronostics avec tes amis</b> et grimpe au classement&nbsp;!
       </p>
-      <p class="hero-pitch-bot">
+      <p class="hero-pitch-bot" data-i18n-html="idx_pitchbot">
         Le 🤖 <b>bot du site joue aussi&nbsp;!</b> Va-t-il vous battre&nbsp;?
       </p>
       <div class="hero-cta">
-        <a href="groupes.html" class="btn-hero">👥 Créer un groupe entre amis</a>
-        <a href="simulateur.html" class="btn-hero ghost">🏆 Qui va gagner&nbsp;?</a>
+        <a href="groupes.html" class="btn-hero" data-i18n="idx_cta_group">👥 Créer un groupe entre amis</a>
+        <a href="simulateur.html" class="btn-hero ghost" data-i18n="idx_cta_winner">🏆 Qui va gagner&nbsp;?</a>
       </div>
       <div class="hero-stats" id="heroStats"></div>
     </section>
@@ -88,23 +90,24 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" />
         </svg>
-        <input type="search" id="searchInput" placeholder="Rechercher une équipe…" aria-label="Rechercher une équipe" />
+        <input type="search" id="searchInput" placeholder="Rechercher une équipe…" aria-label="Rechercher une équipe" data-i18n-attr="placeholder:idx_search_ph;aria-label:idx_search_ph" />
       </div>
     </section>
 
     <section class="matches" id="matchList" aria-live="polite"></section>
 
-    <p class="empty-state" id="emptyState" hidden>Aucun match ne correspond à votre recherche.</p>
+    <p class="empty-state" id="emptyState" hidden data-i18n="idx_empty">Aucun match ne correspond à votre recherche.</p>
   </main>
 
   <footer class="site-footer">
     <p>
-      <strong>Avertissement.</strong> Ces pronostics sont générés automatiquement à des fins
-      d'illustration et de divertissement. Ils ne constituent pas un conseil de pari.
+      <strong data-i18n="foot_disclaimer_label">Avertissement.</strong>
+      <span data-i18n="idx_foot_disclaimer">Ces pronostics sont générés automatiquement à des fins
+      d'illustration et de divertissement. Ils ne constituent pas un conseil de pari.</span>
     </p>
-    <p class="footer-credit">Modèle prédictif · données réelles agrégées (paris · forme · presse · X) · CDM 2026</p>
+    <p class="footer-credit" data-i18n="idx_foot_credit">Modèle prédictif · données réelles agrégées (paris · forme · presse · X) · CDM 2026</p>
     <p class="footer-update">
-      <span class="pill"><span class="dot"></span> Modèle mis à jour</span>
+      <span class="pill"><span class="dot"></span> <span data-i18n="foot_updated">Modèle mis à jour</span></span>
       <span class="updated" id="lastUpdated">…</span>
     </p>
   </footer>

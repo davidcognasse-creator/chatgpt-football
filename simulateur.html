@@ -25,6 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="i18n.js"></script>
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -40,22 +41,23 @@
       </div>
       <div class="brand-text">
         <span class="brand-title">Chat Game<br />Prediction Technology</span>
-        <span class="brand-sub">Coupe du Monde 2026</span>
+        <span class="brand-sub" data-i18n="brand_sub">Coupe du Monde 2026</span>
       </div>
     </a>
     <nav class="header-nav">
-      <a href="index.html" class="nav-link">Pronostics</a>
-      <a href="simulateur.html" class="nav-link active">Qui va gagner&nbsp;?</a>
-      <a href="groupes.html" class="nav-link">Groupes</a>
-      <a href="historique.html" class="nav-link">Historique</a>
+      <a href="index.html" class="nav-link" data-i18n="nav_predictions">Pronostics</a>
+      <a href="simulateur.html" class="nav-link active" data-i18n="nav_winner">Qui va gagner&nbsp;?</a>
+      <a href="groupes.html" class="nav-link" data-i18n="nav_groups">Groupes</a>
+      <a href="historique.html" class="nav-link" data-i18n="nav_history">Historique</a>
+      <span class="lang-switch" data-lang-switcher></span>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <p class="eyebrow">Estimation du vainqueur</p>
-      <h1>Qui va gagner<br />la Coupe du Monde&nbsp;?</h1>
-      <p class="hero-lede">
+      <p class="eyebrow" data-i18n="sim_eyebrow">Estimation du vainqueur</p>
+      <h1 data-i18n-html="sim_h1">Qui va gagner<br />la Coupe du Monde&nbsp;?</h1>
+      <p class="hero-lede" data-i18n="sim_lede">
         Probabilités de titre estimées à partir des marchés agrégés, recalculées
         après chaque match joué.
       </p>
@@ -63,15 +65,15 @@
     </section>
 
     <section class="sim-block">
-      <h2 class="sim-title">🏆 Probabilités de titre</h2>
+      <h2 class="sim-title" data-i18n="sim_title">🏆 Probabilités de titre</h2>
       <div class="champ-list" id="champList"></div>
       <p class="sim-note" id="winnerUpdated"></p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p><strong>Avertissement.</strong> Estimations générées automatiquement à des fins d'illustration. Ne constituent pas un conseil de pari.</p>
-    <p class="footer-credit">Probabilités de titre = marchés outright agrégés · CDM 2026</p>
+    <p><strong data-i18n="foot_disclaimer_label">Avertissement.</strong> <span data-i18n="sim_foot_disclaimer">Estimations générées automatiquement à des fins d'illustration. Ne constituent pas un conseil de pari.</span></p>
+    <p class="footer-credit" data-i18n="sim_foot_credit">Probabilités de titre = marchés outright agrégés · CDM 2026</p>
   </footer>
 
   <script src="winner.js"></script>

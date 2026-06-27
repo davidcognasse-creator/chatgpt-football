@@ -5,6 +5,10 @@
   const champListEl = document.getElementById("champList");
   const winnerUpdatedEl = document.getElementById("winnerUpdated");
 
+  const t = (k, v) => (window.t ? window.t(k, v) : k);
+  const LOC = { fr: "fr-FR", en: "en-GB", es: "es-ES", pt: "pt-PT", de: "de-DE", it: "it-IT", sw: "sw-KE" };
+  const locale = () => LOC[window.getLang ? window.getLang() : "fr"] || "fr-FR";
+
   async function loadJSON(url, fallbackGlobal) {
     try {
       const res = await fetch(url, { cache: "no-store" });
@@ -19,7 +23,7 @@
   /* ---------- Probabilités de titre ---------- */
   function renderWinner(winner) {
     if (!winner || !winner.teams || !winner.teams.length) {
-      champListEl.innerHTML = '<p class="empty-state">Estimation de titre indisponible.</p>';
+      champListEl.innerHTML = `<p class="empty-state">${t("sim_unavailable")}</p>`;
       return;
     }
     const teams = winner.teams.slice().sort((a, b) => b.prob - a.prob);
@@ -31,7 +35,7 @@
         <div class="champ-hero-flag">${flagHTML(top, 48)}</div>
         <div>
           <div class="stat-value">${top.name}</div>
-          <div class="stat-label">Favori pour le titre · ${top.prob}%</div>
+          <div class="stat-label">${t("sim_fav_label", { p: top.prob })}</div>
         </div>
       </div>`;
 
@@ -47,11 +51,12 @@
       .join("");
 
     if (winner.updatedAt) {
-      winnerUpdatedEl.textContent =
-        "Mis à jour le " +
-        new Date(winner.updatedAt).toLocaleDateString("fr-FR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+      const d = new Date(winner.updatedAt).toLocaleDateString(locale(), { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+      winnerUpdatedEl.textContent = t("sim_updated", { d });
     }
   }
 
-  loadJSON("winner.json", "WC_WINNER").then(renderWinner);
+  let lastWinner = null;
+  loadJSON("winner.json", "WC_WINNER").then((w) => { lastWinner = w; renderWinner(w); });
+  document.addEventListener("i18n:changed", () => renderWinner(lastWinner));
 })();
