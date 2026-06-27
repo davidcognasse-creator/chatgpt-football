@@ -40,8 +40,13 @@ et le stockage des pronostics. Voici la mise en place (~10 min, une seule fois).
 ## C'est prêt 🎉
 Sur **https://chatgpt.football/groupes.html** :
 - crée un compte (e-mail ou Google),
-- crée un groupe, copie le **lien d'invitation** et envoie-le à tes amis,
+- crée un groupe, copie le **lien d'invitation** (ou invite par **e-mail**) et envoie-le à tes amis,
 - chacun pronostique les matchs à venir (1N2 + score),
-- le **classement** se met à jour avec les vrais résultats — le **🤖 bot du site** y est aussi !
+- le **classement** se met à jour avec les vrais résultats — le **🤖 bot du site** y est aussi !,
+- un **forum** par groupe permet de discuter en temps réel,
+- chacun peut gérer ou **supprimer son compte** depuis l'onglet **Profil**.
+
+> ⚠️ Si tu avais déjà publié `firestore.rules`, **republie-le** : il a évolué
+> (forum, départ de groupe, suppression de pronostics/compte).
 
 **Barème :** score exact = **3 pts**, bon résultat (1N2) = **2 pts**.

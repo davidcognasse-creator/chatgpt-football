@@ -8,7 +8,8 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import {
   getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, addDoc,
-  collection, getDocs, query, where, arrayUnion, arrayRemove, deleteField, serverTimestamp,
+  collection, getDocs, query, where, orderBy, limit, onSnapshot,
+  arrayUnion, arrayRemove, deleteField, serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const appEl = document.getElementById("app");
@@ -49,6 +50,7 @@ let history = [];       // résultats (history.json)
 let myGroups = [];      // groupes de l'utilisateur
 let activeGroupId = null;
 let showProfile = false; // affiche l'onglet Profil à la place du contenu groupe
+let forumUnsub = null;   // désabonnement du flux temps réel du forum
 
 /* ---------- données du site ---------- */
 async function loadSiteData() {
@@ -206,6 +208,7 @@ async function createGroup(name) {
 
 /* ================= APP (connecté) ================= */
 async function renderApp() {
+  if (forumUnsub) { forumUnsub(); forumUnsub = null; } // on coupe l'ancien flux forum
   await refreshGroups();
   const group = myGroups.find((g) => g.id === activeGroupId) || null;
 
@@ -362,9 +365,11 @@ function renderGroup(group) {
     <div class="tabs">
       <button class="tab active" data-tab="pred">⚽ Mes pronostics</button>
       <button class="tab" data-tab="rank">🏆 Classement</button>
+      <button class="tab" data-tab="forum">💬 Forum</button>
     </div>
     <div id="tabPred"></div>
-    <div id="tabRank" hidden></div>`;
+    <div id="tabRank" hidden></div>
+    <div id="tabForum" hidden></div>`;
 }
 
 async function wireGroup(group) {
@@ -392,11 +397,84 @@ async function wireGroup(group) {
       appEl.querySelectorAll(".tab").forEach((x) => x.classList.toggle("active", x === t));
       document.getElementById("tabPred").hidden = t.dataset.tab !== "pred";
       document.getElementById("tabRank").hidden = t.dataset.tab !== "rank";
+      document.getElementById("tabForum").hidden = t.dataset.tab !== "forum";
     };
   });
 
   await renderPredictions(group);
   await renderLeaderboard(group);
+  renderForum(group);
+}
+
+/* ---------- forum du groupe ---------- */
+function renderForum(group) {
+  const el = document.getElementById("tabForum");
+  el.innerHTML = `
+    <div class="forum">
+      <div class="forum-list" id="forumList"><p class="empty-state">Chargement…</p></div>
+      <form class="forum-form" id="forumForm">
+        <input type="text" id="forumInput" maxlength="500" autocomplete="off"
+          placeholder="Écris un message au groupe…" />
+        <button type="submit" class="btn-primary forum-send">Envoyer</button>
+      </form>
+    </div>`;
+
+  const listEl = document.getElementById("forumList");
+  const form = document.getElementById("forumForm");
+  const input = document.getElementById("forumInput");
+
+  // envoi d'un message
+  form.onsubmit = async (e) => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = "";
+    try {
+      await addDoc(collection(db, "groups", group.id, "messages"), {
+        uid: me.uid, name: myName(), text, ts: serverTimestamp(),
+      });
+    } catch (err) {
+      input.value = text;
+      alert("Message non envoyé : " + (err.message || err));
+    }
+  };
+
+  // flux temps réel des messages (les 200 derniers, ordre chronologique)
+  if (forumUnsub) { forumUnsub(); forumUnsub = null; }
+  const qy = query(collection(db, "groups", group.id, "messages"), orderBy("ts", "asc"), limit(200));
+  forumUnsub = onSnapshot(qy,
+    (snap) => {
+      if (snap.empty) {
+        listEl.innerHTML = `<p class="empty-state">Aucun message. Lance la discussion ! 💬</p>`;
+        return;
+      }
+      const atBottom = listEl.scrollHeight - listEl.scrollTop - listEl.clientHeight < 80;
+      listEl.innerHTML = snap.docs.map((d) => {
+        const m = d.data();
+        const mine = m.uid === me.uid;
+        const time = m.ts && m.ts.toDate
+          ? m.ts.toDate().toLocaleString("fr-FR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })
+          : "…";
+        const canDel = mine || (group.ownerUid === me.uid);
+        return `
+          <div class="msg ${mine ? "mine" : ""}" data-id="${d.id}">
+            <div class="msg-meta">
+              <span class="msg-author">${esc(m.name || "Joueur")}</span>
+              <span class="msg-time">${time}</span>
+              ${canDel ? `<button class="msg-del" data-id="${d.id}" title="Supprimer">✕</button>` : ""}
+            </div>
+            <div class="msg-text">${esc(m.text)}</div>
+          </div>`;
+      }).join("");
+      listEl.querySelectorAll(".msg-del").forEach((b) => {
+        b.onclick = async () => {
+          try { await deleteDoc(doc(db, "groups", group.id, "messages", b.dataset.id)); } catch {}
+        };
+      });
+      if (atBottom) listEl.scrollTop = listEl.scrollHeight;
+    },
+    () => { listEl.innerHTML = `<p class="empty-state">Forum indisponible.</p>`; }
+  );
 }
 
 /* ---------- pronostics ---------- */

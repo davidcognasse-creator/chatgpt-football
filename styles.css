@@ -193,6 +193,33 @@ h1, h2, h3, .brand-title { font-family: "Sora", "Inter", sans-serif; }
 .btn-danger:hover { filter: brightness(1.06); }
 .btn-danger:disabled { opacity: 0.6; cursor: default; }
 .del-status { display: block; margin-top: 10px; font-size: 0.82rem; color: var(--muted); }
+
+/* forum du groupe */
+.forum { display: flex; flex-direction: column; gap: 12px; }
+.forum-list {
+  max-height: 56vh; min-height: 220px; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 10px; padding: 4px;
+}
+.msg {
+  max-width: 82%; align-self: flex-start;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--card-border);
+  border-radius: 14px; padding: 9px 12px;
+}
+.msg.mine {
+  align-self: flex-end;
+  background: linear-gradient(135deg, rgba(91,140,255,0.18), rgba(163,107,255,0.18));
+  border-color: rgba(120,150,220,0.35);
+}
+.msg-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
+.msg-author { font-weight: 700; font-size: 0.8rem; color: var(--accent); }
+.msg.mine .msg-author { color: var(--text); }
+.msg-time { font-size: 0.7rem; color: var(--muted-soft); }
+.msg-del { margin-left: auto; background: none; border: none; color: var(--muted-soft); cursor: pointer; font-size: 0.78rem; padding: 0 2px; line-height: 1; }
+.msg-del:hover { color: #ff8a98; }
+.msg-text { font-size: 0.92rem; line-height: 1.4; white-space: pre-wrap; word-break: break-word; }
+.forum-form { display: flex; gap: 8px; }
+.forum-form input { flex: 1; margin: 0; }
+.forum-send { width: auto; padding: 12px 18px; white-space: nowrap; }
 .btn-google {
   width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
   font: inherit; font-weight: 600; color: #1f2330; background: #fff; border: none;

@@ -53,6 +53,21 @@ service cloud.firestore {
         // Chacun peut supprimer ses propres pronostics (suppression de compte).
         allow delete: if signedIn() && resource.data.uid == uid();
       }
+
+      // Forum du groupe : lisible par les connectés ; chacun poste sous son nom ;
+      // suppression par l'auteur ou le propriétaire du groupe.
+      match /messages/{mid} {
+        allow read: if signedIn();
+        allow create: if signedIn()
+          && request.resource.data.uid == uid()
+          && request.resource.data.text is string
+          && request.resource.data.text.size() > 0
+          && request.resource.data.text.size() <= 500;
+        allow delete: if signedIn() && (
+          resource.data.uid == uid()
+          || get(/databases/$(database)/documents/groups/$(gid)).data.ownerUid == uid()
+        );
+      }
     }
   }
 }
