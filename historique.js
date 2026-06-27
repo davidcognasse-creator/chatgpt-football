@@ -69,8 +69,10 @@
 
         <div class="hist-compare">
           <div class="cmp">
-            <span class="cmp-label">Pronostic IA</span>
-            <span class="cmp-val">${predName} <b>${predProb}%</b> · ${e.predicted.score.home}–${e.predicted.score.away}</span>
+            <span class="cmp-label">Pronostic IA
+              <span class="cmp-prob" title="Probabilité estimée par l'IA pour ce pronostic (la plus élevée des 3 issues 1·N·2)">${predProb}%</span>
+            </span>
+            <span class="cmp-val">${predName} · ${e.predicted.score.home}–${e.predicted.score.away}</span>
           </div>
           <div class="cmp">
             <span class="cmp-label">Résultat réel</span>
