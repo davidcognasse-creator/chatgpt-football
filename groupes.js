@@ -258,10 +258,7 @@ function renderGroup(group) {
         <div class="group-name">${esc(group.name)}</div>
         <div class="group-meta">${Object.keys(group.members || {}).length} membre(s)</div>
       </div>
-      <div class="invite-actions">
-        <button class="btn-soft" id="btnInvite">🔗 Copier le lien</button>
-        <a class="btn-wa" id="btnWhats" target="_blank" rel="noopener">💬 Inviter sur WhatsApp</a>
-      </div>
+      <button class="btn-soft" id="btnInvite">🔗 Copier le lien d'invitation</button>
     </div>
     <div class="tabs">
       <button class="tab active" data-tab="pred">⚽ Mes pronostics</button>
@@ -278,20 +275,7 @@ async function wireGroup(group) {
     try { await navigator.clipboard.writeText(inviteLink); } catch {}
     const b = document.getElementById("btnInvite");
     b.textContent = "✅ Lien copié !";
-    setTimeout(() => (b.textContent = "🔗 Copier le lien"), 2000);
-  };
-
-  // invitation WhatsApp
-  const waMsg = `Rejoins mon groupe de pronostics « ${group.name} » sur Chat Game Prediction Technology ⚽ : ${inviteLink}`;
-  const btnWhats = document.getElementById("btnWhats");
-  // Repli : lien wa.me (mobile surtout) avec le message pré-rempli.
-  btnWhats.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(waMsg)}`;
-  btnWhats.onclick = (ev) => {
-    // Sur mobile, le partage natif ouvre WhatsApp avec le message déjà rempli.
-    if (navigator.share) {
-      ev.preventDefault();
-      navigator.share({ title: `Pronostics · ${group.name}`, text: waMsg }).catch(() => {});
-    }
+    setTimeout(() => (b.textContent = "🔗 Copier le lien d'invitation"), 2000);
   };
 
   // tabs
