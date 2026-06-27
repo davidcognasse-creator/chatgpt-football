@@ -77,7 +77,7 @@
     const stats = [{ value: matches.length, label: "Matchs analysés" }];
     if (acc) stats.push({ value: acc.pct + "%", label: `Précision (${acc.total} matchs)` });
     stats.push({ value: avgConf + "%", label: "Confiance moyenne" });
-    stats.push({ value: next ? favoredName(next) : "—", label: "Prochain favori" });
+    stats.push({ value: next ? favoredName(next) : "…", label: "Prochain favori" });
     if (!acc) stats.push({ value: String(nSources), label: "Sources agrégées" });
     heroStatsEl.innerHTML = stats
       .map(
@@ -116,8 +116,8 @@
 
   /* ---------- bloc sources ---------- */
   const SRC_HINTS = {
-    Forme: "5 derniers matchs, du plus récent au plus ancien — V victoire · N nul · D défaite",
-    "Face-à-face": "Bilan des confrontations passées — V victoires · N nuls · D défaites",
+    Forme: "5 derniers matchs, du plus récent au plus ancien · V victoire · N nul · D défaite",
+    "Face-à-face": "Bilan des confrontations passées · V victoires · N nuls · D défaites",
   };
 
   function sourceRow(m, src) {

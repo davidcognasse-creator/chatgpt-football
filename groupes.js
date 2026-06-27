@@ -273,7 +273,7 @@ function renderProfile() {
       <h3>⚙️ Mon profil</h3>
       <dl class="profile-info">
         <div><dt>Nom</dt><dd>${esc(myName())}</dd></div>
-        <div><dt>E-mail</dt><dd>${esc(me.email || "—")}</dd></div>
+        <div><dt>E-mail</dt><dd>${esc(me.email || "non renseigné")}</dd></div>
         <div><dt>Connexion</dt><dd>${via}</dd></div>
         <div><dt>Groupes</dt><dd>${myGroups.length}</dd></div>
       </dl>
@@ -409,7 +409,7 @@ async function wireGroup(group) {
   };
 
   // invitation par e-mail (ouvre le client mail avec un message pré-rempli)
-  const subject = `Invitation — groupe de pronostics « ${group.name} »`;
+  const subject = `Invitation au groupe de pronostics « ${group.name} »`;
   const body =
     `Salut !\n\nJe t'invite à rejoindre mon groupe de pronostics « ${group.name} » ` +
     `sur Chat Game Prediction Technology ⚽\n\nClique sur ce lien pour participer :\n${inviteLink}\n\n` +
@@ -552,7 +552,7 @@ async function renderPredictions(group) {
     const m = matches.find((x) => x.id === matchId);
     if (m && hasStarted(m)) {
       lockRow(row);
-      tag.textContent = "🔒 match commencé — pronostic verrouillé";
+      tag.textContent = "🔒 match commencé, pronostic verrouillé";
       return;
     }
     const pickEl = row.querySelector(".pick.on");
