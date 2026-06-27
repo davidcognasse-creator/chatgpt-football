@@ -1,11 +1,13 @@
 name: Actualiser les pronostics
 
 # Le robot régénère data.json / data.js à partir des sources (paris, presse, X)
-# puis committe les changements. Planifié 1×/jour à 07:00 UTC (économie du quota
-# The Odds API avec les player props "buteurs") + déclenchement manuel.
+# puis committe les changements. Planifié 2×/jour : 07:00 UTC (≈ 9 h Paris) pour la
+# passe du matin, et 16:00 UTC (= 18 h Paris l'été) pour rafraîchir les cotes avant
+# les coups d'envoi du soir. Déclenchement manuel toujours possible.
 on:
   schedule:
     - cron: "0 7 * * *"
+    - cron: "0 16 * * *"
   workflow_dispatch:
     inputs:
       mode:

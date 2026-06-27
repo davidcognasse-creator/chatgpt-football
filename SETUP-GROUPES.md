@@ -44,4 +44,4 @@ Sur **https://chatgpt.football/groupes.html** :
 - chacun pronostique les matchs à venir (1N2 + score),
 - le **classement** se met à jour avec les vrais résultats — le **🤖 bot du site** y est aussi !
 
-**Barème :** score exact = **3 pts**, bon résultat (1N2) = **1 pt**.
+**Barème :** score exact = **3 pts**, bon résultat (1N2) = **2 pts**.

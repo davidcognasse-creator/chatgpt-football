@@ -28,7 +28,7 @@
 
     champStatEl.innerHTML = `
       <div class="stat champ-hero">
-        <div class="champ-hero-flag">${top.flag}</div>
+        <div class="champ-hero-flag">${flagHTML(top, 48)}</div>
         <div>
           <div class="stat-value">${top.name}</div>
           <div class="stat-label">Favori pour le titre · ${top.prob}%</div>
@@ -39,7 +39,7 @@
       .map((t, i) => `
         <div class="champ-row">
           <span class="champ-rank">${i + 1}</span>
-          <span class="champ-flag">${t.flag}</span>
+          <span class="champ-flag">${flagHTML(t, 22)}</span>
           <span class="champ-name">${t.name}</span>
           <div class="champ-bar"><div class="champ-fill" style="width:${Math.max(2, (t.prob / max) * 100)}%"></div></div>
           <span class="champ-prob">${t.prob}%</span>

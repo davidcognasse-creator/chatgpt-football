@@ -37,7 +37,26 @@
     new Date(iso).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
 
   const sideLabel = (m, key) =>
-    key === "home" ? m.home.flag : key === "away" ? m.away.flag : "Nul";
+    key === "home" ? flagHTML(m.home, 14) : key === "away" ? flagHTML(m.away, 14) : "Nul";
+
+  // « il y a 3 h » plutôt qu'une date brute.
+  function relativeTime(iso) {
+    const mins = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
+    if (mins < 1) return "à l'instant";
+    if (mins < 60) return `il y a ${mins} min`;
+    const h = Math.round(mins / 60);
+    if (h < 24) return `il y a ${h} h`;
+    return `il y a ${Math.round(h / 24)} j`;
+  }
+
+  // Précision du modèle calculée sur l'historique (history.js → window.WC_HISTORY).
+  function histAccuracy() {
+    const entries = (window.WC_HISTORY && window.WC_HISTORY.entries) || [];
+    const settled = entries.filter((e) => e.actual && e.predicted);
+    if (!settled.length) return null;
+    const correct = settled.filter((e) => e.predicted.favored === e.actual.outcome).length;
+    return { total: settled.length, pct: Math.round((correct / settled.length) * 100) };
+  }
 
   const favoredName = (m) => {
     const { home, draw, away } = m.probs;
@@ -56,12 +75,12 @@
     );
     const next = matches.find((m) => new Date(m.datetime) >= new Date()) || matches[0];
     const nSources = matches[0] && matches[0].sources ? Object.keys(matches[0].sources).length : 0;
-    const stats = [
-      { value: matches.length, label: "Matchs analysés" },
-      { value: avgConf + "%", label: "Confiance moyenne" },
-      { value: next ? favoredName(next) : "—", label: "Prochain favori" },
-      { value: String(nSources), label: "Sources agrégées" },
-    ];
+    const acc = histAccuracy();
+    const stats = [{ value: matches.length, label: "Matchs analysés" }];
+    if (acc) stats.push({ value: acc.pct + "%", label: `Précision (${acc.total} matchs)` });
+    stats.push({ value: avgConf + "%", label: "Confiance moyenne" });
+    stats.push({ value: next ? favoredName(next) : "—", label: "Prochain favori" });
+    if (!acc) stats.push({ value: String(nSources), label: "Sources agrégées" });
     heroStatsEl.innerHTML = stats
       .map(
         (s) =>
@@ -142,11 +161,11 @@
           <div class="scorers-head">⚽ Buteurs probables</div>
           <div class="scorers-grid">
             <div>
-              <div class="scorers-team">${m.home.flag} ${m.home.name}</div>
+              <div class="scorers-team">${flagHTML(m.home, 15)} ${m.home.name}</div>
               <ul class="scorer-list">${(sc.home || []).map(scorerItem).join("")}</ul>
             </div>
             <div>
-              <div class="scorers-team">${m.away.flag} ${m.away.name}</div>
+              <div class="scorers-team">${flagHTML(m.away, 15)} ${m.away.name}</div>
               <ul class="scorer-list">${(sc.away || []).map(scorerItem).join("")}</ul>
             </div>
           </div>
@@ -189,7 +208,7 @@
 
         <div class="teams">
           <div class="team">
-            <span class="flag">${m.home.flag}</span>
+            <span class="flag">${flagHTML(m.home, 34)}</span>
             <span class="tname">${m.home.name}</span>
           </div>
           <div class="score-pred">
@@ -197,7 +216,7 @@
             <span class="score">${m.predictedScore.home} – ${m.predictedScore.away}</span>
           </div>
           <div class="team">
-            <span class="flag">${m.away.flag}</span>
+            <span class="flag">${flagHTML(m.away, 34)}</span>
             <span class="tname">${m.away.name}</span>
           </div>
         </div>
@@ -208,9 +227,9 @@
           <div class="prob-seg away" style="width:${away}%"></div>
         </div>
         <div class="prob-legend">
-          <span class="lg home"><b>${home}%</b>&nbsp;${m.home.flag}</span>
+          <span class="lg home"><b>${home}%</b>&nbsp;${flagHTML(m.home, 13)}</span>
           <span class="lg draw"><b>${draw}%</b>&nbsp;Nul</span>
-          <span class="lg away"><b>${away}%</b>&nbsp;${m.away.flag}</span>
+          <span class="lg away"><b>${away}%</b>&nbsp;${flagHTML(m.away, 13)}</span>
         </div>
 
         <div class="confidence">
@@ -253,14 +272,8 @@
       );
 
       if (data.updatedAt) {
-        updatedEl.textContent =
-          "MàJ " +
-          new Date(data.updatedAt).toLocaleDateString("fr-FR", {
-            day: "numeric",
-            month: "short",
-            hour: "2-digit",
-            minute: "2-digit",
-          });
+        updatedEl.textContent = "Mis à jour " + relativeTime(data.updatedAt);
+        updatedEl.title = new Date(data.updatedAt).toLocaleString("fr-FR");
       }
 
       searchEl.addEventListener("input", (e) => {

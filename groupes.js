@@ -64,7 +64,7 @@ async function loadSiteData() {
 function points(pred, actual) {
   if (!pred) return 0;
   if (Number(pred.sh) === actual.home && Number(pred.sa) === actual.away) return 3;
-  if (pred.pick === actual.outcome) return 1;
+  if (pred.pick === actual.outcome) return 2;
   return 0;
 }
 
@@ -323,9 +323,9 @@ async function renderPredictions(group) {
     return `
       <div class="pred-row" data-m="${m.id}">
         <div class="pred-head">
-          <div class="pteam"><span class="pflag">${m.home.flag}</span><span class="pname">${esc(m.home.name)}</span></div>
+          <div class="pteam"><span class="pflag">${window.flagHTML(m.home, 34)}</span><span class="pname">${esc(m.home.name)}</span></div>
           <span class="pvs">VS</span>
-          <div class="pteam right"><span class="pname">${esc(m.away.name)}</span><span class="pflag">${m.away.flag}</span></div>
+          <div class="pteam"><span class="pflag">${window.flagHTML(m.away, 34)}</span><span class="pname">${esc(m.away.name)}</span></div>
         </div>
         <div class="pdate">🕐 ${fmtDate(m.datetime)}</div>
         <div class="pred-controls">
@@ -425,8 +425,8 @@ async function renderLeaderboard(group) {
     <div class="rules-card">
       <b>📜 Règles</b>
       <ul>
-        <li>🎯 <b>Score exact</b> = <b>3 pts</b> · ✅ <b>bon résultat</b> (1N2) = <b>1 pt</b> · ❌ raté = 0</li>
-        <li>⏱️ Seuls comptent les matchs <b>à partir de la création du groupe</b> — le 🤖 bot démarre <b>en même temps que vous</b>, sans avance.</li>
+        <li>🎯 <b>Score exact</b> = <b>3 pts</b> · ✅ <b>bon résultat</b> (1N2) = <b>2 pts</b> · ❌ raté = 0</li>
+        <li>⏱️ Seuls comptent les matchs <b>à partir de la création du groupe</b>.</li>
         <li>🔒 Un pronostic se verrouille au <b>coup d'envoi</b> du match.</li>
       </ul>
     </div>

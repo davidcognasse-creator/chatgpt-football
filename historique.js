@@ -33,14 +33,11 @@
   function renderStats(entries) {
     const total = entries.length;
     const correct = entries.filter(isCorrect).length;
-    const exact = entries.filter(isExact).length;
     const acc = total ? Math.round((correct / total) * 100) : 0;
-    const exactPct = total ? Math.round((exact / total) * 100) : 0;
     const stats = [
       { value: acc + "%", label: "Précision (1N2)" },
       { value: `${correct}/${total}`, label: "Bons pronostics" },
-      { value: `${exact}`, label: "Scores exacts" },
-      { value: exactPct + "%", label: "Taux score exact" },
+      { value: `${total}`, label: "Matchs terminés" },
     ];
     statsEl.innerHTML = stats
       .map(
@@ -65,9 +62,9 @@
         </div>
 
         <div class="hist-teams">
-          <span class="ht">${e.home.flag} ${e.home.name}</span>
+          <span class="ht">${flagHTML(e.home, 16)} ${e.home.name}</span>
           <span class="ht-score">${e.actual.home} – ${e.actual.away}</span>
-          <span class="ht ht-right">${e.away.name} ${e.away.flag}</span>
+          <span class="ht ht-right">${e.away.name} ${flagHTML(e.away, 16)}</span>
         </div>
 
         <div class="hist-compare">
