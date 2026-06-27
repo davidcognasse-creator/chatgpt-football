@@ -560,6 +560,13 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   max-width: 600px; margin: 16px auto 0; font-size: 1.05rem; line-height: 1.5; color: var(--text);
 }
 .hero-pitch b { color: var(--text); }
+.hero-pitch-bot {
+  max-width: 600px; margin: 6px auto 0; font-size: 0.98rem; color: var(--muted);
+}
+.hero-pitch-bot b {
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;
+}
 .hero-cta {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 22px;
 }
