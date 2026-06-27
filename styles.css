@@ -351,7 +351,9 @@ a.btn-soft { text-decoration: none; display: inline-flex; align-items: center; }
 .lb-row { border-top: 1px solid var(--card-border); font-size: 0.9rem; }
 .lb-row.is-bot { background: rgba(91,140,255,0.1); }
 .lb-rank { font-family: "Sora", sans-serif; font-weight: 700; color: var(--muted); }
-.lb-name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lb-name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center; gap: 6px; }
+.lb-del { flex: none; background: none; border: none; color: var(--muted-soft); cursor: pointer; font-size: 0.72rem; padding: 2px 4px; border-radius: 6px; line-height: 1; }
+.lb-del:hover { color: #ff8a98; background: rgba(255,90,110,0.12); }
 .lb-num { color: var(--muted); font-size: 0.85rem; }
 .lb-pts { font-family: "Sora", sans-serif; font-weight: 800; color: var(--text); }
 .lb-row:nth-child(2) .lb-pts { color: var(--draw); }

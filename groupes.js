@@ -210,7 +210,12 @@ async function createGroup(name) {
 async function renderApp() {
   if (forumUnsub) { forumUnsub(); forumUnsub = null; } // on coupe l'ancien flux forum
   await refreshGroups();
-  const group = myGroups.find((g) => g.id === activeGroupId) || null;
+  let group = myGroups.find((g) => g.id === activeGroupId) || null;
+
+  // Nettoyage : retire les membres dont le compte a été supprimé (côté proprio).
+  if (group && !showProfile) {
+    try { if (await pruneDeletedMembers(group)) { await refreshGroups(); group = myGroups.find((g) => g.id === activeGroupId) || group; } } catch {}
+  }
 
   const groupPicker = myGroups.length > 1
     ? `<select id="groupSel" class="group-sel">${myGroups.map((g) =>
@@ -236,6 +241,27 @@ async function renderApp() {
   if (showProfile) wireProfile();
   else if (!group) wireNoGroup();
   else await wireGroup(group);
+}
+
+// Retire d'un groupe les membres dont le compte a été supprimé (fiche users/
+// absente — l'upsert s'exécute à chaque connexion, donc une fiche manquante
+// signifie un compte supprimé). N'agit que pour le propriétaire du groupe.
+async function pruneDeletedMembers(group) {
+  if (!group || group.ownerUid !== me.uid) return false;
+  const updates = {};
+  const removed = [];
+  for (const uid of Object.keys(group.members || {})) {
+    if (uid === group.ownerUid) continue; // jamais le propriétaire
+    let exists = true;
+    try { exists = (await getDoc(doc(db, "users", uid))).exists(); } catch { exists = true; }
+    if (!exists) { updates[`members.${uid}`] = deleteField(); removed.push(uid); }
+  }
+  if (!removed.length) return false;
+  try {
+    await updateDoc(doc(db, "groups", group.id), { ...updates, memberUids: arrayRemove(...removed) });
+    removed.forEach((u) => { if (group.members) delete group.members[u]; });
+    return true;
+  } catch { return false; }
 }
 
 /* ---------- profil ---------- */
@@ -561,6 +587,7 @@ async function renderPredictions(group) {
 /* ---------- classement ---------- */
 async function renderLeaderboard(group) {
   const el = document.getElementById("tabRank");
+  const isOwner = group.ownerUid === me.uid;
 
   // Équité : on ne compte que les matchs dont le coup d'envoi est APRÈS la
   // création du groupe → le bot démarre en même temps que les membres.
@@ -586,7 +613,7 @@ async function renderLeaderboard(group) {
       const p = points(pr, e.actual);
       pts += p; if (p === 3) exact++;
     }
-    rows.push({ name: info.name || "Joueur", pts, exact, played, bot: false });
+    rows.push({ uid, name: info.name || "Joueur", pts, exact, played, bot: false });
   }
   // bot — sur les MÊMES matchs (depuis la création du groupe)
   let bpts = 0, bexact = 0;
@@ -611,15 +638,33 @@ async function renderLeaderboard(group) {
     <div class="lb-note">${settled.length} match(s) comptabilisé(s) depuis la création du groupe</div>
     <div class="lb">
       <div class="lb-h"><span>#</span><span>Joueur</span><span>Joués</span><span>Exacts</span><span>Points</span></div>
-      ${rows.map((r, i) => `
+      ${rows.map((r, i) => {
+        const canRemove = isOwner && !r.bot && r.uid !== me.uid;
+        return `
         <div class="lb-row ${r.bot ? "is-bot" : ""}">
           <span class="lb-rank">${i + 1}</span>
-          <span class="lb-name">${r.bot ? "🤖 " : ""}${esc(r.name)}</span>
+          <span class="lb-name">${r.bot ? "🤖 " : ""}${esc(r.name)}${canRemove ? `<button class="lb-del" data-uid="${r.uid}" title="Retirer ${esc(r.name)} du groupe">✕</button>` : ""}</span>
           <span class="lb-num">${r.played}</span>
           <span class="lb-num">${r.exact}</span>
           <span class="lb-pts">${r.pts}</span>
-        </div>`).join("")}
+        </div>`; }).join("")}
     </div>`;
+
+  // retrait d'un membre (propriétaire uniquement)
+  el.querySelectorAll(".lb-del").forEach((b) => {
+    b.onclick = async () => {
+      const uid = b.dataset.uid;
+      if (!confirm("Retirer ce membre du groupe ?")) return;
+      try {
+        await updateDoc(doc(db, "groups", group.id), {
+          [`members.${uid}`]: deleteField(),
+          memberUids: arrayRemove(uid),
+        });
+        if (group.members) delete group.members[uid];
+        await renderLeaderboard(group);
+      } catch (e) { alert("Retrait impossible : " + (e.message || e)); }
+    };
+  });
 }
 
 /* ================= bootstrap ================= */
