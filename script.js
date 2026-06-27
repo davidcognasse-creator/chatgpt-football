@@ -91,7 +91,16 @@
 
   /* ---------- filtres ---------- */
   function renderFilters() {
-    const stages = ["Tous", ...new Set(matches.map((m) => m.stage))];
+    const distinct = [...new Set(matches.map((m) => m.stage))];
+    // Une seule phase (ex. « À venir ») → filtre inutile, on masque la barre.
+    if (distinct.length <= 1) {
+      filtersEl.innerHTML = "";
+      filtersEl.hidden = true;
+      activeStage = "Tous";
+      return;
+    }
+    filtersEl.hidden = false;
+    const stages = ["Tous", ...distinct];
     filtersEl.innerHTML = stages
       .map(
         (s) =>
