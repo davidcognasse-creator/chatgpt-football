@@ -258,7 +258,10 @@ function renderGroup(group) {
         <div class="group-name">${esc(group.name)}</div>
         <div class="group-meta">${Object.keys(group.members || {}).length} membre(s)</div>
       </div>
-      <button class="btn-soft" id="btnInvite">🔗 Copier le lien d'invitation</button>
+      <div class="invite-actions">
+        <button class="btn-soft" id="btnInvite">🔗 Copier le lien d'invitation</button>
+        <a class="btn-soft" id="btnEmail">✉️ Inviter par e-mail</a>
+      </div>
     </div>
     <div class="tabs">
       <button class="tab active" data-tab="pred">⚽ Mes pronostics</button>
@@ -277,6 +280,15 @@ async function wireGroup(group) {
     b.textContent = "✅ Lien copié !";
     setTimeout(() => (b.textContent = "🔗 Copier le lien d'invitation"), 2000);
   };
+
+  // invitation par e-mail (ouvre le client mail avec un message pré-rempli)
+  const subject = `Invitation — groupe de pronostics « ${group.name} »`;
+  const body =
+    `Salut !\n\nJe t'invite à rejoindre mon groupe de pronostics « ${group.name} » ` +
+    `sur Chat Game Prediction Technology ⚽\n\nClique sur ce lien pour participer :\n${inviteLink}\n\n` +
+    `À toi de jouer 🏆`;
+  document.getElementById("btnEmail").href =
+    `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   // tabs
   appEl.querySelectorAll(".tab").forEach((t) => {

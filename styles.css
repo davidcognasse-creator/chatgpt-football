@@ -205,6 +205,8 @@ h1, h2, h3, .brand-title { font-family: "Sora", "Inter", sans-serif; }
 }
 .btn-soft { color: var(--text); }
 .btn-ghost:hover, .btn-soft:hover { border-color: rgba(120,150,220,0.4); color: var(--text); }
+a.btn-soft { text-decoration: none; display: inline-flex; align-items: center; }
+.invite-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
 .cards-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .panel h3 { margin: 0 0 14px; font-size: 1rem; }
