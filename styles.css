@@ -494,6 +494,23 @@ a.btn-soft { text-decoration: none; display: inline-flex; align-items: center; }
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--card-border);
 }
+/* encart « fiabilité quand l'IA est confiante » */
+.insight-card {
+  display: flex; align-items: center; gap: 20px;
+  background: linear-gradient(135deg, rgba(91,140,255,0.14), rgba(163,107,255,0.12));
+  border: 1px solid rgba(120,150,220,0.35); border-radius: 16px;
+  padding: 18px 22px; margin: 0 0 22px; box-shadow: var(--shadow);
+}
+.insight-fig { display: flex; flex-direction: column; align-items: center; line-height: 1; flex: none; }
+.insight-pct { font-family: "Sora", sans-serif; font-weight: 800; font-size: 2.4rem;
+  background: linear-gradient(120deg, #eaf0ff, #b9ccff 60%, #d3b9ff);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.insight-cap { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+.insight-body h3 { margin: 0 0 4px; font-size: 1rem; }
+.insight-body p { margin: 0; font-size: 0.9rem; color: var(--muted); line-height: 1.45; }
+.insight-body b { color: var(--text); }
+@media (max-width: 560px) { .insight-card { gap: 16px; padding: 16px; } .insight-pct { font-size: 2rem; } }
+
 .cmp-label { color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
 .cmp-prob {
   font-weight: 700; font-size: 0.74rem; color: var(--accent);

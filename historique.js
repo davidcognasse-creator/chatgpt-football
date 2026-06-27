@@ -4,6 +4,7 @@
   const listEl = document.getElementById("historyList");
   const emptyEl = document.getElementById("emptyState");
   const statsEl = document.getElementById("histStats");
+  const insightEl = document.getElementById("histInsight");
 
   async function loadData() {
     try {
@@ -45,6 +46,30 @@
           `<div class="stat"><div class="stat-value">${s.value}</div><div class="stat-label">${s.label}</div></div>`
       )
       .join("");
+  }
+
+  // Encart : fiabilité quand l'IA est confiante (probabilité estimée > 50 %).
+  function renderInsight(entries) {
+    if (!insightEl) return;
+    const conf = entries.filter((e) => e.predicted.probs[e.predicted.favored] > 50);
+    if (!conf.length) { insightEl.innerHTML = ""; return; }
+    const ok = conf.filter(isCorrect).length;
+    const pct = Math.round((ok / conf.length) * 100);
+    const parfait = ok === conf.length;
+    const titre = parfait
+      ? "Quand l'IA est sûre d'elle, elle ne se trompe pas"
+      : "Plus l'IA est confiante, plus elle voit juste";
+    const phrase = parfait
+      ? `Sur les <b>${conf.length} matchs</b> où elle estimait une probabilité <b>supérieure à 50&nbsp;%</b>, son pronostic s'est révélé <b>juste à chaque fois</b>.`
+      : `Sur les <b>${conf.length} matchs</b> où elle estimait une probabilité <b>supérieure à 50&nbsp;%</b>, son pronostic a été <b>bon ${ok} fois sur ${conf.length}</b>.`;
+    insightEl.innerHTML = `
+      <div class="insight-card">
+        <div class="insight-fig"><span class="insight-pct">${pct}%</span><span class="insight-cap">de réussite</span></div>
+        <div class="insight-body">
+          <h3>🎯 ${titre}</h3>
+          <p>${phrase}</p>
+        </div>
+      </div>`;
   }
 
   function row(e) {
@@ -93,6 +118,7 @@
         return;
       }
       renderStats(entries);
+      renderInsight(entries);
       listEl.innerHTML = entries.map(row).join("");
       listEl.querySelectorAll(".hist-card").forEach((el, i) => {
         el.style.animationDelay = i * 40 + "ms";
