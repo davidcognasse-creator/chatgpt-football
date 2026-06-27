@@ -1,4 +1,43 @@
 {
-  "teams": {},
-  "h2h": {}
+  "teams": {
+    "croatia": 3,
+    "ghana": 1504,
+    "panama": 11,
+    "england": 10,
+    "colombia": 8,
+    "portugal": 27,
+    "dr congo": 27739,
+    "uzbekistan": 1568,
+    "algeria": 1532,
+    "austria": 775,
+    "jordan": 1548,
+    "argentina": 26,
+    "south africa": 1531,
+    "canada": 1717,
+    "brazil": 6,
+    "japan": 12,
+    "netherlands": 1118,
+    "morocco": 31,
+    "usa": 1718
+  },
+  "h2h": {
+    "panama|england": {
+      "home": 0,
+      "draw": 0,
+      "away": 1,
+      "ts": "2026-06-27T09:25:12.867Z"
+    },
+    "brazil|japan": {
+      "home": 3,
+      "draw": 0,
+      "away": 1,
+      "ts": "2026-06-27T09:27:09.894Z"
+    },
+    "netherlands|morocco": {
+      "home": 1,
+      "draw": 0,
+      "away": 0,
+      "ts": "2026-06-27T09:27:29.397Z"
+    }
+  }
 }
