@@ -142,11 +142,11 @@
           <div class="scorers-head">⚽ Buteurs probables</div>
           <div class="scorers-grid">
             <div>
-              <div class="scorers-team">${m.home.flag} ${m.home.code}</div>
+              <div class="scorers-team">${m.home.flag} ${m.home.name}</div>
               <ul class="scorer-list">${(sc.home || []).map(scorerItem).join("")}</ul>
             </div>
             <div>
-              <div class="scorers-team">${m.away.flag} ${m.away.code}</div>
+              <div class="scorers-team">${m.away.flag} ${m.away.name}</div>
               <ul class="scorer-list">${(sc.away || []).map(scorerItem).join("")}</ul>
             </div>
           </div>
