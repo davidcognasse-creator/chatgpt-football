@@ -59,11 +59,27 @@
 
   /* ---------- Chemin projeté vers le titre (bracket hypothétique) ---------- */
   // Probabilité que A batte B, dérivée des probabilités de titre (style Bradley-Terry).
+  // Ordre des têtes de série pour un bracket de n équipes (n puissance de 2),
+  // de sorte que les favoris se rencontrent le plus tard possible.
+  function seedOrder(n) {
+    let pls = [1, 2];
+    for (let r = 0; r < Math.log2(n) - 1; r++) {
+      const sum = pls.length * 2 + 1, out = [];
+      for (const p of pls) { out.push(p, sum - p); }
+      pls = out;
+    }
+    return pls; // seeds 1-indexés, dans l'ordre du tableau
+  }
+
   function buildBracket(teams) {
-    const top = teams.slice(0, 8); // 8 meilleurs par probabilité de titre
-    // Têtes de série : 1v8, 4v5, 2v7, 3v6 (les favoris se rencontrent le plus tard).
-    let round = [[top[0], top[7]], [top[3], top[4]], [top[1], top[6]], [top[2], top[5]]]
-      .filter((p) => p[0] && p[1]);
+    const n = teams.length >= 16 ? 16 : 8; // 8es si ≥ 16 équipes, sinon quarts
+    const top = teams.slice(0, n);
+    const order = seedOrder(n);
+    let round = [];
+    for (let i = 0; i < order.length; i += 2) {
+      const a = top[order[i] - 1], b = top[order[i + 1] - 1];
+      if (a && b) round.push([a, b]);
+    }
     const rounds = [];
     while (round.length >= 1) {
       const winners = [];
@@ -95,7 +111,9 @@
     if (!winner || !winner.teams || winner.teams.length < 8) { bracketEl.innerHTML = ""; return; }
     const teams = winner.teams.slice().sort((a, b) => b.prob - a.prob);
     const rounds = buildBracket(teams);
-    const labelKeys = ["sim_round_quarter", "sim_round_semi", "sim_round_final"];
+    const labelKeys = rounds.length === 4
+      ? ["sim_round_r16", "sim_round_quarter", "sim_round_semi", "sim_round_final"]
+      : ["sim_round_quarter", "sim_round_semi", "sim_round_final"];
     let html = "";
     rounds.forEach((matches, ri) => {
       html += `<div class="br-round"><div class="br-round-label">${t(labelKeys[ri] || "sim_round_final")}</div>`;
