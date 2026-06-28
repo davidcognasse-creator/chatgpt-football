@@ -387,6 +387,38 @@ a.btn-soft { text-decoration: none; display: inline-flex; align-items: center; }
 }
 .sim-note { font-size: 0.76rem; color: var(--muted-soft); margin-top: 12px; }
 
+/* chemin projeté vers le titre (bracket) */
+.bracket { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; align-items: start; }
+.br-round { display: flex; flex-direction: column; gap: 10px; }
+.br-round-label {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--accent); padding-bottom: 4px; border-bottom: 1px solid var(--card-border);
+}
+.br-match {
+  background: var(--card); border: 1px solid var(--card-border); border-radius: 12px;
+  padding: 6px; display: flex; flex-direction: column; gap: 4px; box-shadow: var(--shadow);
+}
+.br-team {
+  display: flex; align-items: center; gap: 8px; padding: 7px 9px; border-radius: 8px;
+  font-size: 0.88rem;
+}
+.br-team.win { background: linear-gradient(135deg, rgba(91,140,255,0.18), rgba(163,107,255,0.16)); }
+.br-team.lose { opacity: 0.55; }
+.br-flag { flex: none; display: inline-flex; }
+.br-name { flex: 1; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.br-team.win .br-name { color: var(--text); }
+.br-win { flex: none; font-size: 0.74rem; font-weight: 800; color: var(--accent); }
+.br-prob { flex: none; font-size: 0.74rem; color: var(--muted-soft); }
+.br-champion {
+  grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 4px; padding: 14px 18px; border-radius: 14px; font-size: 1.05rem;
+  background: linear-gradient(135deg, rgba(91,140,255,0.16), rgba(163,107,255,0.16));
+  border: 1px solid rgba(120,150,220,0.35);
+}
+.br-trophy { font-size: 1.4rem; }
+.br-champ-label { font-size: 0.74rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+@media (max-width: 560px) { .bracket { grid-template-columns: 1fr; } }
+
 .champ-hero { display: flex; align-items: center; gap: 14px; text-align: left; min-width: 260px; }
 .champ-hero-flag { font-size: 2.6rem; line-height: 1; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.45)); }
 
