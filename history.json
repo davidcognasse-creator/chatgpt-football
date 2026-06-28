@@ -1,6 +1,230 @@
 {
-  "updatedAt": "2026-06-27T23:29:47.272Z",
+  "updatedAt": "2026-06-28T09:59:02.944Z",
   "entries": [
+    {
+      "id": "8756200e539155e571557c4f2e0d7f05",
+      "datetime": "2026-06-28T02:00:00Z",
+      "home": {
+        "name": "Algeria",
+        "flag": "🇩🇿",
+        "code": "ALG"
+      },
+      "away": {
+        "name": "Austria",
+        "flag": "🇦🇹",
+        "code": "AUT"
+      },
+      "predicted": {
+        "probs": {
+          "home": 29,
+          "draw": 38,
+          "away": 33
+        },
+        "score": {
+          "home": 1,
+          "away": 1
+        },
+        "favored": "draw"
+      },
+      "sources": {
+        "betting": {
+          "home": 27,
+          "draw": 46,
+          "away": 26
+        },
+        "form": {
+          "home": 37,
+          "draw": 26,
+          "away": 37
+        },
+        "h2h": null,
+        "press": {
+          "home": 30,
+          "draw": 26,
+          "away": 44
+        },
+        "social": {
+          "home": 24,
+          "draw": 26,
+          "away": 50
+        }
+      },
+      "actual": {
+        "home": 3,
+        "away": 3,
+        "outcome": "draw"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
+    {
+      "id": "54697f453437ab26276d773be1d72e9b",
+      "datetime": "2026-06-28T02:00:00Z",
+      "home": {
+        "name": "Jordan",
+        "flag": "🇯🇴",
+        "code": "JOR"
+      },
+      "away": {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "code": "ARG"
+      },
+      "predicted": {
+        "probs": {
+          "home": 8,
+          "draw": 17,
+          "away": 75
+        },
+        "score": {
+          "home": 0,
+          "away": 3
+        },
+        "favored": "away"
+      },
+      "sources": {
+        "betting": {
+          "home": 5,
+          "draw": 11,
+          "away": 85
+        },
+        "form": {
+          "home": 3,
+          "draw": 26,
+          "away": 71
+        },
+        "h2h": null,
+        "press": {
+          "home": 23,
+          "draw": 26,
+          "away": 51
+        },
+        "social": {
+          "home": 13,
+          "draw": 26,
+          "away": 61
+        }
+      },
+      "actual": {
+        "home": 1,
+        "away": 3,
+        "outcome": "away"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
+    {
+      "id": "67ae5751c401a98409b8566ae4897069",
+      "datetime": "2026-06-27T23:30:00Z",
+      "home": {
+        "name": "Colombia",
+        "flag": "🇨🇴",
+        "code": "COL"
+      },
+      "away": {
+        "name": "Portugal",
+        "flag": "🇵🇹",
+        "code": "POR"
+      },
+      "predicted": {
+        "probs": {
+          "home": 25,
+          "draw": 25,
+          "away": 50
+        },
+        "score": {
+          "home": 1,
+          "away": 2
+        },
+        "favored": "away"
+      },
+      "sources": {
+        "betting": {
+          "home": 24,
+          "draw": 24,
+          "away": 52
+        },
+        "form": {
+          "home": 44,
+          "draw": 26,
+          "away": 30
+        },
+        "h2h": null,
+        "press": {
+          "home": 17,
+          "draw": 26,
+          "away": 57
+        },
+        "social": {
+          "home": 16,
+          "draw": 26,
+          "away": 58
+        }
+      },
+      "actual": {
+        "home": 0,
+        "away": 0,
+        "outcome": "draw"
+      },
+      "correctOutcome": false,
+      "correctScore": false
+    },
+    {
+      "id": "13eab94a136b9c264ba974cf437a5f71",
+      "datetime": "2026-06-27T23:30:00Z",
+      "home": {
+        "name": "DR Congo",
+        "flag": "🇨🇩",
+        "code": "COD"
+      },
+      "away": {
+        "name": "Uzbekistan",
+        "flag": "🇺🇿",
+        "code": "UZB"
+      },
+      "predicted": {
+        "probs": {
+          "home": 49,
+          "draw": 25,
+          "away": 26
+        },
+        "score": {
+          "home": 2,
+          "away": 1
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 58,
+          "draw": 25,
+          "away": 18
+        },
+        "form": {
+          "home": 60,
+          "draw": 26,
+          "away": 14
+        },
+        "h2h": null,
+        "press": {
+          "home": 27,
+          "draw": 26,
+          "away": 47
+        },
+        "social": {
+          "home": 16,
+          "draw": 26,
+          "away": 58
+        }
+      },
+      "actual": {
+        "home": 3,
+        "away": 1,
+        "outcome": "home"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "537c0997cd899394f47f16545b7068b2",
       "datetime": "2026-06-27T21:00:00Z",

@@ -18,7 +18,11 @@
     "japan": 12,
     "netherlands": 1118,
     "morocco": 31,
-    "usa": 1718
+    "usa": 1718,
+    "mexico": 16,
+    "ecuador": 1731,
+    "belgium": 1,
+    "senegal": 13
   },
   "h2h": {
     "panama|england": {
@@ -38,6 +42,12 @@
       "draw": 0,
       "away": 0,
       "ts": "2026-06-27T09:27:29.397Z"
+    },
+    "portugal|croatia": {
+      "home": 4,
+      "draw": 2,
+      "away": 1,
+      "ts": "2026-06-28T09:57:31.479Z"
     }
   }
 }
