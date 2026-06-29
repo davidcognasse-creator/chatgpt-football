@@ -58,6 +58,7 @@
   let photoDataUrl = null; // photo d'origine (envoyée à l'IA)
   let flagImg = null;
   let paniniImg = null; // logo officiel optionnel (panini-logo.png à la racine)
+  let paniniCrop = null; // zone visible (recadrage des marges transparentes)
   const state = { country: COUNTRIES[0] };
 
   /* ---------- formulaire ---------- */
@@ -96,9 +97,38 @@
   // Logo PANINI officiel optionnel (panini-logo.png à la racine du site).
   function loadPanini() {
     const img = new Image();
-    img.onload = () => { paniniImg = img; render(); };
+    img.onload = () => { paniniImg = img; paniniCrop = opaqueBounds(img); render(); };
     img.onerror = () => { paniniImg = null; };
     img.src = "panini-logo.png";
+  }
+
+  // Boîte englobante du logo : pixels « colorés » (saturés) ou « sombres »,
+  // de façon à ignorer un fond gris/blanc ou un damier de transparence incrusté.
+  function opaqueBounds(img) {
+    try {
+      const c = document.createElement("canvas");
+      c.width = img.width; c.height = img.height;
+      const cx = c.getContext("2d");
+      cx.drawImage(img, 0, 0);
+      const d = cx.getImageData(0, 0, c.width, c.height).data;
+      let minX = c.width, minY = c.height, maxX = 0, maxY = 0, found = false;
+      for (let y = 0; y < c.height; y += 2) {
+        for (let x = 0; x < c.width; x += 2) {
+          const i = (y * c.width + x) * 4;
+          if (d[i + 3] < 16) continue; // vrai transparent
+          const r = d[i], g = d[i + 1], b = d[i + 2];
+          const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+          const colored = mx - mn > 45;     // couleur vive (jaune, rouge, bleu…)
+          const dark = mx < 70;             // bordure noire
+          if (!colored && !dark) continue;  // gris / blanc / damier → ignoré
+          found = true;
+          if (x < minX) minX = x; if (x > maxX) maxX = x;
+          if (y < minY) minY = y; if (y > maxY) maxY = y;
+        }
+      }
+      if (!found) return null;
+      return { sx: minX, sy: minY, sw: maxX - minX, sh: maxY - minY };
+    } catch (e) { return null; }
   }
 
   $("cPhoto").addEventListener("change", (e) => {
@@ -246,10 +276,14 @@
   // Logo PANINI : utilise panini-logo.png s'il existe, sinon version dessinée.
   function paniniBadge(x, y) {
     if (paniniImg) {
-      const maxH = 66, maxW = 290;
-      let h = maxH, w = h * (paniniImg.width / paniniImg.height);
-      if (w > maxW) { w = maxW; h = w * (paniniImg.height / paniniImg.width); }
-      ctx.drawImage(paniniImg, x, y, w, h);
+      const cr = paniniCrop || { sx: 0, sy: 0, sw: paniniImg.width, sh: paniniImg.height };
+      const maxH = 70, maxW = 300;
+      let h = maxH, w = h * (cr.sw / cr.sh);
+      if (w > maxW) { w = maxW; h = w * (cr.sh / cr.sw); }
+      ctx.save();
+      rr(x, y, w, h, 11); ctx.clip(); // masque les coins (damier résiduel)
+      ctx.drawImage(paniniImg, cr.sx, cr.sy, cr.sw, cr.sh, x, y, w, h);
+      ctx.restore();
       return;
     }
     const w = 204, h = 58;
