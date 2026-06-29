@@ -249,14 +249,11 @@
   function companyBox(x, y, w, h, text) {
     rr(x, y, w, h, 14); ctx.fillStyle = "#f4f2ea"; ctx.fill();
     ctx.lineWidth = 3; ctx.strokeStyle = "rgba(12,42,107,0.55)"; ctx.stroke();
-    ctx.fillStyle = "#2f6df0";
-    ctx.save(); ctx.translate(x + w / 2, y + 24); ctx.rotate(Math.PI / 4);
-    ctx.fillRect(-8, -8, 16, 16); ctx.restore();
     const words = (text || "").split(/\s+/).filter(Boolean);
     if (!words.length) return;
     ctx.fillStyle = "#0c2a6b"; ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
-    ctx.font = `800 ${fitFont(words[0], w - 28, 42, 800)}px Sora, sans-serif`;
-    ctx.fillText(words[0].toUpperCase(), x + w / 2, y + 76);
+    ctx.font = `800 ${fitFont(words[0], w - 28, 44, 800)}px Sora, sans-serif`;
+    ctx.fillText(words[0].toUpperCase(), x + w / 2, y + 70);
     const rest = words.slice(1).join(" ").toUpperCase();
     if (rest) {
       ctx.fillStyle = "#13315f"; ctx.font = `700 ${fitFont(rest, w - 24, 17, 700)}px Sora, sans-serif`;
