@@ -59,6 +59,12 @@
       </p>
     </section>
 
+    <section id="authGate" class="app-shell" aria-live="polite">
+      <p class="empty-state" data-i18n="grp_loading">Chargement…</p>
+    </section>
+
+    <div id="carteApp" hidden>
+    <div id="carteUserbar"></div>
     <section class="carte-layout">
       <div class="panel carte-form">
         <h3 data-i18n="card_form_title">🎴 Ta carte</h3>
@@ -117,6 +123,7 @@
         <canvas id="cCanvas" width="1080" height="1500" aria-label="Aperçu de la carte"></canvas>
       </div>
     </section>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -124,8 +131,10 @@
     <p class="footer-credit">chatgpt.football · CDM 2026</p>
   </footer>
 
+  <script src="firebase-config.js"></script>
   <script src="flags.js"></script>
   <script src="carte-config.js"></script>
   <script src="carte.js"></script>
+  <script type="module" src="carte-auth.js"></script>
 </body>
 </html>
