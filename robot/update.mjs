@@ -35,6 +35,14 @@ async function main() {
   const mode = arg("mode", config.mode || "fixtures");
   const ctx = { mode, env: process.env, alpha: config.prior?.alpha ?? 0.05, config };
 
+  // Mode « scores » : règle uniquement les matchs terminés (aucun recalcul des
+  // cotes/probabilités → quota The Odds API préservé). N'appelle l'API que si un
+  // match archivé devrait être terminé. Pensé pour tourner souvent.
+  if (mode === "scores") {
+    await settleScores(ctx, config);
+    return;
+  }
+
   // Cache persistant API-Football (équipes + face-à-face), réutilisé si le
   // crédit de l'API est épuisé.
   const cachePath = here(config.state.apifootballCache);
@@ -246,6 +254,99 @@ async function updateHistory(ctx, config, matches) {
   );
   await writeFile(pendingPath, JSON.stringify(pending, null, 2) + "\n", "utf8");
   console.log(`[history] ${settled} match(s) réglé(s) · ${history.entries.length} au total`);
+}
+
+/**
+ * Mode « scores » : déplace les matchs terminés vers history.json à partir des
+ * pronostics déjà archivés (pending.json) + scores réels (endpoint scores, léger).
+ * Ne recalcule AUCUNE cote/probabilité. N'appelle l'API que si un match archivé
+ * devrait être terminé (coup d'envoi + ~2 h 30), sinon zéro requête.
+ */
+async function settleScores(ctx, config) {
+  const dataPath = here(config.output.json);
+  const dataJsPath = here(config.output.js);
+  const pendingPath = here(config.state.pending);
+  const historyPath = here(config.output.history);
+
+  const data = await readJSONSafe(dataPath);
+  const pending = (await readJSONSafe(pendingPath)) || {};
+  const history = (await readJSONSafe(historyPath)) || { entries: [] };
+  if (!Array.isArray(history.entries)) history.entries = [];
+  const known = new Set(history.entries.map((e) => e.id));
+
+  const MATCH_MS = 2.5 * 3600 * 1000; // durée approx. d'un match + mi-temps
+  const candidates = Object.values(pending).filter(
+    (p) => !known.has(p.id) && new Date(p.datetime).getTime() + MATCH_MS <= Date.now()
+  );
+  if (!candidates.length) {
+    console.log("[scores] aucun match à régler — pas d'appel API (quota préservé)");
+    return;
+  }
+  console.log(`[scores] ${candidates.length} match(s) potentiellement terminé(s) — vérification`);
+
+  let settled = 0;
+  try {
+    const { fetchResults } = await import("./sources/results.mjs");
+    const results = await fetchResults(ctx);
+    for (const r of results) {
+      const p = pending[r.id];
+      if (!p || known.has(r.id)) continue;
+      history.entries.push({
+        id: r.id,
+        datetime: p.datetime,
+        home: p.home,
+        away: p.away,
+        predicted: p.predicted,
+        sources: p.sources || null,
+        actual: { home: r.scoreHome, away: r.scoreAway, outcome: r.outcome },
+        correctOutcome: p.predicted.favored === r.outcome,
+        correctScore:
+          p.predicted.score.home === r.scoreHome && p.predicted.score.away === r.scoreAway,
+      });
+      delete pending[r.id];
+      known.add(r.id);
+      settled++;
+    }
+  } catch (e) {
+    console.warn(`[scores] résultats indisponibles : ${e.message}`);
+    return;
+  }
+
+  if (!settled) {
+    console.log("[scores] aucun nouveau résultat disponible pour l'instant");
+    return;
+  }
+
+  history.entries.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
+  history.updatedAt = new Date().toISOString();
+  const hjson = JSON.stringify(history, null, 2);
+  await writeFile(historyPath, hjson + "\n", "utf8");
+  await writeFile(
+    here(config.output.historyJs),
+    "// Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.\n" +
+      `window.WC_HISTORY = ${hjson};\n`,
+    "utf8"
+  );
+  await writeFile(pendingPath, JSON.stringify(pending, null, 2) + "\n", "utf8");
+
+  // Retire les matchs réglés de data.json (ne plus les afficher « à venir »).
+  if (data && Array.isArray(data.matches)) {
+    const before = data.matches.length;
+    data.matches = data.matches.filter((m) => !known.has(m.id));
+    data.updatedAt = new Date().toISOString();
+    const json = JSON.stringify(data, null, 2);
+    await writeFile(dataPath, json + "\n", "utf8");
+    await writeFile(
+      dataJsPath,
+      "// Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.\n" +
+        "// Miroir de data.json pour permettre l'ouverture du site en file://.\n" +
+        `window.WC_DATA = ${json};\n`,
+      "utf8"
+    );
+    console.log(`[scores] data.json : ${before} → ${data.matches.length} matchs à venir`);
+  }
+
+  console.log(`[scores] ${settled} match(s) réglé(s) · ${history.entries.length} au total`);
 }
 
 async function readJSONSafe(p) {

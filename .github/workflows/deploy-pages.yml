@@ -34,7 +34,7 @@ on:
   # Redéploie après chaque run du robot (ses commits via GITHUB_TOKEN ne
   # déclenchent pas le trigger 'push', d'où ce workflow_run).
   workflow_run:
-    workflows: ["Actualiser les pronostics"]
+    workflows: ["Actualiser les pronostics", "Régler les scores"]
     types: [completed]
   workflow_dispatch:
 
