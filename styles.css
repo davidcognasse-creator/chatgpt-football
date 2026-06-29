@@ -398,6 +398,9 @@ a.btn-soft { text-decoration: none; display: inline-flex; align-items: center; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .field-check { display: flex; align-items: center; gap: 8px; font-size: 0.86rem; color: var(--text); cursor: pointer; }
 .field-check input { width: 18px; height: 18px; accent-color: var(--accent); }
+.btn-ai { width: 100%; justify-content: center; color: #c9b8ff; border-color: rgba(163,107,255,0.5); }
+.btn-ai:hover { color: #fff; background: rgba(163,107,255,0.14); border-color: rgba(163,107,255,0.85); }
+.btn-ai:disabled { opacity: 0.6; cursor: default; }
 .carte-form input[type="text"], .carte-form input[type="number"], .carte-form select, .carte-form input[type="file"] {
   width: 100%; font: inherit; font-size: 0.9rem; color: var(--text);
   background: rgba(255,255,255,0.04); border: 1px solid var(--card-border);

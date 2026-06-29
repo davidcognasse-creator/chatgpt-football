@@ -19,6 +19,9 @@ on:
       - "firebase-config.js"
       - "flags.js"
       - "i18n.js"
+      - "carte.html"
+      - "carte.js"
+      - "carte-config.js"
       - "favicon.svg"
       - "og-image.png"
       - "robots.txt"
@@ -64,7 +67,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html historique.html simulateur.html groupes.html carte.html _site/
-          cp styles.css script.js historique.js simulateur.js groupes.js firebase-config.js flags.js i18n.js carte.js _site/
+          cp styles.css script.js historique.js simulateur.js groupes.js firebase-config.js flags.js i18n.js carte.js carte-config.js _site/
           cp data.json data.js history.json history.js winner.json winner.js _site/
           cp favicon.svg og-image.png robots.txt sitemap.xml _site/
           cp CNAME _site/   # déclare le domaine personnalisé à GitHub Pages

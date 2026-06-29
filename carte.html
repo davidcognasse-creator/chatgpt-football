@@ -42,8 +42,8 @@
     <nav class="header-nav">
       <a href="index.html" class="nav-link" data-i18n="nav_predictions">Pronostics</a>
       <a href="simulateur.html" class="nav-link" data-i18n="nav_winner">Vainqueur</a>
-      <a href="groupes.html" class="nav-link" data-i18n="nav_groups">Groupes</a>
-      <a href="carte.html" class="nav-link active" data-i18n="nav_card">Ma carte</a>
+      <a href="groupes.html" class="nav-link" data-i18n="nav_groups">Mon groupe</a>
+      <a href="carte.html" class="nav-link active" data-i18n="nav_card">Ma Carte Panini</a>
       <a href="historique.html" class="nav-link" data-i18n="nav_history">Historique</a>
       <span class="lang-switch" data-lang-switcher></span>
     </nav>
@@ -72,6 +72,9 @@
           <input type="checkbox" id="cJersey" checked />
           <span data-i18n="card_jersey">👕 Habiller d'un maillot aux couleurs du pays</span>
         </label>
+
+        <button class="btn-soft btn-ai" id="cAI" data-i18n="card_ai">✨ Version IA (maillot réaliste)</button>
+        <p class="carte-hint" id="cAIStatus" hidden></p>
 
         <label class="field">
           <span data-i18n="card_name">Nom</span>
@@ -122,6 +125,7 @@
   </footer>
 
   <script src="flags.js"></script>
+  <script src="carte-config.js"></script>
   <script src="carte.js"></script>
 </body>
 </html>

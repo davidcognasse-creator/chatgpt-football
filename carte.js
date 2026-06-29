@@ -55,6 +55,7 @@
 
   const $ = (id) => document.getElementById(id);
   let photoImg = null;
+  let photoDataUrl = null; // photo d'origine (envoyée à l'IA)
   let flagImg = null;
   const state = { country: COUNTRIES[0] };
 
@@ -96,6 +97,7 @@
     if (!file) return;
     const reader = new FileReader();
     reader.onload = () => {
+      photoDataUrl = reader.result; // conservée pour l'envoi à l'IA
       const img = new Image();
       img.onload = () => { photoImg = img; render(); };
       img.src = reader.result; // data URL local → pas de taint, export OK
@@ -336,6 +338,45 @@
 
   $("cLinkedin").href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
   $("cX").href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText())}&url=${encodeURIComponent(shareUrl)}`;
+
+  /* ---------- version IA (maillot réaliste via Gemini, proxifié) ---------- */
+  const WORKER = (window.CARTE_CONFIG && window.CARTE_CONFIG.geminiWorkerUrl) || "";
+  const aiStatus = $("cAIStatus");
+  const setStatus = (msg) => { aiStatus.hidden = !msg; aiStatus.textContent = msg || ""; };
+
+  $("cAI").onclick = async () => {
+    if (!WORKER) { setStatus(t("card_ai_unconfigured")); return; }
+    if (!photoDataUrl) { setStatus(t("card_ai_need_photo")); return; }
+    const btn = $("cAI");
+    btn.disabled = true;
+    setStatus(t("card_ai_loading"));
+    try {
+      const res = await fetch(WORKER, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          image: photoDataUrl,
+          country: state.country[0],
+          colors: jerseyColors().join(" / "),
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.image) throw new Error(data.error || ("HTTP " + res.status));
+      const img = new Image();
+      img.onload = () => {
+        photoImg = img;
+        $("cJersey").checked = false; // l'IA a déjà mis le maillot
+        render();
+        setStatus("");
+        btn.disabled = false;
+      };
+      img.onerror = () => { setStatus(t("card_ai_error")); btn.disabled = false; };
+      img.src = data.image;
+    } catch (e) {
+      setStatus(t("card_ai_error") + " — " + (e.message || e));
+      btn.disabled = false;
+    }
+  };
 
   /* ---------- init ---------- */
   fillCountries();
