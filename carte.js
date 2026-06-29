@@ -57,6 +57,7 @@
   let photoImg = null;
   let photoDataUrl = null; // photo d'origine (envoyée à l'IA)
   let flagImg = null;
+  let paniniImg = null; // logo officiel optionnel (panini-logo.png à la racine)
   const state = { country: COUNTRIES[0] };
 
   /* ---------- formulaire ---------- */
@@ -90,6 +91,14 @@
     img.onload = () => { flagImg = img; render(); };
     img.onerror = () => { flagImg = null; render(); };
     img.src = `https://flagcdn.com/w160/${iso}.png`;
+  }
+
+  // Logo PANINI officiel optionnel (panini-logo.png à la racine du site).
+  function loadPanini() {
+    const img = new Image();
+    img.onload = () => { paniniImg = img; render(); };
+    img.onerror = () => { paniniImg = null; };
+    img.src = "panini-logo.png";
   }
 
   $("cPhoto").addEventListener("change", (e) => {
@@ -234,14 +243,25 @@
     ctx.restore();
   }
 
-  // Logo PANINI stylisé (haut gauche).
+  // Logo PANINI : utilise panini-logo.png s'il existe, sinon version dessinée.
   function paniniBadge(x, y) {
-    const w = 158, h = 50;
-    rr(x, y, w, h, 9); ctx.fillStyle = "#ffd400"; ctx.fill();
-    ctx.lineWidth = 3; ctx.strokeStyle = "#0c2a6b"; ctx.stroke();
-    ctx.fillStyle = "#d6122b"; ctx.font = "800 32px Sora, sans-serif";
+    if (paniniImg) {
+      const maxH = 66, maxW = 290;
+      let h = maxH, w = h * (paniniImg.width / paniniImg.height);
+      if (w > maxW) { w = maxW; h = w * (paniniImg.height / paniniImg.width); }
+      ctx.drawImage(paniniImg, x, y, w, h);
+      return;
+    }
+    const w = 204, h = 58;
+    rr(x, y, w, h, 10); ctx.fillStyle = "#ffd400"; ctx.fill();
+    ctx.lineWidth = 4; ctx.strokeStyle = "#1a1a1a"; ctx.stroke();
     ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.fillText("PANINI", x + w / 2, y + h / 2 + 2);
+    ctx.font = "800 38px Georgia, 'Times New Roman', serif";
+    ctx.lineJoin = "round"; ctx.lineWidth = 7; ctx.strokeStyle = "#0c2a6b";
+    ctx.strokeText("PANINI", x + w / 2, y + h / 2 + 1);
+    ctx.fillStyle = "#d6122b"; ctx.fillText("PANINI", x + w / 2, y + h / 2 + 1);
+    ctx.beginPath(); ctx.moveTo(x + 14, y + h - 11); ctx.lineTo(x + w - 14, y + h - 11);
+    ctx.lineWidth = 2; ctx.strokeStyle = "#1a1a1a"; ctx.stroke();
     ctx.textBaseline = "alphabetic";
   }
 
@@ -259,34 +279,6 @@
       ctx.fillStyle = "#13315f"; ctx.font = `700 ${fitFont(rest, w - 24, 17, 700)}px Sora, sans-serif`;
       ctx.fillText(rest, x + w / 2, y + h - 16);
     }
-  }
-
-  // Pictogrammes du rail latéral.
-  function railIcon(type, cx, cy, s) {
-    ctx.save();
-    ctx.strokeStyle = "#e3ebff"; ctx.fillStyle = "#e3ebff";
-    ctx.lineWidth = 4; ctx.lineJoin = "round"; ctx.lineCap = "round";
-    if (type === "chart") {
-      const base = cy + s * 0.75;
-      [0, 1, 2].forEach((i) => ctx.fillRect(cx - s * 0.8 + i * s * 0.62, base - (i + 1) * s * 0.38, s * 0.4, (i + 1) * s * 0.38));
-      ctx.beginPath();
-      ctx.moveTo(cx - s * 0.85, cy + s * 0.15); ctx.lineTo(cx + s * 0.85, cy - s * 0.85);
-      ctx.lineTo(cx + s * 0.3, cy - s * 0.85); ctx.moveTo(cx + s * 0.85, cy - s * 0.85);
-      ctx.lineTo(cx + s * 0.85, cy - s * 0.3); ctx.stroke();
-    } else if (type === "deal") {
-      // anneaux entrelacés = partenariat / accord
-      ctx.lineWidth = 6;
-      ctx.beginPath(); ctx.arc(cx - s * 0.42, cy, s * 0.52, 0, Math.PI * 2); ctx.stroke();
-      ctx.beginPath(); ctx.arc(cx + s * 0.42, cy, s * 0.52, 0, Math.PI * 2); ctx.stroke();
-    } else {
-      [-s * 0.6, s * 0.6, 0].forEach((dx, i) => {
-        const hr = i === 2 ? s * 0.34 : s * 0.27;
-        const hy = i === 2 ? cy - s * 0.42 : cy - s * 0.28;
-        ctx.beginPath(); ctx.arc(cx + dx, hy, hr, 0, Math.PI * 2); ctx.fill();
-        ctx.beginPath(); ctx.arc(cx + dx, hy + hr * 2.1, hr * 1.5, Math.PI, 0); ctx.fill();
-      });
-    }
-    ctx.restore();
   }
 
   // Écusson étoile (à droite du nom).
@@ -340,8 +332,8 @@
     ctx.restore();
     rr(pr.x, pr.y, pr.w, pr.h, 24); ctx.lineWidth = 7; ctx.strokeStyle = "#13315f"; ctx.stroke();
 
-    // ---- rail latéral gauche (drapeau, code, icônes) ----
-    rr(56, 150, 96, 624, 18); ctx.fillStyle = "rgba(9,19,42,0.62)"; ctx.fill();
+    // ---- drapeau + code pays (haut gauche) ----
+    rr(56, 150, 96, 122, 16); ctx.fillStyle = "rgba(9,19,42,0.62)"; ctx.fill();
     ctx.lineWidth = 3; ctx.strokeStyle = "rgba(120,150,220,0.4)"; ctx.stroke();
     if (flagImg) {
       ctx.save(); rr(70, 166, 68, 48, 7); ctx.clip();
@@ -351,9 +343,6 @@
     rr(70, 222, 68, 34, 7); ctx.fillStyle = "#13315f"; ctx.fill();
     ctx.fillStyle = "#fff"; ctx.font = "800 22px Sora, sans-serif"; ctx.textAlign = "center";
     ctx.fillText(state.country[2], 104, 247);
-    railIcon("chart", 104, 360, 30);
-    railIcon("deal", 104, 500, 30);
-    railIcon("people", 104, 640, 30);
 
     // ---- badges du haut ----
     paniniBadge(64, 60);
@@ -481,6 +470,7 @@
   fillCountries();
   buildStats();
   loadFlag();
+  loadPanini();
   render();
   document.addEventListener("i18n:changed", render);
 })();
