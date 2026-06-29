@@ -44,7 +44,7 @@ export default {
 
     const gReq = {
       contents: [{ parts: [{ text: prompt }, { inline_data: { mime_type: mime, data: b64 } }] }],
-      generationConfig: { responseModalities: ["IMAGE"] },
+      generationConfig: { responseModalities: ["TEXT", "IMAGE"] },
     };
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${env.GEMINI_API_KEY}`;
@@ -63,9 +63,17 @@ export default {
     }
 
     const data = await gr.json();
-    const parts = (((data.candidates || [])[0] || {}).content || {}).parts || [];
+    const cand = (data.candidates || [])[0] || {};
+    const parts = (cand.content || {}).parts || [];
     const part = parts.find((p) => p.inlineData || p.inline_data);
-    if (!part) return json({ error: "Pas d'image renvoyée par Gemini" }, 502, cors);
+    if (!part) {
+      // Pas d'image : on remonte la vraie raison (blocage sécurité, texte de refus…)
+      const reason = cand.finishReason || (data.promptFeedback || {}).blockReason || "inconnue";
+      const txt = parts.map((p) => p.text).filter(Boolean).join(" ").slice(0, 200);
+      return json({
+        error: "Pas d'image (raison: " + reason + ")" + (txt ? " — " + txt : ""),
+      }, 502, cors);
+    }
     const inl = part.inlineData || part.inline_data;
     return json({ image: `data:${inl.mimeType || inl.mime_type || "image/png"};base64,${inl.data}` }, 200, cors);
   },
