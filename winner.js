@@ -1,12 +1,12 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_WINNER = {
-  "updatedAt": "2026-06-28T17:00:37.503Z",
+  "updatedAt": "2026-06-29T11:26:46.467Z",
   "teams": [
     {
       "name": "France",
       "flag": "🇫🇷",
       "code": "FRA",
-      "prob": 20.2
+      "prob": 19.7
     },
     {
       "name": "Argentina",
@@ -18,7 +18,7 @@ window.WC_WINNER = {
       "name": "England",
       "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
       "code": "ENG",
-      "prob": 11.4
+      "prob": 10.9
     },
     {
       "name": "Spain",
@@ -30,13 +30,13 @@ window.WC_WINNER = {
       "name": "Portugal",
       "flag": "🇵🇹",
       "code": "POR",
-      "prob": 6.1
+      "prob": 6.4
     },
     {
       "name": "Brazil",
       "flag": "🇧🇷",
       "code": "BRA",
-      "prob": 5.8
+      "prob": 6.2
     },
     {
       "name": "Netherlands",
@@ -48,13 +48,13 @@ window.WC_WINNER = {
       "name": "Germany",
       "flag": "🇩🇪",
       "code": "GER",
-      "prob": 4.2
+      "prob": 4.4
     },
     {
       "name": "Colombia",
       "flag": "🇨🇴",
       "code": "COL",
-      "prob": 2.5
+      "prob": 2.6
     },
     {
       "name": "USA",
@@ -84,7 +84,7 @@ window.WC_WINNER = {
       "name": "Mexico",
       "flag": "🇲🇽",
       "code": "MEX",
-      "prob": 1.5
+      "prob": 1.6
     },
     {
       "name": "Japan",
@@ -117,27 +117,27 @@ window.WC_WINNER = {
       "prob": 0.5
     },
     {
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "code": "CAN",
+      "prob": 0.5
+    },
+    {
       "name": "Ivory Coast",
       "flag": "🇨🇮",
       "code": "CIV",
       "prob": 0.4
     },
     {
-      "name": "Canada",
-      "flag": "🇨🇦",
-      "code": "CAN",
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "code": "AUT",
       "prob": 0.3
     },
     {
       "name": "Sweden",
       "flag": "🇸🇪",
       "code": "SWE",
-      "prob": 0.3
-    },
-    {
-      "name": "Austria",
-      "flag": "🇦🇹",
-      "code": "AUT",
       "prob": 0.3
     },
     {
@@ -180,12 +180,6 @@ window.WC_WINNER = {
       "name": "Cape Verde",
       "flag": "🇨🇻",
       "code": "CPV",
-      "prob": 0.1
-    },
-    {
-      "name": "South Africa",
-      "flag": "🇿🇦",
-      "code": "RSA",
       "prob": 0.1
     },
     {

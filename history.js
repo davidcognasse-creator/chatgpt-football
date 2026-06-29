@@ -1,7 +1,63 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_HISTORY = {
-  "updatedAt": "2026-06-28T17:00:37.427Z",
+  "updatedAt": "2026-06-29T11:26:46.245Z",
   "entries": [
+    {
+      "id": "def55b09ef3d6854e3c01e74b5c63415",
+      "datetime": "2026-06-28T19:00:00Z",
+      "home": {
+        "name": "South Africa",
+        "flag": "🇿🇦",
+        "code": "RSA"
+      },
+      "away": {
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "code": "CAN"
+      },
+      "predicted": {
+        "probs": {
+          "home": 19,
+          "draw": 27,
+          "away": 54
+        },
+        "score": {
+          "home": 0,
+          "away": 3
+        },
+        "favored": "away"
+      },
+      "sources": {
+        "betting": {
+          "home": 17,
+          "draw": 27,
+          "away": 56
+        },
+        "form": {
+          "home": 37,
+          "draw": 26,
+          "away": 37
+        },
+        "h2h": null,
+        "press": {
+          "home": 4,
+          "draw": 26,
+          "away": 70
+        },
+        "social": {
+          "home": 28,
+          "draw": 26,
+          "away": 46
+        }
+      },
+      "actual": {
+        "home": 0,
+        "away": 1,
+        "outcome": "away"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "8756200e539155e571557c4f2e0d7f05",
       "datetime": "2026-06-28T02:00:00Z",
