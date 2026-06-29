@@ -39,9 +39,10 @@ export default {
       `Edit this portrait photo to look like a football trading card. ` +
       `1) Dress the person in a realistic football (soccer) jersey in the colours ` +
       `of ${country}${colors ? " (" + colors + ")" : ""}. ` +
-      `2) Replace the entire background with a clean professional football stadium ` +
-      `backdrop: blurred stands, soft stadium floodlights and a subtle bokeh glow in ` +
-      `the team colours${colors ? " (" + colors + ")" : ""}, like a Panini sticker. ` +
+      `2) Replace the entire background with a premium collectible trading-card ` +
+      `backdrop: a holographic prismatic foil texture combined with a subtle modern ` +
+      `city skyline and an upward-trending bar chart with a rising arrow, tinted in ` +
+      `the team colours${colors ? " (" + colors + ")" : ""}, like a shiny Panini sticker. ` +
       `Keep the person's face, hairstyle, skin tone and identity EXACTLY the same. ` +
       `Head-and-shoulders framing, natural lighting, realistic fabric and collar. ` +
       `No text, no sponsor, no logo, no watermark.`;

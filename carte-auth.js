@@ -28,6 +28,7 @@ if (!configured) {
       gate.hidden = true; gate.innerHTML = "";
       appEl.hidden = false;
       renderUserbar(auth, user);
+      prefillCard(user);
     } else {
       appEl.hidden = true;
       userbar.innerHTML = "";
@@ -42,6 +43,15 @@ if (!configured) {
 
 function myName(user) {
   return user.displayName || (user.email ? user.email.split("@")[0] : "Joueur");
+}
+
+// Pré-remplit le nom de la carte avec celui du compte (sans écraser une saisie).
+function prefillCard(user) {
+  const n = document.getElementById("cName");
+  if (n && !n.value) {
+    n.value = myName(user);
+    n.dispatchEvent(new Event("input", { bubbles: true }));
+  }
 }
 
 function renderUserbar(auth, user) {

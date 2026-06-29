@@ -105,7 +105,7 @@
     reader.readAsDataURL(file);
   });
 
-  ["cName", "cRole", "cCompany"].forEach((id) => $(id).addEventListener("input", render));
+  ["cName", "cRole", "cCompany", "cNumber"].forEach((id) => $(id).addEventListener("input", render));
 
   /* ---------- dessin ---------- */
   function rr(x, y, w, h, r) {
@@ -199,107 +199,211 @@
     ctx.restore();
   }
 
+  /* ---------- éléments carte premium (style Panini) ---------- */
+  // PRNG déterministe → fond holographique stable (pas de scintillement).
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = (a + 0x6d2b79f5) | 0;
+      let x = Math.imul(a ^ (a >>> 15), 1 | a);
+      x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
+      return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  // Fond holographique : éclats prismatiques dans un rectangle arrondi.
+  function drawFoil(x, y, w, h, r) {
+    ctx.save();
+    rr(x, y, w, h, r); ctx.clip();
+    const base = ctx.createLinearGradient(x, y, x + w, y + h);
+    base.addColorStop(0, "#cdd4e6"); base.addColorStop(0.5, "#eef1f7"); base.addColorStop(1, "#d4d8e6");
+    ctx.fillStyle = base; ctx.fillRect(x, y, w, h);
+    const cols = ["#ff6d9a", "#ffd24d", "#5fe3ff", "#9a8cff", "#74ffb0", "#ffa45f"];
+    const rnd = mulberry32(20260629);
+    for (let i = 0; i < 110; i++) {
+      const px = x + rnd() * w, py = y + rnd() * h, s = 50 + rnd() * 150;
+      ctx.beginPath();
+      ctx.moveTo(px, py);
+      ctx.lineTo(px + s * (rnd() - 0.5), py + s * (0.3 + rnd() * 0.7));
+      ctx.lineTo(px + s * (0.3 + rnd() * 0.7), py + s * (rnd() - 0.5));
+      ctx.closePath();
+      ctx.globalAlpha = 0.08 + rnd() * 0.12;
+      ctx.fillStyle = cols[i % cols.length];
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    ctx.restore();
+  }
+
+  // Logo PANINI stylisé (haut gauche).
+  function paniniBadge(x, y) {
+    const w = 158, h = 50;
+    rr(x, y, w, h, 9); ctx.fillStyle = "#ffd400"; ctx.fill();
+    ctx.lineWidth = 3; ctx.strokeStyle = "#0c2a6b"; ctx.stroke();
+    ctx.fillStyle = "#d6122b"; ctx.font = "800 32px Sora, sans-serif";
+    ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    ctx.fillText("PANINI", x + w / 2, y + h / 2 + 2);
+    ctx.textBaseline = "alphabetic";
+  }
+
+  // Encart « logo entreprise » (haut droite) : nom mis en page comme un logo.
+  function companyBox(x, y, w, h, text) {
+    rr(x, y, w, h, 14); ctx.fillStyle = "#f4f2ea"; ctx.fill();
+    ctx.lineWidth = 3; ctx.strokeStyle = "rgba(12,42,107,0.55)"; ctx.stroke();
+    ctx.fillStyle = "#2f6df0";
+    ctx.save(); ctx.translate(x + w / 2, y + 24); ctx.rotate(Math.PI / 4);
+    ctx.fillRect(-8, -8, 16, 16); ctx.restore();
+    const words = (text || "").split(/\s+/).filter(Boolean);
+    if (!words.length) return;
+    ctx.fillStyle = "#0c2a6b"; ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+    ctx.font = `800 ${fitFont(words[0], w - 28, 42, 800)}px Sora, sans-serif`;
+    ctx.fillText(words[0].toUpperCase(), x + w / 2, y + 76);
+    const rest = words.slice(1).join(" ").toUpperCase();
+    if (rest) {
+      ctx.fillStyle = "#13315f"; ctx.font = `700 ${fitFont(rest, w - 24, 17, 700)}px Sora, sans-serif`;
+      ctx.fillText(rest, x + w / 2, y + h - 16);
+    }
+  }
+
+  // Pictogrammes du rail latéral.
+  function railIcon(type, cx, cy, s) {
+    ctx.save();
+    ctx.strokeStyle = "#e3ebff"; ctx.fillStyle = "#e3ebff";
+    ctx.lineWidth = 4; ctx.lineJoin = "round"; ctx.lineCap = "round";
+    if (type === "chart") {
+      const base = cy + s * 0.75;
+      [0, 1, 2].forEach((i) => ctx.fillRect(cx - s * 0.8 + i * s * 0.62, base - (i + 1) * s * 0.38, s * 0.4, (i + 1) * s * 0.38));
+      ctx.beginPath();
+      ctx.moveTo(cx - s * 0.85, cy + s * 0.15); ctx.lineTo(cx + s * 0.85, cy - s * 0.85);
+      ctx.lineTo(cx + s * 0.3, cy - s * 0.85); ctx.moveTo(cx + s * 0.85, cy - s * 0.85);
+      ctx.lineTo(cx + s * 0.85, cy - s * 0.3); ctx.stroke();
+    } else if (type === "deal") {
+      // anneaux entrelacés = partenariat / accord
+      ctx.lineWidth = 6;
+      ctx.beginPath(); ctx.arc(cx - s * 0.42, cy, s * 0.52, 0, Math.PI * 2); ctx.stroke();
+      ctx.beginPath(); ctx.arc(cx + s * 0.42, cy, s * 0.52, 0, Math.PI * 2); ctx.stroke();
+    } else {
+      [-s * 0.6, s * 0.6, 0].forEach((dx, i) => {
+        const hr = i === 2 ? s * 0.34 : s * 0.27;
+        const hy = i === 2 ? cy - s * 0.42 : cy - s * 0.28;
+        ctx.beginPath(); ctx.arc(cx + dx, hy, hr, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(cx + dx, hy + hr * 2.1, hr * 1.5, Math.PI, 0); ctx.fill();
+      });
+    }
+    ctx.restore();
+  }
+
+  // Écusson étoile (à droite du nom).
+  function shieldStar(cx, topY) {
+    const w = 104, h = 104, x = cx - w / 2, y = topY;
+    ctx.beginPath();
+    ctx.moveTo(x + 14, y);
+    ctx.lineTo(x + w - 14, y);
+    ctx.arcTo(x + w, y, x + w, y + 14, 12);
+    ctx.lineTo(x + w, y + h * 0.55);
+    ctx.quadraticCurveTo(x + w, y + h * 0.82, cx, y + h);
+    ctx.quadraticCurveTo(x, y + h * 0.82, x, y + h * 0.55);
+    ctx.lineTo(x, y + 14);
+    ctx.arcTo(x, y, x + 14, y, 12);
+    ctx.closePath();
+    ctx.fillStyle = "#13315f"; ctx.fill();
+    ctx.lineWidth = 4; ctx.strokeStyle = "#e7e3d6"; ctx.stroke();
+    star(cx, y + h * 0.46, 28, true);
+  }
+
   function render() {
     ctx.clearRect(0, 0, W, H);
 
-    // fond carte + cadre
-    rr(0, 0, W, H, 46); ctx.fillStyle = "#0a1326"; ctx.fill();
-    const bg = ctx.createLinearGradient(0, 0, W, H);
-    bg.addColorStop(0, "#11213f"); bg.addColorStop(0.5, "#0d1830"); bg.addColorStop(1, "#1a1640");
-    rr(24, 24, W - 48, H - 48, 36); ctx.fillStyle = bg; ctx.fill();
-    // reflets holo
-    for (let i = -2; i < 8; i++) {
-      const g = ctx.createLinearGradient(i * 180, 0, i * 180 + 220, H);
-      g.addColorStop(0, "rgba(120,160,255,0)");
-      g.addColorStop(0.5, "rgba(150,180,255,0.05)");
-      g.addColorStop(1, "rgba(180,140,255,0)");
-      ctx.save(); rr(24, 24, W - 48, H - 48, 36); ctx.clip();
-      ctx.fillStyle = g; ctx.fillRect(i * 180, 24, 120, H); ctx.restore();
-    }
-    rr(24, 24, W - 48, H - 48, 36);
-    ctx.lineWidth = 8; ctx.strokeStyle = "rgba(232,238,255,0.85)"; ctx.stroke();
+    const name = ($("cName").value || "").toUpperCase();
+    const role = ($("cRole").value || "").toUpperCase();
+    const comp = ($("cCompany").value || "");
+    const num = ($("cNumber") && $("cNumber").value || "").trim();
+    const stats = getStats();
+    const [body] = jerseyColors();
 
-    // photo
-    const pr = { x: 70, y: 150, w: W - 140, h: 760 };
-    ctx.save(); rr(pr.x, pr.y, pr.w, pr.h, 20); ctx.clip();
-    const glow = ctx.createRadialGradient(W / 2, pr.y + 280, 80, W / 2, pr.y + 280, 600);
-    glow.addColorStop(0, "rgba(91,140,255,0.35)"); glow.addColorStop(1, "rgba(10,19,38,0.9)");
+    // bord crème + fond holographique
+    rr(0, 0, W, H, 46); ctx.fillStyle = "#e7e3d6"; ctx.fill();
+    drawFoil(14, 14, W - 28, H - 28, 38);
+
+    // ---- panneau photo ----
+    const pr = { x: 42, y: 42, w: W - 84, h: 946 };
+    ctx.save(); rr(pr.x, pr.y, pr.w, pr.h, 24); ctx.clip();
+    const glow = ctx.createRadialGradient(W / 2, pr.y + 360, 120, W / 2, pr.y + 360, 780);
+    glow.addColorStop(0, shade(body, 0.9)); glow.addColorStop(1, "#0a1326");
     ctx.fillStyle = glow; ctx.fillRect(pr.x, pr.y, pr.w, pr.h);
     if (photoImg) {
       const ar = photoImg.width / photoImg.height, tr = pr.w / pr.h;
       let dw, dh; if (ar > tr) { dh = pr.h; dw = dh * ar; } else { dw = pr.w; dh = dw / ar; }
       ctx.drawImage(photoImg, pr.x + (pr.w - dw) / 2, pr.y + (pr.h - dh) / 2, dw, dh);
     } else {
-      ctx.fillStyle = "rgba(255,255,255,0.5)";
+      ctx.fillStyle = "rgba(255,255,255,0.6)";
       ctx.font = "600 34px Inter, sans-serif"; ctx.textAlign = "center";
-      ctx.fillText(t("card_photo_ph"), W / 2, pr.y + pr.h / 2);
-      ctx.font = "120px serif"; ctx.fillText("👤", W / 2, pr.y + pr.h / 2 - 60);
+      ctx.fillText(t("card_photo_ph"), W / 2, pr.y + pr.h / 2 + 70);
+      ctx.font = "150px serif"; ctx.fillText("👤", W / 2, pr.y + pr.h / 2 - 10);
     }
     ctx.restore();
+    rr(pr.x, pr.y, pr.w, pr.h, 24); ctx.lineWidth = 7; ctx.strokeStyle = "#13315f"; ctx.stroke();
 
-    // maillot aux couleurs du pays (par-dessus la photo)
-    if (photoImg && $("cJersey") && $("cJersey").checked) drawJersey(pr);
-
-    // badge chatgpt.football (haut gauche) — promotion du site
-    ctx.textAlign = "left";
-    rr(70, 60, 360, 64, 14); ctx.fillStyle = "rgba(10,19,38,0.78)"; ctx.fill();
-    ctx.lineWidth = 2; ctx.strokeStyle = "rgba(120,150,220,0.5)"; ctx.stroke();
-    ctx.font = "800 30px Sora, sans-serif"; ctx.fillStyle = "#7ea0ff";
-    ctx.fillText("Chatgpt.football", 90, 102);
-
-    // drapeau + code (haut gauche, sous le badge dans la photo)
+    // ---- rail latéral gauche (drapeau, code, icônes) ----
+    rr(56, 150, 96, 624, 18); ctx.fillStyle = "rgba(9,19,42,0.62)"; ctx.fill();
+    ctx.lineWidth = 3; ctx.strokeStyle = "rgba(120,150,220,0.4)"; ctx.stroke();
     if (flagImg) {
-      ctx.save(); rr(80, 175, 92, 66, 8); ctx.clip();
-      ctx.drawImage(flagImg, 80, 175, 92, 66); ctx.restore();
-      rr(80, 175, 92, 66, 8); ctx.lineWidth = 3; ctx.strokeStyle = "#fff"; ctx.stroke();
+      ctx.save(); rr(70, 166, 68, 48, 7); ctx.clip();
+      ctx.drawImage(flagImg, 70, 166, 68, 48); ctx.restore();
+      rr(70, 166, 68, 48, 7); ctx.lineWidth = 3; ctx.strokeStyle = "#fff"; ctx.stroke();
     }
-    rr(80, 248, 92, 40, 8); ctx.fillStyle = "rgba(10,19,38,0.8)"; ctx.fill();
-    ctx.font = "800 26px Sora, sans-serif"; ctx.fillStyle = "#fff"; ctx.textAlign = "center";
-    ctx.fillText(state.country[2], 126, 277);
+    rr(70, 222, 68, 34, 7); ctx.fillStyle = "#13315f"; ctx.fill();
+    ctx.fillStyle = "#fff"; ctx.font = "800 22px Sora, sans-serif"; ctx.textAlign = "center";
+    ctx.fillText(state.country[2], 104, 247);
+    railIcon("chart", 104, 360, 30);
+    railIcon("deal", 104, 500, 30);
+    railIcon("people", 104, 640, 30);
 
-    // bandeau nom
-    const name = ($("cName").value || "").toUpperCase();
-    rr(70, 930, W - 140, 86, 14); ctx.fillStyle = "#eef0ec"; ctx.fill();
+    // ---- badges du haut ----
+    paniniBadge(64, 60);
+    companyBox(W - 296, 58, 232, 120, comp);
+
+    // ---- filigrane du site ----
+    rr(W - 352, 922, 288, 46, 12); ctx.fillStyle = "rgba(9,19,42,0.72)"; ctx.fill();
+    ctx.font = "800 24px Sora, sans-serif"; ctx.fillStyle = "#7ea0ff"; ctx.textAlign = "center";
+    ctx.fillText("Chatgpt.football", W - 208, 952);
+
+    // ---- bandeau nom + écusson étoile ----
+    rr(42, 998, W - 84, 92, 16); ctx.fillStyle = "#f1efe6"; ctx.fill();
+    ctx.lineWidth = 4; ctx.strokeStyle = "#13315f"; ctx.stroke();
     ctx.fillStyle = "#0a1326"; ctx.textAlign = "center";
-    ctx.font = `800 ${fitFont(name, W - 220, 62, 800)}px Sora, sans-serif`;
-    ctx.fillText(name, W / 2, 992);
+    ctx.font = `800 ${fitFont(name, W - 300, 64, 800)}px Sora, sans-serif`;
+    ctx.fillText(name, (W - 120) / 2, 1062);
+    shieldStar(W - 108, 984);
 
-    // rôle + entreprise
-    const role = ($("cRole").value || "").toUpperCase();
-    const comp = ($("cCompany").value || "").toUpperCase();
-    rr(70, 1028, W - 140, 58, 12); ctx.fillStyle = "#15315f"; ctx.fill();
-    ctx.fillStyle = "#dce6ff"; ctx.font = `700 ${fitFont(role, W - 200, 30, 700)}px Sora, sans-serif`;
-    ctx.fillText(role, W / 2, 1066);
-    rr(70, 1094, W - 140, 58, 12); ctx.fillStyle = "#0f2547"; ctx.fill();
-    ctx.fillStyle = "#aebbe0"; ctx.font = `700 ${fitFont(comp, W - 200, 28, 700)}px Sora, sans-serif`;
-    ctx.fillText(comp, W / 2, 1132);
+    // ---- rôle + entreprise ----
+    rr(42, 1098, W - 84, 56, 12); ctx.fillStyle = "#13315f"; ctx.fill();
+    ctx.fillStyle = "#dce6ff"; ctx.textAlign = "center";
+    ctx.font = `700 ${fitFont(role, W - 160, 32, 700)}px Sora, sans-serif`;
+    ctx.fillText(role, W / 2, 1136);
+    rr(42, 1160, W - 84, 56, 12); ctx.fillStyle = "#0e2444"; ctx.fill();
+    ctx.fillStyle = "#aebbe0";
+    ctx.font = `700 ${fitFont(comp.toUpperCase(), W - 160, 30, 700)}px Sora, sans-serif`;
+    ctx.fillText(comp.toUpperCase(), W / 2, 1198);
 
-    // bloc stats
-    const stats = getStats();
-    const bx = 70, by = 1176, bw = W - 140, bh = 250;
-    rr(bx, by, bw, bh, 16); ctx.fillStyle = "#eceee9"; ctx.fill();
-    ctx.textAlign = "left";
+    // ---- numéro joueur + bloc stats ----
+    rr(50, 1240, 90, 90, 14); ctx.fillStyle = "#13315f"; ctx.fill();
+    ctx.lineWidth = 4; ctx.strokeStyle = "#e7e3d6"; ctx.stroke();
+    ctx.fillStyle = "#fff"; ctx.textAlign = "center";
+    ctx.font = `800 ${fitFont(num || "—", 70, 46, 800)}px Sora, sans-serif`;
+    ctx.fillText(num || "—", 95, 1302);
+
+    const bx = 156, by = 1228, bw = W - 156 - 42, bh = 230;
+    rr(bx, by, bw, bh, 16); ctx.fillStyle = "#eceae0"; ctx.fill();
     const rowH = bh / stats.length;
     stats.forEach((s, i) => {
       const cy = by + rowH * i + rowH / 2;
-      ctx.fillStyle = "#0a1326"; ctx.font = "800 27px Sora, sans-serif"; ctx.textAlign = "left";
-      ctx.fillText(s[0].toUpperCase(), bx + 28, cy + 9);
-      ctx.font = "800 27px Sora, sans-serif"; ctx.textAlign = "right";
-      ctx.fillText(String(s[1]), bx + 470, cy + 9);
+      ctx.fillStyle = "#0a1326"; ctx.font = "800 26px Sora, sans-serif"; ctx.textAlign = "left";
+      ctx.fillText(s[0].toUpperCase(), bx + 26, cy + 9);
+      ctx.textAlign = "right";
+      ctx.fillText(String(s[1]), bx + 500, cy + 9);
       const filled = Math.round(s[1] / 20);
-      for (let k = 0; k < 5; k++) star(bx + 540 + k * 56, cy, 22, k < filled);
+      for (let k = 0; k < 5; k++) star(bx + 540 + k * 52, cy, 19, k < filled);
     });
-
-    // badge note + étoile
-    const avg = Math.round(stats.reduce((a, s) => a + s[1], 0) / stats.length / 10);
-    rr(bx - 0, by - 70, 90, 60, 12); ctx.fillStyle = "#13294e"; ctx.fill();
-    ctx.lineWidth = 2; ctx.strokeStyle = "rgba(120,150,220,0.5)"; ctx.stroke();
-    ctx.fillStyle = "#fff"; ctx.font = "800 32px Sora, sans-serif"; ctx.textAlign = "center";
-    ctx.fillText(String(avg), bx + 45, by - 28);
-
-    // pied
-    ctx.fillStyle = "#7ea0ff"; ctx.font = "700 26px Sora, sans-serif"; ctx.textAlign = "center";
-    ctx.fillText("chatgpt.football", W / 2, H - 50);
   }
 
   /* ---------- télécharger / partager ---------- */
