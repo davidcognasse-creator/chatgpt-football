@@ -106,7 +106,6 @@
   });
 
   ["cName", "cRole", "cCompany"].forEach((id) => $(id).addEventListener("input", render));
-  $("cJersey").addEventListener("change", render);
 
   /* ---------- dessin ---------- */
   function rr(x, y, w, h, r) {
@@ -365,7 +364,6 @@
       const img = new Image();
       img.onload = () => {
         photoImg = img;
-        $("cJersey").checked = false; // l'IA a déjà mis le maillot
         render();
         setStatus("");
         btn.disabled = false;
