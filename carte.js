@@ -245,7 +245,7 @@
     rr(70, 60, 360, 64, 14); ctx.fillStyle = "rgba(10,19,38,0.78)"; ctx.fill();
     ctx.lineWidth = 2; ctx.strokeStyle = "rgba(120,150,220,0.5)"; ctx.stroke();
     ctx.font = "800 30px Sora, sans-serif"; ctx.fillStyle = "#7ea0ff";
-    ctx.fillText("chatgpt.football", 90, 102);
+    ctx.fillText("Chatgpt.football", 90, 102);
 
     // drapeau + code (haut gauche, sous le badge dans la photo)
     if (flagImg) {
