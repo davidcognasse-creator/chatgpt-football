@@ -411,6 +411,7 @@ function renderGroup(group) {
       <div class="invite-actions">
         <button class="btn-soft" id="btnInvite">${t("g_invite_copy")}</button>
         <a class="btn-soft" id="btnEmail">${t("g_invite_email")}</a>
+        ${group.ownerUid === me.uid ? `<button class="btn-soft danger-soft" id="btnDelGroup">${t("g_delete_group")}</button>` : ""}
       </div>
     </div>
     <div class="tabs">
@@ -431,6 +432,25 @@ async function wireGroup(group) {
     const b = document.getElementById("btnInvite");
     b.textContent = t("g_invite_copied");
     setTimeout(() => (b.textContent = t("g_invite_copy")), 2000);
+  };
+
+  // suppression du groupe (propriétaire uniquement)
+  const btnDel = document.getElementById("btnDelGroup");
+  if (btnDel) btnDel.onclick = async () => {
+    if (!confirm(t("g_delete_group_confirm", { name: group.name }))) return;
+    btnDel.disabled = true;
+    try {
+      // nettoyage best-effort des sous-collections (forum + ses propres pronostics)
+      for (const sub of ["messages", "preds"]) {
+        try {
+          const snap = await getDocs(collection(db, "groups", group.id, sub));
+          for (const d of snap.docs) { try { await deleteDoc(d.ref); } catch {} }
+        } catch {}
+      }
+      await deleteDoc(doc(db, "groups", group.id));
+      activeGroupId = null;
+      await renderApp();
+    } catch (e) { btnDel.disabled = false; alert((e.message || e)); }
   };
 
   // invitation par e-mail (ouvre le client mail avec un message pré-rempli)
