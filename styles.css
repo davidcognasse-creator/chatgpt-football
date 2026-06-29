@@ -396,6 +396,8 @@ a.btn-soft { text-decoration: none; display: inline-flex; align-items: center; }
 .field { display: flex; flex-direction: column; gap: 6px; }
 .field > span { font-size: 0.82rem; color: var(--muted); font-weight: 600; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.field-check { display: flex; align-items: center; gap: 8px; font-size: 0.86rem; color: var(--text); cursor: pointer; }
+.field-check input { width: 18px; height: 18px; accent-color: var(--accent); }
 .carte-form input[type="text"], .carte-form input[type="number"], .carte-form select, .carte-form input[type="file"] {
   width: 100%; font: inherit; font-size: 0.9rem; color: var(--text);
   background: rgba(255,255,255,0.04); border: 1px solid var(--card-border);

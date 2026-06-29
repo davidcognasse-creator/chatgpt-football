@@ -29,6 +29,30 @@
     ["Sang-froid", 88], ["Influence", 91], ["Leadership", 93],
   ];
 
+  // Couleurs de maillot par pays (corps, liseré).
+  const COLORS = {
+    fr: ["#14225e", "#ffffff"], be: ["#b71234", "#f0c419"], ch: ["#d52b1e", "#ffffff"],
+    es: ["#c60b1e", "#f9d616"], pt: ["#7a1f2b", "#1c8a3a"], it: ["#1a52a0", "#ffffff"],
+    de: ["#ededed", "#161616"], "gb-eng": ["#ededed", "#1b2a64"], nl: ["#ff6a13", "#ffffff"],
+    br: ["#ffd000", "#1c8a3a"], ar: ["#75aadb", "#ffffff"], us: ["#1b2a64", "#c8102e"],
+    ca: ["#c8102e", "#ffffff"], mx: ["#0a6b3b", "#ffffff"], ma: ["#c1272d", "#1c8a3a"],
+    sn: ["#1e8a4c", "#e8b300"], dz: ["#1a7a45", "#ffffff"], tn: ["#d21a2a", "#ffffff"],
+    ci: ["#f08a1d", "#1e8a4c"], gh: ["#ededed", "#d21a2a"], ng: ["#1e8a4c", "#ffffff"],
+    jp: ["#1a2b6b", "#ffffff"], kr: ["#d21a2a", "#1a2b6b"], au: ["#f9d616", "#1e8a4c"],
+    hr: ["#d21a2a", "#ffffff"], pl: ["#ededed", "#d21a2a"], dk: ["#c60c30", "#ffffff"],
+    se: ["#1a52a0", "#f9d616"], no: ["#c8102e", "#1a2b6b"], tr: ["#d21a2a", "#ffffff"],
+    eg: ["#d21a2a", "#ffffff"], sa: ["#1e8a4c", "#ffffff"], qa: ["#7a1230", "#ffffff"],
+    co: ["#f9d616", "#1a2b6b"], uy: ["#4aa3df", "#161616"], cl: ["#c8102e", "#1a52a0"],
+  };
+  const jerseyColors = () => COLORS[state.country[1]] || ["#14225e", "#ffffff"];
+
+  function shade(hex, f) {
+    const n = parseInt(hex.slice(1), 16);
+    const c = [(n >> 16) & 255, (n >> 8) & 255, n & 255]
+      .map((v) => Math.max(0, Math.min(255, Math.round(v * f))));
+    return `rgb(${c[0]},${c[1]},${c[2]})`;
+  }
+
   const $ = (id) => document.getElementById(id);
   let photoImg = null;
   let flagImg = null;
@@ -80,6 +104,7 @@
   });
 
   ["cName", "cRole", "cCompany"].forEach((id) => $(id).addEventListener("input", render));
+  $("cJersey").addEventListener("change", render);
 
   /* ---------- dessin ---------- */
   function rr(x, y, w, h, r) {
@@ -112,6 +137,65 @@
     ctx.closePath();
     ctx.fillStyle = fill ? "#e7b53b" : "rgba(60,70,95,0.45)";
     ctx.fill();
+  }
+
+  // Dessine un maillot façon col en V aux couleurs du pays, par-dessus la photo.
+  function drawJersey(r) {
+    const [body, trim] = jerseyColors();
+    const cx = r.x + r.w / 2;
+    const top = r.y + r.h * 0.58;   // ligne d'épaules
+    const neck = top + 70;          // ouverture du col
+    const vpt = top + 210;          // pointe du V
+    const bottom = r.y + r.h + 30;
+
+    ctx.save();
+    rr(r.x, r.y, r.w, r.h, 20); ctx.clip();
+
+    const g = ctx.createLinearGradient(0, top, 0, bottom);
+    g.addColorStop(0, shade(body, 1.12)); g.addColorStop(1, shade(body, 0.82));
+
+    ctx.beginPath();
+    ctx.moveTo(r.x - 30, bottom);
+    ctx.lineTo(r.x - 30, top + 64);
+    ctx.quadraticCurveTo(r.x + r.w * 0.20, top - 30, cx - 112, neck);
+    ctx.lineTo(cx, vpt);
+    ctx.lineTo(cx + 112, neck);
+    ctx.quadraticCurveTo(r.x + r.w * 0.80, top - 30, r.x + r.w + 30, top + 64);
+    ctx.lineTo(r.x + r.w + 30, bottom);
+    ctx.closePath();
+    ctx.fillStyle = g; ctx.fill();
+
+    // ombre douce du col
+    ctx.save(); ctx.clip();
+    const sh = ctx.createLinearGradient(0, top, 0, top + 120);
+    sh.addColorStop(0, "rgba(0,0,0,0.22)"); sh.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = sh; ctx.fillRect(r.x - 30, top - 30, r.w + 60, 150);
+    ctx.restore();
+
+    // liseré col en V
+    ctx.lineJoin = "round"; ctx.lineCap = "round";
+    ctx.lineWidth = 20; ctx.strokeStyle = trim;
+    ctx.beginPath();
+    ctx.moveTo(cx - 112, neck); ctx.lineTo(cx, vpt); ctx.lineTo(cx + 112, neck);
+    ctx.stroke();
+
+    // liserés d'épaules (style maillot)
+    ctx.lineWidth = 12; ctx.strokeStyle = trim;
+    ctx.beginPath();
+    ctx.moveTo(r.x + r.w * 0.07, top + 70);
+    ctx.quadraticCurveTo(r.x + r.w * 0.22, top - 4, cx - 120, neck - 4);
+    ctx.moveTo(r.x + r.w * 0.93, top + 70);
+    ctx.quadraticCurveTo(r.x + r.w * 0.78, top - 4, cx + 120, neck - 4);
+    ctx.stroke();
+
+    // petit écusson (drapeau) sur le torse
+    if (flagImg) {
+      const fx = cx + 150, fy = vpt + 10, fw = 70, fh = 50;
+      ctx.save(); rr(fx, fy, fw, fh, 6); ctx.clip();
+      ctx.drawImage(flagImg, fx, fy, fw, fh); ctx.restore();
+      rr(fx, fy, fw, fh, 6); ctx.lineWidth = 3; ctx.strokeStyle = trim; ctx.stroke();
+    }
+    ctx.restore();
   }
 
   function render() {
@@ -151,6 +235,9 @@
       ctx.font = "120px serif"; ctx.fillText("👤", W / 2, pr.y + pr.h / 2 - 60);
     }
     ctx.restore();
+
+    // maillot aux couleurs du pays (par-dessus la photo)
+    if (photoImg && $("cJersey") && $("cJersey").checked) drawJersey(pr);
 
     // badge chatgpt.football (haut gauche) — promotion du site
     ctx.textAlign = "left";
