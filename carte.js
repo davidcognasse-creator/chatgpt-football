@@ -366,17 +366,17 @@
     ctx.restore();
     rr(pr.x, pr.y, pr.w, pr.h, 24); ctx.lineWidth = 7; ctx.strokeStyle = "#13315f"; ctx.stroke();
 
-    // ---- drapeau + code pays (haut gauche) ----
-    rr(56, 150, 96, 122, 16); ctx.fillStyle = "rgba(9,19,42,0.62)"; ctx.fill();
+    // ---- drapeau pays (haut gauche) ----
+    rr(56, 150, 96, 88, 14); ctx.fillStyle = "rgba(9,19,42,0.62)"; ctx.fill();
     ctx.lineWidth = 3; ctx.strokeStyle = "rgba(120,150,220,0.4)"; ctx.stroke();
     if (flagImg) {
-      ctx.save(); rr(70, 166, 68, 48, 7); ctx.clip();
-      ctx.drawImage(flagImg, 70, 166, 68, 48); ctx.restore();
-      rr(70, 166, 68, 48, 7); ctx.lineWidth = 3; ctx.strokeStyle = "#fff"; ctx.stroke();
+      ctx.save(); rr(68, 166, 72, 54, 7); ctx.clip();
+      ctx.drawImage(flagImg, 68, 166, 72, 54); ctx.restore();
+      rr(68, 166, 72, 54, 7); ctx.lineWidth = 3; ctx.strokeStyle = "#fff"; ctx.stroke();
+    } else {
+      ctx.fillStyle = "#fff"; ctx.font = "800 22px Sora, sans-serif"; ctx.textAlign = "center";
+      ctx.fillText(state.country[2], 104, 201);
     }
-    rr(70, 222, 68, 34, 7); ctx.fillStyle = "#13315f"; ctx.fill();
-    ctx.fillStyle = "#fff"; ctx.font = "800 22px Sora, sans-serif"; ctx.textAlign = "center";
-    ctx.fillText(state.country[2], 104, 247);
 
     // ---- badges du haut ----
     paniniBadge(64, 60);
