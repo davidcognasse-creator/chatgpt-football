@@ -387,6 +387,39 @@ a.btn-soft { text-decoration: none; display: inline-flex; align-items: center; }
 }
 .sim-note { font-size: 0.76rem; color: var(--muted-soft); margin-top: 12px; }
 
+/* ---------- page carte Panini ---------- */
+.carte-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.carte-form { display: flex; flex-direction: column; gap: 14px; }
+.carte-form h3 { margin: 0 0 4px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field > span { font-size: 0.82rem; color: var(--muted); font-weight: 600; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.carte-form input[type="text"], .carte-form input[type="number"], .carte-form select, .carte-form input[type="file"] {
+  width: 100%; font: inherit; font-size: 0.9rem; color: var(--text);
+  background: rgba(255,255,255,0.04); border: 1px solid var(--card-border);
+  border-radius: 10px; padding: 10px 12px; outline: none;
+}
+.carte-form input:focus, .carte-form select:focus { border-color: var(--accent); }
+.carte-form select option { background-color: #0d1426; color: #eaf0ff; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.stat-input { display: flex; gap: 6px; }
+.carte-form input.st-label { flex: 1; min-width: 0; }
+.carte-form input.st-val { width: 64px; flex: none; text-align: center; }
+.carte-actions { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.carte-actions .btn-primary { width: auto; flex: 1; min-width: 150px; }
+.carte-share-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.carte-hint { font-size: 0.76rem; color: var(--muted-soft); flex-basis: 100%; }
+.carte-privacy { font-size: 0.78rem; color: var(--muted); margin: 4px 0 0; }
+.carte-preview { position: sticky; top: 20px; }
+#cCanvas {
+  width: 100%; height: auto; border-radius: 18px; display: block;
+  box-shadow: 0 24px 60px -20px rgba(0,0,0,0.7);
+}
+@media (max-width: 760px) {
+  .carte-layout { grid-template-columns: 1fr; }
+  .carte-preview { position: static; order: -1; max-width: 420px; margin: 0 auto; }
+}
+
 /* chemin projeté vers le titre (bracket) */
 .bracket { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; align-items: start; }
 .br-round { display: flex; flex-direction: column; gap: 10px; }

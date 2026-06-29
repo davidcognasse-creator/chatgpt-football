@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ma carte Panini — chatgpt.football</title>
+  <meta name="description" content="Crée ta carte à collectionner façon Panini à ton effigie (photo + stats) et partage-la sur LinkedIn, X et Instagram. Gratuit, ta photo reste dans ton navigateur." />
+  <link rel="canonical" href="https://chatgpt.football/carte.html" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="theme-color" content="#070b16" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ChatGPT Football" />
+  <meta property="og:title" content="Crée ta carte à collectionner — chatgpt.football" />
+  <meta property="og:description" content="Ta carte façon Panini à ton effigie, à partager sur LinkedIn, X et Instagram." />
+  <meta property="og:url" content="https://chatgpt.football/carte.html" />
+  <meta property="og:image" content="https://chatgpt.football/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="i18n.js"></script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 16.9 7.2 18l.9-5.4L4.2 8.7l5.4-.8z" />
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">Chat Game<br />Prediction Technology</span>
+        <span class="brand-sub" data-i18n="brand_sub">Coupe du Monde 2026</span>
+      </div>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link" data-i18n="nav_predictions">Pronostics</a>
+      <a href="simulateur.html" class="nav-link" data-i18n="nav_winner">Vainqueur</a>
+      <a href="groupes.html" class="nav-link" data-i18n="nav_groups">Groupes</a>
+      <a href="carte.html" class="nav-link active" data-i18n="nav_card">Ma carte</a>
+      <a href="historique.html" class="nav-link" data-i18n="nav_history">Historique</a>
+      <span class="lang-switch" data-lang-switcher></span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom:18px">
+      <p class="eyebrow" data-i18n="card_eyebrow">Carte à collectionner</p>
+      <h1 data-i18n="card_h1">Crée ta carte Panini</h1>
+      <p class="hero-lede" data-i18n="card_lede">
+        Ta carte à ton effigie, façon vignette de foot. Remplis le formulaire,
+        ajoute ta photo, télécharge et partage-la pour faire connaître le site.
+      </p>
+    </section>
+
+    <section class="carte-layout">
+      <div class="panel carte-form">
+        <h3 data-i18n="card_form_title">🎴 Ta carte</h3>
+
+        <label class="field">
+          <span data-i18n="card_photo">Photo (reste sur ton appareil)</span>
+          <input type="file" id="cPhoto" accept="image/*" />
+        </label>
+
+        <label class="field">
+          <span data-i18n="card_name">Nom</span>
+          <input type="text" id="cName" maxlength="28" placeholder="David Cognasse" value="David Cognasse" />
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span data-i18n="card_role">Poste</span>
+            <input type="text" id="cRole" maxlength="34" placeholder="Directeur d'investissement" value="Directeur d'investissement" />
+          </label>
+          <label class="field">
+            <span data-i18n="card_country">Pays</span>
+            <select id="cCountry"></select>
+          </label>
+        </div>
+
+        <label class="field">
+          <span data-i18n="card_company">Entreprise / équipe</span>
+          <input type="text" id="cCompany" maxlength="34" placeholder="IRDI Capital Investissement" value="IRDI Capital Investissement" />
+        </label>
+
+        <div class="field">
+          <span data-i18n="card_stats">Statistiques (0–99)</span>
+          <div id="cStats" class="stats-grid"></div>
+        </div>
+
+        <div class="carte-actions">
+          <button class="btn-primary" id="cDownload" data-i18n="card_download">📥 Télécharger</button>
+          <button class="btn-soft" id="cShare" data-i18n="card_share">📤 Partager</button>
+        </div>
+        <div class="carte-share-links" id="cShareLinks" hidden>
+          <a class="btn-soft" id="cLinkedin" target="_blank" rel="noopener">in LinkedIn</a>
+          <a class="btn-soft" id="cX" target="_blank" rel="noopener">𝕏</a>
+          <span class="carte-hint" data-i18n="card_share_hint">Astuce : télécharge l'image puis joins-la à ton post (sur Instagram, partage depuis ta galerie).</span>
+        </div>
+        <p class="carte-privacy" data-i18n="card_privacy">🔒 Tout se passe dans ton navigateur : ta photo n'est jamais envoyée à un serveur.</p>
+      </div>
+
+      <div class="carte-preview">
+        <canvas id="cCanvas" width="1080" height="1500" aria-label="Aperçu de la carte"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong data-i18n="foot_disclaimer_label">Avertissement.</strong> <span data-i18n="card_foot">Image générée localement à des fins ludiques. Marque Panini™ citée à titre d'inspiration, sans affiliation.</span></p>
+    <p class="footer-credit">chatgpt.football · CDM 2026</p>
+  </footer>
+
+  <script src="flags.js"></script>
+  <script src="carte.js"></script>
+</body>
+</html>
