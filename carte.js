@@ -70,8 +70,8 @@
     const grid = $("cStats");
     grid.innerHTML = DEFAULT_STATS.map((s, i) => `
       <div class="stat-input">
-        <input type="text" class="st-label" data-i="${i}" maxlength="14" placeholder="${s[0]}" />
-        <input type="number" class="st-val" data-i="${i}" min="0" max="99" placeholder="${s[1]}" />
+        <input type="text" class="st-label" data-i="${i}" maxlength="14" value="${s[0]}" />
+        <input type="number" class="st-val" data-i="${i}" min="0" max="99" value="${s[1]}" />
       </div>`).join("");
     grid.querySelectorAll("input").forEach((inp) => inp.addEventListener("input", render));
   }
