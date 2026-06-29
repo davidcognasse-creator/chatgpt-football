@@ -2,5 +2,5 @@
 // Colle ici l'URL de ton Cloudflare Worker une fois déployé (voir SETUP-CARTE-IA.md).
 // Laisse vide ("") pour garder uniquement le maillot dessiné (gratuit, sans IA).
 window.CARTE_CONFIG = {
-  geminiWorkerUrl: "",
+  geminiWorkerUrl: "https://gemini-card.david-cognasse.workers.dev",
 };
