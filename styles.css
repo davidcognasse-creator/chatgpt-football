@@ -896,6 +896,28 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   border-radius: 999px;
   vertical-align: middle;
 }
+.badge-done {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #16d38a;
+  background: rgba(22, 211, 138, 0.14);
+  border: 1px solid rgba(22, 211, 138, 0.4);
+  padding: 2px 8px;
+  border-radius: 999px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+.score-pred .ai-note {
+  font-size: 0.6rem;
+  color: var(--muted-soft);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+.match-card.is-finished .score-pred .score { color: #16d38a; }
+.match-card.is-finished::before {
+  background: linear-gradient(90deg, #16d38a, var(--accent));
+}
 .match-card.is-projected::before {
   background: linear-gradient(90deg, var(--accent-2), var(--accent));
   opacity: 0.7;

@@ -119,12 +119,27 @@ async function main() {
     });
   }
 
+  // En live, on garde sur l'accueil UNIQUEMENT le dernier match terminé
+  // (avec son vrai score). Les plus anciens ne restent que dans l'historique.
+  let finalMatches = matches;
+  if (mode === "live") {
+    const prev = await readJSONSafe(here(config.output.json));
+    const prevFinished = (prev?.matches || []).filter((m) => m.status === "finished");
+    if (prevFinished.length) {
+      prevFinished.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
+      const last = prevFinished[0];
+      const ids = new Set(matches.map((m) => m.id));
+      const ageOk = Date.now() - new Date(last.datetime).getTime() <= 48 * 3600 * 1000;
+      if (!ids.has(last.id) && ageOk) finalMatches = [last, ...matches];
+    }
+  }
+
   const out = {
     tournament: fixtures.tournament,
     updatedAt: new Date().toISOString(),
     mode,
     weights: config.weights,
-    matches,
+    matches: finalMatches,
   };
 
   const jsonPath = here(config.output.json);
@@ -285,6 +300,7 @@ async function settleScores(ctx, config) {
   console.log(`[scores] ${candidates.length} match(s) potentiellement terminé(s) — vérification`);
 
   let settled = 0;
+  const resultById = {}; // id → { home, away, outcome } pour l'affichage accueil
   try {
     const { fetchResults } = await import("./sources/results.mjs");
     const results = await fetchResults(ctx);
@@ -303,6 +319,7 @@ async function settleScores(ctx, config) {
         correctScore:
           p.predicted.score.home === r.scoreHome && p.predicted.score.away === r.scoreAway,
       });
+      resultById[r.id] = { home: r.scoreHome, away: r.scoreAway, outcome: r.outcome };
       delete pending[r.id];
       known.add(r.id);
       settled++;
@@ -329,10 +346,20 @@ async function settleScores(ctx, config) {
   );
   await writeFile(pendingPath, JSON.stringify(pending, null, 2) + "\n", "utf8");
 
-  // Retire les matchs réglés de data.json (ne plus les afficher « à venir »).
+  // Sur l'accueil : marque le match réglé comme « terminé » (avec son vrai
+  // score) et ne conserve QUE le dernier terminé (les plus anciens ne restent
+  // que dans l'historique).
   if (data && Array.isArray(data.matches)) {
     const before = data.matches.length;
-    data.matches = data.matches.filter((m) => !known.has(m.id));
+    for (const m of data.matches) {
+      if (resultById[m.id]) { m.status = "finished"; m.result = resultById[m.id]; }
+    }
+    const finished = data.matches.filter((m) => m.status === "finished");
+    if (finished.length > 1) {
+      finished.sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
+      const keepId = finished[0].id;
+      data.matches = data.matches.filter((m) => m.status !== "finished" || m.id === keepId);
+    }
     data.updatedAt = new Date().toISOString();
     const json = JSON.stringify(data, null, 2);
     await writeFile(dataPath, json + "\n", "utf8");
@@ -343,7 +370,7 @@ async function settleScores(ctx, config) {
         `window.WC_DATA = ${json};\n`,
       "utf8"
     );
-    console.log(`[scores] data.json : ${before} → ${data.matches.length} matchs à venir`);
+    console.log(`[scores] data.json : ${before} → ${data.matches.length} matchs (dont dernier terminé)`);
   }
 
   console.log(`[scores] ${settled} match(s) réglé(s) · ${history.entries.length} au total`);

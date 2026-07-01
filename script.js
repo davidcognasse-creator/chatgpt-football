@@ -207,13 +207,22 @@
   /* ---------- carte match ---------- */
   function card(m) {
     const { home, draw, away } = m.probs;
+    const finished = m.status === "finished" && m.result;
     const projected = m.projected
       ? `<span class="badge-proj" title="${t("card_projected_title")}">${t("card_projected")}</span>`
       : "";
+    const doneBadge = finished ? `<span class="badge-done">${t("card_finished")}</span>` : "";
+    const scoreLabel = finished ? t("card_result") : t("card_scoreia");
+    const scoreVal = finished
+      ? `${m.result.home} – ${m.result.away}`
+      : `${m.predictedScore.home} – ${m.predictedScore.away}`;
+    const aiNote = finished
+      ? `<span class="ai-note">${t("card_ai_short")} ${m.predictedScore.home}–${m.predictedScore.away}</span>`
+      : "";
     return `
-      <article class="match-card${m.projected ? " is-projected" : ""}">
+      <article class="match-card${m.projected ? " is-projected" : ""}${finished ? " is-finished" : ""}">
         <div class="match-top">
-          <span class="stage-tag">${m.stage}${projected}</span>
+          <span class="stage-tag">${finished ? doneBadge : m.stage + projected}</span>
           <span class="match-date">${fmtDate(m.datetime)} · ${fmtTime(m.datetime)}</span>
         </div>
 
@@ -223,8 +232,9 @@
             <span class="tname">${m.home.name}</span>
           </div>
           <div class="score-pred">
-            <span class="vs">${t("card_scoreia")}</span>
-            <span class="score">${m.predictedScore.home} – ${m.predictedScore.away}</span>
+            <span class="vs">${scoreLabel}</span>
+            <span class="score">${scoreVal}</span>
+            ${aiNote}
           </div>
           <div class="team">
             <span class="flag">${flagHTML(m.away, 34)}</span>
