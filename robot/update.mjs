@@ -274,7 +274,7 @@ async function settleScores(ctx, config) {
   if (!Array.isArray(history.entries)) history.entries = [];
   const known = new Set(history.entries.map((e) => e.id));
 
-  const MATCH_MS = 2.5 * 3600 * 1000; // durée approx. d'un match + mi-temps
+  const MATCH_MS = 2.25 * 3600 * 1000; // durée approx. d'un match + mi-temps (2h15)
   const candidates = Object.values(pending).filter(
     (p) => !known.has(p.id) && new Date(p.datetime).getTime() + MATCH_MS <= Date.now()
   );
