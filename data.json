@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-02T01:25:20.125Z",
+  "updatedAt": "2026-07-02T06:10:03.298Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -10,121 +10,6 @@
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "658ac8cbf214ca3cc150109b4ddc1e74",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-01T20:00:00Z",
-      "venue": "",
-      "home": {
-        "name": "Belgium",
-        "flag": "🇧🇪",
-        "code": "BEL"
-      },
-      "away": {
-        "name": "Senegal",
-        "flag": "🇸🇳",
-        "code": "SEN"
-      },
-      "probs": {
-        "home": 43,
-        "draw": 28,
-        "away": 29
-      },
-      "predictedScore": {
-        "home": 2,
-        "away": 1
-      },
-      "confidence": 64,
-      "analysis": "Belgium tient la corde (44% au global). Les marchés de paris donnent 45% à Belgium. La forme récente avantage Belgium. La presse penche vers Belgium. Le public suit surtout Senegal.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Iliman-Cheikh Ndiaye",
-            "prob": 87
-          },
-          {
-            "name": "Leandro Trossard",
-            "prob": 83
-          },
-          {
-            "name": "Kevin De Bruyne",
-            "prob": 83
-          },
-          {
-            "name": "Sadio Mane",
-            "prob": 82
-          },
-          {
-            "name": "Ismaila Sarr",
-            "prob": 80
-          },
-          {
-            "name": "Charles De Ketelaere",
-            "prob": 79
-          }
-        ]
-      },
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 45,
-            "draw": 29,
-            "away": 26
-          },
-          "favored": "home",
-          "detail": "40 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 45,
-            "draw": 26,
-            "away": 29
-          },
-          "favored": "home",
-          "detail": "VNN vs VDD"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 46,
-            "draw": 26,
-            "away": 28
-          },
-          "favored": "home",
-          "detail": "1870 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 30,
-            "draw": 26,
-            "away": 44
-          },
-          "favored": "away",
-          "detail": "X · 5907/8655 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 3,
-        "away": 2,
-        "outcome": "home"
-      }
-    },
     {
       "id": "9eeb4876001f5a52ce3c3641bd5f1f2f",
       "stage": "À venir",
@@ -232,6 +117,12 @@
           "favored": "home",
           "detail": "X · 24138/756 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 2,
+        "away": 0,
+        "outcome": "home"
       }
     },
     {

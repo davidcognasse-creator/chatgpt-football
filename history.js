@@ -1,7 +1,63 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_HISTORY = {
-  "updatedAt": "2026-07-02T01:25:20.122Z",
+  "updatedAt": "2026-07-02T06:10:03.296Z",
   "entries": [
+    {
+      "id": "9eeb4876001f5a52ce3c3641bd5f1f2f",
+      "datetime": "2026-07-02T00:00:00Z",
+      "home": {
+        "name": "USA",
+        "flag": "🇺🇸",
+        "code": "USA"
+      },
+      "away": {
+        "name": "Bosnia & Herzegovina",
+        "flag": "🇧🇦",
+        "code": "BIH"
+      },
+      "predicted": {
+        "probs": {
+          "home": 66,
+          "draw": 22,
+          "away": 12
+        },
+        "score": {
+          "home": 3,
+          "away": 0
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 70,
+          "draw": 19,
+          "away": 11
+        },
+        "form": {
+          "home": 44,
+          "draw": 26,
+          "away": 30
+        },
+        "h2h": null,
+        "press": {
+          "home": 73,
+          "draw": 26,
+          "away": 1
+        },
+        "social": {
+          "home": 72,
+          "draw": 26,
+          "away": 2
+        }
+      },
+      "actual": {
+        "home": 2,
+        "away": 0,
+        "outcome": "home"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "658ac8cbf214ca3cc150109b4ddc1e74",
       "datetime": "2026-07-01T20:00:00Z",
