@@ -48,55 +48,6 @@
       }
     }
   },
-  "658ac8cbf214ca3cc150109b4ddc1e74": {
-    "id": "658ac8cbf214ca3cc150109b4ddc1e74",
-    "datetime": "2026-07-01T20:00:00Z",
-    "home": {
-      "name": "Belgium",
-      "flag": "🇧🇪",
-      "code": "BEL"
-    },
-    "away": {
-      "name": "Senegal",
-      "flag": "🇸🇳",
-      "code": "SEN"
-    },
-    "predicted": {
-      "probs": {
-        "home": 43,
-        "draw": 28,
-        "away": 29
-      },
-      "score": {
-        "home": 2,
-        "away": 1
-      },
-      "favored": "home"
-    },
-    "sources": {
-      "betting": {
-        "home": 45,
-        "draw": 29,
-        "away": 26
-      },
-      "form": {
-        "home": 45,
-        "draw": 26,
-        "away": 29
-      },
-      "h2h": null,
-      "press": {
-        "home": 46,
-        "draw": 26,
-        "away": 28
-      },
-      "social": {
-        "home": 30,
-        "draw": 26,
-        "away": 44
-      }
-    }
-  },
   "a518ac20df8f5c732b881e213ae0c230": {
     "id": "a518ac20df8f5c732b881e213ae0c230",
     "datetime": "2026-07-02T19:00:00Z",
