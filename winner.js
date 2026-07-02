@@ -1,12 +1,12 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_WINNER = {
-  "updatedAt": "2026-07-02T09:58:18.048Z",
+  "updatedAt": "2026-07-02T17:27:21.184Z",
   "teams": [
     {
       "name": "France",
       "flag": "🇫🇷",
       "code": "FRA",
-      "prob": 31.6
+      "prob": 31.8
     },
     {
       "name": "Argentina",
@@ -18,7 +18,7 @@ window.WC_WINNER = {
       "name": "Spain",
       "flag": "🇪🇸",
       "code": "ESP",
-      "prob": 10.3
+      "prob": 10.2
     },
     {
       "name": "England",
@@ -30,24 +30,18 @@ window.WC_WINNER = {
       "name": "Brazil",
       "flag": "🇧🇷",
       "code": "BRA",
-      "prob": 7.3
+      "prob": 7.2
     },
     {
       "name": "Portugal",
       "flag": "🇵🇹",
       "code": "POR",
-      "prob": 5.4
+      "prob": 5.6
     },
     {
       "name": "Mexico",
       "flag": "🇲🇽",
       "code": "MEX",
-      "prob": 3
-    },
-    {
-      "name": "Colombia",
-      "flag": "🇨🇴",
-      "code": "COL",
       "prob": 2.9
     },
     {
@@ -60,6 +54,12 @@ window.WC_WINNER = {
       "name": "Morocco",
       "flag": "🇲🇦",
       "code": "MAR",
+      "prob": 2.9
+    },
+    {
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "code": "COL",
       "prob": 2.8
     },
     {
@@ -72,7 +72,7 @@ window.WC_WINNER = {
       "name": "Belgium",
       "flag": "🇧🇪",
       "code": "BEL",
-      "prob": 2
+      "prob": 1.9
     },
     {
       "name": "Switzerland",
@@ -93,18 +93,6 @@ window.WC_WINNER = {
       "prob": 0.3
     },
     {
-      "name": "Egypt",
-      "flag": "🇪🇬",
-      "code": "EGY",
-      "prob": 0.2
-    },
-    {
-      "name": "Paraguay",
-      "flag": "🇵🇾",
-      "code": "PAR",
-      "prob": 0.2
-    },
-    {
       "name": "Austria",
       "flag": "🇦🇹",
       "code": "AUT",
@@ -114,6 +102,18 @@ window.WC_WINNER = {
       "name": "Australia",
       "flag": "🇦🇺",
       "code": "AUS",
+      "prob": 0.2
+    },
+    {
+      "name": "Egypt",
+      "flag": "🇪🇬",
+      "code": "EGY",
+      "prob": 0.2
+    },
+    {
+      "name": "Paraguay",
+      "flag": "🇵🇾",
+      "code": "PAR",
       "prob": 0.2
     },
     {
