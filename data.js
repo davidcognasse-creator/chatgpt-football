@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-02T17:27:20.935Z",
+  "updatedAt": "2026-07-02T21:32:24.490Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -12,121 +12,6 @@ window.WC_DATA = {
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "9eeb4876001f5a52ce3c3641bd5f1f2f",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-02T00:00:00Z",
-      "venue": "",
-      "home": {
-        "name": "USA",
-        "flag": "🇺🇸",
-        "code": "USA"
-      },
-      "away": {
-        "name": "Bosnia & Herzegovina",
-        "flag": "🇧🇦",
-        "code": "BIH"
-      },
-      "probs": {
-        "home": 66,
-        "draw": 22,
-        "away": 12
-      },
-      "predictedScore": {
-        "home": 3,
-        "away": 0
-      },
-      "confidence": 75,
-      "analysis": "USA tient la corde (67% au global). Les marchés de paris donnent 70% à USA. La forme récente avantage USA. La presse penche vers USA. Le public suit surtout USA.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Ermedin Demirovic",
-            "prob": 88
-          },
-          {
-            "name": "Weston McKennie",
-            "prob": 85
-          },
-          {
-            "name": "Edin Dzeko",
-            "prob": 83
-          },
-          {
-            "name": "Christian Pulisic",
-            "prob": 65
-          },
-          {
-            "name": "Folarin Balogun",
-            "prob": 59
-          },
-          {
-            "name": "Ricardo Pepi",
-            "prob": 47
-          }
-        ]
-      },
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 70,
-            "draw": 19,
-            "away": 11
-          },
-          "favored": "home",
-          "detail": "40 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 44,
-            "draw": 26,
-            "away": 30
-          },
-          "favored": "home",
-          "detail": "DVV vs VDN"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 73,
-            "draw": 26,
-            "away": 1
-          },
-          "favored": "home",
-          "detail": "2884 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 72,
-            "draw": 26,
-            "away": 2
-          },
-          "favored": "home",
-          "detail": "X · 24138/756 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 2,
-        "away": 0,
-        "outcome": "home"
-      }
-    },
     {
       "id": "a518ac20df8f5c732b881e213ae0c230",
       "stage": "À venir",
@@ -234,6 +119,12 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "X · 14473/6859 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 3,
+        "away": 0,
+        "outcome": "home"
       }
     },
     {
