@@ -1,7 +1,67 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_HISTORY = {
-  "updatedAt": "2026-07-02T21:32:24.487Z",
+  "updatedAt": "2026-07-03T04:08:55.864Z",
   "entries": [
+    {
+      "id": "852b4baf0be4b9eef2a30596a8d39249",
+      "datetime": "2026-07-02T23:00:00Z",
+      "home": {
+        "name": "Portugal",
+        "flag": "🇵🇹",
+        "code": "POR"
+      },
+      "away": {
+        "name": "Croatia",
+        "flag": "🇭🇷",
+        "code": "CRO"
+      },
+      "predicted": {
+        "probs": {
+          "home": 52,
+          "draw": 26,
+          "away": 22
+        },
+        "score": {
+          "home": 3,
+          "away": 0
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 57,
+          "draw": 25,
+          "away": 18
+        },
+        "form": {
+          "home": 34,
+          "draw": 26,
+          "away": 40
+        },
+        "h2h": {
+          "home": 50,
+          "draw": 30,
+          "away": 20
+        },
+        "press": {
+          "home": 51,
+          "draw": 26,
+          "away": 23
+        },
+        "social": {
+          "home": 53,
+          "draw": 26,
+          "away": 21
+        }
+      },
+      "actual": {
+        "home": 2,
+        "away": 1,
+        "outcome": "home"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "a518ac20df8f5c732b881e213ae0c230",
       "datetime": "2026-07-02T19:00:00Z",

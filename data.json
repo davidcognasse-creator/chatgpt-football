@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-02T21:32:24.490Z",
+  "updatedAt": "2026-07-03T04:08:55.866Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -10,121 +10,6 @@
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "a518ac20df8f5c732b881e213ae0c230",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-02T19:00:00Z",
-      "venue": "",
-      "home": {
-        "name": "Spain",
-        "flag": "🇪🇸",
-        "code": "ESP"
-      },
-      "away": {
-        "name": "Austria",
-        "flag": "🇦🇹",
-        "code": "AUT"
-      },
-      "probs": {
-        "home": 66,
-        "draw": 21,
-        "away": 13
-      },
-      "predictedScore": {
-        "home": 3,
-        "away": 0
-      },
-      "confidence": 75,
-      "analysis": "Spain tient la corde (66% au global). Les marchés de paris donnent 73% à Spain. La forme récente avantage Spain. La presse penche vers Spain. Le public suit surtout Spain.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Marko Arnautovic",
-            "prob": 88
-          },
-          {
-            "name": "Dani Olmo",
-            "prob": 76
-          },
-          {
-            "name": "Lamine Yamal",
-            "prob": 59
-          },
-          {
-            "name": "Mikel Oyarzabal",
-            "prob": 58
-          },
-          {
-            "name": "Borja Iglesias",
-            "prob": 51
-          },
-          {
-            "name": "Ferran Torres Garcia",
-            "prob": 47
-          }
-        ]
-      },
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 73,
-            "draw": 18,
-            "away": 8
-          },
-          "favored": "home",
-          "detail": "41 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 46,
-            "draw": 26,
-            "away": 28
-          },
-          "favored": "home",
-          "detail": "VVN vs NDV"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 67,
-            "draw": 26,
-            "away": 7
-          },
-          "favored": "home",
-          "detail": "4326 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 50,
-            "draw": 26,
-            "away": 24
-          },
-          "favored": "home",
-          "detail": "X · 14473/6859 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 3,
-        "away": 0,
-        "outcome": "home"
-      }
-    },
     {
       "id": "852b4baf0be4b9eef2a30596a8d39249",
       "stage": "À venir",
@@ -236,6 +121,12 @@
           "favored": "home",
           "detail": "X · 23131/9110 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 2,
+        "away": 1,
+        "outcome": "home"
       }
     },
     {
