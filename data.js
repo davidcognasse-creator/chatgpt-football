@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-03T07:36:02.250Z",
+  "updatedAt": "2026-07-03T09:54:04.705Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -144,41 +144,41 @@ window.WC_DATA = {
         "code": "EGY"
       },
       "probs": {
-        "home": 35,
+        "home": 33,
         "draw": 30,
-        "away": 35
+        "away": 37
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
-      "confidence": 56,
-      "analysis": "Egypt tient la corde (35% au global). Les marchés de paris donnent 38% à Egypt. La forme récente avantage Egypt. La presse penche vers Australia. Le public suit surtout Egypt.",
+      "confidence": 57,
+      "analysis": "Egypt tient la corde (37% au global). Les marchés de paris donnent 40% à Egypt. La forme récente avantage Egypt. La presse penche vers Australia. Le public suit surtout Egypt.",
       "scorers": {
         "combined": [
           {
-            "name": "Omar Marmoush",
-            "prob": 83
+            "name": "Cristian Volpato",
+            "prob": 89
+          },
+          {
+            "name": "Mostafa Ziko",
+            "prob": 85
           },
           {
             "name": "Nestory Irankunda",
             "prob": 83
           },
           {
-            "name": "Mohamed Toure",
-            "prob": 80
+            "name": "Omar Marmoush",
+            "prob": 82
           },
           {
             "name": "Mohamed Salah",
-            "prob": 76
+            "prob": 75
           },
           {
-            "name": "Mahmoud Hassan",
+            "name": "Mohamed Toure",
             "prob": 27
-          },
-          {
-            "name": "Mostafa Ziko",
-            "prob": 26
           }
         ]
       },
@@ -187,9 +187,9 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 28,
+            "home": 26,
             "draw": 33,
-            "away": 38
+            "away": 40
           },
           "favored": "away",
           "detail": "41 bookmakers"
@@ -221,18 +221,18 @@ window.WC_DATA = {
             "away": 10
           },
           "favored": "home",
-          "detail": "4114 articles"
+          "detail": "4116 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 35,
+            "home": 32,
             "draw": 26,
-            "away": 39
+            "away": 42
           },
           "favored": "away",
-          "detail": "X · 5777/6340 mentions"
+          "detail": "X · 4751/6407 mentions"
         }
       }
     },
@@ -262,7 +262,7 @@ window.WC_DATA = {
         "away": 0
       },
       "confidence": 79,
-      "analysis": "Argentina tient la corde (74% au global). Les marchés de paris donnent 83% à Argentina. La forme récente avantage Argentina. La presse penche vers Argentina. Le public suit surtout Argentina.",
+      "analysis": "Argentina tient la corde (75% au global). Les marchés de paris donnent 84% à Argentina. La forme récente avantage Argentina. La presse penche vers Argentina. Le public suit surtout Argentina.",
       "scorers": {
         "combined": [
           {
@@ -274,20 +274,20 @@ window.WC_DATA = {
             "prob": 69
           },
           {
-            "name": "Lautaro Martinez",
-            "prob": 61
+            "name": "Julian Alvarez",
+            "prob": 60
           },
           {
-            "name": "Julian Alvarez",
-            "prob": 61
+            "name": "Lautaro Martinez",
+            "prob": 58
           },
           {
             "name": "Jose Manuel Alberto Lopez",
-            "prob": 48
+            "prob": 49
           },
           {
             "name": "Nicolas Paz Martinez",
-            "prob": 36
+            "prob": 38
           }
         ]
       },
@@ -296,9 +296,9 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 83,
-            "draw": 12,
-            "away": 5
+            "home": 84,
+            "draw": 11,
+            "away": 4
           },
           "favored": "home",
           "detail": "41 bookmakers"
@@ -330,7 +330,7 @@ window.WC_DATA = {
             "away": 6
           },
           "favored": "home",
-          "detail": "3546 articles"
+          "detail": "3561 articles"
         },
         "social": {
           "label": "Public",
@@ -341,7 +341,7 @@ window.WC_DATA = {
             "away": 17
           },
           "favored": "home",
-          "detail": "X · 24168/7061 mentions"
+          "detail": "X · 25233/7442 mentions"
         }
       }
     },
@@ -362,40 +362,40 @@ window.WC_DATA = {
         "code": "GHA"
       },
       "probs": {
-        "home": 55,
-        "draw": 25,
-        "away": 20
+        "home": 58,
+        "draw": 23,
+        "away": 19
       },
       "predictedScore": {
         "home": 3,
         "away": 0
       },
-      "confidence": 68,
-      "analysis": "Colombia tient la corde (55% au global). Les marchés de paris donnent 63% à Colombia. La forme récente avantage Colombia. La presse penche vers Colombia. Le public suit surtout Colombia.",
+      "confidence": 69,
+      "analysis": "Colombia tient la corde (58% au global). Les marchés de paris donnent 67% à Colombia. La forme récente avantage Colombia. La presse penche vers Colombia. Le public suit surtout Colombia.",
       "scorers": {
         "combined": [
           {
-            "name": "Inaki Williams",
-            "prob": 88
-          },
-          {
             "name": "Antoine Semenyo",
-            "prob": 87
+            "prob": 89
           },
           {
             "name": "Jordan Ayew",
-            "prob": 87
+            "prob": 89
+          },
+          {
+            "name": "Jhon Arias",
+            "prob": 82
           },
           {
             "name": "James Rodriguez",
-            "prob": 79
-          },
-          {
-            "name": "Luis Fernando Diaz Marulanda",
-            "prob": 71
+            "prob": 80
           },
           {
             "name": "Luis Javier Suarez Charris",
+            "prob": 71
+          },
+          {
+            "name": "Luis Fernando Diaz Marulanda",
             "prob": 70
           }
         ]
@@ -405,9 +405,9 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 63,
-            "draw": 24,
-            "away": 13
+            "home": 67,
+            "draw": 22,
+            "away": 11
           },
           "favored": "home",
           "detail": "41 bookmakers"
@@ -439,18 +439,18 @@ window.WC_DATA = {
             "away": 32
           },
           "favored": "home",
-          "detail": "953 articles"
+          "detail": "957 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 38,
+            "home": 39,
             "draw": 26,
-            "away": 36
+            "away": 35
           },
           "favored": "home",
-          "detail": "X · 10818/10047 mentions"
+          "detail": "X · 11211/10244 mentions"
         }
       }
     },
@@ -471,41 +471,41 @@ window.WC_DATA = {
         "code": "MAR"
       },
       "probs": {
-        "home": 29,
+        "home": 28,
         "draw": 27,
-        "away": 44
+        "away": 45
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
       "confidence": 61,
-      "analysis": "Morocco tient la corde (44% au global). Les marchés de paris donnent 53% à Morocco. La forme récente avantage Morocco. La presse penche vers Canada. Le public suit surtout Morocco.",
+      "analysis": "Morocco tient la corde (45% au global). Les marchés de paris donnent 54% à Morocco. La forme récente avantage Morocco. La presse penche vers Canada. Le public suit surtout Morocco.",
       "scorers": {
         "combined": [
           {
-            "name": "Ismael Saibari",
-            "prob": 38
+            "name": "Achraf Hakimi",
+            "prob": 93
           },
           {
-            "name": "Ayoub El Kaabi",
-            "prob": 35
+            "name": "Azzedine Ounahi",
+            "prob": 91
           },
           {
-            "name": "Soufiane Rahimi",
-            "prob": 33
-          },
-          {
-            "name": "Brahim Diaz",
-            "prob": 32
+            "name": "Tani Oluwaseyi",
+            "prob": 88
           },
           {
             "name": "Jonathan David",
-            "prob": 25
+            "prob": 82
           },
           {
-            "name": "Mohamed Amine Sbai",
-            "prob": 23
+            "name": "Brahim Diaz",
+            "prob": 77
+          },
+          {
+            "name": "Ismael Saibari",
+            "prob": 69
           }
         ]
       },
@@ -515,8 +515,8 @@ window.WC_DATA = {
           "weight": 0.55,
           "probs": {
             "home": 19,
-            "draw": 28,
-            "away": 53
+            "draw": 27,
+            "away": 54
           },
           "favored": "away",
           "detail": "41 bookmakers"
@@ -548,7 +548,7 @@ window.WC_DATA = {
             "away": 10
           },
           "favored": "home",
-          "detail": "10212 articles"
+          "detail": "10217 articles"
         },
         "social": {
           "label": "Public",
@@ -559,7 +559,7 @@ window.WC_DATA = {
             "away": 38
           },
           "favored": "away",
-          "detail": "X · 19861/20746 mentions"
+          "detail": "X · 19926/20554 mentions"
         }
       }
     },
@@ -588,33 +588,33 @@ window.WC_DATA = {
         "home": 0,
         "away": 3
       },
-      "confidence": 75,
+      "confidence": 76,
       "analysis": "France tient la corde (70% au global). Les marchés de paris donnent 81% à France. La forme récente avantage France. La presse penche vers France. Le public suit surtout France.",
       "scorers": {
         "combined": [
           {
+            "name": "Julio Cesar Enciso",
+            "prob": 93
+          },
+          {
+            "name": "Bradley Barcola",
+            "prob": 75
+          },
+          {
+            "name": "Michael Olise",
+            "prob": 74
+          },
+          {
             "name": "Kylian Mbappe",
-            "prob": 67
+            "prob": 70
           },
           {
             "name": "Ousmane Dembele",
-            "prob": 48
+            "prob": 66
           },
           {
             "name": "Jean-Philippe Mateta",
             "prob": 45
-          },
-          {
-            "name": "Marcus Thuram",
-            "prob": 44
-          },
-          {
-            "name": "Michael Olise",
-            "prob": 40
-          },
-          {
-            "name": "Desire Doue",
-            "prob": 38
           }
         ]
       },
@@ -657,18 +657,18 @@ window.WC_DATA = {
             "away": 65
           },
           "favored": "away",
-          "detail": "3759 articles"
+          "detail": "3772 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 27,
+            "home": 26,
             "draw": 26,
-            "away": 47
+            "away": 48
           },
           "favored": "away",
-          "detail": "X · 24809/43264 mentions"
+          "detail": "X · 23515/43537 mentions"
         }
       }
     },
@@ -689,9 +689,9 @@ window.WC_DATA = {
         "code": "NOR"
       },
       "probs": {
-        "home": 50,
+        "home": 51,
         "draw": 26,
-        "away": 24
+        "away": 23
       },
       "predictedScore": {
         "home": 2,
@@ -702,27 +702,27 @@ window.WC_DATA = {
       "scorers": {
         "combined": [
           {
+            "name": "Vinicius Junior",
+            "prob": 47
+          },
+          {
             "name": "Erling Braut Haaland",
             "prob": 43
           },
           {
-            "name": "Vinicius Junior",
-            "prob": 42
-          },
-          {
             "name": "Matheus Cunha",
-            "prob": 36
+            "prob": 37
           },
           {
-            "name": "Raphael Dias Belloli",
-            "prob": 35
+            "name": "Endrick Felipe Moreira de Sousa",
+            "prob": 37
           },
           {
             "name": "Neymar",
             "prob": 35
           },
           {
-            "name": "Igor Thiago Nascimento Rodrigues",
+            "name": "Raphael Dias Belloli",
             "prob": 35
           }
         ]
@@ -766,7 +766,7 @@ window.WC_DATA = {
             "away": 12
           },
           "favored": "home",
-          "detail": "4050 articles"
+          "detail": "4058 articles"
         },
         "social": {
           "label": "Public",
@@ -777,7 +777,7 @@ window.WC_DATA = {
             "away": 26
           },
           "favored": "home",
-          "detail": "X · 35791/19654 mentions"
+          "detail": "X · 35147/19298 mentions"
         }
       }
     },
@@ -799,15 +799,15 @@ window.WC_DATA = {
       },
       "probs": {
         "home": 29,
-        "draw": 29,
-        "away": 42
+        "draw": 28,
+        "away": 43
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
-      "confidence": 61,
-      "analysis": "England tient la corde (42% au global). Les marchés de paris donnent 39% à England. La forme récente avantage Mexico. La presse penche vers England. Le public suit surtout England.",
+      "confidence": 62,
+      "analysis": "England tient la corde (43% au global). Les marchés de paris donnent 40% à England. La forme récente avantage Mexico. La presse penche vers England. Le public suit surtout England.",
       "scorers": {
         "combined": [
           {
@@ -820,7 +820,7 @@ window.WC_DATA = {
           },
           {
             "name": "Ivan Toney",
-            "prob": 34
+            "prob": 35
           },
           {
             "name": "Julian Quinones",
@@ -841,9 +841,9 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 31,
+            "home": 30,
             "draw": 30,
-            "away": 39
+            "away": 40
           },
           "favored": "away",
           "detail": "41 bookmakers"
@@ -875,7 +875,7 @@ window.WC_DATA = {
             "away": 58
           },
           "favored": "away",
-          "detail": "15116 articles"
+          "detail": "15159 articles"
         },
         "social": {
           "label": "Public",
@@ -886,7 +886,7 @@ window.WC_DATA = {
             "away": 52
           },
           "favored": "away",
-          "detail": "X · 19513/47343 mentions"
+          "detail": "X · 19883/48480 mentions"
         }
       }
     },
@@ -907,21 +907,29 @@ window.WC_DATA = {
         "code": "BEL"
       },
       "probs": {
-        "home": 41,
+        "home": 40,
         "draw": 27,
-        "away": 32
+        "away": 33
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 62,
-      "analysis": "USA tient la corde (41% au global). Les marchés de paris donnent 37% à USA. La forme récente avantage USA. La presse penche vers USA. Le public suit surtout USA.",
+      "confidence": 61,
+      "analysis": "USA tient la corde (40% au global). Les marchés de paris donnent 36% à USA. La forme récente avantage USA. La presse penche vers USA. Le public suit surtout USA.",
       "scorers": {
         "combined": [
           {
             "name": "Romelu Lukaku",
-            "prob": 42
+            "prob": 50
+          },
+          {
+            "name": "Christian Pulisic",
+            "prob": 47
+          },
+          {
+            "name": "Kevin De Bruyne",
+            "prob": 40
           },
           {
             "name": "Ricardo Pepi",
@@ -932,16 +940,8 @@ window.WC_DATA = {
             "prob": 35
           },
           {
-            "name": "Christian Pulisic",
-            "prob": 35
-          },
-          {
             "name": "Giovanni Reyna",
             "prob": 29
-          },
-          {
-            "name": "Hans Vanaken",
-            "prob": 27
           }
         ]
       },
@@ -950,12 +950,12 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 37,
+            "home": 36,
             "draw": 28,
-            "away": 35
+            "away": 36
           },
           "favored": "home",
-          "detail": "40 bookmakers"
+          "detail": "41 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -984,18 +984,18 @@ window.WC_DATA = {
             "away": 22
           },
           "favored": "home",
-          "detail": "4078 articles"
+          "detail": "4095 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 49,
+            "home": 47,
             "draw": 26,
-            "away": 25
+            "away": 27
           },
           "favored": "home",
-          "detail": "X · 34385/17246 mentions"
+          "detail": "X · 30858/17698 mentions"
         }
       }
     }

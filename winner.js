@@ -1,59 +1,47 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_WINNER = {
-  "updatedAt": "2026-07-02T17:27:21.184Z",
+  "updatedAt": "2026-07-03T09:54:05.078Z",
   "teams": [
     {
       "name": "France",
       "flag": "🇫🇷",
       "code": "FRA",
-      "prob": 31.8
+      "prob": 31.4
     },
     {
       "name": "Argentina",
       "flag": "🇦🇷",
       "code": "ARG",
-      "prob": 17.5
+      "prob": 17.2
     },
     {
       "name": "Spain",
       "flag": "🇪🇸",
       "code": "ESP",
-      "prob": 10.2
+      "prob": 12.8
     },
     {
       "name": "England",
       "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
       "code": "ENG",
-      "prob": 9.3
+      "prob": 8.2
     },
     {
       "name": "Brazil",
       "flag": "🇧🇷",
       "code": "BRA",
-      "prob": 7.2
+      "prob": 6.8
     },
     {
       "name": "Portugal",
       "flag": "🇵🇹",
       "code": "POR",
-      "prob": 5.6
+      "prob": 6.3
     },
     {
       "name": "Mexico",
       "flag": "🇲🇽",
       "code": "MEX",
-      "prob": 2.9
-    },
-    {
-      "name": "USA",
-      "flag": "🇺🇸",
-      "code": "USA",
-      "prob": 2.9
-    },
-    {
-      "name": "Morocco",
-      "flag": "🇲🇦",
-      "code": "MAR",
       "prob": 2.9
     },
     {
@@ -63,28 +51,34 @@ window.WC_WINNER = {
       "prob": 2.8
     },
     {
+      "name": "USA",
+      "flag": "🇺🇸",
+      "code": "USA",
+      "prob": 2.7
+    },
+    {
+      "name": "Morocco",
+      "flag": "🇲🇦",
+      "code": "MAR",
+      "prob": 2.7
+    },
+    {
       "name": "Norway",
       "flag": "🇳🇴",
       "code": "NOR",
-      "prob": 2.2
+      "prob": 2.1
     },
     {
       "name": "Belgium",
       "flag": "🇧🇪",
       "code": "BEL",
-      "prob": 1.9
+      "prob": 1.7
     },
     {
       "name": "Switzerland",
       "flag": "🇨🇭",
       "code": "SUI",
-      "prob": 0.9
-    },
-    {
-      "name": "Croatia",
-      "flag": "🇭🇷",
-      "code": "CRO",
-      "prob": 0.4
+      "prob": 1.3
     },
     {
       "name": "Canada",
@@ -93,21 +87,15 @@ window.WC_WINNER = {
       "prob": 0.3
     },
     {
-      "name": "Austria",
-      "flag": "🇦🇹",
-      "code": "AUT",
+      "name": "Egypt",
+      "flag": "🇪🇬",
+      "code": "EGY",
       "prob": 0.2
     },
     {
       "name": "Australia",
       "flag": "🇦🇺",
       "code": "AUS",
-      "prob": 0.2
-    },
-    {
-      "name": "Egypt",
-      "flag": "🇪🇬",
-      "code": "EGY",
       "prob": 0.2
     },
     {
@@ -121,12 +109,6 @@ window.WC_WINNER = {
       "flag": "🇬🇭",
       "code": "GHA",
       "prob": 0.2
-    },
-    {
-      "name": "Algeria",
-      "flag": "🇩🇿",
-      "code": "ALG",
-      "prob": 0.1
     },
     {
       "name": "Cape Verde",
