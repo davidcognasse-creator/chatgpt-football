@@ -50,7 +50,10 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # false : les déploiements se mettent en file au lieu de s'annuler entre eux.
+  # (cancel-in-progress provoquait des « Deployment failed, try again later »
+  # quand le robot enchaînait deux commits — scores puis pronostics.)
+  cancel-in-progress: false
 
 jobs:
   # Build et deploy séparés : relancer le seul job "deploy" ne recrée pas un
