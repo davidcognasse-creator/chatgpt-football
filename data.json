@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-03T04:08:55.866Z",
+  "updatedAt": "2026-07-03T07:36:02.250Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -10,125 +10,6 @@
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "852b4baf0be4b9eef2a30596a8d39249",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-02T23:00:00Z",
-      "venue": "",
-      "home": {
-        "name": "Portugal",
-        "flag": "🇵🇹",
-        "code": "POR"
-      },
-      "away": {
-        "name": "Croatia",
-        "flag": "🇭🇷",
-        "code": "CRO"
-      },
-      "probs": {
-        "home": 52,
-        "draw": 26,
-        "away": 22
-      },
-      "predictedScore": {
-        "home": 3,
-        "away": 0
-      },
-      "confidence": 69,
-      "analysis": "Portugal tient la corde (52% au global). Les marchés de paris donnent 57% à Portugal. La forme récente avantage Croatia. L'historique des confrontations penche pour Portugal. La presse penche vers Portugal. Le public suit surtout Portugal.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Martin Baturina",
-            "prob": 92
-          },
-          {
-            "name": "Pedro Neto",
-            "prob": 85
-          },
-          {
-            "name": "Ante Budimir",
-            "prob": 83
-          },
-          {
-            "name": "Joao Felix Sequeira",
-            "prob": 79
-          },
-          {
-            "name": "Bruno Fernandes",
-            "prob": 79
-          },
-          {
-            "name": "Cristiano Ronaldo",
-            "prob": 60
-          }
-        ]
-      },
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 57,
-            "draw": 25,
-            "away": 18
-          },
-          "favored": "home",
-          "detail": "41 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 34,
-            "draw": 26,
-            "away": 40
-          },
-          "favored": "away",
-          "detail": "NVN vs VVD"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": {
-            "home": 50,
-            "draw": 30,
-            "away": 20
-          },
-          "favored": "home",
-          "detail": "4V 2N 1D (caché)"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 51,
-            "draw": 26,
-            "away": 23
-          },
-          "favored": "home",
-          "detail": "2519 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 53,
-            "draw": 26,
-            "away": 21
-          },
-          "favored": "home",
-          "detail": "X · 23131/9110 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 2,
-        "away": 1,
-        "outcome": "home"
-      }
-    },
     {
       "id": "c17fe2e46190d7ab6af01504ff240e82",
       "stage": "À venir",
@@ -236,6 +117,12 @@
           "favored": "away",
           "detail": "X · 1966/6306 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 2,
+        "away": 0,
+        "outcome": "home"
       }
     },
     {
