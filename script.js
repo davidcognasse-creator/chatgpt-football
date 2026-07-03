@@ -60,10 +60,23 @@
     return { total: settled.length, pct: Math.round((correct / settled.length) * 100) };
   }
 
+  // Remplace les noms des 2 équipes par leur version localisée dans l'analyse
+  // (phrase pré-générée par le robot, en anglais/mixte).
+  const localizedAnalysis = (m) => {
+    let a = m.analysis || "";
+    [m.home, m.away].forEach((tm) => {
+      if (tm && tm.name) {
+        const loc = window.teamName(tm);
+        if (loc && loc !== tm.name) a = a.split(tm.name).join(loc);
+      }
+    });
+    return a;
+  };
+
   const favoredName = (m) => {
     const { home, draw, away } = m.probs;
-    if (home >= draw && home >= away) return m.home.name;
-    if (away >= draw && away >= home) return m.away.name;
+    if (home >= draw && home >= away) return window.teamName(m.home);
+    if (away >= draw && away >= home) return window.teamName(m.away);
     return t("card_draw");
   };
 
@@ -172,11 +185,11 @@
           <div class="scorers-head">${t("scorers_head")}</div>
           <div class="scorers-grid">
             <div>
-              <div class="scorers-team">${flagHTML(m.home, 15)} ${m.home.name}</div>
+              <div class="scorers-team">${flagHTML(m.home, 15)} ${window.teamName(m.home)}</div>
               <ul class="scorer-list">${(sc.home || []).map(scorerItem).join("")}</ul>
             </div>
             <div>
-              <div class="scorers-team">${flagHTML(m.away, 15)} ${m.away.name}</div>
+              <div class="scorers-team">${flagHTML(m.away, 15)} ${window.teamName(m.away)}</div>
               <ul class="scorer-list">${(sc.away || []).map(scorerItem).join("")}</ul>
             </div>
           </div>
@@ -229,7 +242,7 @@
         <div class="teams">
           <div class="team">
             <span class="flag">${flagHTML(m.home, 34)}</span>
-            <span class="tname">${m.home.name}</span>
+            <span class="tname">${window.teamName(m.home)}</span>
           </div>
           <div class="score-pred">
             <span class="vs">${scoreLabel}</span>
@@ -238,11 +251,11 @@
           </div>
           <div class="team">
             <span class="flag">${flagHTML(m.away, 34)}</span>
-            <span class="tname">${m.away.name}</span>
+            <span class="tname">${window.teamName(m.away)}</span>
           </div>
         </div>
 
-        <div class="prob-bar" role="img" aria-label="Probabilités ${home}% ${m.home.name}, ${draw}% nul, ${away}% ${m.away.name}">
+        <div class="prob-bar" role="img" aria-label="Probabilités ${home}% ${window.teamName(m.home)}, ${draw}% nul, ${away}% ${window.teamName(m.away)}">
           <div class="prob-seg home" style="width:${home}%"></div>
           <div class="prob-seg draw" style="width:${draw}%"></div>
           <div class="prob-seg away" style="width:${away}%"></div>
@@ -259,7 +272,7 @@
           <span class="confidence-pct">${m.confidence}%</span>
         </div>
 
-        <p class="analysis">${m.analysis}</p>
+        <p class="analysis">${localizedAnalysis(m)}</p>
         ${scorersBlock(m)}
         ${sourcesBlock(m)}
         ${m.venue ? `<div class="venue">${pinIcon}<span>${m.venue}</span></div>` : ""}
@@ -273,8 +286,8 @@
       const stageOk = activeStage === "Tous" || m.stage === activeStage;
       const searchOk =
         !q ||
-        m.home.name.toLowerCase().includes(q) ||
-        m.away.name.toLowerCase().includes(q);
+        (window.teamName(m.home) + " " + m.home.name).toLowerCase().includes(q) ||
+        (window.teamName(m.away) + " " + m.away.name).toLowerCase().includes(q);
       return stageOk && searchOk;
     });
 

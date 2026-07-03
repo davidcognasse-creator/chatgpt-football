@@ -35,7 +35,7 @@
       <div class="stat champ-hero">
         <div class="champ-hero-flag">${flagHTML(top, 48)}</div>
         <div>
-          <div class="stat-value">${top.name}</div>
+          <div class="stat-value">${window.teamName(top)}</div>
           <div class="stat-label">${t("sim_fav_label", { p: top.prob })}</div>
         </div>
       </div>`;
@@ -45,7 +45,7 @@
         <div class="champ-row">
           <span class="champ-rank">${i + 1}</span>
           <span class="champ-flag">${flagHTML(t, 22)}</span>
-          <span class="champ-name">${t.name}</span>
+          <span class="champ-name">${window.teamName(t)}</span>
           <div class="champ-bar"><div class="champ-fill" style="width:${Math.max(2, (t.prob / max) * 100)}%"></div></div>
           <span class="champ-prob">${t.prob}%</span>
         </div>`)
@@ -101,7 +101,7 @@
   function brTeam(team, win, pct) {
     return `<div class="br-team ${win ? "win" : "lose"}">
       <span class="br-flag">${flagHTML(team, 18)}</span>
-      <span class="br-name">${team.name}</span>
+      <span class="br-name">${window.teamName(team)}</span>
       ${win ? `<span class="br-win">🏆 ${pct}%</span>` : `<span class="br-prob">${team.prob}%</span>`}
     </div>`;
   }
@@ -126,7 +126,7 @@
       html += `</div>`;
     });
     const champ = rounds[rounds.length - 1][0].winner;
-    html += `<div class="br-champion"><span class="br-trophy">🏆</span> ${flagHTML(champ, 28)} <b>${champ.name}</b> <span class="br-champ-label">${t("sim_champion")}</span></div>`;
+    html += `<div class="br-champion"><span class="br-trophy">🏆</span> ${flagHTML(champ, 28)} <b>${window.teamName(champ)}</b> <span class="br-champ-label">${t("sim_champion")}</span></div>`;
     bracketEl.innerHTML = html;
   }
 

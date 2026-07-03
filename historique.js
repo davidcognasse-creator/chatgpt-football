@@ -25,7 +25,7 @@
     new Date(iso).toLocaleDateString(locale(), { day: "numeric", month: "short", year: "numeric" });
 
   const sideName = (m, key) =>
-    key === "home" ? m.home.name : key === "away" ? m.away.name : t("his_draw");
+    key === "home" ? window.teamName(m.home) : key === "away" ? window.teamName(m.away) : t("his_draw");
 
   // Recalcule la justesse à partir des données (robuste si les flags manquent).
   function isCorrect(e) {
@@ -89,9 +89,9 @@
         </div>
 
         <div class="hist-teams">
-          <span class="ht">${flagHTML(e.home, 16)} ${e.home.name}</span>
+          <span class="ht">${flagHTML(e.home, 16)} ${window.teamName(e.home)}</span>
           <span class="ht-score">${e.actual.home} – ${e.actual.away}</span>
-          <span class="ht ht-right">${e.away.name} ${flagHTML(e.away, 16)}</span>
+          <span class="ht ht-right">${window.teamName(e.away)} ${flagHTML(e.away, 16)}</span>
         </div>
 
         <div class="hist-compare">
