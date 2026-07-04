@@ -1,6 +1,6 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_HISTORY = {
-  "updatedAt": "2026-07-04T13:45:13.756Z",
+  "updatedAt": "2026-07-04T14:28:32.830Z",
   "entries": [
     {
       "id": "88e032a2b2e5042d26db3f0da1df924a",
@@ -56,6 +56,63 @@ window.WC_HISTORY = {
         "outcome": "home"
       },
       "correctOutcome": true,
+      "correctScore": false
+    },
+    {
+      "id": "3e161b2448ed76d6b0c0f5bda6fd5bf2",
+      "datetime": "2026-07-03T22:00:00Z",
+      "home": {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "code": "ARG"
+      },
+      "away": {
+        "name": "Cape Verde",
+        "flag": "🇨🇻",
+        "code": "CPV"
+      },
+      "predicted": {
+        "probs": {
+          "home": 75,
+          "draw": 17,
+          "away": 8
+        },
+        "score": {
+          "home": 3,
+          "away": 0
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 84,
+          "draw": 11,
+          "away": 4
+        },
+        "form": {
+          "home": 54,
+          "draw": 26,
+          "away": 20
+        },
+        "h2h": null,
+        "press": {
+          "home": 68,
+          "draw": 26,
+          "away": 6
+        },
+        "social": {
+          "home": 57,
+          "draw": 26,
+          "away": 17
+        }
+      },
+      "actual": {
+        "home": 1,
+        "away": 1,
+        "outcome": "draw",
+        "decidedBy": "aet"
+      },
+      "correctOutcome": false,
       "correctScore": false
     },
     {
