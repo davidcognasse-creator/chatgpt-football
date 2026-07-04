@@ -1,7 +1,115 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_HISTORY = {
-  "updatedAt": "2026-07-04T16:53:58.581Z",
+  "updatedAt": "2026-07-04T19:40:53.668Z",
   "entries": [
+    {
+      "id": "1567824",
+      "datetime": "2026-07-04T17:00:00+00:00",
+      "home": {
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "code": "CAN"
+      },
+      "away": {
+        "name": "Morocco",
+        "flag": "🇲🇦",
+        "code": "MAR"
+      },
+      "predicted": {
+        "probs": {
+          "home": 23,
+          "draw": 27,
+          "away": 50
+        },
+        "score": {
+          "home": 1,
+          "away": 2
+        },
+        "favored": "away"
+      },
+      "sources": {
+        "betting": {
+          "home": 19,
+          "draw": 28,
+          "away": 53
+        },
+        "form": {
+          "home": 31,
+          "draw": 26,
+          "away": 43
+        },
+        "h2h": null,
+        "press": null,
+        "social": {
+          "home": 36,
+          "draw": 26,
+          "away": 38
+        }
+      },
+      "actual": {
+        "home": 0,
+        "away": 3,
+        "outcome": "away"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
+    {
+      "id": "9c7073ae2c29ee4881bb695f92168c68",
+      "datetime": "2026-07-04T17:00:00Z",
+      "home": {
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "code": "CAN"
+      },
+      "away": {
+        "name": "Morocco",
+        "flag": "🇲🇦",
+        "code": "MAR"
+      },
+      "predicted": {
+        "probs": {
+          "home": 28,
+          "draw": 27,
+          "away": 45
+        },
+        "score": {
+          "home": 1,
+          "away": 2
+        },
+        "favored": "away"
+      },
+      "sources": {
+        "betting": {
+          "home": 19,
+          "draw": 27,
+          "away": 54
+        },
+        "form": {
+          "home": 31,
+          "draw": 26,
+          "away": 43
+        },
+        "h2h": null,
+        "press": {
+          "home": 64,
+          "draw": 26,
+          "away": 10
+        },
+        "social": {
+          "home": 36,
+          "draw": 26,
+          "away": 38
+        }
+      },
+      "actual": {
+        "home": 0,
+        "away": 3,
+        "outcome": "away"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "88e032a2b2e5042d26db3f0da1df924a",
       "datetime": "2026-07-04T01:30:00Z",

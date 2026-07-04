@@ -1,49 +1,4 @@
 {
-  "1567824": {
-    "id": "1567824",
-    "datetime": "2026-07-04T17:00:00+00:00",
-    "home": {
-      "name": "Canada",
-      "flag": "🇨🇦",
-      "code": "CAN"
-    },
-    "away": {
-      "name": "Morocco",
-      "flag": "🇲🇦",
-      "code": "MAR"
-    },
-    "predicted": {
-      "probs": {
-        "home": 23,
-        "draw": 27,
-        "away": 50
-      },
-      "score": {
-        "home": 1,
-        "away": 2
-      },
-      "favored": "away"
-    },
-    "sources": {
-      "betting": {
-        "home": 19,
-        "draw": 28,
-        "away": 53
-      },
-      "form": {
-        "home": 31,
-        "draw": 26,
-        "away": 43
-      },
-      "h2h": null,
-      "press": null,
-      "social": {
-        "home": 36,
-        "draw": 26,
-        "away": 38
-      }
-    }
-  },
   "1568100": {
     "id": "1568100",
     "datetime": "2026-07-05T20:00:00+00:00",
@@ -360,55 +315,6 @@
         "home": 18,
         "draw": 26,
         "away": 56
-      }
-    }
-  },
-  "9c7073ae2c29ee4881bb695f92168c68": {
-    "id": "9c7073ae2c29ee4881bb695f92168c68",
-    "datetime": "2026-07-04T17:00:00Z",
-    "home": {
-      "name": "Canada",
-      "flag": "🇨🇦",
-      "code": "CAN"
-    },
-    "away": {
-      "name": "Morocco",
-      "flag": "🇲🇦",
-      "code": "MAR"
-    },
-    "predicted": {
-      "probs": {
-        "home": 28,
-        "draw": 27,
-        "away": 45
-      },
-      "score": {
-        "home": 1,
-        "away": 2
-      },
-      "favored": "away"
-    },
-    "sources": {
-      "betting": {
-        "home": 19,
-        "draw": 27,
-        "away": 54
-      },
-      "form": {
-        "home": 31,
-        "draw": 26,
-        "away": 43
-      },
-      "h2h": null,
-      "press": {
-        "home": 64,
-        "draw": 26,
-        "away": 10
-      },
-      "social": {
-        "home": 36,
-        "draw": 26,
-        "away": 38
       }
     }
   },

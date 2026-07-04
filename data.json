@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-04T16:53:54.810Z",
+  "updatedAt": "2026-07-04T19:40:53.670Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -10,121 +10,6 @@
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "88e032a2b2e5042d26db3f0da1df924a",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-04T01:30:00Z",
-      "venue": "",
-      "home": {
-        "name": "Colombia",
-        "flag": "🇨🇴",
-        "code": "COL"
-      },
-      "away": {
-        "name": "Ghana",
-        "flag": "🇬🇭",
-        "code": "GHA"
-      },
-      "probs": {
-        "home": 57,
-        "draw": 24,
-        "away": 19
-      },
-      "predictedScore": {
-        "home": 3,
-        "away": 0
-      },
-      "confidence": 69,
-      "analysis": "Colombia tient la corde (57% au global). Les marchés de paris donnent 67% à Colombia. La forme récente avantage Colombia. La presse penche vers Colombia. Le public suit surtout Colombia.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Antoine Semenyo",
-            "prob": 89
-          },
-          {
-            "name": "Jordan Ayew",
-            "prob": 89
-          },
-          {
-            "name": "Jhon Arias",
-            "prob": 82
-          },
-          {
-            "name": "James Rodriguez",
-            "prob": 79
-          },
-          {
-            "name": "Luis Javier Suarez Charris",
-            "prob": 71
-          },
-          {
-            "name": "Luis Fernando Diaz Marulanda",
-            "prob": 70
-          }
-        ]
-      },
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 67,
-            "draw": 22,
-            "away": 11
-          },
-          "favored": "home",
-          "detail": "41 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 46,
-            "draw": 26,
-            "away": 28
-          },
-          "favored": "home",
-          "detail": "NVV vs DNV"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 42,
-            "draw": 26,
-            "away": 32
-          },
-          "favored": "home",
-          "detail": "957 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 39,
-            "draw": 26,
-            "away": 35
-          },
-          "favored": "home",
-          "detail": "X · 12376/11191 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 1,
-        "away": 0,
-        "outcome": "home"
-      }
-    },
     {
       "id": "1567824",
       "stage": "À venir",
@@ -201,6 +86,12 @@
           "favored": "away",
           "detail": "X · 23067/23983 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 0,
+        "away": 3,
+        "outcome": "away"
       }
     },
     {
