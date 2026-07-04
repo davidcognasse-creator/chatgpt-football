@@ -1,0 +1,42 @@
+name: Algo Ligue 1 (backtest)
+
+# Lancement MANUEL. Optimise la clé de répartition de l'algo Ligue 1 par backtest
+# sur 10+ saisons. Sur GitHub le réseau est ouvert → les COTES (football-data.co.uk)
+# sont récupérées et intègrent la clé (grosse entrée, comme la CDM). Committe le
+# rapport + les poids optimisés.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: algo-ligue1
+  cancel-in-progress: false
+
+jobs:
+  algo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Backtest + optimisation de la clé
+        working-directory: analyse-ligue1
+        run: python3 algo-ligue1.py
+
+      - name: Committer le rapport
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/RESULTATS-ALGO.md analyse-ligue1/algo-ligue1.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(algo): clé de répartition Ligue 1 (backtest avec cotes)"
+            git push
+          else
+            echo "Aucun changement."
+          fi
