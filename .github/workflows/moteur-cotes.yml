@@ -39,7 +39,7 @@ jobs:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
         run: python3 moteur-cotes.py
 
-      - name: Optimiser la grille sous 50 €
+      - name: Optimiser la grille (budget de grille.json)
         working-directory: analyse-ligue1
         run: python3 grille-optim.py
 

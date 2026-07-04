@@ -1,15 +1,15 @@
-# Optimiseur de grille Loto Foot — budget 50 €
+# Optimiseur de grille Loto Foot — budget 25 €
 
 Probas : **cotes (13 books)** · 15 matchs · mise unitaire 1 €
 
-## 🎯 Grille optimale (48 €)
-_Doubles/triples sur les matchs les plus incertains. À 48 €, cette répartition maximise **à la fois** la grille parfaite ET le P(≥13) — vérifié par force brute, il n'existe pas de grille « plus sûre » distincte._
-Combinaisons : **48** → coût **48 €** (≤ 50 €)
+## 🎯 Grille optimale (≤ 25 €)
+_Doubles/triples sur les matchs les plus incertains. Cette répartition maximise **à la fois** la grille parfaite ET le P(≥13) — vérifié par force brute, il n'existe pas de grille « plus sûre » distincte._
+Combinaisons : **24** → coût **24 €** (≤ 25 €)
 
 | # | Match | Type | Pronostic(s) | Couverture |
 |---|---|---|---|---|
 | 1 | Paraguay–France | simple | 2 | 80% |
-| 2 | Canada–Maroc | DOUBLE | 2 / N | 81% |
+| 2 | Canada–Maroc | simple | 2 | 53% |
 | 3 | Bresil–Norvege | simple | 1 | 52% |
 | 4 | Qingdao Hainiu–Chengdu Rongcheng | simple | 2 | 70% |
 | 5 | Shanghai Shenhua–Zhejiang | simple | 1 | 73% |
@@ -24,9 +24,9 @@ Combinaisons : **48** → coût **48 €** (≤ 50 €)
 | 14 | Supra Quebec–Forge | simple | 2 | 53% |
 | 15 | Barcelona SC–Deportivo Cuenca | simple | 1 | 58% |
 
-Répartition : 10 simples · **4 doubles** · **1 triples**
-- **15/15** (parfaite) : 0.34 % · **14/15** : 2.45 % · **13/15** : 8.15 %
-- **≥ 13** (rang gagnant) : **10.94 %** · espérance **10.4/15**
+Répartition : 11 simples · **3 doubles** · **1 triples**
+- **15/15** (parfaite) : 0.22 % · **14/15** : 1.75 % · **13/15** : 6.36 %
+- **≥ 13** (rang gagnant) : **8.33 %** · espérance **10.2/15**
 
 ---
 _Répartition doubles/triples sur les matchs les plus incertains. Probas = cotes (13 books) (via moteur-cotes → probas.json)._

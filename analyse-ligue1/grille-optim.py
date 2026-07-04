@@ -14,9 +14,28 @@ import json
 import math
 import os
 
-BUDGET = 50.0   # €
 UNIT = 1.0      # € par combinaison
 HERE = os.path.dirname(__file__)
+
+
+def get_budget():
+    """Budget € : priorité à BUDGET_EUR (env), sinon "budget" de grille.json, sinon 50."""
+    env = os.environ.get("BUDGET_EUR")
+    if env:
+        try:
+            return float(env)
+        except ValueError:
+            pass
+    try:
+        g = json.load(open(os.path.join(HERE, "grille.json"), encoding="utf-8"))
+        if g.get("budget"):
+            return float(g["budget"])
+    except Exception:
+        pass
+    return 50.0
+
+
+BUDGET = get_budget()
 
 L = []
 def say(s): L.append(s); print(s)
@@ -106,10 +125,10 @@ def main():
             f"· espérance **{sum(i*d[i] for i in range(n+1)):.1f}/{n}**\n")
 
     ch1, cb1, inf1 = optimize(matchs, maxcombos)
-    render("🎯 Grille optimale (48 €)", ch1, cb1, inf1,
-           "_Doubles/triples sur les matchs les plus incertains. À 48 €, cette "
-           "répartition maximise **à la fois** la grille parfaite ET le P(≥13) — "
-           "vérifié par force brute, il n'existe pas de grille « plus sûre » distincte._")
+    render(f"🎯 Grille optimale (≤ {BUDGET:.0f} €)", ch1, cb1, inf1,
+           "_Doubles/triples sur les matchs les plus incertains. Cette répartition "
+           "maximise **à la fois** la grille parfaite ET le P(≥13) — vérifié par "
+           "force brute, il n'existe pas de grille « plus sûre » distincte._")
 
     say("---\n_Répartition doubles/triples sur les matchs les plus incertains. "
         "Probas = " + src + " (via moteur-cotes → probas.json)._")
