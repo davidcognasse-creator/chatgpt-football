@@ -1,0 +1,21 @@
+{
+  "nom": "Loto Foot 15 N°51",
+  "note": "foule = répartition des mises FDJ (approx., éditable). dom/ext = noms tels qu'affichés.",
+  "matchs": [
+    {"dom": "Paraguay", "ext": "France", "foule": {"1": 8, "N": 9, "2": 80}},
+    {"dom": "Canada", "ext": "Maroc", "foule": {"1": 16, "N": 22, "2": 63}},
+    {"dom": "Bresil", "ext": "Norvege", "foule": {"1": 68, "N": 20, "2": 12}},
+    {"dom": "Qingdao Hainiu", "ext": "Chengdu Rongcheng", "foule": {"1": 16, "N": 14, "2": 70}},
+    {"dom": "Shanghai Shenhua", "ext": "Zhejiang", "foule": {"1": 73, "N": 19, "2": 8}},
+    {"dom": "Gimcheon Sangmu", "ext": "Jeju", "foule": {"1": 48, "N": 37, "2": 15}},
+    {"dom": "FC Seoul", "ext": "Incheon", "foule": {"1": 87, "N": 7, "2": 6}},
+    {"dom": "Gwangju", "ext": "Ulsan", "foule": {"1": 12, "N": 11, "2": 77}},
+    {"dom": "Elfsborg", "ext": "Hammarby", "foule": {"1": 44, "N": 30, "2": 26}},
+    {"dom": "IFK Goteborg", "ext": "AIK", "foule": {"1": 47, "N": 29, "2": 24}},
+    {"dom": "Kalmar", "ext": "Orgryte", "foule": {"1": 88, "N": 7, "2": 6}},
+    {"dom": "Vancouver", "ext": "Inter Toronto", "foule": {"1": 73, "N": 16, "2": 12}},
+    {"dom": "Atletico Ottawa", "ext": "Cavalry", "foule": {"1": 51, "N": 25, "2": 24}},
+    {"dom": "Supra Quebec", "ext": "Forge", "foule": {"1": 12, "N": 11, "2": 74}},
+    {"dom": "Barcelona SC", "ext": "Deportivo Cuenca", "foule": {"1": 73, "N": 18, "2": 5}}
+  ]
+}

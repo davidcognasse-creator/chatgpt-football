@@ -1,0 +1,41 @@
+name: Prédicteur de grille Loto Foot
+
+# Lancement MANUEL. Lit analyse-ligue1/grille.json (matchs + répartition foule),
+# calcule le pronostic modèle et le compare à la foule → surligne les
+# divergences (value). Committe GRILLE-PRONO.md.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: grille-prono
+  cancel-in-progress: false
+
+jobs:
+  grille:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pronostiquer la grille
+        working-directory: analyse-ligue1
+        run: python3 grille-prono.py
+
+      - name: Committer le rapport
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/GRILLE-PRONO.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(lotofoot): pronostic de grille (modèle vs foule)"
+            git push
+          else
+            echo "Aucun changement."
+          fi
