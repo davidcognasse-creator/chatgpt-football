@@ -83,10 +83,11 @@
   // Suffixe prolongation / tirs au but sur un score final.
   const resultExtra = (r) => {
     if (!r) return "";
-    if (r.pens && (r.pens.home != null || r.pens.away != null))
-      return ` <span class="ai-note">${t("his_pens")} ${r.pens.home}‑${r.pens.away}</span>`;
-    if (r.decidedBy === "pens") return ` <span class="ai-note">${t("his_pens")}</span>`;
-    if (r.decidedBy === "aet") return ` <span class="ai-note">${t("his_aet")}</span>`;
+    if (r.decidedBy === "pens" || (r.pens && r.pens.home != null)) {
+      const sc = r.pens && r.pens.home != null ? ` ${r.pens.home}‑${r.pens.away}` : "";
+      return ` <span class="ai-note">🥅 ${t("his_pens")}${sc}</span>`;
+    }
+    if (r.decidedBy === "aet") return ` <span class="ai-note">⏱ ${t("his_aet")}</span>`;
     return "";
   };
 

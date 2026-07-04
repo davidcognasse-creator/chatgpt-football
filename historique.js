@@ -29,25 +29,25 @@
 
   // Suffixe « a.p. » (prolongation) ou « t.a.b. X-Y » (tirs au but) pour connaître
   // le vrai vainqueur des matchs à élimination directe.
+  // Pastille lisible : "prolongation" ou "tirs au but 4–2" (le pronostic 1N2
+  // reste réglé sur les 90 min, cette pastille n'est qu'une info).
   function scoreExtra(a) {
     if (!a) return "";
-    if (a.pens && (a.pens.home != null || a.pens.away != null))
-      return ` <span class="score-extra">${t("his_pens")} ${a.pens.home}‑${a.pens.away}</span>`;
-    if (a.decidedBy === "pens") return ` <span class="score-extra">${t("his_pens")}</span>`;
-    if (a.decidedBy === "aet") return ` <span class="score-extra">${t("his_aet")}</span>`;
+    if (a.decidedBy === "pens" || (a.pens && a.pens.home != null)) {
+      const sc = a.pens && a.pens.home != null ? ` ${a.pens.home}‑${a.pens.away}` : "";
+      return ` <span class="score-extra">🥅 ${t("his_pens")}${sc}</span>`;
+    }
+    if (a.decidedBy === "aet") return ` <span class="score-extra">⏱ ${t("his_aet")}</span>`;
     return "";
   }
-  // Vrai vainqueur en cas de tirs au but (sinon l'issue réglementaire).
-  function trueOutcome(a) {
-    if (a && a.pens && a.pens.home != null && a.pens.away != null && a.pens.home !== a.pens.away)
-      return a.pens.home > a.pens.away ? "home" : "away";
-    return a ? a.outcome : "draw";
-  }
 
-  // Recalcule la justesse à partir des données (robuste si les flags manquent).
-  // En cas de tirs au but, on compare au vrai vainqueur (celui qui se qualifie).
+  // Résultat 1N2 (90 minutes).
+  const res90 = (a) => (a ? a.outcome : "draw");
+
+  // Justesse en 1N2 : on compare au résultat des 90 minutes (actual.outcome).
+  // Un match gagné en prolongation/t.a.b. = nul à 90 → pronostic "N".
   function isCorrect(e) {
-    return e.predicted.favored === trueOutcome(e.actual);
+    return e.predicted.favored === res90(e.actual);
   }
   function isExact(e) {
     return e.predicted.score.home === e.actual.home && e.predicted.score.away === e.actual.away;
@@ -122,7 +122,7 @@
           <div class="cmp">
             <span class="cmp-label">${t("his_real_label")}</span>
             <span class="cmp-val">${
-              trueOutcome(e.actual) === "draw" ? t("his_draw") : sideName(e, trueOutcome(e.actual))
+              res90(e.actual) === "draw" ? t("his_draw") : sideName(e, res90(e.actual))
             } · ${e.actual.home}–${e.actual.away}${scoreExtra(e.actual)}</span>
           </div>
         </div>
@@ -145,7 +145,7 @@
       const pU = Math.min(0.99, fair * OVERROUND); // prix Unibet (avec marge)
       const pP = fair;                              // prix Polymarket (≈ marché, sans marge)
       staked += STAKE;
-      if (trueOutcome(e.actual) === fav) {
+      if (res90(e.actual) === fav) {
         netU += STAKE * (1 / pU - 1); netP += STAKE * (1 / pP - 1); w += 1;
       } else { netU -= STAKE; netP -= STAKE; l += 1; }
     });
