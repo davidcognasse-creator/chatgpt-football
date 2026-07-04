@@ -1,0 +1,43 @@
+name: Sonde absences (presse)
+
+# Lancement MANUEL, juste avant de préparer la grille. Interroge GNews par
+# équipe (mots-clés blessure/suspension) et PROPOSE des candidats absents dans
+# ABSENCES-CANDIDATS.md — à valider à la main avant de remplir absences.json.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sonde-absences
+  cancel-in-progress: false
+
+jobs:
+  sonde:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sonder la presse
+        working-directory: analyse-ligue1
+        env:
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+        run: python3 sonde-absences.py
+
+      - name: Committer le rapport
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/ABSENCES-CANDIDATS.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(lotofoot): candidats absents (presse)"
+            git push
+          else
+            echo "Aucun changement."
+          fi
