@@ -10,11 +10,11 @@
         "2": 35
       },
       "p": {
-        "1": 0.35,
-        "N": 0.3,
-        "2": 0.35
+        "1": 0.2431121592052392,
+        "N": 0.26582761951082956,
+        "2": 0.49106022128393123
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (12 books)"
     },
     {
       "dom": "Etats-Unis",
@@ -25,11 +25,11 @@
         "2": 38
       },
       "p": {
-        "1": 0.34,
-        "N": 0.28,
-        "2": 0.38
+        "1": 0.3560837326300004,
+        "N": 0.2820966149399953,
+        "2": 0.3618196524300042
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (12 books)"
     },
     {
       "dom": "Hacken",
@@ -40,11 +40,11 @@
         "2": 27
       },
       "p": {
-        "1": 0.45,
-        "N": 0.28,
-        "2": 0.27
+        "1": 0.37863720228237635,
+        "N": 0.25983130570719654,
+        "2": 0.36153149201042706
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (13 books)"
     },
     {
       "dom": "Brommapojkarna",
@@ -55,11 +55,11 @@
         "2": 29
       },
       "p": {
-        "1": 0.42,
-        "N": 0.29,
-        "2": 0.29
+        "1": 0.29014765992424224,
+        "N": 0.2761142006712968,
+        "2": 0.433738139404461
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (13 books)"
     },
     {
       "dom": "FK Suduva",
@@ -74,7 +74,7 @@
         "N": 0.22,
         "2": 0.14
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "foule (non coté)"
     },
     {
       "dom": "SK Super Nova",
@@ -85,11 +85,11 @@
         "2": 20
       },
       "p": {
-        "1": 0.55,
-        "N": 0.25,
-        "2": 0.2
+        "1": 0.5515535382593376,
+        "N": 0.24485584029585622,
+        "2": 0.20359062144480605
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (8 books)"
     },
     {
       "dom": "CDUC Ecuador",
@@ -104,7 +104,7 @@
         "N": 0.28,
         "2": 0.34
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "foule (non coté)"
     },
     {
       "dom": "Keflavik",
@@ -115,11 +115,11 @@
         "2": 27
       },
       "p": {
-        "1": 0.45,
-        "N": 0.28,
-        "2": 0.27
+        "1": 0.293015630361762,
+        "N": 0.24178385378469794,
+        "2": 0.46520051585353994
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (11 books)"
     }
   ]
 }
