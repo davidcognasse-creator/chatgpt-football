@@ -98,44 +98,64 @@ export function twoSidedProbs(strengthHome, strengthAway, drawPrior = 0.26) {
 
 const PCT = (x) => Math.round(x * 100);
 
-/** Génère une analyse en français à partir des chiffres et des sources. */
+/** Génère une analyse en français : synthèse (accord/désaccord) plutôt qu'une
+ *  liste répétitive où le nom de l'équipe revient à chaque phrase. */
 export function buildAnalysis(match, prediction, sources) {
   const sideName = (k) =>
     k === "home" ? match.home.name : k === "away" ? match.away.name : "le nul";
-  const fav = favoredOutcome(prediction.probs);
+  const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+  const joinFr = (arr) =>
+    arr.length <= 1 ? arr[0] || "" : arr.slice(0, -1).join(", ") + " et " + arr[arr.length - 1];
 
-  const find = (k) => sources.find((s) => s.key === k);
-  const betting = find("betting");
-  const form = find("form");
-  const h2h = find("h2h");
-  const press = find("press");
-  const social = find("social");
+  const fav = favoredOutcome(prediction.probs);
+  const favName = sideName(fav);
+  const p = PCT(prediction.probs[fav]);
+  const probs = (k) => (sources.find((s) => s.key === k) || {}).probs;
+  const LABELS = {
+    form: "la forme récente",
+    h2h: "l'historique des confrontations",
+    press: "la presse",
+    social: "le public",
+  };
 
   const parts = [];
-  parts.push(
-    `${sideName(fav) === "le nul" ? "Le nul" : sideName(fav)} tient la corde (${PCT(
-      prediction.probs[fav]
-    )}% au global).`
-  );
-  if (betting?.probs) {
+
+  // 1) Ouverture, ton modulé par la confiance.
+  const conf = p >= 62 ? "se détache" : p >= 52 ? "tient la corde" : "part favori de justesse";
+  parts.push(`${cap(favName)} ${conf} avec ${p}% de chances estimées.`);
+
+  // 2) Le marché (cotes) : confirme ou contredit.
+  const betting = probs("betting");
+  if (betting) {
+    const bf = favoredOutcome(betting);
     parts.push(
-      `Les marchés de paris donnent ${PCT(betting.probs[favoredOutcome(betting.probs)])}% à ${sideName(
-        favoredOutcome(betting.probs)
-      )}.`
+      bf === fav
+        ? `Les cotes confirment (${PCT(betting[bf])}%).`
+        : `Les cotes, elles, penchent pour ${sideName(bf)} (${PCT(betting[bf])}%).`
     );
   }
-  if (form?.probs) {
-    parts.push(`La forme récente avantage ${sideName(favoredOutcome(form.probs))}.`);
+
+  // 3) Signaux qualitatifs : on regroupe ceux qui vont dans le sens du modèle
+  //    et on met en avant les signaux contraires (l'info la plus utile).
+  const signals = ["form", "h2h", "press", "social"]
+    .map((k) => ({ k, pr: probs(k) }))
+    .filter((x) => x.pr);
+  const agree = signals.filter((x) => favoredOutcome(x.pr) === fav).map((x) => LABELS[x.k]);
+  const disagree = signals.filter((x) => favoredOutcome(x.pr) !== fav);
+
+  if (agree.length >= 2) parts.push(`${cap(joinFr(agree))} vont dans le même sens.`);
+  else if (agree.length === 1) parts.push(`${cap(agree[0])} abonde aussi.`);
+
+  if (disagree.length) {
+    const byTeam = {};
+    disagree.forEach((x) => {
+      const team = sideName(favoredOutcome(x.pr));
+      (byTeam[team] = byTeam[team] || []).push(LABELS[x.k]);
+    });
+    const frags = Object.entries(byTeam).map(([team, ls]) => `${joinFr(ls)} pour ${team}`);
+    parts.push(`Signal contraire : ${frags.join(" ; ")}.`);
   }
-  if (h2h?.probs) {
-    parts.push(`L'historique des confrontations penche pour ${sideName(favoredOutcome(h2h.probs))}.`);
-  }
-  if (press?.probs) {
-    parts.push(`La presse penche vers ${sideName(favoredOutcome(press.probs))}.`);
-  }
-  if (social?.probs) {
-    parts.push(`Le public suit surtout ${sideName(favoredOutcome(social.probs))}.`);
-  }
+
   if (match.note) parts.push(match.note);
   return parts.join(" ");
 }
