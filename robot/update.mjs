@@ -233,7 +233,7 @@ async function updateHistory(ctx, config, matches) {
   try {
     const { fetchResults } = await import("./sources/results.mjs");
     const { matchOutcome } = await import("./lib/footballdata.mjs");
-    const results = await fetchResults(ctx);
+    const results = await fetchResults(ctx, pending);
     const known = new Set(history.entries.map((e) => e.id));
     for (const r of results) {
       const p = pending[r.id];
@@ -317,7 +317,7 @@ async function settleScores(ctx, config) {
   try {
     const { fetchResults } = await import("./sources/results.mjs");
     const { matchOutcome } = await import("./lib/footballdata.mjs");
-    const results = await fetchResults(ctx);
+    const results = await fetchResults(ctx, pending);
     for (const r of results) {
       const p = pending[r.id];
       if (!p || known.has(r.id)) continue;
