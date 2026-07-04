@@ -148,7 +148,7 @@ def find_event(dom, ext, pool):
     if flip:  # l'event a dom/ext inversés par rapport à la grille
         p = {"1": p["2"], "N": p["N"], "2": p["1"]}
     return {"p": p, "nbooks": ev["nbooks"], "league": ev["league"],
-            "ev": f"{ev['home_team']}–{ev['away_team']}", "flip": flip}
+            "ev": f"{ev['home']}–{ev['away']}", "flip": flip}
 
 
 def ajust_actualite(dom, ext, p):
