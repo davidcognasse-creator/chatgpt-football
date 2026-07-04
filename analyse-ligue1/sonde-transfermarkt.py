@@ -16,16 +16,29 @@ import urllib.request
 from collections import defaultdict
 
 R2 = "https://pub-e682421888d945d684bcae8890b0ec20.r2.dev/data"
-PLAYERS = f"{R2}/players.csv.gz"
+UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
 
 L = []
 def say(s): L.append(s); print(s)
 
 
+def fetch(url):
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
+    return urllib.request.urlopen(req, timeout=120).read()
+
+
 def load_players():
-    raw = urllib.request.urlopen(PLAYERS, timeout=90).read()
-    txt = gzip.decompress(raw).decode("utf-8", errors="replace")
-    return list(csv.DictReader(io.StringIO(txt)))
+    # players.csv.gz sinon players.csv (selon la publication du mainteneur)
+    last = None
+    for name in ("players.csv.gz", "players.csv"):
+        try:
+            raw = fetch(f"{R2}/{name}")
+            txt = gzip.decompress(raw).decode("utf-8", "replace") if name.endswith(".gz") \
+                else raw.decode("utf-8", "replace")
+            return list(csv.DictReader(io.StringIO(txt)))
+        except Exception as e:
+            last = e
+    raise last
 
 
 def main():
