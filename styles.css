@@ -1169,3 +1169,59 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 .g-table .pf-pos { color: #16d38a; font-weight: 700; font-variant-numeric: tabular-nums; }
 .g-table .pf-neg { color: #ff6b7d; font-weight: 700; font-variant-numeric: tabular-nums; }
 .g-lost td { background: rgba(255,107,125,0.05); }
+
+/* ============ Thème clair (bascule via bouton, i18n.js) ============ */
+:root[data-theme="light"] {
+  --bg: #f3f6fc;
+  --bg-soft: #ffffff;
+  --card: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(30, 50, 110, 0.16);
+  --text: #141d33;
+  --muted: #566188;
+  --muted-soft: #7c88a6;
+  --shadow: 0 20px 50px -30px rgba(30, 50, 110, 0.35);
+}
+:root[data-theme="light"] .bg-glow { opacity: 0.2; }
+:root[data-theme="light"] .bg-grid {
+  background-image:
+    linear-gradient(rgba(30, 50, 110, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 50, 110, 0.05) 1px, transparent 1px);
+}
+/* Les surfaces "overlay blanc" (pensées pour fond sombre) repassent en clair */
+:root[data-theme="light"] .loto-card,
+:root[data-theme="light"] .loto-tag,
+:root[data-theme="light"] .grid-stat,
+:root[data-theme="light"] .lang-current,
+:root[data-theme="light"] .budget-tabs button,
+:root[data-theme="light"] .pdf-btn,
+:root[data-theme="light"] .nav-link,
+:root[data-theme="light"] .stat,
+:root[data-theme="light"] .paper-card,
+:root[data-theme="light"] .pf-stat,
+:root[data-theme="light"] .match-card,
+:root[data-theme="light"] .hist-card,
+:root[data-theme="light"] .insight-card,
+:root[data-theme="light"] .rules-card,
+:root[data-theme="light"] .auth-card,
+:root[data-theme="light"] .g-tablewrap {
+  background: #ffffff;
+  border-color: rgba(30, 50, 110, 0.14);
+  box-shadow: 0 8px 24px -18px rgba(30, 50, 110, 0.4);
+}
+:root[data-theme="light"] .lang-menu { background: #ffffff; border-color: rgba(30, 50, 110, 0.14); }
+:root[data-theme="light"] .lang-menu button:hover,
+:root[data-theme="light"] .budget-tabs button:not(.active):hover { background: rgba(20, 30, 60, 0.06); }
+:root[data-theme="light"] table.loto th,
+:root[data-theme="light"] table.loto td,
+:root[data-theme="light"] .g-table th,
+:root[data-theme="light"] .g-table td { border-color: rgba(30, 50, 110, 0.12); }
+:root[data-theme="light"] .site-footer { border-color: rgba(30, 50, 110, 0.1); }
+
+/* Bouton de bascule de thème (injecté en bas de page) */
+.theme-toggle-wrap { text-align: center; margin-top: 16px; }
+.theme-toggle {
+  font-family: "Sora", sans-serif; font-size: 0.85rem; font-weight: 700; cursor: pointer;
+  padding: 8px 16px; border-radius: 999px; color: var(--text);
+  background: var(--bg-soft); border: 1px solid var(--card-border);
+}
+.theme-toggle:hover { border-color: var(--accent); }

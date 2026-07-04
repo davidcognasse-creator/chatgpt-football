@@ -805,7 +805,35 @@
     } catch (e) { /* hors-ligne ou bloqué : on garde la langue du navigateur */ }
   }
 
-  function init() { buildSwitchers(); apply(); detectByIP(); }
+  // ---- Thème clair / sombre ----
+  const THEME_KEY = "theme";
+  const getTheme = () => { try { return localStorage.getItem(THEME_KEY) || "dark"; } catch (e) { return "dark"; } };
+  function applyTheme(th) {
+    document.documentElement.setAttribute("data-theme", th);
+    try { localStorage.setItem(THEME_KEY, th); } catch (e) {}
+    const btn = document.querySelector("[data-theme-toggle]");
+    if (btn) btn.textContent = th === "light" ? "🌙 Mode sombre" : "☀️ Mode clair";
+  }
+  // Appliqué tout de suite (script dans <head>) pour éviter le flash au chargement.
+  document.documentElement.setAttribute("data-theme", getTheme());
+
+  function buildThemeToggle() {
+    if (document.querySelector("[data-theme-toggle]")) return;
+    const foot = document.querySelector(".site-footer") || document.body;
+    const wrap = document.createElement("div");
+    wrap.className = "theme-toggle-wrap";
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "theme-toggle";
+    btn.setAttribute("data-theme-toggle", "");
+    btn.addEventListener("click", () =>
+      applyTheme(document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light"));
+    wrap.appendChild(btn);
+    foot.appendChild(wrap);
+    applyTheme(getTheme());
+  }
+
+  function init() { buildSwitchers(); apply(); buildThemeToggle(); detectByIP(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 })();

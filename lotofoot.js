@@ -100,6 +100,9 @@
       if (b) showGrid(Number(b.dataset.idx));
     });
     showGrid(grids.length - 1); // 48 € par défaut
+
+    const pdf = document.getElementById("exportPdf");
+    if (pdf) pdf.addEventListener("click", () => window.print());
   }
 
   fetch("lotofoot.json?v=" + Date.now())

@@ -59,6 +59,20 @@
     .type-double { color:#fdba74; font-weight:700; }
     .type-triple { color:#f472b6; font-weight:800; }
     .picks-cell b { letter-spacing:.06em; }
+    .pdf-btn { font-family:'Sora',sans-serif; font-weight:700; cursor:pointer; font-size:.9rem;
+      display:inline-flex; align-items:center; gap:7px; padding:9px 16px; border-radius:12px;
+      border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.05); color:var(--text); }
+    .pdf-btn:hover { background:rgba(255,255,255,.1); }
+    @media print {
+      .bg-grid, .bg-glow, .site-header, .site-footer, .pdf-btn, .budget-tabs { display:none !important; }
+      body { background:#fff !important; color:#000 !important; }
+      .loto-card { border-color:#ccc !important; break-inside:avoid; }
+      .loto-card h2, .loto-card .sub, .grid-stat .v, table.loto td.match { color:#000 !important; }
+      table.loto th { color:#333 !important; }
+      main, .hero, .loto-wrap { padding:0 !important; }
+      .hero h1 { font-size:1.6rem; }
+      * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    }
   </style>
   <script src="i18n.js"></script>
 </head>
@@ -105,6 +119,7 @@
 
     <div class="loto-wrap">
       <div class="loto-meta" id="lotoMeta"></div>
+      <p style="margin:-8px 0 20px"><button id="exportPdf" class="pdf-btn">📄 Exporter le pronostic en PDF</button></p>
 
       <div class="loto-card">
         <h2>📊 Marché vs public · les 15 matchs</h2>
