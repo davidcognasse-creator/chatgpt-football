@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-04T14:28:32.833Z",
+  "updatedAt": "2026-07-04T16:53:54.810Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -201,7 +201,7 @@ window.WC_DATA = {
             "away": 38
           },
           "favored": "away",
-          "detail": "X · 21785/22680 mentions"
+          "detail": "X · 23067/23983 mentions"
         }
       }
     },
@@ -279,7 +279,7 @@ window.WC_DATA = {
             "away": 44
           },
           "favored": "away",
-          "detail": "X · 25576/37532 mentions"
+          "detail": "X · 26165/38351 mentions"
         }
       }
     },
@@ -357,7 +357,7 @@ window.WC_DATA = {
             "away": 19
           },
           "favored": "home",
-          "detail": "X · 35805/12792 mentions"
+          "detail": "X · 35890/12774 mentions"
         }
       }
     },
@@ -435,7 +435,7 @@ window.WC_DATA = {
             "away": 51
           },
           "favored": "away",
-          "detail": "X · 23341/51708 mentions"
+          "detail": "X · 23687/51711 mentions"
         }
       }
     },
@@ -499,7 +499,7 @@ window.WC_DATA = {
             "away": 28
           },
           "favored": "draw",
-          "detail": "0V 6N 2D"
+          "detail": "0V 6N 2D (caché)"
         },
         "press": {
           "label": "Presse",
@@ -517,7 +517,7 @@ window.WC_DATA = {
             "away": 23
           },
           "favored": "home",
-          "detail": "X · 47849/21473 mentions"
+          "detail": "X · 47566/21537 mentions"
         }
       }
     },
@@ -595,7 +595,7 @@ window.WC_DATA = {
             "away": 26
           },
           "favored": "home",
-          "detail": "X · 31323/16627 mentions"
+          "detail": "X · 31374/16639 mentions"
         }
       }
     },
@@ -673,7 +673,7 @@ window.WC_DATA = {
             "away": 12
           },
           "favored": "home",
-          "detail": "X · 63986/12639 mentions"
+          "detail": "X · 64518/12719 mentions"
         }
       }
     },
@@ -746,12 +746,12 @@ window.WC_DATA = {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 17,
+            "home": 18,
             "draw": 26,
-            "away": 57
+            "away": 56
           },
           "favored": "away",
-          "detail": "X · 4990/16156 mentions"
+          "detail": "X · 5047/15994 mentions"
         }
       }
     }
