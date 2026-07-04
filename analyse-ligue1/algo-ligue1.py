@@ -106,8 +106,10 @@ def enrich_with_odds(matches):
                 continue
             tot = ih + idr + ia  # retire la marge (overround)
             probs = {"home": ih / tot, "draw": idr / tot, "away": ia / tot}
+            dec = {"home": float(oh), "draw": float(od), "away": float(oa)}
             for m in by_key.get((iso, key(row.get("HomeTeam", "")), key(row.get("AwayTeam", ""))), []):
                 m["odds"] = probs
+                m["dec"] = dec  # cotes décimales (pour le ROI)
                 added += 1
     print(f"  Cotes rattachées : {added}/{len(matches)} matchs")
 

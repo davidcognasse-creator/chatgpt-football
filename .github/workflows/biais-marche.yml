@@ -1,0 +1,41 @@
+name: Biais marché Ligue 1
+
+# Lancement MANUEL. Cherche des biais exploitables dans les cotes (calibration
+# favori-outsider, surréaction aux séries, ROI de règles simples) sur 10+ saisons.
+# Réseau ouvert requis (cotes football-data.co.uk) → GitHub Actions.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: biais-marche
+  cancel-in-progress: false
+
+jobs:
+  biais:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Chasse aux biais du marché
+        working-directory: analyse-ligue1
+        run: python3 biais-marche.py
+
+      - name: Committer le rapport
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/RESULTATS-BIAIS.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(analyse): biais marché Ligue 1"
+            git push
+          else
+            echo "Aucun changement."
+          fi
