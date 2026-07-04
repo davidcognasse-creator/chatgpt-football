@@ -1,5 +1,5 @@
 /* Page Loto Foot : lit lotofoot.json (généré par grille-optim.py) et affiche
-   l'analyse marché vs foule, les value bets, et la grille optimale à 12/24/48 €. */
+   l'analyse marché vs public, les value bets, et la grille optimale à 12/24/48 €. */
 (function () {
   "use strict";
 
@@ -21,18 +21,18 @@
       `<span class="loto-tag">📈 Source : <b>${data.source || "cotes"}</b></span>` +
       `<span class="loto-tag">⚽ <b>${data.matchs.length}</b> matchs</span>`;
 
-    // Tableau marché vs foule
+    // Tableau marché vs public
     const mt = document.getElementById("matchTable");
     let rows =
-      "<tr><th>#</th><th>Match</th><th>Marché 1·N·2</th><th>Foule 1·N·2</th>" +
+      "<tr><th>#</th><th>Match</th><th>Marché 1·N·2</th><th>Public 1·N·2</th>" +
       "<th>Prono</th><th>Value</th></tr>";
     for (const m of data.matchs) {
       const market = m.coted
         ? `<span class="pick">${SIGN[m.marketPick]}</span>`
-        : `<span class="pick na">foule</span>`;
+        : `<span class="pick na">public</span>`;
       const marketProb = m.coted ? probCell(m.p) : '<span class="prob">non coté</span>';
       const value = m.divergence
-        ? `<span class="value">marché ${SIGN[m.marketPick]} ≠ foule ${SIGN[m.crowdPick]}</span>`
+        ? `<span class="value">marché ${SIGN[m.marketPick]} ≠ public ${SIGN[m.crowdPick]}</span>`
         : "";
       rows +=
         `<tr><td>${m.i}</td><td class="match">${m.dom} - ${m.ext}</td>` +
@@ -50,7 +50,7 @@
             `<p style="margin:6px 0;line-height:1.5">` +
             `<strong>Match ${d.i} · ${d.dom} - ${d.ext}</strong> : le marché voit ` +
             `<span class="pick">${SIGN[d.marketPick]}</span> (${pct(d.p[d.marketPick])}%) ` +
-            `alors que la foule joue <b>${SIGN[d.crowdPick]}</b> (${pct(d.foule[d.crowdPick])}%). ` +
+            `alors que le public joue <b>${SIGN[d.crowdPick]}</b> (${pct(d.foule[d.crowdPick])}%). ` +
             `<span style="color:var(--muted)">Value si le marché a raison.</span></p>`
         )
         .join("");
