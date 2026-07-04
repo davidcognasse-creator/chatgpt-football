@@ -59,6 +59,7 @@
     // Grilles par budget
     const tabs = document.getElementById("budgetTabs");
     const grids = data.grids || [];
+    let currentG = null;
     tabs.innerHTML = grids
       .map(
         (g, i) =>
@@ -93,6 +94,7 @@
           `<td>${pct(p.coverage)}%</td></tr>`;
       }
       document.getElementById("gridTable").innerHTML = rows;
+      currentG = g;
       const pdf = document.getElementById("exportPdf");
       if (pdf) pdf.textContent = `📄 Exporter la grille à ${g.budget} € en PDF`;
     }
@@ -104,7 +106,72 @@
     showGrid(grids.length - 1); // 48 € par défaut
 
     const pdf = document.getElementById("exportPdf");
-    if (pdf) pdf.addEventListener("click", () => window.print());
+    if (pdf) pdf.addEventListener("click", () => exportPdf(data, currentG));
+  }
+
+  // Génère un PDF propre et autonome de la grille choisie (via iframe d'impression).
+  function exportPdf(data, g) {
+    if (!g) return;
+    const TYPE = { simple: "Simple", double: "Double", triple: "Triple" };
+    const byI = {};
+    g.picks.forEach((p) => (byI[p.i] = p));
+    const rows = data.matchs.map((m) => {
+      const p = byI[m.i] || { type: "simple", picks: [m.coted ? m.marketPick : m.crowdPick], coverage: 0 };
+      const star = p.type === "triple" ? "triple" : p.type === "double" ? "double" : "";
+      return `<tr>
+        <td class="n">${m.i}</td>
+        <td class="mt">${m.dom} <span class="vs">–</span> ${m.ext}</td>
+        <td class="ty ${star}">${TYPE[p.type]}</td>
+        <td class="pk">${p.picks.map((x) => SIGN[x]).join(" / ")}</td>
+        <td class="cv">${pct(p.coverage)}%</td></tr>`;
+    }).join("");
+    const s = g.stats;
+    const rep = `${g.repartition.simples} simples · ${g.repartition.doubles} doubles · ${g.repartition.triples} triple(s)`;
+    const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<title>Grille ${g.budget}€ — ${data.nom || "Loto Foot"}</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #14203a; margin: 28px; }
+  h1 { font-size: 20px; margin: 0 0 2px; }
+  .sub { color: #5a678a; font-size: 12.5px; margin: 0 0 16px; }
+  .sub b { color: #14203a; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 7px 8px; border-bottom: 1px solid #e2e7f1; text-align: center; }
+  th { font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; color: #5a678a; border-bottom: 2px solid #cfd7e6; }
+  td.mt { text-align: left; font-weight: 600; }
+  td.n { color: #97a1bd; }
+  .vs { color: #b3bcd2; }
+  td.pk { font-weight: 800; letter-spacing: .08em; }
+  td.ty.double { color: #c2680f; font-weight: 700; }
+  td.ty.triple { color: #b3247e; font-weight: 800; }
+  .stats { margin: 16px 0 4px; font-size: 12.5px; color: #14203a; }
+  .stats span { display: inline-block; margin-right: 16px; }
+  .stats b { font-size: 15px; }
+  .foot { margin-top: 18px; font-size: 10.5px; color: #8a93ab; border-top: 1px solid #e2e7f1; padding-top: 8px; }
+</style></head><body>
+  <h1>🎯 ${data.nom || "Loto Foot"} — Grille ${g.budget} €</h1>
+  <p class="sub"><b>${g.combos}</b> combinaisons · coût <b>${g.cost} €</b> · ${rep} · source : ${data.source || "cotes"}</p>
+  <table>
+    <thead><tr><th>#</th><th>Match</th><th>Type</th><th>Pronostic(s)</th><th>Couv.</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>
+  <p class="stats">
+    <span>Grille parfaite (15/15) : <b>${(s.p15 * 100).toFixed(2)} %</b></span>
+    <span>Rang gagnant (≥ 13) : <b>${(s.pge13 * 100).toFixed(1)} %</b></span>
+    <span>Espérance : <b>${s.esperance.toFixed(1)} / 15</b></span>
+  </p>
+  <p class="foot">Cotes des bookmakers (API-Football) confrontées au public FDJ · pronostic éducatif, ne constitue pas un conseil de pari. Jouer comporte des risques.</p>
+</body></html>`;
+
+    const ifr = document.createElement("iframe");
+    ifr.style.cssText = "position:fixed;right:0;bottom:0;width:0;height:0;border:0";
+    ifr.setAttribute("aria-hidden", "true");
+    ifr.onload = () => {
+      try { ifr.contentWindow.focus(); ifr.contentWindow.print(); } catch (e) { console.error(e); }
+      setTimeout(() => ifr.remove(), 60000);
+    };
+    ifr.srcdoc = html;
+    document.body.appendChild(ifr);
   }
 
   fetch("lotofoot.json?v=" + Date.now())
