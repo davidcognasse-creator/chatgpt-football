@@ -31,13 +31,19 @@
   // le vrai vainqueur des matchs à élimination directe.
   // Pastille lisible : "prolongation" ou "tirs au but 4–2" (le pronostic 1N2
   // reste réglé sur les 90 min, cette pastille n'est qu'une info).
+  // Le score affiché est celui des 90 min (issue 1N2). On indique entre
+  // parenthèses le score FINAL du match : (3–2 après prolongation) ou
+  // (t.a.b. 4–2), pour montrer les deux scores.
   function scoreExtra(a) {
     if (!a) return "";
     if (a.decidedBy === "pens" || (a.pens && a.pens.home != null)) {
       const sc = a.pens && a.pens.home != null ? ` ${a.pens.home}‑${a.pens.away}` : "";
-      return ` <span class="score-extra">🥅 ${t("his_pens")}${sc}</span>`;
+      return ` <span class="score-extra">🥅 (${t("his_pens")}${sc})</span>`;
     }
-    if (a.decidedBy === "aet") return ` <span class="score-extra">⏱ ${t("his_aet")}</span>`;
+    if (a.decidedBy === "aet") {
+      const fin = a.full ? `${a.full.home}‑${a.full.away} ` : "";
+      return ` <span class="score-extra">⏱ (${fin}${t("his_aet")})</span>`;
+    }
     return "";
   }
 

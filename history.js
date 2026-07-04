@@ -110,7 +110,11 @@ window.WC_HISTORY = {
         "home": 1,
         "away": 1,
         "outcome": "draw",
-        "decidedBy": "aet"
+        "decidedBy": "aet",
+        "full": {
+          "home": 3,
+          "away": 2
+        }
       },
       "correctOutcome": false,
       "correctScore": false

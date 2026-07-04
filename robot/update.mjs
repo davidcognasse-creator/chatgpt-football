@@ -250,6 +250,7 @@ async function updateHistory(ctx, config, matches) {
           home: r.scoreHome, away: r.scoreAway, outcome: r.outcome,
           ...(r.decidedBy ? { decidedBy: r.decidedBy } : {}),
           ...(r.pens ? { pens: r.pens } : {}),
+          ...(r.full ? { full: r.full } : {}),
         },
         correctOutcome: p.predicted.favored === r.outcome,
         correctScore:
@@ -325,6 +326,7 @@ async function settleScores(ctx, config) {
           home: r.scoreHome, away: r.scoreAway, outcome: r.outcome,
           ...(r.decidedBy ? { decidedBy: r.decidedBy } : {}),
           ...(r.pens ? { pens: r.pens } : {}),
+          ...(r.full ? { full: r.full } : {}),
         },
         correctOutcome: p.predicted.favored === r.outcome,
         correctScore:
@@ -334,6 +336,7 @@ async function settleScores(ctx, config) {
         home: r.scoreHome, away: r.scoreAway, outcome: r.outcome,
         ...(r.decidedBy ? { decidedBy: r.decidedBy } : {}),
         ...(r.pens ? { pens: r.pens } : {}),
+        ...(r.full ? { full: r.full } : {}),
       };
       delete pending[r.id];
       known.add(r.id);

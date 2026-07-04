@@ -85,9 +85,14 @@ export async function fetchResults(ctx, pending) {
       const pens = short === "PEN" && ph != null && pa != null ? { home: ph, away: pa } : null;
       const decidedBy = short === "PEN" ? "pens" : short === "AET" ? "aet" : null;
       const outcome = gh > ga ? "home" : gh < ga ? "away" : "draw"; // 90 min
+      // Score FINAL (prolongation incluse), pour l'afficher entre parenthèses.
+      let fgh = f.goals.home, fga = f.goals.away;
+      if (flip && fgh != null) { const t = fgh; fgh = fga; fga = t; }
+      const full = decidedBy === "aet" && fgh != null && fga != null && (fgh !== gh || fga !== ga)
+        ? { home: fgh, away: fga } : null;
       out.push({
         id: p.id, home: p.home, away: p.away, datetime: p.datetime,
-        scoreHome: gh, scoreAway: ga, outcome, decidedBy, pens,
+        scoreHome: gh, scoreAway: ga, outcome, decidedBy, pens, full,
       });
       break;
     }
