@@ -1,0 +1,40 @@
+name: Note d'équipe (valeur → probas)
+
+# Lancement MANUEL. Calibre le lien valeur marchande d'équipe → probas 1·N·2
+# sur l'historique récent (socle du pronostic Loto Foot). Committe NOTE-EQUIPE.md.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: note-equipe
+  cancel-in-progress: false
+
+jobs:
+  note:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Calibrer valeur → probas
+        working-directory: analyse-ligue1
+        run: python3 note-equipe.py
+
+      - name: Committer le rapport
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/NOTE-EQUIPE.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(algo): calibration note d'équipe (valeur -> probas)"
+            git push
+          else
+            echo "Aucun changement."
+          fi
