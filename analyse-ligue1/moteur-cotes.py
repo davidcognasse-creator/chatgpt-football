@@ -3,20 +3,21 @@
 Moteur COTES → probas.json : le signal PRIMAIRE du système Loto Foot.
 
 Les cotes des bookmakers sont l'entrée la plus forte (comme pour la CDM).
-Pour chaque match de grille.json, on récupère les cotes h2h (The Odds API),
-on retire la marge (« de-vig »), on moyenne les books → proba 1·N·2 du MARCHÉ.
-On COMPARE à la foule (répartition des mises FDJ) → l'edge d'un jeu de pool =
-là où la foule s'écarte du marché sharp.
+Pour chaque match de grille.json, on résout le fixture sur API-Football, on
+récupère les cotes "Match Winner" (multi-books), on retire la marge (« de-vig »)
+et on moyenne → proba 1·N·2 du MARCHÉ. On COMPARE à la foule (mises FDJ) →
+l'edge d'un jeu de pool = là où la foule s'écarte du marché sharp. La prédiction
+maison d'API-Football sert de repli/cross-check.
 
 Sortie :
   - probas.json   → consommé par grille-optim.py (grille sous budget 50 €)
   - MOTEUR-COTES.md → rapport marché vs foule + divergences
 
-Couche suivante (hook `ajust_actualite`) : corriger la proba avec les absents
-détectés presse/X (star out, turnover) AVANT que le marché bouge — c'est là
-qu'est le vrai edge, mais seulement quand le marché n'a pas encore intégré l'info.
+Couche `ajust_actualite` : corriger la proba avec les absents (star out, turnover)
+AVANT que le marché bouge — le vrai edge. Alimentée par la compo API-Football
+(à venir, ~40 min avant le coup d'envoi) + presse/manuel, pondérée par la note.
 
-Secret ODDS_API_KEY requis → GitHub Actions.
+Secret APIFOOTBALL_KEY requis → GitHub Actions (plan Pro : cotes+compo+prédictions).
 """
 import csv
 import gzip
@@ -28,11 +29,9 @@ import unicodedata
 import urllib.request
 import urllib.parse
 
-KEY = os.environ.get("ODDS_API_KEY", "")
-BASE = "https://api.the-odds-api.com/v4"
-REGIONS = "eu"   # 1 seule région = coût quota /2 vs "eu,uk"
+KEY = os.environ.get("APIFOOTBALL_KEY", "")
+BASE = "https://v3.football.api-sports.io"
 HERE = os.path.dirname(__file__)
-MAX_LEAGUES = 60  # garde-fou quota
 
 # Note par joueur = valeur marchande Transfermarkt (dataset public R2).
 R2 = "https://pub-e682421888d945d684bcae8890b0ec20.r2.dev/data"
@@ -56,22 +55,15 @@ def norm(s):
     return [t for t in s.split() if t and t not in STOP]
 
 
-def http(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "lotofoot-cotes/1.0"})
+def af(path):
+    """GET API-Football (v3). Renvoie la liste `response` (lève sur erreurs API)."""
+    req = urllib.request.Request(BASE + path, headers={"x-apisports-key": KEY})
     with urllib.request.urlopen(req, timeout=60) as r:
-        return json.loads(r.read().decode("utf-8", "replace")), dict(r.headers)
-
-
-def active_soccer_keys(whitelist=None):
-    """Ligues foot actives ; si `whitelist` (grille.json → "sports") est fournie,
-    ne garde que celles-là → beaucoup moins de crédits The Odds API consommés."""
-    sports, _ = http(f"{BASE}/sports/?apiKey={urllib.parse.quote(KEY)}")
-    keys = [s["key"] for s in sports
-            if s.get("group") == "Soccer" and s.get("active") and not s.get("has_outrights")]
-    if whitelist:
-        wl = set(whitelist)
-        keys = [k for k in keys if k in wl]
-    return keys
+        j = json.loads(r.read().decode("utf-8", "replace"))
+    e = j.get("errors")
+    if (isinstance(e, list) and e) or (isinstance(e, dict) and e):
+        raise RuntimeError(f"API errors: {e}")
+    return j.get("response", [])
 
 
 def devig(home, draw, away):
@@ -80,16 +72,71 @@ def devig(home, draw, away):
     return {"1": ih / s, "N": idr / s, "2": ia / s}
 
 
-def event_probs(ev):
-    """Moyenne dévignée des books d'un event The Odds API."""
+def side_match(query_tokens, ev_tokens):
+    """Score d'appariement d'un côté : tokens significatifs partagés."""
+    q = set(t for t in query_tokens if len(t) >= 4)
+    if not q:                       # nom court (AIK, PSG…) : garde tous les tokens
+        q = set(query_tokens)
+    if not q:
+        return 0.0
+    shared = q & ev_tokens
+    minlen = 3 if all(len(t) <= 3 for t in q) else 4
+    if not shared or max((len(t) for t in shared), default=0) < minlen:
+        return 0.0
+    return len(shared) / len(q)
+
+
+_TEAM = {}
+def team_id(name):
+    """Résout un nom d'équipe → (id, nom officiel) via /teams?search, avec cache."""
+    key = " ".join(norm(name))
+    if key in _TEAM:
+        return _TEAM[key]
+    res = af(f"/teams?search={urllib.parse.quote(name)}")
+    best = None
+    nt = set(norm(name))
+    for r in res:
+        t = r.get("team") or {}
+        score = side_match(list(nt), set(norm(t.get("name", ""))))
+        if score > 0 and (not best or score > best[0]):
+            best = (score, t.get("id"), t.get("name"))
+    _TEAM[key] = (best[1], best[2]) if best else (None, None)
+    return _TEAM[key]
+
+
+def resolve_fixture(dom, ext):
+    """Trouve le fixture à venir dom–ext ; renvoie (fid, flip, league) ou None.
+    flip=True si l'API a dom/ext inversés par rapport à la grille."""
+    hid, _ = team_id(dom)
+    if not hid:
+        return None
+    et = set(norm(ext))
+    for r in af(f"/fixtures?team={hid}&next=5"):
+        h = r["teams"]["home"]; a = r["teams"]["away"]
+        # le match cherché : l'autre équipe correspond à ext
+        if side_match(list(et), set(norm(a["name"]))) > 0 and h["id"] == hid:
+            return r["fixture"]["id"], False, r["league"]["name"]
+        if side_match(list(et), set(norm(h["name"]))) > 0 and a["id"] == hid:
+            return r["fixture"]["id"], True, r["league"]["name"]
+    return None
+
+
+def fixture_odds(fid, flip):
+    """Cotes "Match Winner" multi-books dévignées → proba 1·N·2 (côté grille)."""
+    res = af(f"/odds?fixture={fid}")
+    if not res:
+        return None
     acc = {"1": 0.0, "N": 0.0, "2": 0.0}
     n = 0
-    for b in ev.get("bookmakers", []):
-        h2h = next((m for m in b.get("markets", []) if m["key"] == "h2h"), None)
-        if not h2h:
+    for bk in res[0].get("bookmakers", []):
+        bet = next((b for b in bk.get("bets", []) if b.get("id") == 1
+                    or b.get("name") == "Match Winner"), None)
+        if not bet:
             continue
-        px = {o["name"]: o["price"] for o in h2h.get("outcomes", [])}
-        home = px.get(ev["home_team"]); away = px.get(ev["away_team"]); draw = px.get("Draw")
+        px = {}
+        for v in bet.get("values", []):
+            px[str(v.get("value")).lower()] = float(v.get("odd"))
+        home, draw, away = px.get("home"), px.get("draw"), px.get("away")
         if not (home and draw and away):
             continue
         p = devig(home, draw, away)
@@ -98,92 +145,29 @@ def event_probs(ev):
         n += 1
     if not n:
         return None
-    return {k: acc[k] / n for k in acc}, n
-
-
-def build_pool(keys):
-    """Récupère les events + cotes de chaque ligue active ; renvoie une liste
-    d'events enrichis (home/away normalisés + proba dévignée)."""
-    pool = []
-    used = 0
-    quota_epuise = False
-    for k in keys[:MAX_LEAGUES]:
-        url = (f"{BASE}/sports/{k}/odds/?regions={REGIONS}"
-               f"&markets=h2h&oddsFormat=decimal&apiKey={urllib.parse.quote(KEY)}")
-        evs = None
-        for attempt in range(2):          # 1 reprise (401/429 parfois transitoires)
-            try:
-                evs, hdr = http(url)
-                rem = hdr.get("x-requests-remaining")
-                if rem is not None and used == 0:
-                    say(f"_Quota The Odds API restant : {rem} requêtes._")
-                break
-            except Exception as e:
-                if "401" in str(e):       # 401 sur /odds = quota épuisé → on arrête
-                    quota_epuise = True
-                    break
-                if attempt == 0:
-                    continue
-                say(f"- ⚠️ {k} : {e}")
-        if quota_epuise:
-            say("- ❌ **Quota The Odds API épuisé (401)** — arrêt. Attends le reset "
-                "mensuel ou passe à un plan supérieur ; les matchs retombent sur la foule.")
-            break
-        if evs is None:
-            continue
-        used += 1
-        for ev in evs:
-            r = event_probs(ev)
-            if not r:
-                continue
-            p, nbooks = r
-            pool.append({
-                "home": ev["home_team"], "away": ev["away_team"],
-                "hn": set(norm(ev["home_team"])), "an": set(norm(ev["away_team"])),
-                "p": p, "nbooks": nbooks, "league": k,
-            })
-    say(f"\n_{used} ligues interrogées · {len(pool)} matchs cotés récupérés._\n")
-    return pool
-
-
-def side_match(query_tokens, ev_tokens):
-    """Score d'appariement d'un côté (dom ou ext) : tokens significatifs partagés."""
-    q = set(t for t in query_tokens if len(t) >= 4)
-    if not q:                       # nom court (AIK, PSG…) : garde tous les tokens
-        q = set(query_tokens)
-    if not q:
-        return 0.0
-    shared = q & ev_tokens
-    # exige un token distinctif partagé : ≥4 lettres, OU ≥3 si c'est TOUT le nom
-    minlen = 3 if all(len(t) <= 3 for t in q) else 4
-    if not shared or max((len(t) for t in shared), default=0) < minlen:
-        return 0.0
-    return len(shared) / len(q)
-
-
-def find_event(dom, ext, pool):
-    """Meilleur event du pool pour (dom, ext), en respectant l'ordre domicile."""
-    dt, et = norm(dom), norm(ext)
-    best = None
-    for ev in pool:
-        sh = side_match(dt, ev["hn"]) * side_match(et, ev["an"])
-        sr = side_match(dt, ev["an"]) * side_match(et, ev["hn"])  # inversé
-        if sh >= sr:
-            score, flip = sh, False
-        else:
-            score, flip = sr, True
-        if score <= 0:
-            continue
-        if not best or score > best[0]:
-            best = (score, ev, flip)
-    if not best or best[0] < 0.5:
-        return None
-    _, ev, flip = best
-    p = ev["p"]
-    if flip:  # l'event a dom/ext inversés par rapport à la grille
+    p = {k: acc[k] / n for k in acc}
+    if flip:
         p = {"1": p["2"], "N": p["N"], "2": p["1"]}
-    return {"p": p, "nbooks": ev["nbooks"], "league": ev["league"],
-            "ev": f"{ev['home']}–{ev['away']}", "flip": flip}
+    return p, n
+
+
+def fixture_prediction(fid, flip):
+    """Prédiction maison API-Football (repli/cross-check) → proba 1·N·2."""
+    res = af(f"/predictions?fixture={fid}")
+    if not res:
+        return None
+    pc = (res[0].get("predictions") or {}).get("percent") or {}
+    try:
+        h = float(str(pc.get("home", "")).rstrip("%"))
+        d = float(str(pc.get("draw", "")).rstrip("%"))
+        a = float(str(pc.get("away", "")).rstrip("%"))
+    except ValueError:
+        return None
+    s = h + d + a or 1
+    p = {"1": h / s, "N": d / s, "2": a / s}
+    if flip:
+        p = {"1": p["2"], "N": p["N"], "2": p["1"]}
+    return p
 
 
 _ABS = None
@@ -324,26 +308,39 @@ def ajust_actualite(dom, ext, p):
     return adj, {"h": (ih, absh), "a": (ia, absa)}
 
 
+def market_probs(dom, ext):
+    """Proba 1·N·2 du marché pour dom–ext via API-Football : cotes multi-books,
+    repli sur la prédiction maison. Renvoie (p, nbooks, source, league) ou None."""
+    try:
+        fx = resolve_fixture(dom, ext)
+    except Exception as e:
+        say(f"  _(résolution {dom}–{ext} : {e})_"); return None
+    if not fx:
+        return None
+    fid, flip, league = fx
+    try:
+        o = fixture_odds(fid, flip)
+        if o:
+            p, nb = o
+            return p, nb, f"cotes ({nb} books)", league
+    except Exception:
+        pass
+    try:
+        pr = fixture_prediction(fid, flip)
+        if pr:
+            return pr, 0, "prédiction API", league
+    except Exception:
+        pass
+    return None
+
+
 def main():
     say("# Moteur cotes → probas Loto Foot (marché vs foule)\n")
     grid = json.load(open(os.path.join(HERE, "grille.json"), encoding="utf-8"))
-    say(f"Grille : **{grid.get('nom','?')}** · {len(grid['matchs'])} matchs\n")
+    say(f"Grille : **{grid.get('nom','?')}** · {len(grid['matchs'])} matchs · source **API-Football**\n")
     if not KEY:
-        say("❌ ODDS_API_KEY manquant — impossible d'interroger le marché.")
+        say("❌ APIFOOTBALL_KEY manquant — impossible d'interroger le marché.")
         return finish(grid, [])
-
-    try:
-        wl = grid.get("sports")
-        keys = active_soccer_keys(wl)
-        if wl:
-            say(f"Ligues ciblées (grille.json → sports) : {len(keys)}/{len(wl)} actives.")
-        else:
-            say(f"Ligues foot actives sur le marché : {len(keys)} "
-                "(astuce : ajoute \"sports\":[...] à grille.json pour économiser le quota).")
-    except Exception as e:
-        say(f"❌ Liste des sports indisponible : {e}")
-        return finish(grid, [])
-    pool = build_pool(keys)
 
     say("| # | Match | Marché 1·N·2 | Foule 1·N·2 | Prono marché | Foule | Books | Écart |")
     say("|---|---|---|---|---|---|---|---|")
@@ -352,16 +349,17 @@ def main():
         f = m["foule"]; ft = f["1"] + f["N"] + f["2"] or 1
         foule = {k: f[k] / ft for k in ("1", "N", "2")}
         cp = max(("1", "N", "2"), key=lambda k: foule[k])
-        e = find_event(m["dom"], m["ext"], pool)
-        if not e:
+        mk = market_probs(m["dom"], m["ext"])
+        if not mk:
             say(f"| {i} | {m['dom']}–{m['ext']} | — | "
                 f"{foule['1']*100:.0f}/{foule['N']*100:.0f}/{foule['2']*100:.0f} | "
                 f"_non coté_ | {cp} | — | — |")
             out.append({"dom": m["dom"], "ext": m["ext"], "foule": f,
                         "p": foule, "source": "foule (non coté)"})
             continue
+        raw_p, nbooks, msrc, _league = mk
         couverts += 1
-        p, info = ajust_actualite(m["dom"], m["ext"], e["p"])
+        p, info = ajust_actualite(m["dom"], m["ext"], raw_p)
         mp = max(("1", "N", "2"), key=lambda k: p[k])
         flag = ""
         if mp != cp:
@@ -369,14 +367,14 @@ def main():
             divergences.append((i, m, mp, cp, p, foule))
         note = " ✎" if info else ""
         if info:
-            ajustes.append((i, m, info, e["p"], p))
+            ajustes.append((i, m, info, raw_p, p))
+        books = str(nbooks) if nbooks else "préd."
         say(f"| {i} | {m['dom']}–{m['ext']} | "
             f"{p['1']*100:.0f}/{p['N']*100:.0f}/{p['2']*100:.0f}{note} | "
             f"{foule['1']*100:.0f}/{foule['N']*100:.0f}/{foule['2']*100:.0f} | "
-            f"**{mp}** | {cp} | {e['nbooks']} | {flag} |")
+            f"**{mp}** | {cp} | {books} | {flag} |")
         out.append({"dom": m["dom"], "ext": m["ext"], "foule": f,
-                    "p": p, "source": f"cotes ({e['nbooks']} books)"
-                    + (" + absents" if info else "")})
+                    "p": p, "source": msrc + (" + absents" if info else "")})
 
     say(f"\n**Couverture marché : {couverts}/{len(grid['matchs'])} matchs cotés.**")
     say(f"_{len(ajustes)} match(s) corrigé(s) par les absents (✎)._\n" if ajustes
@@ -414,9 +412,9 @@ def main():
     else:
         say("_Aucune divergence de pronostic sur les matchs cotés._")
 
-    say("\n---\n_Le marché (cotes dévignées, moyenne multi-books) est le signal primaire. "
-        "Prochaine couche : corriger avec les absents détectés presse/X, pondérés par "
-        "la valeur du joueur, AVANT que le marché ne bouge._")
+    say("\n---\n_Cotes API-Football (dévignées, moyenne multi-books) = signal primaire ; "
+        "repli sur la prédiction maison. Couche absences (compo J-40min + presse/manuel, "
+        "pondérée par la note) appliquée AVANT que le marché ne bouge._")
     return finish(grid, out)
 
 

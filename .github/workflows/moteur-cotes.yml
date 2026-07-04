@@ -2,7 +2,7 @@ name: Grille Loto Foot (cotes → optimiseur)
 
 # Lancement MANUEL, à faire juste avant la clôture des paris.
 # 0) sonde-absences.py : presse (GNews) → absences-auto.json (absents trouvés seuls)
-# 1) moteur-cotes.py : cotes marché (The Odds API) dévignées, corrigées par les
+# 1) moteur-cotes.py : cotes marché (API-Football) dévignées, corrigées par les
 #    absents (poids = note Transfermarkt) → probas.json + MOTEUR-COTES.md
 # 2) grille-optim.py : répartit doubles/triples sous 50 € → GRILLE-OPTIM.md
 on:
@@ -36,7 +36,7 @@ jobs:
       - name: Moteur cotes (+ absents) → probas.json
         working-directory: analyse-ligue1
         env:
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
         run: python3 moteur-cotes.py
 
       - name: Optimiser la grille sous 50 €
