@@ -1095,9 +1095,11 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 @media (max-width: 560px) {
   .site-header { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px; }
   .header-meta { width: 100%; justify-content: space-between; }
-  .header-nav { width: 100%; gap: 6px; justify-content: flex-start; }
+  .header-nav { width: 100%; gap: 6px; justify-content: flex-start; position: relative; padding-top: 2px; }
   .nav-link { font-size: 0.78rem; padding: 6px 12px; }
   .lang-sel { font-size: 0.78rem; padding: 5px 8px; margin-left: auto; }
+  /* Sélecteur de langue épinglé en haut à droite du menu = 1re ligne (Mon groupe) */
+  .header-nav .lang-switch { position: absolute; top: 0; right: 0; }
   .hero { padding: 22px 0 16px; }
   .hero-stats { margin-top: 18px; gap: 10px; }
   .stat { flex: 1 1 calc(50% - 5px); min-width: 0; padding: 14px 12px; }
