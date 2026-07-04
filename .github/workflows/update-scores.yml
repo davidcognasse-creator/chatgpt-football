@@ -32,6 +32,10 @@ jobs:
       - name: Régler les matchs terminés
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          # Permet de récupérer prolongation / tirs au but (vrai vainqueur) sur
+          # les matchs à élimination directe. Optionnel : sans clé, on garde le
+          # score réglementaire.
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
         run: node robot/update.mjs --mode scores
 
       - name: Committer les résultats

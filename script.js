@@ -64,8 +64,15 @@
   // (phrase pré-générée par le robot, en anglais/mixte).
   const localizedAnalysis = (m) => {
     let a = m.analysis || "";
+    const fr = window.getLang ? window.getLang() === "fr" : false;
     [m.home, m.away].forEach((tm) => {
-      if (tm && tm.name) {
+      if (!tm || !tm.name) return;
+      if (fr && window.teamNameArt) {
+        const esc = tm.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        // Insère l'article : majuscule en début de phrase (après . ou :), minuscule sinon.
+        a = a.replace(new RegExp("([.:]\\s+)?" + esc, "g"), (match, pre, offset) =>
+          (pre || "") + window.teamNameArt(tm, !!pre || offset === 0));
+      } else {
         const loc = window.teamName(tm);
         if (loc && loc !== tm.name) a = a.split(tm.name).join(loc);
       }
@@ -78,6 +85,7 @@
     if (!r) return "";
     if (r.pens && (r.pens.home != null || r.pens.away != null))
       return ` <span class="ai-note">${t("his_pens")} ${r.pens.home}‑${r.pens.away}</span>`;
+    if (r.decidedBy === "pens") return ` <span class="ai-note">${t("his_pens")}</span>`;
     if (r.decidedBy === "aet") return ` <span class="ai-note">${t("his_aet")}</span>`;
     return "";
   };

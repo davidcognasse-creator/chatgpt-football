@@ -152,8 +152,10 @@ export function buildAnalysis(match, prediction, sources) {
       const team = sideName(favoredOutcome(x.pr));
       (byTeam[team] = byTeam[team] || []).push(LABELS[x.k]);
     });
-    const frags = Object.entries(byTeam).map(([team, ls]) => `${joinFr(ls)} pour ${team}`);
-    parts.push(`Signal contraire : ${frags.join(" ; ")}.`);
+    const frags = Object.entries(byTeam).map(
+      ([team, ls]) => `${joinFr(ls)} ${ls.length > 1 ? "penchent" : "penche"} plutôt pour ${team}`
+    );
+    parts.push(`À contre-courant, ${frags.join(" ; ")}.`);
   }
 
   if (match.note) parts.push(match.note);

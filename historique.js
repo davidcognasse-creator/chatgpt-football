@@ -33,6 +33,7 @@
     if (!a) return "";
     if (a.pens && (a.pens.home != null || a.pens.away != null))
       return ` <span class="score-extra">${t("his_pens")} ${a.pens.home}‑${a.pens.away}</span>`;
+    if (a.decidedBy === "pens") return ` <span class="score-extra">${t("his_pens")}</span>`;
     if (a.decidedBy === "aet") return ` <span class="score-extra">${t("his_aet")}</span>`;
     return "";
   }

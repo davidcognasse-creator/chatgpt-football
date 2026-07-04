@@ -63,6 +63,43 @@ export async function competitionMatches(ctx) {
   return compMatchesCache;
 }
 
+/**
+ * Dénouement d'un match (prolongation / tirs au but) via le calendrier WC.
+ * Retourne { decidedBy: "aet"|"pens", outcome: "home"|"away"|"draw", pens }
+ * ou null si le match s'est joué dans le temps réglementaire (ou introuvable).
+ * Sert à connaître le VRAI vainqueur des matchs à élimination directe.
+ */
+export async function matchOutcome(ctx, homeName, awayName, dateISO) {
+  let ms;
+  try { ms = await competitionMatches(ctx); } catch { return null; }
+  const norm = (s) => (s || "").toLowerCase().trim();
+  const day = (dateISO || "").slice(0, 10);
+  const same = (fdName, oddsName) => {
+    const a = norm(fdName), b = norm(oddsName);
+    if (!a || !b) return false;
+    if (a === b || a.includes(b) || b.includes(a)) return true;
+    for (const [k, arr] of Object.entries(ALIASES)) {
+      const set = new Set([k, ...arr]);
+      if (set.has(a) && set.has(b)) return true;
+    }
+    return false;
+  };
+  const m = ms.find((x) => {
+    const d = (x.utcDate || "").slice(0, 10);
+    return d === day && same(x.homeTeam && x.homeTeam.name, homeName) &&
+      same(x.awayTeam && x.awayTeam.name, awayName);
+  });
+  const sc = m && m.score;
+  if (!sc) return null;
+  const decidedBy = sc.duration === "PENALTY_SHOOTOUT" ? "pens"
+    : sc.duration === "EXTRA_TIME" ? "aet" : null;
+  if (!decidedBy) return null;
+  const outcome = sc.winner === "HOME_TEAM" ? "home" : sc.winner === "AWAY_TEAM" ? "away" : "draw";
+  const pens = sc.penalties && sc.penalties.home != null && sc.penalties.away != null
+    ? { home: sc.penalties.home, away: sc.penalties.away } : null;
+  return { decidedBy, outcome, pens };
+}
+
 /** Identifiant football-data d'une équipe à partir de son nom (avec alias). */
 export async function teamId(ctx, name) {
   const idx = await teamIndex(ctx);

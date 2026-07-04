@@ -232,11 +232,20 @@ async function updateHistory(ctx, config, matches) {
   let settled = 0;
   try {
     const { fetchResults } = await import("./sources/results.mjs");
+    const { matchOutcome } = await import("./lib/footballdata.mjs");
     const results = await fetchResults(ctx);
     const known = new Set(history.entries.map((e) => e.id));
     for (const r of results) {
       const p = pending[r.id];
       if (!p || known.has(r.id)) continue;
+      try {
+        const dec = await matchOutcome(ctx, r.home, r.away, r.datetime);
+        if (dec) {
+          r.decidedBy = dec.decidedBy;
+          if (dec.pens) r.pens = dec.pens;
+          if (dec.outcome && dec.outcome !== "draw") r.outcome = dec.outcome;
+        }
+      } catch (e) { /* pas de clé / indispo → score réglementaire */ }
       history.entries.push({
         id: r.id,
         datetime: p.datetime,
@@ -307,10 +316,21 @@ async function settleScores(ctx, config) {
   const resultById = {}; // id → { home, away, outcome } pour l'affichage accueil
   try {
     const { fetchResults } = await import("./sources/results.mjs");
+    const { matchOutcome } = await import("./lib/footballdata.mjs");
     const results = await fetchResults(ctx);
     for (const r of results) {
       const p = pending[r.id];
       if (!p || known.has(r.id)) continue;
+      // Prolongation / tirs au but (matchs à élimination directe) : football-data
+      // donne le vrai vainqueur même quand le temps réglementaire est un nul.
+      try {
+        const dec = await matchOutcome(ctx, r.home, r.away, r.datetime);
+        if (dec) {
+          r.decidedBy = dec.decidedBy;
+          if (dec.pens) r.pens = dec.pens;
+          if (dec.outcome && dec.outcome !== "draw") r.outcome = dec.outcome;
+        }
+      } catch (e) { /* pas de clé / indispo → on garde le score réglementaire */ }
       history.entries.push({
         id: r.id,
         datetime: p.datetime,

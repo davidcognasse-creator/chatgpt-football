@@ -144,6 +144,33 @@
     return team.name || "";
   };
 
+  // Article fran\u00e7ais par pays (pour les phrases : \u00ab L'\u00c9gypte \u00bb, \u00ab La France \u00bb,
+  // \u00ab Le Br\u00e9sil \u00bb, \u00ab Les Pays-Bas \u00bb). "" = pas d'article (Oman, Ha\u00efti\u2026).
+  const ART = {
+    dz: "l'", ar: "l'", au: "l'", at: "l'", be: "la", ba: "la", br: "le", ca: "le",
+    cv: "le", cm: "le", cl: "le", co: "la", cr: "le", hr: "la", cw: "", dk: "le",
+    cd: "la", ec: "l'", eg: "l'", sv: "le", "gb-eng": "l'", fr: "la", de: "l'",
+    gh: "le", gr: "la", gt: "le", ht: "", hn: "le", ir: "l'", iq: "l'", ie: "l'",
+    ci: "la", it: "l'", jm: "la", jp: "le", jo: "la", ml: "le", mx: "le", ma: "le",
+    nl: "les", nz: "la", ng: "le", "gb-nir": "l'", no: "la", om: "", pa: "le",
+    py: "le", pe: "le", pl: "la", pt: "le", qa: "le", sa: "l'", "gb-sct": "l'",
+    sn: "le", rs: "la", za: "l'", kr: "la", es: "l'", sr: "le", se: "la", ch: "la",
+    tn: "la", tr: "la", ua: "l'", ae: "les", us: "les", uy: "l'", uz: "l'",
+    ve: "le", "gb-wls": "le",
+  };
+
+  // Nom d'\u00e9quipe pr\u00e9c\u00e9d\u00e9 de son article fran\u00e7ais (\u00ab l'\u00c9gypte \u00bb / \u00ab La France \u00bb).
+  // capital = true \u2192 majuscule initiale (d\u00e9but de phrase). Hors fran\u00e7ais : nom nu.
+  window.teamNameArt = function (team, capital) {
+    const name = window.teamName(team);
+    const fr = window.getLang ? window.getLang() === "fr" : true;
+    if (!fr) return name;
+    const art = ART[code(team)];
+    if (!art) return name; // pas d'article connu
+    if (art === "l'") return (capital ? "L'" : "l'") + name;
+    return (capital ? art.charAt(0).toUpperCase() + art.slice(1) : art) + " " + name;
+  };
+
   window.flagHTML = function (team, h) {
     h = h || 15;
     const w = Math.round((h * 4) / 3);
