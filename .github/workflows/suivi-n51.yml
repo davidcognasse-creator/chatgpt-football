@@ -1,0 +1,42 @@
+name: Suivi Loto Foot N°51 (toi vs optimale)
+
+# Lancement MANUEL, après les matchs. Récupère les résultats réels (90 min,
+# API-Football) et compte les bons de chaque grille. Committe SUIVI-N51.md.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: suivi-n51
+  cancel-in-progress: false
+
+jobs:
+  suivi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Récupérer les résultats et comparer
+        working-directory: analyse-ligue1
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: python3 suivi-grille.py
+
+      - name: Committer le suivi
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/SUIVI-N51.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(lotofoot): suivi N°51 (résultats réels)"
+            git push
+          else
+            echo "Aucun changement."
+          fi
