@@ -5,8 +5,8 @@ Grille : **Loto Foot 15 N°51** · 15 matchs · source **API-Football**
 | # | Match | Marché 1·N·2 | Foule 1·N·2 | Prono marché | Foule | Books | Écart |
 |---|---|---|---|---|---|---|---|
 | 1 | Paraguay–France | 6/14/80 | 8/9/82 | **2** | 2 | 13 |  |
-| 2 | Canada–Maroc | — | 16/22/62 | _non coté_ | 2 | — | — |
-| 3 | Bresil–Norvege | — | 68/20/12 | _non coté_ | 1 | — | — |
+| 2 | Canada–Maroc | 19/28/53 | 16/22/62 | **2** | 2 | 13 |  |
+| 3 | Bresil–Norvege | 52/26/22 | 68/20/12 | **1** | 1 | 13 |  |
 | 4 | Qingdao Hainiu–Chengdu Rongcheng | — | 16/14/70 | _non coté_ | 2 | — | — |
 | 5 | Shanghai Shenhua–Zhejiang | — | 73/19/8 | _non coté_ | 1 | — | — |
 | 6 | Gimcheon Sangmu–Jeju | 39/29/33 | 48/37/15 | **1** | 1 | 13 |  |
@@ -20,7 +20,7 @@ Grille : **Loto Foot 15 N°51** · 15 matchs · source **API-Football**
 | 14 | Supra Quebec–Forge | 21/26/53 | 12/11/76 | **2** | 2 | 11 |  |
 | 15 | Barcelona SC–Deportivo Cuenca | 58/26/16 | 76/19/5 | **1** | 1 | 13 |  |
 
-**Couverture marché : 10/15 matchs cotés.**
+**Couverture marché : 12/15 matchs cotés.**
 _Aucun absent renseigné (absences.json) — probas = marché brut._
 
 ## 🎯 Divergences marché vs foule (value de pool)
