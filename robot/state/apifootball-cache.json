@@ -22,7 +22,9 @@
     "mexico": 16,
     "ecuador": 1731,
     "belgium": 1,
-    "senegal": 13
+    "senegal": 13,
+    "spain": 9,
+    "switzerland": 15
   },
   "h2h": {
     "panama|england": {
@@ -48,6 +50,12 @@
       "draw": 2,
       "away": 1,
       "ts": "2026-06-28T09:57:31.479Z"
+    },
+    "portugal|spain": {
+      "home": 0,
+      "draw": 6,
+      "away": 2,
+      "ts": "2026-07-04T13:44:11.579Z"
     }
   }
 }

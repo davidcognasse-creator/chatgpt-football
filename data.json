@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-04T13:39:09.339Z",
+  "updatedAt": "2026-07-04T13:45:10.041Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -126,11 +126,11 @@
       }
     },
     {
-      "id": "9c7073ae2c29ee4881bb695f92168c68",
+      "id": "1567824",
       "stage": "À venir",
       "projected": false,
-      "datetime": "2026-07-04T17:00:00Z",
-      "venue": "",
+      "datetime": "2026-07-04T17:00:00+00:00",
+      "venue": "NRG Stadium",
       "home": {
         "name": "Canada",
         "flag": "🇨🇦",
@@ -142,55 +142,28 @@
         "code": "MAR"
       },
       "probs": {
-        "home": 28,
+        "home": 23,
         "draw": 27,
-        "away": 45
+        "away": 50
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
-      "confidence": 61,
-      "analysis": "Morocco tient la corde (45% au global). Les marchés de paris donnent 54% à Morocco. La forme récente avantage Morocco. La presse penche vers Canada. Le public suit surtout Morocco.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Achraf Hakimi",
-            "prob": 93
-          },
-          {
-            "name": "Azzedine Ounahi",
-            "prob": 91
-          },
-          {
-            "name": "Tani Oluwaseyi",
-            "prob": 88
-          },
-          {
-            "name": "Jonathan David",
-            "prob": 82
-          },
-          {
-            "name": "Brahim Diaz",
-            "prob": 77
-          },
-          {
-            "name": "Ismael Saibari",
-            "prob": 69
-          }
-        ]
-      },
+      "confidence": 66,
+      "analysis": "Morocco part favori de justesse avec 50% de chances estimées. Les cotes confirment (53%). La forme récente et le public vont dans le même sens.",
+      "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
             "home": 19,
-            "draw": 27,
-            "away": 54
+            "draw": 28,
+            "away": 53
           },
           "favored": "away",
-          "detail": "41 bookmakers"
+          "detail": "13 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -213,13 +186,9 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": {
-            "home": 64,
-            "draw": 26,
-            "away": 10
-          },
-          "favored": "home",
-          "detail": "10221 articles"
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
         },
         "social": {
           "label": "Public",
@@ -230,16 +199,16 @@
             "away": 38
           },
           "favored": "away",
-          "detail": "X · 20486/21118 mentions"
+          "detail": "X · 21785/22680 mentions"
         }
       }
     },
     {
-      "id": "c798a1ffdeda28e82d930e7145a8ff10",
+      "id": "1569870",
       "stage": "À venir",
       "projected": false,
-      "datetime": "2026-07-04T21:00:00Z",
-      "venue": "",
+      "datetime": "2026-07-04T21:00:00+00:00",
+      "venue": "Lincoln Financial Field",
       "home": {
         "name": "Paraguay",
         "flag": "🇵🇾",
@@ -251,44 +220,17 @@
         "code": "FRA"
       },
       "probs": {
-        "home": 12,
-        "draw": 19,
-        "away": 69
+        "home": 13,
+        "draw": 17,
+        "away": 70
       },
       "predictedScore": {
         "home": 0,
         "away": 3
       },
-      "confidence": 75,
-      "analysis": "France tient la corde (70% au global). Les marchés de paris donnent 81% à France. La forme récente avantage France. La presse penche vers France. Le public suit surtout France.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Julio Cesar Enciso",
-            "prob": 93
-          },
-          {
-            "name": "Bradley Barcola",
-            "prob": 75
-          },
-          {
-            "name": "Michael Olise",
-            "prob": 74
-          },
-          {
-            "name": "Kylian Mbappe",
-            "prob": 70
-          },
-          {
-            "name": "Ousmane Dembele",
-            "prob": 66
-          },
-          {
-            "name": "Jean-Philippe Mateta",
-            "prob": 47
-          }
-        ]
-      },
+      "confidence": 74,
+      "analysis": "France se détache avec 70% de chances estimées. Les cotes confirment (80%). La forme récente et le public vont dans le même sens.",
+      "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
@@ -296,10 +238,10 @@
           "probs": {
             "home": 6,
             "draw": 14,
-            "away": 81
+            "away": 80
           },
           "favored": "away",
-          "detail": "41 bookmakers"
+          "detail": "13 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -322,33 +264,29 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": {
-            "home": 9,
-            "draw": 26,
-            "away": 65
-          },
-          "favored": "away",
-          "detail": "3773 articles"
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 27,
+            "home": 30,
             "draw": 26,
-            "away": 47
+            "away": 44
           },
           "favored": "away",
-          "detail": "X · 24509/43896 mentions"
+          "detail": "X · 25576/37532 mentions"
         }
       }
     },
     {
-      "id": "a4634eae056c18d705e3feffb347163f",
+      "id": "1568100",
       "stage": "À venir",
       "projected": false,
-      "datetime": "2026-07-05T20:00:00Z",
-      "venue": "",
+      "datetime": "2026-07-05T20:00:00+00:00",
+      "venue": "MetLife Stadium",
       "home": {
         "name": "Brazil",
         "flag": "🇧🇷",
@@ -360,44 +298,17 @@
         "code": "NOR"
       },
       "probs": {
-        "home": 51,
+        "home": 50,
         "draw": 26,
-        "away": 23
+        "away": 24
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
       "confidence": 68,
-      "analysis": "Brazil tient la corde (51% au global). Les marchés de paris donnent 52% à Brazil. La forme récente avantage Brazil. La presse penche vers Brazil. Le public suit surtout Brazil.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Antonio Nusa",
-            "prob": 88
-          },
-          {
-            "name": "Alexander Sorloth",
-            "prob": 85
-          },
-          {
-            "name": "Rayan Vitor",
-            "prob": 80
-          },
-          {
-            "name": "Matheus Cunha",
-            "prob": 69
-          },
-          {
-            "name": "Erling Braut Haaland",
-            "prob": 66
-          },
-          {
-            "name": "Vinicius Junior",
-            "prob": 66
-          }
-        ]
-      },
+      "analysis": "Brazil part favori de justesse avec 50% de chances estimées. Les cotes confirment (52%). La forme récente et le public vont dans le même sens.",
+      "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
@@ -408,7 +319,7 @@
             "away": 22
           },
           "favored": "home",
-          "detail": "41 bookmakers"
+          "detail": "13 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -431,33 +342,29 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": {
-            "home": 61,
-            "draw": 26,
-            "away": 13
-          },
-          "favored": "home",
-          "detail": "4064 articles"
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 49,
+            "home": 55,
             "draw": 26,
-            "away": 25
+            "away": 19
           },
           "favored": "home",
-          "detail": "X · 35546/18636 mentions"
+          "detail": "X · 35805/12792 mentions"
         }
       }
     },
     {
-      "id": "e61a7b471cadc8e3849158ed59d49cab",
+      "id": "1570714",
       "stage": "À venir",
       "projected": false,
-      "datetime": "2026-07-06T00:00:00Z",
-      "venue": "",
+      "datetime": "2026-07-06T00:00:00+00:00",
+      "venue": "Estadio Banorte",
       "home": {
         "name": "Mexico",
         "flag": "🇲🇽",
@@ -469,44 +376,17 @@
         "code": "ENG"
       },
       "probs": {
-        "home": 29,
-        "draw": 28,
-        "away": 43
+        "home": 31,
+        "draw": 29,
+        "away": 40
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
-      "confidence": 62,
-      "analysis": "England tient la corde (43% au global). Les marchés de paris donnent 39% à England. La forme récente avantage Mexico. La presse penche vers England. Le public suit surtout England.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Marcus Rashford",
-            "prob": 86
-          },
-          {
-            "name": "Jude Bellingham",
-            "prob": 85
-          },
-          {
-            "name": "Julian Quinones",
-            "prob": 79
-          },
-          {
-            "name": "Raul Jimenez",
-            "prob": 76
-          },
-          {
-            "name": "Harry Kane",
-            "prob": 66
-          },
-          {
-            "name": "Ollie Watkins",
-            "prob": 36
-          }
-        ]
-      },
+      "confidence": 61,
+      "analysis": "England part favori de justesse avec 40% de chances estimées. Les cotes confirment (39%). Le public abonde aussi. À contre-courant, la forme récente penche plutôt pour Mexico.",
+      "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
@@ -517,7 +397,7 @@
             "away": 39
           },
           "favored": "away",
-          "detail": "41 bookmakers"
+          "detail": "13 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -540,33 +420,111 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": {
-            "home": 16,
-            "draw": 26,
-            "away": 58
-          },
-          "favored": "away",
-          "detail": "15171 articles"
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 22,
+            "home": 23,
             "draw": 26,
-            "away": 52
+            "away": 51
           },
           "favored": "away",
-          "detail": "X · 20647/50135 mentions"
+          "detail": "X · 23341/51708 mentions"
         }
       }
     },
     {
-      "id": "810f80b3ae79f5e86b3747ca15718ed8",
+      "id": "1576756",
       "stage": "À venir",
       "projected": false,
-      "datetime": "2026-07-07T00:00:00Z",
+      "datetime": "2026-07-06T19:00:00+00:00",
       "venue": "",
+      "home": {
+        "name": "Portugal",
+        "flag": "🇵🇹",
+        "code": "POR"
+      },
+      "away": {
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "code": "ESP"
+      },
+      "probs": {
+        "home": 27,
+        "draw": 30,
+        "away": 43
+      },
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "confidence": 59,
+      "analysis": "Spain part favori de justesse avec 43% de chances estimées. Les cotes confirment (50%). La forme récente abonde aussi. À contre-courant, l'historique des confrontations penche plutôt pour le nul ; le public penche plutôt pour Portugal.",
+      "scorers": null,
+      "sources": {
+        "betting": {
+          "label": "Paris",
+          "weight": 0.55,
+          "probs": {
+            "home": 24,
+            "draw": 27,
+            "away": 50
+          },
+          "favored": "away",
+          "detail": "12 bookmakers"
+        },
+        "form": {
+          "label": "Forme",
+          "weight": 0.13,
+          "probs": {
+            "home": 33,
+            "draw": 26,
+            "away": 41
+          },
+          "favored": "away",
+          "detail": "VNVN vs VVVN"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.1,
+          "probs": {
+            "home": 10,
+            "draw": 62,
+            "away": 28
+          },
+          "favored": "draw",
+          "detail": "0V 6N 2D"
+        },
+        "press": {
+          "label": "Presse",
+          "weight": 0.12,
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
+        },
+        "social": {
+          "label": "Public",
+          "weight": 0.1,
+          "probs": {
+            "home": 51,
+            "draw": 26,
+            "away": 23
+          },
+          "favored": "home",
+          "detail": "X · 47849/21473 mentions"
+        }
+      }
+    },
+    {
+      "id": "1570715",
+      "stage": "À venir",
+      "projected": false,
+      "datetime": "2026-07-07T00:00:00+00:00",
+      "venue": "Lumen Field",
       "home": {
         "name": "USA",
         "flag": "🇺🇸",
@@ -578,55 +536,28 @@
         "code": "BEL"
       },
       "probs": {
-        "home": 40,
-        "draw": 27,
-        "away": 33
+        "home": 37,
+        "draw": 28,
+        "away": 35
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
       "confidence": 61,
-      "analysis": "USA tient la corde (40% au global). Les marchés de paris donnent 36% à USA. La forme récente avantage USA. La presse penche vers USA. Le public suit surtout USA.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Romelu Lukaku",
-            "prob": 50
-          },
-          {
-            "name": "Christian Pulisic",
-            "prob": 47
-          },
-          {
-            "name": "Kevin De Bruyne",
-            "prob": 40
-          },
-          {
-            "name": "Ricardo Pepi",
-            "prob": 36
-          },
-          {
-            "name": "Haji Wright",
-            "prob": 35
-          },
-          {
-            "name": "Matias Fernandez Pardo",
-            "prob": 30
-          }
-        ]
-      },
+      "analysis": "USA part favori de justesse avec 38% de chances estimées. Les cotes, elles, penchent pour Belgium (37%). La forme récente et le public vont dans le même sens.",
+      "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 36,
+            "home": 35,
             "draw": 28,
-            "away": 36
+            "away": 37
           },
-          "favored": "home",
-          "detail": "41 bookmakers"
+          "favored": "away",
+          "detail": "12 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -649,24 +580,176 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": {
-            "home": 52,
-            "draw": 26,
-            "away": 22
-          },
-          "favored": "home",
-          "detail": "4101 articles"
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 47,
+            "home": 48,
             "draw": 26,
-            "away": 27
+            "away": 26
           },
           "favored": "home",
-          "detail": "X · 30996/18282 mentions"
+          "detail": "X · 31323/16627 mentions"
+        }
+      }
+    },
+    {
+      "id": "1576804",
+      "stage": "À venir",
+      "projected": false,
+      "datetime": "2026-07-07T16:00:00+00:00",
+      "venue": "",
+      "home": {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "code": "ARG"
+      },
+      "away": {
+        "name": "Egypt",
+        "flag": "🇪🇬",
+        "code": "EGY"
+      },
+      "probs": {
+        "home": 64,
+        "draw": 22,
+        "away": 14
+      },
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "confidence": 75,
+      "analysis": "Argentina se détache avec 65% de chances estimées. Les cotes confirment (70%). La forme récente et le public vont dans le même sens.",
+      "scorers": null,
+      "sources": {
+        "betting": {
+          "label": "Paris",
+          "weight": 0.55,
+          "probs": {
+            "home": 70,
+            "draw": 20,
+            "away": 10
+          },
+          "favored": "home",
+          "detail": "13 bookmakers"
+        },
+        "form": {
+          "label": "Forme",
+          "weight": 0.13,
+          "probs": {
+            "home": 44,
+            "draw": 26,
+            "away": 30
+          },
+          "favored": "home",
+          "detail": "VVVV vs VNVN"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.1,
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
+        },
+        "press": {
+          "label": "Presse",
+          "weight": 0.12,
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
+        },
+        "social": {
+          "label": "Public",
+          "weight": 0.1,
+          "probs": {
+            "home": 62,
+            "draw": 26,
+            "away": 12
+          },
+          "favored": "home",
+          "detail": "X · 63986/12639 mentions"
+        }
+      }
+    },
+    {
+      "id": "1576805",
+      "stage": "À venir",
+      "projected": false,
+      "datetime": "2026-07-07T20:00:00+00:00",
+      "venue": "",
+      "home": {
+        "name": "Switzerland",
+        "flag": "🇨🇭",
+        "code": "SUI"
+      },
+      "away": {
+        "name": "Colombia",
+        "flag": "🇨🇴",
+        "code": "COL"
+      },
+      "probs": {
+        "home": 28,
+        "draw": 29,
+        "away": 43
+      },
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "confidence": 63,
+      "analysis": "Colombia part favori de justesse avec 43% de chances estimées. Les cotes confirment (43%). Le public abonde aussi. À contre-courant, la forme récente penche plutôt pour Switzerland.",
+      "scorers": null,
+      "sources": {
+        "betting": {
+          "label": "Paris",
+          "weight": 0.55,
+          "probs": {
+            "home": 28,
+            "draw": 30,
+            "away": 43
+          },
+          "favored": "away",
+          "detail": "12 bookmakers"
+        },
+        "form": {
+          "label": "Forme",
+          "weight": 0.13,
+          "probs": {
+            "home": 37,
+            "draw": 26,
+            "away": 37
+          },
+          "favored": "home",
+          "detail": "VVVN vs VNVV"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.1,
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
+        },
+        "press": {
+          "label": "Presse",
+          "weight": 0.12,
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
+        },
+        "social": {
+          "label": "Public",
+          "weight": 0.1,
+          "probs": {
+            "home": 17,
+            "draw": 26,
+            "away": 57
+          },
+          "favored": "away",
+          "detail": "X · 4990/16156 mentions"
         }
       }
     }
