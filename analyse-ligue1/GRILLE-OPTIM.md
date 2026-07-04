@@ -20,13 +20,13 @@ Combinaisons : **48** → coût **48 €** (≤ 50 €)
 | 10 | IFK Goteborg–AIK | DOUBLE | 1 / 2 | 73% |
 | 11 | Kalmar–Orgryte | simple | 1 | 62% |
 | 12 | Vancouver–Inter Toronto | simple | 1 | 73% |
-| 13 | Atletico Ottawa–Cavalry | DOUBLE | 2 / N | 79% |
-| 14 | Supra Quebec–Forge | simple | 2 | 76% |
+| 13 | Atletico Ottawa–Cavalry | simple | 2 | 53% |
+| 14 | Supra Quebec–Forge | DOUBLE | 2 / N | 79% |
 | 15 | Barcelona SC–Deportivo Cuenca | simple | 1 | 58% |
 
 Répartition : 10 simples · **4 doubles** · **1 triples**
-- **15/15** (parfaite) : 0.74 % · **14/15** : 4.40 % · **13/15** : 12.10 %
-- **≥ 13** (rang gagnant) : **17.23 %** · espérance **10.9/15**
+- **15/15** (parfaite) : 0.51 % · **14/15** : 3.35 % · **13/15** : 10.08 %
+- **≥ 13** (rang gagnant) : **13.94 %** · espérance **10.7/15**
 
 ---
-_Estimations provisoires (sans cotes). Le moteur cotes/actualité (probas.json) donnera le vrai edge au retour du quota._
+_Répartition doubles/triples sur les matchs les plus incertains. Probas = cotes (13 books) (via moteur-cotes → probas.json)._

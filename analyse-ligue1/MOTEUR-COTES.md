@@ -17,10 +17,10 @@ Grille : **Loto Foot 15 N°51** · 15 matchs · source **API-Football**
 | 11 | Kalmar–Orgryte | 62/21/16 | 88/7/5 | **1** | 1 | 13 |  |
 | 12 | Vancouver–Inter Toronto | — | 73/15/12 | _non coté_ | 1 | — | — |
 | 13 | Atletico Ottawa–Cavalry | 21/26/53 | 51/25/24 | **2** | 1 | 12 | **+29%** |
-| 14 | Supra Quebec–Forge | — | 12/11/76 | _non coté_ | 2 | — | — |
+| 14 | Supra Quebec–Forge | 21/26/53 | 12/11/76 | **2** | 2 | 11 |  |
 | 15 | Barcelona SC–Deportivo Cuenca | 58/26/16 | 76/19/5 | **1** | 1 | 13 |  |
 
-**Couverture marché : 9/15 matchs cotés.**
+**Couverture marché : 10/15 matchs cotés.**
 _Aucun absent renseigné (absences.json) — probas = marché brut._
 
 ## 🎯 Divergences marché vs foule (value de pool)

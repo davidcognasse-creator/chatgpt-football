@@ -47,29 +47,26 @@ Grille : **Loto Foot 15 N°51** · 30 équipes interrogées.
 - **Chadi Riad** — _blessé_ · « Morocco lineup vs. Canada: Predicted XI for World Cup 2026 last 16 after Chadi Riad injury update » (Sports Mole)
 - **Other Sports** — _blessé_ · « Canada Open: Injury forces Srikanth out as Indian challenge falters » (Lokmat Times)
 
-## Gwangju
-- **South Korea** — _suspendu_ · « South Korea baseball team suspended over 'Tank Day' chants » (The Straits Times)
-- **Tank Day** — _suspendu_ · « South Korea baseball team suspended over 'Tank Day' chants » (The Straits Times)
-- **South Korean** — _suspendu_ · « South Korea baseball team suspended over 'Tank Day' chants » (The Straits Times)
-
-## Vancouver
-- **Sam Shaw** — _blessé_ · « Vancouver Canadians: B.C.'s Sam Shaw finding form as Blue Jays prospect after blood clot » (Vancouver Sun)
-- **Blue Jays** — _blessé_ · « Vancouver Canadians: B.C.'s Sam Shaw finding form as Blue Jays prospect after blood clot » (Vancouver Sun)
-- **Connor Bedard** — _blessé_ · « Blackhawks star Connor Bedard suffers apparent injury at Burnaby's Scotia Barn » (Vancouver Sun)
-- **Scotia Barn** — _blessé_ · « Blackhawks star Connor Bedard suffers apparent injury at Burnaby's Scotia Barn » (Vancouver Sun)
-- **Chicago Blackhawks** — _blessé_ · « Blackhawks star Connor Bedard suffers apparent injury at Burnaby's Scotia Barn » (Vancouver Sun)
-- **Max Scherzer** — _blessé_ · « Blue Jays' Max Scherzer to make rehab start for the Vancouver Canadians » (The London Free Press)
-- **Seattle Mariners** — _blessé_ · « Blue Jays' Max Scherzer to make rehab start for the Vancouver Canadians » (The London Free Press)
-- **West Cordova** — _blessé_ · « Pedestrian, 72, critically injured in Vancouver crash with cyclist » (The Province)
-- **Richards Street** — _blessé_ · « Pedestrian, 72, critically injured in Vancouver crash with cyclist » (The Province)
-
-## Forge
-- **Major Hurdles Loom** — _forfait_ · « Major Hurdles Loom as US-Iran Peace Talks Enter Crucial Phase » (Deccan Chronicle)
-- **Iran Peace Talks** — _forfait_ · « Major Hurdles Loom as US-Iran Peace Talks Enter Crucial Phase » (Deccan Chronicle)
-- **Enter Crucial Phase** — _forfait_ · « Major Hurdles Loom as US-Iran Peace Talks Enter Crucial Phase » (Deccan Chronicle)
-- **By Matt** — _forfait_ · « Explainer-What challenges could stand in the way of a final US-Iran deal? » (Al-Monitor)
-- **President Donald Trump** — _forfait_ · « Explainer-What challenges could stand in the way of a final US-Iran deal? » (Al-Monitor)
-
+- ⚠️ Gimcheon Sangmu : HTTP Error 403: Forbidden
+- ⚠️ Jeju : HTTP Error 403: Forbidden
+- ⚠️ FC Seoul : HTTP Error 403: Forbidden
+- ⚠️ Incheon : HTTP Error 403: Forbidden
+- ⚠️ Gwangju : HTTP Error 403: Forbidden
+- ⚠️ Ulsan : HTTP Error 403: Forbidden
+- ⚠️ Elfsborg : HTTP Error 403: Forbidden
+- ⚠️ Hammarby : HTTP Error 403: Forbidden
+- ⚠️ IFK Goteborg : HTTP Error 403: Forbidden
+- ⚠️ AIK : HTTP Error 403: Forbidden
+- ⚠️ Kalmar : HTTP Error 403: Forbidden
+- ⚠️ Orgryte : HTTP Error 403: Forbidden
+- ⚠️ Vancouver : HTTP Error 403: Forbidden
+- ⚠️ Inter Toronto : HTTP Error 403: Forbidden
+- ⚠️ Atletico Ottawa : HTTP Error 403: Forbidden
+- ⚠️ Cavalry : HTTP Error 403: Forbidden
+- ⚠️ Supra Quebec : HTTP Error 403: Forbidden
+- ⚠️ Forge : HTTP Error 403: Forbidden
+- ⚠️ Barcelona SC : HTTP Error 403: Forbidden
+- ⚠️ Deportivo Cuenca : HTTP Error 403: Forbidden
 ---
 
 ## 📋 Absents détectés → `absences-auto.json` (lu automatiquement par le moteur)
@@ -239,80 +236,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       {
         "joueur": "Other Sports",
         "raison": "blessé"
-      }
-    ],
-    "Gwangju": [
-      {
-        "joueur": "South Korea",
-        "raison": "suspendu"
-      },
-      {
-        "joueur": "Tank Day",
-        "raison": "suspendu"
-      },
-      {
-        "joueur": "South Korean",
-        "raison": "suspendu"
-      }
-    ],
-    "Vancouver": [
-      {
-        "joueur": "Sam Shaw",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Blue Jays",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Connor Bedard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Scotia Barn",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Chicago Blackhawks",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Max Scherzer",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Seattle Mariners",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "West Cordova",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Richards Street",
-        "raison": "blessé"
-      }
-    ],
-    "Forge": [
-      {
-        "joueur": "Major Hurdles Loom",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Iran Peace Talks",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Enter Crucial Phase",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "By Matt",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "President Donald Trump",
-        "raison": "forfait"
       }
     ]
   }
