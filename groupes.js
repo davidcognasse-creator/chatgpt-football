@@ -269,7 +269,7 @@ async function renderApp() {
 }
 
 // Retire d'un groupe les membres dont le compte a été supprimé (fiche users/
-// absente — l'upsert s'exécute à chaque connexion, donc une fiche manquante
+// absente · l'upsert s'exécute à chaque connexion, donc une fiche manquante
 // signifie un compte supprimé). N'agit que pour le propriétaire du groupe.
 async function pruneDeletedMembers(group) {
   if (!group || group.ownerUid !== me.uid) return false;
@@ -657,7 +657,7 @@ async function renderLeaderboard(group) {
     }
     rows.push({ uid, name: info.name || t("g_lb_player"), pts, exact, played, bot: false });
   }
-  // bot — sur les MÊMES matchs (depuis la création du groupe)
+  // bot · sur les MÊMES matchs (depuis la création du groupe)
   let bpts = 0, bexact = 0;
   for (const e of settled) {
     const botPred = { pick: e.predicted.favored, sh: e.predicted.score.home, sa: e.predicted.score.away };

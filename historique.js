@@ -130,7 +130,7 @@
   }
 
   // Portefeuille VIRTUEL : mise fictive de 20 € sur chaque match où l'IA donnait
-  // le favori > 50 %. Purement éducatif — aucun pari réel, aucun argent.
+  // le favori > 50 %. Purement éducatif · aucun pari réel, aucun argent.
   function renderPaper(entries) {
     const el = document.getElementById("paperFolio");
     if (!el) return;

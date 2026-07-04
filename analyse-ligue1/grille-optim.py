@@ -96,22 +96,22 @@ def poisson_binomial(covs):
     return dist
 
 
+BUDGETS = [12, 24, 48]   # trois grilles proposées
+
+
 def main():
     matchs, src = load()
-    say(f"# Optimiseur de grille Loto Foot — budget {BUDGET:.0f} €\n")
-    say(f"Probas : **{src}** · {len(matchs)} matchs · mise unitaire {UNIT:.0f} €\n")
-
-    maxcombos = int(BUDGET / UNIT)
     n = len(matchs)
+    say("# Optimiseur de grille Loto Foot\n")
+    say(f"Probas : **{src}** · {n} matchs · mise unitaire {UNIT:.0f} € · "
+        f"budgets {', '.join(str(b) for b in BUDGETS)} €\n")
 
-    def render(titre, choices, combos, infos, sous):
-        say(f"## {titre}")
-        say(f"{sous}")
-        say(f"Combinaisons : **{combos}** → coût **{combos*UNIT:.0f} €** (≤ {BUDGET:.0f} €)\n")
+    def render(bud, choices, combos, infos):
+        say(f"## 🎯 Grille ≤ {bud} €")
+        say(f"Combinaisons : **{combos}** → coût **{combos*UNIT:.0f} €** (≤ {bud} €)\n")
         say("| # | Match | Type | Pronostic(s) | Couverture |")
         say("|---|---|---|---|---|")
-        covs = []
-        nb = {1: 0, 2: 0, 3: 0}
+        covs, nb = [], {1: 0, 2: 0, 3: 0}
         for i, (m, (order, cov), k) in enumerate(zip(matchs, infos, choices), 1):
             nb[k] += 1
             typ = {1: "simple", 2: "DOUBLE", 3: "TRIPLE"}[k]
@@ -119,20 +119,69 @@ def main():
             say(f"| {i} | {m['dom']}–{m['ext']} | {typ} | {' / '.join(order[:k])} | {cov[k]*100:.0f}% |")
         say(f"\nRépartition : {nb[1]} simples · **{nb[2]} doubles** · **{nb[3]} triples**")
         d = poisson_binomial(covs)
-        say(f"- **{n}/{n}** (parfaite) : {d[n]*100:.2f} % · **{n-1}/{n}** : {d[n-1]*100:.2f} % "
-            f"· **{n-2}/{n}** : {d[n-2]*100:.2f} %")
         say(f"- **≥ {n-2}** (rang gagnant) : **{(d[n]+d[n-1]+d[n-2])*100:.2f} %** "
             f"· espérance **{sum(i*d[i] for i in range(n+1)):.1f}/{n}**\n")
 
-    ch1, cb1, inf1 = optimize(matchs, maxcombos)
-    render(f"🎯 Grille optimale (≤ {BUDGET:.0f} €)", ch1, cb1, inf1,
-           "_Doubles/triples sur les matchs les plus incertains. Cette répartition "
-           "maximise **à la fois** la grille parfaite ET le P(≥13) — vérifié par "
-           "force brute, il n'existe pas de grille « plus sûre » distincte._")
+    grids = []
+    for bud in BUDGETS:
+        ch, cb, inf = optimize(matchs, int(bud / UNIT))
+        render(bud, ch, cb, inf)
+        grids.append((bud, ch, cb, inf))
 
-    say("---\n_Répartition doubles/triples sur les matchs les plus incertains. "
-        "Probas = " + src + " (via moteur-cotes → probas.json)._")
+    say("---\n_Doubles/triples sur les matchs les plus incertains. Probas = "
+        + src + " (via moteur-cotes → probas.json)._")
     open(os.path.join(HERE, "GRILLE-OPTIM.md"), "w", encoding="utf-8").write("\n".join(L) + "\n")
+
+    export_json(matchs, src, grids)
+
+
+def export_json(matchs, src, grids):
+    """Écrit lotofoot.json (racine du repo) pour la page publique lotofoot.html :
+    l'analyse par match (marché vs foule) + une grille par budget."""
+    n = len(matchs)
+    rows, divergences = [], []
+    for i, m in enumerate(matchs, 1):
+        f = m.get("foule") or {}
+        ft = (f.get("1", 0) + f.get("N", 0) + f.get("2", 0)) or 1
+        foule = {kk: f.get(kk, 0) / ft for kk in ("1", "N", "2")}
+        p = m["p"]
+        market_pick = max(("1", "N", "2"), key=lambda kk: p[kk])
+        crowd_pick = max(("1", "N", "2"), key=lambda kk: foule[kk])
+        source = m.get("source", "")
+        coted = source.startswith("cotes") or source.startswith("prédiction")
+        div = coted and market_pick != crowd_pick
+        if div:
+            divergences.append({"i": i, "dom": m["dom"], "ext": m["ext"],
+                                "marketPick": market_pick, "crowdPick": crowd_pick,
+                                "p": p, "foule": foule})
+        rows.append({"i": i, "dom": m["dom"], "ext": m["ext"], "p": p, "foule": foule,
+                     "source": source, "coted": coted, "marketPick": market_pick,
+                     "crowdPick": crowd_pick, "divergence": div})
+
+    grids_json = []
+    for bud, choices, combos, infos in grids:
+        covs, nb, picks = [], {1: 0, 2: 0, 3: 0}, []
+        for i, ((order, cov), k) in enumerate(zip(infos, choices), 1):
+            nb[k] += 1
+            covs.append(cov[k])
+            picks.append({"i": i, "type": {1: "simple", 2: "double", 3: "triple"}[k],
+                          "picks": order[:k], "coverage": cov[k]})
+        d = poisson_binomial(covs)
+        grids_json.append({
+            "budget": bud, "combos": combos, "cost": combos * UNIT,
+            "repartition": {"simples": nb[1], "doubles": nb[2], "triples": nb[3]},
+            "stats": {"p15": d[n], "p14": d[n - 1], "p13": d[n - 2],
+                      "pge13": d[n] + d[n - 1] + d[n - 2],
+                      "esperance": sum(i * d[i] for i in range(n + 1))},
+            "picks": picks,
+        })
+
+    data = {
+        "nom": json.load(open(os.path.join(HERE, "grille.json"), encoding="utf-8")).get("nom", ""),
+        "source": src, "matchs": rows, "divergences": divergences, "grids": grids_json,
+    }
+    json.dump(data, open(os.path.join(HERE, "..", "lotofoot.json"), "w", encoding="utf-8"),
+              ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":

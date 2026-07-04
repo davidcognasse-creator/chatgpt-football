@@ -1,4 +1,4 @@
-// Onglet « Gain de l'IA » — portefeuille VIRTUEL (aucun pari réel).
+// Onglet « Gain de l'IA » · portefeuille VIRTUEL (aucun pari réel).
 // Mise fictive de 20 € sur chaque match où l'IA donnait le favori > 50 %,
 // gains théoriques comparés Unibet (marge ~6 %) vs Polymarket (≈ prix marché).
 (function () {

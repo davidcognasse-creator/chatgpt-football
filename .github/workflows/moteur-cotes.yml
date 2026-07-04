@@ -47,7 +47,7 @@ jobs:
         run: |
           git config user.name "predictions-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add analyse-ligue1/probas.json analyse-ligue1/MOTEUR-COTES.md analyse-ligue1/GRILLE-OPTIM.md analyse-ligue1/absences-auto.json analyse-ligue1/ABSENCES-CANDIDATS.md
+          git add analyse-ligue1/probas.json analyse-ligue1/MOTEUR-COTES.md analyse-ligue1/GRILLE-OPTIM.md analyse-ligue1/absences-auto.json analyse-ligue1/ABSENCES-CANDIDATS.md lotofoot.json
           if ! git diff --cached --quiet; then
             git commit -m "chore(lotofoot): grille cotes+optim (marché vs foule)"
             git push

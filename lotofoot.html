@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loto Foot · Chat Game Prediction Technology</title>
+  <meta name="description" content="Grille Loto Foot pronostiquée par l'IA : cotes des bookmakers vs foule FDJ, value bets, et grille optimale à 12, 24 ou 48 €." />
+  <link rel="canonical" href="https://chatgpt.football/lotofoot.html" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="theme-color" content="#070b16" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Chat Game Prediction Technology" />
+  <meta property="og:title" content="Loto Foot · Grille pronostiquée par l'IA" />
+  <meta property="og:description" content="Cotes des bookmakers vs foule FDJ, value bets, et grille optimale à 12, 24 ou 48 €." />
+  <meta property="og:url" content="https://chatgpt.football/lotofoot.html" />
+  <meta property="og:image" content="https://chatgpt.football/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .loto-wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+    .loto-meta { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:6px 0 22px; }
+    .loto-tag { display:inline-flex; align-items:center; gap:6px; padding:5px 12px; border-radius:999px;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); font-size:.86rem; }
+    .loto-tag b { color:#fff; }
+    .loto-card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10);
+      border-radius:18px; padding:18px 18px 22px; margin-bottom:22px; }
+    .loto-card h2 { font-family:'Sora',sans-serif; font-size:1.15rem; margin:0 0 4px; }
+    .loto-card .sub { color:var(--muted); font-size:.9rem; margin:0 0 16px; }
+    table.loto { width:100%; border-collapse:collapse; font-size:.9rem; }
+    table.loto th, table.loto td { padding:9px 8px; text-align:center; border-bottom:1px solid rgba(255,255,255,.07); }
+    table.loto th { color:var(--muted); font-weight:600; font-size:.78rem; text-transform:uppercase; letter-spacing:.03em; }
+    table.loto td.match { text-align:left; font-weight:600; white-space:nowrap; }
+    .prob { display:inline-flex; gap:3px; font-variant-numeric:tabular-nums; }
+    .prob span { min-width:30px; padding:2px 4px; border-radius:6px; font-size:.8rem; }
+    .p1 { background:rgba(56,189,248,.14); color:#7dd3fc; }
+    .pN { background:rgba(148,163,184,.16); color:#cbd5e1; }
+    .p2 { background:rgba(251,146,60,.14); color:#fdba74; }
+    .pick { font-weight:800; padding:2px 9px; border-radius:7px; background:rgba(52,211,153,.16); color:#6ee7b7; }
+    .pick.na { background:rgba(148,163,184,.12); color:var(--muted); font-weight:600; }
+    .value { font-size:.72rem; font-weight:700; color:#fca5a5; background:rgba(248,113,113,.14);
+      padding:2px 7px; border-radius:999px; white-space:nowrap; }
+    .budget-tabs { display:flex; gap:8px; margin:2px 0 18px; flex-wrap:wrap; }
+    .budget-tabs button { font-family:'Sora',sans-serif; font-weight:700; cursor:pointer;
+      padding:9px 18px; border-radius:12px; border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04); color:var(--muted); font-size:.95rem; transition:.15s; }
+    .budget-tabs button.active { background:linear-gradient(135deg,#34d399,#10b981); color:#04231a; border-color:transparent; }
+    .grid-stats { display:flex; flex-wrap:wrap; gap:14px; margin:4px 0 16px; }
+    .grid-stat { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+      border-radius:12px; padding:10px 14px; min-width:110px; }
+    .grid-stat .v { font-family:'Sora',sans-serif; font-size:1.25rem; font-weight:800; color:#fff; }
+    .grid-stat .l { color:var(--muted); font-size:.76rem; text-transform:uppercase; letter-spacing:.03em; }
+    .type-simple { color:var(--muted); }
+    .type-double { color:#fdba74; font-weight:700; }
+    .type-triple { color:#f472b6; font-weight:800; }
+    .picks-cell b { letter-spacing:.06em; }
+  </style>
+  <script src="i18n.js"></script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" style="text-decoration:none;color:inherit">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 16.9 7.2 18l.9-5.4L4.2 8.7l5.4-.8z" />
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">Chat Game<br />Prediction Technology</span>
+        <span class="brand-sub" data-i18n="brand_sub">Coupe du Monde 2026</span>
+      </div>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link" data-i18n="nav_predictions">Pronostics</a>
+      <a href="simulateur.html" class="nav-link" data-i18n="nav_winner">Qui va gagner&nbsp;?</a>
+      <a href="groupes.html" class="nav-link" data-i18n="nav_groups">Mon groupe</a>
+      <a href="carte.html" class="nav-link" data-i18n="nav_card">Ma Carte Panini</a>
+      <a href="historique.html" class="nav-link" data-i18n="nav_history">Historique</a>
+      <a href="gains.html" class="nav-link" data-i18n="nav_gains">Paris</a>
+      <a href="lotofoot.html" class="nav-link active" data-i18n="nav_loto">Loto</a>
+      <span class="lang-switch" data-lang-switcher></span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Loto Foot · pronostic IA</p>
+      <h1>Battre la foule,<br />pas le hasard</h1>
+      <p class="hero-lede">
+        Pour chaque match de la grille FDJ, on compare les <strong>cotes réelles des bookmakers</strong>
+        (le marché) à la <strong>répartition des mises de la foule</strong>. Là où les deux divergent,
+        il y a de la <strong>value</strong>. Puis on répartit doubles et triples pour une
+        <strong>grille optimale</strong> à 12, 24 ou 48 €.
+      </p>
+    </section>
+
+    <div class="loto-wrap">
+      <div class="loto-meta" id="lotoMeta"></div>
+
+      <div class="loto-card">
+        <h2>📊 Marché vs foule · les 15 matchs</h2>
+        <p class="sub">Cotes dévignées (moyenne multi-bookmakers) face à la répartition des mises FDJ. Un match non coté retombe sur la foule.</p>
+        <div style="overflow-x:auto"><table class="loto" id="matchTable"></table></div>
+      </div>
+
+      <div class="loto-card" id="valueCard" hidden>
+        <h2>🎯 Value bets · la foule se trompe de favori</h2>
+        <p class="sub">Matchs où le marché sharp et la foule ne désignent pas le même résultat : c'est là qu'est l'edge d'un jeu de pool.</p>
+        <div id="valueList"></div>
+      </div>
+
+      <div class="loto-card">
+        <h2>💶 Grille optimale</h2>
+        <p class="sub">Choisis ton budget. On place les doubles/triples sur les matchs les plus incertains pour maximiser la probabilité de toucher un rang (≥ 13 bons).</p>
+        <div class="budget-tabs" id="budgetTabs"></div>
+        <div class="grid-stats" id="gridStats"></div>
+        <div style="overflow-x:auto"><table class="loto" id="gridTable"></table></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <strong data-i18n="foot_disclaimer_label">Avertissement.</strong>
+      Pronostics générés automatiquement à des fins d'illustration. Ils ne constituent pas un conseil de pari.
+      Jouer comporte des risques : endettement, dépendance… Interdit aux mineurs.
+    </p>
+    <p class="footer-credit">Cotes API-Football · répartition foule FDJ · grille optimisée sous budget</p>
+  </footer>
+
+  <script src="lotofoot.js"></script>
+</body>
+</html>

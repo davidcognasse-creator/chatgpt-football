@@ -1,4 +1,4 @@
-// Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
+// Généré automatiquement par robot/update.mjs · NE PAS éditer à la main.
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",

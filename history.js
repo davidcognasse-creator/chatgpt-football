@@ -1,4 +1,4 @@
-// Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
+// Généré automatiquement par robot/update.mjs · NE PAS éditer à la main.
 window.WC_HISTORY = {
   "updatedAt": "2026-07-03T21:31:55.726Z",
   "entries": [

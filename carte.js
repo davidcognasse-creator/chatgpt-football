@@ -23,7 +23,7 @@
     ["Colombie", "co", "COL"], ["Uruguay", "uy", "URU"], ["Chili", "cl", "CHI"],
   ];
 
-  // Stats par défaut (modifiables) — clin d'œil aux cartes de foot.
+  // Stats par défaut (modifiables) · clin d'œil aux cartes de foot.
   const DEFAULT_STATS = [
     ["Vision", 95], ["Réseau", 92], ["Mental", 90],
     ["Sang-froid", 88], ["Influence", 91], ["Leadership", 93],
@@ -81,7 +81,7 @@
   function getStats() {
     const labels = [...document.querySelectorAll(".st-label")];
     const vals = [...document.querySelectorAll(".st-val")];
-    return labels.map((l, i) => [l.value || "—", Math.max(0, Math.min(99, +vals[i].value || 0))]);
+    return labels.map((l, i) => [l.value || "·", Math.max(0, Math.min(99, +vals[i].value || 0))]);
   }
 
   function loadFlag() {
@@ -409,8 +409,8 @@
     rr(50, 1240, 90, 90, 14); ctx.fillStyle = "#13315f"; ctx.fill();
     ctx.lineWidth = 4; ctx.strokeStyle = "#e7e3d6"; ctx.stroke();
     ctx.fillStyle = "#fff"; ctx.textAlign = "center";
-    ctx.font = `800 ${fitFont(num || "—", 70, 46, 800)}px Sora, sans-serif`;
-    ctx.fillText(num || "—", 95, 1302);
+    ctx.font = `800 ${fitFont(num || "·", 70, 46, 800)}px Sora, sans-serif`;
+    ctx.fillText(num || "·", 95, 1302);
 
     const bx = 156, by = 1228, bw = W - 156 - 42, bh = 230;
     rr(bx, by, bw, bh, 16); ctx.fillStyle = "#eceae0"; ctx.fill();
@@ -495,7 +495,7 @@
       img.onerror = () => { setStatus(t("card_ai_error")); btn.disabled = false; };
       img.src = data.image;
     } catch (e) {
-      setStatus(t("card_ai_error") + " — " + (e.message || e));
+      setStatus(t("card_ai_error") + " · " + (e.message || e));
       btn.disabled = false;
     }
   };

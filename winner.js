@@ -1,4 +1,4 @@
-// Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
+// Généré automatiquement par robot/update.mjs · NE PAS éditer à la main.
 window.WC_WINNER = {
   "updatedAt": "2026-07-03T17:12:38.924Z",
   "teams": [
