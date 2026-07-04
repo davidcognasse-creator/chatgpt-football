@@ -68,19 +68,23 @@ export async function fetchResults(ctx, pending) {
       const direct = sideMatch(ht, h.name) && sideMatch(at, a.name);
       const flip = sideMatch(ht, a.name) && sideMatch(at, h.name);
       if (!direct && !flip) continue;
-      let gh = f.goals.home, ga = f.goals.away;
+      // Règle 1N2 (Loto Foot / cotes) : l'issue se règle sur les 90 MINUTES.
+      // On prend donc le score "fulltime" (fin du temps réglementaire), PAS le
+      // score après prolongation. Un match gagné en prolongation ou aux t.a.b.
+      // était un NUL à la 90e → outcome "draw".
+      const ft = f.score?.fulltime || {};
+      let gh = ft.home != null ? ft.home : f.goals.home;
+      let ga = ft.away != null ? ft.away : f.goals.away;
       if (gh == null || ga == null) continue;
       if (flip) { const t = gh; gh = ga; ga = t; }
       const short = f.fixture.status.short;
+      // Tags d'affichage uniquement (a.p. / t.a.b.) — ne changent PAS l'issue 1N2.
       const pen = f.score?.penalty || {};
       let ph = pen.home, pa = pen.away;
       if (flip && ph != null) { const t = ph; ph = pa; pa = t; }
       const pens = short === "PEN" && ph != null && pa != null ? { home: ph, away: pa } : null;
-      const decidedBy = pens ? "pens" : short === "AET" ? "aet" : null;
-      // Vainqueur : aux t.a.b. si applicable, sinon au score.
-      const outcome = pens
-        ? (pens.home > pens.away ? "home" : "away")
-        : gh > ga ? "home" : gh < ga ? "away" : "draw";
+      const decidedBy = short === "PEN" ? "pens" : short === "AET" ? "aet" : null;
+      const outcome = gh > ga ? "home" : gh < ga ? "away" : "draw"; // 90 min
       out.push({
         id: p.id, home: p.home, away: p.away, datetime: p.datetime,
         scoreHome: gh, scoreAway: ga, outcome, decidedBy, pens,

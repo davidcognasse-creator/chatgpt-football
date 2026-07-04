@@ -59,63 +59,6 @@ window.WC_HISTORY = {
       "correctScore": false
     },
     {
-      "id": "3e161b2448ed76d6b0c0f5bda6fd5bf2",
-      "datetime": "2026-07-03T22:00:00Z",
-      "home": {
-        "name": "Argentina",
-        "flag": "🇦🇷",
-        "code": "ARG"
-      },
-      "away": {
-        "name": "Cape Verde",
-        "flag": "🇨🇻",
-        "code": "CPV"
-      },
-      "predicted": {
-        "probs": {
-          "home": 75,
-          "draw": 17,
-          "away": 8
-        },
-        "score": {
-          "home": 3,
-          "away": 0
-        },
-        "favored": "home"
-      },
-      "sources": {
-        "betting": {
-          "home": 84,
-          "draw": 11,
-          "away": 4
-        },
-        "form": {
-          "home": 54,
-          "draw": 26,
-          "away": 20
-        },
-        "h2h": null,
-        "press": {
-          "home": 68,
-          "draw": 26,
-          "away": 6
-        },
-        "social": {
-          "home": 57,
-          "draw": 26,
-          "away": 17
-        }
-      },
-      "actual": {
-        "home": 3,
-        "away": 2,
-        "outcome": "home",
-        "decidedBy": "aet"
-      },
-      "correctOutcome": true,
-      "correctScore": false
-    },
-    {
       "id": "fb270a3dac2b682c861bd674a5ff4a04",
       "datetime": "2026-07-03T18:00:00Z",
       "home": {
