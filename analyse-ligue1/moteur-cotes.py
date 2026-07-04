@@ -34,9 +34,10 @@ MAX_LEAGUES = 60  # garde-fou quota
 L = []
 def say(s): L.append(s); print(s)
 
+# Uniquement des formes juridiques/mots génériques — JAMAIS un nom d'équipe.
+# (AIK, AFC, CSKA, United, City sont des noms réels → retirés.)
 STOP = {"fc", "cf", "sc", "if", "sk", "ac", "as", "sd", "cd", "club", "de", "the",
-        "football", "association", "calcio", "aik", "ff", "cska", "afc", "bk",
-        "cd", "ca", "sv", "se", "ec", "cska", "u", "united", "city"}
+        "football", "association", "calcio", "ff", "bk", "sv", "se", "ec", "ca"}
 
 
 def norm(s):
@@ -116,12 +117,14 @@ def build_pool(keys):
 def side_match(query_tokens, ev_tokens):
     """Score d'appariement d'un côté (dom ou ext) : tokens significatifs partagés."""
     q = set(t for t in query_tokens if len(t) >= 4)
-    if not q:
+    if not q:                       # nom court (AIK, PSG…) : garde tous les tokens
         q = set(query_tokens)
     if not q:
         return 0.0
     shared = q & ev_tokens
-    if not shared or max((len(t) for t in shared), default=0) < 4:
+    # exige un token distinctif partagé : ≥4 lettres, OU ≥3 si c'est TOUT le nom
+    minlen = 3 if all(len(t) <= 3 for t in q) else 4
+    if not shared or max((len(t) for t in shared), default=0) < minlen:
         return 0.0
     return len(shared) / len(q)
 
