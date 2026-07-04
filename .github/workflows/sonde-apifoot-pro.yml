@@ -1,0 +1,42 @@
+name: Sonde API-Football PRO (cotes/prédictions/compo)
+
+# Lancement MANUEL. Vérifie ce que le plan Pro expose (cotes, prédictions,
+# compo, fixtures saison en cours) sur des équipes de la grille, avant de
+# rebrancher le moteur Loto Foot sur API-Football. Consomme ~15 requêtes.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sonde-apifoot-pro
+  cancel-in-progress: false
+
+jobs:
+  sonde:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Sonder l'API (Pro)
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+        run: node robot/probe-apifoot-pro.mjs
+
+      - name: Committer le rapport
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/SONDE-APIFOOT-PRO.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(sonde): capacités API-Football Pro"
+            git push
+          else
+            echo "Aucun changement."
+          fi
