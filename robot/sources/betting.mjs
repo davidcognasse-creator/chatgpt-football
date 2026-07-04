@@ -1,102 +1,91 @@
 // Adaptateur "paris" : cotes des bookmakers -> probabilités.
-// En mode live, fournit AUSSI la liste des matchs réels à venir (The Odds API).
+// En mode live, fournit AUSSI la liste des matchs à venir (API-Football).
+// Migré de The Odds API vers API-Football (quota Odds API épuisé).
 import { fetchT } from "../lib/http.mjs";
 import { marketConsensus } from "../lib/odds.mjs";
+import { throttle } from "../lib/throttle.mjs";
 import { team } from "../lib/teams.mjs";
-import { teamId, competitionMatches } from "../lib/footballdata.mjs";
 
-const pairKey = (a, b) => [a, b].sort((x, y) => x - y).join("-");
+const AF = "https://v3.football.api-sports.io";
 
-const UA = "wc2026-predictions-robot/1.0 (+github actions)";
+async function afGet(ctx, path) {
+  const key = ctx.env.APIFOOTBALL_KEY;
+  const gap = ctx.config?.live?.apiFootball?.minGapMs ?? 1200;
+  return throttle("apifootball", gap, async () => {
+    const res = await fetchT(AF + path, { headers: { "x-apisports-key": key } });
+    if (!res.ok) throw new Error(`API-Football HTTP ${res.status} sur ${path}`);
+    const j = await res.json();
+    const e = j.errors;
+    if (Array.isArray(e) ? e.length : e && Object.keys(e).length)
+      throw new Error(`API-Football errors: ${JSON.stringify(e)}`);
+    return j.response || [];
+  });
+}
+
+/** Cotes "Match Winner" multi-books d'un fixture -> [{name, odds:{home,draw,away}}]. */
+async function fixtureBooks(ctx, fixtureId) {
+  let resp;
+  try { resp = await afGet(ctx, `/odds?fixture=${fixtureId}`); }
+  catch { return []; }
+  const books = [];
+  for (const bk of resp[0]?.bookmakers || []) {
+    const bet = (bk.bets || []).find((b) => b.id === 1 || b.name === "Match Winner");
+    if (!bet) continue;
+    const px = {};
+    for (const v of bet.values || []) px[String(v.value).toLowerCase()] = Number(v.odd);
+    if (px.home && px.draw && px.away)
+      books.push({ name: bk.name || String(bk.id), odds: { home: px.home, draw: px.draw, away: px.away } });
+  }
+  return books;
+}
 
 /**
- * Récupère les matchs à venir et leurs cotes depuis The Odds API.
- * Nécessite ctx.env.ODDS_API_KEY. Renvoie des objets au format "fixture".
+ * Matchs à venir + cotes depuis API-Football. Nécessite ctx.env.APIFOOTBALL_KEY.
+ * config.live.apiFootballLeagues = ligues (déf. [1]=Coupe du Monde),
+ * config.live.season = saison (déf. année en cours), maxMatches = plafond.
  */
 export async function fetchLiveEvents(ctx, config) {
-  const key = ctx.env.ODDS_API_KEY;
-  if (!key) throw new Error("ODDS_API_KEY manquant (mode live)");
-
+  if (!ctx.env.APIFOOTBALL_KEY) throw new Error("APIFOOTBALL_KEY manquant (mode live)");
   const live = config.live || {};
-  const sport = live.sport || "soccer_fifa_world_cup";
-  const regions = live.regions || "eu,uk";
-  const url =
-    `https://api.the-odds-api.com/v4/sports/${sport}/odds` +
-    `?regions=${encodeURIComponent(regions)}&markets=h2h&oddsFormat=decimal&apiKey=${key}`;
+  const leagues = live.apiFootballLeagues || [1]; // 1 = World Cup
+  const season = live.season || new Date().getUTCFullYear();
+  const maxMatches = live.maxMatches || 15;
 
-  const res = await fetchT(url, { headers: { "User-Agent": UA } });
-  if (!res.ok) throw new Error(`Odds API HTTP ${res.status}: ${await res.text()}`);
-  let events = await res.json();
-
-  // Filtre Coupe du Monde STRICT : ne garder que les matchs présents au
-  // calendrier officiel WC (exclut les amicaux entre équipes qualifiées).
-  // Repli sur l'appartenance WC si le calendrier est indisponible.
-  // Désactivable via live.wcOnly = false.
-  if (live.wcOnly !== false && ctx.env.FOOTBALL_DATA_KEY) {
-    let wcPairs = null;
+  // 1) Fixtures à venir (non commencés) sur les ligues configurées.
+  const fixtures = [];
+  for (const lg of leagues) {
     try {
-      const ms = await competitionMatches(ctx);
-      const set = new Set();
-      for (const m of ms) {
-        if (m.homeTeam?.id && m.awayTeam?.id) set.add(pairKey(m.homeTeam.id, m.awayTeam.id));
-      }
-      if (set.size) wcPairs = set;
-      else console.warn("[wc-filter] calendrier WC vide — repli sur appartenance WC");
+      const arr = await afGet(ctx, `/fixtures?league=${lg}&season=${season}&next=${maxMatches}`);
+      for (const f of arr) if (f.fixture?.status?.short === "NS") fixtures.push(f);
     } catch (e) {
-      console.warn(`[wc-filter] calendrier WC indisponible (${e.message}) — repli sur appartenance WC`);
+      console.warn(`[betting] ligue ${lg} indisponible : ${e.message}`);
     }
-
-    const kept = [];
-    for (const ev of events) {
-      try {
-        const [h, a] = await Promise.all([teamId(ctx, ev.home_team), teamId(ctx, ev.away_team)]);
-        if (!h || !a) {
-          console.log(`[wc-filter] exclu (équipe non WC) : ${ev.home_team} - ${ev.away_team}`);
-          continue;
-        }
-        if (wcPairs && !wcPairs.has(pairKey(h, a))) {
-          console.log(`[wc-filter] exclu (hors calendrier WC) : ${ev.home_team} - ${ev.away_team}`);
-          continue;
-        }
-        kept.push(ev);
-      } catch (e) {
-        console.warn(`[wc-filter] vérif impossible (${e.message}) — match conservé`);
-        kept.push(ev);
-      }
-    }
-    events = kept;
-    console.log(`[wc-filter] ${events.length} matchs retenus (${wcPairs ? "calendrier WC" : "appartenance WC"})`);
   }
+  fixtures.sort((a, b) => new Date(a.fixture.date) - new Date(b.fixture.date));
+  const chosen = fixtures.slice(0, maxMatches);
+  console.log(`[betting] ${chosen.length} match(s) à venir (API-Football, ligues ${leagues.join(",")})`);
 
-  return events
-    .map((ev) => {
-      const books = (ev.bookmakers || [])
-        .map((b) => {
-          const h2h = (b.markets || []).find((m) => m.key === "h2h");
-          if (!h2h) return null;
-          const get = (name) => h2h.outcomes.find((o) => o.name === name)?.price;
-          const home = get(ev.home_team);
-          const away = get(ev.away_team);
-          const draw = get("Draw");
-          if (!home || !draw || !away) return null;
-          return { name: b.title || b.key, odds: { home, draw, away } };
-        })
-        .filter(Boolean);
-
-      if (books.length === 0) return null;
-      return {
-        id: ev.id || `${ev.home_team}-${ev.away_team}-${ev.commence_time}`,
-        eventId: ev.id,
-        stage: live.stageLabel || "À venir",
-        projected: false,
-        datetime: ev.commence_time,
-        venue: "",
-        home: team(ev.home_team),
-        away: team(ev.away_team),
-        market: { books },
-      };
-    })
-    .filter(Boolean);
+  // 2) Cotes par fixture -> format "fixture" attendu par le pipeline.
+  const out = [];
+  for (const f of chosen) {
+    const books = await fixtureBooks(ctx, f.fixture.id);
+    if (!books.length) {
+      console.log(`[betting] pas de cotes : ${f.teams.home.name}-${f.teams.away.name}`);
+      continue;
+    }
+    out.push({
+      id: String(f.fixture.id),
+      eventId: f.fixture.id,
+      stage: live.stageLabel || f.league?.round || "À venir",
+      projected: false,
+      datetime: f.fixture.date,
+      venue: f.fixture.venue?.name || "",
+      home: team(f.teams.home.name),
+      away: team(f.teams.away.name),
+      market: { books },
+    });
+  }
+  return out;
 }
 
 /**
