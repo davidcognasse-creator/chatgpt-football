@@ -27,9 +27,26 @@
   const sideName = (m, key) =>
     key === "home" ? window.teamName(m.home) : key === "away" ? window.teamName(m.away) : t("his_draw");
 
+  // Suffixe « a.p. » (prolongation) ou « t.a.b. X-Y » (tirs au but) pour connaître
+  // le vrai vainqueur des matchs à élimination directe.
+  function scoreExtra(a) {
+    if (!a) return "";
+    if (a.pens && (a.pens.home != null || a.pens.away != null))
+      return ` <span class="score-extra">${t("his_pens")} ${a.pens.home}‑${a.pens.away}</span>`;
+    if (a.decidedBy === "aet") return ` <span class="score-extra">${t("his_aet")}</span>`;
+    return "";
+  }
+  // Vrai vainqueur en cas de tirs au but (sinon l'issue réglementaire).
+  function trueOutcome(a) {
+    if (a && a.pens && a.pens.home != null && a.pens.away != null && a.pens.home !== a.pens.away)
+      return a.pens.home > a.pens.away ? "home" : "away";
+    return a ? a.outcome : "draw";
+  }
+
   // Recalcule la justesse à partir des données (robuste si les flags manquent).
+  // En cas de tirs au but, on compare au vrai vainqueur (celui qui se qualifie).
   function isCorrect(e) {
-    return e.predicted.favored === e.actual.outcome;
+    return e.predicted.favored === trueOutcome(e.actual);
   }
   function isExact(e) {
     return e.predicted.score.home === e.actual.home && e.predicted.score.away === e.actual.away;
@@ -90,7 +107,7 @@
 
         <div class="hist-teams">
           <span class="ht">${flagHTML(e.home, 16)} ${window.teamName(e.home)}</span>
-          <span class="ht-score">${e.actual.home} – ${e.actual.away}</span>
+          <span class="ht-score">${e.actual.home} – ${e.actual.away}${scoreExtra(e.actual)}</span>
           <span class="ht ht-right">${window.teamName(e.away)} ${flagHTML(e.away, 16)}</span>
         </div>
 
@@ -104,11 +121,63 @@
           <div class="cmp">
             <span class="cmp-label">${t("his_real_label")}</span>
             <span class="cmp-val">${
-              e.actual.outcome === "draw" ? t("his_draw") : sideName(e, e.actual.outcome)
-            } · ${e.actual.home}–${e.actual.away}</span>
+              trueOutcome(e.actual) === "draw" ? t("his_draw") : sideName(e, trueOutcome(e.actual))
+            } · ${e.actual.home}–${e.actual.away}${scoreExtra(e.actual)}</span>
           </div>
         </div>
       </article>`;
+  }
+
+  // Portefeuille VIRTUEL : mise fictive de 20 € sur chaque match où l'IA donnait
+  // le favori > 50 %. Purement éducatif — aucun pari réel, aucun argent.
+  function renderPaper(entries) {
+    const el = document.getElementById("paperFolio");
+    if (!el) return;
+    const STAKE = 20, OVERROUND = 1.06; // marge Unibet ~6 % ; Polymarket ≈ prix marché
+    const bets = entries.filter((e) => e.predicted.probs[e.predicted.favored] > 50);
+    if (!bets.length) { el.innerHTML = ""; return; }
+    let staked = 0, w = 0, l = 0, netU = 0, netP = 0;
+    bets.forEach((e) => {
+      const fav = e.predicted.favored;
+      const bet = e.sources && e.sources.betting;
+      const fair = bet && bet[fav] ? bet[fav] / 100 : e.predicted.probs[fav] / 100; // proba « juste »
+      const pU = Math.min(0.99, fair * OVERROUND); // prix Unibet (avec marge)
+      const pP = fair;                              // prix Polymarket (≈ marché, sans marge)
+      staked += STAKE;
+      if (trueOutcome(e.actual) === fav) {
+        netU += STAKE * (1 / pU - 1); netP += STAKE * (1 / pP - 1); w += 1;
+      } else { netU -= STAKE; netP -= STAKE; l += 1; }
+    });
+    const money = (n) => `${n >= 0 ? "+" : ""}${n.toFixed(0)} €`;
+    const pct = (n) => `${n >= 0 ? "+" : ""}${(n / staked * 100).toFixed(0)} %`;
+    const cls = (n) => (n >= 0 ? "pf-pos" : "pf-neg");
+    const cell = (v, lab) => `<div class="pf-stat"><div class="pf-val">${v}</div><div class="pf-lab">${lab}</div></div>`;
+    const plat = (name, note, net) => `
+      <div class="pf-plat">
+        <div class="pf-plat-name">${name} <span class="pf-plat-note">${note}</span></div>
+        <div class="pf-plat-figs">
+          <span class="pf-big ${cls(net)}">${money(net)}</span>
+          <span class="pf-roi ${cls(net)}">${pct(net)}</span>
+        </div>
+      </div>`;
+    el.innerHTML = `
+      <div class="paper-card">
+        <div class="paper-head">
+          <h3>💶 ${t("pf_title")}</h3>
+          <span class="paper-tag">${t("pf_virtual")}</span>
+        </div>
+        <p class="paper-sub">${t("pf_sub", { stake: STAKE })}</p>
+        <div class="paper-grid pf-grid3">
+          ${cell(bets.length, t("pf_bets"))}
+          ${cell(`${w}/${l}`, t("pf_wl"))}
+          ${cell(`${staked.toFixed(0)} €`, t("pf_staked"))}
+        </div>
+        <div class="pf-platforms">
+          ${plat("Unibet", t("pf_book"), netU)}
+          ${plat("Polymarket", t("pf_poly_note"), netP)}
+        </div>
+        <p class="paper-warn">⚠️ ${t("pf_warn")}</p>
+      </div>`;
   }
 
   function renderAll(entries) {
@@ -119,6 +188,7 @@
     }
     renderStats(entries);
     renderInsight(entries);
+    renderPaper(entries);
     listEl.innerHTML = entries.map(row).join("");
     listEl.querySelectorAll(".hist-card").forEach((el, i) => {
       el.style.animationDelay = i * 40 + "ms";

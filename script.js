@@ -73,6 +73,15 @@
     return a;
   };
 
+  // Suffixe prolongation / tirs au but sur un score final.
+  const resultExtra = (r) => {
+    if (!r) return "";
+    if (r.pens && (r.pens.home != null || r.pens.away != null))
+      return ` <span class="ai-note">${t("his_pens")} ${r.pens.home}‑${r.pens.away}</span>`;
+    if (r.decidedBy === "aet") return ` <span class="ai-note">${t("his_aet")}</span>`;
+    return "";
+  };
+
   const favoredName = (m) => {
     const { home, draw, away } = m.probs;
     if (home >= draw && home >= away) return window.teamName(m.home);
@@ -226,8 +235,9 @@
       : "";
     const doneBadge = finished ? `<span class="badge-done">${t("card_finished")}</span>` : "";
     const scoreLabel = finished ? t("card_result") : t("card_scoreia");
+    const extra = finished ? resultExtra(m.result) : "";
     const scoreVal = finished
-      ? `${m.result.home} – ${m.result.away}`
+      ? `${m.result.home} – ${m.result.away}${extra}`
       : `${m.predictedScore.home} – ${m.predictedScore.away}`;
     const aiNote = finished
       ? `<span class="ai-note">${t("card_ai_short")} ${m.predictedScore.home}–${m.predictedScore.away}</span>`

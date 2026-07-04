@@ -244,7 +244,11 @@ async function updateHistory(ctx, config, matches) {
         away: p.away,
         predicted: p.predicted,
         sources: p.sources || null,
-        actual: { home: r.scoreHome, away: r.scoreAway, outcome: r.outcome },
+        actual: {
+          home: r.scoreHome, away: r.scoreAway, outcome: r.outcome,
+          ...(r.decidedBy ? { decidedBy: r.decidedBy } : {}),
+          ...(r.pens ? { pens: r.pens } : {}),
+        },
         correctOutcome: p.predicted.favored === r.outcome,
         correctScore:
           p.predicted.score.home === r.scoreHome && p.predicted.score.away === r.scoreAway,
@@ -314,12 +318,20 @@ async function settleScores(ctx, config) {
         away: p.away,
         predicted: p.predicted,
         sources: p.sources || null,
-        actual: { home: r.scoreHome, away: r.scoreAway, outcome: r.outcome },
+        actual: {
+          home: r.scoreHome, away: r.scoreAway, outcome: r.outcome,
+          ...(r.decidedBy ? { decidedBy: r.decidedBy } : {}),
+          ...(r.pens ? { pens: r.pens } : {}),
+        },
         correctOutcome: p.predicted.favored === r.outcome,
         correctScore:
           p.predicted.score.home === r.scoreHome && p.predicted.score.away === r.scoreAway,
       });
-      resultById[r.id] = { home: r.scoreHome, away: r.scoreAway, outcome: r.outcome };
+      resultById[r.id] = {
+        home: r.scoreHome, away: r.scoreAway, outcome: r.outcome,
+        ...(r.decidedBy ? { decidedBy: r.decidedBy } : {}),
+        ...(r.pens ? { pens: r.pens } : {}),
+      };
       delete pending[r.id];
       known.add(r.id);
       settled++;

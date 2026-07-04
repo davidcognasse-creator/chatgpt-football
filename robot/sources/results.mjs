@@ -24,6 +24,15 @@ export async function fetchResults(ctx) {
     const sh = Number(e.scores.find((s) => s.name === e.home_team)?.score);
     const sa = Number(e.scores.find((s) => s.name === e.away_team)?.score);
     if (Number.isNaN(sh) || Number.isNaN(sa)) continue;
+    // Prolongation / tirs au but si la source les expose (champ period/status
+    // « ET »/« PEN », ou scores de shootout). The Odds API ne les fournit pas
+    // aujourd'hui → null ; plomberie prête pour une source plus riche.
+    const per = String(e.period || e.status || "").toUpperCase();
+    const ps = e.penalties || e.shootout || null;
+    const pens = ps && ps.home != null && ps.away != null
+      ? { home: Number(ps.home), away: Number(ps.away) }
+      : null;
+    const decidedBy = pens || /PEN|SHOOT/.test(per) ? "pens" : /ET|EXTRA|AET/.test(per) ? "aet" : null;
     out.push({
       id: e.id,
       home: e.home_team,
@@ -32,6 +41,8 @@ export async function fetchResults(ctx) {
       scoreHome: sh,
       scoreAway: sa,
       outcome: sh > sa ? "home" : sh < sa ? "away" : "draw",
+      decidedBy,
+      pens,
     });
   }
   return out;

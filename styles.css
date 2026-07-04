@@ -1081,3 +1081,48 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   .search-wrap { flex: none; width: 100%; max-width: none; }
   .matches { grid-template-columns: 1fr; gap: 14px; }
 }
+
+/* Suffixe prolongation / tirs au but sur les scores */
+.score-extra { font-size: 0.72em; font-weight: 700; color: #a3b6e8; margin-left: 4px; white-space: nowrap; }
+
+/* Portefeuille virtuel (historique) */
+.paper-card {
+  max-width: 920px; margin: 8px auto 26px; padding: 20px 22px;
+  border: 1px solid rgba(120,150,220,0.28); border-radius: 20px;
+  background: linear-gradient(160deg, rgba(20,32,62,0.65), rgba(12,20,40,0.75));
+}
+.paper-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.paper-head h3 { margin: 0; font-size: 1.15rem; }
+.paper-tag {
+  font-size: 0.62rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #ffcf5b; background: rgba(255,207,91,0.14); border: 1px solid rgba(255,207,91,0.4);
+  padding: 3px 9px; border-radius: 999px;
+}
+.paper-sub { color: var(--muted); font-size: 0.9rem; margin: 8px 0 16px; }
+.paper-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.paper-grid.pf-grid3 { grid-template-columns: repeat(3, 1fr); }
+.pf-platforms { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.pf-plat {
+  padding: 14px 16px; border-radius: 14px;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+}
+.pf-plat-name { font-family: "Sora", sans-serif; font-weight: 800; font-size: 1.02rem; }
+.pf-plat-note { display: block; font-size: 0.64rem; font-weight: 500; color: var(--muted-soft); margin-top: 2px; }
+.pf-plat-figs { display: flex; align-items: baseline; gap: 10px; margin-top: 8px; }
+.pf-big { font-family: "Sora", sans-serif; font-weight: 800; font-size: 1.5rem; }
+.pf-roi { font-size: 0.9rem; font-weight: 700; }
+.pf-stat {
+  text-align: center; padding: 12px 6px; border-radius: 14px;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+}
+.pf-val { font-family: "Sora", sans-serif; font-weight: 800; font-size: 1.25rem; }
+.pf-lab { font-size: 0.66rem; color: var(--muted-soft); margin-top: 3px; }
+.pf-pos .pf-val { color: #16d38a; }
+.pf-neg .pf-val { color: #ff6b7d; }
+.paper-warn {
+  margin: 16px 0 0; padding: 11px 14px; border-radius: 12px; font-size: 0.82rem; line-height: 1.5;
+  color: #ffd9a8; background: rgba(255,150,60,0.08); border: 1px solid rgba(255,150,60,0.25);
+}
+@media (max-width: 720px) {
+  .pf-platforms { grid-template-columns: 1fr; }
+}
