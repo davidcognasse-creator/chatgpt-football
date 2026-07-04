@@ -93,6 +93,8 @@
           `<td>${pct(p.coverage)}%</td></tr>`;
       }
       document.getElementById("gridTable").innerHTML = rows;
+      const pdf = document.getElementById("exportPdf");
+      if (pdf) pdf.textContent = `📄 Exporter la grille à ${g.budget} € en PDF`;
     }
 
     tabs.addEventListener("click", (e) => {

@@ -1243,3 +1243,10 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 :root[data-theme="light"] .lang-current { background: #fff; }
 :root[data-theme="light"] .pick.na { background: rgba(30,50,110,0.08); }
 :root[data-theme="light"] .prob .pN { background: rgba(30,50,110,0.1); color: #45557f; }
+
+/* Lien de nav ACTIF en mode clair : garder le dégradé (sinon blanc sur blanc) */
+:root[data-theme="light"] .nav-link.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-color: transparent;
+}
