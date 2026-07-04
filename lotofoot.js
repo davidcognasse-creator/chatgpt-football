@@ -77,7 +77,7 @@
         `<div class="grid-stat"><div class="v">${g.combos}</div><div class="l">combinaisons</div></div>` +
         `<div class="grid-stat"><div class="v">${g.cost} €</div><div class="l">coût</div></div>` +
         `<div class="grid-stat"><div class="v">${g.repartition.simples}·${g.repartition.doubles}·${g.repartition.triples}</div><div class="l">simples·doubles·triples</div></div>` +
-        `<div class="grid-stat"><div class="v">${(s.pge13 * 100).toFixed(1)}%</div><div class="l">P(≥ 13 bons)</div></div>` +
+        `<div class="grid-stat"><div class="v">${(s.pge13 * 100).toFixed(1)}%</div><div class="l">P(≥ ${data.matchs.length - 2} bons)</div></div>` +
         `<div class="grid-stat"><div class="v">${s.esperance.toFixed(1)}</div><div class="l">espérance /15</div></div>`;
 
       const byI = {};
@@ -158,9 +158,9 @@
     <tbody>${rows}</tbody>
   </table>
   <p class="stats">
-    <span>Grille parfaite (15/15) : <b>${(s.p15 * 100).toFixed(2)} %</b></span>
-    <span>Rang gagnant (≥ 13) : <b>${(s.pge13 * 100).toFixed(1)} %</b></span>
-    <span>Espérance : <b>${s.esperance.toFixed(1)} / 15</b></span>
+    <span>Grille parfaite (${data.matchs.length}/${data.matchs.length}) : <b>${(s.p15 * 100).toFixed(2)} %</b></span>
+    <span>Rang gagnant (≥ ${data.matchs.length - 2}) : <b>${(s.pge13 * 100).toFixed(1)} %</b></span>
+    <span>Espérance : <b>${s.esperance.toFixed(1)} / ${data.matchs.length}</b></span>
   </p>
   <p class="foot">Cotes des bookmakers (API-Football) confrontées au public FDJ · pronostic éducatif, ne constitue pas un conseil de pari. Jouer comporte des risques.</p>
 </body></html>`;

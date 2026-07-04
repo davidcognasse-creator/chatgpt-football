@@ -1,22 +1,15 @@
 {
-  "nom": "Loto Foot 15 N°51",
-  "note": "foule = répartition des mises FDJ (approx., éditable). dom/ext = noms tels qu'affichés. budget = € max de la grille (25, 50…).",
-  "budget": 25,
+  "nom": "Loto Foot 8 N°87",
+  "note": "Loto Foot 8 (8 matchs). foule = estimation provisoire (mises FDJ non publiées) — sera écrasée par le moteur cotes. budget = € max.",
+  "budget": 24,
   "matchs": [
-    {"dom": "Paraguay", "ext": "France", "foule": {"1": 8, "N": 9, "2": 80}},
-    {"dom": "Canada", "ext": "Maroc", "foule": {"1": 16, "N": 22, "2": 63}},
-    {"dom": "Bresil", "ext": "Norvege", "foule": {"1": 68, "N": 20, "2": 12}},
-    {"dom": "Qingdao Hainiu", "ext": "Chengdu Rongcheng", "foule": {"1": 16, "N": 14, "2": 70}},
-    {"dom": "Shanghai Shenhua", "ext": "Zhejiang", "foule": {"1": 73, "N": 19, "2": 8}},
-    {"dom": "Gimcheon Sangmu", "ext": "Jeju", "foule": {"1": 48, "N": 37, "2": 15}},
-    {"dom": "FC Seoul", "ext": "Incheon", "foule": {"1": 87, "N": 7, "2": 6}},
-    {"dom": "Gwangju", "ext": "Ulsan", "foule": {"1": 12, "N": 11, "2": 77}},
-    {"dom": "Elfsborg", "ext": "Hammarby", "foule": {"1": 44, "N": 34, "2": 22}},
-    {"dom": "IFK Goteborg", "ext": "AIK", "foule": {"1": 47, "N": 35, "2": 18}},
-    {"dom": "Kalmar", "ext": "Orgryte", "foule": {"1": 88, "N": 7, "2": 5}},
-    {"dom": "Vancouver", "ext": "Inter Toronto", "foule": {"1": 73, "N": 15, "2": 12}},
-    {"dom": "Atletico Ottawa", "ext": "Cavalry", "foule": {"1": 51, "N": 25, "2": 24}},
-    {"dom": "Supra Quebec", "ext": "Forge", "foule": {"1": 12, "N": 11, "2": 74}},
-    {"dom": "Barcelona SC", "ext": "Deportivo Cuenca", "foule": {"1": 73, "N": 18, "2": 5}}
+    {"dom": "Portugal",        "ext": "Espagne",        "foule": {"1": 35, "N": 30, "2": 35}},
+    {"dom": "Etats-Unis",      "ext": "Belgique",       "foule": {"1": 34, "N": 28, "2": 38}},
+    {"dom": "Hacken",          "ext": "Djurgardens",    "foule": {"1": 45, "N": 28, "2": 27}},
+    {"dom": "Brommapojkarna",  "ext": "GAIS Goteborg",  "foule": {"1": 42, "N": 29, "2": 29}},
+    {"dom": "FK Suduva",       "ext": "FK Transinvest", "foule": {"1": 64, "N": 22, "2": 14}},
+    {"dom": "SK Super Nova",   "ext": "Ogre United",    "foule": {"1": 55, "N": 25, "2": 20}},
+    {"dom": "CDUC Ecuador",    "ext": "Mushuc Runa",    "foule": {"1": 38, "N": 28, "2": 34}},
+    {"dom": "Keflavik",        "ext": "Fram Reykjavik", "foule": {"1": 45, "N": 28, "2": 27}}
   ]
 }
