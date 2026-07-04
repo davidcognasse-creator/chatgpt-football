@@ -1,0 +1,245 @@
+{
+  "note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
+  "equipes": {
+    "Paraguay": [
+      {
+        "joueur": "Piero Hincapie",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Association Board",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Miguel Almiron",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Step Up",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Christian Pulisic",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Injury Concerns Spark",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Pierluigi Collina",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Jonathan Tah",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Orlando Gill",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Waldemar Anton",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Call That Saw",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Germany Goal Ruled",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Santi Gimenez",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Why Germany",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Minute Goal Against",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Jalal Jayed",
+        "raison": "forfait"
+      }
+    ],
+    "France": [
+      {
+        "joueur": "Worker Suspended Amid",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "French School",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Sexual Violence",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Monaco Mystery",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Suspected Bomber",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "International Pursuit",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Sports Mole",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Josh Tarling",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Vadym Yermolaiev",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Netcompany Ineos",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "With Oscar Onley",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Egan Bernal",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Kylian Mbappe",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "William Saliba",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Prince Albert",
+        "raison": "blessé"
+      }
+    ],
+    "Canada": [
+      {
+        "joueur": "Chadi Riad",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Sports Mole",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Other Sports",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Eric Hartman",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Flats Park",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Canadian Heritage",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Injured Kone",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Ismael Kone",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "South Africa",
+        "raison": "blessé"
+      }
+    ],
+    "Gwangju": [
+      {
+        "joueur": "South Korea",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Tank Day",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "South Korean",
+        "raison": "suspendu"
+      }
+    ],
+    "Vancouver": [
+      {
+        "joueur": "Connor Bedard",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Scotia Barn",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Chicago Blackhawks",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Blue Jays",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Max Scherzer",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Seattle Mariners",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "West Cordova",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Richards Street",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "North Van",
+        "raison": "blessé"
+      }
+    ],
+    "Forge": [
+      {
+        "joueur": "Major Hurdles Loom",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Iran Peace Talks",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Enter Crucial Phase",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "By Matt",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "President Donald Trump",
+        "raison": "forfait"
+      }
+    ]
+  }
+}
