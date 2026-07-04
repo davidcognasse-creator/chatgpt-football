@@ -1,0 +1,42 @@
+name: Analyse météo Ligue 1
+
+# Lancement MANUEL (Actions → « Analyse météo Ligue 1 » → Run workflow).
+# Télécharge les résultats (openfootball) + la météo de chaque match (Open-Meteo,
+# gratuit, sans clé), croise pluie/température/vent × résultats, et committe le
+# rapport. Réseau ouvert sur GitHub → Open-Meteo est accessible ici.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: analyse-meteo
+  cancel-in-progress: false
+
+jobs:
+  meteo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Lancer l'analyse météo
+        working-directory: analyse-ligue1
+        run: python3 meteo-ligue1.py
+
+      - name: Committer le rapport
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/RESULTATS-METEO.md analyse-ligue1/meteo-ligue1.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(analyse): rapport météo Ligue 1"
+            git push
+          else
+            echo "Aucun changement."
+          fi
