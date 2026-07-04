@@ -1,0 +1,15 @@
+{
+  "nom": "Loto Foot 8 N°87",
+  "budget": 12,
+  "note": "Grille de référence à 12 € (cotes API-Football). picks = issues cochées. Résultats réglés sur 90 min (règle 1N2). * = match non coté (estimation).",
+  "matchs": [
+    {"i": 1, "dom": "Portugal",       "ext": "Espagne",        "ref": ["2"]},
+    {"i": 2, "dom": "Etats-Unis",     "ext": "Belgique",       "ref": ["1", "N", "2"]},
+    {"i": 3, "dom": "Hacken",         "ext": "Djurgardens",    "ref": ["1", "2"]},
+    {"i": 4, "dom": "Brommapojkarna", "ext": "GAIS Goteborg",  "ref": ["2"]},
+    {"i": 5, "dom": "FK Suduva",      "ext": "FK Transinvest", "ref": ["1"]},
+    {"i": 6, "dom": "SK Super Nova",  "ext": "Ogre United",    "ref": ["1"]},
+    {"i": 7, "dom": "CDUC Ecuador",   "ext": "Mushuc Runa",    "ref": ["1", "2"]},
+    {"i": 8, "dom": "Keflavik",       "ext": "Fram Reykjavik", "ref": ["2"]}
+  ]
+}

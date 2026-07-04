@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """
-Suivi comparatif Loto Foot N°51 : grille jouée (toi) vs grille optimale (moi).
-Récupère le résultat réel de chaque match (API-Football, issue réglée sur 90 min)
-et compte, pour chaque grille, le nombre de matchs corrects (issue ∈ pronostics).
-Écrit SUIVI-N51.md.
+Suivi comparatif des grilles Loto Foot jouées vs résultats réels.
 
-Réutilise les helpers de moteur-cotes.py (norm/alias, team_id, af, side_match).
-Secret APIFOOTBALL_KEY requis → GitHub Actions.
+Traite TOUS les fichiers suivi-*.json du dossier (N°51, N°87, …). Chaque fichier
+décrit les matchs et une ou plusieurs grilles (les clés dont la valeur est une
+liste d'issues, ex. "toi"/"moi" ou "ref"). Le script récupère le résultat réel
+de chaque match (API-Football, issue réglée sur 90 min) et compte, pour chaque
+grille, le nombre de matchs corrects (issue ∈ pronostics). Écrit un SUIVI-*.md
+par grille.
+
+Réutilise les helpers de moteur-cotes.py. Secret APIFOOTBALL_KEY → GitHub Actions.
 """
+import glob
 import importlib.util
 import json
 import os
@@ -18,12 +22,11 @@ mc = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mc)
 
 FINISHED = {"FT", "AET", "PEN"}
-L = []
-def say(s): L.append(s); print(s)
+NON_GRID = {"i", "dom", "ext"}   # clés qui ne sont pas des grilles
 
 
 def result_90(dom, ext):
-    """Issue 1N2 (90 min) du match dom–ext, ou None si pas encore joué/introuvable."""
+    """Issue 1N2 (90 min) du match dom–ext + score, ou None si pas encore joué."""
     hid, _ = mc.team_id(dom)
     if not hid:
         return None
@@ -45,47 +48,68 @@ def result_90(dom, ext):
             gh, ga = f["goals"]["home"], f["goals"]["away"]
         if gh is None or ga is None:
             continue
-        if h["id"] != hid:          # remet dans l'ordre dom/ext de la grille
+        if h["id"] != hid:
             gh, ga = ga, gh
         res = "1" if gh > ga else "2" if gh < ga else "N"
-        tag = " (a.p.)" if f["fixture"]["status"]["short"] == "AET" else \
-              " (t.a.b.)" if f["fixture"]["status"]["short"] == "PEN" else ""
+        short = f["fixture"]["status"]["short"]
+        tag = " ⏱" if short == "AET" else " 🥅" if short == "PEN" else ""
         return res, f"{gh}-{ga}{tag}"
     return None
 
 
-def main():
-    d = json.load(open(os.path.join(HERE, "suivi-n51.json"), encoding="utf-8"))
-    say(f"# Suivi {d['nom']} — ta grille vs la grille optimale ({d['budget']} €)\n")
+def grid_names(matchs):
+    return [k for k, v in matchs[0].items() if k not in NON_GRID and isinstance(v, list)]
+
+
+def process(path):
+    d = json.load(open(path, encoding="utf-8"))
+    L = []
+    say = lambda s: L.append(s)
+    grids = grid_names(d["matchs"])
+    say(f"# Suivi {d['nom']} — grille(s) vs réel ({d.get('budget','?')} €)\n")
     if not mc.KEY:
-        say("❌ APIFOOTBALL_KEY manquant."); return finish()
+        say("❌ APIFOOTBALL_KEY manquant.")
+    else:
+        head = "| # | Match | Résultat 90′ | " + " | ".join(f"{g} | ✓" for g in grids) + " |"
+        say(head)
+        say("|---|---|---|" + "---|:-:|" * len(grids))
+        ok = {g: 0 for g in grids}
+        joues = 0
+        for m in d["matchs"]:
+            r = result_90(m["dom"], m["ext"])
+            cells = ""
+            if not r:
+                for g in grids:
+                    cells += f" {'/'.join(m[g])} | · |"
+                say(f"| {m['i']} | {m['dom']}–{m['ext']} | _à venir_ |{cells}")
+                continue
+            res, score = r
+            joues += 1
+            for g in grids:
+                hit = res in m[g]
+                ok[g] += hit
+                cells += f" {'/'.join(m[g])} | {'✅' if hit else '❌'} |"
+            say(f"| {m['i']} | {m['dom']}–{m['ext']} | **{res}** ({score}) |{cells}")
+        n = len(d["matchs"])
+        say(f"\n**Matchs joués : {joues}/{n}**")
+        for g in grids:
+            tot = f" ({ok[g]}/{n} au total)" if joues == n else ""
+            say(f"- **{g}** : {ok[g]}/{joues} corrects{tot}")
+        if joues == n:
+            rank = n - 2
+            for g in grids:
+                say(f"  - {g} : {'🏆 grille parfaite !' if ok[g]==n else ('🎯 rang gagnant (≥%d) !' % rank) if ok[g]>=rank else 'hors rang'}")
 
-    say("| # | Match | Résultat 90′ | Toi | ✓ | Moi | ✓ |")
-    say("|---|---|---|---|:-:|---|:-:|")
-    okU = okM = joues = 0
-    for m in d["matchs"]:
-        r = result_90(m["dom"], m["ext"])
-        if not r:
-            say(f"| {m['i']} | {m['dom']}–{m['ext']} | _à venir_ | {'/'.join(m['toi'])} | · | {'/'.join(m['moi'])} | · |")
-            continue
-        res, score = r
-        joues += 1
-        hu = res in m["toi"]; hm = res in m["moi"]
-        okU += hu; okM += hm
-        say(f"| {m['i']} | {m['dom']}–{m['ext']} | **{res}** ({score}) | {'/'.join(m['toi'])} | "
-            f"{'✅' if hu else '❌'} | {'/'.join(m['moi'])} | {'✅' if hm else '❌'} |")
-
-    say(f"\n**Matchs joués : {joues}/15**")
-    say(f"- 🎫 Ta grille : **{okU}/{joues}** corrects" + (f" ({okU}/15 au total)" if joues == 15 else ""))
-    say(f"- 🤖 Grille optimale : **{okM}/{joues}** corrects" + (f" ({okM}/15 au total)" if joues == 15 else ""))
-    if joues == 15:
-        rank = lambda k: "🏆 15/15 !" if k == 15 else "🥈 rang 14" if k == 14 else "🥉 rang 13" if k == 13 else "hors rang"
-        say(f"- Ta grille : {rank(okU)} · Grille optimale : {rank(okM)}")
-    return finish()
+    name = os.path.basename(path).replace("suivi-", "SUIVI-").replace(".json", ".md")
+    open(os.path.join(HERE, name), "w", encoding="utf-8").write("\n".join(L) + "\n")
+    return name
 
 
-def finish():
-    open(os.path.join(HERE, "SUIVI-N51.md"), "w", encoding="utf-8").write("\n".join(L) + "\n")
+def main():
+    files = sorted(glob.glob(os.path.join(HERE, "suivi-*.json")))
+    for p in files:
+        out = process(p)
+        print(f"écrit {out}")
 
 
 if __name__ == "__main__":
