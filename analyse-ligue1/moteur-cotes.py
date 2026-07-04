@@ -47,12 +47,25 @@ def say(s): L.append(s); print(s)
 STOP = {"fc", "cf", "sc", "if", "sk", "ac", "as", "sd", "cd", "club", "de", "the",
         "football", "association", "calcio", "ff", "bk", "sv", "se", "ec", "ca"}
 
+# Sélections nationales : la grille FDJ est en français, API-Football en anglais.
+ALIAS = {
+    "bresil": "brazil", "maroc": "morocco", "norvege": "norway", "coree": "korea",
+    "espagne": "spain", "allemagne": "germany", "angleterre": "england",
+    "italie": "italy", "pays": "wales", "galles": "wales", "ecosse": "scotland",
+    "irlande": "ireland", "belgique": "belgium", "suede": "sweden", "suisse": "switzerland",
+    "danemark": "denmark", "pologne": "poland", "japon": "japan", "coree du sud": "korea",
+    "etats": "usa", "unis": "usa", "argentine": "argentina", "bresilien": "brazil",
+    "croatie": "croatia", "serbie": "serbia", "turquie": "turkey", "grece": "greece",
+    "hongrie": "hungary", "autriche": "austria", "tchequie": "czechia", "russie": "russia",
+    "afrique": "south", "sud": "africa",
+}
+
 
 def norm(s):
     s = unicodedata.normalize("NFD", s or "")
     s = "".join(c for c in s if unicodedata.category(c) != "Mn").lower()
     s = re.sub(r"[^a-z0-9 ]", " ", s)
-    return [t for t in s.split() if t and t not in STOP]
+    return [ALIAS.get(t, t) for t in s.split() if t and t not in STOP]
 
 
 def af(path):
@@ -92,7 +105,8 @@ def team_id(name):
     key = " ".join(norm(name))
     if key in _TEAM:
         return _TEAM[key]
-    res = af(f"/teams?search={urllib.parse.quote(name)}")
+    # cherche avec le nom canonicalisé (FR→EN) pour les sélections nationales
+    res = af(f"/teams?search={urllib.parse.quote(key or name)}")
     best = None
     nt = set(norm(name))
     for r in res:
