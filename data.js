@@ -1,8 +1,8 @@
-// Généré automatiquement par robot/update.mjs · NE PAS éditer à la main.
+// Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-03T21:31:55.729Z",
+  "updatedAt": "2026-07-04T13:39:09.339Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -12,230 +12,6 @@ window.WC_DATA = {
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "fb270a3dac2b682c861bd674a5ff4a04",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-03T18:00:00Z",
-      "venue": "",
-      "home": {
-        "name": "Australia",
-        "flag": "🇦🇺",
-        "code": "AUS"
-      },
-      "away": {
-        "name": "Egypt",
-        "flag": "🇪🇬",
-        "code": "EGY"
-      },
-      "probs": {
-        "home": 33,
-        "draw": 31,
-        "away": 36
-      },
-      "predictedScore": {
-        "home": 1,
-        "away": 2
-      },
-      "confidence": 57,
-      "analysis": "Egypt tient la corde (37% au global). Les marchés de paris donnent 40% à Egypt. La forme récente avantage Egypt. La presse penche vers Australia. Le public suit surtout Egypt.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Cristian Volpato",
-            "prob": 89
-          },
-          {
-            "name": "Mostafa Ziko",
-            "prob": 85
-          },
-          {
-            "name": "Nestory Irankunda",
-            "prob": 82
-          },
-          {
-            "name": "Omar Marmoush",
-            "prob": 79
-          },
-          {
-            "name": "Mohamed Salah",
-            "prob": 71
-          },
-          {
-            "name": "Mohamed Toure",
-            "prob": 25
-          }
-        ]
-      },
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 26,
-            "draw": 33,
-            "away": 40
-          },
-          "favored": "away",
-          "detail": "41 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 33,
-            "draw": 26,
-            "away": 41
-          },
-          "favored": "away",
-          "detail": "NDV vs NVN"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 64,
-            "draw": 26,
-            "away": 10
-          },
-          "favored": "home",
-          "detail": "4120 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 32,
-            "draw": 26,
-            "away": 42
-          },
-          "favored": "away",
-          "detail": "X · 5529/7236 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 1,
-        "away": 1,
-        "outcome": "draw"
-      }
-    },
-    {
-      "id": "3e161b2448ed76d6b0c0f5bda6fd5bf2",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-03T22:00:00Z",
-      "venue": "",
-      "home": {
-        "name": "Argentina",
-        "flag": "🇦🇷",
-        "code": "ARG"
-      },
-      "away": {
-        "name": "Cape Verde",
-        "flag": "🇨🇻",
-        "code": "CPV"
-      },
-      "probs": {
-        "home": 75,
-        "draw": 17,
-        "away": 8
-      },
-      "predictedScore": {
-        "home": 3,
-        "away": 0
-      },
-      "confidence": 79,
-      "analysis": "Argentina tient la corde (75% au global). Les marchés de paris donnent 84% à Argentina. La forme récente avantage Argentina. La presse penche vers Argentina. Le public suit surtout Argentina.",
-      "scorers": {
-        "combined": [
-          {
-            "name": "Thiago Almada",
-            "prob": 79
-          },
-          {
-            "name": "Lionel Messi",
-            "prob": 69
-          },
-          {
-            "name": "Julian Alvarez",
-            "prob": 62
-          },
-          {
-            "name": "Lautaro Martinez",
-            "prob": 56
-          },
-          {
-            "name": "Jose Manuel Alberto Lopez",
-            "prob": 50
-          },
-          {
-            "name": "Nicolas Paz Martinez",
-            "prob": 38
-          }
-        ]
-      },
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 84,
-            "draw": 11,
-            "away": 4
-          },
-          "favored": "home",
-          "detail": "41 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 54,
-            "draw": 26,
-            "away": 20
-          },
-          "favored": "home",
-          "detail": "VVV vs NNN"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 68,
-            "draw": 26,
-            "away": 6
-          },
-          "favored": "home",
-          "detail": "3572 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 57,
-            "draw": 26,
-            "away": 17
-          },
-          "favored": "home",
-          "detail": "X · 27917/8281 mentions"
-        }
-      }
-    },
     {
       "id": "88e032a2b2e5042d26db3f0da1df924a",
       "stage": "À venir",
@@ -343,6 +119,12 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "X · 12376/11191 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 1,
+        "away": 0,
+        "outcome": "home"
       }
     },
     {

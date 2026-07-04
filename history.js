@@ -1,7 +1,120 @@
-// Généré automatiquement par robot/update.mjs · NE PAS éditer à la main.
+// Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_HISTORY = {
-  "updatedAt": "2026-07-03T21:31:55.726Z",
+  "updatedAt": "2026-07-04T13:39:09.337Z",
   "entries": [
+    {
+      "id": "88e032a2b2e5042d26db3f0da1df924a",
+      "datetime": "2026-07-04T01:30:00Z",
+      "home": {
+        "name": "Colombia",
+        "flag": "🇨🇴",
+        "code": "COL"
+      },
+      "away": {
+        "name": "Ghana",
+        "flag": "🇬🇭",
+        "code": "GHA"
+      },
+      "predicted": {
+        "probs": {
+          "home": 57,
+          "draw": 24,
+          "away": 19
+        },
+        "score": {
+          "home": 3,
+          "away": 0
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 67,
+          "draw": 22,
+          "away": 11
+        },
+        "form": {
+          "home": 46,
+          "draw": 26,
+          "away": 28
+        },
+        "h2h": null,
+        "press": {
+          "home": 42,
+          "draw": 26,
+          "away": 32
+        },
+        "social": {
+          "home": 39,
+          "draw": 26,
+          "away": 35
+        }
+      },
+      "actual": {
+        "home": 1,
+        "away": 0,
+        "outcome": "home"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
+    {
+      "id": "3e161b2448ed76d6b0c0f5bda6fd5bf2",
+      "datetime": "2026-07-03T22:00:00Z",
+      "home": {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "code": "ARG"
+      },
+      "away": {
+        "name": "Cape Verde",
+        "flag": "🇨🇻",
+        "code": "CPV"
+      },
+      "predicted": {
+        "probs": {
+          "home": 75,
+          "draw": 17,
+          "away": 8
+        },
+        "score": {
+          "home": 3,
+          "away": 0
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 84,
+          "draw": 11,
+          "away": 4
+        },
+        "form": {
+          "home": 54,
+          "draw": 26,
+          "away": 20
+        },
+        "h2h": null,
+        "press": {
+          "home": 68,
+          "draw": 26,
+          "away": 6
+        },
+        "social": {
+          "home": 57,
+          "draw": 26,
+          "away": 17
+        }
+      },
+      "actual": {
+        "home": 3,
+        "away": 2,
+        "outcome": "home",
+        "decidedBy": "aet"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "fb270a3dac2b682c861bd674a5ff4a04",
       "datetime": "2026-07-03T18:00:00Z",
