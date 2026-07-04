@@ -130,24 +130,26 @@
     const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <title>Grille ${g.budget}€ — ${data.nom || "Loto Foot"}</title>
 <style>
+  @page { size: A4 portrait; margin: 12mm; }
   * { box-sizing: border-box; }
-  body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #14203a; margin: 28px; }
-  h1 { font-size: 20px; margin: 0 0 2px; }
-  .sub { color: #5a678a; font-size: 12.5px; margin: 0 0 16px; }
+  html, body { margin: 0; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #14203a; }
+  h1 { font-size: 18px; margin: 0 0 2px; }
+  .sub { color: #5a678a; font-size: 11.5px; margin: 0 0 12px; }
   .sub b { color: #14203a; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th, td { padding: 7px 8px; border-bottom: 1px solid #e2e7f1; text-align: center; }
-  th { font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; color: #5a678a; border-bottom: 2px solid #cfd7e6; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; page-break-inside: avoid; }
+  th, td { padding: 5px 8px; border-bottom: 1px solid #e2e7f1; text-align: center; }
+  th { font-size: 10px; text-transform: uppercase; letter-spacing: .04em; color: #5a678a; border-bottom: 2px solid #cfd7e6; }
   td.mt { text-align: left; font-weight: 600; }
   td.n { color: #97a1bd; }
   .vs { color: #b3bcd2; }
   td.pk { font-weight: 800; letter-spacing: .08em; }
   td.ty.double { color: #c2680f; font-weight: 700; }
   td.ty.triple { color: #b3247e; font-weight: 800; }
-  .stats { margin: 16px 0 4px; font-size: 12.5px; color: #14203a; }
+  .stats { margin: 14px 0 4px; font-size: 12px; color: #14203a; }
   .stats span { display: inline-block; margin-right: 16px; }
-  .stats b { font-size: 15px; }
-  .foot { margin-top: 18px; font-size: 10.5px; color: #8a93ab; border-top: 1px solid #e2e7f1; padding-top: 8px; }
+  .stats b { font-size: 14px; }
+  .foot { margin-top: 14px; font-size: 10px; color: #8a93ab; border-top: 1px solid #e2e7f1; padding-top: 8px; }
 </style></head><body>
   <h1>🎯 ${data.nom || "Loto Foot"} — Grille ${g.budget} €</h1>
   <p class="sub"><b>${g.combos}</b> combinaisons · coût <b>${g.cost} €</b> · ${rep} · source : ${data.source || "cotes"}</p>
