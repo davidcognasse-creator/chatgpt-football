@@ -15,7 +15,7 @@ Combinaisons jouées : **48** → coût **48 €** (≤ 50 €)
 | — | FC Seoul–Incheon | DOUBLE | 1 / N | 77% |
 | — | Gwangju–Ulsan | simple | 2 | 63% |
 | — | Elfsborg–Hammarby | DOUBLE | 2 / N | 75% |
-| — | IFK Goteborg–AIK | DOUBLE | 1 / N | 82% |
+| — | IFK Goteborg–AIK | DOUBLE | 1 / 2 | 73% |
 | — | Kalmar–Orgryte | simple | 1 | 62% |
 | — | Vancouver–Inter Toronto | simple | 1 | 73% |
 | — | Atletico Ottawa–Cavalry | DOUBLE | 1 / N | 76% |
@@ -25,11 +25,11 @@ Combinaisons jouées : **48** → coût **48 €** (≤ 50 €)
 Répartition : 10 simples · **4 doubles** · **1 triples**
 
 ## Probabilité de résultat (matchs corrects)
-- **15/15** (grille parfaite) : 0.67 %
-- **14/15** : 4.14 %
-- **13/15** : 11.69 %
-- **≥ 13** : 16.51 %
-- Espérance de bons résultats : **10.9 / 15**
+- **15/15** (grille parfaite) : 0.60 %
+- **14/15** : 3.78 %
+- **13/15** : 10.96 %
+- **≥ 13** : 15.34 %
+- Espérance de bons résultats : **10.8 / 15**
 
 ---
 _Les doubles/triples sont placés sur les matchs les plus incertains (meilleur gain de couverture par € dépensé). Remplace la FOULE par le modèle cotes/actualité (probas.json) pour un vrai edge._

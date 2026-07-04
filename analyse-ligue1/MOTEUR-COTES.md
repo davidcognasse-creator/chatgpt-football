@@ -17,14 +17,14 @@ _28 ligues interrogées · 279 matchs cotés récupérés._
 | 7 | FC Seoul–Incheon | 49/28/23 | 87/7/6 | **1** | 1 | 32 |  |
 | 8 | Gwangju–Ulsan | 14/23/63 | 12/11/77 | **2** | 2 | 32 |  |
 | 9 | Elfsborg–Hammarby | 25/26/49 | 44/34/22 | **2** | 1 | 35 | **+27%** |
-| 10 | IFK Goteborg–AIK | — | 47/35/18 | _non coté_ | 1 | — | — |
+| 10 | IFK Goteborg–AIK | 42/27/31 | 47/35/18 | **1** | 1 | 36 |  |
 | 11 | Kalmar–Orgryte | 62/22/17 | 88/7/5 | **1** | 1 | 36 |  |
 | 12 | Vancouver–Inter Toronto | — | 73/15/12 | _non coté_ | 1 | — | — |
 | 13 | Atletico Ottawa–Cavalry | — | 51/25/24 | _non coté_ | 1 | — | — |
 | 14 | Supra Quebec–Forge | — | 12/11/76 | _non coté_ | 2 | — | — |
 | 15 | Barcelona SC–Deportivo Cuenca | — | 76/19/5 | _non coté_ | 1 | — | — |
 
-**Couverture marché : 8/15 matchs cotés.**
+**Couverture marché : 9/15 matchs cotés.**
 
 ## 🎯 Divergences marché vs foule (value de pool)
 - **Match 9 · Elfsborg–Hammarby** : le marché voit **2** (49%) alors que la foule joue **1** (44%). → la foule sur/sous-estime, value si le marché a raison.
