@@ -249,11 +249,38 @@ h1, h2, h3, .brand-title { font-family: "Sora", "Inter", sans-serif; }
 
 /* sélecteur de langue */
 .lang-switch { display: inline-flex; }
+/* sélecteur de langue sous le logo : un peu détaché */
+.brand-col .lang-switch { margin-top: 12px; margin-left: 2px; }
 .lang-sel {
   font: inherit; font-size: 0.82rem; color: var(--text); background: var(--bg-soft);
   border: 1px solid var(--card-border); border-radius: 999px; padding: 6px 10px; cursor: pointer;
 }
 .lang-sel option { background-color: #0d1426; color: #eaf0ff; }
+
+/* sélecteur à drapeaux (images) */
+.lang-flags { position: relative; display: inline-block; }
+.lang-current {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+  background: var(--bg-soft); border: 1px solid var(--card-border);
+  border-radius: 999px; padding: 5px 10px; color: var(--text);
+}
+.lang-current img { border-radius: 2px; display: block; }
+.lang-current svg { opacity: 0.7; }
+.lang-menu {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 60;
+  margin: 0; padding: 6px; list-style: none; min-width: 160px;
+  background: #0d1426; border: 1px solid var(--card-border);
+  border-radius: 12px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+}
+.lang-menu li { margin: 0; }
+.lang-menu button {
+  width: 100%; display: flex; align-items: center; gap: 9px; cursor: pointer;
+  background: none; border: none; color: var(--text); font: inherit; font-size: 0.9rem;
+  text-align: left; padding: 7px 8px; border-radius: 8px;
+}
+.lang-menu button:hover { background: rgba(255, 255, 255, 0.08); }
+.lang-menu img { border-radius: 2px; }
+.lang-menu li[aria-selected="true"] button { background: rgba(52, 211, 153, 0.14); }
 
 /* arabe (droite-à-gauche) */
 [dir="rtl"] .auth-toggle, [dir="rtl"] .profile-info dd { text-align: right; }

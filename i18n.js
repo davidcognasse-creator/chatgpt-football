@@ -707,17 +707,48 @@
     document.dispatchEvent(new CustomEvent("i18n:changed", { detail: { lang: code } }));
   };
 
+  // Code pays (ISO) par langue pour l'image de drapeau (flagcdn).
+  const LANG_CC = { fr: "fr", en: "gb", es: "es", pt: "pt", de: "de", it: "it", sw: "tz", ar: "sa" };
+  const flagImg = (code) => `https://flagcdn.com/w40/${LANG_CC[code] || code}.png`;
+
   function buildSwitchers() {
     document.querySelectorAll("[data-lang-switcher]").forEach((host) => {
-      const sel = document.createElement("select");
-      sel.className = "lang-sel";
-      sel.setAttribute("aria-label", "Language");
-      sel.innerHTML = LANGS.map((l) =>
-        `<option value="${l.code}" ${l.code === cur ? "selected" : ""}>${l.flag} ${l.label}</option>`).join("");
-      sel.onchange = () => window.setLang(sel.value);
+      const curL = LANGS.find((l) => l.code === cur) || LANGS[0];
+      const wrap = document.createElement("div");
+      wrap.className = "lang-flags";
+      wrap.innerHTML =
+        `<button type="button" class="lang-current" aria-haspopup="listbox" aria-expanded="false" aria-label="${curL.label}">
+           <img src="${flagImg(cur)}" alt="${curL.label}" width="22" height="16" loading="lazy" />
+           <svg viewBox="0 0 10 6" width="9" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+         </button>
+         <ul class="lang-menu" role="listbox" hidden>` +
+        LANGS.map((l) =>
+          `<li role="option"${l.code === cur ? ' aria-selected="true"' : ""}>` +
+          `<button type="button" data-code="${l.code}"><img src="${flagImg(l.code)}" alt="" width="22" height="16" loading="lazy" /> ${l.label}</button></li>`
+        ).join("") +
+        `</ul>`;
+      const btn = wrap.querySelector(".lang-current");
+      const menu = wrap.querySelector(".lang-menu");
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const willOpen = menu.hidden;
+        menu.hidden = !willOpen;
+        btn.setAttribute("aria-expanded", String(willOpen));
+      });
+      menu.addEventListener("click", (e) => {
+        const b = e.target.closest("button[data-code]");
+        if (b) window.setLang(b.dataset.code);
+      });
       host.innerHTML = "";
-      host.appendChild(sel);
+      host.appendChild(wrap);
     });
+    if (!window.__langOutsideClose) {
+      window.__langOutsideClose = true;
+      document.addEventListener("click", () => {
+        document.querySelectorAll(".lang-menu").forEach((m) => (m.hidden = true));
+        document.querySelectorAll(".lang-current").forEach((b) => b.setAttribute("aria-expanded", "false"));
+      });
+    }
   }
   window.buildLangSwitchers = buildSwitchers;
 
