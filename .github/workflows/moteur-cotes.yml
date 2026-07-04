@@ -1,0 +1,48 @@
+name: Grille Loto Foot (cotes → optimiseur)
+
+# Lancement MANUEL, à faire juste avant la clôture des paris.
+# 1) moteur-cotes.py : cotes marché (The Odds API) dévignées → probas.json
+#    + rapport marché vs foule (MOTEUR-COTES.md)
+# 2) grille-optim.py : répartit doubles/triples sous 50 € → GRILLE-OPTIM.md
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: grille-lotofoot
+  cancel-in-progress: false
+
+jobs:
+  grille:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Moteur cotes → probas.json
+        working-directory: analyse-ligue1
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python3 moteur-cotes.py
+
+      - name: Optimiser la grille sous 50 €
+        working-directory: analyse-ligue1
+        run: python3 grille-optim.py
+
+      - name: Committer les rapports
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/probas.json analyse-ligue1/MOTEUR-COTES.md analyse-ligue1/GRILLE-OPTIM.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(lotofoot): grille cotes+optim (marché vs foule)"
+            git push
+          else
+            echo "Aucun changement."
+          fi
