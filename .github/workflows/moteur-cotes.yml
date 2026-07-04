@@ -1,8 +1,9 @@
 name: Grille Loto Foot (cotes → optimiseur)
 
 # Lancement MANUEL, à faire juste avant la clôture des paris.
-# 1) moteur-cotes.py : cotes marché (The Odds API) dévignées → probas.json
-#    + rapport marché vs foule (MOTEUR-COTES.md)
+# 0) sonde-absences.py : presse (GNews) → absences-auto.json (absents trouvés seuls)
+# 1) moteur-cotes.py : cotes marché (The Odds API) dévignées, corrigées par les
+#    absents (poids = note Transfermarkt) → probas.json + MOTEUR-COTES.md
 # 2) grille-optim.py : répartit doubles/triples sous 50 € → GRILLE-OPTIM.md
 on:
   workflow_dispatch:
@@ -25,7 +26,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Moteur cotes → probas.json
+      - name: Sonde absences (presse) → absences-auto.json
+        working-directory: analyse-ligue1
+        env:
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+        continue-on-error: true   # si la presse échoue, on continue sans absents
+        run: python3 sonde-absences.py
+
+      - name: Moteur cotes (+ absents) → probas.json
         working-directory: analyse-ligue1
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
@@ -39,7 +47,7 @@ jobs:
         run: |
           git config user.name "predictions-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add analyse-ligue1/probas.json analyse-ligue1/MOTEUR-COTES.md analyse-ligue1/GRILLE-OPTIM.md
+          git add analyse-ligue1/probas.json analyse-ligue1/MOTEUR-COTES.md analyse-ligue1/GRILLE-OPTIM.md analyse-ligue1/absences-auto.json analyse-ligue1/ABSENCES-CANDIDATS.md
           if ! git diff --cached --quiet; then
             git commit -m "chore(lotofoot): grille cotes+optim (marché vs foule)"
             git push

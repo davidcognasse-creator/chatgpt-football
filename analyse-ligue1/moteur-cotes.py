@@ -18,6 +18,9 @@ qu'est le vrai edge, mais seulement quand le marché n'a pas encore intégré l'
 
 Secret ODDS_API_KEY requis → GitHub Actions.
 """
+import csv
+import gzip
+import io
 import json
 import os
 import re
@@ -30,6 +33,12 @@ BASE = "https://api.the-odds-api.com/v4"
 REGIONS = "eu,uk"
 HERE = os.path.dirname(__file__)
 MAX_LEAGUES = 60  # garde-fou quota
+
+# Note par joueur = valeur marchande Transfermarkt (dataset public R2).
+R2 = "https://pub-e682421888d945d684bcae8890b0ec20.r2.dev/data"
+TM_UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
+SCALE = 9e8   # valeur ~ d'un très bon XI ; poids d'un absent = sa note / SCALE
+PCAP = 0.25   # une seule absence ne retire jamais plus de 25 % de la force
 
 L = []
 def say(s): L.append(s); print(s)
@@ -156,23 +165,88 @@ def find_event(dom, ext, pool):
 
 _ABS = None
 def load_absences():
-    """[(token_set, [absences]), ...] depuis absences.json (clés '_...' ignorées)."""
+    """[(token_set, [absences]), ...] fusionnant absences-auto.json (presse, auto) et
+    absences.json (manuel, PRIORITAIRE). Clés '_...' ignorées. Le moteur trouve donc
+    les absents tout seul via la sonde ; s'il n'y a rien, aucune correction."""
     global _ABS
     if _ABS is not None:
         return _ABS
-    _ABS = []
-    p = os.path.join(HERE, "absences.json")
-    if os.path.exists(p):
-        d = json.load(open(p, encoding="utf-8"))
+    merged = {}   # team -> list
+    for fname in ("absences-auto.json", "absences.json"):   # manuel écrase auto
+        p = os.path.join(HERE, fname)
+        if not os.path.exists(p):
+            continue
+        try:
+            d = json.load(open(p, encoding="utf-8"))
+        except Exception:
+            continue
         for team, lst in (d.get("equipes") or {}).items():
             if team.startswith("_") or not lst:
                 continue
-            _ABS.append((set(norm(team)), team, lst))
+            merged[team] = lst
+    _ABS = [(set(norm(team)), team, lst) for team, lst in merged.items()]
     return _ABS
 
 
+def nkey(name):
+    return " ".join(norm(name))
+
+
+def _surname(name):
+    toks = [t for t in norm(name) if len(t) > 1]
+    return toks[-1] if toks else nkey(name)
+
+
+_NOTES = None
+def load_notes():
+    """Note par joueur = valeur marchande Transfermarkt. Renvoie {nom_normalisé:val}
+    et {nom_de_famille:val_max}. Chargé une seule fois, seulement si nécessaire."""
+    global _NOTES
+    if _NOTES is not None:
+        return _NOTES
+    full, last = {}, {}
+    try:
+        txt = gzip.decompress(urllib.request.urlopen(
+            urllib.request.Request(f"{R2}/players.csv.gz", headers={"User-Agent": TM_UA}),
+            timeout=120).read()).decode("utf-8", "replace")
+        for p in csv.DictReader(io.StringIO(txt)):
+            try:
+                v = int(p["market_value_in_eur"])
+            except (ValueError, TypeError):
+                continue
+            nm = nkey(p.get("name", ""))
+            if nm:
+                full[nm] = max(full.get(nm, 0), v)
+            sn = _surname(p.get("name", ""))
+            if sn:
+                last[sn] = max(last.get(sn, 0), v)
+    except Exception as e:
+        say(f"_⚠️ Notes joueurs indisponibles ({e}) — poids manuels uniquement._")
+    _NOTES = (full, last)
+    return _NOTES
+
+
+def player_note(name):
+    """Valeur marchande du joueur : match nom complet, sinon nom de famille (max)."""
+    full, last = load_notes()
+    n = nkey(name)
+    if n in full:
+        return full[n]
+    return last.get(_surname(name), 0)
+
+
+def entry_poids(a):
+    """Poids d'un absent : soit fourni à la main, soit dérivé de la NOTE du joueur
+    (valeur Transfermarkt / SCALE), plafonné. C'est la « note par joueur » qui
+    fixe l'impact ; pour une sélection, ce sont les mieux notés qui pèsent."""
+    if a.get("poids"):
+        return float(a["poids"]), None
+    v = player_note(a.get("joueur", ""))
+    return (min(PCAP, v / SCALE), v) if v else (0.0, 0)
+
+
 def team_impact(name):
-    """Impact total (part de force perdue, plafonné) + liste des absents pour `name`."""
+    """Impact total (part de force perdue, plafonné) + absents annotés (poids/note)."""
     q = set(norm(name))
     if not q:
         return 0.0, []
@@ -181,8 +255,12 @@ def team_impact(name):
             continue
         shared = q & toks
         if shared and len(shared) / len(toks) >= 0.6:
-            imp = min(0.6, sum(float(a.get("poids", 0)) for a in lst))
-            return imp, lst
+            annotated, tot = [], 0.0
+            for a in lst:
+                w, note = entry_poids(a)
+                tot += w
+                annotated.append({**a, "_poids": w, "_note": note})
+            return min(0.6, tot), annotated
     return 0.0, []
 
 
@@ -263,9 +341,14 @@ def main():
                 imp, lst = info[side]
                 if imp <= 0:
                     continue
-                who = ", ".join(f"{a.get('joueur','?')} ({a.get('raison','')})".strip()
-                                for a in lst)
-                say(f"- **{m[key]}** −{imp*100:.0f}% de force : {who}")
+                parts = []
+                for a in lst:
+                    note = a.get("_note")
+                    tag = f"{a.get('joueur','?')} ({a.get('raison','')})".strip()
+                    if note:
+                        tag += f" · note {note/1e6:.0f} M€ → −{a.get('_poids',0)*100:.0f}%"
+                    parts.append(tag)
+                say(f"- **{m[key]}** −{imp*100:.0f}% de force : " + " ; ".join(parts))
             say(f"  → marché {praw['1']*100:.0f}/{praw['N']*100:.0f}/{praw['2']*100:.0f} "
                 f"⇒ ajusté **{padj['1']*100:.0f}/{padj['N']*100:.0f}/{padj['2']*100:.0f}** "
                 f"(match {i})")

@@ -123,27 +123,33 @@ def main():
                 if key not in picked:
                     picked[key] = (nm, reason)
                     say(f"- **{nm}** — _{reason}_ · « {title.strip()} » ({src})")
-            draft[t] = [{"joueur": nm, "poids": 0.0, "raison": reason}
+            draft[t] = [{"joueur": nm, "raison": reason}
                         for nm, reason in picked.values()]
             say("")
         time.sleep(1.5)   # respecte la limite GNews
 
     say("---\n")
     if draft:
-        say("## 📋 Bloc à coller dans `absences.json` (mets les `poids` : star≈0.15, titulaire≈0.07)\n")
+        say("## 📋 Absents détectés → `absences-auto.json` (lu automatiquement par le moteur)\n")
+        say("Le poids de chaque joueur est **calculé depuis sa note** (valeur "
+            "Transfermarkt) par le moteur cotes ; un joueur sans note ⇒ 0 impact. "
+            "Pour corriger/forcer, édite `absences.json` (prioritaire).\n")
         say("```json")
         say(json.dumps({"equipes": draft}, ensure_ascii=False, indent=2))
         say("```")
-        say("\n_Vérifie chaque nom (heuristique presse, faux positifs possibles) "
-            "et renseigne les poids avant de relancer le moteur cotes._")
     else:
-        say("_Aucun candidat absent détecté dans la presse pour ces équipes._")
-    return finish()
+        say("_Aucun absent détecté dans la presse — aucune correction appliquée._")
+    return finish(draft)
 
 
-def finish():
+def finish(draft=None):
     open(os.path.join(HERE, "ABSENCES-CANDIDATS.md"), "w", encoding="utf-8").write(
         "\n".join(L) + "\n")
+    # fichier machine lu automatiquement par moteur-cotes.py
+    json.dump({"note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
+               "equipes": draft or {}},
+              open(os.path.join(HERE, "absences-auto.json"), "w", encoding="utf-8"),
+              ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
