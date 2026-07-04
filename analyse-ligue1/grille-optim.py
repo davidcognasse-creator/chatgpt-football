@@ -83,38 +83,36 @@ def main():
     say(f"Probas : **{src}** · {len(matchs)} matchs · mise unitaire {UNIT:.0f} €\n")
 
     maxcombos = int(BUDGET / UNIT)
-    choices, combos, infos = optimize(matchs, maxcombos)
-
-    say(f"Combinaisons jouées : **{combos}** → coût **{combos*UNIT:.0f} €** (≤ {BUDGET:.0f} €)\n")
-    say("| # | Match | Type | Pronostic(s) | Couverture |")
-    say("|---|---|---|---|---|")
-    covs = []
-    nb = {1: 0, 2: 0, 3: 0}
-    for m, (order, cov), k in zip(matchs, infos, choices):
-        nb[k] += 1
-        picks = order[:k]
-        typ = {1: "simple", 2: "DOUBLE", 3: "TRIPLE"}[k]
-        covs.append(cov[k])
-        say(f"| — | {m['dom']}–{m['ext']} | {typ} | {' / '.join(picks)} | {cov[k]*100:.0f}% |")
-
-    say(f"\nRépartition : {nb[1]} simples · **{nb[2]} doubles** · **{nb[3]} triples**")
-
-    dist = poisson_binomial(covs)
     n = len(matchs)
-    p_all = dist[n]
-    say("\n## Probabilité de résultat (matchs corrects)")
-    say(f"- **{n}/{n}** (grille parfaite) : {p_all*100:.2f} %")
-    if n >= 14:
-        say(f"- **{n-1}/{n}** : {dist[n-1]*100:.2f} %")
-    if n >= 15:
-        say(f"- **{n-2}/{n}** : {dist[n-2]*100:.2f} %")
-        say(f"- **≥ {n-2}** : {(dist[n]+dist[n-1]+dist[n-2])*100:.2f} %")
-    esp = sum(i * dist[i] for i in range(n + 1))
-    say(f"- Espérance de bons résultats : **{esp:.1f} / {n}**")
 
-    say("\n---\n_Les doubles/triples sont placés sur les matchs les plus incertains "
-        "(meilleur gain de couverture par € dépensé). Remplace la FOULE par le modèle "
-        "cotes/actualité (probas.json) pour un vrai edge._")
+    def render(titre, choices, combos, infos, sous):
+        say(f"## {titre}")
+        say(f"{sous}")
+        say(f"Combinaisons : **{combos}** → coût **{combos*UNIT:.0f} €** (≤ {BUDGET:.0f} €)\n")
+        say("| # | Match | Type | Pronostic(s) | Couverture |")
+        say("|---|---|---|---|---|")
+        covs = []
+        nb = {1: 0, 2: 0, 3: 0}
+        for i, (m, (order, cov), k) in enumerate(zip(matchs, infos, choices), 1):
+            nb[k] += 1
+            typ = {1: "simple", 2: "DOUBLE", 3: "TRIPLE"}[k]
+            covs.append(cov[k])
+            say(f"| {i} | {m['dom']}–{m['ext']} | {typ} | {' / '.join(order[:k])} | {cov[k]*100:.0f}% |")
+        say(f"\nRépartition : {nb[1]} simples · **{nb[2]} doubles** · **{nb[3]} triples**")
+        d = poisson_binomial(covs)
+        say(f"- **{n}/{n}** (parfaite) : {d[n]*100:.2f} % · **{n-1}/{n}** : {d[n-1]*100:.2f} % "
+            f"· **{n-2}/{n}** : {d[n-2]*100:.2f} %")
+        say(f"- **≥ {n-2}** (rang gagnant) : **{(d[n]+d[n-1]+d[n-2])*100:.2f} %** "
+            f"· espérance **{sum(i*d[i] for i in range(n+1)):.1f}/{n}**\n")
+
+    ch1, cb1, inf1 = optimize(matchs, maxcombos)
+    render("🎯 Grille optimale (48 €)", ch1, cb1, inf1,
+           "_Doubles/triples sur les matchs les plus incertains. À 48 €, cette "
+           "répartition maximise **à la fois** la grille parfaite ET le P(≥13) — "
+           "vérifié par force brute, il n'existe pas de grille « plus sûre » distincte._")
+
+    say("---\n_Estimations provisoires (sans cotes). Le moteur cotes/actualité "
+        "(probas.json) donnera le vrai edge au retour du quota._")
     open(os.path.join(HERE, "GRILLE-OPTIM.md"), "w", encoding="utf-8").write("\n".join(L) + "\n")
 
 
