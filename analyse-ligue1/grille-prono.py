@@ -63,21 +63,28 @@ def load_clubs():
 
 
 def match_club(name, clubs):
+    """Appariement STRICT : exige un token distinctif (≥5 lettres) partagé et la
+    couverture des tokens significatifs de la requête. Sinon → None (non couvert),
+    pour ne JAMAIS fabriquer un faux appariement (sélections, clubs exotiques…)."""
     q = norm(name)
-    if not q:
+    qtok = [t for t in q.split() if len(t) >= 4]
+    if not qtok:
         return None
-    # 1) égalité, 2) inclusion dans un sens ou l'autre (mot significatif commun)
     best = None
     for cn, c in clubs.items():
         n = c["n"]
         if n == q:
             return (cn, c)
-        qs, ns = set(q.split()), set(n.split())
-        if q in n or n in q or (qs & ns and (qs <= ns or ns <= qs)):
-            # score = taille du recouvrement
-            sc = len(qs & ns)
-            if not best or sc > best[0]:
-                best = (sc, cn, c)
+        ntok = set(n.split())
+        shared = [t for t in qtok if t in ntok]
+        if not shared or max(len(t) for t in shared) < 5:
+            continue
+        cover = len(shared) / len(qtok)      # part des mots significatifs retrouvés
+        if cover < 0.6:
+            continue
+        score = cover + 0.001 * max(len(t) for t in shared)
+        if not best or score > best[0]:
+            best = (score, cn, c)
     return (best[1], best[2]) if best else None
 
 
