@@ -102,11 +102,18 @@ def build_pool(keys):
     pool = []
     used = 0
     for k in keys[:MAX_LEAGUES]:
-        try:
-            evs, hdr = http(f"{BASE}/sports/{k}/odds/?regions={REGIONS}"
-                            f"&markets=h2h&oddsFormat=decimal&apiKey={urllib.parse.quote(KEY)}")
-        except Exception as e:
-            say(f"- ⚠️ {k} : {e}")
+        url = (f"{BASE}/sports/{k}/odds/?regions={REGIONS}"
+               f"&markets=h2h&oddsFormat=decimal&apiKey={urllib.parse.quote(KEY)}")
+        evs = None
+        for attempt in range(2):          # 1 reprise (401/429 parfois transitoires)
+            try:
+                evs, hdr = http(url)
+                break
+            except Exception as e:
+                if attempt == 0:
+                    continue
+                say(f"- ⚠️ {k} : {e}")
+        if evs is None:
             continue
         used += 1
         for ev in evs:
@@ -171,9 +178,9 @@ def load_absences():
     global _ABS
     if _ABS is not None:
         return _ABS
-    merged = {}   # team -> list
-    for fname in ("absences-auto.json", "absences.json"):   # manuel écrase auto
-        p = os.path.join(HERE, fname)
+    merged = {}   # team -> list (chaque absent tagué _auto=True/False)
+    for fname, auto in (("absences-auto.json", True), ("absences.json", False)):
+        p = os.path.join(HERE, fname)                       # manuel écrase auto
         if not os.path.exists(p):
             continue
         try:
@@ -183,7 +190,7 @@ def load_absences():
         for team, lst in (d.get("equipes") or {}).items():
             if team.startswith("_") or not lst:
                 continue
-            merged[team] = lst
+            merged[team] = [{**a, "_auto": auto} for a in lst]
     _ABS = [(set(norm(team)), team, lst) for team, lst in merged.items()]
     return _ABS
 
@@ -199,12 +206,12 @@ def _surname(name):
 
 _NOTES = None
 def load_notes():
-    """Note par joueur = valeur marchande Transfermarkt. Renvoie {nom_normalisé:val}
-    et {nom_de_famille:val_max}. Chargé une seule fois, seulement si nécessaire."""
+    """Note par joueur = valeur marchande Transfermarkt. Renvoie (full, last, club) :
+    {nom:val}, {nom_de_famille:val_max}, {nom:club} pour vérifier l'effectif."""
     global _NOTES
     if _NOTES is not None:
         return _NOTES
-    full, last = {}, {}
+    full, last, club = {}, {}, {}
     try:
         txt = gzip.decompress(urllib.request.urlopen(
             urllib.request.Request(f"{R2}/players.csv.gz", headers={"User-Agent": TM_UA}),
@@ -216,23 +223,38 @@ def load_notes():
                 continue
             nm = nkey(p.get("name", ""))
             if nm:
+                if v >= full.get(nm, -1):        # garde le club du record de + forte valeur
+                    club[nm] = p.get("current_club_name", "")
                 full[nm] = max(full.get(nm, 0), v)
             sn = _surname(p.get("name", ""))
             if sn:
                 last[sn] = max(last.get(sn, 0), v)
     except Exception as e:
         say(f"_⚠️ Notes joueurs indisponibles ({e}) — poids manuels uniquement._")
-    _NOTES = (full, last)
+    _NOTES = (full, last, club)
     return _NOTES
 
 
 def player_note(name):
     """Valeur marchande du joueur : match nom complet, sinon nom de famille (max)."""
-    full, last = load_notes()
+    full, last, _ = load_notes()
     n = nkey(name)
     if n in full:
         return full[n]
     return last.get(_surname(name), 0)
+
+
+def squad_ok(name, team):
+    """Vrai si le joueur appartient au CLUB `team` (Transfermarkt) — garde-fou
+    anti-bruit pour les absences auto. Faux si le club ne correspond pas ou si
+    l'équipe n'est pas un club (sélection nationale : non vérifiable → manuel only)."""
+    full, _, club = load_notes()
+    cn = club.get(nkey(name))
+    if not cn:
+        return False
+    ct, tt = set(norm(cn)), set(norm(team))
+    shared = ct & tt
+    return bool(shared) and max((len(t) for t in shared), default=0) >= 5
 
 
 def entry_poids(a):
@@ -257,6 +279,11 @@ def team_impact(name):
         if shared and len(shared) / len(toks) >= 0.6:
             annotated, tot = [], 0.0
             for a in lst:
+                # garde-fou : une absence AUTO n'est retenue que si le joueur est
+                # bien dans l'effectif du club (sinon bruit presse / sélection).
+                if a.get("_auto") and not squad_ok(a.get("joueur", ""), team):
+                    annotated.append({**a, "_poids": 0.0, "_note": None, "_rejete": True})
+                    continue
                 w, note = entry_poids(a)
                 tot += w
                 annotated.append({**a, "_poids": w, "_note": note})
@@ -343,12 +370,15 @@ def main():
                     continue
                 parts = []
                 for a in lst:
-                    note = a.get("_note")
+                    if a.get("_rejete") or a.get("_poids", 0) <= 0:
+                        continue   # bruit presse rejeté / joueur sans note : ignoré
                     tag = f"{a.get('joueur','?')} ({a.get('raison','')})".strip()
+                    note = a.get("_note")
                     if note:
                         tag += f" · note {note/1e6:.0f} M€ → −{a.get('_poids',0)*100:.0f}%"
                     parts.append(tag)
-                say(f"- **{m[key]}** −{imp*100:.0f}% de force : " + " ; ".join(parts))
+                if parts:
+                    say(f"- **{m[key]}** −{imp*100:.0f}% de force : " + " ; ".join(parts))
             say(f"  → marché {praw['1']*100:.0f}/{praw['N']*100:.0f}/{praw['2']*100:.0f} "
                 f"⇒ ajusté **{padj['1']*100:.0f}/{padj['N']*100:.0f}/{padj['2']*100:.0f}** "
                 f"(match {i})")
