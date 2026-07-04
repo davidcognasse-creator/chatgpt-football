@@ -1,0 +1,8 @@
+{
+  "note": "Absences connues juste avant la clôture des paris (presse/X). C'est ICI qu'est l'edge : le marché n'a pas encore bougé. poids = part de la FORCE de l'équipe perdue par ce joueur (0..1 ; une star ≈ 0.12–0.20, un titulaire ≈ 0.05–0.10). Le nom d'équipe doit correspondre à dom/ext de grille.json.",
+  "equipes": {
+    "_exemple_France": [
+      {"joueur": "Mbappé", "poids": 0.15, "raison": "repos (exemple, non appliqué)"}
+    ]
+  }
+}

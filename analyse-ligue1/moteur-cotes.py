@@ -154,10 +154,53 @@ def find_event(dom, ext, pool):
             "ev": f"{ev['home']}–{ev['away']}", "flip": flip}
 
 
+_ABS = None
+def load_absences():
+    """[(token_set, [absences]), ...] depuis absences.json (clés '_...' ignorées)."""
+    global _ABS
+    if _ABS is not None:
+        return _ABS
+    _ABS = []
+    p = os.path.join(HERE, "absences.json")
+    if os.path.exists(p):
+        d = json.load(open(p, encoding="utf-8"))
+        for team, lst in (d.get("equipes") or {}).items():
+            if team.startswith("_") or not lst:
+                continue
+            _ABS.append((set(norm(team)), team, lst))
+    return _ABS
+
+
+def team_impact(name):
+    """Impact total (part de force perdue, plafonné) + liste des absents pour `name`."""
+    q = set(norm(name))
+    if not q:
+        return 0.0, []
+    for toks, team, lst in load_absences():
+        if not toks:
+            continue
+        shared = q & toks
+        if shared and len(shared) / len(toks) >= 0.6:
+            imp = min(0.6, sum(float(a.get("poids", 0)) for a in lst))
+            return imp, lst
+    return 0.0, []
+
+
 def ajust_actualite(dom, ext, p):
-    """Hook absences presse/X. Neutre pour l'instant (le moteur Node press/social
-    alimentera un absences.json ; on l'appliquera ici, pondéré par valeur joueur)."""
-    return p
+    """Corrige les probas marché avec les absents connus (absences.json), pondérés
+    par leur poids. La force perdue par une équipe profite au nul ET à l'adversaire.
+    Renvoie (probas_ajustées, info) — c'est l'edge : le marché n'a pas encore bougé."""
+    ih, absh = team_impact(dom)
+    ia, absa = team_impact(ext)
+    if ih <= 0 and ia <= 0:
+        return p, None
+    rem_h, rem_a = p["1"] * ih, p["2"] * ia          # proba de victoire perdue
+    r1 = p["1"] - rem_h + rem_a * 0.5                 # l'adversaire affaibli me profite (moitié)
+    r2 = p["2"] - rem_a + rem_h * 0.5
+    rN = p["N"] + (rem_h + rem_a) * 0.5              # l'autre moitié va au nul
+    s = r1 + r2 + rN
+    adj = {"1": r1 / s, "N": rN / s, "2": r2 / s}
+    return adj, {"h": (ih, absh), "a": (ia, absa)}
 
 
 def main():
@@ -178,7 +221,7 @@ def main():
 
     say("| # | Match | Marché 1·N·2 | Foule 1·N·2 | Prono marché | Foule | Books | Écart |")
     say("|---|---|---|---|---|---|---|---|")
-    out, divergences, couverts = [], [], 0
+    out, divergences, couverts, ajustes = [], [], 0, []
     for i, m in enumerate(grid["matchs"], 1):
         f = m["foule"]; ft = f["1"] + f["N"] + f["2"] or 1
         foule = {k: f[k] / ft for k in ("1", "N", "2")}
@@ -192,20 +235,41 @@ def main():
                         "p": foule, "source": "foule (non coté)"})
             continue
         couverts += 1
-        p = ajust_actualite(m["dom"], m["ext"], e["p"])
+        p, info = ajust_actualite(m["dom"], m["ext"], e["p"])
         mp = max(("1", "N", "2"), key=lambda k: p[k])
         flag = ""
         if mp != cp:
             flag = f"**{p[mp]-foule[mp]:+.0%}**"
             divergences.append((i, m, mp, cp, p, foule))
+        note = " ✎" if info else ""
+        if info:
+            ajustes.append((i, m, info, e["p"], p))
         say(f"| {i} | {m['dom']}–{m['ext']} | "
-            f"{p['1']*100:.0f}/{p['N']*100:.0f}/{p['2']*100:.0f} | "
+            f"{p['1']*100:.0f}/{p['N']*100:.0f}/{p['2']*100:.0f}{note} | "
             f"{foule['1']*100:.0f}/{foule['N']*100:.0f}/{foule['2']*100:.0f} | "
             f"**{mp}** | {cp} | {e['nbooks']} | {flag} |")
         out.append({"dom": m["dom"], "ext": m["ext"], "foule": f,
-                    "p": p, "source": f"cotes ({e['nbooks']} books)"})
+                    "p": p, "source": f"cotes ({e['nbooks']} books)"
+                    + (" + absents" if info else "")})
 
-    say(f"\n**Couverture marché : {couverts}/{len(grid['matchs'])} matchs cotés.**\n")
+    say(f"\n**Couverture marché : {couverts}/{len(grid['matchs'])} matchs cotés.**")
+    say(f"_{len(ajustes)} match(s) corrigé(s) par les absents (✎)._\n" if ajustes
+        else "_Aucun absent renseigné (absences.json) — probas = marché brut._\n")
+
+    if ajustes:
+        say("## 🩹 Ajustements absences (edge : le marché n'a pas encore bougé)")
+        for i, m, info, praw, padj in ajustes:
+            for side, key in (("h", "dom"), ("a", "ext")):
+                imp, lst = info[side]
+                if imp <= 0:
+                    continue
+                who = ", ".join(f"{a.get('joueur','?')} ({a.get('raison','')})".strip()
+                                for a in lst)
+                say(f"- **{m[key]}** −{imp*100:.0f}% de force : {who}")
+            say(f"  → marché {praw['1']*100:.0f}/{praw['N']*100:.0f}/{praw['2']*100:.0f} "
+                f"⇒ ajusté **{padj['1']*100:.0f}/{padj['N']*100:.0f}/{padj['2']*100:.0f}** "
+                f"(match {i})")
+        say("")
 
     say("## 🎯 Divergences marché vs foule (value de pool)")
     if divergences:
