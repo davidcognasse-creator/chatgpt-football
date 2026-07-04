@@ -1,0 +1,40 @@
+name: Sonde Transfermarkt (valeurs)
+
+# Lancement MANUEL. Vérifie l'accès au dataset public Transfermarkt (valeurs
+# marchandes) et qu'on peut construire une note d'équipe = somme du XI.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sonde-transfermarkt
+  cancel-in-progress: false
+
+jobs:
+  sonde:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sonder le dataset Transfermarkt
+        working-directory: analyse-ligue1
+        run: python3 sonde-transfermarkt.py
+
+      - name: Committer le rapport
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/SONDE-TRANSFERMARKT.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(sonde): dataset Transfermarkt (valeurs marchandes)"
+            git push
+          else
+            echo "Aucun changement."
+          fi
