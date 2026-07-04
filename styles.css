@@ -1225,3 +1225,21 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   background: var(--bg-soft); border: 1px solid var(--card-border);
 }
 .theme-toggle:hover { border-color: var(--accent); }
+
+/* ---- Mode clair : corrections de contraste (textes pensés pour fond sombre) ---- */
+:root[data-theme="light"] .hero h1 {
+  background: linear-gradient(180deg, #16213f 20%, #45557f);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+:root[data-theme="light"] .loto-tag b,
+:root[data-theme="light"] .grid-stat .v,
+:root[data-theme="light"] .pf-big,
+:root[data-theme="light"] .stat .num,
+:root[data-theme="light"] .pf-val { color: #16213f; }
+:root[data-theme="light"] .loto-tag { border-color: rgba(30, 50, 110, 0.18); }
+:root[data-theme="light"] .brand-title { color: #16213f; }
+:root[data-theme="light"] .nav-link { color: #3b466a; background: #fff; }
+:root[data-theme="light"] .nav-link.active { color: #fff; }
+:root[data-theme="light"] .lang-current { background: #fff; }
+:root[data-theme="light"] .pick.na { background: rgba(30,50,110,0.08); }
+:root[data-theme="light"] .prob .pN { background: rgba(30,50,110,0.1); color: #45557f; }
