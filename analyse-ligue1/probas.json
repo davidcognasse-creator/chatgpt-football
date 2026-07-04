@@ -10,11 +10,11 @@
         "2": 80
       },
       "p": {
-        "1": 0.08247422680412371,
-        "N": 0.09278350515463918,
-        "2": 0.8247422680412371
+        "1": 0.15,
+        "N": 0.22,
+        "2": 0.63
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Canada",
@@ -25,11 +25,11 @@
         "2": 63
       },
       "p": {
-        "1": 0.15841584158415842,
-        "N": 0.21782178217821782,
-        "2": 0.6237623762376238
+        "1": 0.22,
+        "N": 0.26,
+        "2": 0.52
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Bresil",
@@ -40,11 +40,11 @@
         "2": 12
       },
       "p": {
-        "1": 0.68,
-        "N": 0.2,
+        "1": 0.66,
+        "N": 0.22,
         "2": 0.12
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Qingdao Hainiu",
@@ -55,11 +55,11 @@
         "2": 70
       },
       "p": {
-        "1": 0.16,
-        "N": 0.14,
-        "2": 0.7
+        "1": 0.2,
+        "N": 0.24,
+        "2": 0.56
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Shanghai Shenhua",
@@ -70,11 +70,11 @@
         "2": 8
       },
       "p": {
-        "1": 0.73,
-        "N": 0.19,
-        "2": 0.08
+        "1": 0.6,
+        "N": 0.24,
+        "2": 0.16
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Gimcheon Sangmu",
@@ -85,11 +85,11 @@
         "2": 15
       },
       "p": {
-        "1": 0.48,
-        "N": 0.37,
-        "2": 0.15
+        "1": 0.44,
+        "N": 0.3,
+        "2": 0.26
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "FC Seoul",
@@ -100,11 +100,11 @@
         "2": 6
       },
       "p": {
-        "1": 0.87,
-        "N": 0.07,
-        "2": 0.06
+        "1": 0.66,
+        "N": 0.21,
+        "2": 0.13
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Gwangju",
@@ -115,11 +115,11 @@
         "2": 77
       },
       "p": {
-        "1": 0.12,
-        "N": 0.11,
-        "2": 0.77
+        "1": 0.2,
+        "N": 0.24,
+        "2": 0.56
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Elfsborg",
@@ -130,11 +130,11 @@
         "2": 22
       },
       "p": {
-        "1": 0.44,
-        "N": 0.34,
-        "2": 0.22
+        "1": 0.3,
+        "N": 0.28,
+        "2": 0.42
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "IFK Goteborg",
@@ -145,11 +145,11 @@
         "2": 18
       },
       "p": {
-        "1": 0.47,
-        "N": 0.35,
-        "2": 0.18
+        "1": 0.4,
+        "N": 0.28,
+        "2": 0.32
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Kalmar",
@@ -160,11 +160,11 @@
         "2": 5
       },
       "p": {
-        "1": 0.88,
-        "N": 0.07,
-        "2": 0.05
+        "1": 0.62,
+        "N": 0.24,
+        "2": 0.14
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Vancouver",
@@ -175,11 +175,11 @@
         "2": 12
       },
       "p": {
-        "1": 0.73,
-        "N": 0.15,
-        "2": 0.12
+        "1": 0.56,
+        "N": 0.25,
+        "2": 0.19
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Atletico Ottawa",
@@ -190,11 +190,11 @@
         "2": 24
       },
       "p": {
-        "1": 0.51,
-        "N": 0.25,
-        "2": 0.24
+        "1": 0.46,
+        "N": 0.28,
+        "2": 0.26
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Supra Quebec",
@@ -205,11 +205,11 @@
         "2": 74
       },
       "p": {
-        "1": 0.12371134020618557,
-        "N": 0.1134020618556701,
-        "2": 0.7628865979381443
+        "1": 0.2,
+        "N": 0.24,
+        "2": 0.56
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     },
     {
       "dom": "Barcelona SC",
@@ -220,11 +220,11 @@
         "2": 5
       },
       "p": {
-        "1": 0.7604166666666666,
-        "N": 0.1875,
-        "2": 0.052083333333333336
+        "1": 0.58,
+        "N": 0.26,
+        "2": 0.16
       },
-      "source": "foule (non coté)"
+      "source": "estimation experte (provisoire, sans cotes)"
     }
   ]
 }

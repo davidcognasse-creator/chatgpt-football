@@ -26,7 +26,8 @@ def load():
     p = os.path.join(HERE, "probas.json")
     if os.path.exists(p):
         d = json.load(open(p, encoding="utf-8"))
-        return d["matchs"], "modèle (cotes/actualité)"
+        src = (d["matchs"][0].get("source") if d.get("matchs") else None) or "modèle (cotes/actualité)"
+        return d["matchs"], src
     # placeholder : la foule (juste pour valider l'optimiseur)
     g = json.load(open(os.path.join(HERE, "grille.json"), encoding="utf-8"))
     ms = []
