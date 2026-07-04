@@ -188,7 +188,6 @@
     }
     renderStats(entries);
     renderInsight(entries);
-    renderPaper(entries);
     listEl.innerHTML = entries.map(row).join("");
     listEl.querySelectorAll(".hist-card").forEach((el, i) => {
       el.style.animationDelay = i * 40 + "ms";

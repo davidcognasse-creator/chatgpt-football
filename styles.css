@@ -1126,3 +1126,21 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 @media (max-width: 720px) {
   .pf-platforms { grid-template-columns: 1fr; }
 }
+
+/* Tableau « Gain de l'IA » match par match */
+.g-tablewrap { max-width: 980px; margin: 18px auto 30px; overflow-x: auto; }
+.g-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 660px; }
+.g-table th {
+  text-align: left; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--muted-soft); padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.g-table td { padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.g-table tbody tr:hover td { background: rgba(255,255,255,0.02); }
+.g-date { color: var(--muted-soft); white-space: nowrap; }
+.g-match { font-weight: 600; }
+.g-prob { color: var(--accent-2); font-weight: 700; font-size: 0.8rem; }
+.g-odds { font-variant-numeric: tabular-nums; color: #a3b6e8; }
+.g-res { white-space: nowrap; }
+.g-table .pf-pos { color: #16d38a; font-weight: 700; font-variant-numeric: tabular-nums; }
+.g-table .pf-neg { color: #ff6b7d; font-weight: 700; font-variant-numeric: tabular-nums; }
+.g-lost td { background: rgba(255,107,125,0.05); }

@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Groupes &amp; classement · Chat Game Prediction Technology</title>
-  <meta name="description" content="Crée un groupe, invite tes amis, pronostique les matchs et affronte le bot au classement." />
-  <link rel="canonical" href="https://chatgpt.football/groupes.html" />
+  <title>Gain de l'IA · Chat Game Prediction Technology</title>
+  <meta name="description" content="Portefeuille virtuel : ce qu'aurait rapporté une mise fictive de 20 € sur chaque match où l'IA donnait le favori à plus de 50 %. Simulation éducative, aucun pari réel." />
+  <link rel="canonical" href="https://chatgpt.football/gains.html" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="theme-color" content="#070b16" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Chat Game Prediction Technology" />
-  <meta property="og:title" content="Groupes &amp; classement · Pronostics entre amis" />
-  <meta property="og:description" content="Crée un groupe, invite tes amis, pronostique les matchs de la CDM 2026 et affronte le bot au classement." />
-  <meta property="og:url" content="https://chatgpt.football/groupes.html" />
+  <meta property="og:title" content="Gain de l'IA · Portefeuille virtuel · CDM 2026" />
+  <meta property="og:description" content="Gains théoriques Unibet vs Polymarket d'une stratégie fictive suivant les pronostics IA. Simulation éducative." />
+  <meta property="og:url" content="https://chatgpt.football/gains.html" />
   <meta property="og:image" content="https://chatgpt.football/og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Groupes &amp; classement · Pronostics entre amis" />
-  <meta name="twitter:description" content="Crée un groupe, invite tes amis et affronte le bot au classement." />
-  <meta name="twitter:image" content="https://chatgpt.football/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -47,36 +42,40 @@
     <nav class="header-nav">
       <a href="index.html" class="nav-link" data-i18n="nav_predictions">Pronostics</a>
       <a href="simulateur.html" class="nav-link" data-i18n="nav_winner">Qui va gagner&nbsp;?</a>
-      <a href="groupes.html" class="nav-link active" data-i18n="nav_groups">Mon groupe</a>
+      <a href="groupes.html" class="nav-link" data-i18n="nav_groups">Mon groupe</a>
       <a href="carte.html" class="nav-link" data-i18n="nav_card">Ma Carte Panini</a>
       <a href="historique.html" class="nav-link" data-i18n="nav_history">Historique</a>
-      <a href="gains.html" class="nav-link" data-i18n="nav_gains">Gain de l'IA</a>
+      <a href="gains.html" class="nav-link active" data-i18n="nav_gains">Gain de l'IA</a>
       <span class="lang-switch" data-lang-switcher></span>
     </nav>
   </header>
 
   <main>
-    <section class="hero" style="padding-bottom:18px">
-      <p class="eyebrow" data-i18n="grp_eyebrow">Entre amis</p>
-      <h1 data-i18n="grp_h1">Groupes &amp; classement</h1>
-      <p class="hero-lede" data-i18n="grp_lede">
-        Crée un groupe, invite tes amis, pronostique chaque match à venir et
-        grimpe au classement, le 🤖 bot du site joue aussi !
+    <section class="hero">
+      <p class="eyebrow" data-i18n="pf_title">Portefeuille virtuel</p>
+      <h1 data-i18n="nav_gains">Gain de l'IA</h1>
+      <p class="hero-lede" data-i18n="gains_lede">
+        Si on avait misé 20 € fictifs sur chaque match où l'IA donnait le favori à plus de 50 %.
+        Gains théoriques Unibet vs Polymarket. Simulation éducative — aucun pari réel.
       </p>
     </section>
 
-    <section id="app" class="app-shell" aria-live="polite">
+    <section id="gainsApp" aria-live="polite">
       <p class="empty-state" data-i18n="grp_loading">Chargement…</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p><strong data-i18n="foot_disclaimer_label">Avertissement.</strong> <span data-i18n="grp_foot_disclaimer">Jeu de pronostics entre amis, à but de divertissement.</span></p>
-    <p class="footer-credit" data-i18n="grp_foot_credit">Comptes &amp; données : Firebase · CDM 2026</p>
+    <p>
+      <strong data-i18n="foot_disclaimer_label">Avertissement.</strong>
+      <span data-i18n="his_foot_disclaimer">Pronostics générés automatiquement à des fins
+      d'illustration. Ils ne constituent pas un conseil de pari.</span>
+    </p>
+    <p class="footer-credit" data-i18n="his_foot_credit">Précision calculée sur les matchs terminés · CDM 2026</p>
   </footer>
 
-  <script src="firebase-config.js"></script>
+  <script src="history.js"></script>
   <script src="flags.js"></script>
-  <script type="module" src="groupes.js"></script>
+  <script src="gains.js"></script>
 </body>
 </html>
