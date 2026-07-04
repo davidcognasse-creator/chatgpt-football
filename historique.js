@@ -41,8 +41,9 @@
       return ` <span class="score-extra">🥅 (${t("his_pens")}${sc})</span>`;
     }
     if (a.decidedBy === "aet") {
-      const fin = a.full ? `${a.full.home}‑${a.full.away} ` : "";
-      return ` <span class="score-extra">⏱ (${fin}${t("his_aet")})</span>`;
+      return a.full
+        ? ` <span class="score-extra">⏱ (${a.full.home}‑${a.full.away})</span>`
+        : ` <span class="score-extra">⏱</span>`;
     }
     return "";
   }
