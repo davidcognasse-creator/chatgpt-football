@@ -1,0 +1,42 @@
+name: Optimiseur de grille Loto Foot
+
+# Lancement MANUEL. Lit analyse-ligue1/probas.json (produit par le moteur
+# cotes/actualité) ou, à défaut, la foule de grille.json (placeholder), et
+# répartit doubles/triples sous budget 50 € pour maximiser P(15/14/13).
+# Committe GRILLE-OPTIM.md.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: grille-optim
+  cancel-in-progress: false
+
+jobs:
+  optim:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Optimiser la grille
+        working-directory: analyse-ligue1
+        run: python3 grille-optim.py
+
+      - name: Committer le rapport
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/GRILLE-OPTIM.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(lotofoot): grille optimisée sous budget"
+            git push
+          else
+            echo "Aucun changement."
+          fi
