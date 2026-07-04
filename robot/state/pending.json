@@ -44,51 +44,6 @@
       }
     }
   },
-  "1569870": {
-    "id": "1569870",
-    "datetime": "2026-07-04T21:00:00+00:00",
-    "home": {
-      "name": "Paraguay",
-      "flag": "🇵🇾",
-      "code": "PAR"
-    },
-    "away": {
-      "name": "France",
-      "flag": "🇫🇷",
-      "code": "FRA"
-    },
-    "predicted": {
-      "probs": {
-        "home": 13,
-        "draw": 17,
-        "away": 70
-      },
-      "score": {
-        "home": 0,
-        "away": 3
-      },
-      "favored": "away"
-    },
-    "sources": {
-      "betting": {
-        "home": 6,
-        "draw": 14,
-        "away": 80
-      },
-      "form": {
-        "home": 28,
-        "draw": 26,
-        "away": 46
-      },
-      "h2h": null,
-      "press": null,
-      "social": {
-        "home": 30,
-        "draw": 26,
-        "away": 44
-      }
-    }
-  },
   "1570714": {
     "id": "1570714",
     "datetime": "2026-07-06T00:00:00+00:00",
@@ -315,55 +270,6 @@
         "home": 18,
         "draw": 26,
         "away": 56
-      }
-    }
-  },
-  "c798a1ffdeda28e82d930e7145a8ff10": {
-    "id": "c798a1ffdeda28e82d930e7145a8ff10",
-    "datetime": "2026-07-04T21:00:00Z",
-    "home": {
-      "name": "Paraguay",
-      "flag": "🇵🇾",
-      "code": "PAR"
-    },
-    "away": {
-      "name": "France",
-      "flag": "🇫🇷",
-      "code": "FRA"
-    },
-    "predicted": {
-      "probs": {
-        "home": 12,
-        "draw": 19,
-        "away": 69
-      },
-      "score": {
-        "home": 0,
-        "away": 3
-      },
-      "favored": "away"
-    },
-    "sources": {
-      "betting": {
-        "home": 6,
-        "draw": 14,
-        "away": 81
-      },
-      "form": {
-        "home": 28,
-        "draw": 26,
-        "away": 46
-      },
-      "h2h": null,
-      "press": {
-        "home": 9,
-        "draw": 26,
-        "away": 65
-      },
-      "social": {
-        "home": 27,
-        "draw": 26,
-        "away": 47
       }
     }
   },

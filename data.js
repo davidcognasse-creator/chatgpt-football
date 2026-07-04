@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-04T19:40:53.670Z",
+  "updatedAt": "2026-07-04T23:16:49.817Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -12,90 +12,6 @@ window.WC_DATA = {
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "1567824",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-04T17:00:00+00:00",
-      "venue": "NRG Stadium",
-      "home": {
-        "name": "Canada",
-        "flag": "🇨🇦",
-        "code": "CAN"
-      },
-      "away": {
-        "name": "Morocco",
-        "flag": "🇲🇦",
-        "code": "MAR"
-      },
-      "probs": {
-        "home": 23,
-        "draw": 27,
-        "away": 50
-      },
-      "predictedScore": {
-        "home": 1,
-        "away": 2
-      },
-      "confidence": 66,
-      "analysis": "Morocco part favori de justesse avec 50% de chances estimées. Les cotes confirment (53%). La forme récente et le public vont dans le même sens.",
-      "scorers": null,
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 19,
-            "draw": 28,
-            "away": 53
-          },
-          "favored": "away",
-          "detail": "13 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 31,
-            "draw": 26,
-            "away": 43
-          },
-          "favored": "away",
-          "detail": "VDVN vs VVVN"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 36,
-            "draw": 26,
-            "away": 38
-          },
-          "favored": "away",
-          "detail": "X · 23067/23983 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 0,
-        "away": 3,
-        "outcome": "away"
-      }
-    },
     {
       "id": "1569870",
       "stage": "À venir",
@@ -172,6 +88,12 @@ window.WC_DATA = {
           "favored": "away",
           "detail": "X · 26165/38351 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 0,
+        "away": 1,
+        "outcome": "away"
       }
     },
     {

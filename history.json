@@ -1,6 +1,114 @@
 {
-  "updatedAt": "2026-07-04T19:40:53.668Z",
+  "updatedAt": "2026-07-04T23:16:49.815Z",
   "entries": [
+    {
+      "id": "1569870",
+      "datetime": "2026-07-04T21:00:00+00:00",
+      "home": {
+        "name": "Paraguay",
+        "flag": "🇵🇾",
+        "code": "PAR"
+      },
+      "away": {
+        "name": "France",
+        "flag": "🇫🇷",
+        "code": "FRA"
+      },
+      "predicted": {
+        "probs": {
+          "home": 13,
+          "draw": 17,
+          "away": 70
+        },
+        "score": {
+          "home": 0,
+          "away": 3
+        },
+        "favored": "away"
+      },
+      "sources": {
+        "betting": {
+          "home": 6,
+          "draw": 14,
+          "away": 80
+        },
+        "form": {
+          "home": 28,
+          "draw": 26,
+          "away": 46
+        },
+        "h2h": null,
+        "press": null,
+        "social": {
+          "home": 30,
+          "draw": 26,
+          "away": 44
+        }
+      },
+      "actual": {
+        "home": 0,
+        "away": 1,
+        "outcome": "away"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
+    {
+      "id": "c798a1ffdeda28e82d930e7145a8ff10",
+      "datetime": "2026-07-04T21:00:00Z",
+      "home": {
+        "name": "Paraguay",
+        "flag": "🇵🇾",
+        "code": "PAR"
+      },
+      "away": {
+        "name": "France",
+        "flag": "🇫🇷",
+        "code": "FRA"
+      },
+      "predicted": {
+        "probs": {
+          "home": 12,
+          "draw": 19,
+          "away": 69
+        },
+        "score": {
+          "home": 0,
+          "away": 3
+        },
+        "favored": "away"
+      },
+      "sources": {
+        "betting": {
+          "home": 6,
+          "draw": 14,
+          "away": 81
+        },
+        "form": {
+          "home": 28,
+          "draw": 26,
+          "away": 46
+        },
+        "h2h": null,
+        "press": {
+          "home": 9,
+          "draw": 26,
+          "away": 65
+        },
+        "social": {
+          "home": 27,
+          "draw": 26,
+          "away": 47
+        }
+      },
+      "actual": {
+        "home": 0,
+        "away": 1,
+        "outcome": "away"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "1567824",
       "datetime": "2026-07-04T17:00:00+00:00",
