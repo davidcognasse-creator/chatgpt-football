@@ -111,8 +111,8 @@ def main():
            "répartition maximise **à la fois** la grille parfaite ET le P(≥13) — "
            "vérifié par force brute, il n'existe pas de grille « plus sûre » distincte._")
 
-    say("---\n_Estimations provisoires (sans cotes). Le moteur cotes/actualité "
-        "(probas.json) donnera le vrai edge au retour du quota._")
+    say("---\n_Répartition doubles/triples sur les matchs les plus incertains. "
+        "Probas = " + src + " (via moteur-cotes → probas.json)._")
     open(os.path.join(HERE, "GRILLE-OPTIM.md"), "w", encoding="utf-8").write("\n".join(L) + "\n")
 
 

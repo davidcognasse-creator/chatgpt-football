@@ -104,20 +104,31 @@ def team_id(name):
     return _TEAM[key]
 
 
-def resolve_fixture(dom, ext):
-    """Trouve le fixture à venir dom–ext ; renvoie (fid, flip, league) ou None.
-    flip=True si l'API a dom/ext inversés par rapport à la grille."""
-    hid, _ = team_id(dom)
-    if not hid:
-        return None
-    et = set(norm(ext))
-    for r in af(f"/fixtures?team={hid}&next=5"):
+def _find_fx(tid, other):
+    """Dans les 10 prochains matchs de `tid`, trouve celui contre `other` (quel
+    que soit le sens). Renvoie (fid, league, tid_is_home) ou None."""
+    ot = set(norm(other))
+    for r in af(f"/fixtures?team={tid}&next=10"):
         h = r["teams"]["home"]; a = r["teams"]["away"]
-        # le match cherché : l'autre équipe correspond à ext
-        if side_match(list(et), set(norm(a["name"]))) > 0 and h["id"] == hid:
-            return r["fixture"]["id"], False, r["league"]["name"]
-        if side_match(list(et), set(norm(h["name"]))) > 0 and a["id"] == hid:
-            return r["fixture"]["id"], True, r["league"]["name"]
+        opp = a if h["id"] == tid else h
+        if side_match(list(ot), set(norm(opp["name"]))) > 0:
+            return r["fixture"]["id"], r["league"]["name"], h["id"] == tid
+    return None
+
+
+def resolve_fixture(dom, ext):
+    """Trouve le fixture dom–ext ; renvoie (fid, flip, league) ou None.
+    flip=True si l'API a le match dans l'ordre inverse (API domicile = ext)."""
+    hid, _ = team_id(dom)
+    if hid:
+        r = _find_fx(hid, ext)
+        if r:
+            return r[0], (not r[2]), r[1]        # flip si dom n'est PAS à domicile côté API
+    aid, _ = team_id(ext)
+    if aid:
+        r = _find_fx(aid, dom)                    # tid=ext ; r[2]=ext_à_domicile
+        if r:
+            return r[0], r[2], r[1]               # flip si ext est à domicile côté API
     return None
 
 
