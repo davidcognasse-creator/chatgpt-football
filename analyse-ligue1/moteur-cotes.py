@@ -62,10 +62,15 @@ def http(url):
         return json.loads(r.read().decode("utf-8", "replace")), dict(r.headers)
 
 
-def active_soccer_keys():
+def active_soccer_keys(whitelist=None):
+    """Ligues foot actives ; si `whitelist` (grille.json → "sports") est fournie,
+    ne garde que celles-là → beaucoup moins de crédits The Odds API consommés."""
     sports, _ = http(f"{BASE}/sports/?apiKey={urllib.parse.quote(KEY)}")
     keys = [s["key"] for s in sports
             if s.get("group") == "Soccer" and s.get("active") and not s.get("has_outrights")]
+    if whitelist:
+        wl = set(whitelist)
+        keys = [k for k in keys if k in wl]
     return keys
 
 
@@ -328,8 +333,13 @@ def main():
         return finish(grid, [])
 
     try:
-        keys = active_soccer_keys()
-        say(f"Ligues foot actives sur le marché : {len(keys)}.")
+        wl = grid.get("sports")
+        keys = active_soccer_keys(wl)
+        if wl:
+            say(f"Ligues ciblées (grille.json → sports) : {len(keys)}/{len(wl)} actives.")
+        else:
+            say(f"Ligues foot actives sur le marché : {len(keys)} "
+                "(astuce : ajoute \"sports\":[...] à grille.json pour économiser le quota).")
     except Exception as e:
         say(f"❌ Liste des sports indisponible : {e}")
         return finish(grid, [])

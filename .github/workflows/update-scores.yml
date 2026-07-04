@@ -8,7 +8,7 @@ name: Régler les scores
 # réduit le délai entre la fin d'un match et son passage dans l'historique.
 on:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "17 */2 * * *"   # 12x/jour (au lieu de 24) pour économiser le quota The Odds API
   workflow_dispatch:
 
 permissions:

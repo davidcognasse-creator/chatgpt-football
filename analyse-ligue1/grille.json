@@ -1,6 +1,13 @@
 {
   "nom": "Loto Foot 15 N°51",
   "note": "foule = répartition des mises FDJ (approx., éditable). dom/ext = noms tels qu'affichés.",
+  "sports": [
+    "soccer_china_superleague",
+    "soccer_korea_kleague1",
+    "soccer_sweden_allsvenskan",
+    "soccer_usa_mls",
+    "soccer_conmebol_copa_libertadores"
+  ],
   "matchs": [
     {"dom": "Paraguay", "ext": "France", "foule": {"1": 8, "N": 9, "2": 80}},
     {"dom": "Canada", "ext": "Maroc", "foule": {"1": 16, "N": 22, "2": 63}},
