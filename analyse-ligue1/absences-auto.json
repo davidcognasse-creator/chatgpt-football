@@ -3,6 +3,14 @@
   "equipes": {
     "Paraguay": [
       {
+        "joueur": "Sports Mole",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Les Bleus",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Piero Hincapie",
         "raison": "suspendu"
       },
@@ -53,21 +61,17 @@
       {
         "joueur": "Santi Gimenez",
         "raison": "suspendu"
-      },
-      {
-        "joueur": "Why Germany",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Minute Goal Against",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Jalal Jayed",
-        "raison": "forfait"
       }
     ],
     "France": [
+      {
+        "joueur": "Sports Mole",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Les Bleus",
+        "raison": "blessé"
+      },
       {
         "joueur": "Worker Suspended Amid",
         "raison": "suspendu"
@@ -90,10 +94,6 @@
       },
       {
         "joueur": "International Pursuit",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Sports Mole",
         "raison": "blessé"
       },
       {
@@ -123,15 +123,31 @@
       {
         "joueur": "William Saliba",
         "raison": "blessé"
-      },
-      {
-        "joueur": "Prince Albert",
-        "raison": "blessé"
       }
     ],
     "Canada": [
       {
-        "joueur": "Chadi Riad",
+        "joueur": "Marsch Says He",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Ever Become",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Jesse Marsch",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Ismael Kone",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Assim Madibo",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Alphonso Davies",
         "raison": "blessé"
       },
       {
@@ -139,31 +155,11 @@
         "raison": "blessé"
       },
       {
+        "joueur": "Chadi Riad",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Other Sports",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Eric Hartman",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Flats Park",
-        "raison": "suspendu"
-      },
-      {
-        "joueur": "Canadian Heritage",
-        "raison": "suspendu"
-      },
-      {
-        "joueur": "Injured Kone",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Ismael Kone",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "South Africa",
         "raison": "blessé"
       }
     ],
@@ -183,6 +179,14 @@
     ],
     "Vancouver": [
       {
+        "joueur": "Sam Shaw",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Blue Jays",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Connor Bedard",
         "raison": "blessé"
       },
@@ -192,10 +196,6 @@
       },
       {
         "joueur": "Chicago Blackhawks",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Blue Jays",
         "raison": "blessé"
       },
       {
@@ -212,10 +212,6 @@
       },
       {
         "joueur": "Richards Street",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "North Van",
         "raison": "blessé"
       }
     ],

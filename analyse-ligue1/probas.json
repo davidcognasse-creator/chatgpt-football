@@ -10,11 +10,11 @@
         "2": 80
       },
       "p": {
-        "1": 0.15,
-        "N": 0.22,
-        "2": 0.63
+        "1": 0.058959551337888515,
+        "N": 0.13843663999166939,
+        "2": 0.8026038086704421
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (13 books)"
     },
     {
       "dom": "Canada",
@@ -25,11 +25,11 @@
         "2": 63
       },
       "p": {
-        "1": 0.22,
-        "N": 0.26,
-        "2": 0.52
+        "1": 0.15841584158415842,
+        "N": 0.21782178217821782,
+        "2": 0.6237623762376238
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "foule (non coté)"
     },
     {
       "dom": "Bresil",
@@ -40,11 +40,11 @@
         "2": 12
       },
       "p": {
-        "1": 0.66,
-        "N": 0.22,
+        "1": 0.68,
+        "N": 0.2,
         "2": 0.12
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "foule (non coté)"
     },
     {
       "dom": "Qingdao Hainiu",
@@ -55,11 +55,11 @@
         "2": 70
       },
       "p": {
-        "1": 0.2,
-        "N": 0.24,
-        "2": 0.56
+        "1": 0.16,
+        "N": 0.14,
+        "2": 0.7
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "foule (non coté)"
     },
     {
       "dom": "Shanghai Shenhua",
@@ -70,11 +70,11 @@
         "2": 8
       },
       "p": {
-        "1": 0.6,
-        "N": 0.24,
-        "2": 0.16
+        "1": 0.73,
+        "N": 0.19,
+        "2": 0.08
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "foule (non coté)"
     },
     {
       "dom": "Gimcheon Sangmu",
@@ -85,11 +85,11 @@
         "2": 15
       },
       "p": {
-        "1": 0.44,
-        "N": 0.3,
-        "2": 0.26
+        "1": 0.3859886507129111,
+        "N": 0.28788758618665045,
+        "2": 0.3261237631004383
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (13 books)"
     },
     {
       "dom": "FC Seoul",
@@ -100,11 +100,11 @@
         "2": 6
       },
       "p": {
-        "1": 0.66,
-        "N": 0.21,
-        "2": 0.13
+        "1": 0.48844974850766787,
+        "N": 0.27755812393444906,
+        "2": 0.23399212755788307
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (13 books)"
     },
     {
       "dom": "Gwangju",
@@ -115,11 +115,11 @@
         "2": 77
       },
       "p": {
-        "1": 0.2,
-        "N": 0.24,
-        "2": 0.56
+        "1": 0.13682706612561174,
+        "N": 0.224765558816695,
+        "2": 0.6384073750576934
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (13 books)"
     },
     {
       "dom": "Elfsborg",
@@ -130,11 +130,11 @@
         "2": 22
       },
       "p": {
-        "1": 0.3,
-        "N": 0.28,
-        "2": 0.42
+        "1": 0.2553897738022573,
+        "N": 0.2601759019920538,
+        "2": 0.4844343242056888
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (11 books)"
     },
     {
       "dom": "IFK Goteborg",
@@ -145,11 +145,11 @@
         "2": 18
       },
       "p": {
-        "1": 0.4,
-        "N": 0.28,
-        "2": 0.32
+        "1": 0.4184349080160137,
+        "N": 0.2683886049314014,
+        "2": 0.31317648705258494
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (13 books)"
     },
     {
       "dom": "Kalmar",
@@ -160,11 +160,11 @@
         "2": 5
       },
       "p": {
-        "1": 0.62,
-        "N": 0.24,
-        "2": 0.14
+        "1": 0.621388587613392,
+        "N": 0.2139863074720957,
+        "2": 0.1646251049145124
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (13 books)"
     },
     {
       "dom": "Vancouver",
@@ -175,11 +175,11 @@
         "2": 12
       },
       "p": {
-        "1": 0.56,
-        "N": 0.25,
-        "2": 0.19
+        "1": 0.73,
+        "N": 0.15,
+        "2": 0.12
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "foule (non coté)"
     },
     {
       "dom": "Atletico Ottawa",
@@ -190,11 +190,11 @@
         "2": 24
       },
       "p": {
-        "1": 0.46,
-        "N": 0.28,
-        "2": 0.26
+        "1": 0.21480114934444616,
+        "N": 0.2583679683117247,
+        "2": 0.5268308823438291
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (12 books)"
     },
     {
       "dom": "Supra Quebec",
@@ -205,11 +205,11 @@
         "2": 74
       },
       "p": {
-        "1": 0.2,
-        "N": 0.24,
-        "2": 0.56
+        "1": 0.12371134020618557,
+        "N": 0.1134020618556701,
+        "2": 0.7628865979381443
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "foule (non coté)"
     },
     {
       "dom": "Barcelona SC",
@@ -220,11 +220,11 @@
         "2": 5
       },
       "p": {
-        "1": 0.58,
-        "N": 0.26,
-        "2": 0.16
+        "1": 0.5845154644967814,
+        "N": 0.2553573965588903,
+        "2": 0.16012713894432837
       },
-      "source": "estimation experte (provisoire, sans cotes)"
+      "source": "cotes (13 books)"
     }
   ]
 }

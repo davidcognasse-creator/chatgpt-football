@@ -1,62 +1,31 @@
 # Moteur cotes → probas Loto Foot (marché vs foule)
 
-Grille : **Loto Foot 15 N°51** · 15 matchs
-
-Ligues foot actives sur le marché : 28.
-- ⚠️ soccer_argentina_primera_division : HTTP Error 401: Unauthorized
-- ⚠️ soccer_austria_bundesliga : HTTP Error 401: Unauthorized
-- ⚠️ soccer_brazil_campeonato : HTTP Error 401: Unauthorized
-- ⚠️ soccer_brazil_serie_b : HTTP Error 401: Unauthorized
-- ⚠️ soccer_china_superleague : HTTP Error 401: Unauthorized
-- ⚠️ soccer_conmebol_copa_libertadores : HTTP Error 401: Unauthorized
-- ⚠️ soccer_conmebol_copa_sudamericana : HTTP Error 401: Unauthorized
-- ⚠️ soccer_denmark_superliga : HTTP Error 401: Unauthorized
-- ⚠️ soccer_efl_champ : HTTP Error 401: Unauthorized
-- ⚠️ soccer_england_efl_cup : HTTP Error 401: Unauthorized
-- ⚠️ soccer_england_league1 : HTTP Error 401: Unauthorized
-- ⚠️ soccer_england_league2 : HTTP Error 401: Unauthorized
-- ⚠️ soccer_epl : HTTP Error 401: Unauthorized
-- ⚠️ soccer_fifa_world_cup : HTTP Error 401: Unauthorized
-- ⚠️ soccer_finland_veikkausliiga : HTTP Error 401: Unauthorized
-- ⚠️ soccer_france_ligue_one : HTTP Error 401: Unauthorized
-- ⚠️ soccer_germany_bundesliga : HTTP Error 401: Unauthorized
-- ⚠️ soccer_germany_dfb_pokal : HTTP Error 401: Unauthorized
-- ⚠️ soccer_italy_serie_a : HTTP Error 401: Unauthorized
-- ⚠️ soccer_korea_kleague1 : HTTP Error 401: Unauthorized
-- ⚠️ soccer_league_of_ireland : HTTP Error 401: Unauthorized
-- ⚠️ soccer_norway_eliteserien : HTTP Error 401: Unauthorized
-- ⚠️ soccer_spain_la_liga : HTTP Error 401: Unauthorized
-- ⚠️ soccer_spl : HTTP Error 401: Unauthorized
-- ⚠️ soccer_sweden_allsvenskan : HTTP Error 401: Unauthorized
-- ⚠️ soccer_sweden_superettan : HTTP Error 401: Unauthorized
-- ⚠️ soccer_switzerland_superleague : HTTP Error 401: Unauthorized
-- ⚠️ soccer_usa_mls : HTTP Error 401: Unauthorized
-
-_0 ligues interrogées · 0 matchs cotés récupérés._
+Grille : **Loto Foot 15 N°51** · 15 matchs · source **API-Football**
 
 | # | Match | Marché 1·N·2 | Foule 1·N·2 | Prono marché | Foule | Books | Écart |
 |---|---|---|---|---|---|---|---|
-| 1 | Paraguay–France | — | 8/9/82 | _non coté_ | 2 | — | — |
+| 1 | Paraguay–France | 6/14/80 | 8/9/82 | **2** | 2 | 13 |  |
 | 2 | Canada–Maroc | — | 16/22/62 | _non coté_ | 2 | — | — |
 | 3 | Bresil–Norvege | — | 68/20/12 | _non coté_ | 1 | — | — |
 | 4 | Qingdao Hainiu–Chengdu Rongcheng | — | 16/14/70 | _non coté_ | 2 | — | — |
 | 5 | Shanghai Shenhua–Zhejiang | — | 73/19/8 | _non coté_ | 1 | — | — |
-| 6 | Gimcheon Sangmu–Jeju | — | 48/37/15 | _non coté_ | 1 | — | — |
-| 7 | FC Seoul–Incheon | — | 87/7/6 | _non coté_ | 1 | — | — |
-| 8 | Gwangju–Ulsan | — | 12/11/77 | _non coté_ | 2 | — | — |
-| 9 | Elfsborg–Hammarby | — | 44/34/22 | _non coté_ | 1 | — | — |
-| 10 | IFK Goteborg–AIK | — | 47/35/18 | _non coté_ | 1 | — | — |
-| 11 | Kalmar–Orgryte | — | 88/7/5 | _non coté_ | 1 | — | — |
+| 6 | Gimcheon Sangmu–Jeju | 39/29/33 | 48/37/15 | **1** | 1 | 13 |  |
+| 7 | FC Seoul–Incheon | 49/28/23 | 87/7/6 | **1** | 1 | 13 |  |
+| 8 | Gwangju–Ulsan | 14/22/64 | 12/11/77 | **2** | 2 | 13 |  |
+| 9 | Elfsborg–Hammarby | 26/26/48 | 44/34/22 | **2** | 1 | 11 | **+26%** |
+| 10 | IFK Goteborg–AIK | 42/27/31 | 47/35/18 | **1** | 1 | 13 |  |
+| 11 | Kalmar–Orgryte | 62/21/16 | 88/7/5 | **1** | 1 | 13 |  |
 | 12 | Vancouver–Inter Toronto | — | 73/15/12 | _non coté_ | 1 | — | — |
-| 13 | Atletico Ottawa–Cavalry | — | 51/25/24 | _non coté_ | 1 | — | — |
+| 13 | Atletico Ottawa–Cavalry | 21/26/53 | 51/25/24 | **2** | 1 | 12 | **+29%** |
 | 14 | Supra Quebec–Forge | — | 12/11/76 | _non coté_ | 2 | — | — |
-| 15 | Barcelona SC–Deportivo Cuenca | — | 76/19/5 | _non coté_ | 1 | — | — |
+| 15 | Barcelona SC–Deportivo Cuenca | 58/26/16 | 76/19/5 | **1** | 1 | 13 |  |
 
-**Couverture marché : 0/15 matchs cotés.**
+**Couverture marché : 9/15 matchs cotés.**
 _Aucun absent renseigné (absences.json) — probas = marché brut._
 
 ## 🎯 Divergences marché vs foule (value de pool)
-_Aucune divergence de pronostic sur les matchs cotés._
+- **Match 9 · Elfsborg–Hammarby** : le marché voit **2** (48%) alors que la foule joue **1** (44%). → la foule sur/sous-estime, value si le marché a raison.
+- **Match 13 · Atletico Ottawa–Cavalry** : le marché voit **2** (53%) alors que la foule joue **1** (51%). → la foule sur/sous-estime, value si le marché a raison.
 
 ---
-_Le marché (cotes dévignées, moyenne multi-books) est le signal primaire. Prochaine couche : corriger avec les absents détectés presse/X, pondérés par la valeur du joueur, AVANT que le marché ne bouge._
+_Cotes API-Football (dévignées, moyenne multi-books) = signal primaire ; repli sur la prédiction maison. Couche absences (compo J-40min + presse/manuel, pondérée par la note) appliquée AVANT que le marché ne bouge._
