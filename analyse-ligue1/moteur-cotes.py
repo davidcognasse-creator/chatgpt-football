@@ -30,7 +30,7 @@ import urllib.parse
 
 KEY = os.environ.get("ODDS_API_KEY", "")
 BASE = "https://api.the-odds-api.com/v4"
-REGIONS = "eu,uk"
+REGIONS = "eu"   # 1 seule région = coût quota /2 vs "eu,uk"
 HERE = os.path.dirname(__file__)
 MAX_LEAGUES = 60  # garde-fou quota
 
@@ -101,6 +101,7 @@ def build_pool(keys):
     d'events enrichis (home/away normalisés + proba dévignée)."""
     pool = []
     used = 0
+    quota_epuise = False
     for k in keys[:MAX_LEAGUES]:
         url = (f"{BASE}/sports/{k}/odds/?regions={REGIONS}"
                f"&markets=h2h&oddsFormat=decimal&apiKey={urllib.parse.quote(KEY)}")
@@ -108,11 +109,21 @@ def build_pool(keys):
         for attempt in range(2):          # 1 reprise (401/429 parfois transitoires)
             try:
                 evs, hdr = http(url)
+                rem = hdr.get("x-requests-remaining")
+                if rem is not None and used == 0:
+                    say(f"_Quota The Odds API restant : {rem} requêtes._")
                 break
             except Exception as e:
+                if "401" in str(e):       # 401 sur /odds = quota épuisé → on arrête
+                    quota_epuise = True
+                    break
                 if attempt == 0:
                     continue
                 say(f"- ⚠️ {k} : {e}")
+        if quota_epuise:
+            say("- ❌ **Quota The Odds API épuisé (401)** — arrêt. Attends le reset "
+                "mensuel ou passe à un plan supérieur ; les matchs retombent sur la foule.")
+            break
         if evs is None:
             continue
         used += 1
