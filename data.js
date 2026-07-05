@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-05T16:55:08.084Z",
+  "updatedAt": "2026-07-05T23:30:36.903Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -12,90 +12,6 @@ window.WC_DATA = {
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "1569870",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-04T21:00:00+00:00",
-      "venue": "Lincoln Financial Field",
-      "home": {
-        "name": "Paraguay",
-        "flag": "🇵🇾",
-        "code": "PAR"
-      },
-      "away": {
-        "name": "France",
-        "flag": "🇫🇷",
-        "code": "FRA"
-      },
-      "probs": {
-        "home": 13,
-        "draw": 17,
-        "away": 70
-      },
-      "predictedScore": {
-        "home": 0,
-        "away": 3
-      },
-      "confidence": 74,
-      "analysis": "France se détache avec 70% de chances estimées. Les cotes confirment (80%). La forme récente et le public vont dans le même sens.",
-      "scorers": null,
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 6,
-            "draw": 14,
-            "away": 80
-          },
-          "favored": "away",
-          "detail": "13 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 28,
-            "draw": 26,
-            "away": 46
-          },
-          "favored": "away",
-          "detail": "VNVD vs VVVV"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 30,
-            "draw": 26,
-            "away": 44
-          },
-          "favored": "away",
-          "detail": "X · 26165/38351 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 0,
-        "away": 1,
-        "outcome": "away"
-      }
-    },
     {
       "id": "1568100",
       "stage": "À venir",
@@ -176,6 +92,12 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "X · 38197/15016 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 1,
+        "away": 2,
+        "outcome": "away"
       }
     },
     {
