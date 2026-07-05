@@ -29,6 +29,14 @@ function arg(name, fallback) {
   return i !== -1 && process.argv[i + 1] ? process.argv[i + 1] : fallback;
 }
 
+// Clé anti-doublon d'un match : équipes + heure (indépendante de l'id source).
+// Évite qu'un même match soit enregistré 2x (ex. ancien id Odds API + nouvel id
+// API-Football). Noms normalisés (accents/casse/ponctuation ignorés).
+const _tname = (t) => (t && typeof t === "object" ? t.name : t) || "";
+const _norm = (s) =>
+  _tname(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+const matchKey = (home, away, dt) => `${_norm(home)}|${_norm(away)}|${(dt || "").slice(0, 13)}`;
+
 async function main() {
   const config = await readJSON(here("config.json"));
   const fixtures = await readJSON(here("fixtures.json"));
@@ -234,9 +242,12 @@ async function updateHistory(ctx, config, matches) {
     const { fetchResults } = await import("./sources/results.mjs");
     const results = await fetchResults(ctx, pending);
     const known = new Set(history.entries.map((e) => e.id));
+    const knownKeys = new Set(history.entries.map((e) => matchKey(e.home, e.away, e.datetime)));
     for (const r of results) {
       const p = pending[r.id];
-      if (!p || known.has(r.id)) continue;
+      const mk = p && matchKey(p.home, p.away, p.datetime);
+      if (!p || known.has(r.id) || knownKeys.has(mk)) continue;
+      knownKeys.add(mk);
       // NB : l'issue 1N2 est réglée sur 90 min par results.mjs (score fulltime).
       // decidedBy / pens ne servent qu'à l'affichage (a.p. / t.a.b.).
       history.entries.push({
@@ -311,9 +322,12 @@ async function settleScores(ctx, config) {
   try {
     const { fetchResults } = await import("./sources/results.mjs");
     const results = await fetchResults(ctx, pending);
+    const knownKeys = new Set(history.entries.map((e) => matchKey(e.home, e.away, e.datetime)));
     for (const r of results) {
       const p = pending[r.id];
-      if (!p || known.has(r.id)) continue;
+      const mk = p && matchKey(p.home, p.away, p.datetime);
+      if (!p || known.has(r.id) || knownKeys.has(mk)) continue;
+      knownKeys.add(mk);
       // Issue 1N2 réglée sur 90 min (results.mjs) ; decidedBy/pens = affichage.
       history.entries.push({
         id: r.id,
