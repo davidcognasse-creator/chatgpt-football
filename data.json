@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-05T09:39:19.268Z",
+  "updatedAt": "2026-07-05T16:55:08.084Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -161,18 +161,18 @@
             "away": 13
           },
           "favored": "home",
-          "detail": "4095 articles"
+          "detail": "4106 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 54,
+            "home": 53,
             "draw": 26,
-            "away": 20
+            "away": 21
           },
           "favored": "home",
-          "detail": "X · 36616/13393 mentions"
+          "detail": "X · 38197/15016 mentions"
         }
       }
     },
@@ -193,9 +193,9 @@
         "code": "ENG"
       },
       "probs": {
-        "home": 29,
+        "home": 30,
         "draw": 29,
-        "away": 42
+        "away": 41
       },
       "predictedScore": {
         "home": 1,
@@ -209,7 +209,7 @@
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 30,
+            "home": 31,
             "draw": 30,
             "away": 39
           },
@@ -243,18 +243,18 @@
             "away": 58
           },
           "favored": "away",
-          "detail": "15270 articles"
+          "detail": "15285 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 26,
+            "home": 27,
             "draw": 26,
-            "away": 48
+            "away": 47
           },
           "favored": "away",
-          "detail": "X · 24982/45120 mentions"
+          "detail": "X · 26980/46781 mentions"
         }
       }
     },
@@ -283,7 +283,7 @@
         "home": 1,
         "away": 2
       },
-      "confidence": 60,
+      "confidence": 61,
       "analysis": "Spain part favori de justesse avec 44% de chances estimées. Les cotes confirment (49%). La forme récente et la presse vont dans le même sens. À contre-courant, l'historique des confrontations penche plutôt pour le nul ; le public penche plutôt pour Portugal.",
       "scorers": null,
       "sources": {
@@ -292,7 +292,7 @@
           "weight": 0.55,
           "probs": {
             "home": 24,
-            "draw": 27,
+            "draw": 26,
             "away": 49
           },
           "favored": "away",
@@ -329,7 +329,7 @@
             "away": 51
           },
           "favored": "away",
-          "detail": "5776 articles"
+          "detail": "5777 articles"
         },
         "social": {
           "label": "Public",
@@ -340,7 +340,7 @@
             "away": 26
           },
           "favored": "home",
-          "detail": "X · 39428/21266 mentions"
+          "detail": "X · 38561/21278 mentions"
         }
       }
     },
@@ -411,7 +411,7 @@
             "away": 22
           },
           "favored": "home",
-          "detail": "4134 articles"
+          "detail": "4137 articles"
         },
         "social": {
           "label": "Public",
@@ -422,7 +422,7 @@
             "away": 26
           },
           "favored": "home",
-          "detail": "X · 31290/16524 mentions"
+          "detail": "X · 31371/16677 mentions"
         }
       }
     },
@@ -488,12 +488,12 @@
           "label": "Presse",
           "weight": 0.12,
           "probs": {
-            "home": 63,
+            "home": 62,
             "draw": 26,
-            "away": 11
+            "away": 12
           },
           "favored": "home",
-          "detail": "3961 articles"
+          "detail": "3966 articles"
         },
         "social": {
           "label": "Public",
@@ -504,7 +504,7 @@
             "away": 13
           },
           "favored": "home",
-          "detail": "X · 61030/12555 mentions"
+          "detail": "X · 60707/12468 mentions"
         }
       }
     },
@@ -581,12 +581,12 @@
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 25,
+            "home": 26,
             "draw": 26,
-            "away": 49
+            "away": 48
           },
           "favored": "away",
-          "detail": "X · 4978/9505 mentions"
+          "detail": "X · 4878/8943 mentions"
         }
       }
     }
