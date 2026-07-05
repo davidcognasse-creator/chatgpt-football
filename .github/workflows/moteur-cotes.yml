@@ -6,6 +6,8 @@ name: Grille Loto Foot (cotes → optimiseur)
 #    absents (poids = note Transfermarkt) → probas.json + MOTEUR-COTES.md
 # 2) grille-optim.py : répartit doubles/triples sous 50 € → GRILLE-OPTIM.md
 on:
+  schedule:
+    - cron: "20 8,15 * * *"   # 2x/jour : rafraîchit cotes + grille de la grille courante
   workflow_dispatch:
 
 permissions:

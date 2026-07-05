@@ -3,6 +3,8 @@ name: Suivi Loto Foot N°51 (toi vs optimale)
 # Lancement MANUEL, après les matchs. Récupère les résultats réels (90 min,
 # API-Football) et compte les bons de chaque grille. Committe SUIVI-N51.md.
 on:
+  schedule:
+    - cron: "40 */4 * * *"   # toutes les 4 h : complète les résultats au fil des matchs
   workflow_dispatch:
 
 permissions:
