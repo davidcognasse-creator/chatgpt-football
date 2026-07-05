@@ -59,17 +59,21 @@ def _scan(tid, other, tid_is_dom):
 
 def result_90(dom, ext):
     """Issue 1N2 (90 min) du match dom–ext + score. Essaie via l'équipe à
-    domicile puis, à défaut, via l'extérieur. None si pas encore joué/introuvable."""
-    hid, _ = mc.team_id(dom)
-    if hid:
-        r = _scan(hid, ext, tid_is_dom=True)
-        if r:
-            return r
-    aid, _ = mc.team_id(ext)
-    if aid:
-        r = _scan(aid, dom, tid_is_dom=False)
-        if r:
-            return r
+    domicile puis, à défaut, via l'extérieur. None si pas encore joué/introuvable
+    ou si l'API est indisponible (pas de clé / réseau)."""
+    try:
+        hid, _ = mc.team_id(dom)
+        if hid:
+            r = _scan(hid, ext, tid_is_dom=True)
+            if r:
+                return r
+        aid, _ = mc.team_id(ext)
+        if aid:
+            r = _scan(aid, dom, tid_is_dom=False)
+            if r:
+                return r
+    except Exception:
+        return None
     return None
 
 
@@ -83,16 +87,18 @@ def process(path):
     say = lambda s: L.append(s)
     grids = grid_names(d["matchs"])
     say(f"# Suivi {d['nom']} — grille(s) vs réel ({d.get('budget','?')} €)\n")
-    if not mc.KEY:
-        say("❌ APIFOOTBALL_KEY manquant.")
-    else:
+    needs_api = any(not m.get("reel") for m in d["matchs"])
+    if needs_api and not mc.KEY:
+        say("_⚠️ APIFOOTBALL_KEY manquant : seuls les résultats figés (reel) sont affichés._\n")
+    if True:
         head = "| # | Match | Résultat 90′ | " + " | ".join(f"{g} | ✓" for g in grids) + " |"
         say(head)
         say("|---|---|---|" + "---|:-:|" * len(grids))
         ok = {g: 0 for g in grids}
         joues = 0
         for m in d["matchs"]:
-            r = result_90(m["dom"], m["ext"])
+            # résultat officiel figé (reel) prioritaire, sinon API-Football.
+            r = (m["reel"], m.get("score", "")) if m.get("reel") else result_90(m["dom"], m["ext"])
             cells = ""
             if not r:
                 for g in grids:
@@ -107,14 +113,21 @@ def process(path):
                 cells += f" {'/'.join(m[g])} | {'✅' if hit else '❌'} |"
             say(f"| {m['i']} | {m['dom']}–{m['ext']} | **{res}** ({score}) |{cells}")
         n = len(d["matchs"])
+        rapports = d.get("rapports") or {}
         say(f"\n**Matchs joués : {joues}/{n}**")
         for g in grids:
             tot = f" ({ok[g]}/{n} au total)" if joues == n else ""
             say(f"- **{g}** : {ok[g]}/{joues} corrects{tot}")
         if joues == n:
-            rank = n - 2
             for g in grids:
-                say(f"  - {g} : {'🏆 grille parfaite !' if ok[g]==n else ('🎯 rang gagnant (≥%d) !' % rank) if ok[g]>=rank else 'hors rang'}")
+                k = ok[g]                       # meilleure combinaison = nb de matchs couverts
+                gain = rapports.get(str(k))
+                if gain:
+                    say(f"  - **{g}** : rang **{k}/{n}** → gain **{gain:.2f} €**")
+                elif k == n:
+                    say(f"  - **{g}** : 🏆 grille parfaite {n}/{n} !")
+                else:
+                    say(f"  - **{g}** : {k}/{n} → hors rang (0 €)")
 
     name = os.path.basename(path).replace("suivi-", "SUIVI-").replace(".json", ".md")
     open(os.path.join(HERE, name), "w", encoding="utf-8").write("\n".join(L) + "\n")
