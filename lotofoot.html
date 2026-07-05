@@ -65,16 +65,19 @@
       display:inline-flex; align-items:center; gap:7px; padding:9px 16px; border-radius:12px;
       border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.05); color:var(--text); }
     .pdf-btn:hover { background:rgba(255,255,255,.1); }
-    .bilan-card { border-color:rgba(52,211,153,.35); background:rgba(52,211,153,.06); }
-    .bilan-gains { display:flex; flex-wrap:wrap; gap:14px; margin:2px 0 16px; }
-    .bilan-grille { flex:1 1 200px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10);
-      border-radius:14px; padding:14px 16px; }
-    .bilan-grille .nm { font-size:.82rem; color:var(--muted); }
-    .bilan-grille .sc { font-family:'Sora',sans-serif; font-size:1.5rem; font-weight:800; color:#fff; margin:2px 0; }
-    .bilan-grille .gn { font-weight:700; }
-    .bilan-grille.win { border-color:rgba(52,211,153,.5); background:rgba(52,211,153,.10); }
-    .bilan-grille.win .gn { color:#6ee7b7; }
-    .bilan-grille .gn.zero { color:var(--muted); font-weight:600; }
+    .grid-result { display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px;
+      margin:2px 0 16px; padding:12px 16px; border-radius:14px;
+      border:1px solid rgba(148,163,184,.28); background:rgba(148,163,184,.08); }
+    .grid-result.win { border-color:rgba(52,211,153,.45); background:rgba(52,211,153,.10); }
+    .grid-result .rlabel { font-size:.9rem; color:var(--muted); }
+    .grid-result .rscore { font-family:'Sora',sans-serif; font-weight:800; font-size:1.15rem; color:#fff; }
+    .grid-result .rgain { font-family:'Sora',sans-serif; font-weight:800; font-size:1.15rem; }
+    .grid-result.win .rgain { color:#6ee7b7; }
+    .grid-result .rgain.zero { color:var(--muted); }
+    .grid-result .rnet { font-size:.85rem; padding:2px 10px; border-radius:999px;
+      background:rgba(255,255,255,.06); }
+    .grid-result .rnet.pos { color:#6ee7b7; } .grid-result .rnet.neg { color:#fca5a5; }
+    .played-note { margin:16px 0 0; font-size:.85rem; color:var(--muted); }
     table.loto td.hit { color:#6ee7b7; font-weight:700; }
     table.loto td.miss { color:#fca5a5; }
     @media print {
@@ -138,13 +141,6 @@
       </p>
       <div class="loto-meta" id="lotoMeta"></div>
 
-      <div class="loto-card bilan-card" id="bilanCard" hidden>
-        <h2>🏁 Résultat officiel · gains</h2>
-        <p class="sub" id="bilanSub"></p>
-        <div class="bilan-gains" id="bilanGains"></div>
-        <div style="overflow-x:auto"><table class="loto" id="bilanTable"></table></div>
-      </div>
-
       <div class="loto-card">
         <h2>📊 Marché vs public · les matchs de la grille</h2>
         <p class="sub">Cotes dévignées (moyenne multi-bookmakers) face à la répartition des mises FDJ. Un match non coté retombe sur le public.</p>
@@ -157,12 +153,14 @@
         <div id="valueList"></div>
       </div>
 
-      <div class="loto-card">
+      <div class="loto-card" id="gridCard">
         <h2>💶 Grille optimale</h2>
-        <p class="sub">Choisis ton budget. On place les doubles/triples sur les matchs les plus incertains pour maximiser la probabilité de toucher un rang (≥ 13 bons).</p>
+        <p class="sub" id="gridSub">Choisis ton budget. On place les doubles/triples sur les matchs les plus incertains pour maximiser la probabilité de toucher un rang (≥ 13 bons).</p>
         <div class="budget-tabs" id="budgetTabs"></div>
+        <div class="grid-result" id="gridResult" hidden></div>
         <div class="grid-stats" id="gridStats"></div>
         <div style="overflow-x:auto"><table class="loto" id="gridTable"></table></div>
+        <p class="played-note" id="playedNote" hidden></p>
         <p style="margin:18px 0 2px;text-align:center">
           <button id="exportPdf" class="pdf-btn">📄 Exporter cette grille en PDF</button>
         </p>

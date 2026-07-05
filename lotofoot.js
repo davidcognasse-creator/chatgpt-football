@@ -13,67 +13,30 @@
       <span class="p2">${pct(p["2"])}</span></span>`;
   }
 
-  // Bilan officiel : score de chaque grille et gain FDJ (si data.bilan présent).
-  function renderBilan(data) {
-    const card = document.getElementById("bilanCard");
-    if (!card) return;
-    const b = data.bilan;
-    if (!b || !b.grilles || !b.grilles.length) {
-      card.hidden = true;
-      return;
-    }
-    card.hidden = false;
-    document.getElementById("bilanSub").textContent = b.note || "";
-    document.getElementById("bilanGains").innerHTML = b.grilles
-      .map((g) => {
-        const win = g.gain > 0;
-        const gain = win
-          ? `<span class="gn">Gain ${g.gain.toFixed(2)} €${g.rang ? " · rang " + g.rang : ""}</span>`
-          : `<span class="gn zero">Hors rang · 0 €</span>`;
-        return (
-          `<div class="bilan-grille${win ? " win" : ""}">` +
-          `<div class="nm">${g.nom}</div>` +
-          `<div class="sc">${g.corrects}/${g.n}</div>` +
-          gain +
-          `</div>`
-        );
-      })
-      .join("");
-
-    const reels = b.reels || [];
-    if (reels.length) {
-      const cles = b.grilles.map((g) => g.cle).filter(Boolean);
-      const byI = {};
-      data.matchs.forEach((m) => (byI[m.i] = m));
-      let rows =
-        "<tr><th>#</th><th>Match</th><th>Réel</th>" +
-        cles.map((c) => `<th>${labelFor(b, c)}</th>`).join("") +
-        "</tr>";
-      for (const r of reels) {
-        const m = byI[r.i] || {};
-        const label = `${m.dom || ""} - ${m.ext || ""}`;
-        const cells = cles
-          .map((c) => {
-            const picks = r[c] || [];
-            const hit = picks.includes(r.reel);
-            return `<td class="${hit ? "hit" : "miss"}">${picks.map((x) => SIGN[x]).join("/")} ${hit ? "✅" : "❌"}</td>`;
-          })
-          .join("");
-        rows +=
-          `<tr><td>${r.i}</td><td class="match">${label}</td>` +
-          `<td><b>${SIGN[r.reel] || "?"}</b>${r.score ? ' <span style="color:var(--muted)">(' + r.score + ")</span>" : ""}</td>` +
-          cells +
-          "</tr>";
-      }
-      document.getElementById("bilanTable").innerHTML = rows;
-    } else {
-      document.getElementById("bilanTable").innerHTML = "";
-    }
+  // Signe(s) couvert(s) par une grille pour un match donné (repli sur le prono).
+  function gridPicksFor(data, g, m) {
+    const byI = {};
+    g.picks.forEach((p) => (byI[p.i] = p));
+    const p = byI[m.i];
+    return p ? p.picks : [m.coted ? m.marketPick : m.crowdPick];
   }
 
-  function labelFor(b, cle) {
-    const g = (b.grilles || []).find((x) => x.cle === cle);
-    return g ? g.nom : cle;
+  // Résultat réel d'une grille : nb de bons + gain FDJ (si les résultats sont figés).
+  function realResult(data, g) {
+    const b = data.bilan;
+    if (!b || !b.reels || !b.reels.length) return null;
+    const reelByI = {};
+    b.reels.forEach((r) => (reelByI[r.i] = r));
+    const rap = b.rapports || {};
+    let correct = 0;
+    for (const m of data.matchs) {
+      const r = reelByI[m.i];
+      if (!r) continue;
+      if (gridPicksFor(data, g, m).includes(r.reel)) correct++;
+    }
+    const n = b.reels.length;
+    const gain = Number(rap[String(correct)] || 0);
+    return { correct, n, gain, net: gain - g.cost };
   }
 
   function render(data) {
@@ -84,7 +47,26 @@
       `<span class="loto-tag">📈 Source : <b>${data.source || "cotes"}</b></span>` +
       `<span class="loto-tag">⚽ <b>${data.matchs.length}</b> matchs</span>`;
 
-    renderBilan(data);
+    const finished = !!(data.bilan && data.bilan.reels && data.bilan.reels.length);
+    const gridSub = document.getElementById("gridSub");
+    if (finished && gridSub) {
+      gridSub.innerHTML =
+        (data.bilan.note ? data.bilan.note + " — " : "") +
+        "sélectionne un budget pour voir le <b>gain réel</b> qu'aurait rapporté chaque grille.";
+    }
+    // Note comparative : grille réellement jouée (si présente dans le bilan).
+    const played = ((data.bilan && data.bilan.grilles) || []).find((x) => x.cle === "toi");
+    const pn = document.getElementById("playedNote");
+    if (pn) {
+      if (finished && played) {
+        pn.hidden = false;
+        pn.innerHTML =
+          `👤 Pour comparaison, la grille <b>réellement jouée</b> : ${played.corrects}/${played.n} → ` +
+          (played.gain > 0 ? `gain <b>${played.gain.toFixed(2)} €</b>` : "hors rang · 0 €") + ".";
+      } else {
+        pn.hidden = true;
+      }
+    }
 
     // Tableau marché vs public
     const mt = document.getElementById("matchTable");
@@ -145,18 +127,53 @@
         `<div class="grid-stat"><div class="v">${(s.pge13 * 100).toFixed(1)}%</div><div class="l">P(≥ ${data.matchs.length - 2} bons)</div></div>` +
         `<div class="grid-stat"><div class="v">${s.esperance.toFixed(1)}</div><div class="l">espérance /15</div></div>`;
 
+      // Bandeau résultat réel (si la grille est réglée) — dynamique par budget.
+      const rr = realResult(data, g);
+      const res = document.getElementById("gridResult");
+      const reelByI = {};
+      if (rr) (data.bilan.reels || []).forEach((r) => (reelByI[r.i] = r));
+      if (res) {
+        if (rr) {
+          const win = rr.gain > 0;
+          const netCls = rr.net >= 0 ? "pos" : "neg";
+          res.hidden = false;
+          res.className = "grid-result" + (win ? " win" : "");
+          res.innerHTML =
+            `<span class="rlabel">🏁 Résultat réel de la grille ${g.budget} €</span>` +
+            `<span class="rscore">${rr.correct}/${rr.n} bons</span>` +
+            `<span class="rgain${win ? "" : " zero"}">${win ? "gain " + rr.gain.toFixed(2) + " €" : "hors rang · 0 €"}</span>` +
+            `<span class="rnet ${netCls}">net ${rr.net >= 0 ? "+" : ""}${rr.net.toFixed(2)} €</span>`;
+        } else {
+          res.hidden = true;
+        }
+      }
+
       const byI = {};
       g.picks.forEach((p) => (byI[p.i] = p));
       let rows =
-        "<tr><th>#</th><th>Match</th><th>Type</th><th>Pronostic(s)</th><th>Couverture</th></tr>";
+        "<tr><th>#</th><th>Match</th><th>Type</th><th>Pronostic(s)</th><th>Couverture</th>" +
+        (rr ? "<th>Réel</th>" : "") +
+        "</tr>";
       for (const m of data.matchs) {
         const p = byI[m.i] || { type: "simple", picks: [m.coted ? m.marketPick : m.crowdPick], coverage: 0 };
         const label = { simple: "simple", double: "DOUBLE", triple: "TRIPLE" }[p.type];
+        let realCell = "";
+        if (rr) {
+          const r = reelByI[m.i];
+          if (r) {
+            const hit = p.picks.includes(r.reel);
+            realCell = `<td class="${hit ? "hit" : "miss"}"><b>${SIGN[r.reel]}</b>${r.score ? " (" + r.score + ")" : ""} ${hit ? "✅" : "❌"}</td>`;
+          } else {
+            realCell = "<td>·</td>";
+          }
+        }
         rows +=
           `<tr><td>${m.i}</td><td class="match">${m.dom} - ${m.ext}</td>` +
           `<td class="type-${p.type}">${label}</td>` +
           `<td class="picks-cell"><b>${p.picks.map((x) => SIGN[x]).join(" / ")}</b></td>` +
-          `<td>${pct(p.coverage)}%</td></tr>`;
+          `<td>${pct(p.coverage)}%</td>` +
+          realCell +
+          `</tr>`;
       }
       document.getElementById("gridTable").innerHTML = rows;
       currentG = g;
