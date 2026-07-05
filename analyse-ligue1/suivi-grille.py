@@ -25,22 +25,21 @@ FINISHED = {"FT", "AET", "PEN"}
 NON_GRID = {"i", "dom", "ext"}   # clés qui ne sont pas des grilles
 
 
-def result_90(dom, ext):
-    """Issue 1N2 (90 min) du match dom–ext + score, ou None si pas encore joué."""
-    hid, _ = mc.team_id(dom)
-    if not hid:
-        return None
-    et = set(mc.norm(ext))
+def _scan(tid, other, tid_is_dom):
+    """Cherche dans les 30 derniers matchs de `tid` celui contre `other` ;
+    renvoie (issue 1N2 côté grille, score) ou None. tid_is_dom = tid est le
+    'dom' de la grille."""
+    ot = set(mc.norm(other))
     try:
-        fixtures = mc.af(f"/fixtures?team={hid}&last=20")
+        fixtures = mc.af(f"/fixtures?team={tid}&last=30")
     except Exception:
         return None
     for f in fixtures:
         if f["fixture"]["status"]["short"] not in FINISHED:
             continue
         h, a = f["teams"]["home"], f["teams"]["away"]
-        opp = a if h["id"] == hid else h
-        if mc.side_match(list(et), set(mc.norm(opp["name"]))) <= 0:
+        opp = a if h["id"] == tid else h
+        if mc.side_match(list(ot), set(mc.norm(opp["name"]))) <= 0:
             continue
         ft = f.get("score", {}).get("fulltime", {}) or {}
         gh, ga = ft.get("home"), ft.get("away")
@@ -48,12 +47,29 @@ def result_90(dom, ext):
             gh, ga = f["goals"]["home"], f["goals"]["away"]
         if gh is None or ga is None:
             continue
-        if h["id"] != hid:
-            gh, ga = ga, gh
-        res = "1" if gh > ga else "2" if gh < ga else "N"
+        tid_goals = gh if h["id"] == tid else ga
+        opp_goals = ga if h["id"] == tid else gh
+        dg, eg = (tid_goals, opp_goals) if tid_is_dom else (opp_goals, tid_goals)
+        res = "1" if dg > eg else "2" if dg < eg else "N"
         short = f["fixture"]["status"]["short"]
         tag = " ⏱" if short == "AET" else " 🥅" if short == "PEN" else ""
-        return res, f"{gh}-{ga}{tag}"
+        return res, f"{dg}-{eg}{tag}"
+    return None
+
+
+def result_90(dom, ext):
+    """Issue 1N2 (90 min) du match dom–ext + score. Essaie via l'équipe à
+    domicile puis, à défaut, via l'extérieur. None si pas encore joué/introuvable."""
+    hid, _ = mc.team_id(dom)
+    if hid:
+        r = _scan(hid, ext, tid_is_dom=True)
+        if r:
+            return r
+    aid, _ = mc.team_id(ext)
+    if aid:
+        r = _scan(aid, dom, tid_is_dom=False)
+        if r:
+            return r
     return None
 
 
