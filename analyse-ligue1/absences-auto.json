@@ -1,4 +1,43 @@
 {
   "note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
-  "equipes": {}
+  "equipes": {
+    "Portugal": [
+      {
+        "joueur": "La Roja",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Will Cristiano Ronaldo",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Zlatan Ibrahimovic",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Why Croatia",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Josko Gvardiol",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Late Equaliser Ruled",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Out By",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Connected Ball Technology",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Igor Matanovic",
+        "raison": "forfait"
+      }
+    ]
+  }
 }
