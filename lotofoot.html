@@ -65,6 +65,18 @@
       display:inline-flex; align-items:center; gap:7px; padding:9px 16px; border-radius:12px;
       border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.05); color:var(--text); }
     .pdf-btn:hover { background:rgba(255,255,255,.1); }
+    .bilan-card { border-color:rgba(52,211,153,.35); background:rgba(52,211,153,.06); }
+    .bilan-gains { display:flex; flex-wrap:wrap; gap:14px; margin:2px 0 16px; }
+    .bilan-grille { flex:1 1 200px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10);
+      border-radius:14px; padding:14px 16px; }
+    .bilan-grille .nm { font-size:.82rem; color:var(--muted); }
+    .bilan-grille .sc { font-family:'Sora',sans-serif; font-size:1.5rem; font-weight:800; color:#fff; margin:2px 0; }
+    .bilan-grille .gn { font-weight:700; }
+    .bilan-grille.win { border-color:rgba(52,211,153,.5); background:rgba(52,211,153,.10); }
+    .bilan-grille.win .gn { color:#6ee7b7; }
+    .bilan-grille .gn.zero { color:var(--muted); font-weight:600; }
+    table.loto td.hit { color:#6ee7b7; font-weight:700; }
+    table.loto td.miss { color:#fca5a5; }
     @media print {
       .bg-grid, .bg-glow, .site-header, .site-footer, .pdf-btn, .budget-tabs { display:none !important; }
       body { background:#fff !important; color:#000 !important; }
@@ -125,6 +137,13 @@
         <select id="gridPicker" class="grid-picker"></select>
       </p>
       <div class="loto-meta" id="lotoMeta"></div>
+
+      <div class="loto-card bilan-card" id="bilanCard" hidden>
+        <h2>🏁 Résultat officiel · gains</h2>
+        <p class="sub" id="bilanSub"></p>
+        <div class="bilan-gains" id="bilanGains"></div>
+        <div style="overflow-x:auto"><table class="loto" id="bilanTable"></table></div>
+      </div>
 
       <div class="loto-card">
         <h2>📊 Marché vs public · les matchs de la grille</h2>

@@ -13,6 +13,69 @@
       <span class="p2">${pct(p["2"])}</span></span>`;
   }
 
+  // Bilan officiel : score de chaque grille et gain FDJ (si data.bilan présent).
+  function renderBilan(data) {
+    const card = document.getElementById("bilanCard");
+    if (!card) return;
+    const b = data.bilan;
+    if (!b || !b.grilles || !b.grilles.length) {
+      card.hidden = true;
+      return;
+    }
+    card.hidden = false;
+    document.getElementById("bilanSub").textContent = b.note || "";
+    document.getElementById("bilanGains").innerHTML = b.grilles
+      .map((g) => {
+        const win = g.gain > 0;
+        const gain = win
+          ? `<span class="gn">Gain ${g.gain.toFixed(2)} €${g.rang ? " · rang " + g.rang : ""}</span>`
+          : `<span class="gn zero">Hors rang · 0 €</span>`;
+        return (
+          `<div class="bilan-grille${win ? " win" : ""}">` +
+          `<div class="nm">${g.nom}</div>` +
+          `<div class="sc">${g.corrects}/${g.n}</div>` +
+          gain +
+          `</div>`
+        );
+      })
+      .join("");
+
+    const reels = b.reels || [];
+    if (reels.length) {
+      const cles = b.grilles.map((g) => g.cle).filter(Boolean);
+      const byI = {};
+      data.matchs.forEach((m) => (byI[m.i] = m));
+      let rows =
+        "<tr><th>#</th><th>Match</th><th>Réel</th>" +
+        cles.map((c) => `<th>${labelFor(b, c)}</th>`).join("") +
+        "</tr>";
+      for (const r of reels) {
+        const m = byI[r.i] || {};
+        const label = `${m.dom || ""} - ${m.ext || ""}`;
+        const cells = cles
+          .map((c) => {
+            const picks = r[c] || [];
+            const hit = picks.includes(r.reel);
+            return `<td class="${hit ? "hit" : "miss"}">${picks.map((x) => SIGN[x]).join("/")} ${hit ? "✅" : "❌"}</td>`;
+          })
+          .join("");
+        rows +=
+          `<tr><td>${r.i}</td><td class="match">${label}</td>` +
+          `<td><b>${SIGN[r.reel] || "?"}</b>${r.score ? ' <span style="color:var(--muted)">(' + r.score + ")</span>" : ""}</td>` +
+          cells +
+          "</tr>";
+      }
+      document.getElementById("bilanTable").innerHTML = rows;
+    } else {
+      document.getElementById("bilanTable").innerHTML = "";
+    }
+  }
+
+  function labelFor(b, cle) {
+    const g = (b.grilles || []).find((x) => x.cle === cle);
+    return g ? g.nom : cle;
+  }
+
   function render(data) {
     // Bandeau méta
     const meta = document.getElementById("lotoMeta");
@@ -20,6 +83,8 @@
       `<span class="loto-tag">🏆 <b>${data.nom || "Loto Foot"}</b></span>` +
       `<span class="loto-tag">📈 Source : <b>${data.source || "cotes"}</b></span>` +
       `<span class="loto-tag">⚽ <b>${data.matchs.length}</b> matchs</span>`;
+
+    renderBilan(data);
 
     // Tableau marché vs public
     const mt = document.getElementById("matchTable");

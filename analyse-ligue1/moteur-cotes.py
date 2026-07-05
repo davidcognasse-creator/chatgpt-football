@@ -282,6 +282,88 @@ def squad_ok(name, team):
     return bool(shared) and max((len(t) for t in shared), default=0) >= 5
 
 
+_SQUAD = {}
+def team_pool(tid):
+    """Pool {nom_de_famille: note} d'une équipe via /players/squads + notes
+    Transfermarkt. Sert de référence pour valoriser le XI annoncé. Caché."""
+    if tid in _SQUAD:
+        return _SQUAD[tid]
+    pool = {}
+    try:
+        res = af(f"/players/squads?team={tid}")
+        players = (res[0].get("players") if res else []) or []
+        for pl in players:
+            v = player_note(pl.get("name", ""))
+            if v:
+                sn = _surname(pl.get("name", ""))
+                pool[sn] = max(pool.get(sn, 0), v)
+    except Exception:
+        pass
+    _SQUAD[tid] = pool
+    return pool
+
+
+def xi_weakening(tid, xi_names):
+    """Force perdue (ratio 0–0.5) : valeur du XI ANNONCÉ vs meilleur XI possible
+    (top-11 des notes de l'effectif). C'est l'edge d'origine : la compo encode
+    rotation + absents + repos AVANT que le marché ne bouge. (0.0, None) si pas
+    exploitable (pas de compo, effectif mal valorisé, appariement trop faible)."""
+    pool = team_pool(tid)
+    vals = sorted(pool.values(), reverse=True)
+    if len(vals) < 11 or not xi_names:
+        return 0.0, None
+    best11 = sum(vals[:11])
+    if best11 <= 0:
+        return 0.0, None
+    med = vals[len(vals) // 2]
+    tot = matched = 0
+    for nm in xi_names:
+        v = pool.get(_surname(nm))
+        if v:
+            tot += v; matched += 1
+        else:
+            tot += med                       # non apparié : médiane (évite de surestimer l'affaiblissement)
+    if matched < 6:                          # compo trop mal appariée : on ne s'y fie pas
+        return 0.0, None
+    ratio = max(0.0, 1 - tot / best11)
+    return min(0.5, ratio), {"xi_val": tot, "best": best11, "matched": matched, "n": len(xi_names)}
+
+
+def fixture_lineups(fid):
+    """[(team_id, team_name, [noms du XI]), ...] ou [] si compo pas encore annoncée
+    (dispo ~40 min avant le coup d'envoi sur API-Football)."""
+    try:
+        lus = af(f"/fixtures/lineups?fixture={fid}")
+    except Exception:
+        return []
+    out = []
+    for lu in lus:
+        t = lu.get("team", {}) or {}
+        xi = [e["player"]["name"] for e in (lu.get("startXI") or []) if e.get("player")]
+        if t.get("id") and xi:
+            out.append((t.get("id"), t.get("name", ""), xi))
+    return out
+
+
+def compo_impacts(fid, dom, ext):
+    """{'dom': (impact, info), 'ext': (impact, info)} d'après le XI annoncé, ou
+    None si aucune compo n'est disponible. Chaque côté rattaché à dom/ext par le
+    nom d'équipe (pas besoin du sens API)."""
+    lus = fixture_lineups(fid)
+    if not lus:
+        return None
+    dt, et = set(norm(dom)), set(norm(ext))
+    res = {"dom": (0.0, None), "ext": (0.0, None)}
+    for tid, tname, xi in lus:
+        tn = set(norm(tname))
+        side = "dom" if side_match(list(dt), tn) >= side_match(list(et), tn) else "ext"
+        r, info = xi_weakening(tid, xi)
+        if info:
+            info["team"] = tname
+        res[side] = (r, info)
+    return res if (res["dom"][0] > 0 or res["ext"][0] > 0) else None
+
+
 def entry_poids(a):
     """Poids d'un absent : soit fourni à la main, soit dérivé de la NOTE du joueur
     (valeur Transfermarkt / SCALE), plafonné. C'est la « note par joueur » qui
@@ -316,12 +398,20 @@ def team_impact(name):
     return 0.0, []
 
 
-def ajust_actualite(dom, ext, p):
-    """Corrige les probas marché avec les absents connus (absences.json), pondérés
-    par leur poids. La force perdue par une équipe profite au nul ET à l'adversaire.
-    Renvoie (probas_ajustées, info) — c'est l'edge : le marché n'a pas encore bougé."""
-    ih, absh = team_impact(dom)
-    ia, absa = team_impact(ext)
+def ajust_actualite(dom, ext, p, fid=None):
+    """Corrige les probas marché avec l'affaiblissement connu de chaque équipe.
+    PRIORITÉ au XI ANNONCÉ (compo API-Football, ~40 min avant : le vrai edge, il
+    encode rotation + absents + repos) ; à défaut, la couche absences presse/manuel.
+    La force perdue par une équipe profite au nul ET à l'adversaire. Renvoie
+    (probas_ajustées, info) — c'est l'edge : le marché n'a pas encore bougé."""
+    comp = compo_impacts(fid, dom, ext) if fid else None
+    if comp:
+        (ih, infoh), (ia, infoa), source = comp["dom"][0], comp["ext"][0], "compo"
+        infoh, infoa = comp["dom"][1], comp["ext"][1]
+    else:
+        ih, infoh = team_impact(dom)
+        ia, infoa = team_impact(ext)
+        source = "absents"
     if ih <= 0 and ia <= 0:
         return p, None
     rem_h, rem_a = p["1"] * ih, p["2"] * ia          # proba de victoire perdue
@@ -330,12 +420,12 @@ def ajust_actualite(dom, ext, p):
     rN = p["N"] + (rem_h + rem_a) * 0.5              # l'autre moitié va au nul
     s = r1 + r2 + rN
     adj = {"1": r1 / s, "N": rN / s, "2": r2 / s}
-    return adj, {"h": (ih, absh), "a": (ia, absa)}
+    return adj, {"source": source, "h": (ih, infoh), "a": (ia, infoa)}
 
 
 def market_probs(dom, ext):
     """Proba 1·N·2 du marché pour dom–ext via API-Football : cotes multi-books,
-    repli sur la prédiction maison. Renvoie (p, nbooks, source, league) ou None."""
+    repli sur la prédiction maison. Renvoie (p, nbooks, source, league, fid) ou None."""
     try:
         fx = resolve_fixture(dom, ext)
     except Exception as e:
@@ -347,13 +437,13 @@ def market_probs(dom, ext):
         o = fixture_odds(fid, flip)
         if o:
             p, nb = o
-            return p, nb, f"cotes ({nb} books)", league
+            return p, nb, f"cotes ({nb} books)", league, fid
     except Exception:
         pass
     try:
         pr = fixture_prediction(fid, flip)
         if pr:
-            return pr, 0, "prédiction API", league
+            return pr, 0, "prédiction API", league, fid
     except Exception:
         pass
     return None
@@ -382,15 +472,15 @@ def main():
             out.append({"dom": m["dom"], "ext": m["ext"], "foule": f,
                         "p": foule, "source": "foule (non coté)"})
             continue
-        raw_p, nbooks, msrc, _league = mk
+        raw_p, nbooks, msrc, _league, fid = mk
         couverts += 1
-        p, info = ajust_actualite(m["dom"], m["ext"], raw_p)
+        p, info = ajust_actualite(m["dom"], m["ext"], raw_p, fid)
         mp = max(("1", "N", "2"), key=lambda k: p[k])
         flag = ""
         if mp != cp:
             flag = f"**{p[mp]-foule[mp]:+.0%}**"
             divergences.append((i, m, mp, cp, p, foule))
-        note = " ✎" if info else ""
+        note = (" 🧬" if info["source"] == "compo" else " ✎") if info else ""
         if info:
             ajustes.append((i, m, info, raw_p, p))
         books = str(nbooks) if nbooks else "préd."
@@ -398,22 +488,29 @@ def main():
             f"{p['1']*100:.0f}/{p['N']*100:.0f}/{p['2']*100:.0f}{note} | "
             f"{foule['1']*100:.0f}/{foule['N']*100:.0f}/{foule['2']*100:.0f} | "
             f"**{mp}** | {cp} | {books} | {flag} |")
+        tag = f" + {info['source']}" if info else ""
         out.append({"dom": m["dom"], "ext": m["ext"], "foule": f,
-                    "p": p, "source": msrc + (" + absents" if info else "")})
+                    "p": p, "source": msrc + tag})
 
     say(f"\n**Couverture marché : {couverts}/{len(grid['matchs'])} matchs cotés.**")
     say(f"_{len(ajustes)} match(s) corrigé(s) par les absents (✎)._\n" if ajustes
         else "_Aucun absent renseigné (absences.json) — probas = marché brut._\n")
 
     if ajustes:
-        say("## 🩹 Ajustements absences (edge : le marché n'a pas encore bougé)")
+        say("## 🩹 Ajustements compo/absences (edge : le marché n'a pas encore bougé)")
+        say("_🧬 = XI annoncé (compo API-Football) · ✎ = absences presse/manuel._\n")
         for i, m, info, praw, padj in ajustes:
             for side, key in (("h", "dom"), ("a", "ext")):
-                imp, lst = info[side]
-                if imp <= 0:
+                imp, det = info[side]
+                if imp <= 0 or not det:
+                    continue
+                if info["source"] == "compo":
+                    say(f"- 🧬 **{m[key]}** −{imp*100:.0f}% : XI annoncé "
+                        f"{det['xi_val']/1e6:.0f} M€ vs meilleur XI {det['best']/1e6:.0f} M€ "
+                        f"({det['matched']}/{det['n']} joueurs valorisés)")
                     continue
                 parts = []
-                for a in lst:
+                for a in det:
                     if a.get("_rejete") or a.get("_poids", 0) <= 0:
                         continue   # bruit presse rejeté / joueur sans note : ignoré
                     tag = f"{a.get('joueur','?')} ({a.get('raison','')})".strip()
@@ -422,7 +519,7 @@ def main():
                         tag += f" · note {note/1e6:.0f} M€ → −{a.get('_poids',0)*100:.0f}%"
                     parts.append(tag)
                 if parts:
-                    say(f"- **{m[key]}** −{imp*100:.0f}% de force : " + " ; ".join(parts))
+                    say(f"- ✎ **{m[key]}** −{imp*100:.0f}% de force : " + " ; ".join(parts))
             say(f"  → marché {praw['1']*100:.0f}/{praw['N']*100:.0f}/{praw['2']*100:.0f} "
                 f"⇒ ajusté **{padj['1']*100:.0f}/{padj['N']*100:.0f}/{padj['2']*100:.0f}** "
                 f"(match {i})")
@@ -438,8 +535,9 @@ def main():
         say("_Aucune divergence de pronostic sur les matchs cotés._")
 
     say("\n---\n_Cotes API-Football (dévignées, moyenne multi-books) = signal primaire ; "
-        "repli sur la prédiction maison. Couche absences (compo J-40min + presse/manuel, "
-        "pondérée par la note) appliquée AVANT que le marché ne bouge._")
+        "repli sur la prédiction maison. Couche compo (🧬 XI annoncé valorisé Transfermarkt, "
+        "dispo ~40 min avant) — à défaut absences presse/manuel (✎) — appliquée AVANT que le "
+        "marché ne bouge : c'est l'edge du système._")
     return finish(grid, out)
 
 
