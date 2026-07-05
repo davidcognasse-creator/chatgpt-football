@@ -14,21 +14,21 @@
     },
     "predicted": {
       "probs": {
-        "home": 50,
+        "home": 52,
         "draw": 26,
-        "away": 24
+        "away": 22
       },
       "score": {
-        "home": 2,
-        "away": 1
+        "home": 3,
+        "away": 0
       },
       "favored": "home"
     },
     "sources": {
       "betting": {
-        "home": 52,
+        "home": 53,
         "draw": 26,
-        "away": 22
+        "away": 21
       },
       "form": {
         "home": 39,
@@ -36,11 +36,15 @@
         "away": 35
       },
       "h2h": null,
-      "press": null,
-      "social": {
-        "home": 55,
+      "press": {
+        "home": 61,
         "draw": 26,
-        "away": 19
+        "away": 13
+      },
+      "social": {
+        "home": 54,
+        "draw": 26,
+        "away": 20
       }
     }
   },
@@ -59,9 +63,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 31,
+        "home": 29,
         "draw": 29,
-        "away": 40
+        "away": 42
       },
       "score": {
         "home": 1,
@@ -71,7 +75,7 @@
     },
     "sources": {
       "betting": {
-        "home": 31,
+        "home": 30,
         "draw": 30,
         "away": 39
       },
@@ -81,11 +85,15 @@
         "away": 34
       },
       "h2h": null,
-      "press": null,
-      "social": {
-        "home": 23,
+      "press": {
+        "home": 16,
         "draw": 26,
-        "away": 51
+        "away": 58
+      },
+      "social": {
+        "home": 26,
+        "draw": 26,
+        "away": 48
       }
     }
   },
@@ -104,9 +112,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 37,
-        "draw": 28,
-        "away": 35
+        "home": 40,
+        "draw": 27,
+        "away": 33
       },
       "score": {
         "home": 2,
@@ -116,9 +124,9 @@
     },
     "sources": {
       "betting": {
-        "home": 35,
+        "home": 36,
         "draw": 28,
-        "away": 37
+        "away": 36
       },
       "form": {
         "home": 39,
@@ -126,7 +134,11 @@
         "away": 35
       },
       "h2h": null,
-      "press": null,
+      "press": {
+        "home": 52,
+        "draw": 26,
+        "away": 22
+      },
       "social": {
         "home": 48,
         "draw": 26,
@@ -149,9 +161,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 27,
+        "home": 26,
         "draw": 30,
-        "away": 43
+        "away": 44
       },
       "score": {
         "home": 1,
@@ -163,7 +175,7 @@
       "betting": {
         "home": 24,
         "draw": 27,
-        "away": 50
+        "away": 49
       },
       "form": {
         "home": 33,
@@ -175,11 +187,15 @@
         "draw": 62,
         "away": 28
       },
-      "press": null,
-      "social": {
-        "home": 51,
+      "press": {
+        "home": 23,
         "draw": 26,
-        "away": 23
+        "away": 51
+      },
+      "social": {
+        "home": 48,
+        "draw": 26,
+        "away": 26
       }
     }
   },
@@ -198,8 +214,8 @@
     },
     "predicted": {
       "probs": {
-        "home": 64,
-        "draw": 22,
+        "home": 63,
+        "draw": 23,
         "away": 14
       },
       "score": {
@@ -210,9 +226,9 @@
     },
     "sources": {
       "betting": {
-        "home": 70,
-        "draw": 20,
-        "away": 10
+        "home": 69,
+        "draw": 21,
+        "away": 11
       },
       "form": {
         "home": 44,
@@ -220,11 +236,15 @@
         "away": 30
       },
       "h2h": null,
-      "press": null,
-      "social": {
-        "home": 62,
+      "press": {
+        "home": 63,
         "draw": 26,
-        "away": 12
+        "away": 11
+      },
+      "social": {
+        "home": 61,
+        "draw": 26,
+        "away": 13
       }
     }
   },
@@ -243,9 +263,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 28,
+        "home": 31,
         "draw": 29,
-        "away": 43
+        "away": 40
       },
       "score": {
         "home": 1,
@@ -255,9 +275,9 @@
     },
     "sources": {
       "betting": {
-        "home": 28,
-        "draw": 30,
-        "away": 43
+        "home": 27,
+        "draw": 31,
+        "away": 42
       },
       "form": {
         "home": 37,
@@ -265,11 +285,15 @@
         "away": 37
       },
       "h2h": null,
-      "press": null,
-      "social": {
-        "home": 18,
+      "press": {
+        "home": 47,
         "draw": 26,
-        "away": 56
+        "away": 27
+      },
+      "social": {
+        "home": 25,
+        "draw": 26,
+        "away": 49
       }
     }
   },

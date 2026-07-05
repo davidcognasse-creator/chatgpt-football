@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-04T23:16:49.817Z",
+  "updatedAt": "2026-07-05T09:39:19.268Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -111,25 +111,25 @@
         "code": "NOR"
       },
       "probs": {
-        "home": 50,
+        "home": 52,
         "draw": 26,
-        "away": 24
+        "away": 22
       },
       "predictedScore": {
-        "home": 2,
-        "away": 1
+        "home": 3,
+        "away": 0
       },
-      "confidence": 68,
-      "analysis": "Brazil part favori de justesse avec 50% de chances estimées. Les cotes confirment (52%). La forme récente et le public vont dans le même sens.",
+      "confidence": 69,
+      "analysis": "Brazil tient la corde avec 52% de chances estimées. Les cotes confirment (53%). La forme récente, la presse et le public vont dans le même sens.",
       "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 52,
+            "home": 53,
             "draw": 26,
-            "away": 22
+            "away": 21
           },
           "favored": "home",
           "detail": "13 bookmakers"
@@ -155,20 +155,24 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
+          "probs": {
+            "home": 61,
+            "draw": 26,
+            "away": 13
+          },
+          "favored": "home",
+          "detail": "4095 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 55,
+            "home": 54,
             "draw": 26,
-            "away": 19
+            "away": 20
           },
           "favored": "home",
-          "detail": "X · 35890/12774 mentions"
+          "detail": "X · 36616/13393 mentions"
         }
       }
     },
@@ -189,23 +193,23 @@
         "code": "ENG"
       },
       "probs": {
-        "home": 31,
+        "home": 29,
         "draw": 29,
-        "away": 40
+        "away": 42
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
-      "confidence": 61,
-      "analysis": "England part favori de justesse avec 40% de chances estimées. Les cotes confirment (39%). Le public abonde aussi. À contre-courant, la forme récente penche plutôt pour Mexico.",
+      "confidence": 62,
+      "analysis": "England part favori de justesse avec 42% de chances estimées. Les cotes confirment (39%). La presse et le public vont dans le même sens. À contre-courant, la forme récente penche plutôt pour Mexico.",
       "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 31,
+            "home": 30,
             "draw": 30,
             "away": 39
           },
@@ -233,20 +237,24 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
+          "probs": {
+            "home": 16,
+            "draw": 26,
+            "away": 58
+          },
+          "favored": "away",
+          "detail": "15270 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 23,
+            "home": 26,
             "draw": 26,
-            "away": 51
+            "away": 48
           },
           "favored": "away",
-          "detail": "X · 23687/51711 mentions"
+          "detail": "X · 24982/45120 mentions"
         }
       }
     },
@@ -267,16 +275,16 @@
         "code": "ESP"
       },
       "probs": {
-        "home": 27,
+        "home": 26,
         "draw": 30,
-        "away": 43
+        "away": 44
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
-      "confidence": 59,
-      "analysis": "Spain part favori de justesse avec 43% de chances estimées. Les cotes confirment (50%). La forme récente abonde aussi. À contre-courant, l'historique des confrontations penche plutôt pour le nul ; le public penche plutôt pour Portugal.",
+      "confidence": 60,
+      "analysis": "Spain part favori de justesse avec 44% de chances estimées. Les cotes confirment (49%). La forme récente et la presse vont dans le même sens. À contre-courant, l'historique des confrontations penche plutôt pour le nul ; le public penche plutôt pour Portugal.",
       "scorers": null,
       "sources": {
         "betting": {
@@ -285,7 +293,7 @@
           "probs": {
             "home": 24,
             "draw": 27,
-            "away": 50
+            "away": 49
           },
           "favored": "away",
           "detail": "12 bookmakers"
@@ -315,20 +323,24 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
+          "probs": {
+            "home": 23,
+            "draw": 26,
+            "away": 51
+          },
+          "favored": "away",
+          "detail": "5776 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 51,
+            "home": 48,
             "draw": 26,
-            "away": 23
+            "away": 26
           },
           "favored": "home",
-          "detail": "X · 47566/21537 mentions"
+          "detail": "X · 39428/21266 mentions"
         }
       }
     },
@@ -349,25 +361,25 @@
         "code": "BEL"
       },
       "probs": {
-        "home": 37,
-        "draw": 28,
-        "away": 35
+        "home": 40,
+        "draw": 27,
+        "away": 33
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
       "confidence": 61,
-      "analysis": "USA part favori de justesse avec 38% de chances estimées. Les cotes, elles, penchent pour Belgium (37%). La forme récente et le public vont dans le même sens.",
+      "analysis": "USA part favori de justesse avec 40% de chances estimées. Les cotes, elles, penchent pour Belgium (36%). La forme récente, la presse et le public vont dans le même sens.",
       "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 35,
+            "home": 36,
             "draw": 28,
-            "away": 37
+            "away": 36
           },
           "favored": "away",
           "detail": "12 bookmakers"
@@ -393,9 +405,13 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
+          "probs": {
+            "home": 52,
+            "draw": 26,
+            "away": 22
+          },
+          "favored": "home",
+          "detail": "4134 articles"
         },
         "social": {
           "label": "Public",
@@ -406,7 +422,7 @@
             "away": 26
           },
           "favored": "home",
-          "detail": "X · 31374/16639 mentions"
+          "detail": "X · 31290/16524 mentions"
         }
       }
     },
@@ -427,8 +443,8 @@
         "code": "EGY"
       },
       "probs": {
-        "home": 64,
-        "draw": 22,
+        "home": 63,
+        "draw": 23,
         "away": 14
       },
       "predictedScore": {
@@ -436,16 +452,16 @@
         "away": 0
       },
       "confidence": 75,
-      "analysis": "Argentina se détache avec 65% de chances estimées. Les cotes confirment (70%). La forme récente et le public vont dans le même sens.",
+      "analysis": "Argentina se détache avec 63% de chances estimées. Les cotes confirment (69%). La forme récente, la presse et le public vont dans le même sens.",
       "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 70,
-            "draw": 20,
-            "away": 10
+            "home": 69,
+            "draw": 21,
+            "away": 11
           },
           "favored": "home",
           "detail": "13 bookmakers"
@@ -471,20 +487,24 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
+          "probs": {
+            "home": 63,
+            "draw": 26,
+            "away": 11
+          },
+          "favored": "home",
+          "detail": "3961 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 62,
+            "home": 61,
             "draw": 26,
-            "away": 12
+            "away": 13
           },
           "favored": "home",
-          "detail": "X · 64518/12719 mentions"
+          "detail": "X · 61030/12555 mentions"
         }
       }
     },
@@ -505,25 +525,25 @@
         "code": "COL"
       },
       "probs": {
-        "home": 28,
+        "home": 31,
         "draw": 29,
-        "away": 43
+        "away": 40
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
-      "confidence": 63,
-      "analysis": "Colombia part favori de justesse avec 43% de chances estimées. Les cotes confirment (43%). Le public abonde aussi. À contre-courant, la forme récente penche plutôt pour Switzerland.",
+      "confidence": 61,
+      "analysis": "Colombia part favori de justesse avec 40% de chances estimées. Les cotes confirment (42%). Le public abonde aussi. À contre-courant, la forme récente et la presse penchent plutôt pour Switzerland.",
       "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 28,
-            "draw": 30,
-            "away": 43
+            "home": 27,
+            "draw": 31,
+            "away": 42
           },
           "favored": "away",
           "detail": "12 bookmakers"
@@ -549,20 +569,24 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
+          "probs": {
+            "home": 47,
+            "draw": 26,
+            "away": 27
+          },
+          "favored": "home",
+          "detail": "1526 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 18,
+            "home": 25,
             "draw": 26,
-            "away": 56
+            "away": 49
           },
           "favored": "away",
-          "detail": "X · 5047/15994 mentions"
+          "detail": "X · 4978/9505 mentions"
         }
       }
     }
