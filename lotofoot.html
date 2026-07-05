@@ -59,6 +59,8 @@
     .type-double { color:#fdba74; font-weight:700; }
     .type-triple { color:#f472b6; font-weight:800; }
     .picks-cell b { letter-spacing:.06em; }
+    .grid-picker { font:inherit; font-size:.9rem; font-weight:600; color:var(--text);
+      background:var(--bg-soft); border:1px solid var(--card-border); border-radius:10px; padding:7px 12px; cursor:pointer; }
     .pdf-btn { font-family:'Sora',sans-serif; font-weight:700; cursor:pointer; font-size:.9rem;
       display:inline-flex; align-items:center; gap:7px; padding:9px 16px; border-radius:12px;
       border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.05); color:var(--text); }
@@ -118,6 +120,10 @@
     </section>
 
     <div class="loto-wrap">
+      <p class="grid-picker-wrap" hidden style="margin:0 0 14px">
+        <label style="color:var(--muted);font-size:.85rem;margin-right:8px">Grille :</label>
+        <select id="gridPicker" class="grid-picker"></select>
+      </p>
       <div class="loto-meta" id="lotoMeta"></div>
 
       <div class="loto-card">

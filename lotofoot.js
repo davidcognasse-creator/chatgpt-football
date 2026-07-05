@@ -176,15 +176,33 @@
     document.body.appendChild(ifr);
   }
 
-  fetch("lotofoot.json?v=" + Date.now())
-    .then((r) => {
-      if (!r.ok) throw new Error("lotofoot.json introuvable");
-      return r.json();
+  const bust = () => "?v=" + Date.now();
+
+  function loadGrid(file) {
+    fetch(file + bust())
+      .then((r) => { if (!r.ok) throw new Error(file + " introuvable"); return r.json(); })
+      .then(render)
+      .catch((err) => {
+        document.getElementById("lotoMeta").innerHTML =
+          `<span class="loto-tag">⚠️ Grille indisponible pour le moment.</span>`;
+        console.error(err);
+      });
+  }
+
+  // Sélecteur de grilles (actuelle + précédentes) depuis lotofoot-archive.json.
+  fetch("lotofoot-archive.json" + bust())
+    .then((r) => (r.ok ? r.json() : null))
+    .then((arch) => {
+      const sel = document.getElementById("gridPicker");
+      const list = arch && arch.grilles && arch.grilles.length ? arch.grilles : null;
+      if (sel && list) {
+        sel.innerHTML = list.map((g, i) => `<option value="${g.file}">${g.nom}</option>`).join("");
+        sel.parentElement.hidden = false;
+        sel.addEventListener("change", () => loadGrid(sel.value));
+        loadGrid(list[0].file);
+      } else {
+        loadGrid("lotofoot.json"); // repli
+      }
     })
-    .then(render)
-    .catch((err) => {
-      document.getElementById("lotoMeta").innerHTML =
-        `<span class="loto-tag">⚠️ Grille indisponible pour le moment.</span>`;
-      console.error(err);
-    });
+    .catch(() => loadGrid("lotofoot.json"));
 })();

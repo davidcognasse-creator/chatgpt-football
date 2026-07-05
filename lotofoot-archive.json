@@ -1,0 +1,6 @@
+{
+  "grilles": [
+    { "nom": "Loto Foot 8 N°87 (actuelle)", "file": "lotofoot.json" },
+    { "nom": "Loto Foot 15 N°51", "file": "lotofoot-n51.json" }
+  ]
+}

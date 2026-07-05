@@ -28,6 +28,7 @@ on:
       - "lotofoot.html"
       - "lotofoot.js"
       - "lotofoot.json"
+      - "lotofoot-*.json"
       - "favicon.svg"
       - "og-image.png"
       - "panini-logo.png"
@@ -80,6 +81,7 @@ jobs:
           cp styles.css script.js historique.js simulateur.js groupes.js firebase-config.js flags.js i18n.js carte.js carte-config.js carte-auth.js gains.js lotofoot.js _site/
           cp data.json data.js history.json history.js winner.json winner.js _site/
           cp lotofoot.json _site/ 2>/dev/null || true   # grille Loto Foot (générée par grille-optim.py)
+          cp lotofoot-archive.json lotofoot-*.json _site/ 2>/dev/null || true   # archives grilles précédentes
           cp favicon.svg og-image.png robots.txt sitemap.xml _site/
           cp panini-logo.png _site/ 2>/dev/null || true   # logo optionnel (si présent)
           cp CNAME _site/   # déclare le domaine personnalisé à GitHub Pages
