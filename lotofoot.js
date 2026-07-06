@@ -6,8 +6,9 @@
   const pct = (x) => Math.round((x || 0) * 100);
   const SIGN = { "1": "1", "N": "N", "2": "2" };
   const GRID_SUB_DEFAULT =
-    "Choisis ton budget. On place les doubles/triples sur les matchs les plus " +
-    "incertains pour maximiser la probabilité de toucher un rang (≥ 13 bons).";
+    "Choisis ton budget. Les doubles/triples sont répartis pour maximiser " +
+    "l'<b>espérance de gain (€)</b>. <b>P(profit)</b> = probabilité que les gains couvrent " +
+    "la mise (rapports FDJ estimés) — la mesure la plus fiable pour comparer les budgets.";
 
   function probCell(p) {
     return `<span class="prob">
@@ -119,12 +120,22 @@
       [...tabs.children].forEach((b, i) => b.classList.toggle("active", i === idx));
 
       const s = g.stats;
+      const n = data.matchs.length;
+      const be = s.breakeven;
+      const beRap = be != null && data.estRapports ? data.estRapports[String(be)] : null;
+      const profitTile =
+        s.pProfit != null
+          ? `<div class="grid-stat hl"><div class="v">${(s.pProfit * 100).toFixed(0)}%</div><div class="l">P(profit)${be != null ? " · dès " + be + "/" + n : ""}</div></div>`
+          : "";
       document.getElementById("gridStats").innerHTML =
         `<div class="grid-stat"><div class="v">${g.combos}</div><div class="l">combinaisons</div></div>` +
         `<div class="grid-stat"><div class="v">${g.cost} €</div><div class="l">coût</div></div>` +
         `<div class="grid-stat"><div class="v">${g.repartition.simples}·${g.repartition.doubles}·${g.repartition.triples}</div><div class="l">simples·doubles·triples</div></div>` +
-        `<div class="grid-stat"><div class="v">${(s.pge13 * 100).toFixed(1)}%</div><div class="l">P(≥ ${data.matchs.length - 2} bons)</div></div>` +
-        `<div class="grid-stat"><div class="v">${s.esperance.toFixed(1)}</div><div class="l">espérance /15</div></div>`;
+        profitTile +
+        `<div class="grid-stat"><div class="v">${(s.pge13 * 100).toFixed(1)}%</div><div class="l">P(≥ ${n - 2} bons)</div></div>` +
+        (beRap
+          ? `<div class="grid-stat"><div class="v">~${Math.round(beRap)} €</div><div class="l">rapport estimé ${be}/${n}</div></div>`
+          : `<div class="grid-stat"><div class="v">${s.esperance.toFixed(1)}</div><div class="l">espérance /${n}</div></div>`);
 
       // Bandeau résultat réel (si la grille est réglée) — dynamique par budget.
       const rr = realResult(data, g);

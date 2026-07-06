@@ -130,52 +130,177 @@ def poisson_binomial(covs):
     return dist
 
 
-BUDGETS = [12, 24, 48]   # trois grilles proposées
+# ── Espérance de gain en € (#3) ────────────────────────────────────────────
+# Objectif : maximiser E[€] = Σ P(rang)·rapport − coût, au lieu de P(parfait).
+# Rapports (pari-mutuel, inconnus) ESTIMÉS par un modèle « rareté-foule » :
+#   rapport_k ≈ C · F_k / Pc_k
+# où Pc_k = proba qu'une grille-FOULE type (favori du public à chaque match)
+# atteigne EXACTEMENT le rang k, F_k = part du rang (les rangs rares payent plus),
+# C = richesse du pool. Calibré sur le N°51 réel : C≈13 (quasi constant sur les
+# trois rangs observés → le modèle tient). Réglable via env pour la calibration #4.
+LF_RICHNESS = float(os.environ.get("LF_RICHNESS", "13.5"))
+
+
+def paying_tiers(n):
+    """Rangs qui payent : {n, n-1, n-2} et n-3 en plus pour le LF15."""
+    lo = n - 3 if n >= 15 else n - 2
+    return list(range(lo, n + 1))
+
+
+def crowd_correct_probs(matchs):
+    """Par match : proba (modèle) que le pari du PUBLIC (son favori) soit juste."""
+    c = []
+    for m in matchs:
+        p = m["p"]
+        f = m.get("foule") or p
+        fav = max(("1", "N", "2"), key=lambda k: f.get(k, 0))
+        c.append(p.get(fav, 0.0))
+    return c
+
+
+def estimate_rapports(matchs, n):
+    """Rapports ESTIMÉS par rang (modèle rareté-foule). Renvoie ({rang: €}, Pc)."""
+    tiers = paying_tiers(n)
+    Pc = poisson_binomial(crowd_correct_probs(matchs))
+    lo = tiers[0]
+    w = {k: 2 ** (k - lo) for k in tiers}
+    W = sum(w.values())
+    rap = {}
+    for k in tiers:
+        pc = Pc[k] if k < len(Pc) else 0.0
+        rap[k] = LF_RICHNESS * (w[k] / W) / pc if pc > 1e-9 else 0.0
+    return rap, Pc
+
+
+def expected_gain(dist, rapports):
+    """E[€ gagnés] d'une grille = Σ P(meilleure combinaison = k)·rapport_k
+    (modèle rang unique, cohérent avec le bilan affiché)."""
+    return sum(dist[k] * rapports.get(k, 0.0) for k in range(len(dist)))
+
+
+def optimize_ev(matchs, maxcombos, rapports):
+    """Répartit doubles/triples pour MAXIMISER E[€] = gain espéré − coût, sous
+    le plafond de combinaisons. Glouton : à chaque pas on applique l'upgrade
+    (simple→double→triple) au meilleur gain net, et on S'ARRÊTE dès qu'aucun
+    upgrade n'augmente l'espérance nette — donc le coût optimal peut être < plafond
+    (l'enseignement du N°51 : au-delà d'un point, ajouter des combinaisons perd de l'argent)."""
+    infos = [picks_info(m["p"]) for m in matchs]
+    cov = [info["cov"] for info in infos]
+    N = len(matchs)
+    k = [1] * N
+
+    def combos(kk):
+        pr = 1
+        for x in kk:
+            pr *= x
+        return pr
+
+    def net(kk, cb):
+        d = poisson_binomial([cov[i][kk[i]] for i in range(N)])
+        return expected_gain(d, rapports) - cb * UNIT
+
+    cur_combos = 1
+    cur_net = net(k, cur_combos)
+    while True:
+        best = None
+        for i in range(N):
+            if k[i] >= 3:
+                continue
+            nk = k[i] + 1
+            nc = cur_combos // k[i] * nk
+            if nc > maxcombos:
+                continue
+            k[i] = nk
+            e = net(k, nc)
+            k[i] -= 1
+            if e > cur_net + 1e-9 and (best is None or e > best[0]):
+                best = (e, i, nk, nc)
+        if not best:
+            break
+        cur_net, i, nk, cur_combos = best[0], best[1], best[2], best[3]
+        k[i] = nk
+    return list(k), combos(k), infos
+
+
+def grid_metrics(covs, combos, rapports, n):
+    """Métriques €/proba d'une grille. P(profit)=P(gain ≥ coût) est la mesure
+    HONNÊTE (le rang requis pour rembourser monte avec le budget), robuste même
+    si les probas des rangs rares sont sur-estimées. E[€] dépend, lui, de la
+    calibration du modèle (→ #4) — affiché mais à prendre avec des pincettes."""
+    dist = poisson_binomial(covs)
+    cost = combos * UNIT
+    eg = expected_gain(dist, rapports)
+    tiers = paying_tiers(n)
+    pge = sum(dist[k] for k in tiers)                                   # P(atteindre un rang)
+    breakeven = min([k for k in tiers if rapports.get(k, 0) >= cost], default=None)
+    pprofit = sum(dist[k] for k in range(len(dist)) if rapports.get(k, 0) >= cost)
+    return {"dist": dist, "cost": cost, "eg": eg, "pge": pge,
+            "breakeven": breakeven, "pprofit": pprofit}
+
+
+BUDGETS = [12, 24, 48]   # trois plafonds proposés
 
 
 def main():
     matchs, src = load()
     n = len(matchs)
+    rapports, Pc = estimate_rapports(matchs, n)
+    tiers = paying_tiers(n)
     say("# Optimiseur de grille Loto Foot\n")
     say(f"Probas : **{src}** · {n} matchs · mise unitaire {UNIT:.0f} € · "
         f"budgets {', '.join(str(b) for b in BUDGETS)} €\n")
+    say("**Objectif : espérance de gain (€), pas seulement la probabilité de grille parfaite.**")
+    say("Rapports FDJ ESTIMÉS (modèle rareté-public, calibré sur du réel) :")
+    say("| Rang | Rapport estimé | P(public l'atteint) |")
+    say("|---|---|---|")
+    for k in sorted(tiers, reverse=True):
+        pc = Pc[k] if k < len(Pc) else 0
+        say(f"| {k}/{n} | ~{rapports[k]:,.0f} € | {pc*100:.3f} % |".replace(",", " "))
+    say("")
 
     def render(bud, choices, combos, infos):
+        m_ = grid_metrics([infos[i]["cov"][choices[i]] for i in range(n)], combos, rapports, n)
         say(f"## 🎯 Grille ≤ {bud} €")
-        say(f"Combinaisons : **{combos}** → coût **{combos*UNIT:.0f} €** (≤ {bud} €)\n")
+        stop = " · _plafond atteint_" if combos >= int(bud / UNIT) else " · _coût optimal < plafond_"
+        say(f"Combinaisons : **{combos}** → coût **{m_['cost']:.0f} €** (≤ {bud} €){stop}\n")
         say("| # | Match | Type | Pronostic(s) | Couverture |")
         say("|---|---|---|---|---|")
-        covs, nb = [], {1: 0, 2: 0, 3: 0}
+        nb = {1: 0, 2: 0, 3: 0}
         for i, (m, info, k) in enumerate(zip(matchs, infos, choices), 1):
             nb[k] += 1
-            signs, cov = info["signs"], info["cov"]
+            signs = info["signs"]
             typ = {1: "simple", 2: "DOUBLE", 3: "TRIPLE"}[k]
             hedge = " 🅽" if k == 2 and "N" in signs[k] and info["order"][2] == "N" else ""
-            covs.append(cov[k])
-            say(f"| {i} | {m['dom']}–{m['ext']} | {typ}{hedge} | {' / '.join(signs[k])} | {cov[k]*100:.0f}% |")
+            say(f"| {i} | {m['dom']}–{m['ext']} | {typ}{hedge} | {' / '.join(signs[k])} | {info['cov'][k]*100:.0f}% |")
         say(f"\nRépartition : {nb[1]} simples · **{nb[2]} doubles** · **{nb[3]} triples**")
-        d = poisson_binomial(covs)
-        say(f"- **≥ {n-2}** (rang gagnant) : **{(d[n]+d[n-1]+d[n-2])*100:.2f} %** "
-            f"· espérance **{sum(i*d[i] for i in range(n+1)):.1f}/{n}**\n")
+        be = m_["breakeven"]
+        say(f"- **P(profit)** (gain ≥ coût) : **{m_['pprofit']*100:.1f} %** "
+            f"→ rembourse dès **{be}/{n}** (rapport ~{rapports.get(be,0):.0f} €)" if be
+            else f"- **P(profit)** : le budget dépasse le plus gros rapport estimé")
+        say(f"- P(atteindre un rang, ≥ {tiers[0]}/{n}) : {m_['pge']*100:.1f} % "
+            f"· espérance de gain (si modèle calibré) : ~{m_['eg']:.0f} €\n")
 
     grids = []
     for bud in BUDGETS:
-        ch, cb, inf = optimize(matchs, int(bud / UNIT))
+        ch, cb, inf = optimize_ev(matchs, int(bud / UNIT), rapports)
         render(bud, ch, cb, inf)
         grids.append((bud, ch, cb, inf))
 
-    say("---\n_Doubles/triples sur les matchs les plus incertains, avec conscience du "
-        "nul (🅽 = double couvrant le nul sur un match équilibré, pour ne plus rater les "
-        "1-1 type Qingdao/Gwangju du N°51). Probas = " + src + " (via moteur-cotes → probas.json)._")
+    say("---\n_Répartition doubles/triples pour MAXIMISER l'espérance de gain (Σ P(rang)×rapport − coût), "
+        "avec conscience du nul (🅽). Rapports estimés par le modèle rareté-public. "
+        "**P(profit)** est la mesure fiable ; l'espérance € dépend de la calibration (#4). "
+        "Probas = " + src + " (via moteur-cotes → probas.json)._")
     open(os.path.join(HERE, "GRILLE-OPTIM.md"), "w", encoding="utf-8").write("\n".join(L) + "\n")
 
-    export_json(matchs, src, grids)
+    export_json(matchs, src, grids, rapports)
 
 
-def export_json(matchs, src, grids):
+def export_json(matchs, src, grids, rapports=None):
     """Écrit lotofoot.json (racine du repo) pour la page publique lotofoot.html :
     l'analyse par match (marché vs foule) + une grille par budget."""
     n = len(matchs)
+    if rapports is None:
+        rapports, _ = estimate_rapports(matchs, n)
     rows, divergences = [], []
     for i, m in enumerate(matchs, 1):
         f = m.get("foule") or {}
@@ -204,19 +329,26 @@ def export_json(matchs, src, grids):
             covs.append(cov[k])
             picks.append({"i": i, "type": {1: "simple", 2: "double", 3: "triple"}[k],
                           "picks": signs[k], "coverage": cov[k]})
-        d = poisson_binomial(covs)
+        mtr = grid_metrics(covs, combos, rapports, n)
+        d = mtr["dist"]
         grids_json.append({
             "budget": bud, "combos": combos, "cost": combos * UNIT,
             "repartition": {"simples": nb[1], "doubles": nb[2], "triples": nb[3]},
             "stats": {"p15": d[n], "p14": d[n - 1], "p13": d[n - 2],
-                      "pge13": d[n] + d[n - 1] + d[n - 2],
-                      "esperance": sum(i * d[i] for i in range(n + 1))},
+                      "pge13": d[n] + d[n - 1] + d[n - 2],  # P(≥ n-2), attendu par la page
+                      "pReach": mtr["pge"],                # P(atteindre un rang payant, ≥ tier bas)
+                      "esperance": sum(i * d[i] for i in range(n + 1)),  # espérance de bons /n
+                      "pProfit": mtr["pprofit"],           # P(gain ≥ coût) — métrique honnête
+                      "breakeven": mtr["breakeven"],       # rang minimal pour rembourser
+                      "expectedGain": mtr["eg"]},          # E[€] (dépend de la calibration)
             "picks": picks,
         })
 
+    tiers = paying_tiers(n)
     data = {
         "nom": json.load(open(os.path.join(HERE, "grille.json"), encoding="utf-8")).get("nom", ""),
         "source": src, "matchs": rows, "divergences": divergences, "grids": grids_json,
+        "estRapports": {str(k): rapports.get(k, 0.0) for k in tiers},
     }
     json.dump(data, open(os.path.join(HERE, "..", "lotofoot.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)
