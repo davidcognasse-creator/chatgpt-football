@@ -126,23 +126,15 @@
       if (!g) return;
       [...tabs.children].forEach((b, i) => b.classList.toggle("active", i === idx));
 
-      const s = g.stats;
-      const n = data.matchs.length;
-      const be = s.breakeven;
-      const beRap = be != null && data.estRapports ? data.estRapports[String(be)] : null;
-      const profitTile =
-        s.pProfit != null
-          ? `<div class="grid-stat hl"><div class="v">${(s.pProfit * 100).toFixed(0)}%</div><div class="l">P(profit)${be != null ? " · dès " + be + "/" + n : ""}</div></div>`
-          : "";
+      const picks = g.picks || [];
+      const avgCov = picks.length
+        ? picks.reduce((acc, p) => acc + (p.coverage || 0), 0) / picks.length
+        : 0;
       document.getElementById("gridStats").innerHTML =
         `<div class="grid-stat"><div class="v">${g.combos}</div><div class="l">combinaisons</div></div>` +
         `<div class="grid-stat"><div class="v">${g.cost} €</div><div class="l">coût</div></div>` +
         `<div class="grid-stat"><div class="v">${g.repartition.simples}·${g.repartition.doubles}·${g.repartition.triples}</div><div class="l">simples·doubles·triples</div></div>` +
-        profitTile +
-        `<div class="grid-stat"><div class="v">${(s.pge13 * 100).toFixed(1)}%</div><div class="l">P(≥ ${n - 2} bons)</div></div>` +
-        (beRap
-          ? `<div class="grid-stat"><div class="v">~${Math.round(beRap)} €</div><div class="l">rapport estimé ${be}/${n}</div></div>`
-          : `<div class="grid-stat"><div class="v">${s.esperance.toFixed(1)}</div><div class="l">espérance /${n}</div></div>`);
+        `<div class="grid-stat"><div class="v">${(avgCov * 100).toFixed(0)}%</div><div class="l">couverture moyenne</div></div>`;
 
       // Bandeau résultat réel (si la grille est réglée) — dynamique par budget.
       const rr = realResult(data, g);
