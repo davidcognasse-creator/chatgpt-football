@@ -310,8 +310,7 @@
           (beats
             ? `<span class="ct">🎯 <b>Modèle vérifié en réel</b>, <span class="cwin">il bat le public !</span></span>`
             : `<span class="ct">🎯 <b>Modèle vérifié en réel</b> — <span>calibration en cours</span></span>`) +
-          `<span class="cmetric"><b>${accM}%</b><span>précision modèle</span></span>` +
-          `<span class="cmetric"><b>${accC}%</b><span>précision public</span></span>`;
+          `<span class="ct">La précision du modèle est de <b>${accM}%</b> versus <b>${accC}%</b> pour les parieurs.</span>`;
       })
       .catch(() => {});
   }
