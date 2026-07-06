@@ -41,17 +41,17 @@ Combinaisons : **48** → coût **48 €** (≤ 48 €)
 
 | # | Match | Type | Pronostic(s) | Couverture |
 |---|---|---|---|---|
-| 1 | Portugal–Espagne | simple | 2 | 49% |
+| 1 | Portugal–Espagne | DOUBLE | 2 / N | 76% |
 | 2 | Etats-Unis–Belgique | DOUBLE | 1 / 2 | 72% |
 | 3 | Hacken–Djurgardens | DOUBLE | 1 / 2 | 74% |
 | 4 | Brommapojkarna–GAIS Goteborg | DOUBLE | 2 / 1 | 72% |
 | 5 | FK Suduva–FK Transinvest | simple | 1 | 64% |
 | 6 | SK Super Nova–Ogre United | simple | 1 | 55% |
 | 7 | CDUC Ecuador–Mushuc Runa | TRIPLE | 1 / 2 / N | 100% |
-| 8 | Keflavik–Fram Reykjavik | DOUBLE | 2 / 1 | 76% |
+| 8 | Keflavik–Fram Reykjavik | simple | 2 | 47% |
 
 Répartition : 3 simples · **4 doubles** · **1 triples**
-- **≥ 6** (rang gagnant) : **55.74 %** · espérance **5.6/8**
+- **≥ 6** (rang gagnant) : **54.89 %** · espérance **5.6/8**
 
 ---
-_Doubles/triples sur les matchs les plus incertains. Probas = cotes (12 books) (via moteur-cotes → probas.json)._
+_Doubles/triples sur les matchs les plus incertains, avec conscience du nul (🅽 = double couvrant le nul sur un match équilibré, pour ne plus rater les 1-1 type Qingdao/Gwangju du N°51). Probas = cotes (12 books) (via moteur-cotes → probas.json)._

@@ -17,6 +17,25 @@ import os
 UNIT = 1.0      # € par combinaison
 HERE = os.path.dirname(__file__)
 
+# ── Conscience du nul (#2) ─────────────────────────────────────────────────
+# Faiblesse #1 du N°51 : sur les matchs équilibrés, le modèle jouait le favori
+# en simple et le nul tombait (Qingdao 1-1, Gwangju 1-1). L'indice de propension
+# au nul (dpi) repère ces matchs (équilibrés, P(N) non négligeable) pour :
+#  (a) inciter l'optimiseur à y placer un double/triple (bonus de valeur), et
+#  (b) faire couvrir le NUL par ce double plutôt que le 2e favori.
+# Réglable via env pour la calibration (#4). Coverage recalculée honnêtement.
+DRAW_MIN = float(os.environ.get("DRAW_MIN", "0.72"))     # dpi mini pour couvrir N dans un double
+DRAW_BONUS = float(os.environ.get("DRAW_BONUS", "0.10"))  # bonus de valeur (log) × dpi si N couvert
+DRAW_MAXCOST = float(os.environ.get("DRAW_MAXCOST", "0.06"))  # coût de coverage max pour couvrir N au lieu du 2e favori
+
+
+def draw_propensity(p):
+    """Indice 0..~1.3 : élevé quand le match est ÉQUILIBRÉ (P(1)≈P(2)) et que le
+    nul n'est pas négligeable. C'est là que le nul est le piège classique du pool."""
+    p1, pN, p2 = p["1"], p["N"], p["2"]
+    balance = 1 - abs(p1 - p2) / (p1 + p2 + 1e-9)   # 1 = parfaitement équilibré
+    return balance * pN / 0.33                       # 0.33 = nul « neutre » de référence
+
 
 def get_budget():
     """Budget € : priorité à BUDGET_EUR (env), sinon "budget" de grille.json, sinon 50."""
@@ -58,28 +77,43 @@ def load():
 
 
 def picks_info(p):
-    """Trie les issues ; renvoie coverage pour simple/double/triple."""
+    """Trie les issues ; renvoie les SIGNES couverts et la coverage réelle pour
+    simple/double/triple. Le double est « conscient du nul » : sur un match
+    équilibré (dpi élevé) où le nul serait exclu, il couvre {favori, N} au lieu
+    des deux favoris — au prix d'un peu de coverage, pour ne plus rater les nuls."""
     order = sorted(("1", "N", "2"), key=lambda k: -p[k])
-    cov = {1: p[order[0]], 2: p[order[0]] + p[order[1]], 3: 1.0}
-    return order, cov
+    dpi = draw_propensity(p)
+    signs = {1: [order[0]], 3: list(order)}
+    swap_cost = p[order[1]] - p["N"]         # coverage perdue en couvrant N au lieu du 2e favori
+    if "N" in order[:2]:
+        signs[2] = order[:2]                 # nul déjà dans le top-2 : rien à faire
+    elif dpi >= DRAW_MIN and swap_cost <= DRAW_MAXCOST:
+        signs[2] = [order[0], "N"]           # match équilibré + nul quasi aussi probable : on couvre le NUL
+    else:
+        signs[2] = order[:2]                 # match tranché ou nul trop coûteux : top-2 classique
+    cov = {k: sum(p[s] for s in signs[k]) for k in (1, 2, 3)}
+    return {"order": order, "cov": cov, "signs": signs, "dpi": dpi}
 
 
 def optimize(matchs, maxcombos):
     infos = [picks_info(m["p"]) for m in matchs]
     # DP sur le nombre de combinaisons (produit des picks) ≤ maxcombos.
-    dp = {1: (0.0, [])}  # produit -> (somme log-coverage, choix[])
-    for (order, cov) in infos:
+    dp = {1: (0.0, [])}  # produit -> (valeur, choix[])
+    for info in infos:
+        cov, signs, dpi = info["cov"], info["signs"], info["dpi"]
         nd = {}
         for prod, (val, ch) in dp.items():
             for k in (1, 2, 3):
                 np_ = prod * k
                 if np_ > maxcombos:
                     continue
-                v = val + math.log(max(1e-9, cov[k]))
+                # valeur = log-coverage + bonus si le pick couvre le nul sur un
+                # match à forte propension au nul (oriente le budget vers ces matchs).
+                bonus = DRAW_BONUS * dpi if "N" in signs[k] else 0.0
+                v = val + math.log(max(1e-9, cov[k])) + bonus
                 if np_ not in nd or v > nd[np_][0]:
                     nd[np_] = (v, ch + [k])
         dp = nd
-    # meilleure valeur sous budget
     best_prod = max(dp, key=lambda pr: dp[pr][0])
     return dp[best_prod][1], best_prod, infos
 
@@ -112,11 +146,13 @@ def main():
         say("| # | Match | Type | Pronostic(s) | Couverture |")
         say("|---|---|---|---|---|")
         covs, nb = [], {1: 0, 2: 0, 3: 0}
-        for i, (m, (order, cov), k) in enumerate(zip(matchs, infos, choices), 1):
+        for i, (m, info, k) in enumerate(zip(matchs, infos, choices), 1):
             nb[k] += 1
+            signs, cov = info["signs"], info["cov"]
             typ = {1: "simple", 2: "DOUBLE", 3: "TRIPLE"}[k]
+            hedge = " 🅽" if k == 2 and "N" in signs[k] and info["order"][2] == "N" else ""
             covs.append(cov[k])
-            say(f"| {i} | {m['dom']}–{m['ext']} | {typ} | {' / '.join(order[:k])} | {cov[k]*100:.0f}% |")
+            say(f"| {i} | {m['dom']}–{m['ext']} | {typ}{hedge} | {' / '.join(signs[k])} | {cov[k]*100:.0f}% |")
         say(f"\nRépartition : {nb[1]} simples · **{nb[2]} doubles** · **{nb[3]} triples**")
         d = poisson_binomial(covs)
         say(f"- **≥ {n-2}** (rang gagnant) : **{(d[n]+d[n-1]+d[n-2])*100:.2f} %** "
@@ -128,8 +164,9 @@ def main():
         render(bud, ch, cb, inf)
         grids.append((bud, ch, cb, inf))
 
-    say("---\n_Doubles/triples sur les matchs les plus incertains. Probas = "
-        + src + " (via moteur-cotes → probas.json)._")
+    say("---\n_Doubles/triples sur les matchs les plus incertains, avec conscience du "
+        "nul (🅽 = double couvrant le nul sur un match équilibré, pour ne plus rater les "
+        "1-1 type Qingdao/Gwangju du N°51). Probas = " + src + " (via moteur-cotes → probas.json)._")
     open(os.path.join(HERE, "GRILLE-OPTIM.md"), "w", encoding="utf-8").write("\n".join(L) + "\n")
 
     export_json(matchs, src, grids)
@@ -161,11 +198,12 @@ def export_json(matchs, src, grids):
     grids_json = []
     for bud, choices, combos, infos in grids:
         covs, nb, picks = [], {1: 0, 2: 0, 3: 0}, []
-        for i, ((order, cov), k) in enumerate(zip(infos, choices), 1):
+        for i, (info, k) in enumerate(zip(infos, choices), 1):
             nb[k] += 1
+            signs, cov = info["signs"], info["cov"]
             covs.append(cov[k])
             picks.append({"i": i, "type": {1: "simple", 2: "double", 3: "triple"}[k],
-                          "picks": order[:k], "coverage": cov[k]})
+                          "picks": signs[k], "coverage": cov[k]})
         d = poisson_binomial(covs)
         grids_json.append({
             "budget": bud, "combos": combos, "cost": combos * UNIT,
