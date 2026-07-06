@@ -14,9 +14,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 40,
+        "home": 41,
         "draw": 27,
-        "away": 33
+        "away": 32
       },
       "score": {
         "home": 2,
@@ -26,9 +26,9 @@
     },
     "sources": {
       "betting": {
-        "home": 36,
+        "home": 37,
         "draw": 28,
-        "away": 36
+        "away": 35
       },
       "form": {
         "home": 39,
@@ -42,9 +42,9 @@
         "away": 22
       },
       "social": {
-        "home": 48,
+        "home": 47,
         "draw": 26,
-        "away": 26
+        "away": 27
       }
     }
   },
@@ -76,7 +76,7 @@
     "sources": {
       "betting": {
         "home": 24,
-        "draw": 26,
+        "draw": 27,
         "away": 49
       },
       "form": {
@@ -95,9 +95,9 @@
         "away": 51
       },
       "social": {
-        "home": 48,
+        "home": 47,
         "draw": 26,
-        "away": 26
+        "away": 27
       }
     }
   },
@@ -165,9 +165,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 31,
+        "home": 32,
         "draw": 29,
-        "away": 40
+        "away": 39
       },
       "score": {
         "home": 1,
@@ -177,9 +177,9 @@
     },
     "sources": {
       "betting": {
-        "home": 27,
+        "home": 28,
         "draw": 31,
-        "away": 42
+        "away": 41
       },
       "form": {
         "home": 37,
@@ -193,9 +193,62 @@
         "away": 27
       },
       "social": {
-        "home": 26,
+        "home": 27,
         "draw": 26,
-        "away": 48
+        "away": 47
+      }
+    }
+  },
+  "1578539": {
+    "id": "1578539",
+    "datetime": "2026-07-09T20:00:00+00:00",
+    "home": {
+      "name": "France",
+      "flag": "🇫🇷",
+      "code": "FRA"
+    },
+    "away": {
+      "name": "Morocco",
+      "flag": "🇲🇦",
+      "code": "MAR"
+    },
+    "predicted": {
+      "probs": {
+        "home": 57,
+        "draw": 24,
+        "away": 19
+      },
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "favored": "home"
+    },
+    "sources": {
+      "betting": {
+        "home": 60,
+        "draw": 25,
+        "away": 16
+      },
+      "form": {
+        "home": 40,
+        "draw": 26,
+        "away": 34
+      },
+      "h2h": {
+        "home": 79,
+        "draw": 10,
+        "away": 10
+      },
+      "press": {
+        "home": 52,
+        "draw": 26,
+        "away": 22
+      },
+      "social": {
+        "home": 47,
+        "draw": 26,
+        "away": 27
       }
     }
   },

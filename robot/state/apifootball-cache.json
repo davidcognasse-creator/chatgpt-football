@@ -24,7 +24,8 @@
     "belgium": 1,
     "senegal": 13,
     "spain": 9,
-    "switzerland": 15
+    "switzerland": 15,
+    "france": 2
   },
   "h2h": {
     "panama|england": {
@@ -56,6 +57,12 @@
       "draw": 6,
       "away": 2,
       "ts": "2026-07-04T13:44:11.579Z"
+    },
+    "france|morocco": {
+      "home": 1,
+      "draw": 0,
+      "away": 0,
+      "ts": "2026-07-06T11:25:36.402Z"
     }
   }
 }
