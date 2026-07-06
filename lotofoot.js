@@ -25,22 +25,28 @@
     return p ? p.picks : [m.coted ? m.marketPick : m.crowdPick];
   }
 
-  // Résultat réel d'une grille : nb de bons + gain FDJ (si les résultats sont figés).
+  // Résultat réel d'une grille. Le gain/net n'est calculé QUE si les rapports FDJ
+  // OFFICIELS sont publiés ET la grille est définitive (tous les résultats connus) ;
+  // sinon on n'affiche que le score (pas de gain inventé ni de « 0 € » trompeur).
   function realResult(data, g) {
     const b = data.bilan;
     if (!b || !b.reels || !b.reels.length) return null;
     const reelByI = {};
     b.reels.forEach((r) => (reelByI[r.i] = r));
-    const rap = b.rapports || {};
-    let correct = 0;
+    const n = data.matchs.length;
+    let correct = 0, played = 0;
     for (const m of data.matchs) {
       const r = reelByI[m.i];
-      if (!r) continue;
+      if (!r || !r.reel) continue;
+      played++;
       if (gridPicksFor(data, g, m).includes(r.reel)) correct++;
     }
-    const n = b.reels.length;
-    const gain = Number(rap[String(correct)] || 0);
-    return { correct, n, gain, net: gain - g.cost };
+    const official = !!(b.rapports && Object.keys(b.rapports).length);
+    const definitive = played === n && b.reels.filter((r) => r.reel).length === n;
+    const hasGain = official && definitive;
+    const gain = hasGain ? Number((b.rapports || {})[String(correct)] || 0) : null;
+    return { correct, n, played, definitive, official, hasGain,
+             gain, net: gain != null ? gain - g.cost : null };
   }
 
   function render(data) {
@@ -54,15 +60,18 @@
     // Sous-titre réinitialisé à chaque grille (évite de garder le texte d'une
     // grille réglée quand on revient sur une grille en cours).
     const finished = !!(data.bilan && data.bilan.reels && data.bilan.reels.length);
+    const official = !!(finished && data.bilan.rapports && Object.keys(data.bilan.rapports).length);
     // Grille jouée : le pré-match (marché vs public) n'a plus d'intérêt → on le masque.
     const marketCard = document.getElementById("marketCard");
     if (marketCard) marketCard.hidden = finished;
     const gridSub = document.getElementById("gridSub");
     if (gridSub) {
-      gridSub.innerHTML = finished
-        ? (data.bilan.note ? data.bilan.note + " — " : "") +
-          "sélectionne un budget pour voir le <b>gain réel</b> qu'aurait rapporté chaque grille."
-        : GRID_SUB_DEFAULT;
+      const note = data.bilan && data.bilan.note ? data.bilan.note + " — " : "";
+      gridSub.innerHTML = !finished
+        ? GRID_SUB_DEFAULT
+        : official
+          ? note + "sélectionne un budget pour voir le <b>gain réel</b> qu'aurait rapporté chaque grille."
+          : note + "résultats connus ; <b>gains officiels non publiés</b> (aucun gain affiché).";
     }
 
     // Tableau marché vs public
@@ -143,7 +152,7 @@
       const reelByI = {};
       if (rr) (data.bilan.reels || []).forEach((r) => (reelByI[r.i] = r));
       if (res) {
-        if (rr) {
+        if (rr && rr.hasGain) {
           const win = rr.gain > 0;
           const netCls = rr.net >= 0 ? "pos" : "neg";
           res.hidden = false;
@@ -153,6 +162,16 @@
             `<span class="rscore">${rr.correct}/${rr.n} bons</span>` +
             `<span class="rgain${win ? "" : " zero"}">${win ? "gain " + rr.gain.toFixed(2) + " €" : "hors rang · 0 €"}</span>` +
             `<span class="rnet ${netCls}">net ${rr.net >= 0 ? "+" : ""}${rr.net.toFixed(2)} €</span>`;
+        } else if (rr) {
+          // Résultats connus mais rapports officiels non publiés (ou grille non
+          // définitive) : score seul, aucun gain affiché.
+          res.hidden = false;
+          res.className = "grid-result";
+          const label = rr.definitive ? "🏁 Résultat" : `⏳ En cours (${rr.played}/${rr.n} joués)`;
+          res.innerHTML =
+            `<span class="rlabel">${label} · grille ${g.budget} €</span>` +
+            `<span class="rscore">${rr.correct}/${rr.n} bons</span>` +
+            `<span class="rlabel">gains officiels non publiés</span>`;
         } else {
           res.hidden = true;
         }
