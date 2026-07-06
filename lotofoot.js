@@ -104,8 +104,7 @@
             `<p style="margin:6px 0;line-height:1.5">` +
             `<strong>Match ${d.i} · ${d.dom} - ${d.ext}</strong> : le marché voit ` +
             `<span class="pick">${SIGN[d.marketPick]}</span> (${pct(d.p[d.marketPick])}%) ` +
-            `alors que le public joue <b>${SIGN[d.crowdPick]}</b> (${pct(d.foule[d.crowdPick])}%). ` +
-            `<span style="color:var(--muted)">Value si le marché a raison.</span></p>`
+            `alors que le public joue <b>${SIGN[d.crowdPick]}</b> (${pct(d.foule[d.crowdPick])}%).</p>`
         )
         .join("");
     } else {
