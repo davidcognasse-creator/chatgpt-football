@@ -134,23 +134,10 @@
         `<div class="grid-stat"><div class="v">${g.combos}</div><div class="l">combinaisons</div></div>` +
         `<div class="grid-stat"><div class="v">${g.cost} €</div><div class="l">coût</div></div>` +
         `<div class="grid-stat"><div class="v">${g.repartition.simples}·${g.repartition.doubles}·${g.repartition.triples}</div><div class="l">simples·doubles·triples</div></div>` +
-        `<div class="grid-stat"><div class="v">${(avgCov * 100).toFixed(0)}%</div><div class="l">couverture moyenne</div></div>`;
-
-      // Estimations (grille non clôturée) : grille parfaite, rang gagnant, espérance.
-      const est = document.getElementById("gridEstimates");
-      if (est) {
-        const s = g.stats || {};
-        if (!finished && s.p15 != null) {
-          const nn = data.matchs.length;
-          est.hidden = false;
-          est.innerHTML =
-            `Grille parfaite (${nn}/${nn}) : <b>${(s.p15 * 100).toFixed(2)} %</b> · ` +
-            `Rang gagnant (≥ ${nn - 2}) : <b>${(s.pge13 * 100).toFixed(1)} %</b> · ` +
-            `Espérance : <b>${s.esperance.toFixed(1)} / ${nn}</b>`;
-        } else {
-          est.hidden = true;
-        }
-      }
+        `<div class="grid-stat"><div class="v">${(avgCov * 100).toFixed(0)}%</div><div class="l">couverture moyenne</div></div>` +
+        (g.stats && g.stats.esperance != null
+          ? `<div class="grid-stat"><div class="v">${g.stats.esperance.toFixed(1)} / ${data.matchs.length}</div><div class="l">espérance</div></div>`
+          : "");
 
       // Bandeau résultat réel (si la grille est réglée) — dynamique par budget.
       const rr = realResult(data, g);
