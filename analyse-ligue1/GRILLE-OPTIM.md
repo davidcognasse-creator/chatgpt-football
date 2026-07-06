@@ -6,10 +6,10 @@ Probas : **cotes (13 books)** · 15 matchs · mise unitaire 1 € · budgets 12,
 Rapports FDJ ESTIMÉS (modèle rareté-public, calibré sur du réel) :
 | Rang | Rapport estimé | P(public l'atteint) |
 |---|---|---|
-| 15/15 | ~83 443 € | 0.009 % |
-| 14/15 | ~2 866 € | 0.126 % |
-| 13/15 | ~219 € | 0.822 % |
-| 12/15 | ~28 € | 3.211 % |
+| 15/15 | ~83 304 € | 0.009 % |
+| 14/15 | ~2 862 € | 0.126 % |
+| 13/15 | ~219 € | 0.823 % |
+| 12/15 | ~28 € | 3.214 % |
 
 ## 🎯 Grille ≤ 12 €
 Combinaisons : **12** → coût **12 €** (≤ 12 €) · _plafond atteint_
