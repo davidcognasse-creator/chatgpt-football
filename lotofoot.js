@@ -293,11 +293,11 @@
         const accM = Math.round((c.accuracy.model || 0) * 100);
         const accC = Math.round((c.accuracy.crowd || 0) * 100);
         panel.hidden = false;
-        panel.innerHTML =
-          (beats
-            ? `<span class="ct">🎯 <b>Modèle vérifié en réel</b>, <span class="cwin">il bat le public !</span></span>`
-            : `<span class="ct">🎯 <b>Modèle vérifié en réel</b> — <span>calibration en cours</span></span>`) +
-          `<span class="ct">La précision du modèle est de <b>${accM}%</b> versus <b>${accC}%</b> pour les parieurs.</span>`;
+        panel.innerHTML = beats
+          ? `<span class="ct">🎯 <b>Modèle vérifié en réel</b>, <span class="cwin">il bat le public !</span> ` +
+            `La précision du modèle est de <b>${accM}%</b> versus <b>${accC}%</b> pour les parieurs.</span>`
+          : `<span class="ct">🎯 <b>Modèle vérifié en réel</b> — calibration en cours. ` +
+            `Précision du modèle : <b>${accM}%</b> versus <b>${accC}%</b> pour les parieurs.</span>`;
       })
       .catch(() => {});
   }
