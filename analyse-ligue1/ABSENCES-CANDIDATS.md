@@ -1,18 +1,19 @@
 # Sonde absences — candidats à VALIDER (presse GNews)
 
-Grille : **Loto Foot 8 N°87** · 16 équipes interrogées.
+Grille : **Loto Foot 15 N°52** · 30 équipes interrogées.
 
-## Portugal
-- **Sports Mole** — _blessé_ · « Team News: Portugal vs. Spain injury, suspension list, predicted XIs » (Sports Mole)
-- **In Nuno Mendes** — _blessé_ · « In Nuno Mendes, Portugal have an antidote to neutralise Spain's Lamine Yamal » (The Indian Express)
-- **Lamine Yamal** — _blessé_ · « In Nuno Mendes, Portugal have an antidote to neutralise Spain's Lamine Yamal » (The Indian Express)
-- **La Roja** — _blessé_ · « Spain XI vs Portugal: Confirmed team news, predicted lineup and injury latest for World Cup 2026 » (Evening Standard)
-- **Will Cristiano Ronaldo** — _blessé_ · « Portugal XI vs Spain: Confirmed team news, predicted lineup and injury latest for World Cup 2026 » (Evening Standard)
-- **Zlatan Ibrahimovic** — _forfait_ · « FIFA World Cup 20226: Ibrahimovic calls VAR decision in Portugal » (The Tribune)
-- **Why Croatia** — _forfait_ · « How does ‘Snicko’ work at the World Cup? Why Croatia were denied equaliser against Portugal by technology » (The Independent)
-- **Josko Gvardiol** — _forfait_ · « How does ‘Snicko’ work at the World Cup? Why Croatia were denied equaliser against Portugal by technology » (The Independent)
-- **Late Equaliser Ruled** — _forfait_ · « EXPLAINED: Why Croatia's Late Equaliser Ruled Out By VAR For Offside During Portugal Clash In RO32? » (Republic World)
-- **Out By** — _forfait_ · « EXPLAINED: Why Croatia's Late Equaliser Ruled Out By VAR For Offside During Portugal Clash In RO32? » (Republic World)
+## Argentine
+- **Tottenham Hotspur** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
+- **Cristian Romero** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
+- **Lamine Yamal** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
+- **Lionel Messi** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
+- **Marcos Senesi Joins** — _blessé_ · « Marcos Senesi Joins Argentina's World Cup Squad as Balerdi's Replacement » (Devdiscourse)
+- **Marcos Senesi** — _blessé_ · « Marcos Senesi Joins Argentina's World Cup Squad as Balerdi's Replacement » (Devdiscourse)
+- **Leonardo Balerdi** — _blessé_ · « Marcos Senesi Joins Argentina's World Cup Squad as Balerdi's Replacement » (Devdiscourse)
+
+## Suisse
+- **France Femmes** — _blessé_ · « Overcoming injury, Reusser’s third Tour de Suisse Women victory leads to renewed confidence ahead of Tour de France Femmes » (Cyclingnews)
+- **Kim Le Court** — _blessé_ · « 'It wasn't planned' - Kim Le Court-Pienaar back to full strength in Tour de Suisse breakaway after two-month injury layoff » (Cyclingnews)
 
 ---
 
@@ -23,13 +24,13 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
 ```json
 {
   "equipes": {
-    "Portugal": [
+    "Argentine": [
       {
-        "joueur": "Sports Mole",
+        "joueur": "Tottenham Hotspur",
         "raison": "blessé"
       },
       {
-        "joueur": "In Nuno Mendes",
+        "joueur": "Cristian Romero",
         "raison": "blessé"
       },
       {
@@ -37,32 +38,30 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
         "raison": "blessé"
       },
       {
-        "joueur": "La Roja",
+        "joueur": "Lionel Messi",
         "raison": "blessé"
       },
       {
-        "joueur": "Will Cristiano Ronaldo",
+        "joueur": "Marcos Senesi Joins",
         "raison": "blessé"
       },
       {
-        "joueur": "Zlatan Ibrahimovic",
-        "raison": "forfait"
+        "joueur": "Marcos Senesi",
+        "raison": "blessé"
       },
       {
-        "joueur": "Why Croatia",
-        "raison": "forfait"
+        "joueur": "Leonardo Balerdi",
+        "raison": "blessé"
+      }
+    ],
+    "Suisse": [
+      {
+        "joueur": "France Femmes",
+        "raison": "blessé"
       },
       {
-        "joueur": "Josko Gvardiol",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Late Equaliser Ruled",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Out By",
-        "raison": "forfait"
+        "joueur": "Kim Le Court",
+        "raison": "blessé"
       }
     ]
   }

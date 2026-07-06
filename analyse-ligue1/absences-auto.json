@@ -1,13 +1,13 @@
 {
   "note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
   "equipes": {
-    "Portugal": [
+    "Argentine": [
       {
-        "joueur": "Sports Mole",
+        "joueur": "Tottenham Hotspur",
         "raison": "blessé"
       },
       {
-        "joueur": "In Nuno Mendes",
+        "joueur": "Cristian Romero",
         "raison": "blessé"
       },
       {
@@ -15,32 +15,30 @@
         "raison": "blessé"
       },
       {
-        "joueur": "La Roja",
+        "joueur": "Lionel Messi",
         "raison": "blessé"
       },
       {
-        "joueur": "Will Cristiano Ronaldo",
+        "joueur": "Marcos Senesi Joins",
         "raison": "blessé"
       },
       {
-        "joueur": "Zlatan Ibrahimovic",
-        "raison": "forfait"
+        "joueur": "Marcos Senesi",
+        "raison": "blessé"
       },
       {
-        "joueur": "Why Croatia",
-        "raison": "forfait"
+        "joueur": "Leonardo Balerdi",
+        "raison": "blessé"
+      }
+    ],
+    "Suisse": [
+      {
+        "joueur": "France Femmes",
+        "raison": "blessé"
       },
       {
-        "joueur": "Josko Gvardiol",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Late Equaliser Ruled",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Out By",
-        "raison": "forfait"
+        "joueur": "Kim Le Court",
+        "raison": "blessé"
       }
     ]
   }
