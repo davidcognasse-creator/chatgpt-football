@@ -1,45 +1,4 @@
 {
   "note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
-  "equipes": {
-    "Argentine": [
-      {
-        "joueur": "Tottenham Hotspur",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Cristian Romero",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lamine Yamal",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lionel Messi",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Marcos Senesi Joins",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Marcos Senesi",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Leonardo Balerdi",
-        "raison": "blessé"
-      }
-    ],
-    "Suisse": [
-      {
-        "joueur": "France Femmes",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kim Le Court",
-        "raison": "blessé"
-      }
-    ]
-  }
+  "equipes": {}
 }

@@ -1,23 +1,23 @@
 {
   "nom": "Loto Foot 15 N°52",
-  "source": "FOULE (placeholder — à remplacer par le modèle)",
+  "source": "cotes (13 books)",
   "matchs": [
     {
       "i": 1,
       "dom": "Argentine",
       "ext": "Egypte",
       "p": {
+        "1": 0.697902094450935,
+        "N": 0.20270203974633197,
+        "2": 0.09939586580273305
+      },
+      "foule": {
         "1": 0.82,
         "N": 0.11,
         "2": 0.07
       },
-      "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
-      },
-      "source": "",
-      "coted": false,
+      "source": "cotes (13 books)",
+      "coted": true,
       "marketPick": "1",
       "crowdPick": "1",
       "divergence": false
@@ -27,19 +27,19 @@
       "dom": "Suisse",
       "ext": "Colombie",
       "p": {
+        "1": 0.27308206617955694,
+        "N": 0.31083175978679634,
+        "2": 0.4160861740336467
+      },
+      "foule": {
         "1": 0.2,
         "N": 0.34,
         "2": 0.46
       },
-      "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
-      },
-      "source": "",
-      "coted": false,
+      "source": "cotes (12 books)",
+      "coted": true,
       "marketPick": "2",
-      "crowdPick": "1",
+      "crowdPick": "2",
       "divergence": false
     },
     {
@@ -47,17 +47,17 @@
       "dom": "Kauno Zalgiris",
       "ext": "KF Drita",
       "p": {
+        "1": 0.3333333333333333,
+        "N": 0.3333333333333333,
+        "2": 0.3333333333333333
+      },
+      "foule": {
         "1": 0.64,
         "N": 0.21,
         "2": 0.15
       },
-      "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
-      },
-      "source": "",
-      "coted": false,
+      "source": "prédiction API",
+      "coted": true,
       "marketPick": "1",
       "crowdPick": "1",
       "divergence": false
@@ -67,17 +67,17 @@
       "dom": "Sabah FK",
       "ext": "The New Saints",
       "p": {
+        "1": 0.6762097950792719,
+        "N": 0.2086221118895848,
+        "2": 0.11516809303114335
+      },
+      "foule": {
         "1": 0.62,
         "N": 0.15,
         "2": 0.23
       },
-      "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
-      },
-      "source": "",
-      "coted": false,
+      "source": "cotes (11 books)",
+      "coted": true,
       "marketPick": "1",
       "crowdPick": "1",
       "divergence": false
@@ -92,14 +92,14 @@
         "2": 0.58
       },
       "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
+        "1": 0.18,
+        "N": 0.24,
+        "2": 0.58
       },
-      "source": "",
+      "source": "foule (non coté)",
       "coted": false,
       "marketPick": "2",
-      "crowdPick": "1",
+      "crowdPick": "2",
       "divergence": false
     },
     {
@@ -107,17 +107,17 @@
       "dom": "Lincoln FC",
       "ext": "Inter Escaldes",
       "p": {
+        "1": 0.41095379088369255,
+        "N": 0.26250882947910664,
+        "2": 0.32653737963720075
+      },
+      "foule": {
         "1": 0.84,
         "N": 0.09,
         "2": 0.07
       },
-      "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
-      },
-      "source": "",
-      "coted": false,
+      "source": "cotes (10 books)",
+      "coted": true,
       "marketPick": "1",
       "crowdPick": "1",
       "divergence": false
@@ -127,17 +127,17 @@
       "dom": "Vardar Skopje",
       "ext": "Kups",
       "p": {
+        "1": 0.4034457970111962,
+        "N": 0.2763798876083566,
+        "2": 0.32017431538044716
+      },
+      "foule": {
         "1": 0.46,
         "N": 0.28,
         "2": 0.26
       },
-      "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
-      },
-      "source": "",
-      "coted": false,
+      "source": "cotes (10 books)",
+      "coted": true,
       "marketPick": "1",
       "crowdPick": "1",
       "divergence": false
@@ -147,19 +147,19 @@
       "dom": "Floriana FC",
       "ext": "Shamrock",
       "p": {
+        "1": 0.2765139108872963,
+        "N": 0.28332444618931746,
+        "2": 0.4401616429233863
+      },
+      "foule": {
         "1": 0.11,
         "N": 0.12,
         "2": 0.77
       },
-      "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
-      },
-      "source": "",
-      "coted": false,
+      "source": "cotes (11 books)",
+      "coted": true,
       "marketPick": "2",
-      "crowdPick": "1",
+      "crowdPick": "2",
       "divergence": false
     },
     {
@@ -167,39 +167,39 @@
       "dom": "Borac Banja Luka",
       "ext": "Levski Sofia",
       "p": {
+        "1": 0.2698906756084824,
+        "N": 0.29563199074945445,
+        "2": 0.43447733364206315
+      },
+      "foule": {
         "1": 0.35,
         "N": 0.33,
         "2": 0.32
       },
-      "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
-      },
-      "source": "",
-      "coted": false,
-      "marketPick": "1",
+      "source": "cotes (11 books)",
+      "coted": true,
+      "marketPick": "2",
       "crowdPick": "1",
-      "divergence": false
+      "divergence": true
     },
     {
       "i": 10,
       "dom": "Tre Fiori FC",
       "ext": "FC Larne",
       "p": {
+        "1": 0.12563835816422933,
+        "N": 0.19086635553209333,
+        "2": 0.6834952863036774
+      },
+      "foule": {
         "1": 0.32,
         "N": 0.2,
         "2": 0.48
       },
-      "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
-      },
-      "source": "",
-      "coted": false,
+      "source": "cotes (10 books)",
+      "coted": true,
       "marketPick": "2",
-      "crowdPick": "1",
+      "crowdPick": "2",
       "divergence": false
     },
     {
@@ -207,17 +207,17 @@
       "dom": "KI Klaksvik",
       "ext": "Atert Bissen",
       "p": {
+        "1": 0.6095647987082394,
+        "N": 0.2376330259363668,
+        "2": 0.1528021753553937
+      },
+      "foule": {
         "1": 0.76,
         "N": 0.12,
         "2": 0.12
       },
-      "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
-      },
-      "source": "",
-      "coted": false,
+      "source": "cotes (11 books)",
+      "coted": true,
       "marketPick": "1",
       "crowdPick": "1",
       "divergence": false
@@ -232,11 +232,11 @@
         "2": 0.11
       },
       "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
+        "1": 0.76,
+        "N": 0.13,
+        "2": 0.11
       },
-      "source": "",
+      "source": "foule (non coté)",
       "coted": false,
       "marketPick": "1",
       "crowdPick": "1",
@@ -252,11 +252,11 @@
         "2": 0.09
       },
       "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
+        "1": 0.77,
+        "N": 0.14,
+        "2": 0.09
       },
-      "source": "",
+      "source": "foule (non coté)",
       "coted": false,
       "marketPick": "1",
       "crowdPick": "1",
@@ -272,11 +272,11 @@
         "2": 0.21
       },
       "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
+        "1": 0.59,
+        "N": 0.2,
+        "2": 0.21
       },
-      "source": "",
+      "source": "foule (non coté)",
       "coted": false,
       "marketPick": "1",
       "crowdPick": "1",
@@ -287,23 +287,41 @@
       "dom": "Kairat Almaty",
       "ext": "Sutjeska",
       "p": {
+        "1": 0.6882461495023947,
+        "N": 0.20339980060301419,
+        "2": 0.10835404989459105
+      },
+      "foule": {
         "1": 0.84,
         "N": 0.09,
         "2": 0.07
       },
-      "foule": {
-        "1": 0.0,
-        "N": 0.0,
-        "2": 0.0
-      },
-      "source": "",
-      "coted": false,
+      "source": "cotes (9 books)",
+      "coted": true,
       "marketPick": "1",
       "crowdPick": "1",
       "divergence": false
     }
   ],
-  "divergences": [],
+  "divergences": [
+    {
+      "i": 9,
+      "dom": "Borac Banja Luka",
+      "ext": "Levski Sofia",
+      "marketPick": "2",
+      "crowdPick": "1",
+      "p": {
+        "1": 0.2698906756084824,
+        "N": 0.29563199074945445,
+        "2": 0.43447733364206315
+      },
+      "foule": {
+        "1": 0.35,
+        "N": 0.33,
+        "2": 0.32
+      }
+    }
+  ],
   "grids": [
     {
       "budget": 12,
@@ -315,15 +333,15 @@
         "triples": 1
       },
       "stats": {
-        "p15": 0.007920827106983278,
-        "p14": 0.04829974290302768,
-        "p13": 0.13260377259490932,
-        "pge13": 0.1888243426049203,
-        "pReach": 0.4064604803236495,
-        "esperance": 11.05,
-        "pProfit": 0.1888243426049203,
-        "breakeven": 13,
-        "expectedGain": 86.09281029467313
+        "p15": 0.0011208982675151057,
+        "p14": 0.010408176770923738,
+        "p13": 0.04372224758414339,
+        "pge13": 0.055251322622582234,
+        "pReach": 0.16546768303021317,
+        "esperance": 9.797912001962501,
+        "pProfit": 0.16546768303021317,
+        "breakeven": 12,
+        "expectedGain": 157.41447553194257
       },
       "picks": [
         {
@@ -332,7 +350,7 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.82
+          "coverage": 0.697902094450935
         },
         {
           "i": 2,
@@ -341,15 +359,17 @@
             "2",
             "N"
           ],
-          "coverage": 0.8
+          "coverage": 0.726917933820443
         },
         {
           "i": 3,
-          "type": "simple",
+          "type": "triple",
           "picks": [
-            "1"
+            "1",
+            "N",
+            "2"
           ],
-          "coverage": 0.64
+          "coverage": 1.0
         },
         {
           "i": 4,
@@ -357,7 +377,7 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.62
+          "coverage": 0.6762097950792719
         },
         {
           "i": 5,
@@ -369,11 +389,12 @@
         },
         {
           "i": 6,
-          "type": "simple",
+          "type": "double",
           "picks": [
-            "1"
+            "1",
+            "2"
           ],
-          "coverage": 0.84
+          "coverage": 0.7374911705208933
         },
         {
           "i": 7,
@@ -381,7 +402,7 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.46
+          "coverage": 0.4034457970111962
         },
         {
           "i": 8,
@@ -389,26 +410,23 @@
           "picks": [
             "2"
           ],
-          "coverage": 0.77
+          "coverage": 0.4401616429233863
         },
         {
           "i": 9,
-          "type": "triple",
+          "type": "simple",
           "picks": [
-            "1",
-            "N",
             "2"
           ],
-          "coverage": 1.0
+          "coverage": 0.43447733364206315
         },
         {
           "i": 10,
-          "type": "double",
+          "type": "simple",
           "picks": [
-            "2",
-            "1"
+            "2"
           ],
-          "coverage": 0.8
+          "coverage": 0.6834952863036774
         },
         {
           "i": 11,
@@ -416,7 +434,7 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.76
+          "coverage": 0.6095647987082394
         },
         {
           "i": 12,
@@ -448,7 +466,7 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.84
+          "coverage": 0.6882461495023947
         }
       ]
     },
@@ -462,15 +480,15 @@
         "triples": 1
       },
       "stats": {
-        "p15": 0.012742200128625276,
-        "p14": 0.06721834070999672,
-        "p13": 0.161710480199178,
-        "pge13": 0.24167102103779997,
-        "pReach": 0.4768972459921042,
-        "esperance": 11.33,
-        "pProfit": 0.2416710210378,
-        "breakeven": 13,
-        "expectedGain": 131.16243995646985
+        "p15": 0.0018835925684475034,
+        "p14": 0.015734796915933668,
+        "p13": 0.059456970935742995,
+        "pge13": 0.07707536042012417,
+        "pReach": 0.21205583027561256,
+        "esperance": 10.093543992711954,
+        "pProfit": 0.21205583027561256,
+        "breakeven": 12,
+        "expectedGain": 253.74682805713962
       },
       "picks": [
         {
@@ -479,7 +497,7 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.82
+          "coverage": 0.697902094450935
         },
         {
           "i": 2,
@@ -488,15 +506,17 @@
             "2",
             "N"
           ],
-          "coverage": 0.8
+          "coverage": 0.726917933820443
         },
         {
           "i": 3,
-          "type": "simple",
+          "type": "triple",
           "picks": [
-            "1"
+            "1",
+            "N",
+            "2"
           ],
-          "coverage": 0.64
+          "coverage": 1.0
         },
         {
           "i": 4,
@@ -504,7 +524,7 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.62
+          "coverage": 0.6762097950792719
         },
         {
           "i": 5,
@@ -516,20 +536,20 @@
         },
         {
           "i": 6,
+          "type": "double",
+          "picks": [
+            "1",
+            "2"
+          ],
+          "coverage": 0.7374911705208933
+        },
+        {
+          "i": 7,
           "type": "simple",
           "picks": [
             "1"
           ],
-          "coverage": 0.84
-        },
-        {
-          "i": 7,
-          "type": "double",
-          "picks": [
-            "1",
-            "N"
-          ],
-          "coverage": 0.74
+          "coverage": 0.4034457970111962
         },
         {
           "i": 8,
@@ -537,26 +557,24 @@
           "picks": [
             "2"
           ],
-          "coverage": 0.77
+          "coverage": 0.4401616429233863
         },
         {
           "i": 9,
-          "type": "triple",
-          "picks": [
-            "1",
-            "N",
-            "2"
-          ],
-          "coverage": 1.0
-        },
-        {
-          "i": 10,
           "type": "double",
           "picks": [
             "2",
-            "1"
+            "N"
           ],
-          "coverage": 0.8
+          "coverage": 0.7301093243915175
+        },
+        {
+          "i": 10,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.6834952863036774
         },
         {
           "i": 11,
@@ -564,7 +582,7 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.76
+          "coverage": 0.6095647987082394
         },
         {
           "i": 12,
@@ -596,29 +614,29 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.84
+          "coverage": 0.6882461495023947
         }
       ]
     },
     {
       "budget": 48,
-      "combos": 36,
-      "cost": 36.0,
+      "combos": 48,
+      "cost": 48.0,
       "repartition": {
-        "simples": 11,
-        "doubles": 2,
-        "triples": 2
+        "simples": 10,
+        "doubles": 4,
+        "triples": 1
       },
       "stats": {
-        "p15": 0.017219189363007127,
-        "p14": 0.08478561010218225,
-        "p13": 0.1887381372602846,
-        "pge13": 0.29074293672547397,
-        "pReach": 0.5423028141128121,
-        "esperance": 11.589999999999998,
-        "pProfit": 0.290742936725474,
+        "p15": 0.0031739445964623332,
+        "p14": 0.023315565876246714,
+        "p13": 0.07819948854887421,
+        "pge13": 0.10468899902158325,
+        "pReach": 0.2636931383720224,
+        "esperance": 10.369923880320313,
+        "pProfit": 0.10468899902158325,
         "breakeven": 13,
-        "expectedGain": 173.01281035670962
+        "expectedGain": 409.52708901175225
       },
       "picks": [
         {
@@ -627,7 +645,7 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.82
+          "coverage": 0.697902094450935
         },
         {
           "i": 2,
@@ -636,15 +654,17 @@
             "2",
             "N"
           ],
-          "coverage": 0.8
+          "coverage": 0.726917933820443
         },
         {
           "i": 3,
-          "type": "simple",
+          "type": "triple",
           "picks": [
-            "1"
+            "1",
+            "N",
+            "2"
           ],
-          "coverage": 0.64
+          "coverage": 1.0
         },
         {
           "i": 4,
@@ -652,7 +672,7 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.62
+          "coverage": 0.6762097950792719
         },
         {
           "i": 5,
@@ -664,21 +684,21 @@
         },
         {
           "i": 6,
-          "type": "simple",
+          "type": "double",
           "picks": [
-            "1"
+            "1",
+            "2"
           ],
-          "coverage": 0.84
+          "coverage": 0.7374911705208933
         },
         {
           "i": 7,
-          "type": "triple",
+          "type": "double",
           "picks": [
             "1",
-            "N",
-            "2"
+            "N"
           ],
-          "coverage": 1.0
+          "coverage": 0.6798256846195527
         },
         {
           "i": 8,
@@ -686,26 +706,24 @@
           "picks": [
             "2"
           ],
-          "coverage": 0.77
+          "coverage": 0.4401616429233863
         },
         {
           "i": 9,
-          "type": "triple",
-          "picks": [
-            "1",
-            "N",
-            "2"
-          ],
-          "coverage": 1.0
-        },
-        {
-          "i": 10,
           "type": "double",
           "picks": [
             "2",
-            "1"
+            "N"
           ],
-          "coverage": 0.8
+          "coverage": 0.7301093243915175
+        },
+        {
+          "i": 10,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.6834952863036774
         },
         {
           "i": 11,
@@ -713,7 +731,7 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.76
+          "coverage": 0.6095647987082394
         },
         {
           "i": 12,
@@ -745,15 +763,15 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.84
+          "coverage": 0.6882461495023947
         }
       ]
     }
   ],
   "estRapports": {
-    "12": 8.535800908779477,
-    "13": 44.41238003778964,
-    "14": 387.5493344686237,
-    "15": 7527.917020177988
+    "12": 30.90525722902994,
+    "13": 246.5004792418027,
+    "14": 3287.0767114973983,
+    "15": 97259.65617602882
   }
 }
