@@ -296,9 +296,7 @@
             ? `<span class="cwin">il bat le public</span></span>`
             : `<span>calibration en cours</span></span>`) +
           `<span class="cmetric"><b>${accM}%</b><span>précision modèle</span></span>` +
-          `<span class="cmetric"><b>${accC}%</b><span>précision public</span></span>` +
-          `<span class="cmetric"><b>${c.logloss.model.toFixed(2)}</b><span>log-loss modèle</span></span>` +
-          `<span class="cmetric"><b>${c.logloss.crowd.toFixed(2)}</b><span>log-loss public</span></span>`;
+          `<span class="cmetric"><b>${accC}%</b><span>précision public</span></span>`;
       })
       .catch(() => {});
   }
