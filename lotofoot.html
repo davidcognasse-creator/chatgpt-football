@@ -88,6 +88,8 @@
     .grid-result .rnet { font-size:.85rem; padding:2px 10px; border-radius:999px;
       background:rgba(255,255,255,.06); }
     .grid-result .rnet.pos { color:#6ee7b7; } .grid-result .rnet.neg { color:#fca5a5; }
+    .grid-estimates { margin:16px 0 0; font-size:.85rem; color:var(--muted); }
+    .grid-estimates b { color:var(--text); font-weight:700; }
     table.loto td.hit, table.loto td.miss { font-weight:700; white-space:nowrap; }
     table.loto td.hit { color:#6ee7b7; }
     table.loto td.miss { color:#fca5a5; }
@@ -173,6 +175,7 @@
         <div class="grid-result" id="gridResult" hidden></div>
         <div class="grid-stats" id="gridStats"></div>
         <div style="overflow-x:auto"><table class="loto" id="gridTable"></table></div>
+        <p class="grid-estimates" id="gridEstimates" hidden></p>
         <p style="margin:18px 0 2px;text-align:center">
           <button id="exportPdf" class="pdf-btn">📄 Exporter cette grille en PDF</button>
         </p>
