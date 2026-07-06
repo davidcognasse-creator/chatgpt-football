@@ -53,6 +53,9 @@
     // Sous-titre réinitialisé à chaque grille (évite de garder le texte d'une
     // grille réglée quand on revient sur une grille en cours).
     const finished = !!(data.bilan && data.bilan.reels && data.bilan.reels.length);
+    // Grille jouée : le pré-match (marché vs public) n'a plus d'intérêt → on le masque.
+    const marketCard = document.getElementById("marketCard");
+    if (marketCard) marketCard.hidden = finished;
     const gridSub = document.getElementById("gridSub");
     if (gridSub) {
       gridSub.innerHTML = finished
@@ -81,9 +84,10 @@
     }
     mt.innerHTML = rows;
 
-    // Value bets
-    if (data.divergences && data.divergences.length) {
-      document.getElementById("valueCard").hidden = false;
+    // Value bets (pré-match : masqué sur une grille jouée)
+    const valueCard = document.getElementById("valueCard");
+    if (!finished && data.divergences && data.divergences.length) {
+      valueCard.hidden = false;
       document.getElementById("valueList").innerHTML = data.divergences
         .map(
           (d) =>
@@ -94,6 +98,8 @@
             `<span style="color:var(--muted)">Value si le marché a raison.</span></p>`
         )
         .join("");
+    } else {
+      valueCard.hidden = true;
     }
 
     // Grilles par budget
