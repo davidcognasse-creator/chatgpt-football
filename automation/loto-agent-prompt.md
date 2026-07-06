@@ -1,15 +1,24 @@
 Tu es l'agent d'automatisation Loto Foot du projet chatgpt.football
 (repo davidcognasse-creator/chatgpt-football, branche
 claude/world-cup-predictions-site-pjspe6). Tu tournes en mode HEADLESS, 2×/jour,
-avec l'outil wick_fetch (bypass les 403 anti-bot). Sois AUTONOME mais PRUDENT :
-n'agis que si tu es sûr ; sinon écris un résumé et ne pousse rien.
+avec le MCP Playwright (navigateur Chromium local ; outils
+mcp__playwright__browser_navigate puis mcp__playwright__browser_snapshot). Le vrai
+Chromium rend le JS et contourne les 403 anti-bot (Cloudflare) — c'est le
+remplaçant de wick_fetch, qui ne tourne pas sous Windows. Sois AUTONOME mais
+PRUDENT : n'agis que si tu es sûr ; sinon écris un résumé et ne pousse rien.
+
+MÉTHODE DE LECTURE WEB (à chaque page) : appelle browser_navigate(url), puis
+browser_snapshot. Les snapshots de ces pages sont volumineux et sont écrits dans
+un fichier .playwright-mcp\ ; lis-le / fais un grep dessus pour extraire les titres,
+les noms d'équipes et les scores. Si browser_snapshot dépasse la limite, relis le
+fichier par morceaux. Ne conclus jamais sur une page que tu n'as pas réussi à lire.
 
 Fais, dans l'ordre :
 
 0) SYNC
    - `git pull --rebase origin claude/world-cup-predictions-site-pjspe6`.
 
-1) GRILLE(S) OUVERTE(S) — via wick_fetch
+1) GRILLE(S) OUVERTE(S) — via Playwright (browser_navigate puis browser_snapshot)
    - Lis https://www.statshelf.fr/lotosport/prochaines-grilles
      (repli : https://www.pronosoft.com/fr/lotofoot/pronostics-lotofoot.htm).
    - Identifie la/les grille(s) Loto Foot ACTUELLEMENT ouverte(s) : numéro, type
@@ -20,7 +29,7 @@ Fais, dans l'ordre :
    - Si c'est une NOUVELLE grille :
      * copie lotofoot.json -> lotofoot-n<NUM>.json (sauvegarde l'ancienne) ;
      * écris analyse-ligue1/grille.json :
-       {"nom":"Loto Foot <type> N°<NUM>","note":"auto (wick)","budget":24,
+       {"nom":"Loto Foot <type> N°<NUM>","note":"auto (playwright)","budget":24,
         "matchs":[{"dom":"...","ext":"...","foule":{"1":..,"N":..,"2":..}}, ...]}
        (si public indispo : foule 33/33/34) ;
      * mets à jour lotofoot-archive.json : nouvelle grille en tête libellée
@@ -28,7 +37,7 @@ Fais, dans l'ordre :
        "(ouvert)" si encore jouable sinon "(fermé)" ; les grilles réglées en "(fermé)".
      * commit + push.
 
-2) RÉSULTATS & RAPPORTS OFFICIELS — via wick_fetch (pour les grilles récentes NON figées)
+2) RÉSULTATS & RAPPORTS OFFICIELS — via Playwright (pour les grilles récentes NON figées)
    - Lis https://www.pronosoft.com/fr/lotofoot/resultats-et-rapports.php
      et https://www.pronosoft.com/fr/lotofoot/livescore.php.
    - Pour chaque grille dont les matchs sont finis mais dont le fichier

@@ -1,23 +1,27 @@
-# Automatisation Loto Foot (local + Wick, 2×/jour)
+# Automatisation Loto Foot (local + Playwright, 2×/jour)
 
-Lance l'agent Loto Foot (Claude Code headless + Wick) **deux fois par jour** sur ta
-machine Windows : il récupère la grille ouverte et les résultats/rapports officiels
-FDJ (via `wick_fetch`, qui passe les 403), met à jour les fichiers du site, pousse
-sur la branche, et déclenche le workflow des cotes.
+Lance l'agent Loto Foot (Claude Code headless + Playwright) **deux fois par jour** sur
+ta machine Windows : il récupère la grille ouverte et les résultats/rapports officiels
+FDJ (via le MCP Playwright, un vrai Chromium qui passe les 403), met à jour les
+fichiers du site, pousse sur la branche, et déclenche le workflow des cotes.
 
 ## Pourquoi en local (et pas GitHub Actions) ?
-`wick_fetch` a besoin du moteur réseau de Chrome **depuis une IP résidentielle** pour
-passer les protections anti-bot (Cloudflare) de Pronosoft/FDJ. Les runners GitHub ont
-des IP datacenter → re-bloquées. Les parties **sans** Wick (cotes API-Football, scores,
+Playwright pilote un vrai Chromium **depuis une IP résidentielle** pour passer les
+protections anti-bot (Cloudflare) de Pronosoft/FDJ. Les runners GitHub ont des IP
+datacenter → re-bloquées. Les parties **sans** navigateur (cotes API-Football, scores,
 calibration) sont, elles, déjà automatisées côté serveur par les crons du repo.
+
+> Note : on utilisait `wick_fetch` à l'origine, mais wick-mcp ne s'installe pas sous
+> Windows (macOS/Linux uniquement). Playwright MCP est le remplaçant natif Windows.
 
 ## Pré-requis (une fois)
 ```powershell
 node --version ; git --version                 # doivent répondre
 npm install -g @anthropic-ai/claude-code
-npm install -g wick-mcp
-wick setup                                      # branche Wick dans Claude Code
-claude mcp list                                 # doit montrer: wick  connected
+npm install -g @playwright/mcp                  # serveur MCP Playwright
+claude mcp add playwright -s user -- cmd /c playwright-mcp
+npx playwright install chromium                 # télécharge le navigateur
+claude mcp list                                 # doit montrer: playwright  Connected
 ```
 Clone le repo si ce n'est pas fait :
 ```powershell

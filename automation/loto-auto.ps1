@@ -1,8 +1,9 @@
-# Automatisation Loto Foot — lance Claude Code en headless avec Wick, 2x/jour.
+# Automatisation Loto Foot — lance Claude Code en headless avec Playwright, 2x/jour.
 # Planifié via le Planificateur de tâches Windows (voir automation/README.md).
 #
-# Pré-requis : Node, Git, `npm i -g @anthropic-ai/claude-code`, `npm i -g wick-mcp`
-# puis `wick setup` (branche Wick dans Claude Code). PC allumé + session ouverte.
+# Pré-requis : Node, Git, `npm i -g @anthropic-ai/claude-code`, `npm i -g @playwright/mcp`,
+# `claude mcp add playwright -s user -- cmd /c playwright-mcp`, `npx playwright install
+# chromium`. PC allumé + session ouverte.
 
 $ErrorActionPreference = "Stop"
 
