@@ -77,8 +77,10 @@
     .grid-result .rnet { font-size:.85rem; padding:2px 10px; border-radius:999px;
       background:rgba(255,255,255,.06); }
     .grid-result .rnet.pos { color:#6ee7b7; } .grid-result .rnet.neg { color:#fca5a5; }
-    table.loto td.hit { color:#6ee7b7; font-weight:700; }
+    table.loto td.hit, table.loto td.miss { font-weight:700; white-space:nowrap; }
+    table.loto td.hit { color:#6ee7b7; }
     table.loto td.miss { color:#fca5a5; }
+    table.loto td.hit .rsc, table.loto td.miss .rsc { color:var(--muted); font-weight:600; font-size:.82em; }
     @media print {
       .bg-grid, .bg-glow, .site-header, .site-footer, .pdf-btn, .budget-tabs { display:none !important; }
       body { background:#fff !important; color:#000 !important; }

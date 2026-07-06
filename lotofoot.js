@@ -155,7 +155,7 @@
           const r = reelByI[m.i];
           if (r) {
             const hit = p.picks.includes(r.reel);
-            realCell = `<td class="${hit ? "hit" : "miss"}"><b>${SIGN[r.reel]}</b>${r.score ? " (" + r.score + ")" : ""} ${hit ? "✅" : "❌"}</td>`;
+            realCell = `<td class="${hit ? "hit" : "miss"}"><b>${SIGN[r.reel]}</b>${r.score ? ' <span class="rsc">(' + r.score + ")</span>" : ""} ${hit ? "✅" : "❌"}</td>`;
           } else {
             realCell = "<td>·</td>";
           }
