@@ -48,59 +48,6 @@
       }
     }
   },
-  "1576756": {
-    "id": "1576756",
-    "datetime": "2026-07-06T19:00:00+00:00",
-    "home": {
-      "name": "Portugal",
-      "flag": "🇵🇹",
-      "code": "POR"
-    },
-    "away": {
-      "name": "Spain",
-      "flag": "🇪🇸",
-      "code": "ESP"
-    },
-    "predicted": {
-      "probs": {
-        "home": 26,
-        "draw": 30,
-        "away": 44
-      },
-      "score": {
-        "home": 1,
-        "away": 2
-      },
-      "favored": "away"
-    },
-    "sources": {
-      "betting": {
-        "home": 23,
-        "draw": 27,
-        "away": 50
-      },
-      "form": {
-        "home": 33,
-        "draw": 26,
-        "away": 41
-      },
-      "h2h": {
-        "home": 10,
-        "draw": 62,
-        "away": 28
-      },
-      "press": {
-        "home": 23,
-        "draw": 26,
-        "away": 51
-      },
-      "social": {
-        "home": 46,
-        "draw": 26,
-        "away": 28
-      }
-    }
-  },
   "1576804": {
     "id": "1576804",
     "datetime": "2026-07-07T16:00:00+00:00",
