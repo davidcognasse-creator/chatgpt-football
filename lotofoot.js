@@ -5,6 +5,9 @@
 
   const pct = (x) => Math.round((x || 0) * 100);
   const SIGN = { "1": "1", "N": "N", "2": "2" };
+  const GRID_SUB_DEFAULT =
+    "Choisis ton budget. On place les doubles/triples sur les matchs les plus " +
+    "incertains pour maximiser la probabilité de toucher un rang (≥ 13 bons).";
 
   function probCell(p) {
     return `<span class="prob">
@@ -47,25 +50,15 @@
       `<span class="loto-tag">📈 Source : <b>${data.source || "cotes"}</b></span>` +
       `<span class="loto-tag">⚽ <b>${data.matchs.length}</b> matchs</span>`;
 
+    // Sous-titre réinitialisé à chaque grille (évite de garder le texte d'une
+    // grille réglée quand on revient sur une grille en cours).
     const finished = !!(data.bilan && data.bilan.reels && data.bilan.reels.length);
     const gridSub = document.getElementById("gridSub");
-    if (finished && gridSub) {
-      gridSub.innerHTML =
-        (data.bilan.note ? data.bilan.note + " — " : "") +
-        "sélectionne un budget pour voir le <b>gain réel</b> qu'aurait rapporté chaque grille.";
-    }
-    // Note comparative : grille réellement jouée (si présente dans le bilan).
-    const played = ((data.bilan && data.bilan.grilles) || []).find((x) => x.cle === "toi");
-    const pn = document.getElementById("playedNote");
-    if (pn) {
-      if (finished && played) {
-        pn.hidden = false;
-        pn.innerHTML =
-          `👤 Pour comparaison, la grille <b>réellement jouée</b> : ${played.corrects}/${played.n} → ` +
-          (played.gain > 0 ? `gain <b>${played.gain.toFixed(2)} €</b>` : "hors rang · 0 €") + ".";
-      } else {
-        pn.hidden = true;
-      }
+    if (gridSub) {
+      gridSub.innerHTML = finished
+        ? (data.bilan.note ? data.bilan.note + " — " : "") +
+          "sélectionne un budget pour voir le <b>gain réel</b> qu'aurait rapporté chaque grille."
+        : GRID_SUB_DEFAULT;
     }
 
     // Tableau marché vs public
