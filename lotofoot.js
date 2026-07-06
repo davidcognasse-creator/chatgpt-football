@@ -65,12 +65,12 @@
     if (marketCard) marketCard.hidden = finished;
     const gridSub = document.getElementById("gridSub");
     if (gridSub) {
-      const note = data.bilan && data.bilan.note ? data.bilan.note + " — " : "";
+      const noteBase = (data.bilan && data.bilan.note) || "Résultats";
       gridSub.innerHTML = !finished
         ? GRID_SUB_DEFAULT
         : official
-          ? note + "sélectionne un budget pour voir le <b>gain réel</b> qu'aurait rapporté chaque grille."
-          : note + "résultats connus ; <b>gains officiels non publiés</b> (aucun gain affiché).";
+          ? `${noteBase} : Gain réel en fonction du montant misé.`
+          : `${noteBase} — résultats connus ; <b>gains officiels non publiés</b> (aucun gain affiché).`;
     }
 
     // Tableau marché vs public
