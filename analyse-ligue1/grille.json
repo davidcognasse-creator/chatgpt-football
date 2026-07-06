@@ -1,15 +1,22 @@
 {
-  "nom": "Loto Foot 8 N°87",
-  "note": "Loto Foot 8 (8 matchs). foule = estimation provisoire (mises FDJ non publiées) — sera écrasée par le moteur cotes. budget = € max.",
+  "nom": "Loto Foot 15 N°52",
+  "note": "Loto Foot 15 (15 matchs). foule = répartition des mises du public (saisie depuis la grille). budget = € max. Les probas foule seront écrasées par le moteur cotes.",
   "budget": 24,
   "matchs": [
-    {"dom": "Portugal",        "ext": "Espagne",        "foule": {"1": 35, "N": 30, "2": 35}},
-    {"dom": "Etats-Unis",      "ext": "Belgique",       "foule": {"1": 34, "N": 28, "2": 38}},
-    {"dom": "Hacken",          "ext": "Djurgardens",    "foule": {"1": 45, "N": 28, "2": 27}},
-    {"dom": "Brommapojkarna",  "ext": "GAIS Goteborg",  "foule": {"1": 42, "N": 29, "2": 29}},
-    {"dom": "FK Suduva",       "ext": "FK Transinvest", "foule": {"1": 64, "N": 22, "2": 14}},
-    {"dom": "SK Super Nova",   "ext": "Ogre United",    "foule": {"1": 55, "N": 25, "2": 20}},
-    {"dom": "CDUC Ecuador",    "ext": "Mushuc Runa",    "foule": {"1": 38, "N": 28, "2": 34}},
-    {"dom": "Keflavik",        "ext": "Fram Reykjavik", "foule": {"1": 45, "N": 28, "2": 27}}
+    {"dom": "Argentine",        "ext": "Egypte",         "foule": {"1": 82, "N": 11, "2": 7}},
+    {"dom": "Suisse",           "ext": "Colombie",       "foule": {"1": 20, "N": 36, "2": 44}},
+    {"dom": "Kauno Zalgiris",   "ext": "KF Drita",       "foule": {"1": 64, "N": 21, "2": 15}},
+    {"dom": "Sabah FK",         "ext": "The New Saints", "foule": {"1": 62, "N": 16, "2": 22}},
+    {"dom": "Ararat Armenia",   "ext": "Riga FC",        "foule": {"1": 58, "N": 24, "2": 18}},
+    {"dom": "Lincoln FC",       "ext": "Inter Escaldes", "foule": {"1": 86, "N": 9,  "2": 5}},
+    {"dom": "Vardar Skopje",    "ext": "Kups",           "foule": {"1": 44, "N": 20, "2": 36}},
+    {"dom": "Floriana FC",      "ext": "Shamrock",       "foule": {"1": 11, "N": 12, "2": 77}},
+    {"dom": "Borac Banja Luka", "ext": "Levski Sofia",   "foule": {"1": 35, "N": 33, "2": 32}},
+    {"dom": "Tre Fiori FC",     "ext": "FC Larne",       "foule": {"1": 32, "N": 20, "2": 48}},
+    {"dom": "KI Klaksvik",      "ext": "Atert Bissen",   "foule": {"1": 76, "N": 12, "2": 12}},
+    {"dom": "Vikingur Reykjavik","ext": "Gyor ETO FC",   "foule": {"1": 76, "N": 13, "2": 11}},
+    {"dom": "CS Petrocub",      "ext": "KS Egnatia",     "foule": {"1": 77, "N": 14, "2": 9}},
+    {"dom": "FC Flora",         "ext": "Iberia 1999",    "foule": {"1": 69, "N": 20, "2": 11}},
+    {"dom": "Kairat Almaty",    "ext": "Sutjeska",       "foule": {"1": 84, "N": 9,  "2": 7}}
   ]
 }

@@ -1,0 +1,502 @@
+{
+  "nom": "Loto Foot 8 N°87",
+  "source": "cotes (12 books)",
+  "matchs": [
+    {
+      "i": 1,
+      "dom": "Portugal",
+      "ext": "Espagne",
+      "p": {
+        "1": 0.23469155485218574,
+        "N": 0.26845305029467464,
+        "2": 0.49685539485313973
+      },
+      "foule": {
+        "1": 0.35,
+        "N": 0.3,
+        "2": 0.35
+      },
+      "source": "cotes (12 books)",
+      "coted": true,
+      "marketPick": "2",
+      "crowdPick": "1",
+      "divergence": true
+    },
+    {
+      "i": 2,
+      "dom": "Etats-Unis",
+      "ext": "Belgique",
+      "p": {
+        "1": 0.3852944919973588,
+        "N": 0.27961714675755217,
+        "2": 0.335088361245089
+      },
+      "foule": {
+        "1": 0.34,
+        "N": 0.28,
+        "2": 0.38
+      },
+      "source": "cotes (12 books)",
+      "coted": true,
+      "marketPick": "1",
+      "crowdPick": "2",
+      "divergence": true
+    },
+    {
+      "i": 3,
+      "dom": "Hacken",
+      "ext": "Djurgardens",
+      "p": {
+        "1": 0.45,
+        "N": 0.28,
+        "2": 0.27
+      },
+      "foule": {
+        "1": 0.45,
+        "N": 0.28,
+        "2": 0.27
+      },
+      "source": "foule (non coté)",
+      "coted": false,
+      "marketPick": "1",
+      "crowdPick": "1",
+      "divergence": false
+    },
+    {
+      "i": 4,
+      "dom": "Brommapojkarna",
+      "ext": "GAIS Goteborg",
+      "p": {
+        "1": 0.45,
+        "N": 0.45,
+        "2": 0.1
+      },
+      "foule": {
+        "1": 0.42,
+        "N": 0.29,
+        "2": 0.29
+      },
+      "source": "prédiction API",
+      "coted": true,
+      "marketPick": "1",
+      "crowdPick": "1",
+      "divergence": false
+    },
+    {
+      "i": 5,
+      "dom": "FK Suduva",
+      "ext": "FK Transinvest",
+      "p": {
+        "1": 0.64,
+        "N": 0.22,
+        "2": 0.14
+      },
+      "foule": {
+        "1": 0.64,
+        "N": 0.22,
+        "2": 0.14
+      },
+      "source": "foule (non coté)",
+      "coted": false,
+      "marketPick": "1",
+      "crowdPick": "1",
+      "divergence": false
+    },
+    {
+      "i": 6,
+      "dom": "SK Super Nova",
+      "ext": "Ogre United",
+      "p": {
+        "1": 0.45,
+        "N": 0.45,
+        "2": 0.1
+      },
+      "foule": {
+        "1": 0.55,
+        "N": 0.25,
+        "2": 0.2
+      },
+      "source": "prédiction API",
+      "coted": true,
+      "marketPick": "1",
+      "crowdPick": "1",
+      "divergence": false
+    },
+    {
+      "i": 7,
+      "dom": "CDUC Ecuador",
+      "ext": "Mushuc Runa",
+      "p": {
+        "1": 0.38,
+        "N": 0.28,
+        "2": 0.34
+      },
+      "foule": {
+        "1": 0.38,
+        "N": 0.28,
+        "2": 0.34
+      },
+      "source": "foule (non coté)",
+      "coted": false,
+      "marketPick": "1",
+      "crowdPick": "1",
+      "divergence": false
+    },
+    {
+      "i": 8,
+      "dom": "Keflavik",
+      "ext": "Fram Reykjavik",
+      "p": {
+        "1": 0.27883279566981833,
+        "N": 0.22492883496077323,
+        "2": 0.49623836936940846
+      },
+      "foule": {
+        "1": 0.45,
+        "N": 0.28,
+        "2": 0.27
+      },
+      "source": "cotes (13 books)",
+      "coted": true,
+      "marketPick": "2",
+      "crowdPick": "1",
+      "divergence": true
+    }
+  ],
+  "divergences": [
+    {
+      "i": 1,
+      "dom": "Portugal",
+      "ext": "Espagne",
+      "marketPick": "2",
+      "crowdPick": "1",
+      "p": {
+        "1": 0.23469155485218574,
+        "N": 0.26845305029467464,
+        "2": 0.49685539485313973
+      },
+      "foule": {
+        "1": 0.35,
+        "N": 0.3,
+        "2": 0.35
+      }
+    },
+    {
+      "i": 2,
+      "dom": "Etats-Unis",
+      "ext": "Belgique",
+      "marketPick": "1",
+      "crowdPick": "2",
+      "p": {
+        "1": 0.3852944919973588,
+        "N": 0.27961714675755217,
+        "2": 0.335088361245089
+      },
+      "foule": {
+        "1": 0.34,
+        "N": 0.28,
+        "2": 0.38
+      }
+    },
+    {
+      "i": 8,
+      "dom": "Keflavik",
+      "ext": "Fram Reykjavik",
+      "marketPick": "2",
+      "crowdPick": "1",
+      "p": {
+        "1": 0.27883279566981833,
+        "N": 0.22492883496077323,
+        "2": 0.49623836936940846
+      },
+      "foule": {
+        "1": 0.45,
+        "N": 0.28,
+        "2": 0.27
+      }
+    }
+  ],
+  "grids": [
+    {
+      "budget": 12,
+      "combos": 12,
+      "cost": 12.0,
+      "repartition": {
+        "simples": 5,
+        "doubles": 2,
+        "triples": 1
+      },
+      "stats": {
+        "p15": 0.022161066555047047,
+        "p14": 0.12477080210027268,
+        "p13": 0.2799233304379482,
+        "pge13": 0.42685519909326797,
+        "pReach": 0.4268551990932679,
+        "esperance": 5.2683882562199065,
+        "pProfit": 0.4268551990932679,
+        "breakeven": 6,
+        "expectedGain": 438.1124833136256
+      },
+      "picks": [
+        {
+          "i": 1,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.49685539485313973
+        },
+        {
+          "i": 2,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.3852944919973588
+        },
+        {
+          "i": 3,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.45
+        },
+        {
+          "i": 4,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 0.9
+        },
+        {
+          "i": 5,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.64
+        },
+        {
+          "i": 6,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 0.9
+        },
+        {
+          "i": 7,
+          "type": "triple",
+          "picks": [
+            "1",
+            "2",
+            "N"
+          ],
+          "coverage": 1.0
+        },
+        {
+          "i": 8,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.49623836936940846
+        }
+      ]
+    },
+    {
+      "budget": 24,
+      "combos": 24,
+      "cost": 24.0,
+      "repartition": {
+        "simples": 4,
+        "doubles": 3,
+        "triples": 1
+      },
+      "stats": {
+        "p15": 0.038243866407968244,
+        "p14": 0.17357828889179722,
+        "p13": 0.31465280776350657,
+        "pge13": 0.526474963063272,
+        "pReach": 0.526474963063272,
+        "esperance": 5.54800540297746,
+        "pProfit": 0.526474963063272,
+        "breakeven": 6,
+        "expectedGain": 723.4442161412865
+      },
+      "picks": [
+        {
+          "i": 1,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.49685539485313973
+        },
+        {
+          "i": 2,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 0.664911638754911
+        },
+        {
+          "i": 3,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.45
+        },
+        {
+          "i": 4,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 0.9
+        },
+        {
+          "i": 5,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.64
+        },
+        {
+          "i": 6,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 0.9
+        },
+        {
+          "i": 7,
+          "type": "triple",
+          "picks": [
+            "1",
+            "2",
+            "N"
+          ],
+          "coverage": 1.0
+        },
+        {
+          "i": 8,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.49623836936940846
+        }
+      ]
+    },
+    {
+      "budget": 48,
+      "combos": 48,
+      "cost": 48.0,
+      "repartition": {
+        "simples": 3,
+        "doubles": 4,
+        "triples": 1
+      },
+      "stats": {
+        "p15": 0.06204004995070404,
+        "p14": 0.22870214966283592,
+        "p13": 0.33505890078574496,
+        "pge13": 0.6258011003992849,
+        "pReach": 0.6258011003992849,
+        "esperance": 5.828005402977459,
+        "pProfit": 0.6258011003992849,
+        "breakeven": 6,
+        "expectedGain": 1134.1657058608046
+      },
+      "picks": [
+        {
+          "i": 1,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.49685539485313973
+        },
+        {
+          "i": 2,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 0.664911638754911
+        },
+        {
+          "i": 3,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 0.73
+        },
+        {
+          "i": 4,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 0.9
+        },
+        {
+          "i": 5,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.64
+        },
+        {
+          "i": 6,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 0.9
+        },
+        {
+          "i": 7,
+          "type": "triple",
+          "picks": [
+            "1",
+            "2",
+            "N"
+          ],
+          "coverage": 1.0
+        },
+        {
+          "i": 8,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.49623836936940846
+        }
+      ]
+    }
+  ],
+  "estRapports": {
+    "6": 49.99473384958542,
+    "7": 579.6779769385876,
+    "8": 15874.27680404135
+  }
+}

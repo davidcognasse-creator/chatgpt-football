@@ -57,7 +57,8 @@ ALIAS = {
     "etats": "usa", "unis": "usa", "argentine": "argentina", "bresilien": "brazil",
     "croatie": "croatia", "serbie": "serbia", "turquie": "turkey", "grece": "greece",
     "hongrie": "hungary", "autriche": "austria", "tchequie": "czechia", "russie": "russia",
-    "afrique": "south", "sud": "africa",
+    "afrique": "south", "sud": "africa", "egypte": "egypt", "colombie": "colombia",
+    "colombienne": "colombia",
 }
 
 
