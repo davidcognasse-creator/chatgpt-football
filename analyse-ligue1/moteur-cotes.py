@@ -423,6 +423,33 @@ def ajust_actualite(dom, ext, p, fid=None):
     return adj, {"source": source, "h": (ih, infoh), "a": (ia, infoa)}
 
 
+_CALIB_T = None
+def calib_temperature():
+    """Température de recalibrage issue de calibration.json (#4), 1.0 si non
+    applicable (échantillon insuffisant ou fichier absent)."""
+    global _CALIB_T
+    if _CALIB_T is None:
+        _CALIB_T = 1.0
+        try:
+            t = json.load(open(os.path.join(HERE, "calibration.json"), encoding="utf-8")).get("temperature", {})
+            if t.get("apply"):
+                _CALIB_T = float(t.get("T", 1.0))
+        except Exception:
+            pass
+    return _CALIB_T
+
+
+def apply_calibration(p):
+    """Recalibre les probas finales (p^(1/T) renormalisé) d'après le backtest #4.
+    No-op tant que l'échantillon est trop faible (T=1.0)."""
+    T = calib_temperature()
+    if T == 1.0:
+        return p
+    q = {k: max(1e-12, p[k]) ** (1.0 / T) for k in ("1", "N", "2")}
+    s = sum(q.values()) or 1
+    return {k: q[k] / s for k in q}
+
+
 def market_probs(dom, ext):
     """Proba 1·N·2 du marché pour dom–ext via API-Football : cotes multi-books,
     repli sur la prédiction maison. Renvoie (p, nbooks, source, league, fid) ou None."""
@@ -475,6 +502,7 @@ def main():
         raw_p, nbooks, msrc, _league, fid = mk
         couverts += 1
         p, info = ajust_actualite(m["dom"], m["ext"], raw_p, fid)
+        p = apply_calibration(p)                    # recalibrage #4 (no-op si échantillon < 30)
         mp = max(("1", "N", "2"), key=lambda k: p[k])
         flag = ""
         if mp != cp:

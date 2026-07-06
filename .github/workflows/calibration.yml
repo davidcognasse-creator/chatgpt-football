@@ -1,0 +1,43 @@
+name: Calibration & backtest du modèle
+
+# Mesure la qualité des probas (log-loss, Brier, fiabilité, modèle vs public) sur
+# les grilles réglées, et calcule la température de recalibrage (#4). Sans clé ni
+# réseau : lit les lotofoot-*.json du repo. Committe CALIBRATION.md + calibration.json.
+on:
+  schedule:
+    - cron: "50 6 * * *"   # 1x/jour : recalcule après les grilles terminées
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: calibration
+  cancel-in-progress: false
+
+jobs:
+  calibration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Backtest & calibration
+        working-directory: analyse-ligue1
+        run: python3 calibration.py
+
+      - name: Committer la calibration
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add analyse-ligue1/CALIBRATION.md analyse-ligue1/calibration.json calibration.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(lotofoot): calibration du modèle (backtest #4)"
+            git push
+          else
+            echo "Aucun changement."
+          fi

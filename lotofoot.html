@@ -57,6 +57,15 @@
     .grid-stat .l { color:var(--muted); font-size:.76rem; text-transform:uppercase; letter-spacing:.03em; }
     .grid-stat.hl { border-color:rgba(52,211,153,.45); background:rgba(52,211,153,.10); }
     .grid-stat.hl .v { color:#6ee7b7; }
+    .calib-panel { display:flex; flex-wrap:wrap; align-items:center; gap:10px 20px;
+      margin:0 0 18px; padding:14px 18px; border-radius:16px;
+      border:1px solid rgba(125,211,252,.28); background:rgba(56,189,248,.07); }
+    .calib-panel .ct { font-size:.9rem; color:var(--muted); }
+    .calib-panel .ct b { color:#fff; }
+    .calib-panel .cwin { font-family:'Sora',sans-serif; font-weight:800; color:#7dd3fc; }
+    .calib-panel .cmetric { display:inline-flex; flex-direction:column; line-height:1.15; }
+    .calib-panel .cmetric b { font-family:'Sora',sans-serif; font-size:1.05rem; color:#fff; }
+    .calib-panel .cmetric span { font-size:.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.03em; }
     .type-simple { color:var(--muted); }
     .type-double { color:#fdba74; font-weight:700; }
     .type-triple { color:#f472b6; font-weight:800; }
@@ -138,6 +147,7 @@
     </section>
 
     <div class="loto-wrap">
+      <div class="calib-panel" id="calibPanel" hidden></div>
       <p class="grid-picker-wrap" hidden style="margin:0 0 14px">
         <label style="color:var(--muted);font-size:.85rem;margin-right:8px">Grille :</label>
         <select id="gridPicker" class="grid-picker"></select>

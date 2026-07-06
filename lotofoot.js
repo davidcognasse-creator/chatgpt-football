@@ -270,6 +270,31 @@
 
   const bust = () => "?v=" + Date.now();
 
+  // Panneau calibration (#4) : le modèle bat-il le public ? (lit calibration.json)
+  function loadCalibration() {
+    fetch("calibration.json" + bust())
+      .then((r) => (r.ok ? r.json() : null))
+      .then((c) => {
+        const panel = document.getElementById("calibPanel");
+        if (!panel || !c || !c.n || !c.logloss) return;
+        const beats = c.logloss.model < c.logloss.crowd;
+        const accM = Math.round((c.accuracy.model || 0) * 100);
+        const accC = Math.round((c.accuracy.crowd || 0) * 100);
+        panel.hidden = false;
+        panel.innerHTML =
+          `<span class="ct">🔬 <b>Modèle vérifié</b> sur ${c.n} matchs réglés — ` +
+          (beats
+            ? `<span class="cwin">il bat le public</span></span>`
+            : `<span>calibration en cours</span></span>`) +
+          `<span class="cmetric"><b>${accM}%</b><span>précision modèle</span></span>` +
+          `<span class="cmetric"><b>${accC}%</b><span>précision public</span></span>` +
+          `<span class="cmetric"><b>${c.logloss.model.toFixed(2)}</b><span>log-loss modèle</span></span>` +
+          `<span class="cmetric"><b>${c.logloss.crowd.toFixed(2)}</b><span>log-loss public</span></span>`;
+      })
+      .catch(() => {});
+  }
+  loadCalibration();
+
   function loadGrid(file) {
     fetch(file + bust())
       .then((r) => { if (!r.ok) throw new Error(file + " introuvable"); return r.json(); })

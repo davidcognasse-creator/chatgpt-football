@@ -29,6 +29,7 @@ on:
       - "lotofoot.js"
       - "lotofoot.json"
       - "lotofoot-*.json"
+      - "calibration.json"
       - "favicon.svg"
       - "og-image.png"
       - "panini-logo.png"
@@ -45,7 +46,7 @@ on:
   # Redéploie après chaque run du robot (ses commits via GITHUB_TOKEN ne
   # déclenchent pas le trigger 'push', d'où ce workflow_run).
   workflow_run:
-    workflows: ["Actualiser les pronostics", "Régler les scores", "Grille Loto Foot (cotes → optimiseur)"]
+    workflows: ["Actualiser les pronostics", "Régler les scores", "Grille Loto Foot (cotes → optimiseur)", "Calibration & backtest du modèle"]
     types: [completed]
   workflow_dispatch:
 
@@ -82,6 +83,7 @@ jobs:
           cp data.json data.js history.json history.js winner.json winner.js _site/
           cp lotofoot.json _site/ 2>/dev/null || true   # grille Loto Foot (générée par grille-optim.py)
           cp lotofoot-archive.json lotofoot-*.json _site/ 2>/dev/null || true   # archives grilles précédentes
+          cp calibration.json _site/ 2>/dev/null || true   # backtest/calibration du modèle (#4)
           cp favicon.svg og-image.png robots.txt sitemap.xml _site/
           cp panini-logo.png _site/ 2>/dev/null || true   # logo optionnel (si présent)
           cp CNAME _site/   # déclare le domaine personnalisé à GitHub Pages
