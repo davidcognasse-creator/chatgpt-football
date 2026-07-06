@@ -26,9 +26,9 @@
     },
     "sources": {
       "betting": {
-        "home": 37,
+        "home": 39,
         "draw": 28,
-        "away": 35
+        "away": 34
       },
       "form": {
         "home": 39,
@@ -42,9 +42,9 @@
         "away": 22
       },
       "social": {
-        "home": 47,
+        "home": 45,
         "draw": 26,
-        "away": 27
+        "away": 29
       }
     }
   },
@@ -75,9 +75,9 @@
     },
     "sources": {
       "betting": {
-        "home": 24,
+        "home": 23,
         "draw": 27,
-        "away": 49
+        "away": 50
       },
       "form": {
         "home": 33,
@@ -95,9 +95,9 @@
         "away": 51
       },
       "social": {
-        "home": 47,
+        "home": 46,
         "draw": 26,
-        "away": 27
+        "away": 28
       }
     }
   },
@@ -116,9 +116,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 63,
+        "home": 64,
         "draw": 23,
-        "away": 14
+        "away": 13
       },
       "score": {
         "home": 3,
@@ -128,9 +128,9 @@
     },
     "sources": {
       "betting": {
-        "home": 69,
-        "draw": 21,
-        "away": 11
+        "home": 70,
+        "draw": 20,
+        "away": 10
       },
       "form": {
         "home": 44,
@@ -165,9 +165,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 32,
+        "home": 31,
         "draw": 29,
-        "away": 39
+        "away": 40
       },
       "score": {
         "home": 1,
@@ -177,9 +177,9 @@
     },
     "sources": {
       "betting": {
-        "home": 28,
+        "home": 27,
         "draw": 31,
-        "away": 41
+        "away": 42
       },
       "form": {
         "home": 37,
@@ -249,6 +249,55 @@
         "home": 47,
         "draw": 26,
         "away": 27
+      }
+    }
+  },
+  "1581037": {
+    "id": "1581037",
+    "datetime": "2026-07-11T21:00:00+00:00",
+    "home": {
+      "name": "Norway",
+      "flag": "🇳🇴",
+      "code": "NOR"
+    },
+    "away": {
+      "name": "England",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "code": "ENG"
+    },
+    "predicted": {
+      "probs": {
+        "home": 23,
+        "draw": 26,
+        "away": 51
+      },
+      "score": {
+        "home": 1,
+        "away": 2
+      },
+      "favored": "away"
+    },
+    "sources": {
+      "betting": {
+        "home": 24,
+        "draw": 26,
+        "away": 50
+      },
+      "form": {
+        "home": 36,
+        "draw": 26,
+        "away": 38
+      },
+      "h2h": null,
+      "press": {
+        "home": 5,
+        "draw": 26,
+        "away": 69
+      },
+      "social": {
+        "home": 24,
+        "draw": 26,
+        "away": 50
       }
     }
   },

@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-06T11:25:42.766Z",
+  "updatedAt": "2026-07-06T18:05:18.343Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -103,7 +103,7 @@
       "stage": "À venir",
       "projected": false,
       "datetime": "2026-07-06T19:00:00+00:00",
-      "venue": "",
+      "venue": "AT&T Stadium",
       "home": {
         "name": "Portugal",
         "flag": "🇵🇹",
@@ -124,16 +124,16 @@
         "away": 2
       },
       "confidence": 61,
-      "analysis": "Spain part favori de justesse avec 44% de chances estimées. Les cotes confirment (49%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, l'historique des confrontations penche plutôt pour le nul ; le public penche plutôt pour Portugal.",
+      "analysis": "Spain part favori de justesse avec 44% de chances estimées. Les cotes confirment (50%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, l'historique des confrontations penche plutôt pour le nul ; le public penche plutôt pour Portugal.",
       "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 24,
+            "home": 23,
             "draw": 27,
-            "away": 49
+            "away": 50
           },
           "favored": "away",
           "detail": "12 bookmakers"
@@ -169,18 +169,18 @@
             "away": 51
           },
           "favored": "away",
-          "detail": "5801 articles"
+          "detail": "5808 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 47,
+            "home": 46,
             "draw": 26,
-            "away": 27
+            "away": 28
           },
           "favored": "home",
-          "detail": "X · 38318/22595 mentions"
+          "detail": "X · 45106/26904 mentions"
         }
       }
     },
@@ -209,17 +209,17 @@
         "home": 2,
         "away": 1
       },
-      "confidence": 62,
-      "analysis": "USA part favori de justesse avec 41% de chances estimées. Les cotes confirment (37%). La forme récente, la presse et le public vont dans le même sens.",
+      "confidence": 63,
+      "analysis": "USA part favori de justesse avec 41% de chances estimées. Les cotes confirment (39%). La forme récente, la presse et le public vont dans le même sens.",
       "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 37,
+            "home": 39,
             "draw": 28,
-            "away": 35
+            "away": 34
           },
           "favored": "home",
           "detail": "12 bookmakers"
@@ -251,18 +251,18 @@
             "away": 22
           },
           "favored": "home",
-          "detail": "4173 articles"
+          "detail": "4192 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 47,
+            "home": 45,
             "draw": 26,
-            "away": 27
+            "away": 29
           },
           "favored": "home",
-          "detail": "X · 38401/22381 mentions"
+          "detail": "X · 44227/28395 mentions"
         }
       }
     },
@@ -271,7 +271,7 @@
       "stage": "À venir",
       "projected": false,
       "datetime": "2026-07-07T16:00:00+00:00",
-      "venue": "",
+      "venue": "Mercedes-Benz Stadium",
       "home": {
         "name": "Argentina",
         "flag": "🇦🇷",
@@ -283,25 +283,25 @@
         "code": "EGY"
       },
       "probs": {
-        "home": 63,
+        "home": 64,
         "draw": 23,
-        "away": 14
+        "away": 13
       },
       "predictedScore": {
         "home": 3,
         "away": 0
       },
       "confidence": 75,
-      "analysis": "Argentina se détache avec 63% de chances estimées. Les cotes confirment (69%). La forme récente, la presse et le public vont dans le même sens.",
+      "analysis": "Argentina se détache avec 64% de chances estimées. Les cotes confirment (70%). La forme récente, la presse et le public vont dans le même sens.",
       "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 69,
-            "draw": 21,
-            "away": 11
+            "home": 70,
+            "draw": 20,
+            "away": 10
           },
           "favored": "home",
           "detail": "13 bookmakers"
@@ -333,7 +333,7 @@
             "away": 12
           },
           "favored": "home",
-          "detail": "3980 articles"
+          "detail": "3984 articles"
         },
         "social": {
           "label": "Public",
@@ -344,7 +344,7 @@
             "away": 13
           },
           "favored": "home",
-          "detail": "X · 55520/12213 mentions"
+          "detail": "X · 61499/12734 mentions"
         }
       }
     },
@@ -353,7 +353,7 @@
       "stage": "À venir",
       "projected": false,
       "datetime": "2026-07-07T20:00:00+00:00",
-      "venue": "",
+      "venue": "BC Place",
       "home": {
         "name": "Switzerland",
         "flag": "🇨🇭",
@@ -365,25 +365,25 @@
         "code": "COL"
       },
       "probs": {
-        "home": 32,
+        "home": 31,
         "draw": 29,
-        "away": 39
+        "away": 40
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
-      "confidence": 60,
-      "analysis": "Colombia part favori de justesse avec 39% de chances estimées. Les cotes confirment (41%). Le public abonde aussi. À contre-courant du pronostic IA, la forme récente et la presse penchent plutôt pour Switzerland.",
+      "confidence": 61,
+      "analysis": "Colombia part favori de justesse avec 40% de chances estimées. Les cotes confirment (42%). Le public abonde aussi. À contre-courant du pronostic IA, la forme récente et la presse penchent plutôt pour Switzerland.",
       "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 28,
+            "home": 27,
             "draw": 31,
-            "away": 41
+            "away": 42
           },
           "favored": "away",
           "detail": "12 bookmakers"
@@ -426,7 +426,7 @@
             "away": 47
           },
           "favored": "away",
-          "detail": "X · 4791/8329 mentions"
+          "detail": "X · 4959/8678 mentions"
         }
       }
     },
@@ -435,7 +435,7 @@
       "stage": "À venir",
       "projected": false,
       "datetime": "2026-07-09T20:00:00+00:00",
-      "venue": "",
+      "venue": "Gillette Stadium",
       "home": {
         "name": "France",
         "flag": "🇫🇷",
@@ -490,7 +490,7 @@
             "away": 10
           },
           "favored": "home",
-          "detail": "1V 0N 0D"
+          "detail": "1V 0N 0D (caché)"
         },
         "press": {
           "label": "Presse",
@@ -501,7 +501,7 @@
             "away": 22
           },
           "favored": "home",
-          "detail": "4790 articles"
+          "detail": "4792 articles"
         },
         "social": {
           "label": "Public",
@@ -512,7 +512,89 @@
             "away": 27
           },
           "favored": "home",
-          "detail": "X · 57566/33838 mentions"
+          "detail": "X · 60489/34369 mentions"
+        }
+      }
+    },
+    {
+      "id": "1581037",
+      "stage": "À venir",
+      "projected": false,
+      "datetime": "2026-07-11T21:00:00+00:00",
+      "venue": "Hard Rock Stadium",
+      "home": {
+        "name": "Norway",
+        "flag": "🇳🇴",
+        "code": "NOR"
+      },
+      "away": {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "code": "ENG"
+      },
+      "probs": {
+        "home": 23,
+        "draw": 26,
+        "away": 51
+      },
+      "predictedScore": {
+        "home": 1,
+        "away": 2
+      },
+      "confidence": 67,
+      "analysis": "England part favori de justesse avec 51% de chances estimées. Les cotes confirment (50%). La forme récente, la presse et le public vont dans le même sens.",
+      "scorers": null,
+      "sources": {
+        "betting": {
+          "label": "Paris",
+          "weight": 0.55,
+          "probs": {
+            "home": 24,
+            "draw": 26,
+            "away": 50
+          },
+          "favored": "away",
+          "detail": "13 bookmakers"
+        },
+        "form": {
+          "label": "Forme",
+          "weight": 0.13,
+          "probs": {
+            "home": 36,
+            "draw": 26,
+            "away": 38
+          },
+          "favored": "away",
+          "detail": "VVDVV vs VVVNV"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.1,
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
+        },
+        "press": {
+          "label": "Presse",
+          "weight": 0.12,
+          "probs": {
+            "home": 5,
+            "draw": 26,
+            "away": 69
+          },
+          "favored": "away",
+          "detail": "12777 articles"
+        },
+        "social": {
+          "label": "Public",
+          "weight": 0.1,
+          "probs": {
+            "home": 24,
+            "draw": 26,
+            "away": 50
+          },
+          "favored": "away",
+          "detail": "X · 35821/76846 mentions"
         }
       }
     }
