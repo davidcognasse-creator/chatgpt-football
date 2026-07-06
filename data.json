@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-05T23:30:36.903Z",
+  "updatedAt": "2026-07-06T04:45:04.449Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -10,94 +10,6 @@
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "1568100",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-05T20:00:00+00:00",
-      "venue": "MetLife Stadium",
-      "home": {
-        "name": "Brazil",
-        "flag": "🇧🇷",
-        "code": "BRA"
-      },
-      "away": {
-        "name": "Norway",
-        "flag": "🇳🇴",
-        "code": "NOR"
-      },
-      "probs": {
-        "home": 52,
-        "draw": 26,
-        "away": 22
-      },
-      "predictedScore": {
-        "home": 3,
-        "away": 0
-      },
-      "confidence": 69,
-      "analysis": "Brazil tient la corde avec 52% de chances estimées. Les cotes confirment (53%). La forme récente, la presse et le public vont dans le même sens.",
-      "scorers": null,
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 53,
-            "draw": 26,
-            "away": 21
-          },
-          "favored": "home",
-          "detail": "13 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 39,
-            "draw": 26,
-            "away": 35
-          },
-          "favored": "home",
-          "detail": "VVVN vs VDVV"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 61,
-            "draw": 26,
-            "away": 13
-          },
-          "favored": "home",
-          "detail": "4106 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 53,
-            "draw": 26,
-            "away": 21
-          },
-          "favored": "home",
-          "detail": "X · 38197/15016 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 1,
-        "away": 2,
-        "outcome": "away"
-      }
-    },
     {
       "id": "1570714",
       "stage": "À venir",
@@ -178,6 +90,12 @@
           "favored": "away",
           "detail": "X · 26980/46781 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 2,
+        "away": 3,
+        "outcome": "away"
       }
     },
     {

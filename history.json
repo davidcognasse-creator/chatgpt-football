@@ -1,6 +1,62 @@
 {
-  "updatedAt": "2026-07-05T23:30:36.902Z",
+  "updatedAt": "2026-07-06T04:45:04.446Z",
   "entries": [
+    {
+      "id": "1570714",
+      "datetime": "2026-07-06T00:00:00+00:00",
+      "home": {
+        "name": "Mexico",
+        "flag": "🇲🇽",
+        "code": "MEX"
+      },
+      "away": {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "code": "ENG"
+      },
+      "predicted": {
+        "probs": {
+          "home": 30,
+          "draw": 29,
+          "away": 41
+        },
+        "score": {
+          "home": 1,
+          "away": 2
+        },
+        "favored": "away"
+      },
+      "sources": {
+        "betting": {
+          "home": 31,
+          "draw": 30,
+          "away": 39
+        },
+        "form": {
+          "home": 40,
+          "draw": 26,
+          "away": 34
+        },
+        "h2h": null,
+        "press": {
+          "home": 16,
+          "draw": 26,
+          "away": 58
+        },
+        "social": {
+          "home": 27,
+          "draw": 26,
+          "away": 47
+        }
+      },
+      "actual": {
+        "home": 2,
+        "away": 3,
+        "outcome": "away"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "1568100",
       "datetime": "2026-07-05T20:00:00+00:00",
