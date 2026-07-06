@@ -7,8 +7,7 @@
   const SIGN = { "1": "1", "N": "N", "2": "2" };
   const GRID_SUB_DEFAULT =
     "Choisis ton budget. Les doubles/triples sont répartis pour maximiser " +
-    "l'<b>espérance de gain (€)</b>. <b>P(profit)</b> = probabilité que les gains couvrent " +
-    "la mise (rapports FDJ estimés) — la mesure la plus fiable pour comparer les budgets.";
+    "l'<b>espérance de gain (€)</b>.";
 
   function probCell(p) {
     return `<span class="prob">
