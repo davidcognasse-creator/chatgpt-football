@@ -291,10 +291,9 @@
         const accC = Math.round((c.accuracy.crowd || 0) * 100);
         panel.hidden = false;
         panel.innerHTML =
-          `<span class="ct">🔬 <b>Modèle vérifié</b> sur ${c.n} matchs réglés — ` +
           (beats
-            ? `<span class="cwin">il bat le public</span></span>`
-            : `<span>calibration en cours</span></span>`) +
+            ? `<span class="ct">🎯 <b>Modèle vérifié en réel</b>, <span class="cwin">il bat le public !</span></span>`
+            : `<span class="ct">🎯 <b>Modèle vérifié en réel</b> — <span>calibration en cours</span></span>`) +
           `<span class="cmetric"><b>${accM}%</b><span>précision modèle</span></span>` +
           `<span class="cmetric"><b>${accC}%</b><span>précision public</span></span>`;
       })
