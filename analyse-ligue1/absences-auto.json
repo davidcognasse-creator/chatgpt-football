@@ -3,6 +3,18 @@
   "equipes": {
     "Portugal": [
       {
+        "joueur": "Sports Mole",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "In Nuno Mendes",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Lamine Yamal",
+        "raison": "blessé"
+      },
+      {
         "joueur": "La Roja",
         "raison": "blessé"
       },
@@ -28,14 +40,6 @@
       },
       {
         "joueur": "Out By",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Connected Ball Technology",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Igor Matanovic",
         "raison": "forfait"
       }
     ]
