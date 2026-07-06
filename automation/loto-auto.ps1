@@ -5,7 +5,10 @@
 # `claude mcp add playwright -s user -- cmd /c playwright-mcp`, `npx playwright install
 # chromium`. PC allumé + session ouverte.
 
-$ErrorActionPreference = "Stop"
+# NB PowerShell 5.1 : ne PAS mettre "Stop" ici. git écrit sa progression sur stderr ;
+# avec "Stop" + "2>&1" ces messages NORMAUX deviennent des erreurs BLOQUANTES et le
+# script s'arrête au 1er git. "Continue" laisse le script se dérouler jusqu'au bout.
+$ErrorActionPreference = "Continue"
 
 # --- Chemin du dépôt (adapte si tu l'as cloné ailleurs) ---
 $Repo   = Join-Path $HOME "Documents\chatgpt-football"
@@ -18,9 +21,12 @@ $stamp = Get-Date -Format "yyyyMMdd-HHmmss"
 $log   = Join-Path $LogDir "run-$stamp.log"
 
 Set-Location $Repo
-git fetch origin $Branch 2>&1 | Tee-Object -FilePath $log -Append
-git checkout $Branch     2>&1 | Tee-Object -FilePath $log -Append
-git pull --rebase origin $Branch 2>&1 | Tee-Object -FilePath $log -Append
+# On passe par `cmd /c "... 2>&1"` : la redirection stderr est faite par cmd, donc
+# PowerShell reçoit du texte simple (pas d'ErrorRecord rouge, pas d'arrêt) et on log.
+cmd /c "git fetch origin $Branch 2>&1"         | Tee-Object -FilePath $log -Append
+cmd /c "git checkout $Branch 2>&1"             | Tee-Object -FilePath $log -Append
+cmd /c "git pull --rebase origin $Branch 2>&1" | Tee-Object -FilePath $log -Append
+if ($LASTEXITCODE -ne 0) { "AVERTISSEMENT : git a renvoyé le code $LASTEXITCODE (on continue)" | Tee-Object -FilePath $log -Append }
 
 $promptText = Get-Content $Prompt -Raw
 
