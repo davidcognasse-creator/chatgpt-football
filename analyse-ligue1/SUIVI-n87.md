@@ -3,7 +3,7 @@
 | # | Match | Résultat 90′ | ref | ✓ |
 |---|---|---|---|:-:|
 | 1 | Portugal–Espagne | **2** (0-1) | 2 | ✅ |
-| 2 | Etats-Unis–Belgique | **2** (2-5) | 1/N/2 | ✅ |
+| 2 | Etats-Unis–Belgique | **2** (1-4) | 1/N/2 | ✅ |
 | 3 | Hacken–Djurgardens | **2** (2-4) | 1/2 | ✅ |
 | 4 | Brommapojkarna–GAIS Goteborg | **N** (1-1) | 2 | ❌ |
 | 5 | FK Suduva–FK Transinvest | _à venir_ | 1 | · |
