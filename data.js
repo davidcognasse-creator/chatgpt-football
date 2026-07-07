@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-07T10:22:36.601Z",
+  "updatedAt": "2026-07-07T17:51:21.317Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -101,88 +101,6 @@ window.WC_DATA = {
       }
     },
     {
-      "id": "1576804",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-07T16:00:00+00:00",
-      "venue": "Mercedes-Benz Stadium",
-      "home": {
-        "name": "Argentina",
-        "flag": "🇦🇷",
-        "code": "ARG"
-      },
-      "away": {
-        "name": "Egypt",
-        "flag": "🇪🇬",
-        "code": "EGY"
-      },
-      "probs": {
-        "home": 65,
-        "draw": 22,
-        "away": 13
-      },
-      "predictedScore": {
-        "home": 3,
-        "away": 0
-      },
-      "confidence": 75,
-      "analysis": "Argentina se détache avec 65% de chances estimées. Les cotes confirment (71%). La forme récente, la presse et le public vont dans le même sens.",
-      "scorers": null,
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 71,
-            "draw": 20,
-            "away": 9
-          },
-          "favored": "home",
-          "detail": "13 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 44,
-            "draw": 26,
-            "away": 30
-          },
-          "favored": "home",
-          "detail": "VVVV vs VNVN"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 62,
-            "draw": 26,
-            "away": 12
-          },
-          "favored": "home",
-          "detail": "3997 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 61,
-            "draw": 26,
-            "away": 13
-          },
-          "favored": "home",
-          "detail": "X · 62660/13797 mentions"
-        }
-      }
-    },
-    {
       "id": "1576805",
       "stage": "À venir",
       "projected": false,
@@ -249,7 +167,7 @@ window.WC_DATA = {
             "away": 27
           },
           "favored": "home",
-          "detail": "1530 articles"
+          "detail": "1532 articles"
         },
         "social": {
           "label": "Public",
@@ -260,7 +178,7 @@ window.WC_DATA = {
             "away": 46
           },
           "favored": "away",
-          "detail": "X · 5363/8938 mentions"
+          "detail": "X · 6166/9924 mentions"
         }
       }
     },
@@ -298,7 +216,7 @@ window.WC_DATA = {
           "weight": 0.55,
           "probs": {
             "home": 60,
-            "draw": 25,
+            "draw": 24,
             "away": 16
           },
           "favored": "home",
@@ -335,7 +253,7 @@ window.WC_DATA = {
             "away": 22
           },
           "favored": "home",
-          "detail": "4804 articles"
+          "detail": "4810 articles"
         },
         "social": {
           "label": "Public",
@@ -346,7 +264,7 @@ window.WC_DATA = {
             "away": 20
           },
           "favored": "home",
-          "detail": "X · 61695/23273 mentions"
+          "detail": "X · 61085/22027 mentions"
         }
       }
     },
@@ -412,23 +330,23 @@ window.WC_DATA = {
           "label": "Presse",
           "weight": 0.12,
           "probs": {
-            "home": 55,
+            "home": 54,
             "draw": 26,
-            "away": 19
+            "away": 20
           },
           "favored": "home",
-          "detail": "5434 articles"
+          "detail": "5544 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 32,
+            "home": 31,
             "draw": 26,
-            "away": 42
+            "away": 43
           },
           "favored": "away",
-          "detail": "X · 40296/53708 mentions"
+          "detail": "X · 41279/57790 mentions"
         }
       }
     },
@@ -449,16 +367,16 @@ window.WC_DATA = {
         "code": "ENG"
       },
       "probs": {
-        "home": 23,
+        "home": 25,
         "draw": 26,
-        "away": 51
+        "away": 49
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
-      "confidence": 67,
-      "analysis": "England part favori de justesse avec 51% de chances estimées. Les cotes confirment (50%). La forme récente, la presse et le public vont dans le même sens.",
+      "confidence": 64,
+      "analysis": "England part favori de justesse avec 49% de chances estimées. Les cotes confirment (50%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Norway.",
       "scorers": null,
       "sources": {
         "betting": {
@@ -499,18 +417,18 @@ window.WC_DATA = {
             "away": 69
           },
           "favored": "away",
-          "detail": "12892 articles"
+          "detail": "12902 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 23,
+            "home": 42,
             "draw": 26,
-            "away": 51
+            "away": 32
           },
-          "favored": "away",
-          "detail": "X · 36842/79467 mentions"
+          "favored": "home",
+          "detail": "Wikipédia · 305280/229558 vues"
         }
       }
     }
