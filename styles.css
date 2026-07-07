@@ -1163,6 +1163,9 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   margin: 16px 0 0; padding: 11px 14px; border-radius: 12px; font-size: 0.82rem; line-height: 1.5;
   color: #ffd9a8; background: rgba(255,150,60,0.08); border: 1px solid rgba(255,150,60,0.25);
 }
+.pf-strategy {
+  margin: 2px 0 16px; font-size: 0.84rem; color: var(--muted);
+}
 @media (max-width: 720px) {
   .pf-platforms { grid-template-columns: 1fr; }
 }

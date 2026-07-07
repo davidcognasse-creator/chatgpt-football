@@ -113,7 +113,7 @@ function sideScorers(team, lambda, tm, topN) {
 async function estimateScorers(match, ctx) {
   const tm = await loadTransfermarkt();
   const ps = match.predictedScore || {};
-  const topN = Math.min(5, ctx.config?.live?.scorersTop || 5);
+  const topN = 3; // les 3 buteurs les plus probables par équipe
   const home = sideScorers(match.home, ps.home, tm, topN);
   const away = sideScorers(match.away, ps.away, tm, topN);
   if (!home.length && !away.length) return null;
