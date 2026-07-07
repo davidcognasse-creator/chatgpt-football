@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-07T04:27:28.425Z",
+  "updatedAt": "2026-07-07T10:22:36.601Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -115,8 +115,8 @@
         "code": "EGY"
       },
       "probs": {
-        "home": 64,
-        "draw": 23,
+        "home": 65,
+        "draw": 22,
         "away": 13
       },
       "predictedScore": {
@@ -124,16 +124,16 @@
         "away": 0
       },
       "confidence": 75,
-      "analysis": "Argentina se détache avec 64% de chances estimées. Les cotes confirment (70%). La forme récente, la presse et le public vont dans le même sens.",
+      "analysis": "Argentina se détache avec 65% de chances estimées. Les cotes confirment (71%). La forme récente, la presse et le public vont dans le même sens.",
       "scorers": null,
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 70,
+            "home": 71,
             "draw": 20,
-            "away": 10
+            "away": 9
           },
           "favored": "home",
           "detail": "13 bookmakers"
@@ -165,7 +165,7 @@
             "away": 12
           },
           "favored": "home",
-          "detail": "3984 articles"
+          "detail": "3997 articles"
         },
         "social": {
           "label": "Public",
@@ -176,7 +176,7 @@
             "away": 13
           },
           "favored": "home",
-          "detail": "X · 61499/12734 mentions"
+          "detail": "X · 62660/13797 mentions"
         }
       }
     },
@@ -247,18 +247,18 @@
             "away": 27
           },
           "favored": "home",
-          "detail": "1528 articles"
+          "detail": "1530 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 27,
+            "home": 28,
             "draw": 26,
-            "away": 47
+            "away": 46
           },
           "favored": "away",
-          "detail": "X · 4959/8678 mentions"
+          "detail": "X · 5363/8938 mentions"
         }
       }
     },
@@ -287,8 +287,8 @@
         "home": 3,
         "away": 0
       },
-      "confidence": 69,
-      "analysis": "France tient la corde avec 57% de chances estimées. Les cotes confirment (60%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
+      "confidence": 70,
+      "analysis": "France tient la corde avec 58% de chances estimées. Les cotes confirment (60%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
       "scorers": null,
       "sources": {
         "betting": {
@@ -333,18 +333,100 @@
             "away": 22
           },
           "favored": "home",
-          "detail": "4792 articles"
+          "detail": "4804 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 47,
+            "home": 54,
             "draw": 26,
-            "away": 27
+            "away": 20
           },
           "favored": "home",
-          "detail": "X · 60489/34369 mentions"
+          "detail": "X · 61695/23273 mentions"
+        }
+      }
+    },
+    {
+      "id": "1581821",
+      "stage": "À venir",
+      "projected": false,
+      "datetime": "2026-07-10T19:00:00+00:00",
+      "venue": "SoFi Stadium",
+      "home": {
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "code": "ESP"
+      },
+      "away": {
+        "name": "Belgium",
+        "flag": "🇧🇪",
+        "code": "BEL"
+      },
+      "probs": {
+        "home": 52,
+        "draw": 25,
+        "away": 23
+      },
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "confidence": 67,
+      "analysis": "Spain tient la corde avec 52% de chances estimées. Les cotes confirment (58%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Belgium.",
+      "scorers": null,
+      "sources": {
+        "betting": {
+          "label": "Paris",
+          "weight": 0.55,
+          "probs": {
+            "home": 58,
+            "draw": 24,
+            "away": 18
+          },
+          "favored": "home",
+          "detail": "13 bookmakers"
+        },
+        "form": {
+          "label": "Forme",
+          "weight": 0.13,
+          "probs": {
+            "home": 40,
+            "draw": 26,
+            "away": 34
+          },
+          "favored": "home",
+          "detail": "VVVVN vs VVVNN"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.1,
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
+        },
+        "press": {
+          "label": "Presse",
+          "weight": 0.12,
+          "probs": {
+            "home": 55,
+            "draw": 26,
+            "away": 19
+          },
+          "favored": "home",
+          "detail": "5434 articles"
+        },
+        "social": {
+          "label": "Public",
+          "weight": 0.1,
+          "probs": {
+            "home": 32,
+            "draw": 26,
+            "away": 42
+          },
+          "favored": "away",
+          "detail": "X · 40296/53708 mentions"
         }
       }
     },
@@ -415,18 +497,18 @@
             "away": 69
           },
           "favored": "away",
-          "detail": "12777 articles"
+          "detail": "12892 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 24,
+            "home": 23,
             "draw": 26,
-            "away": 50
+            "away": 51
           },
           "favored": "away",
-          "detail": "X · 35821/76846 mentions"
+          "detail": "X · 36842/79467 mentions"
         }
       }
     }

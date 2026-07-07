@@ -14,8 +14,8 @@
     },
     "predicted": {
       "probs": {
-        "home": 64,
-        "draw": 23,
+        "home": 65,
+        "draw": 22,
         "away": 13
       },
       "score": {
@@ -26,9 +26,9 @@
     },
     "sources": {
       "betting": {
-        "home": 70,
+        "home": 71,
         "draw": 20,
-        "away": 10
+        "away": 9
       },
       "form": {
         "home": 44,
@@ -91,9 +91,9 @@
         "away": 27
       },
       "social": {
-        "home": 27,
+        "home": 28,
         "draw": 26,
-        "away": 47
+        "away": 46
       }
     }
   },
@@ -144,9 +144,9 @@
         "away": 22
       },
       "social": {
-        "home": 47,
+        "home": 54,
         "draw": 26,
-        "away": 27
+        "away": 20
       }
     }
   },
@@ -193,9 +193,58 @@
         "away": 69
       },
       "social": {
-        "home": 24,
+        "home": 23,
         "draw": 26,
-        "away": 50
+        "away": 51
+      }
+    }
+  },
+  "1581821": {
+    "id": "1581821",
+    "datetime": "2026-07-10T19:00:00+00:00",
+    "home": {
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "code": "ESP"
+    },
+    "away": {
+      "name": "Belgium",
+      "flag": "🇧🇪",
+      "code": "BEL"
+    },
+    "predicted": {
+      "probs": {
+        "home": 52,
+        "draw": 25,
+        "away": 23
+      },
+      "score": {
+        "home": 2,
+        "away": 1
+      },
+      "favored": "home"
+    },
+    "sources": {
+      "betting": {
+        "home": 58,
+        "draw": 24,
+        "away": 18
+      },
+      "form": {
+        "home": 40,
+        "draw": 26,
+        "away": 34
+      },
+      "h2h": null,
+      "press": {
+        "home": 55,
+        "draw": 26,
+        "away": 19
+      },
+      "social": {
+        "home": 32,
+        "draw": 26,
+        "away": 42
       }
     }
   },
