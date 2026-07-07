@@ -193,18 +193,19 @@
   function scorersBlock(m) {
     const sc = m.scorers;
     if (!sc) return "";
+    const est = sc.estimated ? ` <span class="scorers-note">· ${t("scorers_est")}</span>` : "";
     // Format par équipe { home:[], away:[] } ou liste combinée { combined:[] }.
     if (sc.combined && sc.combined.length) {
       return `
         <div class="scorers">
-          <div class="scorers-head">${t("scorers_head")}</div>
+          <div class="scorers-head">${t("scorers_head")}${est}</div>
           <ul class="scorer-list">${sc.combined.map(scorerItem).join("")}</ul>
         </div>`;
     }
     if ((sc.home && sc.home.length) || (sc.away && sc.away.length)) {
       return `
         <div class="scorers">
-          <div class="scorers-head">${t("scorers_head")}</div>
+          <div class="scorers-head">${t("scorers_head")}${est}</div>
           <div class="scorers-grid">
             <div>
               <div class="scorers-team">${flagHTML(m.home, 15)} ${window.teamName(m.home)}</div>

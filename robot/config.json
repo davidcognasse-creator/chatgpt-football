@@ -12,7 +12,10 @@
   "live": {
     "sport": "soccer_fifa_world_cup",
     "winnerSport": "soccer_fifa_world_cup_winner",
-    "apiFootballLeagues": [1, 10],
+    "apiFootballLeagues": [
+      1,
+      10
+    ],
     "season": 2026,
     "maxMatches": 15,
     "regions": "eu,uk",
@@ -33,7 +36,8 @@
     "scorers": false,
     "scorersTop": 6,
     "wcOnly": true,
-    "scoresDaysFrom": 3
+    "scoresDaysFrom": 3,
+    "scorersEstimate": true
   },
   "output": {
     "json": "../data.json",

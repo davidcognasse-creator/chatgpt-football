@@ -960,6 +960,11 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   color: var(--text);
   margin-bottom: 10px;
 }
+.scorers-note {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
 .scorers-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
