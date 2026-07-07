@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-06T21:50:20.625Z",
+  "updatedAt": "2026-07-07T04:27:28.425Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -12,98 +12,6 @@ window.WC_DATA = {
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "1576756",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-06T19:00:00+00:00",
-      "venue": "AT&T Stadium",
-      "home": {
-        "name": "Portugal",
-        "flag": "🇵🇹",
-        "code": "POR"
-      },
-      "away": {
-        "name": "Spain",
-        "flag": "🇪🇸",
-        "code": "ESP"
-      },
-      "probs": {
-        "home": 26,
-        "draw": 30,
-        "away": 44
-      },
-      "predictedScore": {
-        "home": 1,
-        "away": 2
-      },
-      "confidence": 61,
-      "analysis": "Spain part favori de justesse avec 44% de chances estimées. Les cotes confirment (50%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, l'historique des confrontations penche plutôt pour le nul ; le public penche plutôt pour Portugal.",
-      "scorers": null,
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 23,
-            "draw": 27,
-            "away": 50
-          },
-          "favored": "away",
-          "detail": "12 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 33,
-            "draw": 26,
-            "away": 41
-          },
-          "favored": "away",
-          "detail": "VNVN vs VVVN"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": {
-            "home": 10,
-            "draw": 62,
-            "away": 28
-          },
-          "favored": "draw",
-          "detail": "0V 6N 2D (caché)"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 23,
-            "draw": 26,
-            "away": 51
-          },
-          "favored": "away",
-          "detail": "5808 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 46,
-            "draw": 26,
-            "away": 28
-          },
-          "favored": "home",
-          "detail": "X · 45106/26904 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 0,
-        "away": 1,
-        "outcome": "away"
-      }
-    },
     {
       "id": "1570715",
       "stage": "À venir",
@@ -184,6 +92,12 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "X · 44227/28395 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 1,
+        "away": 4,
+        "outcome": "away"
       }
     },
     {

@@ -1,6 +1,62 @@
 {
-  "updatedAt": "2026-07-06T21:50:20.623Z",
+  "updatedAt": "2026-07-07T04:27:28.422Z",
   "entries": [
+    {
+      "id": "1570715",
+      "datetime": "2026-07-07T00:00:00+00:00",
+      "home": {
+        "name": "USA",
+        "flag": "🇺🇸",
+        "code": "USA"
+      },
+      "away": {
+        "name": "Belgium",
+        "flag": "🇧🇪",
+        "code": "BEL"
+      },
+      "predicted": {
+        "probs": {
+          "home": 41,
+          "draw": 27,
+          "away": 32
+        },
+        "score": {
+          "home": 2,
+          "away": 1
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 39,
+          "draw": 28,
+          "away": 34
+        },
+        "form": {
+          "home": 39,
+          "draw": 26,
+          "away": 35
+        },
+        "h2h": null,
+        "press": {
+          "home": 52,
+          "draw": 26,
+          "away": 22
+        },
+        "social": {
+          "home": 45,
+          "draw": 26,
+          "away": 29
+        }
+      },
+      "actual": {
+        "home": 1,
+        "away": 4,
+        "outcome": "away"
+      },
+      "correctOutcome": false,
+      "correctScore": false
+    },
     {
       "id": "1576756",
       "datetime": "2026-07-06T19:00:00+00:00",
