@@ -1,6 +1,62 @@
 {
-  "updatedAt": "2026-07-07T17:51:27.473Z",
+  "updatedAt": "2026-07-07T20:18:14.796Z",
   "entries": [
+    {
+      "id": "1576804",
+      "datetime": "2026-07-07T16:00:00+00:00",
+      "home": {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "code": "ARG"
+      },
+      "away": {
+        "name": "Egypt",
+        "flag": "🇪🇬",
+        "code": "EGY"
+      },
+      "predicted": {
+        "probs": {
+          "home": 65,
+          "draw": 22,
+          "away": 13
+        },
+        "score": {
+          "home": 3,
+          "away": 0
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 71,
+          "draw": 20,
+          "away": 9
+        },
+        "form": {
+          "home": 44,
+          "draw": 26,
+          "away": 30
+        },
+        "h2h": null,
+        "press": {
+          "home": 62,
+          "draw": 26,
+          "away": 12
+        },
+        "social": {
+          "home": 61,
+          "draw": 26,
+          "away": 13
+        }
+      },
+      "actual": {
+        "home": 3,
+        "away": 2,
+        "outcome": "home"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "1570715",
       "datetime": "2026-07-07T00:00:00+00:00",
