@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-07T20:18:14.798Z",
+  "updatedAt": "2026-07-07T23:16:27.862Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -12,94 +12,6 @@ window.WC_DATA = {
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "1570715",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-07T00:00:00+00:00",
-      "venue": "Lumen Field",
-      "home": {
-        "name": "USA",
-        "flag": "🇺🇸",
-        "code": "USA"
-      },
-      "away": {
-        "name": "Belgium",
-        "flag": "🇧🇪",
-        "code": "BEL"
-      },
-      "probs": {
-        "home": 41,
-        "draw": 27,
-        "away": 32
-      },
-      "predictedScore": {
-        "home": 2,
-        "away": 1
-      },
-      "confidence": 63,
-      "analysis": "USA part favori de justesse avec 41% de chances estimées. Les cotes confirment (39%). La forme récente, la presse et le public vont dans le même sens.",
-      "scorers": null,
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 39,
-            "draw": 28,
-            "away": 34
-          },
-          "favored": "home",
-          "detail": "12 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 39,
-            "draw": 26,
-            "away": 35
-          },
-          "favored": "home",
-          "detail": "VDVV vs VVNN"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 52,
-            "draw": 26,
-            "away": 22
-          },
-          "favored": "home",
-          "detail": "4192 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 45,
-            "draw": 26,
-            "away": 29
-          },
-          "favored": "home",
-          "detail": "X · 44227/28395 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 1,
-        "away": 4,
-        "outcome": "away"
-      }
-    },
     {
       "id": "1576805",
       "stage": "À venir",
@@ -179,6 +91,17 @@ window.WC_DATA = {
           },
           "favored": "away",
           "detail": "X · 6166/9924 mentions"
+        }
+      },
+      "status": "finished",
+      "result": {
+        "home": 0,
+        "away": 0,
+        "outcome": "draw",
+        "decidedBy": "pens",
+        "pens": {
+          "home": 4,
+          "away": 3
         }
       }
     },

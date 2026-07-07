@@ -1,6 +1,67 @@
 {
-  "updatedAt": "2026-07-07T20:18:14.796Z",
+  "updatedAt": "2026-07-07T23:16:27.861Z",
   "entries": [
+    {
+      "id": "1576805",
+      "datetime": "2026-07-07T20:00:00+00:00",
+      "home": {
+        "name": "Switzerland",
+        "flag": "🇨🇭",
+        "code": "SUI"
+      },
+      "away": {
+        "name": "Colombia",
+        "flag": "🇨🇴",
+        "code": "COL"
+      },
+      "predicted": {
+        "probs": {
+          "home": 31,
+          "draw": 29,
+          "away": 40
+        },
+        "score": {
+          "home": 1,
+          "away": 2
+        },
+        "favored": "away"
+      },
+      "sources": {
+        "betting": {
+          "home": 27,
+          "draw": 31,
+          "away": 42
+        },
+        "form": {
+          "home": 37,
+          "draw": 26,
+          "away": 37
+        },
+        "h2h": null,
+        "press": {
+          "home": 47,
+          "draw": 26,
+          "away": 27
+        },
+        "social": {
+          "home": 28,
+          "draw": 26,
+          "away": 46
+        }
+      },
+      "actual": {
+        "home": 0,
+        "away": 0,
+        "outcome": "draw",
+        "decidedBy": "pens",
+        "pens": {
+          "home": 4,
+          "away": 3
+        }
+      },
+      "correctOutcome": false,
+      "correctScore": false
+    },
     {
       "id": "1576804",
       "datetime": "2026-07-07T16:00:00+00:00",
