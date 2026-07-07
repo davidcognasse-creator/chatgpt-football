@@ -251,7 +251,7 @@
     const scoreLabel = finished ? t("card_result") : t("card_scoreia");
     const extra = finished ? resultExtra(m.result) : "";
     const scoreVal = finished
-      ? `${m.result.home} – ${m.result.away}${extra}`
+      ? `${m.result.home} – ${m.result.away}`
       : `${m.predictedScore.home} – ${m.predictedScore.away}`;
     const aiNote = finished
       ? `<span class="ai-note">${t("card_ai_short")} ${m.predictedScore.home}–${m.predictedScore.away}</span>`
@@ -271,6 +271,7 @@
           <div class="score-pred">
             <span class="vs">${scoreLabel}</span>
             <span class="score">${scoreVal}</span>
+            ${extra}
             ${aiNote}
           </div>
           <div class="team">
