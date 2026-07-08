@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-08T09:24:22.584Z",
+  "updatedAt": "2026-07-08T17:18:30.687Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -206,18 +206,18 @@ window.WC_DATA = {
             "away": 22
           },
           "favored": "home",
-          "detail": "4825 articles"
+          "detail": "4836 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 52,
+            "home": 51,
             "draw": 26,
-            "away": 22
+            "away": 23
           },
           "favored": "home",
-          "detail": "X · 52309/22783 mentions"
+          "detail": "X · 50585/22670 mentions"
         }
       }
     },
@@ -318,7 +318,7 @@ window.WC_DATA = {
             "away": 21
           },
           "favored": "home",
-          "detail": "5638 articles"
+          "detail": "5668 articles"
         },
         "social": {
           "label": "Public",
@@ -329,7 +329,7 @@ window.WC_DATA = {
             "away": 44
           },
           "favored": "away",
-          "detail": "X · 42404/60660 mentions"
+          "detail": "X · 41674/59599 mentions"
         }
       }
     },
@@ -359,7 +359,7 @@ window.WC_DATA = {
         "away": 2
       },
       "confidence": 68,
-      "analysis": "England tient la corde avec 52% de chances estimées. Les cotes confirment (50%). La forme récente, la presse et le public vont dans le même sens.",
+      "analysis": "England part favori de justesse avec 51% de chances estimées. Les cotes confirment (50%). La forme récente, la presse et le public vont dans le même sens.",
       "scorers": {
         "home": [
           {
@@ -430,18 +430,18 @@ window.WC_DATA = {
             "away": 69
           },
           "favored": "away",
-          "detail": "12935 articles"
+          "detail": "12940 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 21,
+            "home": 22,
             "draw": 26,
-            "away": 53
+            "away": 52
           },
           "favored": "away",
-          "detail": "X · 31340/81581 mentions"
+          "detail": "X · 30891/71037 mentions"
         }
       }
     }
