@@ -67,9 +67,9 @@
       "dom": "Sabah FK",
       "ext": "The New Saints",
       "p": {
-        "1": 0.3333333333333333,
-        "N": 0.3333333333333333,
-        "2": 0.3333333333333333
+        "1": 0.5,
+        "N": 0.5,
+        "2": 0.0
       },
       "foule": {
         "1": 0.62,
@@ -147,9 +147,9 @@
       "dom": "Floriana FC",
       "ext": "Shamrock",
       "p": {
-        "1": 0.3333333333333333,
-        "N": 0.3333333333333333,
-        "2": 0.3333333333333333
+        "1": 0.5,
+        "N": 0.5,
+        "2": 0.0
       },
       "foule": {
         "1": 0.11,
@@ -287,16 +287,16 @@
       "dom": "Kairat Almaty",
       "ext": "Sutjeska",
       "p": {
-        "1": 0.7619854539008535,
-        "N": 0.16032750292342685,
-        "2": 0.0776870431757196
+        "1": 0.3333333333333333,
+        "N": 0.3333333333333333,
+        "2": 0.3333333333333333
       },
       "foule": {
         "1": 0.84,
         "N": 0.09,
         "2": 0.07
       },
-      "source": "cotes (13 books)",
+      "source": "prédiction API",
       "coted": true,
       "marketPick": "1",
       "crowdPick": "1",
@@ -328,9 +328,9 @@
       "marketPick": "1",
       "crowdPick": "2",
       "p": {
-        "1": 0.3333333333333333,
-        "N": 0.3333333333333333,
-        "2": 0.3333333333333333
+        "1": 0.5,
+        "N": 0.5,
+        "2": 0.0
       },
       "foule": {
         "1": 0.11,
@@ -367,15 +367,15 @@
         "triples": 0
       },
       "stats": {
-        "p15": 0.0003552938360515499,
-        "p14": 0.004526205497761468,
-        "p13": 0.025327206170665802,
-        "pge13": 0.03020870550447882,
-        "pReach": 0.11220319687398086,
-        "esperance": 9.57531878723419,
-        "pProfit": 0.11184790303792931,
+        "p15": 0.0003497053331851851,
+        "p14": 0.004345777403259259,
+        "p13": 0.0239210823194074,
+        "pge13": 0.028616565055851844,
+        "pReach": 0.10560493280696295,
+        "esperance": 9.480000000000002,
+        "pProfit": 0.1009094500705185,
         "breakeven": 12,
-        "expectedGain": 226.7664903922045
+        "expectedGain": 275.7660121928729
       },
       "picks": [
         {
@@ -404,11 +404,12 @@
         },
         {
           "i": 4,
-          "type": "simple",
+          "type": "double",
           "picks": [
-            "1"
+            "1",
+            "N"
           ],
-          "coverage": 0.3333333333333333
+          "coverage": 1.0
         },
         {
           "i": 5,
@@ -442,7 +443,301 @@
           "picks": [
             "1"
           ],
+          "coverage": 0.5
+        },
+        {
+          "i": 9,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
           "coverage": 0.3333333333333333
+        },
+        {
+          "i": 10,
+          "type": "simple",
+          "picks": [
+            "N"
+          ],
+          "coverage": 0.5
+        },
+        {
+          "i": 11,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.5
+        },
+        {
+          "i": 12,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.76
+        },
+        {
+          "i": 13,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.77
+        },
+        {
+          "i": 14,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.59
+        },
+        {
+          "i": 15,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.3333333333333333
+        }
+      ]
+    },
+    {
+      "budget": 24,
+      "combos": 16,
+      "cost": 16.0,
+      "repartition": {
+        "simples": 11,
+        "doubles": 4,
+        "triples": 0
+      },
+      "stats": {
+        "p15": 0.0006994106663703702,
+        "p14": 0.007992144140148146,
+        "p13": 0.03985002049866666,
+        "pge13": 0.04854157530518518,
+        "pReach": 0.16266829030874075,
+        "esperance": 9.980000000000002,
+        "pProfit": 0.15397673550222224,
+        "breakeven": 12,
+        "expectedGain": 453.9814537496381
+      },
+      "picks": [
+        {
+          "i": 1,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.82
+        },
+        {
+          "i": 2,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.46
+        },
+        {
+          "i": 3,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.3333333333333333
+        },
+        {
+          "i": 4,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 1.0
+        },
+        {
+          "i": 5,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.58
+        },
+        {
+          "i": 6,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 1.0
+        },
+        {
+          "i": 7,
+          "type": "double",
+          "picks": [
+            "N",
+            "2"
+          ],
+          "coverage": 1.0
+        },
+        {
+          "i": 8,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 1.0
+        },
+        {
+          "i": 9,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.3333333333333333
+        },
+        {
+          "i": 10,
+          "type": "simple",
+          "picks": [
+            "N"
+          ],
+          "coverage": 0.5
+        },
+        {
+          "i": 11,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.5
+        },
+        {
+          "i": 12,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.76
+        },
+        {
+          "i": 13,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.77
+        },
+        {
+          "i": 14,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.59
+        },
+        {
+          "i": 15,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.3333333333333333
+        }
+      ]
+    },
+    {
+      "budget": 48,
+      "combos": 32,
+      "cost": 32.0,
+      "repartition": {
+        "simples": 10,
+        "doubles": 5,
+        "triples": 0
+      },
+      "stats": {
+        "p15": 0.0013988213327407403,
+        "p14": 0.014585466947555557,
+        "p13": 0.06511457404977779,
+        "pge13": 0.08109886233007409,
+        "pReach": 0.24423771828740742,
+        "esperance": 10.480000000000002,
+        "pProfit": 0.22825343000711112,
+        "breakeven": 12,
+        "expectedGain": 732.8530636461371
+      },
+      "picks": [
+        {
+          "i": 1,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.82
+        },
+        {
+          "i": 2,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.46
+        },
+        {
+          "i": 3,
+          "type": "simple",
+          "picks": [
+            "1"
+          ],
+          "coverage": 0.3333333333333333
+        },
+        {
+          "i": 4,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 1.0
+        },
+        {
+          "i": 5,
+          "type": "simple",
+          "picks": [
+            "2"
+          ],
+          "coverage": 0.58
+        },
+        {
+          "i": 6,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 1.0
+        },
+        {
+          "i": 7,
+          "type": "double",
+          "picks": [
+            "N",
+            "2"
+          ],
+          "coverage": 1.0
+        },
+        {
+          "i": 8,
+          "type": "double",
+          "picks": [
+            "1",
+            "N"
+          ],
+          "coverage": 1.0
         },
         {
           "i": 9,
@@ -499,311 +794,15 @@
           "picks": [
             "1"
           ],
-          "coverage": 0.7619854539008535
-        }
-      ]
-    },
-    {
-      "budget": 24,
-      "combos": 16,
-      "cost": 16.0,
-      "repartition": {
-        "simples": 11,
-        "doubles": 4,
-        "triples": 0
-      },
-      "stats": {
-        "p15": 0.0007105876721030998,
-        "p14": 0.008341823323419836,
-        "p13": 0.04231258901791177,
-        "pge13": 0.051365000013434706,
-        "pReach": 0.173041393734527,
-        "esperance": 10.07531878723419,
-        "pProfit": 0.17233080606242393,
-        "breakeven": 12,
-        "expectedGain": 408.8785478556308
-      },
-      "picks": [
-        {
-          "i": 1,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.82
-        },
-        {
-          "i": 2,
-          "type": "simple",
-          "picks": [
-            "2"
-          ],
-          "coverage": 0.46
-        },
-        {
-          "i": 3,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
           "coverage": 0.3333333333333333
-        },
-        {
-          "i": 4,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.3333333333333333
-        },
-        {
-          "i": 5,
-          "type": "simple",
-          "picks": [
-            "2"
-          ],
-          "coverage": 0.58
-        },
-        {
-          "i": 6,
-          "type": "double",
-          "picks": [
-            "1",
-            "N"
-          ],
-          "coverage": 1.0
-        },
-        {
-          "i": 7,
-          "type": "double",
-          "picks": [
-            "N",
-            "2"
-          ],
-          "coverage": 1.0
-        },
-        {
-          "i": 8,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.3333333333333333
-        },
-        {
-          "i": 9,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.3333333333333333
-        },
-        {
-          "i": 10,
-          "type": "double",
-          "picks": [
-            "N",
-            "2"
-          ],
-          "coverage": 1.0
-        },
-        {
-          "i": 11,
-          "type": "double",
-          "picks": [
-            "1",
-            "N"
-          ],
-          "coverage": 1.0
-        },
-        {
-          "i": 12,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.76
-        },
-        {
-          "i": 13,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.77
-        },
-        {
-          "i": 14,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.59
-        },
-        {
-          "i": 15,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.7619854539008535
-        }
-      ]
-    },
-    {
-      "budget": 48,
-      "combos": 48,
-      "cost": 48.0,
-      "repartition": {
-        "simples": 10,
-        "doubles": 4,
-        "triples": 1
-      },
-      "stats": {
-        "p15": 0.0021317630163092995,
-        "p14": 0.02076194393764091,
-        "p13": 0.0854138791784535,
-        "pge13": 0.10830758613240371,
-        "pReach": 0.30250900893877375,
-        "esperance": 10.741985453900858,
-        "pProfit": 0.30037724592246445,
-        "breakeven": 12,
-        "expectedGain": 979.0400288821618
-      },
-      "picks": [
-        {
-          "i": 1,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.82
-        },
-        {
-          "i": 2,
-          "type": "simple",
-          "picks": [
-            "2"
-          ],
-          "coverage": 0.46
-        },
-        {
-          "i": 3,
-          "type": "triple",
-          "picks": [
-            "1",
-            "N",
-            "2"
-          ],
-          "coverage": 1.0
-        },
-        {
-          "i": 4,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.3333333333333333
-        },
-        {
-          "i": 5,
-          "type": "simple",
-          "picks": [
-            "2"
-          ],
-          "coverage": 0.58
-        },
-        {
-          "i": 6,
-          "type": "double",
-          "picks": [
-            "1",
-            "N"
-          ],
-          "coverage": 1.0
-        },
-        {
-          "i": 7,
-          "type": "double",
-          "picks": [
-            "N",
-            "2"
-          ],
-          "coverage": 1.0
-        },
-        {
-          "i": 8,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.3333333333333333
-        },
-        {
-          "i": 9,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.3333333333333333
-        },
-        {
-          "i": 10,
-          "type": "double",
-          "picks": [
-            "N",
-            "2"
-          ],
-          "coverage": 1.0
-        },
-        {
-          "i": 11,
-          "type": "double",
-          "picks": [
-            "1",
-            "N"
-          ],
-          "coverage": 1.0
-        },
-        {
-          "i": 12,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.76
-        },
-        {
-          "i": 13,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.77
-        },
-        {
-          "i": 14,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.59
-        },
-        {
-          "i": 15,
-          "type": "simple",
-          "picks": [
-            "1"
-          ],
-          "coverage": 0.7619854539008535
         }
       ]
     }
   ],
   "estRapports": {
-    "12": 103.6421253466811,
-    "13": 1374.887219421386,
-    "14": 40529.83344723912,
+    "12": 383.34716599618736,
+    "13": 10294.38117860683,
+    "14": 0.0,
     "15": 0.0
   }
 }

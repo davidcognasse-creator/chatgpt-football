@@ -12,6 +12,7 @@ Grille : **Loto Foot 15 N°52** · 30 équipes interrogées.
 - **Leonardo Balerdi** — _blessé_ · « Marcos Senesi Joins Argentina's World Cup Squad as Balerdi's Replacement » (Devdiscourse)
 
 ## Suisse
+- **Urska Zigart** — _blessé_ · « Urška Žigart handed positive injury update after jaw-fracturing Tour de Suisse crash » (Cyclingnews)
 - **France Femmes** — _blessé_ · « Overcoming injury, Reusser’s third Tour de Suisse Women victory leads to renewed confidence ahead of Tour de France Femmes » (Cyclingnews)
 - **Kim Le Court** — _blessé_ · « 'It wasn't planned' - Kim Le Court-Pienaar back to full strength in Tour de Suisse breakaway after two-month injury layoff » (Cyclingnews)
 
@@ -55,6 +56,10 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       }
     ],
     "Suisse": [
+      {
+        "joueur": "Urska Zigart",
+        "raison": "blessé"
+      },
       {
         "joueur": "France Femmes",
         "raison": "blessé"
