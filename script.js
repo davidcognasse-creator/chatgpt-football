@@ -88,9 +88,8 @@
       return ` <span class="ai-note">🥅 (${t("his_pens")}${sc})</span>`;
     }
     if (r.decidedBy === "aet") {
-      return r.full
-        ? ` <span class="ai-note">⏱ (${r.full.home}‑${r.full.away})</span>`
-        : ` <span class="ai-note">⏱</span>`;
+      const sc = r.full ? ` ${r.full.home}‑${r.full.away}` : "";
+      return ` <span class="ai-note">⏱ (${t("his_aet")}${sc})</span>`;
     }
     return "";
   };
