@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-07T23:16:27.862Z",
+  "updatedAt": "2026-07-08T09:24:22.584Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -132,7 +132,37 @@ window.WC_DATA = {
       },
       "confidence": 70,
       "analysis": "France tient la corde avec 58% de chances estimées. Les cotes confirment (60%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
-      "scorers": null,
+      "scorers": {
+        "home": [
+          {
+            "name": "Kylian Mbappé",
+            "prob": 16
+          },
+          {
+            "name": "Michael Olise",
+            "prob": 13
+          },
+          {
+            "name": "Désiré Doué",
+            "prob": 11
+          }
+        ],
+        "away": [
+          {
+            "name": "Abde Ezzalzouli",
+            "prob": 14
+          },
+          {
+            "name": "Brahim Díaz",
+            "prob": 12
+          },
+          {
+            "name": "Chemsdine Talbi",
+            "prob": 9
+          }
+        ],
+        "estimated": true
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -140,7 +170,7 @@ window.WC_DATA = {
           "probs": {
             "home": 60,
             "draw": 24,
-            "away": 16
+            "away": 15
           },
           "favored": "home",
           "detail": "13 bookmakers"
@@ -176,18 +206,18 @@ window.WC_DATA = {
             "away": 22
           },
           "favored": "home",
-          "detail": "4810 articles"
+          "detail": "4825 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 54,
+            "home": 52,
             "draw": 26,
-            "away": 20
+            "away": 22
           },
           "favored": "home",
-          "detail": "X · 61085/22027 mentions"
+          "detail": "X · 52309/22783 mentions"
         }
       }
     },
@@ -217,16 +247,46 @@ window.WC_DATA = {
         "away": 1
       },
       "confidence": 67,
-      "analysis": "Spain tient la corde avec 52% de chances estimées. Les cotes confirment (58%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Belgium.",
-      "scorers": null,
+      "analysis": "Spain tient la corde avec 52% de chances estimées. Les cotes confirment (59%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Belgium.",
+      "scorers": {
+        "home": [
+          {
+            "name": "Lamine Yamal",
+            "prob": 25
+          },
+          {
+            "name": "Pedri",
+            "prob": 9
+          },
+          {
+            "name": "Ferran Torres",
+            "prob": 7
+          }
+        ],
+        "away": [
+          {
+            "name": "Jérémy Doku",
+            "prob": 20
+          },
+          {
+            "name": "Matias Fernandez-Pardo",
+            "prob": 10
+          },
+          {
+            "name": "Mika Godts",
+            "prob": 10
+          }
+        ],
+        "estimated": true
+      },
       "sources": {
         "betting": {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 58,
+            "home": 59,
             "draw": 24,
-            "away": 18
+            "away": 17
           },
           "favored": "home",
           "detail": "13 bookmakers"
@@ -253,23 +313,23 @@ window.WC_DATA = {
           "label": "Presse",
           "weight": 0.12,
           "probs": {
-            "home": 54,
+            "home": 53,
             "draw": 26,
-            "away": 20
+            "away": 21
           },
           "favored": "home",
-          "detail": "5544 articles"
+          "detail": "5638 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 31,
+            "home": 30,
             "draw": 26,
-            "away": 43
+            "away": 44
           },
           "favored": "away",
-          "detail": "X · 41279/57790 mentions"
+          "detail": "X · 42404/60660 mentions"
         }
       }
     },
@@ -290,17 +350,47 @@ window.WC_DATA = {
         "code": "ENG"
       },
       "probs": {
-        "home": 25,
+        "home": 23,
         "draw": 26,
-        "away": 49
+        "away": 51
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
-      "confidence": 64,
-      "analysis": "England part favori de justesse avec 49% de chances estimées. Les cotes confirment (50%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Norway.",
-      "scorers": null,
+      "confidence": 68,
+      "analysis": "England tient la corde avec 52% de chances estimées. Les cotes confirment (50%). La forme récente, la presse et le public vont dans le même sens.",
+      "scorers": {
+        "home": [
+          {
+            "name": "Erling Haaland",
+            "prob": 36
+          },
+          {
+            "name": "Jørgen Strand Larsen",
+            "prob": 8
+          },
+          {
+            "name": "Antonio Nusa",
+            "prob": 7
+          }
+        ],
+        "away": [
+          {
+            "name": "Bukayo Saka",
+            "prob": 15
+          },
+          {
+            "name": "Anthony Gordon",
+            "prob": 9
+          },
+          {
+            "name": "Harry Kane",
+            "prob": 9
+          }
+        ],
+        "estimated": true
+      },
       "sources": {
         "betting": {
           "label": "Paris",
@@ -340,18 +430,18 @@ window.WC_DATA = {
             "away": 69
           },
           "favored": "away",
-          "detail": "12902 articles"
+          "detail": "12935 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 42,
+            "home": 21,
             "draw": 26,
-            "away": 32
+            "away": 53
           },
-          "favored": "home",
-          "detail": "Wikipédia · 305280/229558 vues"
+          "favored": "away",
+          "detail": "X · 31340/81581 mentions"
         }
       }
     }

@@ -28,7 +28,7 @@
       "betting": {
         "home": 60,
         "draw": 24,
-        "away": 16
+        "away": 15
       },
       "form": {
         "home": 40,
@@ -46,9 +46,9 @@
         "away": 22
       },
       "social": {
-        "home": 54,
+        "home": 52,
         "draw": 26,
-        "away": 20
+        "away": 22
       }
     }
   },
@@ -67,9 +67,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 25,
+        "home": 23,
         "draw": 26,
-        "away": 49
+        "away": 51
       },
       "score": {
         "home": 1,
@@ -95,9 +95,9 @@
         "away": 69
       },
       "social": {
-        "home": 42,
+        "home": 21,
         "draw": 26,
-        "away": 32
+        "away": 53
       }
     }
   },
@@ -128,9 +128,9 @@
     },
     "sources": {
       "betting": {
-        "home": 58,
+        "home": 59,
         "draw": 24,
-        "away": 18
+        "away": 17
       },
       "form": {
         "home": 40,
@@ -139,14 +139,14 @@
       },
       "h2h": null,
       "press": {
-        "home": 54,
+        "home": 53,
         "draw": 26,
-        "away": 20
+        "away": 21
       },
       "social": {
-        "home": 31,
+        "home": 30,
         "draw": 26,
-        "away": 43
+        "away": 44
       }
     }
   },
