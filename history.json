@@ -1,6 +1,66 @@
 {
-  "updatedAt": "2026-07-09T17:47:36.674Z",
+  "updatedAt": "2026-07-09T23:39:59.240Z",
   "entries": [
+    {
+      "id": "1578539",
+      "datetime": "2026-07-09T20:00:00+00:00",
+      "home": {
+        "name": "France",
+        "flag": "🇫🇷",
+        "code": "FRA"
+      },
+      "away": {
+        "name": "Morocco",
+        "flag": "🇲🇦",
+        "code": "MAR"
+      },
+      "predicted": {
+        "probs": {
+          "home": 57,
+          "draw": 24,
+          "away": 19
+        },
+        "score": {
+          "home": 3,
+          "away": 0
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 60,
+          "draw": 25,
+          "away": 15
+        },
+        "form": {
+          "home": 40,
+          "draw": 26,
+          "away": 34
+        },
+        "h2h": {
+          "home": 79,
+          "draw": 10,
+          "away": 10
+        },
+        "press": {
+          "home": 52,
+          "draw": 26,
+          "away": 22
+        },
+        "social": {
+          "home": 50,
+          "draw": 26,
+          "away": 24
+        }
+      },
+      "actual": {
+        "home": 2,
+        "away": 0,
+        "outcome": "home"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "1576805",
       "datetime": "2026-07-07T20:00:00+00:00",

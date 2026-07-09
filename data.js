@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-09T17:47:29.354Z",
+  "updatedAt": "2026-07-09T23:39:59.242Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -12,99 +12,6 @@ window.WC_DATA = {
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "1576805",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-07T20:00:00+00:00",
-      "venue": "BC Place",
-      "home": {
-        "name": "Switzerland",
-        "flag": "🇨🇭",
-        "code": "SUI"
-      },
-      "away": {
-        "name": "Colombia",
-        "flag": "🇨🇴",
-        "code": "COL"
-      },
-      "probs": {
-        "home": 31,
-        "draw": 29,
-        "away": 40
-      },
-      "predictedScore": {
-        "home": 1,
-        "away": 2
-      },
-      "confidence": 61,
-      "analysis": "Colombia part favori de justesse avec 40% de chances estimées. Les cotes confirment (42%). Le public abonde aussi. À contre-courant du pronostic IA, la forme récente et la presse penchent plutôt pour Switzerland.",
-      "scorers": null,
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 27,
-            "draw": 31,
-            "away": 42
-          },
-          "favored": "away",
-          "detail": "12 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 37,
-            "draw": 26,
-            "away": 37
-          },
-          "favored": "home",
-          "detail": "VVVN vs VNVV"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 47,
-            "draw": 26,
-            "away": 27
-          },
-          "favored": "home",
-          "detail": "1532 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 28,
-            "draw": 26,
-            "away": 46
-          },
-          "favored": "away",
-          "detail": "X · 6166/9924 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 0,
-        "away": 0,
-        "outcome": "draw",
-        "decidedBy": "pens",
-        "pens": {
-          "home": 4,
-          "away": 3
-        }
-      }
-    },
     {
       "id": "1578539",
       "stage": "À venir",
@@ -219,6 +126,12 @@ window.WC_DATA = {
           "favored": "home",
           "detail": "X · 57974/27698 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 2,
+        "away": 0,
+        "outcome": "home"
       }
     },
     {
