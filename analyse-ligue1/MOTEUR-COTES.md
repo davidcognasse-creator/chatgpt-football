@@ -12,13 +12,13 @@ Grille : **Loto Foot 15 N°52** · 15 matchs · source **API-Football**
 | 6 | Lincoln FC–Inter Escaldes | 50/50/0 | 84/9/7 | **1** | 1 | préd. |  |
 | 7 | Vardar Skopje–Kups | 0/50/50 | 46/28/26 | **N** | 1 | préd. | **+22%** |
 | 8 | Floriana FC–Shamrock | 50/50/0 | 11/12/77 | **1** | 2 | préd. | **+39%** |
-| 9 | Borac Banja Luka–Levski Sofia | 33/33/33 | 35/33/32 | **1** | 1 | préd. |  |
+| 9 | Borac Banja Luka–Levski Sofia | 21/28/51 | 35/33/32 | **2** | 1 | 3 | **+19%** |
 | 10 | Tre Fiori FC–FC Larne | 0/50/50 | 32/20/48 | **N** | 2 | préd. | **+30%** |
 | 11 | KI Klaksvik–Atert Bissen | 50/50/0 | 76/12/12 | **1** | 1 | préd. |  |
 | 12 | Vikingur Reykjavik–Gyor ETO FC | — | 76/13/11 | _non coté_ | 1 | — | — |
 | 13 | CS Petrocub–KS Egnatia | — | 77/14/9 | _non coté_ | 1 | — | — |
 | 14 | FC Flora–Iberia 1999 | — | 59/20/21 | _non coté_ | 1 | — | — |
-| 15 | Kairat Almaty–Sutjeska | 33/33/33 | 84/9/7 | **1** | 1 | préd. |  |
+| 15 | Kairat Almaty–Sutjeska | 50/50/0 | 84/9/7 | **1** | 1 | préd. |  |
 
 **Couverture marché : 9/15 matchs cotés.**
 _Aucun absent renseigné (absences.json) — probas = marché brut._
@@ -26,6 +26,7 @@ _Aucun absent renseigné (absences.json) — probas = marché brut._
 ## 🎯 Divergences marché vs foule (value de pool)
 - **Match 7 · Vardar Skopje–Kups** : le marché voit **N** (50%) alors que la foule joue **1** (46%). → la foule sur/sous-estime, value si le marché a raison.
 - **Match 8 · Floriana FC–Shamrock** : le marché voit **1** (50%) alors que la foule joue **2** (77%). → la foule sur/sous-estime, value si le marché a raison.
+- **Match 9 · Borac Banja Luka–Levski Sofia** : le marché voit **2** (51%) alors que la foule joue **1** (35%). → la foule sur/sous-estime, value si le marché a raison.
 - **Match 10 · Tre Fiori FC–FC Larne** : le marché voit **N** (50%) alors que la foule joue **2** (48%). → la foule sur/sous-estime, value si le marché a raison.
 
 ---

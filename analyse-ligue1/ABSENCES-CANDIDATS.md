@@ -3,6 +3,7 @@
 Grille : **Loto Foot 15 N°52** · 30 équipes interrogées.
 
 ## Argentine
+- **Claudio Villamide** — _suspendu_ · « Argentine ex-navy commander convicted over 2017 sub disaster in which 44 sailors died » (The Straits Times)
 - **Tottenham Hotspur** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
 - **Cristian Romero** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
 - **Lamine Yamal** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
@@ -26,6 +27,10 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
 {
   "equipes": {
     "Argentine": [
+      {
+        "joueur": "Claudio Villamide",
+        "raison": "suspendu"
+      },
       {
         "joueur": "Tottenham Hotspur",
         "raison": "blessé"

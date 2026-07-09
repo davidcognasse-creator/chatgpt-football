@@ -3,6 +3,10 @@
   "equipes": {
     "Argentine": [
       {
+        "joueur": "Claudio Villamide",
+        "raison": "suspendu"
+      },
+      {
         "joueur": "Tottenham Hotspur",
         "raison": "blessé"
       },
