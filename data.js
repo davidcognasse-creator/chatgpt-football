@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-09T10:21:54.993Z",
+  "updatedAt": "2026-07-09T17:47:29.354Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -131,7 +131,7 @@ window.WC_DATA = {
         "away": 0
       },
       "confidence": 70,
-      "analysis": "France tient la corde avec 58% de chances estimées. Les cotes confirment (60%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
+      "analysis": "France tient la corde avec 57% de chances estimées. Les cotes confirment (60%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
       "scorers": {
         "home": [
           {
@@ -173,7 +173,7 @@ window.WC_DATA = {
             "away": 15
           },
           "favored": "home",
-          "detail": "13 bookmakers"
+          "detail": "14 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -206,18 +206,18 @@ window.WC_DATA = {
             "away": 22
           },
           "favored": "home",
-          "detail": "4855 articles"
+          "detail": "4883 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 51,
+            "home": 50,
             "draw": 26,
-            "away": 23
+            "away": 24
           },
           "favored": "home",
-          "detail": "X · 54446/24611 mentions"
+          "detail": "X · 57974/27698 mentions"
         }
       }
     },
@@ -318,7 +318,7 @@ window.WC_DATA = {
             "away": 21
           },
           "favored": "home",
-          "detail": "5711 articles"
+          "detail": "5712 articles"
         },
         "social": {
           "label": "Public",
@@ -329,7 +329,7 @@ window.WC_DATA = {
             "away": 40
           },
           "favored": "away",
-          "detail": "X · 43288/51069 mentions"
+          "detail": "X · 42350/50857 mentions"
         }
       }
     },
@@ -401,7 +401,7 @@ window.WC_DATA = {
             "away": 51
           },
           "favored": "away",
-          "detail": "13 bookmakers"
+          "detail": "14 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -430,18 +430,18 @@ window.WC_DATA = {
             "away": 69
           },
           "favored": "away",
-          "detail": "12983 articles"
+          "detail": "12993 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 25,
+            "home": 26,
             "draw": 26,
-            "away": 49
+            "away": 48
           },
           "favored": "away",
-          "detail": "X · 32710/63108 mentions"
+          "detail": "X · 33454/62994 mentions"
         }
       }
     },
@@ -471,7 +471,7 @@ window.WC_DATA = {
         "away": 0
       },
       "confidence": 70,
-      "analysis": "Argentina tient la corde avec 57% de chances estimées. Les cotes confirment (56%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
+      "analysis": "Argentina tient la corde avec 58% de chances estimées. Les cotes confirment (56%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
       "scorers": {
         "home": [
           {
@@ -510,10 +510,10 @@ window.WC_DATA = {
           "probs": {
             "home": 56,
             "draw": 27,
-            "away": 18
+            "away": 17
           },
           "favored": "home",
-          "detail": "13 bookmakers"
+          "detail": "14 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -535,7 +535,7 @@ window.WC_DATA = {
             "away": 10
           },
           "favored": "home",
-          "detail": "1V 0N 0D"
+          "detail": "1V 0N 0D (caché)"
         },
         "press": {
           "label": "Presse",
@@ -546,7 +546,7 @@ window.WC_DATA = {
             "away": 16
           },
           "favored": "home",
-          "detail": "4532 articles"
+          "detail": "4547 articles"
         },
         "social": {
           "label": "Public",
@@ -557,7 +557,7 @@ window.WC_DATA = {
             "away": 6
           },
           "favored": "home",
-          "detail": "X · 129527/11963 mentions"
+          "detail": "X · 131600/11949 mentions"
         }
       }
     }

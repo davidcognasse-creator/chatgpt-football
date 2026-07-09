@@ -46,9 +46,9 @@
         "away": 22
       },
       "social": {
-        "home": 51,
+        "home": 50,
         "draw": 26,
-        "away": 23
+        "away": 24
       }
     }
   },
@@ -95,9 +95,9 @@
         "away": 69
       },
       "social": {
-        "home": 25,
+        "home": 26,
         "draw": 26,
-        "away": 49
+        "away": 48
       }
     }
   },
@@ -179,7 +179,7 @@
       "betting": {
         "home": 56,
         "draw": 27,
-        "away": 18
+        "away": 17
       },
       "form": {
         "home": 40,
