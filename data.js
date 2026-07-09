@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-08T17:18:30.687Z",
+  "updatedAt": "2026-07-09T10:21:54.993Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -169,7 +169,7 @@ window.WC_DATA = {
           "weight": 0.55,
           "probs": {
             "home": 60,
-            "draw": 24,
+            "draw": 25,
             "away": 15
           },
           "favored": "home",
@@ -206,7 +206,7 @@ window.WC_DATA = {
             "away": 22
           },
           "favored": "home",
-          "detail": "4836 articles"
+          "detail": "4855 articles"
         },
         "social": {
           "label": "Public",
@@ -217,7 +217,7 @@ window.WC_DATA = {
             "away": 23
           },
           "favored": "home",
-          "detail": "X · 50585/22670 mentions"
+          "detail": "X · 54446/24611 mentions"
         }
       }
     },
@@ -247,7 +247,7 @@ window.WC_DATA = {
         "away": 1
       },
       "confidence": 67,
-      "analysis": "Spain tient la corde avec 52% de chances estimées. Les cotes confirment (59%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Belgium.",
+      "analysis": "Spain tient la corde avec 52% de chances estimées. Les cotes confirment (58%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Belgium.",
       "scorers": {
         "home": [
           {
@@ -284,9 +284,9 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 59,
+            "home": 58,
             "draw": 24,
-            "away": 17
+            "away": 18
           },
           "favored": "home",
           "detail": "13 bookmakers"
@@ -318,18 +318,18 @@ window.WC_DATA = {
             "away": 21
           },
           "favored": "home",
-          "detail": "5668 articles"
+          "detail": "5711 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 30,
+            "home": 34,
             "draw": 26,
-            "away": 44
+            "away": 40
           },
           "favored": "away",
-          "detail": "X · 41674/59599 mentions"
+          "detail": "X · 43288/51069 mentions"
         }
       }
     },
@@ -358,8 +358,8 @@ window.WC_DATA = {
         "home": 1,
         "away": 2
       },
-      "confidence": 68,
-      "analysis": "England part favori de justesse avec 51% de chances estimées. Les cotes confirment (50%). La forme récente, la presse et le public vont dans le même sens.",
+      "confidence": 67,
+      "analysis": "England part favori de justesse avec 51% de chances estimées. Les cotes confirment (51%). La forme récente, la presse et le public vont dans le même sens.",
       "scorers": {
         "home": [
           {
@@ -396,9 +396,9 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 24,
+            "home": 23,
             "draw": 26,
-            "away": 50
+            "away": 51
           },
           "favored": "away",
           "detail": "13 bookmakers"
@@ -430,18 +430,134 @@ window.WC_DATA = {
             "away": 69
           },
           "favored": "away",
-          "detail": "12940 articles"
+          "detail": "12983 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 22,
+            "home": 25,
             "draw": 26,
-            "away": 52
+            "away": 49
           },
           "favored": "away",
-          "detail": "X · 30891/71037 mentions"
+          "detail": "X · 32710/63108 mentions"
+        }
+      }
+    },
+    {
+      "id": "1582681",
+      "stage": "À venir",
+      "projected": false,
+      "datetime": "2026-07-12T01:00:00+00:00",
+      "venue": "Arrowhead Stadium",
+      "home": {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "code": "ARG"
+      },
+      "away": {
+        "name": "Switzerland",
+        "flag": "🇨🇭",
+        "code": "SUI"
+      },
+      "probs": {
+        "home": 57,
+        "draw": 25,
+        "away": 18
+      },
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "confidence": 70,
+      "analysis": "Argentina tient la corde avec 57% de chances estimées. Les cotes confirment (56%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
+      "scorers": {
+        "home": [
+          {
+            "name": "Julián Alvarez",
+            "prob": 16
+          },
+          {
+            "name": "Lautaro Martínez",
+            "prob": 14
+          },
+          {
+            "name": "Franco Mastantuono",
+            "prob": 8
+          }
+        ],
+        "away": [
+          {
+            "name": "Dan Ndoye",
+            "prob": 18
+          },
+          {
+            "name": "Noah Okafor",
+            "prob": 14
+          },
+          {
+            "name": "Johan Manzambi",
+            "prob": 12
+          }
+        ],
+        "estimated": true
+      },
+      "sources": {
+        "betting": {
+          "label": "Paris",
+          "weight": 0.55,
+          "probs": {
+            "home": 56,
+            "draw": 27,
+            "away": 18
+          },
+          "favored": "home",
+          "detail": "13 bookmakers"
+        },
+        "form": {
+          "label": "Forme",
+          "weight": 0.13,
+          "probs": {
+            "home": 40,
+            "draw": 26,
+            "away": 34
+          },
+          "favored": "home",
+          "detail": "VVVVV vs VVVVN"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.1,
+          "probs": {
+            "home": 79,
+            "draw": 10,
+            "away": 10
+          },
+          "favored": "home",
+          "detail": "1V 0N 0D"
+        },
+        "press": {
+          "label": "Presse",
+          "weight": 0.12,
+          "probs": {
+            "home": 58,
+            "draw": 26,
+            "away": 16
+          },
+          "favored": "home",
+          "detail": "4532 articles"
+        },
+        "social": {
+          "label": "Public",
+          "weight": 0.1,
+          "probs": {
+            "home": 68,
+            "draw": 26,
+            "away": 6
+          },
+          "favored": "home",
+          "detail": "X · 129527/11963 mentions"
         }
       }
     }
