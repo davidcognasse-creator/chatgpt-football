@@ -3,6 +3,9 @@
 Grille : **Loto Foot 15 N°52** · 30 équipes interrogées.
 
 ## Argentine
+- **Morocco Suffer Major** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
+- **Blow As Ismael** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
+- **Saibari Ruled Out** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
 - **Claudio Villamide** — _suspendu_ · « Argentine ex-navy commander convicted over 2017 sub disaster in which 44 sailors died » (The Straits Times)
 - **Tottenham Hotspur** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
 - **Cristian Romero** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
@@ -27,6 +30,18 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
 {
   "equipes": {
     "Argentine": [
+      {
+        "joueur": "Morocco Suffer Major",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Blow As Ismael",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Saibari Ruled Out",
+        "raison": "blessé"
+      },
       {
         "joueur": "Claudio Villamide",
         "raison": "suspendu"
