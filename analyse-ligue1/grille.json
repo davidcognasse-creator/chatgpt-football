@@ -1,22 +1,22 @@
 {
   "nom": "Loto Foot 15 N°53",
-  "note": "auto (playwright) — répartition public Pronosoft (427 pronos), clôture 11/07 22h55. foule = mises du public (1/N/2) ; probas écrasées par le moteur cotes. budget = € max.",
+  "note": "auto (playwright) — répartition public FDJ (grille officielle), clôture 11/07 22h55. foule = mises du public (1/N/2) ; probas écrasées par le moteur cotes. budget = € max.",
   "budget": 24,
   "matchs": [
-    {"dom": "Norvège",        "ext": "Angleterre",    "foule": {"1": 30, "N": 34, "2": 36}},
-    {"dom": "Argentine",      "ext": "Suisse",        "foule": {"1": 52, "N": 30, "2": 18}},
-    {"dom": "Jeju",           "ext": "Daejeon",       "foule": {"1": 45, "N": 29, "2": 26}},
-    {"dom": "FC Seoul",       "ext": "Gangwon FC",    "foule": {"1": 67, "N": 20, "2": 13}},
-    {"dom": "Incheon FC",     "ext": "FC Anyang",     "foule": {"1": 55, "N": 25, "2": 20}},
-    {"dom": "Hammarby",       "ext": "Kalmar FF",     "foule": {"1": 56, "N": 22, "2": 22}},
-    {"dom": "Malmö",          "ext": "IFK Göteborg",  "foule": {"1": 51, "N": 26, "2": 23}},
-    {"dom": "Vasteras SK",    "ext": "Degerfors IF",  "foule": {"1": 46, "N": 32, "2": 22}},
-    {"dom": "Kfum Oslo",      "ext": "Bodø/Glimt",    "foule": {"1": 19, "N": 17, "2": 64}},
-    {"dom": "Brommapojkarna", "ext": "IK Sirius FK",  "foule": {"1": 43, "N": 27, "2": 30}},
-    {"dom": "GAIS Göteborg",  "ext": "Elfsborg",      "foule": {"1": 44, "N": 27, "2": 29}},
-    {"dom": "Sandefjord",     "ext": "HamKam",        "foule": {"1": 60, "N": 24, "2": 16}},
-    {"dom": "SK Brann",       "ext": "Start",         "foule": {"1": 74, "N": 16, "2": 10}},
-    {"dom": "Rosenborg",      "ext": "Kristiansund",  "foule": {"1": 75, "N": 15, "2": 10}},
-    {"dom": "Sarpsborg 08",   "ext": "Viking FK",     "foule": {"1": 34, "N": 24, "2": 42}}
+    {"dom": "Norvège",        "ext": "Angleterre",    "foule": {"1": 27, "N": 28, "2": 45}},
+    {"dom": "Argentine",      "ext": "Suisse",        "foule": {"1": 72, "N": 19, "2": 9}},
+    {"dom": "Jeju",           "ext": "Daejeon",       "foule": {"1": 46, "N": 35, "2": 19}},
+    {"dom": "FC Seoul",       "ext": "Gangwon FC",    "foule": {"1": 74, "N": 18, "2": 8}},
+    {"dom": "Incheon FC",     "ext": "FC Anyang",     "foule": {"1": 61, "N": 27, "2": 12}},
+    {"dom": "Hammarby",       "ext": "Kalmar FF",     "foule": {"1": 83, "N": 10, "2": 7}},
+    {"dom": "Malmö",          "ext": "IFK Göteborg",  "foule": {"1": 64, "N": 25, "2": 11}},
+    {"dom": "Vasteras SK",    "ext": "Degerfors IF",  "foule": {"1": 60, "N": 28, "2": 12}},
+    {"dom": "Kfum Oslo",      "ext": "Bodø/Glimt",    "foule": {"1": 10, "N": 10, "2": 80}},
+    {"dom": "Brommapojkarna", "ext": "IK Sirius FK",  "foule": {"1": 30, "N": 14, "2": 56}},
+    {"dom": "GAIS Göteborg",  "ext": "Elfsborg",      "foule": {"1": 58, "N": 26, "2": 16}},
+    {"dom": "Sandefjord",     "ext": "HamKam",        "foule": {"1": 57, "N": 27, "2": 16}},
+    {"dom": "SK Brann",       "ext": "Start",         "foule": {"1": 84, "N": 9, "2": 7}},
+    {"dom": "Rosenborg",      "ext": "Kristiansund",  "foule": {"1": 81, "N": 13, "2": 6}},
+    {"dom": "Sarpsborg 08",   "ext": "Viking FK",     "foule": {"1": 16, "N": 13, "2": 71}}
   ]
 }
