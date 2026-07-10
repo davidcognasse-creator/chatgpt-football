@@ -1,6 +1,58 @@
 {
-  "updatedAt": "2026-07-10T17:41:48.200Z",
+  "updatedAt": "2026-07-10T21:30:02.789Z",
   "entries": [
+    {
+      "id": "1581821",
+      "datetime": "2026-07-10T19:00:00+00:00",
+      "home": {
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "code": "ESP"
+      },
+      "away": {
+        "name": "Belgium",
+        "flag": "🇧🇪",
+        "code": "BEL"
+      },
+      "predicted": {
+        "probs": {
+          "home": 52,
+          "draw": 25,
+          "away": 23
+        },
+        "score": {
+          "home": 2,
+          "away": 1
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 59,
+          "draw": 24,
+          "away": 17
+        },
+        "form": {
+          "home": 40,
+          "draw": 26,
+          "away": 34
+        },
+        "h2h": null,
+        "press": null,
+        "social": {
+          "home": 30,
+          "draw": 26,
+          "away": 44
+        }
+      },
+      "actual": {
+        "home": 2,
+        "away": 1,
+        "outcome": "home"
+      },
+      "correctOutcome": true,
+      "correctScore": true
+    },
     {
       "id": "1578539",
       "datetime": "2026-07-09T20:00:00+00:00",

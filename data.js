@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-10T17:41:42.067Z",
+  "updatedAt": "2026-07-10T21:30:02.792Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -12,128 +12,6 @@ window.WC_DATA = {
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "1578539",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-09T20:00:00+00:00",
-      "venue": "Gillette Stadium",
-      "home": {
-        "name": "France",
-        "flag": "🇫🇷",
-        "code": "FRA"
-      },
-      "away": {
-        "name": "Morocco",
-        "flag": "🇲🇦",
-        "code": "MAR"
-      },
-      "probs": {
-        "home": 57,
-        "draw": 24,
-        "away": 19
-      },
-      "predictedScore": {
-        "home": 3,
-        "away": 0
-      },
-      "confidence": 70,
-      "analysis": "France tient la corde avec 57% de chances estimées. Les cotes confirment (60%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
-      "scorers": {
-        "home": [
-          {
-            "name": "Kylian Mbappé",
-            "prob": 16
-          },
-          {
-            "name": "Michael Olise",
-            "prob": 13
-          },
-          {
-            "name": "Désiré Doué",
-            "prob": 11
-          }
-        ],
-        "away": [
-          {
-            "name": "Abde Ezzalzouli",
-            "prob": 14
-          },
-          {
-            "name": "Brahim Díaz",
-            "prob": 12
-          },
-          {
-            "name": "Chemsdine Talbi",
-            "prob": 9
-          }
-        ],
-        "estimated": true
-      },
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 60,
-            "draw": 25,
-            "away": 15
-          },
-          "favored": "home",
-          "detail": "14 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 40,
-            "draw": 26,
-            "away": 34
-          },
-          "favored": "home",
-          "detail": "VVVVV vs VVVVN"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": {
-            "home": 79,
-            "draw": 10,
-            "away": 10
-          },
-          "favored": "home",
-          "detail": "1V 0N 0D (caché)"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 52,
-            "draw": 26,
-            "away": 22
-          },
-          "favored": "home",
-          "detail": "4883 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 50,
-            "draw": 26,
-            "away": 24
-          },
-          "favored": "home",
-          "detail": "X · 57974/27698 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 2,
-        "away": 0,
-        "outcome": "home"
-      }
-    },
     {
       "id": "1581821",
       "stage": "À venir",
@@ -240,6 +118,12 @@ window.WC_DATA = {
           "favored": "away",
           "detail": "X · 37520/54191 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 2,
+        "away": 1,
+        "outcome": "home"
       }
     },
     {
