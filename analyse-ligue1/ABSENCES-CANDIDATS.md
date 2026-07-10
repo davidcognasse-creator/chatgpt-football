@@ -1,6 +1,6 @@
 # Sonde absences — candidats à VALIDER (presse GNews)
 
-Grille : **Loto Foot 15 N°52** · 30 équipes interrogées.
+Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
 
 ## Argentine
 - **Morocco Suffer Major** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
@@ -19,6 +19,22 @@ Grille : **Loto Foot 15 N°52** · 30 équipes interrogées.
 - **Urska Zigart** — _blessé_ · « Urška Žigart handed positive injury update after jaw-fracturing Tour de Suisse crash » (Cyclingnews)
 - **France Femmes** — _blessé_ · « Overcoming injury, Reusser’s third Tour de Suisse Women victory leads to renewed confidence ahead of Tour de France Femmes » (Cyclingnews)
 - **Kim Le Court** — _blessé_ · « 'It wasn't planned' - Kim Le Court-Pienaar back to full strength in Tour de Suisse breakaway after two-month injury layoff » (Cyclingnews)
+
+## Start
+- **Logan Henderson** — _blessé_ · « Logan Henderson activated for Thursday start » (Nbc Sports)
+- **Red Sox** — _blessé_ · « Red Sox place pitcher Ranger Suarez on injured list » (Portland Press Herald)
+- **Ranger Suarez** — _blessé_ · « Red Sox place pitcher Ranger Suarez on injured list » (Portland Press Herald)
+- **Janson Junk** — _blessé_ · « Janson Junk activated for start on Thursday » (Nbc Sports)
+- **Christian Pulisic** — _blessé_ · « Christian Pulisic in Danger of Missing Serie A Start After World Cup Injury Blow Revealed » (Sports Illustrated)
+- **Bailey Ober** — _blessé_ · « Bailey Ober back from IL for Thursday start » (Nbc Sports)
+- **Connor Bedard** — _blessé_ · « Connor Bedard shoulder surgery injury update gives Chicago Blackhawks difficult start ahead of upcoming NHL season preparations » (Times of India)
+- **Chicago Blackhawks** — _blessé_ · « Connor Bedard shoulder surgery injury update gives Chicago Blackhawks difficult start ahead of upcoming NHL season preparations » (Times of India)
+- **Flyhalf Russell** — _blessé_ · « Flyhalf Russell fit to face Springboks as Scotland make three changes » (The Straits Times)
+- **Finn Russell** — _blessé_ · « Flyhalf Russell fit to face Springboks as Scotland make three changes » (The Straits Times)
+- **Nations Championship** — _blessé_ · « Flyhalf Russell fit to face Springboks as Scotland make three changes » (The Straits Times)
+- **Finn Russell Returns** — _blessé_ · « Finn Russell Returns: Scotland's Strategy Shake-Up » (Devdiscourse)
+- **Strategy Shake** — _blessé_ · « Finn Russell Returns: Scotland's Strategy Shake-Up » (Devdiscourse)
+- **Matthieu Jalibert** — _blessé_ · « Jalibert to start for France against Australia but faces fitness test » (The Straits Times)
 
 ---
 
@@ -86,6 +102,64 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       },
       {
         "joueur": "Kim Le Court",
+        "raison": "blessé"
+      }
+    ],
+    "Start": [
+      {
+        "joueur": "Logan Henderson",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Red Sox",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Ranger Suarez",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Janson Junk",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Christian Pulisic",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Bailey Ober",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Connor Bedard",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Chicago Blackhawks",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Flyhalf Russell",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Finn Russell",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Nations Championship",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Finn Russell Returns",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Strategy Shake",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Matthieu Jalibert",
         "raison": "blessé"
       }
     ]

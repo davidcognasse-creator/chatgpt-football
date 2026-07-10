@@ -1,90 +1,90 @@
 # Optimiseur de grille Loto Foot
 
-Probas : **foule (non coté)** · 15 matchs · mise unitaire 1 € · budgets 12, 24, 48 €
+Probas : **cotes (14 books)** · 15 matchs · mise unitaire 1 € · budgets 12, 24, 48 €
 
 **Objectif : espérance de gain (€), pas seulement la probabilité de grille parfaite.**
 Rapports FDJ ESTIMÉS (modèle rareté-public, calibré sur du réel) :
 | Rang | Rapport estimé | P(public l'atteint) |
 |---|---|---|
-| 15/15 | ~0 € | 0.000 % |
-| 14/15 | ~0 € | 0.000 % |
-| 13/15 | ~11 768 € | 0.015 % |
-| 12/15 | ~404 € | 0.223 % |
+| 15/15 | ~144 253 € | 0.005 % |
+| 14/15 | ~4 960 € | 0.073 % |
+| 13/15 | ~370 € | 0.487 % |
+| 12/15 | ~45 € | 2.002 % |
 
 ## 🎯 Grille ≤ 12 €
-Combinaisons : **8** → coût **8 €** (≤ 12 €) · _coût optimal < plafond_
+Combinaisons : **12** → coût **12 €** (≤ 12 €) · _plafond atteint_
 
 | # | Match | Type | Pronostic(s) | Couverture |
 |---|---|---|---|---|
-| 1 | Argentine–Egypte | simple | 1 | 82% |
-| 2 | Suisse–Colombie | simple | 2 | 46% |
-| 3 | Kauno Zalgiris–KF Drita | simple | 1 | 33% |
-| 4 | Sabah FK–The New Saints | DOUBLE | 1 / N | 100% |
-| 5 | Ararat Armenia–Riga FC | simple | 2 | 58% |
-| 6 | Lincoln FC–Inter Escaldes | DOUBLE | 1 / N | 100% |
-| 7 | Vardar Skopje–Kups | DOUBLE | N / 2 | 100% |
-| 8 | Floriana FC–Shamrock | simple | 1 | 50% |
-| 9 | Borac Banja Luka–Levski Sofia | simple | 2 | 54% |
-| 10 | Tre Fiori FC–FC Larne | simple | N | 50% |
-| 11 | KI Klaksvik–Atert Bissen | simple | 1 | 50% |
-| 12 | Vikingur Reykjavik–Gyor ETO FC | simple | 1 | 76% |
-| 13 | CS Petrocub–KS Egnatia | simple | 1 | 77% |
-| 14 | FC Flora–Iberia 1999 | simple | 1 | 59% |
-| 15 | Kairat Almaty–Sutjeska | simple | 1 | 50% |
+| 1 | Norvège–Angleterre | simple | 2 | 51% |
+| 2 | Argentine–Suisse | simple | 1 | 56% |
+| 3 | Jeju–Daejeon | TRIPLE | 2 / 1 / N | 100% |
+| 4 | FC Seoul–Gangwon FC | DOUBLE | 1 / N | 69% |
+| 5 | Incheon FC–FC Anyang | DOUBLE | 1 / N | 75% |
+| 6 | Hammarby–Kalmar FF | simple | 1 | 67% |
+| 7 | Malmö–IFK Göteborg | simple | 1 | 49% |
+| 8 | Vasteras SK–Degerfors IF | simple | 1 | 46% |
+| 9 | Kfum Oslo–Bodø/Glimt | simple | 2 | 62% |
+| 10 | Brommapojkarna–IK Sirius FK | simple | 2 | 56% |
+| 11 | GAIS Göteborg–Elfsborg | simple | 1 | 48% |
+| 12 | Sandefjord–HamKam | simple | 1 | 57% |
+| 13 | SK Brann–Start | simple | 1 | 68% |
+| 14 | Rosenborg–Kristiansund | simple | 1 | 58% |
+| 15 | Sarpsborg 08–Viking FK | simple | 2 | 52% |
 
-Répartition : 12 simples · **3 doubles** · **0 triples**
-- **P(profit)** (gain ≥ coût) : **14.9 %** → rembourse dès **12/15** (rapport ~404 €)
-- P(atteindre un rang, ≥ 12/15) : 15.8 % · espérance de gain (si modèle calibré) : ~515 €
+Répartition : 12 simples · **2 doubles** · **1 triples**
+- **P(profit)** (gain ≥ coût) : **9.4 %** → rembourse dès **12/15** (rapport ~45 €)
+- P(atteindre un rang, ≥ 12/15) : 9.4 % · espérance de gain (si modèle calibré) : ~97 €
 
 ## 🎯 Grille ≤ 24 €
-Combinaisons : **16** → coût **16 €** (≤ 24 €) · _coût optimal < plafond_
+Combinaisons : **24** → coût **24 €** (≤ 24 €) · _plafond atteint_
 
 | # | Match | Type | Pronostic(s) | Couverture |
 |---|---|---|---|---|
-| 1 | Argentine–Egypte | simple | 1 | 82% |
-| 2 | Suisse–Colombie | simple | 2 | 46% |
-| 3 | Kauno Zalgiris–KF Drita | simple | 1 | 33% |
-| 4 | Sabah FK–The New Saints | DOUBLE | 1 / N | 100% |
-| 5 | Ararat Armenia–Riga FC | simple | 2 | 58% |
-| 6 | Lincoln FC–Inter Escaldes | DOUBLE | 1 / N | 100% |
-| 7 | Vardar Skopje–Kups | DOUBLE | N / 2 | 100% |
-| 8 | Floriana FC–Shamrock | DOUBLE | 1 / N | 100% |
-| 9 | Borac Banja Luka–Levski Sofia | simple | 2 | 54% |
-| 10 | Tre Fiori FC–FC Larne | simple | N | 50% |
-| 11 | KI Klaksvik–Atert Bissen | simple | 1 | 50% |
-| 12 | Vikingur Reykjavik–Gyor ETO FC | simple | 1 | 76% |
-| 13 | CS Petrocub–KS Egnatia | simple | 1 | 77% |
-| 14 | FC Flora–Iberia 1999 | simple | 1 | 59% |
-| 15 | Kairat Almaty–Sutjeska | simple | 1 | 50% |
+| 1 | Norvège–Angleterre | simple | 2 | 51% |
+| 2 | Argentine–Suisse | simple | 1 | 56% |
+| 3 | Jeju–Daejeon | TRIPLE | 2 / 1 / N | 100% |
+| 4 | FC Seoul–Gangwon FC | DOUBLE | 1 / N | 69% |
+| 5 | Incheon FC–FC Anyang | DOUBLE | 1 / N | 75% |
+| 6 | Hammarby–Kalmar FF | simple | 1 | 67% |
+| 7 | Malmö–IFK Göteborg | simple | 1 | 49% |
+| 8 | Vasteras SK–Degerfors IF | DOUBLE | 1 / N | 74% |
+| 9 | Kfum Oslo–Bodø/Glimt | simple | 2 | 62% |
+| 10 | Brommapojkarna–IK Sirius FK | simple | 2 | 56% |
+| 11 | GAIS Göteborg–Elfsborg | simple | 1 | 48% |
+| 12 | Sandefjord–HamKam | simple | 1 | 57% |
+| 13 | SK Brann–Start | simple | 1 | 68% |
+| 14 | Rosenborg–Kristiansund | simple | 1 | 58% |
+| 15 | Sarpsborg 08–Viking FK | simple | 2 | 52% |
 
-Répartition : 11 simples · **4 doubles** · **0 triples**
-- **P(profit)** (gain ≥ coût) : **21.7 %** → rembourse dès **12/15** (rapport ~404 €)
-- P(atteindre un rang, ≥ 12/15) : 23.4 % · espérance de gain (si modèle calibré) : ~819 €
+Répartition : 11 simples · **3 doubles** · **1 triples**
+- **P(profit)** (gain ≥ coût) : **12.2 %** → rembourse dès **12/15** (rapport ~45 €)
+- P(atteindre un rang, ≥ 12/15) : 12.2 % · espérance de gain (si modèle calibré) : ~149 €
 
 ## 🎯 Grille ≤ 48 €
-Combinaisons : **32** → coût **32 €** (≤ 48 €) · _coût optimal < plafond_
+Combinaisons : **48** → coût **48 €** (≤ 48 €) · _plafond atteint_
 
 | # | Match | Type | Pronostic(s) | Couverture |
 |---|---|---|---|---|
-| 1 | Argentine–Egypte | simple | 1 | 82% |
-| 2 | Suisse–Colombie | simple | 2 | 46% |
-| 3 | Kauno Zalgiris–KF Drita | simple | 1 | 33% |
-| 4 | Sabah FK–The New Saints | DOUBLE | 1 / N | 100% |
-| 5 | Ararat Armenia–Riga FC | simple | 2 | 58% |
-| 6 | Lincoln FC–Inter Escaldes | DOUBLE | 1 / N | 100% |
-| 7 | Vardar Skopje–Kups | DOUBLE | N / 2 | 100% |
-| 8 | Floriana FC–Shamrock | DOUBLE | 1 / N | 100% |
-| 9 | Borac Banja Luka–Levski Sofia | simple | 2 | 54% |
-| 10 | Tre Fiori FC–FC Larne | DOUBLE | N / 2 | 100% |
-| 11 | KI Klaksvik–Atert Bissen | simple | 1 | 50% |
-| 12 | Vikingur Reykjavik–Gyor ETO FC | simple | 1 | 76% |
-| 13 | CS Petrocub–KS Egnatia | simple | 1 | 77% |
-| 14 | FC Flora–Iberia 1999 | simple | 1 | 59% |
-| 15 | Kairat Almaty–Sutjeska | simple | 1 | 50% |
+| 1 | Norvège–Angleterre | simple | 2 | 51% |
+| 2 | Argentine–Suisse | simple | 1 | 56% |
+| 3 | Jeju–Daejeon | TRIPLE | 2 / 1 / N | 100% |
+| 4 | FC Seoul–Gangwon FC | DOUBLE | 1 / N | 69% |
+| 5 | Incheon FC–FC Anyang | DOUBLE | 1 / N | 75% |
+| 6 | Hammarby–Kalmar FF | simple | 1 | 67% |
+| 7 | Malmö–IFK Göteborg | simple | 1 | 49% |
+| 8 | Vasteras SK–Degerfors IF | DOUBLE | 1 / N | 74% |
+| 9 | Kfum Oslo–Bodø/Glimt | simple | 2 | 62% |
+| 10 | Brommapojkarna–IK Sirius FK | simple | 2 | 56% |
+| 11 | GAIS Göteborg–Elfsborg | DOUBLE | 1 / N | 75% |
+| 12 | Sandefjord–HamKam | simple | 1 | 57% |
+| 13 | SK Brann–Start | simple | 1 | 68% |
+| 14 | Rosenborg–Kristiansund | simple | 1 | 58% |
+| 15 | Sarpsborg 08–Viking FK | simple | 2 | 52% |
 
-Répartition : 10 simples · **5 doubles** · **0 triples**
-- **P(profit)** (gain ≥ coût) : **30.5 %** → rembourse dès **12/15** (rapport ~404 €)
-- P(atteindre un rang, ≥ 12/15) : 33.7 % · espérance de gain (si modèle calibré) : ~1267 €
+Répartition : 10 simples · **4 doubles** · **1 triples**
+- **P(profit)** (gain ≥ coût) : **5.2 %** → rembourse dès **13/15** (rapport ~370 €)
+- P(atteindre un rang, ≥ 12/15) : 15.5 % · espérance de gain (si modèle calibré) : ~225 €
 
 ---
-_Répartition doubles/triples pour MAXIMISER l'espérance de gain (Σ P(rang)×rapport − coût), avec conscience du nul (🅽). Rapports estimés par le modèle rareté-public. **P(profit)** est la mesure fiable ; l'espérance € dépend de la calibration (#4). Probas = foule (non coté) (via moteur-cotes → probas.json)._
+_Répartition doubles/triples pour MAXIMISER l'espérance de gain (Σ P(rang)×rapport − coût), avec conscience du nul (🅽). Rapports estimés par le modèle rareté-public. **P(profit)** est la mesure fiable ; l'espérance € dépend de la calibration (#4). Probas = cotes (14 books) (via moteur-cotes → probas.json)._

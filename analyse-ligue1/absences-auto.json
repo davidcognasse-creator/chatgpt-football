@@ -60,6 +60,64 @@
         "joueur": "Kim Le Court",
         "raison": "blessé"
       }
+    ],
+    "Start": [
+      {
+        "joueur": "Logan Henderson",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Red Sox",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Ranger Suarez",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Janson Junk",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Christian Pulisic",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Bailey Ober",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Connor Bedard",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Chicago Blackhawks",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Flyhalf Russell",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Finn Russell",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Nations Championship",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Finn Russell Returns",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Strategy Shake",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Matthieu Jalibert",
+        "raison": "blessé"
+      }
     ]
   }
 }

@@ -1,33 +1,30 @@
 # Moteur cotes → probas Loto Foot (marché vs foule)
 
-Grille : **Loto Foot 15 N°52** · 15 matchs · source **API-Football**
+Grille : **Loto Foot 15 N°53** · 15 matchs · source **API-Football**
 
 | # | Match | Marché 1·N·2 | Foule 1·N·2 | Prono marché | Foule | Books | Écart |
 |---|---|---|---|---|---|---|---|
-| 1 | Argentine–Egypte | — | 82/11/7 | _non coté_ | 1 | — | — |
-| 2 | Suisse–Colombie | — | 20/34/46 | _non coté_ | 2 | — | — |
-| 3 | Kauno Zalgiris–KF Drita | 33/33/33 | 64/21/15 | **1** | 1 | préd. |  |
-| 4 | Sabah FK–The New Saints | 50/50/0 | 62/15/23 | **1** | 1 | préd. |  |
-| 5 | Ararat Armenia–Riga FC | — | 18/24/58 | _non coté_ | 2 | — | — |
-| 6 | Lincoln FC–Inter Escaldes | 50/50/0 | 84/9/7 | **1** | 1 | préd. |  |
-| 7 | Vardar Skopje–Kups | 0/50/50 | 46/28/26 | **N** | 1 | préd. | **+22%** |
-| 8 | Floriana FC–Shamrock | 50/50/0 | 11/12/77 | **1** | 2 | préd. | **+39%** |
-| 9 | Borac Banja Luka–Levski Sofia | 19/27/54 | 35/33/32 | **2** | 1 | 3 | **+22%** |
-| 10 | Tre Fiori FC–FC Larne | 0/50/50 | 32/20/48 | **N** | 2 | préd. | **+30%** |
-| 11 | KI Klaksvik–Atert Bissen | 50/50/0 | 76/12/12 | **1** | 1 | préd. |  |
-| 12 | Vikingur Reykjavik–Gyor ETO FC | — | 76/13/11 | _non coté_ | 1 | — | — |
-| 13 | CS Petrocub–KS Egnatia | — | 77/14/9 | _non coté_ | 1 | — | — |
-| 14 | FC Flora–Iberia 1999 | — | 59/20/21 | _non coté_ | 1 | — | — |
-| 15 | Kairat Almaty–Sutjeska | 50/50/0 | 84/9/7 | **1** | 1 | préd. |  |
+| 1 | Norvège–Angleterre | 23/26/51 | 27/28/45 | **2** | 2 | 14 |  |
+| 2 | Argentine–Suisse | 56/27/17 | 72/19/9 | **1** | 1 | 14 |  |
+| 3 | Jeju–Daejeon | 34/29/37 | 46/35/19 | **2** | 1 | 14 | **+18%** |
+| 4 | FC Seoul–Gangwon FC | 38/31/31 | 74/18/8 | **1** | 1 | 14 |  |
+| 5 | Incheon FC–FC Anyang | 45/29/25 | 61/27/12 | **1** | 1 | 14 |  |
+| 6 | Hammarby–Kalmar FF | 67/19/14 | 83/10/7 | **1** | 1 | 14 |  |
+| 7 | Malmö–IFK Göteborg | 49/25/26 | 64/25/11 | **1** | 1 | 14 |  |
+| 8 | Vasteras SK–Degerfors IF | 46/28/26 | 60/28/12 | **1** | 1 | 14 |  |
+| 9 | Kfum Oslo–Bodø/Glimt | 17/21/62 | 10/10/80 | **2** | 2 | 14 |  |
+| 10 | Brommapojkarna–IK Sirius FK | 21/23/56 | 30/14/56 | **2** | 2 | 13 |  |
+| 11 | GAIS Göteborg–Elfsborg | 48/27/25 | 58/26/16 | **1** | 1 | 14 |  |
+| 12 | Sandefjord–HamKam | — | 57/27/16 | _non coté_ | 1 | — | — |
+| 13 | SK Brann–Start | 68/19/14 | 84/9/7 | **1** | 1 | 14 |  |
+| 14 | Rosenborg–Kristiansund | 58/23/19 | 81/13/6 | **1** | 1 | 14 |  |
+| 15 | Sarpsborg 08–Viking FK | 24/24/52 | 16/13/71 | **2** | 2 | 14 |  |
 
-**Couverture marché : 9/15 matchs cotés.**
+**Couverture marché : 14/15 matchs cotés.**
 _Aucun absent renseigné (absences.json) — probas = marché brut._
 
 ## 🎯 Divergences marché vs foule (value de pool)
-- **Match 7 · Vardar Skopje–Kups** : le marché voit **N** (50%) alors que la foule joue **1** (46%). → la foule sur/sous-estime, value si le marché a raison.
-- **Match 8 · Floriana FC–Shamrock** : le marché voit **1** (50%) alors que la foule joue **2** (77%). → la foule sur/sous-estime, value si le marché a raison.
-- **Match 9 · Borac Banja Luka–Levski Sofia** : le marché voit **2** (54%) alors que la foule joue **1** (35%). → la foule sur/sous-estime, value si le marché a raison.
-- **Match 10 · Tre Fiori FC–FC Larne** : le marché voit **N** (50%) alors que la foule joue **2** (48%). → la foule sur/sous-estime, value si le marché a raison.
+- **Match 3 · Jeju–Daejeon** : le marché voit **2** (37%) alors que la foule joue **1** (46%). → la foule sur/sous-estime, value si le marché a raison.
 
 ---
 _Cotes API-Football (dévignées, moyenne multi-books) = signal primaire ; repli sur la prédiction maison. Couche compo (🧬 XI annoncé valorisé Transfermarkt, dispo ~40 min avant) — à défaut absences presse/manuel (✎) — appliquée AVANT que le marché ne bouge : c'est l'edge du système._
