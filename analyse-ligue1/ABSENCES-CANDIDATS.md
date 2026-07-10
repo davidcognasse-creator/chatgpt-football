@@ -20,22 +20,32 @@ Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
 - **France Femmes** — _blessé_ · « Overcoming injury, Reusser’s third Tour de Suisse Women victory leads to renewed confidence ahead of Tour de France Femmes » (Cyclingnews)
 - **Kim Le Court** — _blessé_ · « 'It wasn't planned' - Kim Le Court-Pienaar back to full strength in Tour de Suisse breakaway after two-month injury layoff » (Cyclingnews)
 
-## Start
-- **Logan Henderson** — _blessé_ · « Logan Henderson activated for Thursday start » (Nbc Sports)
-- **Red Sox** — _blessé_ · « Red Sox place pitcher Ranger Suarez on injured list » (Portland Press Herald)
-- **Ranger Suarez** — _blessé_ · « Red Sox place pitcher Ranger Suarez on injured list » (Portland Press Herald)
-- **Janson Junk** — _blessé_ · « Janson Junk activated for start on Thursday » (Nbc Sports)
-- **Christian Pulisic** — _blessé_ · « Christian Pulisic in Danger of Missing Serie A Start After World Cup Injury Blow Revealed » (Sports Illustrated)
-- **Bailey Ober** — _blessé_ · « Bailey Ober back from IL for Thursday start » (Nbc Sports)
-- **Connor Bedard** — _blessé_ · « Connor Bedard shoulder surgery injury update gives Chicago Blackhawks difficult start ahead of upcoming NHL season preparations » (Times of India)
-- **Chicago Blackhawks** — _blessé_ · « Connor Bedard shoulder surgery injury update gives Chicago Blackhawks difficult start ahead of upcoming NHL season preparations » (Times of India)
-- **Flyhalf Russell** — _blessé_ · « Flyhalf Russell fit to face Springboks as Scotland make three changes » (The Straits Times)
-- **Finn Russell** — _blessé_ · « Flyhalf Russell fit to face Springboks as Scotland make three changes » (The Straits Times)
-- **Nations Championship** — _blessé_ · « Flyhalf Russell fit to face Springboks as Scotland make three changes » (The Straits Times)
-- **Finn Russell Returns** — _blessé_ · « Finn Russell Returns: Scotland's Strategy Shake-Up » (Devdiscourse)
-- **Strategy Shake** — _blessé_ · « Finn Russell Returns: Scotland's Strategy Shake-Up » (Devdiscourse)
-- **Matthieu Jalibert** — _blessé_ · « Jalibert to start for France against Australia but faces fitness test » (The Straits Times)
-
+- ⚠️ Jeju : HTTP Error 403: Forbidden
+- ⚠️ Daejeon : HTTP Error 403: Forbidden
+- ⚠️ FC Seoul : HTTP Error 403: Forbidden
+- ⚠️ Gangwon FC : HTTP Error 403: Forbidden
+- ⚠️ Incheon FC : HTTP Error 403: Forbidden
+- ⚠️ FC Anyang : HTTP Error 403: Forbidden
+- ⚠️ Hammarby : HTTP Error 403: Forbidden
+- ⚠️ Kalmar FF : HTTP Error 403: Forbidden
+- ⚠️ Malmö : HTTP Error 403: Forbidden
+- ⚠️ IFK Göteborg : HTTP Error 403: Forbidden
+- ⚠️ Vasteras SK : HTTP Error 403: Forbidden
+- ⚠️ Degerfors IF : HTTP Error 403: Forbidden
+- ⚠️ Kfum Oslo : HTTP Error 403: Forbidden
+- ⚠️ Bodø/Glimt : HTTP Error 403: Forbidden
+- ⚠️ Brommapojkarna : HTTP Error 403: Forbidden
+- ⚠️ IK Sirius FK : HTTP Error 403: Forbidden
+- ⚠️ GAIS Göteborg : HTTP Error 403: Forbidden
+- ⚠️ Elfsborg : HTTP Error 403: Forbidden
+- ⚠️ Sandefjord : HTTP Error 403: Forbidden
+- ⚠️ HamKam : HTTP Error 403: Forbidden
+- ⚠️ SK Brann : HTTP Error 403: Forbidden
+- ⚠️ Start : HTTP Error 403: Forbidden
+- ⚠️ Rosenborg : HTTP Error 403: Forbidden
+- ⚠️ Kristiansund : HTTP Error 403: Forbidden
+- ⚠️ Sarpsborg 08 : HTTP Error 403: Forbidden
+- ⚠️ Viking FK : HTTP Error 403: Forbidden
 ---
 
 ## 📋 Absents détectés → `absences-auto.json` (lu automatiquement par le moteur)
@@ -102,64 +112,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       },
       {
         "joueur": "Kim Le Court",
-        "raison": "blessé"
-      }
-    ],
-    "Start": [
-      {
-        "joueur": "Logan Henderson",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Red Sox",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Ranger Suarez",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Janson Junk",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Christian Pulisic",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Bailey Ober",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Connor Bedard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Chicago Blackhawks",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Flyhalf Russell",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Finn Russell",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Nations Championship",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Finn Russell Returns",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Strategy Shake",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Matthieu Jalibert",
         "raison": "blessé"
       }
     ]
