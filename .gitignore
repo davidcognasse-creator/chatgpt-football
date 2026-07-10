@@ -5,3 +5,6 @@ _site/
 
 # logs de l'automatisation locale
 automation/logs/
+
+# snapshots Playwright (MCP) — artefacts de lecture web, transitoires
+.playwright-mcp/
