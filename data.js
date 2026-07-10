@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-10T10:18:41.724Z",
+  "updatedAt": "2026-07-10T17:41:42.067Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -151,16 +151,16 @@ window.WC_DATA = {
         "code": "BEL"
       },
       "probs": {
-        "home": 51,
+        "home": 52,
         "draw": 25,
-        "away": 24
+        "away": 23
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 67,
-      "analysis": "Spain tient la corde avec 52% de chances estimées. Les cotes confirment (58%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Belgium.",
+      "confidence": 66,
+      "analysis": "Spain tient la corde avec 52% de chances estimées. Les cotes confirment (59%). La forme récente abonde aussi. À contre-courant du pronostic IA, le public penche plutôt pour Belgium.",
       "scorers": {
         "home": [
           {
@@ -197,9 +197,9 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 58,
+            "home": 59,
             "draw": 24,
-            "away": 18
+            "away": 17
           },
           "favored": "home",
           "detail": "14 bookmakers"
@@ -225,13 +225,9 @@ window.WC_DATA = {
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": {
-            "home": 53,
-            "draw": 26,
-            "away": 21
-          },
-          "favored": "home",
-          "detail": "5743 articles"
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
         },
         "social": {
           "label": "Public",
@@ -242,7 +238,7 @@ window.WC_DATA = {
             "away": 44
           },
           "favored": "away",
-          "detail": "X · 35655/51975 mentions"
+          "detail": "X · 37520/54191 mentions"
         }
       }
     },
@@ -263,16 +259,16 @@ window.WC_DATA = {
         "code": "ENG"
       },
       "probs": {
-        "home": 23,
+        "home": 26,
         "draw": 26,
-        "away": 51
+        "away": 48
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
       "confidence": 67,
-      "analysis": "England part favori de justesse avec 51% de chances estimées. Les cotes confirment (51%). La forme récente, la presse et le public vont dans le même sens.",
+      "analysis": "England part favori de justesse avec 48% de chances estimées. Les cotes confirment (50%). La forme récente et le public vont dans le même sens.",
       "scorers": {
         "home": [
           {
@@ -309,9 +305,9 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 23,
+            "home": 24,
             "draw": 26,
-            "away": 51
+            "away": 50
           },
           "favored": "away",
           "detail": "14 bookmakers"
@@ -337,13 +333,9 @@ window.WC_DATA = {
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": {
-            "home": 5,
-            "draw": 26,
-            "away": 69
-          },
-          "favored": "away",
-          "detail": "13042 articles"
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
         },
         "social": {
           "label": "Public",
@@ -354,7 +346,7 @@ window.WC_DATA = {
             "away": 48
           },
           "favored": "away",
-          "detail": "X · 34641/63336 mentions"
+          "detail": "X · 35384/63503 mentions"
         }
       }
     },
@@ -383,8 +375,8 @@ window.WC_DATA = {
         "home": 3,
         "away": 0
       },
-      "confidence": 70,
-      "analysis": "Argentina tient la corde avec 58% de chances estimées. Les cotes confirment (56%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
+      "confidence": 69,
+      "analysis": "Argentina tient la corde avec 58% de chances estimées. Les cotes confirment (56%). La forme récente, l'historique des confrontations et le public vont dans le même sens.",
       "scorers": {
         "home": [
           {
@@ -453,13 +445,9 @@ window.WC_DATA = {
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": {
-            "home": 58,
-            "draw": 26,
-            "away": 16
-          },
-          "favored": "home",
-          "detail": "4585 articles"
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
         },
         "social": {
           "label": "Public",
@@ -470,7 +458,7 @@ window.WC_DATA = {
             "away": 5
           },
           "favored": "home",
-          "detail": "X · 134011/10380 mentions"
+          "detail": "X · 133201/10194 mentions"
         }
       }
     }
