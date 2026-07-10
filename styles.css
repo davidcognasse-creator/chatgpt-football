@@ -965,6 +965,23 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   color: var(--muted);
   font-size: 0.72rem;
 }
+.scorers-top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  background: var(--bg-soft);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+.scorers-top .stop-team { display: inline-flex; align-items: center; gap: 5px; }
+.scorers-top .stop-prob { color: var(--muted); font-variant-numeric: tabular-nums; }
+.scorers-top .stop-sep { color: var(--muted-soft); }
+.scorers-top .stop-empty { color: var(--muted-soft); }
 .scorers-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

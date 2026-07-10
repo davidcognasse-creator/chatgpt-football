@@ -189,6 +189,23 @@
       </li>`;
   }
 
+  // Ligne résumé « buteur le plus probable » par équipe, toujours visible
+  // (sans avoir à déplier le détail des sources).
+  function topScorersLine(m, sc) {
+    const cell = (side, s) =>
+      s
+        ? `<span class="stop-team">${flagHTML(side, 14)} <b>${s.name}</b> <span class="stop-prob">${s.prob}%</span></span>`
+        : `<span class="stop-team stop-empty">${flagHTML(side, 14)} —</span>`;
+    if (sc.combined && sc.combined.length) {
+      const s = sc.combined[0];
+      return `<div class="scorers-top">⚽ <b>${s.name}</b> <span class="stop-prob">${s.prob}%</span></div>`;
+    }
+    const h = sc.home && sc.home.length ? sc.home[0] : null;
+    const a = sc.away && sc.away.length ? sc.away[0] : null;
+    if (!h && !a) return "";
+    return `<div class="scorers-top">⚽ ${cell(m.home, h)}<span class="stop-sep">·</span>${cell(m.away, a)}</div>`;
+  }
+
   function scorersBlock(m) {
     const sc = m.scorers;
     if (!sc) return "";
@@ -198,6 +215,7 @@
       return `
         <div class="scorers">
           <div class="scorers-head">${t("scorers_head")}${est}</div>
+          ${topScorersLine(m, sc)}
           <ul class="scorer-list">${sc.combined.map(scorerItem).join("")}</ul>
         </div>`;
     }
@@ -205,6 +223,7 @@
       return `
         <div class="scorers">
           <div class="scorers-head">${t("scorers_head")}${est}</div>
+          ${topScorersLine(m, sc)}
           <div class="scorers-grid">
             <div>
               <div class="scorers-team">${flagHTML(m.home, 15)} ${window.teamName(m.home)}</div>
