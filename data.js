@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-09T23:39:59.242Z",
+  "updatedAt": "2026-07-10T10:18:41.724Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -151,9 +151,9 @@ window.WC_DATA = {
         "code": "BEL"
       },
       "probs": {
-        "home": 52,
+        "home": 51,
         "draw": 25,
-        "away": 23
+        "away": 24
       },
       "predictedScore": {
         "home": 2,
@@ -202,7 +202,7 @@ window.WC_DATA = {
             "away": 18
           },
           "favored": "home",
-          "detail": "13 bookmakers"
+          "detail": "14 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -231,18 +231,18 @@ window.WC_DATA = {
             "away": 21
           },
           "favored": "home",
-          "detail": "5712 articles"
+          "detail": "5743 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 34,
+            "home": 30,
             "draw": 26,
-            "away": 40
+            "away": 44
           },
           "favored": "away",
-          "detail": "X · 42350/50857 mentions"
+          "detail": "X · 35655/51975 mentions"
         }
       }
     },
@@ -343,7 +343,7 @@ window.WC_DATA = {
             "away": 69
           },
           "favored": "away",
-          "detail": "12993 articles"
+          "detail": "13042 articles"
         },
         "social": {
           "label": "Public",
@@ -354,7 +354,7 @@ window.WC_DATA = {
             "away": 48
           },
           "favored": "away",
-          "detail": "X · 33454/62994 mentions"
+          "detail": "X · 34641/63336 mentions"
         }
       }
     },
@@ -459,18 +459,18 @@ window.WC_DATA = {
             "away": 16
           },
           "favored": "home",
-          "detail": "4547 articles"
+          "detail": "4585 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 68,
+            "home": 69,
             "draw": 26,
-            "away": 6
+            "away": 5
           },
           "favored": "home",
-          "detail": "X · 131600/11949 mentions"
+          "detail": "X · 134011/10380 mentions"
         }
       }
     }
