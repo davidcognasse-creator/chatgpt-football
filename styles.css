@@ -987,6 +987,9 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   grid-template-columns: 1fr 1fr;
   gap: 14px;
 }
+/* Sans ça, les noms en nowrap forcent le débordement et la 2e colonne (extérieur)
+   sort du cadre → barres/% coupées. min-width:0 laisse les colonnes rétrécir. */
+.scorers-grid > div { min-width: 0; }
 .scorers-team {
   font-size: 0.72rem;
   font-weight: 700;
