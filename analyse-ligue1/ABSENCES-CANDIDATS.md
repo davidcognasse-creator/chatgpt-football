@@ -20,32 +20,22 @@ Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
 - **France Femmes** — _blessé_ · « Overcoming injury, Reusser’s third Tour de Suisse Women victory leads to renewed confidence ahead of Tour de France Femmes » (Cyclingnews)
 - **Kim Le Court** — _blessé_ · « 'It wasn't planned' - Kim Le Court-Pienaar back to full strength in Tour de Suisse breakaway after two-month injury layoff » (Cyclingnews)
 
-- ⚠️ Jeju : HTTP Error 403: Forbidden
-- ⚠️ Daejeon : HTTP Error 403: Forbidden
-- ⚠️ FC Seoul : HTTP Error 403: Forbidden
-- ⚠️ Gangwon FC : HTTP Error 403: Forbidden
-- ⚠️ Incheon FC : HTTP Error 403: Forbidden
-- ⚠️ FC Anyang : HTTP Error 403: Forbidden
-- ⚠️ Hammarby : HTTP Error 403: Forbidden
-- ⚠️ Kalmar FF : HTTP Error 403: Forbidden
-- ⚠️ Malmö : HTTP Error 403: Forbidden
-- ⚠️ IFK Göteborg : HTTP Error 403: Forbidden
-- ⚠️ Vasteras SK : HTTP Error 403: Forbidden
-- ⚠️ Degerfors IF : HTTP Error 403: Forbidden
-- ⚠️ Kfum Oslo : HTTP Error 403: Forbidden
-- ⚠️ Bodø/Glimt : HTTP Error 403: Forbidden
-- ⚠️ Brommapojkarna : HTTP Error 403: Forbidden
-- ⚠️ IK Sirius FK : HTTP Error 403: Forbidden
-- ⚠️ GAIS Göteborg : HTTP Error 403: Forbidden
-- ⚠️ Elfsborg : HTTP Error 403: Forbidden
-- ⚠️ Sandefjord : HTTP Error 403: Forbidden
-- ⚠️ HamKam : HTTP Error 403: Forbidden
-- ⚠️ SK Brann : HTTP Error 403: Forbidden
-- ⚠️ Start : HTTP Error 403: Forbidden
-- ⚠️ Rosenborg : HTTP Error 403: Forbidden
-- ⚠️ Kristiansund : HTTP Error 403: Forbidden
-- ⚠️ Sarpsborg 08 : HTTP Error 403: Forbidden
-- ⚠️ Viking FK : HTTP Error 403: Forbidden
+## Start
+- **Los Angeles Dodgers** — _blessé_ · « Los Angeles Dodgers Announce Starting Pitcher for Diamondbacks Game After Shohei Ohtani Decision » (Heavy.)
+- **Announce Starting Pitcher** — _blessé_ · « Los Angeles Dodgers Announce Starting Pitcher for Diamondbacks Game After Shohei Ohtani Decision » (Heavy.)
+- **Diamondbacks Game After** — _blessé_ · « Los Angeles Dodgers Announce Starting Pitcher for Diamondbacks Game After Shohei Ohtani Decision » (Heavy.)
+- **Is Romelu Lukaku** — _blessé_ · « Is Romelu Lukaku injured? Why didn't he start for Belgium vs Spain today? » (Hindustan Times)
+- **Romelu Lukaku** — _blessé_ · « Is Romelu Lukaku injured? Why didn't he start for Belgium vs Spain today? » (Hindustan Times)
+- **Man Utd** — _blessé_ · « Man Utd in huge injury boost as top star fights back from injury in time for new 2026/27 season » (The Irish Sun)
+- **Benjamin Sesko** — _blessé_ · « Man Utd in huge injury boost as top star fights back from injury in time for new 2026/27 season » (The Irish Sun)
+- **Grayson Rodriguez** — _blessé_ · « Grayson Rodriguez to start against Twins on Friday » (Nbc Sports)
+- **Logan Henderson** — _blessé_ · « Logan Henderson activated for Thursday start » (Nbc Sports)
+- **Red Sox** — _blessé_ · « Red Sox place pitcher Ranger Suarez on injured list » (Portland Press Herald)
+- **Ranger Suarez** — _blessé_ · « Red Sox place pitcher Ranger Suarez on injured list » (Portland Press Herald)
+- **Janson Junk** — _blessé_ · « Janson Junk activated for start on Thursday » (Nbc Sports)
+- **Christian Pulisic** — _blessé_ · « Christian Pulisic in Danger of Missing Serie A Start After World Cup Injury Blow Revealed » (Sports Illustrated)
+- **Bailey Ober** — _blessé_ · « Bailey Ober back from IL for Thursday start » (Nbc Sports)
+
 ---
 
 ## 📋 Absents détectés → `absences-auto.json` (lu automatiquement par le moteur)
@@ -112,6 +102,64 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       },
       {
         "joueur": "Kim Le Court",
+        "raison": "blessé"
+      }
+    ],
+    "Start": [
+      {
+        "joueur": "Los Angeles Dodgers",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Announce Starting Pitcher",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Diamondbacks Game After",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Is Romelu Lukaku",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Romelu Lukaku",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Man Utd",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Benjamin Sesko",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Grayson Rodriguez",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Logan Henderson",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Red Sox",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Ranger Suarez",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Janson Junk",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Christian Pulisic",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Bailey Ober",
         "raison": "blessé"
       }
     ]
