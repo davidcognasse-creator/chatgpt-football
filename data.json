@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-11T08:44:54.019Z",
+  "updatedAt": "2026-07-11T16:42:12.541Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -141,25 +141,25 @@
         "code": "ENG"
       },
       "probs": {
-        "home": 24,
+        "home": 25,
         "draw": 26,
-        "away": 50
+        "away": 49
       },
       "predictedScore": {
         "home": 1,
         "away": 2
       },
-      "confidence": 67,
-      "analysis": "England part favori de justesse avec 50% de chances estimées. Les cotes confirment (49%). La forme récente, la presse et le public vont dans le même sens.",
+      "confidence": 65,
+      "analysis": "England part favori de justesse avec 49% de chances estimées. Les cotes confirment (49%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Norway.",
       "scorers": {
         "home": [
           {
             "name": "Erling Haaland",
-            "prob": 36
+            "prob": 38
           },
           {
             "name": "Jørgen Strand Larsen",
-            "prob": 8
+            "prob": 9
           },
           {
             "name": "Antonio Nusa",
@@ -169,15 +169,15 @@
         "away": [
           {
             "name": "Bukayo Saka",
-            "prob": 15
+            "prob": 16
           },
           {
-            "name": "Anthony Gordon",
-            "prob": 9
+            "name": "Jude Bellingham",
+            "prob": 8
           },
           {
             "name": "Harry Kane",
-            "prob": 9
+            "prob": 8
           }
         ],
         "estimated": true
@@ -221,18 +221,18 @@
             "away": 69
           },
           "favored": "away",
-          "detail": "13114 articles"
+          "detail": "13150 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 27,
+            "home": 38,
             "draw": 26,
-            "away": 47
+            "away": 36
           },
-          "favored": "away",
-          "detail": "X · 35663/60802 mentions"
+          "favored": "home",
+          "detail": "Wikipédia · 112075/109030 vues"
         }
       }
     },
@@ -253,43 +253,43 @@
         "code": "SUI"
       },
       "probs": {
-        "home": 57,
+        "home": 55,
         "draw": 25,
-        "away": 18
+        "away": 20
       },
       "predictedScore": {
         "home": 3,
         "away": 0
       },
-      "confidence": 70,
-      "analysis": "Argentina tient la corde avec 58% de chances estimées. Les cotes confirment (56%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
+      "confidence": 68,
+      "analysis": "Argentina tient la corde avec 55% de chances estimées. Les cotes confirment (55%). La forme récente, l'historique des confrontations, la presse et le public vont dans le même sens.",
       "scorers": {
         "home": [
           {
             "name": "Julián Alvarez",
-            "prob": 16
+            "prob": 17
           },
           {
             "name": "Lautaro Martínez",
             "prob": 14
           },
           {
-            "name": "Franco Mastantuono",
+            "name": "Alejandro Garnacho",
             "prob": 8
           }
         ],
         "away": [
           {
             "name": "Dan Ndoye",
-            "prob": 18
+            "prob": 23
           },
           {
             "name": "Noah Okafor",
-            "prob": 14
+            "prob": 11
           },
           {
-            "name": "Johan Manzambi",
-            "prob": 12
+            "name": "Ardon Jashari",
+            "prob": 9
           }
         ],
         "estimated": true
@@ -299,9 +299,9 @@
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 56,
+            "home": 55,
             "draw": 27,
-            "away": 17
+            "away": 18
           },
           "favored": "home",
           "detail": "14 bookmakers"
@@ -337,18 +337,134 @@
             "away": 16
           },
           "favored": "home",
-          "detail": "4605 articles"
+          "detail": "4611 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 67,
+            "home": 42,
             "draw": 26,
-            "away": 7
+            "away": 32
           },
           "favored": "home",
-          "detail": "X · 92757/9740 mentions"
+          "detail": "Wikipédia · 131216/99708 vues"
+        }
+      }
+    },
+    {
+      "id": "1585131",
+      "stage": "À venir",
+      "projected": false,
+      "datetime": "2026-07-14T19:00:00+00:00",
+      "venue": "",
+      "home": {
+        "name": "France",
+        "flag": "🇫🇷",
+        "code": "FRA"
+      },
+      "away": {
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "code": "ESP"
+      },
+      "probs": {
+        "home": 38,
+        "draw": 26,
+        "away": 36
+      },
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "confidence": 59,
+      "analysis": "France part favori de justesse avec 38% de chances estimées. Les cotes confirment (41%). La forme récente et le public vont dans le même sens. À contre-courant du pronostic IA, l'historique des confrontations et la presse penchent plutôt pour Spain.",
+      "scorers": {
+        "home": [
+          {
+            "name": "Kylian Mbappé",
+            "prob": 16
+          },
+          {
+            "name": "Michael Olise",
+            "prob": 12
+          },
+          {
+            "name": "Ousmane Dembélé",
+            "prob": 9
+          }
+        ],
+        "away": [
+          {
+            "name": "Lamine Yamal",
+            "prob": 20
+          },
+          {
+            "name": "Nico Williams",
+            "prob": 11
+          },
+          {
+            "name": "Álex Baena",
+            "prob": 7
+          }
+        ],
+        "estimated": true
+      },
+      "sources": {
+        "betting": {
+          "label": "Paris",
+          "weight": 0.55,
+          "probs": {
+            "home": 41,
+            "draw": 29,
+            "away": 30
+          },
+          "favored": "home",
+          "detail": "12 bookmakers"
+        },
+        "form": {
+          "label": "Forme",
+          "weight": 0.13,
+          "probs": {
+            "home": 37,
+            "draw": 26,
+            "away": 37
+          },
+          "favored": "home",
+          "detail": "VVVVV vs VVVVV"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.1,
+          "probs": {
+            "home": 24,
+            "draw": 10,
+            "away": 66
+          },
+          "favored": "away",
+          "detail": "1V 0N 4D"
+        },
+        "press": {
+          "label": "Presse",
+          "weight": 0.12,
+          "probs": {
+            "home": 34,
+            "draw": 26,
+            "away": 40
+          },
+          "favored": "away",
+          "detail": "7647 articles"
+        },
+        "social": {
+          "label": "Public",
+          "weight": 0.1,
+          "probs": {
+            "home": 45,
+            "draw": 26,
+            "away": 29
+          },
+          "favored": "home",
+          "detail": "Wikipédia · 203108/133579 vues"
         }
       }
     }

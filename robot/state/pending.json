@@ -14,9 +14,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 24,
+        "home": 25,
         "draw": 26,
-        "away": 50
+        "away": 49
       },
       "score": {
         "home": 1,
@@ -42,9 +42,9 @@
         "away": 69
       },
       "social": {
-        "home": 27,
+        "home": 38,
         "draw": 26,
-        "away": 47
+        "away": 36
       }
     }
   },
@@ -63,9 +63,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 57,
+        "home": 55,
         "draw": 25,
-        "away": 18
+        "away": 20
       },
       "score": {
         "home": 3,
@@ -75,9 +75,9 @@
     },
     "sources": {
       "betting": {
-        "home": 56,
+        "home": 55,
         "draw": 27,
-        "away": 17
+        "away": 18
       },
       "form": {
         "home": 40,
@@ -95,9 +95,62 @@
         "away": 16
       },
       "social": {
-        "home": 67,
+        "home": 42,
         "draw": 26,
-        "away": 7
+        "away": 32
+      }
+    }
+  },
+  "1585131": {
+    "id": "1585131",
+    "datetime": "2026-07-14T19:00:00+00:00",
+    "home": {
+      "name": "France",
+      "flag": "🇫🇷",
+      "code": "FRA"
+    },
+    "away": {
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "code": "ESP"
+    },
+    "predicted": {
+      "probs": {
+        "home": 38,
+        "draw": 26,
+        "away": 36
+      },
+      "score": {
+        "home": 2,
+        "away": 1
+      },
+      "favored": "home"
+    },
+    "sources": {
+      "betting": {
+        "home": 41,
+        "draw": 29,
+        "away": 30
+      },
+      "form": {
+        "home": 37,
+        "draw": 26,
+        "away": 37
+      },
+      "h2h": {
+        "home": 24,
+        "draw": 10,
+        "away": 66
+      },
+      "press": {
+        "home": 34,
+        "draw": 26,
+        "away": 40
+      },
+      "social": {
+        "home": 45,
+        "draw": 26,
+        "away": 29
       }
     }
   },
