@@ -21,6 +21,12 @@ Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
 - **Kim Le Court** — _blessé_ · « 'It wasn't planned' - Kim Le Court-Pienaar back to full strength in Tour de Suisse breakaway after two-month injury layoff » (Cyclingnews)
 
 ## Start
+- **Skip Schumaker** — _blessé_ · « Jacob deGrom missing next start in Rangers injury worry » (New York Post)
+- **Globe Life Field** — _blessé_ · « Jacob deGrom dealing with glute injury » (MLB News)
+- **What Shohei Ohtani** — _blessé_ · « What Shohei Ohtani’s Mysterious Injury Means for the Dodgers » (Sports Illustrated)
+- **Mysterious Injury Means** — _blessé_ · « What Shohei Ohtani’s Mysterious Injury Means for the Dodgers » (Sports Illustrated)
+- **Shohei Ohtani** — _blessé_ · « What Shohei Ohtani’s Mysterious Injury Means for the Dodgers » (Sports Illustrated)
+- **Grayson Rodriguez** — _blessé_ · « Angels activate Grayson Rodriguez for Friday start » (Nbc Sports)
 - **Los Angeles Dodgers** — _blessé_ · « Los Angeles Dodgers Announce Starting Pitcher for Diamondbacks Game After Shohei Ohtani Decision » (Heavy.)
 - **Announce Starting Pitcher** — _blessé_ · « Los Angeles Dodgers Announce Starting Pitcher for Diamondbacks Game After Shohei Ohtani Decision » (Heavy.)
 - **Diamondbacks Game After** — _blessé_ · « Los Angeles Dodgers Announce Starting Pitcher for Diamondbacks Game After Shohei Ohtani Decision » (Heavy.)
@@ -28,13 +34,6 @@ Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
 - **Romelu Lukaku** — _blessé_ · « Is Romelu Lukaku injured? Why didn't he start for Belgium vs Spain today? » (Hindustan Times)
 - **Man Utd** — _blessé_ · « Man Utd in huge injury boost as top star fights back from injury in time for new 2026/27 season » (The Irish Sun)
 - **Benjamin Sesko** — _blessé_ · « Man Utd in huge injury boost as top star fights back from injury in time for new 2026/27 season » (The Irish Sun)
-- **Grayson Rodriguez** — _blessé_ · « Grayson Rodriguez to start against Twins on Friday » (Nbc Sports)
-- **Logan Henderson** — _blessé_ · « Logan Henderson activated for Thursday start » (Nbc Sports)
-- **Red Sox** — _blessé_ · « Red Sox place pitcher Ranger Suarez on injured list » (Portland Press Herald)
-- **Ranger Suarez** — _blessé_ · « Red Sox place pitcher Ranger Suarez on injured list » (Portland Press Herald)
-- **Janson Junk** — _blessé_ · « Janson Junk activated for start on Thursday » (Nbc Sports)
-- **Christian Pulisic** — _blessé_ · « Christian Pulisic in Danger of Missing Serie A Start After World Cup Injury Blow Revealed » (Sports Illustrated)
-- **Bailey Ober** — _blessé_ · « Bailey Ober back from IL for Thursday start » (Nbc Sports)
 
 ---
 
@@ -107,6 +106,30 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
     ],
     "Start": [
       {
+        "joueur": "Skip Schumaker",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Globe Life Field",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "What Shohei Ohtani",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Mysterious Injury Means",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Shohei Ohtani",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Grayson Rodriguez",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Los Angeles Dodgers",
         "raison": "blessé"
       },
@@ -132,34 +155,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       },
       {
         "joueur": "Benjamin Sesko",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Grayson Rodriguez",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Logan Henderson",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Red Sox",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Ranger Suarez",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Janson Junk",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Christian Pulisic",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Bailey Ober",
         "raison": "blessé"
       }
     ]

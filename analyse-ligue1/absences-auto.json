@@ -63,6 +63,30 @@
     ],
     "Start": [
       {
+        "joueur": "Skip Schumaker",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Globe Life Field",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "What Shohei Ohtani",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Mysterious Injury Means",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Shohei Ohtani",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Grayson Rodriguez",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Los Angeles Dodgers",
         "raison": "blessé"
       },
@@ -88,34 +112,6 @@
       },
       {
         "joueur": "Benjamin Sesko",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Grayson Rodriguez",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Logan Henderson",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Red Sox",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Ranger Suarez",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Janson Junk",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Christian Pulisic",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Bailey Ober",
         "raison": "blessé"
       }
     ]
