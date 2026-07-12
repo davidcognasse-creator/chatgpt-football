@@ -21,19 +21,13 @@ Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
 - **Kim Le Court** — _blessé_ · « 'It wasn't planned' - Kim Le Court-Pienaar back to full strength in Tour de Suisse breakaway after two-month injury layoff » (Cyclingnews)
 
 ## Start
+- **Athletics All** — _blessé_ · « Athletics All-Star 1B Nick Kurtz placed on injured list with thumb sprain » (CBS News)
+- **Nick Kurtz** — _blessé_ · « Athletics All-Star 1B Nick Kurtz placed on injured list with thumb sprain » (CBS News)
+- **White Sox** — _blessé_ · « White Sox outfielder Tristan Peters named as an All-Star replacement » (The Atlanta Journal-Constitution)
+- **Tristan Peters** — _blessé_ · « White Sox outfielder Tristan Peters named as an All-Star replacement » (The Atlanta Journal-Constitution)
+- **Shohei Ohtani** — _blessé_ · « Shohei Ohtani homers despite knee injury in Dodgers loss » (New York Post)
 - **Skip Schumaker** — _blessé_ · « Jacob deGrom missing next start in Rangers injury worry » (New York Post)
 - **Globe Life Field** — _blessé_ · « Jacob deGrom dealing with glute injury » (MLB News)
-- **What Shohei Ohtani** — _blessé_ · « What Shohei Ohtani’s Mysterious Injury Means for the Dodgers » (Sports Illustrated)
-- **Mysterious Injury Means** — _blessé_ · « What Shohei Ohtani’s Mysterious Injury Means for the Dodgers » (Sports Illustrated)
-- **Shohei Ohtani** — _blessé_ · « What Shohei Ohtani’s Mysterious Injury Means for the Dodgers » (Sports Illustrated)
-- **Grayson Rodriguez** — _blessé_ · « Angels activate Grayson Rodriguez for Friday start » (Nbc Sports)
-- **Los Angeles Dodgers** — _blessé_ · « Los Angeles Dodgers Announce Starting Pitcher for Diamondbacks Game After Shohei Ohtani Decision » (Heavy.)
-- **Announce Starting Pitcher** — _blessé_ · « Los Angeles Dodgers Announce Starting Pitcher for Diamondbacks Game After Shohei Ohtani Decision » (Heavy.)
-- **Diamondbacks Game After** — _blessé_ · « Los Angeles Dodgers Announce Starting Pitcher for Diamondbacks Game After Shohei Ohtani Decision » (Heavy.)
-- **Is Romelu Lukaku** — _blessé_ · « Is Romelu Lukaku injured? Why didn't he start for Belgium vs Spain today? » (Hindustan Times)
-- **Romelu Lukaku** — _blessé_ · « Is Romelu Lukaku injured? Why didn't he start for Belgium vs Spain today? » (Hindustan Times)
-- **Man Utd** — _blessé_ · « Man Utd in huge injury boost as top star fights back from injury in time for new 2026/27 season » (The Irish Sun)
-- **Benjamin Sesko** — _blessé_ · « Man Utd in huge injury boost as top star fights back from injury in time for new 2026/27 season » (The Irish Sun)
 
 ---
 
@@ -106,19 +100,19 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
     ],
     "Start": [
       {
-        "joueur": "Skip Schumaker",
+        "joueur": "Athletics All",
         "raison": "blessé"
       },
       {
-        "joueur": "Globe Life Field",
+        "joueur": "Nick Kurtz",
         "raison": "blessé"
       },
       {
-        "joueur": "What Shohei Ohtani",
+        "joueur": "White Sox",
         "raison": "blessé"
       },
       {
-        "joueur": "Mysterious Injury Means",
+        "joueur": "Tristan Peters",
         "raison": "blessé"
       },
       {
@@ -126,35 +120,11 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
         "raison": "blessé"
       },
       {
-        "joueur": "Grayson Rodriguez",
+        "joueur": "Skip Schumaker",
         "raison": "blessé"
       },
       {
-        "joueur": "Los Angeles Dodgers",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Announce Starting Pitcher",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Diamondbacks Game After",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Is Romelu Lukaku",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Romelu Lukaku",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Man Utd",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Benjamin Sesko",
+        "joueur": "Globe Life Field",
         "raison": "blessé"
       }
     ]
