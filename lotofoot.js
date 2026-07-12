@@ -9,6 +9,19 @@
     "Choisis ton budget. Les doubles/triples sont répartis pour maximiser " +
     "l'<b>espérance de gain (€)</b>.";
 
+  // Statut d'une grille : ouvert (jouable) · attente (plus jouable, gains inconnus)
+  // · fermé (gains connus). Piloté par le champ `statut` de l'archive (repli : nom).
+  let activeStatut = null;
+  const STATUTS = [
+    { key: "ouvert", label: "🟢 Ouvert", meta: "🟢 Ouvert" },
+    { key: "attente", label: "⏳ En attente (gains à venir)", meta: "⏳ Gains en attente" },
+    { key: "ferme", label: "🏁 Fermé (gains connus)", meta: "🏁 Fermé" },
+  ];
+  const statutOf = (g) =>
+    g.statut || (/ouvert/i.test(g.nom) ? "ouvert" : /attente/i.test(g.nom) ? "attente" : "ferme");
+  const cleanNom = (nom) => (nom || "").replace(/\s*\((?:ouvert|ferm[ée]s?|en attente)\)\s*$/i, "").trim();
+  const statutMeta = (k) => (STATUTS.find((s) => s.key === k) || {}).meta || "";
+
   function probCell(p) {
     return `<span class="prob">
       <span class="p1">${pct(p["1"])}</span>
@@ -52,7 +65,8 @@
     // Bandeau méta
     const meta = document.getElementById("lotoMeta");
     meta.innerHTML =
-      `<span class="loto-tag">🏆 <b>${data.nom || "Loto Foot"}</b></span>` +
+      (activeStatut ? `<span class="loto-tag statut-${activeStatut}">${statutMeta(activeStatut)}</span>` : "") +
+      `<span class="loto-tag">🏆 <b>${cleanNom(data.nom) || "Loto Foot"}</b></span>` +
       `<span class="loto-tag">📈 Source : <b>${data.source || "cotes"}</b></span>` +
       `<span class="loto-tag">⚽ <b>${data.matchs.length}</b> matchs</span>`;
 
@@ -303,7 +317,8 @@
   }
   loadCalibration();
 
-  function loadGrid(file) {
+  function loadGrid(file, statut) {
+    activeStatut = statut || null;
     fetch(file + bust())
       .then((r) => { if (!r.ok) throw new Error(file + " introuvable"); return r.json(); })
       .then(render)
@@ -314,17 +329,27 @@
       });
   }
 
-  // Sélecteur de grilles (actuelle + précédentes) depuis lotofoot-archive.json.
+  // Sélecteur de grilles regroupé par statut (ouvert · en attente · fermé).
   fetch("lotofoot-archive.json" + bust())
     .then((r) => (r.ok ? r.json() : null))
     .then((arch) => {
       const sel = document.getElementById("gridPicker");
       const list = arch && arch.grilles && arch.grilles.length ? arch.grilles : null;
       if (sel && list) {
-        sel.innerHTML = list.map((g, i) => `<option value="${g.file}">${g.nom}</option>`).join("");
+        sel.innerHTML = STATUTS.map((grp) => {
+          const items = list.filter((g) => statutOf(g) === grp.key);
+          if (!items.length) return "";
+          return `<optgroup label="${grp.label}">` +
+            items.map((g) => `<option value="${g.file}">${cleanNom(g.nom)}</option>`).join("") +
+            `</optgroup>`;
+        }).join("");
         sel.parentElement.hidden = false;
-        sel.addEventListener("change", () => loadGrid(sel.value));
-        loadGrid(list[0].file);
+        const fileStatut = {};
+        list.forEach((g) => (fileStatut[g.file] = statutOf(g)));
+        sel.addEventListener("change", () => loadGrid(sel.value, fileStatut[sel.value]));
+        const first = list.find((g) => statutOf(g) === "ouvert") || list[0];
+        sel.value = first.file;
+        loadGrid(first.file, statutOf(first));
       } else {
         loadGrid("lotofoot.json"); // repli
       }

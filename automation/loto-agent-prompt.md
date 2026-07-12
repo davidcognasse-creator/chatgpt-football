@@ -32,9 +32,14 @@ Fais, dans l'ordre :
        {"nom":"Loto Foot <type> N°<NUM>","note":"auto (playwright)","budget":24,
         "matchs":[{"dom":"...","ext":"...","foule":{"1":..,"N":..,"2":..}}, ...]}
        (si public indispo : foule 33/33/34) ;
-     * mets à jour lotofoot-archive.json : nouvelle grille en tête libellée
-       "(ouvert)" -> lotofoot.json ; l'ancienne -> son fichier sauvegardé, en
-       "(ouvert)" si encore jouable sinon "(fermé)" ; les grilles réglées en "(fermé)".
+     * mets à jour lotofoot-archive.json. Chaque entrée a un champ `statut` :
+       - "ouvert"  : on peut encore jouer (avant la clôture) ;
+       - "attente" : clôturée / matchs finis MAIS gains (rapports FDJ) pas encore connus ;
+       - "ferme"   : rapports officiels connus (bilan complet).
+       Format : {"nom":"Loto Foot <type> N°<NUM>","file":"...","statut":"ouvert|attente|ferme"}.
+       Le `nom` NE contient PAS de "(ouvert)"/"(fermé)" — c'est `statut` qui pilote.
+       Nouvelle grille en tête (statut "ouvert" -> lotofoot.json) ; l'ancienne ->
+       son fichier sauvegardé, statut "attente" (ou "ferme" si tu as déjà ses rapports).
      * commit + push.
 
 2) RÉSULTATS & RAPPORTS OFFICIELS — via Playwright (pour les grilles récentes NON figées)
@@ -51,7 +56,9 @@ Fais, dans l'ordre :
        "reels":[{"i":1,"reel":"1|N|2","score":"x-y"}, ...]}
    - N'invente jamais un rapport : si les rapports officiels ne sont pas encore
      publiés, mets les "reels" (résultats) mais laisse "rapports" vide {} — le site
-     n'affichera alors que le score, pas de gain.
+     n'affichera alors que le score, pas de gain. La grille reste en statut "attente".
+   - Dès que tu écris des "rapports" officiels non vides : passe le `statut` de cette
+     grille à "ferme" dans lotofoot-archive.json.
    - commit + push.
 
 3) COTES (workflow serveur — la clé API-Football n'est PAS en local)
