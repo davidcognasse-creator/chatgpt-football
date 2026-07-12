@@ -1200,7 +1200,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 .g-table td { padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .g-table tbody tr:hover td { background: rgba(255,255,255,0.02); }
 .g-date { color: var(--muted-soft); white-space: nowrap; }
-.g-match { font-weight: 600; }
+.g-match { font-weight: 600; white-space: nowrap; }
 .g-prob { color: var(--accent-2); font-weight: 700; font-size: 0.8rem; }
 .g-odds { font-variant-numeric: tabular-nums; color: #a3b6e8; }
 .g-res { white-space: nowrap; }
