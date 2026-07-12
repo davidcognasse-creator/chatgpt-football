@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-11T16:42:12.541Z",
+  "updatedAt": "2026-07-12T04:02:30.873Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -10,232 +10,6 @@
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "1581821",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-10T19:00:00+00:00",
-      "venue": "SoFi Stadium",
-      "home": {
-        "name": "Spain",
-        "flag": "🇪🇸",
-        "code": "ESP"
-      },
-      "away": {
-        "name": "Belgium",
-        "flag": "🇧🇪",
-        "code": "BEL"
-      },
-      "probs": {
-        "home": 52,
-        "draw": 25,
-        "away": 23
-      },
-      "predictedScore": {
-        "home": 2,
-        "away": 1
-      },
-      "confidence": 66,
-      "analysis": "Spain tient la corde avec 52% de chances estimées. Les cotes confirment (59%). La forme récente abonde aussi. À contre-courant du pronostic IA, le public penche plutôt pour Belgium.",
-      "scorers": {
-        "home": [
-          {
-            "name": "Lamine Yamal",
-            "prob": 25
-          },
-          {
-            "name": "Pedri",
-            "prob": 9
-          },
-          {
-            "name": "Ferran Torres",
-            "prob": 7
-          }
-        ],
-        "away": [
-          {
-            "name": "Jérémy Doku",
-            "prob": 20
-          },
-          {
-            "name": "Matias Fernandez-Pardo",
-            "prob": 10
-          },
-          {
-            "name": "Mika Godts",
-            "prob": 10
-          }
-        ],
-        "estimated": true
-      },
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 59,
-            "draw": 24,
-            "away": 17
-          },
-          "favored": "home",
-          "detail": "14 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 40,
-            "draw": 26,
-            "away": 34
-          },
-          "favored": "home",
-          "detail": "VVVVN vs VVVNN"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 30,
-            "draw": 26,
-            "away": 44
-          },
-          "favored": "away",
-          "detail": "X · 37520/54191 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 2,
-        "away": 1,
-        "outcome": "home"
-      }
-    },
-    {
-      "id": "1581037",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-11T21:00:00+00:00",
-      "venue": "Hard Rock Stadium",
-      "home": {
-        "name": "Norway",
-        "flag": "🇳🇴",
-        "code": "NOR"
-      },
-      "away": {
-        "name": "England",
-        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-        "code": "ENG"
-      },
-      "probs": {
-        "home": 25,
-        "draw": 26,
-        "away": 49
-      },
-      "predictedScore": {
-        "home": 1,
-        "away": 2
-      },
-      "confidence": 65,
-      "analysis": "England part favori de justesse avec 49% de chances estimées. Les cotes confirment (49%). La forme récente et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Norway.",
-      "scorers": {
-        "home": [
-          {
-            "name": "Erling Haaland",
-            "prob": 38
-          },
-          {
-            "name": "Jørgen Strand Larsen",
-            "prob": 9
-          },
-          {
-            "name": "Antonio Nusa",
-            "prob": 7
-          }
-        ],
-        "away": [
-          {
-            "name": "Bukayo Saka",
-            "prob": 16
-          },
-          {
-            "name": "Jude Bellingham",
-            "prob": 8
-          },
-          {
-            "name": "Harry Kane",
-            "prob": 8
-          }
-        ],
-        "estimated": true
-      },
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 25,
-            "draw": 26,
-            "away": 49
-          },
-          "favored": "away",
-          "detail": "14 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 36,
-            "draw": 26,
-            "away": 38
-          },
-          "favored": "away",
-          "detail": "VVDVV vs VVVNV"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": {
-            "home": 5,
-            "draw": 26,
-            "away": 69
-          },
-          "favored": "away",
-          "detail": "13150 articles"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 38,
-            "draw": 26,
-            "away": 36
-          },
-          "favored": "home",
-          "detail": "Wikipédia · 112075/109030 vues"
-        }
-      }
-    },
     {
       "id": "1582681",
       "stage": "À venir",
@@ -349,6 +123,17 @@
           },
           "favored": "home",
           "detail": "Wikipédia · 131216/99708 vues"
+        }
+      },
+      "status": "finished",
+      "result": {
+        "home": 1,
+        "away": 1,
+        "outcome": "draw",
+        "decidedBy": "aet",
+        "full": {
+          "home": 3,
+          "away": 1
         }
       }
     },

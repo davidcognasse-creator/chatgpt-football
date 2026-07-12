@@ -1,6 +1,132 @@
 {
-  "updatedAt": "2026-07-11T16:42:18.656Z",
+  "updatedAt": "2026-07-12T04:02:30.871Z",
   "entries": [
+    {
+      "id": "1582681",
+      "datetime": "2026-07-12T01:00:00+00:00",
+      "home": {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "code": "ARG"
+      },
+      "away": {
+        "name": "Switzerland",
+        "flag": "🇨🇭",
+        "code": "SUI"
+      },
+      "predicted": {
+        "probs": {
+          "home": 55,
+          "draw": 25,
+          "away": 20
+        },
+        "score": {
+          "home": 3,
+          "away": 0
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 55,
+          "draw": 27,
+          "away": 18
+        },
+        "form": {
+          "home": 40,
+          "draw": 26,
+          "away": 34
+        },
+        "h2h": {
+          "home": 79,
+          "draw": 10,
+          "away": 10
+        },
+        "press": {
+          "home": 58,
+          "draw": 26,
+          "away": 16
+        },
+        "social": {
+          "home": 42,
+          "draw": 26,
+          "away": 32
+        }
+      },
+      "actual": {
+        "home": 1,
+        "away": 1,
+        "outcome": "draw",
+        "decidedBy": "aet",
+        "full": {
+          "home": 3,
+          "away": 1
+        }
+      },
+      "correctOutcome": false,
+      "correctScore": false
+    },
+    {
+      "id": "1581037",
+      "datetime": "2026-07-11T21:00:00+00:00",
+      "home": {
+        "name": "Norway",
+        "flag": "🇳🇴",
+        "code": "NOR"
+      },
+      "away": {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "code": "ENG"
+      },
+      "predicted": {
+        "probs": {
+          "home": 25,
+          "draw": 26,
+          "away": 49
+        },
+        "score": {
+          "home": 1,
+          "away": 2
+        },
+        "favored": "away"
+      },
+      "sources": {
+        "betting": {
+          "home": 25,
+          "draw": 26,
+          "away": 49
+        },
+        "form": {
+          "home": 36,
+          "draw": 26,
+          "away": 38
+        },
+        "h2h": null,
+        "press": {
+          "home": 5,
+          "draw": 26,
+          "away": 69
+        },
+        "social": {
+          "home": 38,
+          "draw": 26,
+          "away": 36
+        }
+      },
+      "actual": {
+        "home": 1,
+        "away": 1,
+        "outcome": "draw",
+        "decidedBy": "aet",
+        "full": {
+          "home": 1,
+          "away": 2
+        }
+      },
+      "correctOutcome": false,
+      "correctScore": false
+    },
     {
       "id": "1581821",
       "datetime": "2026-07-10T19:00:00+00:00",
