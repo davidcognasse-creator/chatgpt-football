@@ -63,6 +63,42 @@
     ],
     "Start": [
       {
+        "joueur": "Max Holloway",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jacob Misiorowski",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Milwaukee Brewers",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Pittsburgh Pirates",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Pat Murphy",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Paul Skenes",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Cincinnati Reds Starter",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Nick Lodolo Exits",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Cubs With Injury",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Athletics All",
         "raison": "blessé"
       },
@@ -76,18 +112,6 @@
       },
       {
         "joueur": "Tristan Peters",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Shohei Ohtani",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Skip Schumaker",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Globe Life Field",
         "raison": "blessé"
       }
     ]

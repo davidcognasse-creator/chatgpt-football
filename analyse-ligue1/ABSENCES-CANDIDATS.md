@@ -21,13 +21,19 @@ Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
 - **Kim Le Court** — _blessé_ · « 'It wasn't planned' - Kim Le Court-Pienaar back to full strength in Tour de Suisse breakaway after two-month injury layoff » (Cyclingnews)
 
 ## Start
+- **Max Holloway** — _blessé_ · « UFC rocked as injured Conor McGregor forced to quit seconds into comeback fight against Max Holloway » (7NEWS Australia)
+- **Jacob Misiorowski** — _blessé_ · « Jacob Misiorowski injury update: Why the Milwaukee Brewers ace was scratched before Pirates matchup » (Times of India)
+- **Milwaukee Brewers** — _blessé_ · « Jacob Misiorowski injury update: Why the Milwaukee Brewers ace was scratched before Pirates matchup » (Times of India)
+- **Pittsburgh Pirates** — _blessé_ · « Jacob Misiorowski injury update: Why the Milwaukee Brewers ace was scratched before Pirates matchup » (Times of India)
+- **Pat Murphy** — _blessé_ · « Pat Murphy addresses Jacob Misiorowski injury concerns after canceled start » (Yardbarker)
+- **Paul Skenes** — _blessé_ · « Pat Murphy addresses Jacob Misiorowski injury concerns after canceled start » (Yardbarker)
+- **Cincinnati Reds Starter** — _blessé_ · « Cincinnati Reds Starter Nick Lodolo Exits Start vs. Cubs With Injury » (Sports Illustrated)
+- **Nick Lodolo Exits** — _blessé_ · « Cincinnati Reds Starter Nick Lodolo Exits Start vs. Cubs With Injury » (Sports Illustrated)
+- **Cubs With Injury** — _blessé_ · « Cincinnati Reds Starter Nick Lodolo Exits Start vs. Cubs With Injury » (Sports Illustrated)
 - **Athletics All** — _blessé_ · « Athletics All-Star 1B Nick Kurtz placed on injured list with thumb sprain » (CBS News)
 - **Nick Kurtz** — _blessé_ · « Athletics All-Star 1B Nick Kurtz placed on injured list with thumb sprain » (CBS News)
 - **White Sox** — _blessé_ · « White Sox outfielder Tristan Peters named as an All-Star replacement » (The Atlanta Journal-Constitution)
 - **Tristan Peters** — _blessé_ · « White Sox outfielder Tristan Peters named as an All-Star replacement » (The Atlanta Journal-Constitution)
-- **Shohei Ohtani** — _blessé_ · « Shohei Ohtani homers despite knee injury in Dodgers loss » (New York Post)
-- **Skip Schumaker** — _blessé_ · « Jacob deGrom missing next start in Rangers injury worry » (New York Post)
-- **Globe Life Field** — _blessé_ · « Jacob deGrom dealing with glute injury » (MLB News)
 
 ---
 
@@ -100,6 +106,42 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
     ],
     "Start": [
       {
+        "joueur": "Max Holloway",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jacob Misiorowski",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Milwaukee Brewers",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Pittsburgh Pirates",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Pat Murphy",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Paul Skenes",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Cincinnati Reds Starter",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Nick Lodolo Exits",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Cubs With Injury",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Athletics All",
         "raison": "blessé"
       },
@@ -113,18 +155,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       },
       {
         "joueur": "Tristan Peters",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Shohei Ohtani",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Skip Schumaker",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Globe Life Field",
         "raison": "blessé"
       }
     ]
