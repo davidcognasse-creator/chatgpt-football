@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-12T08:59:57.576Z",
+  "updatedAt": "2026-07-12T16:43:32.777Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -240,18 +240,18 @@ window.WC_DATA = {
             "away": 40
           },
           "favored": "away",
-          "detail": "7658 articles"
+          "detail": "7663 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 42,
+            "home": 41,
             "draw": 26,
-            "away": 32
+            "away": 33
           },
           "favored": "home",
-          "detail": "X · 64539/49888 mentions"
+          "detail": "X · 62317/50588 mentions"
         }
       }
     }
