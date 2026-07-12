@@ -28,7 +28,7 @@
       "betting": {
         "home": 41,
         "draw": 29,
-        "away": 30
+        "away": 29
       },
       "form": {
         "home": 37,
@@ -46,9 +46,9 @@
         "away": 40
       },
       "social": {
-        "home": 45,
+        "home": 42,
         "draw": 26,
-        "away": 29
+        "away": 32
       }
     }
   },
