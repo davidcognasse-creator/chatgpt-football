@@ -11,9 +11,6 @@ Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
 - **Cristian Romero** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
 - **Lamine Yamal** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
 - **Lionel Messi** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
-- **Marcos Senesi Joins** — _blessé_ · « Marcos Senesi Joins Argentina's World Cup Squad as Balerdi's Replacement » (Devdiscourse)
-- **Marcos Senesi** — _blessé_ · « Marcos Senesi Joins Argentina's World Cup Squad as Balerdi's Replacement » (Devdiscourse)
-- **Leonardo Balerdi** — _blessé_ · « Marcos Senesi Joins Argentina's World Cup Squad as Balerdi's Replacement » (Devdiscourse)
 
 ## Suisse
 - **Urska Zigart** — _blessé_ · « Urška Žigart handed positive injury update after jaw-fracturing Tour de Suisse crash » (Cyclingnews)
@@ -21,19 +18,17 @@ Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
 - **Kim Le Court** — _blessé_ · « 'It wasn't planned' - Kim Le Court-Pienaar back to full strength in Tour de Suisse breakaway after two-month injury layoff » (Cyclingnews)
 
 ## Start
-- **Max Holloway** — _blessé_ · « UFC rocked as injured Conor McGregor forced to quit seconds into comeback fight against Max Holloway » (7NEWS Australia)
-- **Jacob Misiorowski** — _blessé_ · « Jacob Misiorowski injury update: Why the Milwaukee Brewers ace was scratched before Pirates matchup » (Times of India)
-- **Milwaukee Brewers** — _blessé_ · « Jacob Misiorowski injury update: Why the Milwaukee Brewers ace was scratched before Pirates matchup » (Times of India)
-- **Pittsburgh Pirates** — _blessé_ · « Jacob Misiorowski injury update: Why the Milwaukee Brewers ace was scratched before Pirates matchup » (Times of India)
-- **Pat Murphy** — _blessé_ · « Pat Murphy addresses Jacob Misiorowski injury concerns after canceled start » (Yardbarker)
-- **Paul Skenes** — _blessé_ · « Pat Murphy addresses Jacob Misiorowski injury concerns after canceled start » (Yardbarker)
-- **Cincinnati Reds Starter** — _blessé_ · « Cincinnati Reds Starter Nick Lodolo Exits Start vs. Cubs With Injury » (Sports Illustrated)
-- **Nick Lodolo Exits** — _blessé_ · « Cincinnati Reds Starter Nick Lodolo Exits Start vs. Cubs With Injury » (Sports Illustrated)
-- **Cubs With Injury** — _blessé_ · « Cincinnati Reds Starter Nick Lodolo Exits Start vs. Cubs With Injury » (Sports Illustrated)
-- **Athletics All** — _blessé_ · « Athletics All-Star 1B Nick Kurtz placed on injured list with thumb sprain » (CBS News)
-- **Nick Kurtz** — _blessé_ · « Athletics All-Star 1B Nick Kurtz placed on injured list with thumb sprain » (CBS News)
-- **White Sox** — _blessé_ · « White Sox outfielder Tristan Peters named as an All-Star replacement » (The Atlanta Journal-Constitution)
-- **Tristan Peters** — _blessé_ · « White Sox outfielder Tristan Peters named as an All-Star replacement » (The Atlanta Journal-Constitution)
+- **Arizona Diamondbacks** — _blessé_ · « Arizona Diamondbacks place starter Zac Gallen on 15-day IL » (ESPN)
+- **Zac Gallen** — _blessé_ · « Arizona Diamondbacks place starter Zac Gallen on 15-day IL » (ESPN)
+- **Mitch Bratt** — _blessé_ · « Arizona Diamondbacks place starter Zac Gallen on 15-day IL » (ESPN)
+- **Los Angeles Dodgers** — _blessé_ · « Diamondbacks place RHP Zac Gallen on 15-day IL with elbow inflammation » (The Associated Press)
+- **Houston Astros** — _blessé_ · « Rangers give Jacob deGrom All-Star break to shake off lingering injury » (The Dallas Morning News)
+- **Manuel Ugarte** — _blessé_ · « Manchester United midfielder officially signs sixth contract with club » (Yardbarker)
+- **Kobbie Mainoo** — _blessé_ · « Manchester United midfielder officially signs sixth contract with club » (Yardbarker)
+- **Cam Schlittler** — _incertain_ · « No room for doubt: Yankees’ Cam Schlittler deserves to start All-Star Game: Klapisch » (NJ.com)
+- **Return Ends** — _blessé_ · « Conor McGregor's Shocking UFC Return Ends in Injury » (Devdiscourse)
+- **Max Holloway** — _blessé_ · « Conor McGregor's Shocking UFC Return Ends in Injury » (Devdiscourse)
+- **Las Vegas** — _blessé_ · « Conor McGregor's Shocking UFC Return Ends in Injury » (Devdiscourse)
 
 ---
 
@@ -76,18 +71,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       {
         "joueur": "Lionel Messi",
         "raison": "blessé"
-      },
-      {
-        "joueur": "Marcos Senesi Joins",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Marcos Senesi",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Leonardo Balerdi",
-        "raison": "blessé"
       }
     ],
     "Suisse": [
@@ -106,55 +89,47 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
     ],
     "Start": [
       {
+        "joueur": "Arizona Diamondbacks",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Zac Gallen",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Mitch Bratt",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Los Angeles Dodgers",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Houston Astros",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Manuel Ugarte",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Kobbie Mainoo",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Cam Schlittler",
+        "raison": "incertain"
+      },
+      {
+        "joueur": "Return Ends",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Max Holloway",
         "raison": "blessé"
       },
       {
-        "joueur": "Jacob Misiorowski",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Milwaukee Brewers",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Pittsburgh Pirates",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Pat Murphy",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Paul Skenes",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Cincinnati Reds Starter",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Nick Lodolo Exits",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Cubs With Injury",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Athletics All",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Nick Kurtz",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "White Sox",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Tristan Peters",
+        "joueur": "Las Vegas",
         "raison": "blessé"
       }
     ]

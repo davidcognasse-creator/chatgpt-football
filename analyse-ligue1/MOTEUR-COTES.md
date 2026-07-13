@@ -18,7 +18,7 @@ Grille : **Loto Foot 15 N°53** · 15 matchs · source **API-Football**
 | 12 | Sandefjord–HamKam | — | 57/27/16 | _non coté_ | 1 | — | — |
 | 13 | SK Brann–Start | 44/44/11 | 84/9/7 | **1** | 1 | préd. |  |
 | 14 | Rosenborg–Kristiansund | 44/44/11 | 81/13/6 | **1** | 1 | préd. |  |
-| 15 | Sarpsborg 08–Viking FK | 23/23/54 | 16/13/71 | **2** | 2 | 14 |  |
+| 15 | Sarpsborg 08–Viking FK | 11/44/44 | 16/13/71 | **N** | 2 | préd. | **+31%** |
 
 **Couverture marché : 8/15 matchs cotés.**
 _Aucun absent renseigné (absences.json) — probas = marché brut._
@@ -28,6 +28,7 @@ _Aucun absent renseigné (absences.json) — probas = marché brut._
 - **Match 5 · Incheon FC–FC Anyang** : le marché voit **N** (35%) alors que la foule joue **1** (61%). → la foule sur/sous-estime, value si le marché a raison.
 - **Match 10 · Brommapojkarna–IK Sirius FK** : le marché voit **N** (44%) alors que la foule joue **2** (56%). → la foule sur/sous-estime, value si le marché a raison.
 - **Match 11 · GAIS Göteborg–Elfsborg** : le marché voit **N** (44%) alors que la foule joue **1** (58%). → la foule sur/sous-estime, value si le marché a raison.
+- **Match 15 · Sarpsborg 08–Viking FK** : le marché voit **N** (44%) alors que la foule joue **2** (71%). → la foule sur/sous-estime, value si le marché a raison.
 
 ---
 _Cotes API-Football (dévignées, moyenne multi-books) = signal primaire ; repli sur la prédiction maison. Couche compo (🧬 XI annoncé valorisé Transfermarkt, dispo ~40 min avant) — à défaut absences presse/manuel (✎) — appliquée AVANT que le marché ne bouge : c'est l'edge du système._

@@ -33,18 +33,6 @@
       {
         "joueur": "Lionel Messi",
         "raison": "blessé"
-      },
-      {
-        "joueur": "Marcos Senesi Joins",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Marcos Senesi",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Leonardo Balerdi",
-        "raison": "blessé"
       }
     ],
     "Suisse": [
@@ -63,55 +51,47 @@
     ],
     "Start": [
       {
+        "joueur": "Arizona Diamondbacks",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Zac Gallen",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Mitch Bratt",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Los Angeles Dodgers",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Houston Astros",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Manuel Ugarte",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Kobbie Mainoo",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Cam Schlittler",
+        "raison": "incertain"
+      },
+      {
+        "joueur": "Return Ends",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Max Holloway",
         "raison": "blessé"
       },
       {
-        "joueur": "Jacob Misiorowski",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Milwaukee Brewers",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Pittsburgh Pirates",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Pat Murphy",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Paul Skenes",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Cincinnati Reds Starter",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Nick Lodolo Exits",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Cubs With Injury",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Athletics All",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Nick Kurtz",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "White Sox",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Tristan Peters",
+        "joueur": "Las Vegas",
         "raison": "blessé"
       }
     ]
