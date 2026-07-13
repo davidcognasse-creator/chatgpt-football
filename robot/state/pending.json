@@ -46,9 +46,9 @@
         "away": 40
       },
       "social": {
-        "home": 41,
+        "home": 36,
         "draw": 26,
-        "away": 33
+        "away": 38
       }
     }
   },
@@ -67,9 +67,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 38,
+        "home": 39,
         "draw": 30,
-        "away": 32
+        "away": 31
       },
       "score": {
         "home": 2,
@@ -95,9 +95,9 @@
         "away": 17
       },
       "social": {
-        "home": 27,
+        "home": 45,
         "draw": 26,
-        "away": 47
+        "away": 29
       }
     }
   },
