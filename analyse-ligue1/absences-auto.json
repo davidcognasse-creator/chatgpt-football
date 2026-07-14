@@ -1,23 +1,4 @@
 {
   "note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
-  "equipes": {
-    "France": [
-      {
-        "joueur": "Kylian Mbappe",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Les Bleus",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Didier Deschamps",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Sports Mole",
-        "raison": "blessé"
-      }
-    ]
-  }
+  "equipes": {}
 }

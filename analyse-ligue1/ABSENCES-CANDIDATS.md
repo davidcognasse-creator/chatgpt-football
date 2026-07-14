@@ -2,12 +2,12 @@
 
 Grille : **Loto Foot 15 N°54** · 30 équipes interrogées.
 
-## France
-- **Kylian Mbappe** — _blessé_ · « Experts release updated France-Spain World Cup prediction following recent injury updates » (cleveland.com)
-- **Les Bleus** — _blessé_ · « France star Kylian Mbappe ’100%’ entering Spain match » (CP24 Toronto)
-- **Didier Deschamps** — _blessé_ · « France star Kylian Mbappe '100%' entering Spain match » (Yardbarker)
-- **Sports Mole** — _blessé_ · « Team News: France vs. Spain injury, suspension list, predicted XIs » (Sports Mole)
-
+- ⚠️ France : HTTP Error 403: Forbidden
+- ⚠️ Espagne : HTTP Error 403: Forbidden
+- ⚠️ Levski Sofia : HTTP Error 403: Forbidden
+- ⚠️ Borac Banja Luka : HTTP Error 403: Forbidden
+- ⚠️ Gyor ETO FC : HTTP Error 403: Forbidden
+- ⚠️ Vikingur Reykjavik : HTTP Error 403: Forbidden
 - ⚠️ The New Saints : HTTP Error 403: Forbidden
 - ⚠️ Sabah FK : HTTP Error 403: Forbidden
 - ⚠️ KF Drita : HTTP Error 403: Forbidden
@@ -34,31 +34,4 @@ Grille : **Loto Foot 15 N°54** · 30 équipes interrogées.
 - ⚠️ Argentine : HTTP Error 403: Forbidden
 ---
 
-## 📋 Absents détectés → `absences-auto.json` (lu automatiquement par le moteur)
-
-Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt) par le moteur cotes ; un joueur sans note ⇒ 0 impact. Pour corriger/forcer, édite `absences.json` (prioritaire).
-
-```json
-{
-  "equipes": {
-    "France": [
-      {
-        "joueur": "Kylian Mbappe",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Les Bleus",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Didier Deschamps",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Sports Mole",
-        "raison": "blessé"
-      }
-    ]
-  }
-}
-```
+_Aucun absent détecté dans la presse — aucune correction appliquée._

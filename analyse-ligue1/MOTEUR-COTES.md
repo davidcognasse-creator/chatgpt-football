@@ -7,7 +7,7 @@ Grille : **Loto Foot 15 N°54** · 15 matchs · source **API-Football**
 | 1 | France–Espagne | 38/31/31 | 52/31/17 | **1** | 1 | 13 |  |
 | 2 | Levski Sofia–Borac Banja Luka | 61/25/15 | 85/10/5 | **1** | 1 | 13 |  |
 | 3 | Gyor ETO FC–Vikingur Reykjavik | — | 56/21/23 | _non coté_ | 1 | — | — |
-| 4 | The New Saints–Sabah FK | 22/26/52 | 36/21/43 | **2** | 2 | 13 |  |
+| 4 | The New Saints–Sabah FK | 21/25/54 | 36/21/43 | **2** | 2 | 13 |  |
 | 5 | KF Drita–Kauno Zalgiris | 38/30/32 | 50/29/21 | **1** | 1 | 13 |  |
 | 6 | Riga FC–Ararat Armenia | — | 61/20/19 | _non coté_ | 1 | — | — |
 | 7 | Shamrock–Floriana FC | 61/23/16 | 83/9/8 | **1** | 1 | 13 |  |
@@ -16,11 +16,11 @@ Grille : **Loto Foot 15 N°54** · 15 matchs · source **API-Football**
 | 10 | Sutjeska–Kairat Almaty | 25/27/48 | 14/18/68 | **2** | 2 | 13 |  |
 | 11 | KS Egnatia–CS Petrocub | — | 60/24/16 | _non coté_ | 1 | — | — |
 | 12 | Universitatea Craiova–Maxline Rogachev | — | 91/5/4 | _non coté_ | 1 | — | — |
-| 13 | Inter Escaldes–Lincoln FC | 49/26/26 | 46/21/33 | **1** | 1 | 13 |  |
+| 13 | Inter Escaldes–Lincoln FC | — | 46/21/33 | _non coté_ | 1 | — | — |
 | 14 | Iberia 1999–FC Flora | — | 83/10/7 | _non coté_ | 1 | — | — |
 | 15 | Angleterre–Argentine | 35/33/32 | 39/37/24 | **1** | 1 | 13 |  |
 
-**Couverture marché : 10/15 matchs cotés.**
+**Couverture marché : 9/15 matchs cotés.**
 _Aucun absent renseigné (absences.json) — probas = marché brut._
 
 ## 🎯 Divergences marché vs foule (value de pool)
