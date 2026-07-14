@@ -111,28 +111,6 @@
             })
             .join("") +
           `</div>`;
-      } else if (data.estRapports && Object.keys(data.estRapports).length) {
-        // Grille ouverte / en attente : gain POTENTIEL estimé par rang (rapports
-        // FDJ estimés par le modèle rareté-public). Clairement marqué « estimé ».
-        const raps = data.estRapports;
-        const nm = data.matchs.length;
-        const ranks = Object.keys(raps).map(Number).sort((a, b) => b - a);
-        const fmt = (v) => "~" + Math.round(v).toLocaleString("fr-FR") + " €";
-        orEl.hidden = false;
-        orEl.innerHTML =
-          `<div class="or-head">💰 Gain potentiel estimé · ${cleanNom(data.nom)} ` +
-          `<span class="or-note">(rapports FDJ estimés, avant résultats)</span></div>` +
-          `<div class="or-grid">` +
-          ranks
-            .map((r) => {
-              const v = Number(raps[r]) || 0;
-              return (
-                `<div class="or-cell est"><span class="or-rank">${r}/${nm} bons</span>` +
-                `<span class="or-amt${v > 0 ? "" : " none"}">${v > 0 ? fmt(v) : "—"}</span></div>`
-              );
-            })
-            .join("") +
-          `</div>`;
       } else {
         orEl.hidden = true;
       }
