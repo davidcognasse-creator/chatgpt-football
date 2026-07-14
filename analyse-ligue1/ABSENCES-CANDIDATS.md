@@ -18,17 +18,23 @@ Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
 - **Kim Le Court** — _blessé_ · « 'It wasn't planned' - Kim Le Court-Pienaar back to full strength in Tour de Suisse breakaway after two-month injury layoff » (Cyclingnews)
 
 ## Start
+- **Declan Rice** — _blessé_ · « Declan Rice tells medics he can START World Cup semi as Argentina left in frenzy over Jude Bellingham shoulder injury » (The Sun)
+- **Jude Bellingham** — _blessé_ · « Declan Rice tells medics he can START World Cup semi as Argentina left in frenzy over Jude Bellingham shoulder injury » (The Sun)
+- **Jacob Misiorowski Injury** — _blessé_ · « Jacob Misiorowski Injury Update Provides Answers On Brewers' All » (Sports Illustrated)
+- **Update Provides Answers** — _blessé_ · « Jacob Misiorowski Injury Update Provides Answers On Brewers' All » (Sports Illustrated)
+- **On Brewers** — _blessé_ · « Jacob Misiorowski Injury Update Provides Answers On Brewers' All » (Sports Illustrated)
+- **Mike Burrows** — _blessé_ · « Mike Burrows has right elbow injury » (MLB News)
+- **Alimber Santa** — _blessé_ · « Mike Burrows has right elbow injury » (MLB News)
+- **Sugar Land** — _blessé_ · « Mike Burrows has right elbow injury » (MLB News)
+- **Projected Lines** — _blessé_ · « 27 Projected Lines & Pairings Without Bedard » (The Hockey Writers)
+- **Pairings Without Bedard** — _blessé_ · « 27 Projected Lines & Pairings Without Bedard » (The Hockey Writers)
+- **With Connor Bedard** — _blessé_ · « 27 Projected Lines & Pairings Without Bedard » (The Hockey Writers)
+- **Houston Rockets** — _blessé_ · « Fred VanVleet says he's on track for start of 2026 » (Sports Illustrated)
 - **Arizona Diamondbacks** — _blessé_ · « Arizona Diamondbacks place starter Zac Gallen on 15-day IL » (ESPN)
 - **Zac Gallen** — _blessé_ · « Arizona Diamondbacks place starter Zac Gallen on 15-day IL » (ESPN)
 - **Mitch Bratt** — _blessé_ · « Arizona Diamondbacks place starter Zac Gallen on 15-day IL » (ESPN)
 - **Los Angeles Dodgers** — _blessé_ · « Diamondbacks place RHP Zac Gallen on 15-day IL with elbow inflammation » (The Associated Press)
 - **Houston Astros** — _blessé_ · « Rangers give Jacob deGrom All-Star break to shake off lingering injury » (The Dallas Morning News)
-- **Manuel Ugarte** — _blessé_ · « Manchester United midfielder officially signs sixth contract with club » (Yardbarker)
-- **Kobbie Mainoo** — _blessé_ · « Manchester United midfielder officially signs sixth contract with club » (Yardbarker)
-- **Cam Schlittler** — _incertain_ · « No room for doubt: Yankees’ Cam Schlittler deserves to start All-Star Game: Klapisch » (NJ.com)
-- **Return Ends** — _blessé_ · « Conor McGregor's Shocking UFC Return Ends in Injury » (Devdiscourse)
-- **Max Holloway** — _blessé_ · « Conor McGregor's Shocking UFC Return Ends in Injury » (Devdiscourse)
-- **Las Vegas** — _blessé_ · « Conor McGregor's Shocking UFC Return Ends in Injury » (Devdiscourse)
 
 ---
 
@@ -89,6 +95,54 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
     ],
     "Start": [
       {
+        "joueur": "Declan Rice",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jude Bellingham",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jacob Misiorowski Injury",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Update Provides Answers",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "On Brewers",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Mike Burrows",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Alimber Santa",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Sugar Land",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Projected Lines",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Pairings Without Bedard",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "With Connor Bedard",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Houston Rockets",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Arizona Diamondbacks",
         "raison": "blessé"
       },
@@ -106,30 +160,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       },
       {
         "joueur": "Houston Astros",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Manuel Ugarte",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kobbie Mainoo",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Cam Schlittler",
-        "raison": "incertain"
-      },
-      {
-        "joueur": "Return Ends",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Max Holloway",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Las Vegas",
         "raison": "blessé"
       }
     ]
