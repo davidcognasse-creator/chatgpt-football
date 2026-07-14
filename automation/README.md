@@ -36,22 +36,28 @@ powershell -ExecutionPolicy Bypass -File automation\loto-auto.ps1
 ```
 
 ## Planifier 2×/jour (Planificateur de tâches Windows)
-Deux tâches (ex. 9h00 et 19h00). Dans PowerShell **en admin** :
+Le plus simple et fiable : lance le script fourni (crée/écrase les 2 tâches avec un
+déclenchement robuste — rattrapage d'un run manqué, batterie, réveil) :
 ```powershell
-$ps  = "powershell -ExecutionPolicy Bypass -File `"$HOME\Documents\chatgpt-football\automation\loto-auto.ps1`""
-schtasks /create /tn "LotoFoot AM" /tr $ps /sc daily /st 09:00 /f
-schtasks /create /tn "LotoFoot PM" /tr $ps /sc daily /st 19:00 /f
+powershell -ExecutionPolicy Bypass -File automation\setup-tasks.ps1
 ```
+Il crée `LotoFoot AM` (07:00) et `LotoFoot PM` (17:00) avec :
+- **StartWhenAvailable** : si le PC était éteint/en veille à l'heure prévue, le run se
+  fait **dès que le PC redevient dispo** (rallumé/réveillé) — plus de run perdu.
+- **Batterie autorisée** (portable) et **WakeToRun** (réveille depuis la veille).
+
+Modifier les horaires : édite `setup-tasks.ps1` (lignes `Set-LotoTask`) et relance-le.
 Vérifier / lancer / supprimer :
 ```powershell
-schtasks /query /tn "LotoFoot AM"
+Get-ScheduledTask -TaskName "LotoFoot AM","LotoFoot PM" | Select TaskName,State
 schtasks /run   /tn "LotoFoot AM"
 schtasks /delete /tn "LotoFoot AM" /f
 ```
 
 ## Notes
-- Le PC doit être **allumé et la session ouverte** aux heures planifiées (sinon la
-  tâche est repoussée au prochain réveil selon tes réglages).
+- Grâce à **StartWhenAvailable**, un run manqué (PC éteint) est **rattrapé au réveil**.
+  Un PC totalement **éteint** ne peut pas se réveiller seul (WakeToRun ne marche que
+  depuis la veille) — mais le rattrapage se déclenche dès que tu rallumes.
 - Chaque exécution consomme des **crédits API** Claude.
 - L'agent est **prudent** : s'il n'y a rien de neuf, il ne pousse rien ; en cas de
   doute (grille illisible/ambiguë), il ne modifie rien et le note dans le log.
