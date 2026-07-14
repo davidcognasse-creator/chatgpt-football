@@ -28,6 +28,13 @@ DRAW_MIN = float(os.environ.get("DRAW_MIN", "0.72"))     # dpi mini pour couvrir
 DRAW_BONUS = float(os.environ.get("DRAW_BONUS", "0.10"))  # bonus de valeur (log) × dpi si N couvert
 DRAW_MAXCOST = float(os.environ.get("DRAW_MAXCOST", "0.06"))  # coût de coverage max pour couvrir N au lieu du 2e favori
 
+# Remplir le budget : la grille utilise TOUT le plafond choisi (12/24/48 €) au lieu
+# de s'arrêter dès que l'EV net baisse. Le placement reste guidé par l'EV (on ajoute
+# toujours le meilleur upgrade d'abord) → coût = budget affiché SANS dégrader la
+# qualité (mêmes bons qu'en EV-optimal sur le backtest). FILL_BUDGET=0 pour revenir
+# à l'arrêt EV-optimal (coût potentiellement < plafond).
+FILL_BUDGET = os.environ.get("FILL_BUDGET", "1") not in ("0", "false", "False")
+
 
 def draw_propensity(p):
     """Indice 0..~1.3 : élevé quand le match est ÉQUILIBRÉ (P(1)≈P(2)) et que le
@@ -213,7 +220,10 @@ def optimize_ev(matchs, maxcombos, rapports):
             k[i] = nk
             e = net(k, nc)
             k[i] -= 1
-            if e > cur_net + 1e-9 and (best is None or e > best[0]):
+            # FILL_BUDGET : on continue à remplir même si l'EV net baisse (coût =
+            # budget). Sinon on ne garde que les upgrades qui augmentent l'EV net.
+            gate = True if FILL_BUDGET else (e > cur_net + 1e-9)
+            if gate and (best is None or e > best[0]):
                 best = (e, i, nk, nc)
         if not best:
             break

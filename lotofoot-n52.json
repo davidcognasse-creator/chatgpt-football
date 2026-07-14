@@ -376,12 +376,12 @@
   "grids": [
     {
       "budget": 12,
-      "combos": 8,
-      "cost": 8.0,
+      "combos": 12,
+      "cost": 12.0,
       "repartition": {
         "simples": 12,
-        "doubles": 3,
-        "triples": 0
+        "doubles": 2,
+        "triples": 1
       },
       "stats": {
         "p15": 0.0008499233659725963,
@@ -421,10 +421,11 @@
         },
         {
           "i": 4,
-          "type": "double",
+          "type": "triple",
           "picks": [
             "1",
-            "N"
+            "N",
+            "2"
           ],
           "coverage": 1.0
         },
@@ -522,12 +523,12 @@
     },
     {
       "budget": 24,
-      "combos": 16,
-      "cost": 16.0,
+      "combos": 24,
+      "cost": 24.0,
       "repartition": {
         "simples": 11,
-        "doubles": 4,
-        "triples": 0
+        "doubles": 3,
+        "triples": 1
       },
       "stats": {
         "p15": 0.0016998467319451927,
@@ -567,10 +568,11 @@
         },
         {
           "i": 4,
-          "type": "double",
+          "type": "triple",
           "picks": [
             "1",
-            "N"
+            "N",
+            "2"
           ],
           "coverage": 1.0
         },
@@ -669,12 +671,12 @@
     },
     {
       "budget": 48,
-      "combos": 32,
-      "cost": 32.0,
+      "combos": 48,
+      "cost": 48.0,
       "repartition": {
         "simples": 10,
-        "doubles": 5,
-        "triples": 0
+        "doubles": 4,
+        "triples": 1
       },
       "stats": {
         "p15": 0.0033996934638903854,
@@ -714,10 +716,11 @@
         },
         {
           "i": 4,
-          "type": "double",
+          "type": "triple",
           "picks": [
             "1",
-            "N"
+            "N",
+            "2"
           ],
           "coverage": 1.0
         },
