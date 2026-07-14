@@ -87,6 +87,35 @@
           : `${noteBase} — résultats connus ; <b>gains officiels non publiés</b> (aucun gain affiché).`;
     }
 
+    // Rapports officiels FDJ (montants annoncés par rang) — visible dès qu'une
+    // grille est réglée avec ses rapports, indépendamment de la grille du modèle.
+    const orEl = document.getElementById("officialReports");
+    if (orEl) {
+      if (official) {
+        const raps = data.bilan.rapports;
+        const nm = data.matchs.length;
+        const ranks = Object.keys(raps).map(Number).sort((a, b) => b - a);
+        const fmt = (v) =>
+          v.toLocaleString("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + " €";
+        orEl.hidden = false;
+        orEl.innerHTML =
+          `<div class="or-head">🏦 Rapports officiels FDJ · ${cleanNom(data.nom)}</div>` +
+          `<div class="or-grid">` +
+          ranks
+            .map((r) => {
+              const v = Number(raps[r]) || 0;
+              return (
+                `<div class="or-cell"><span class="or-rank">${r}/${nm} bons</span>` +
+                `<span class="or-amt${v > 0 ? "" : " none"}">${v > 0 ? fmt(v) : "personne"}</span></div>`
+              );
+            })
+            .join("") +
+          `</div>`;
+      } else {
+        orEl.hidden = true;
+      }
+    }
+
     // Tableau marché vs public
     const mt = document.getElementById("matchTable");
     let rows =

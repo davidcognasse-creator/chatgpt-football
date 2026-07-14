@@ -99,6 +99,18 @@
     table.loto td.hit { color:#6ee7b7; }
     table.loto td.miss { color:#fca5a5; }
     table.loto td.hit .rsc, table.loto td.miss .rsc { color:var(--muted); font-weight:600; font-size:.82em; }
+    .official-reports { margin:4px 0 6px; padding:12px 14px; border:1px solid var(--card-border);
+      border-radius:12px; background:rgba(255,255,255,.03); }
+    .official-reports[hidden] { display:none; }
+    .official-reports .or-head { font-family:'Sora',sans-serif; font-weight:700; font-size:.9rem;
+      color:var(--text); margin-bottom:10px; }
+    .official-reports .or-grid { display:flex; flex-wrap:wrap; gap:8px; }
+    .official-reports .or-cell { display:flex; flex-direction:column; gap:2px; min-width:88px;
+      padding:8px 12px; border-radius:10px; background:rgba(255,255,255,.04);
+      border:1px solid var(--card-border); }
+    .official-reports .or-rank { font-size:.74rem; color:var(--muted); letter-spacing:.02em; }
+    .official-reports .or-amt { font-family:'Sora',sans-serif; font-weight:800; color:#6ee7b7; font-size:.98rem; }
+    .official-reports .or-amt.none { color:var(--muted); font-weight:600; }
     @media print {
       .bg-grid, .bg-glow, .site-header, .site-footer, .pdf-btn, .budget-tabs { display:none !important; }
       body { background:#fff !important; color:#000 !important; }
@@ -178,6 +190,7 @@
         <p class="sub" id="gridSub">Choisis ton budget. On place les doubles/triples sur les matchs les plus incertains pour maximiser la probabilité de toucher un rang (≥ 13 bons).</p>
         <div class="budget-tabs" id="budgetTabs"></div>
         <div class="grid-result" id="gridResult" hidden></div>
+        <div class="official-reports" id="officialReports" hidden></div>
         <div class="grid-stats" id="gridStats"></div>
         <div style="overflow-x:auto"><table class="loto" id="gridTable"></table></div>
         <p style="margin:18px 0 2px;text-align:center">
