@@ -20,6 +20,14 @@ import glob
 import json
 import math
 import os
+import sys
+
+# Console Windows (cp1252) : force l'UTF-8 pour ne pas planter sur les emojis des
+# messages (say/print). No-op sous Linux (déjà UTF-8) et si stdout ne le supporte pas.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 HERE = os.path.dirname(__file__)
 ROOT = os.path.join(HERE, "..")
