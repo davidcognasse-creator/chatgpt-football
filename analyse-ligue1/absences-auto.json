@@ -1,6 +1,24 @@
 {
   "note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
   "equipes": {
+    "France": [
+      {
+        "joueur": "Kylian Mbappe",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Les Bleus",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Didier Deschamps",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Sports Mole",
+        "raison": "blessé"
+      }
+    ],
     "Argentine": [
       {
         "joueur": "Morocco Suffer Major",
@@ -32,90 +50,6 @@
       },
       {
         "joueur": "Lionel Messi",
-        "raison": "blessé"
-      }
-    ],
-    "Suisse": [
-      {
-        "joueur": "Urska Zigart",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "France Femmes",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kim Le Court",
-        "raison": "blessé"
-      }
-    ],
-    "Start": [
-      {
-        "joueur": "Declan Rice",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Jude Bellingham",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Jacob Misiorowski Injury",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Update Provides Answers",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "On Brewers",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Mike Burrows",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Alimber Santa",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Sugar Land",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Projected Lines",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Pairings Without Bedard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "With Connor Bedard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Houston Rockets",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Arizona Diamondbacks",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Zac Gallen",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Mitch Bratt",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Los Angeles Dodgers",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Houston Astros",
         "raison": "blessé"
       }
     ]

@@ -1,6 +1,12 @@
 # Sonde absences — candidats à VALIDER (presse GNews)
 
-Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
+Grille : **Loto Foot 15 N°54** · 30 équipes interrogées.
+
+## France
+- **Kylian Mbappe** — _blessé_ · « Experts release updated France-Spain World Cup prediction following recent injury updates » (cleveland.com)
+- **Les Bleus** — _blessé_ · « France star Kylian Mbappe ’100%’ entering Spain match » (CP24 Toronto)
+- **Didier Deschamps** — _blessé_ · « France star Kylian Mbappe '100%' entering Spain match » (Yardbarker)
+- **Sports Mole** — _blessé_ · « Team News: France vs. Spain injury, suspension list, predicted XIs » (Sports Mole)
 
 ## Argentine
 - **Morocco Suffer Major** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
@@ -12,30 +18,6 @@ Grille : **Loto Foot 15 N°53** · 30 équipes interrogées.
 - **Lamine Yamal** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
 - **Lionel Messi** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
 
-## Suisse
-- **Urska Zigart** — _blessé_ · « Urška Žigart handed positive injury update after jaw-fracturing Tour de Suisse crash » (Cyclingnews)
-- **France Femmes** — _blessé_ · « Overcoming injury, Reusser’s third Tour de Suisse Women victory leads to renewed confidence ahead of Tour de France Femmes » (Cyclingnews)
-- **Kim Le Court** — _blessé_ · « 'It wasn't planned' - Kim Le Court-Pienaar back to full strength in Tour de Suisse breakaway after two-month injury layoff » (Cyclingnews)
-
-## Start
-- **Declan Rice** — _blessé_ · « Declan Rice tells medics he can START World Cup semi as Argentina left in frenzy over Jude Bellingham shoulder injury » (The Sun)
-- **Jude Bellingham** — _blessé_ · « Declan Rice tells medics he can START World Cup semi as Argentina left in frenzy over Jude Bellingham shoulder injury » (The Sun)
-- **Jacob Misiorowski Injury** — _blessé_ · « Jacob Misiorowski Injury Update Provides Answers On Brewers' All » (Sports Illustrated)
-- **Update Provides Answers** — _blessé_ · « Jacob Misiorowski Injury Update Provides Answers On Brewers' All » (Sports Illustrated)
-- **On Brewers** — _blessé_ · « Jacob Misiorowski Injury Update Provides Answers On Brewers' All » (Sports Illustrated)
-- **Mike Burrows** — _blessé_ · « Mike Burrows has right elbow injury » (MLB News)
-- **Alimber Santa** — _blessé_ · « Mike Burrows has right elbow injury » (MLB News)
-- **Sugar Land** — _blessé_ · « Mike Burrows has right elbow injury » (MLB News)
-- **Projected Lines** — _blessé_ · « 27 Projected Lines & Pairings Without Bedard » (The Hockey Writers)
-- **Pairings Without Bedard** — _blessé_ · « 27 Projected Lines & Pairings Without Bedard » (The Hockey Writers)
-- **With Connor Bedard** — _blessé_ · « 27 Projected Lines & Pairings Without Bedard » (The Hockey Writers)
-- **Houston Rockets** — _blessé_ · « Fred VanVleet says he's on track for start of 2026 » (Sports Illustrated)
-- **Arizona Diamondbacks** — _blessé_ · « Arizona Diamondbacks place starter Zac Gallen on 15-day IL » (ESPN)
-- **Zac Gallen** — _blessé_ · « Arizona Diamondbacks place starter Zac Gallen on 15-day IL » (ESPN)
-- **Mitch Bratt** — _blessé_ · « Arizona Diamondbacks place starter Zac Gallen on 15-day IL » (ESPN)
-- **Los Angeles Dodgers** — _blessé_ · « Diamondbacks place RHP Zac Gallen on 15-day IL with elbow inflammation » (The Associated Press)
-- **Houston Astros** — _blessé_ · « Rangers give Jacob deGrom All-Star break to shake off lingering injury » (The Dallas Morning News)
-
 ---
 
 ## 📋 Absents détectés → `absences-auto.json` (lu automatiquement par le moteur)
@@ -45,6 +27,24 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
 ```json
 {
   "equipes": {
+    "France": [
+      {
+        "joueur": "Kylian Mbappe",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Les Bleus",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Didier Deschamps",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Sports Mole",
+        "raison": "blessé"
+      }
+    ],
     "Argentine": [
       {
         "joueur": "Morocco Suffer Major",
@@ -76,90 +76,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       },
       {
         "joueur": "Lionel Messi",
-        "raison": "blessé"
-      }
-    ],
-    "Suisse": [
-      {
-        "joueur": "Urska Zigart",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "France Femmes",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kim Le Court",
-        "raison": "blessé"
-      }
-    ],
-    "Start": [
-      {
-        "joueur": "Declan Rice",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Jude Bellingham",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Jacob Misiorowski Injury",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Update Provides Answers",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "On Brewers",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Mike Burrows",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Alimber Santa",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Sugar Land",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Projected Lines",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Pairings Without Bedard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "With Connor Bedard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Houston Rockets",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Arizona Diamondbacks",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Zac Gallen",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Mitch Bratt",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Los Angeles Dodgers",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Houston Astros",
         "raison": "blessé"
       }
     ]
