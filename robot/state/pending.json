@@ -26,8 +26,8 @@
     },
     "sources": {
       "betting": {
-        "home": 41,
-        "draw": 29,
+        "home": 40,
+        "draw": 30,
         "away": 30
       },
       "form": {
@@ -46,9 +46,9 @@
         "away": 40
       },
       "social": {
-        "home": 36,
+        "home": 47,
         "draw": 26,
-        "away": 38
+        "away": 27
       }
     }
   },
@@ -67,9 +67,9 @@
     },
     "predicted": {
       "probs": {
-        "home": 39,
+        "home": 37,
         "draw": 30,
-        "away": 31
+        "away": 33
       },
       "score": {
         "home": 2,
@@ -95,9 +95,9 @@
         "away": 17
       },
       "social": {
-        "home": 45,
+        "home": 26,
         "draw": 26,
-        "away": 29
+        "away": 48
       }
     }
   },
