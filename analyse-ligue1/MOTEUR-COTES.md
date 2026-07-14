@@ -5,7 +5,7 @@ Grille : **Loto Foot 15 N°54** · 15 matchs · source **API-Football**
 | # | Match | Marché 1·N·2 | Foule 1·N·2 | Prono marché | Foule | Books | Écart |
 |---|---|---|---|---|---|---|---|
 | 1 | France–Espagne | 38/31/31 | 52/31/17 | **1** | 1 | 13 |  |
-| 2 | Levski Sofia–Borac Banja Luka | 61/25/14 | 85/10/5 | **1** | 1 | 13 |  |
+| 2 | Levski Sofia–Borac Banja Luka | 61/25/15 | 85/10/5 | **1** | 1 | 13 |  |
 | 3 | Gyor ETO FC–Vikingur Reykjavik | — | 56/21/23 | _non coté_ | 1 | — | — |
 | 4 | The New Saints–Sabah FK | 22/26/52 | 36/21/43 | **2** | 2 | 13 |  |
 | 5 | KF Drita–Kauno Zalgiris | 38/30/32 | 50/29/21 | **1** | 1 | 13 |  |

@@ -8,16 +8,30 @@ Grille : **Loto Foot 15 N°54** · 30 équipes interrogées.
 - **Didier Deschamps** — _blessé_ · « France star Kylian Mbappe '100%' entering Spain match » (Yardbarker)
 - **Sports Mole** — _blessé_ · « Team News: France vs. Spain injury, suspension list, predicted XIs » (Sports Mole)
 
-## Argentine
-- **Morocco Suffer Major** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
-- **Blow As Ismael** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
-- **Saibari Ruled Out** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
-- **Claudio Villamide** — _suspendu_ · « Argentine ex-navy commander convicted over 2017 sub disaster in which 44 sailors died » (The Straits Times)
-- **Tottenham Hotspur** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
-- **Cristian Romero** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
-- **Lamine Yamal** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
-- **Lionel Messi** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
-
+- ⚠️ The New Saints : HTTP Error 403: Forbidden
+- ⚠️ Sabah FK : HTTP Error 403: Forbidden
+- ⚠️ KF Drita : HTTP Error 403: Forbidden
+- ⚠️ Kauno Zalgiris : HTTP Error 403: Forbidden
+- ⚠️ Riga FC : HTTP Error 403: Forbidden
+- ⚠️ Ararat Armenia : HTTP Error 403: Forbidden
+- ⚠️ Shamrock : HTTP Error 403: Forbidden
+- ⚠️ Floriana FC : HTTP Error 403: Forbidden
+- ⚠️ FC Larne : HTTP Error 403: Forbidden
+- ⚠️ Tre Fiori FC : HTTP Error 403: Forbidden
+- ⚠️ Atert Bissen : HTTP Error 403: Forbidden
+- ⚠️ KI Klaksvik : HTTP Error 403: Forbidden
+- ⚠️ Sutjeska : HTTP Error 403: Forbidden
+- ⚠️ Kairat Almaty : HTTP Error 403: Forbidden
+- ⚠️ KS Egnatia : HTTP Error 403: Forbidden
+- ⚠️ CS Petrocub : HTTP Error 403: Forbidden
+- ⚠️ Universitatea Craiova : HTTP Error 403: Forbidden
+- ⚠️ Maxline Rogachev : HTTP Error 403: Forbidden
+- ⚠️ Inter Escaldes : HTTP Error 403: Forbidden
+- ⚠️ Lincoln FC : HTTP Error 403: Forbidden
+- ⚠️ Iberia 1999 : HTTP Error 403: Forbidden
+- ⚠️ FC Flora : HTTP Error 403: Forbidden
+- ⚠️ Angleterre : HTTP Error 403: Forbidden
+- ⚠️ Argentine : HTTP Error 403: Forbidden
 ---
 
 ## 📋 Absents détectés → `absences-auto.json` (lu automatiquement par le moteur)
@@ -42,40 +56,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       },
       {
         "joueur": "Sports Mole",
-        "raison": "blessé"
-      }
-    ],
-    "Argentine": [
-      {
-        "joueur": "Morocco Suffer Major",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Blow As Ismael",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Saibari Ruled Out",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Claudio Villamide",
-        "raison": "suspendu"
-      },
-      {
-        "joueur": "Tottenham Hotspur",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Cristian Romero",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lamine Yamal",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lionel Messi",
         "raison": "blessé"
       }
     ]

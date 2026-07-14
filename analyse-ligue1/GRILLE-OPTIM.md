@@ -6,10 +6,10 @@ Probas : **cotes (13 books)** · 15 matchs · mise unitaire 1 € · budgets 12,
 Rapports FDJ ESTIMÉS (modèle rareté-public, calibré sur du réel) :
 | Rang | Rapport estimé | P(public l'atteint) |
 |---|---|---|
-| 15/15 | ~85 436 € | 0.008 % |
-| 14/15 | ~3 004 € | 0.120 % |
-| 13/15 | ~232 € | 0.775 % |
-| 12/15 | ~30 € | 3.026 % |
+| 15/15 | ~85 721 € | 0.008 % |
+| 14/15 | ~3 013 € | 0.119 % |
+| 13/15 | ~233 € | 0.773 % |
+| 12/15 | ~30 € | 3.020 % |
 
 ## 🎯 Grille ≤ 12 €
 Combinaisons : **12** → coût **12 €** (≤ 12 €) · _plafond atteint_
@@ -83,7 +83,7 @@ Combinaisons : **48** → coût **48 €** (≤ 48 €) · _plafond atteint_
 | 15 | Angleterre–Argentine | TRIPLE | 1 / N / 2 | 100% |
 
 Répartition : 10 simples · **4 doubles** · **1 triples**
-- **P(profit)** (gain ≥ coût) : **9.3 %** → rembourse dès **13/15** (rapport ~232 €)
+- **P(profit)** (gain ≥ coût) : **9.2 %** → rembourse dès **13/15** (rapport ~233 €)
 - P(atteindre un rang, ≥ 12/15) : 24.2 % · espérance de gain (si modèle calibré) : ~300 €
 
 ---
