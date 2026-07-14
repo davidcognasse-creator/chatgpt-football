@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-14T09:02:10.819Z",
+  "updatedAt": "2026-07-14T17:01:31.022Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -28,15 +28,15 @@
       },
       "probs": {
         "home": 38,
-        "draw": 26,
-        "away": 36
+        "draw": 27,
+        "away": 35
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
-      "confidence": 59,
-      "analysis": "France part favori de justesse avec 38% de chances estimées. Les cotes confirment (40%). La forme récente et le public vont dans le même sens. À contre-courant du pronostic IA, l'historique des confrontations et la presse penchent plutôt pour Spain.",
+      "confidence": 58,
+      "analysis": "France part favori de justesse avec 38% de chances estimées. Les cotes confirment (40%). La forme récente et le public vont dans le même sens. À contre-courant du pronostic IA, l'historique des confrontations penche plutôt pour Spain.",
       "scorers": {
         "home": [
           {
@@ -105,24 +105,20 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": {
-            "home": 34,
-            "draw": 26,
-            "away": 40
-          },
-          "favored": "away",
-          "detail": "7757 articles"
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 47,
+            "home": 46,
             "draw": 26,
-            "away": 27
+            "away": 28
           },
           "favored": "home",
-          "detail": "X · 63157/37253 mentions"
+          "detail": "X · 64789/39424 mentions"
         }
       }
     },
@@ -143,16 +139,16 @@
         "code": "ARG"
       },
       "probs": {
-        "home": 37,
-        "draw": 30,
-        "away": 33
+        "home": 34,
+        "draw": 31,
+        "away": 35
       },
       "predictedScore": {
-        "home": 2,
-        "away": 1
+        "home": 1,
+        "away": 2
       },
       "confidence": 58,
-      "analysis": "England part favori de justesse avec 37% de chances estimées. Les cotes confirment (36%). La presse abonde aussi. À contre-courant du pronostic IA, la forme récente et le public penchent plutôt pour Argentina.",
+      "analysis": "Argentina part favori de justesse avec 35% de chances estimées. Les cotes, elles, penchent pour England (36%). La forme récente et le public vont dans le même sens.",
       "scorers": {
         "home": [
           {
@@ -217,24 +213,20 @@
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": {
-            "home": 57,
-            "draw": 26,
-            "away": 17
-          },
-          "favored": "home",
-          "detail": "16150 articles"
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 26,
+            "home": 28,
             "draw": 26,
-            "away": 48
+            "away": 46
           },
           "favored": "away",
-          "detail": "X · 69501/130977 mentions"
+          "detail": "X · 68000/114529 mentions"
         }
       }
     }
