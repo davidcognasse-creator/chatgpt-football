@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-15T17:03:38.657Z",
+  "updatedAt": "2026-07-15T21:17:39.291Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -12,124 +12,6 @@ window.WC_DATA = {
     "social": 0.1
   },
   "matches": [
-    {
-      "id": "1585131",
-      "stage": "À venir",
-      "projected": false,
-      "datetime": "2026-07-14T19:00:00+00:00",
-      "venue": "",
-      "home": {
-        "name": "France",
-        "flag": "🇫🇷",
-        "code": "FRA"
-      },
-      "away": {
-        "name": "Spain",
-        "flag": "🇪🇸",
-        "code": "ESP"
-      },
-      "probs": {
-        "home": 38,
-        "draw": 27,
-        "away": 35
-      },
-      "predictedScore": {
-        "home": 2,
-        "away": 1
-      },
-      "confidence": 58,
-      "analysis": "France part favori de justesse avec 38% de chances estimées. Les cotes confirment (40%). La forme récente et le public vont dans le même sens. À contre-courant du pronostic IA, l'historique des confrontations penche plutôt pour Spain.",
-      "scorers": {
-        "home": [
-          {
-            "name": "Kylian Mbappé",
-            "prob": 16
-          },
-          {
-            "name": "Michael Olise",
-            "prob": 12
-          },
-          {
-            "name": "Ousmane Dembélé",
-            "prob": 9
-          }
-        ],
-        "away": [
-          {
-            "name": "Lamine Yamal",
-            "prob": 20
-          },
-          {
-            "name": "Nico Williams",
-            "prob": 11
-          },
-          {
-            "name": "Álex Baena",
-            "prob": 7
-          }
-        ],
-        "estimated": true
-      },
-      "sources": {
-        "betting": {
-          "label": "Paris",
-          "weight": 0.55,
-          "probs": {
-            "home": 40,
-            "draw": 30,
-            "away": 30
-          },
-          "favored": "home",
-          "detail": "13 bookmakers"
-        },
-        "form": {
-          "label": "Forme",
-          "weight": 0.13,
-          "probs": {
-            "home": 37,
-            "draw": 26,
-            "away": 37
-          },
-          "favored": "home",
-          "detail": "VVVVV vs VVVVV"
-        },
-        "h2h": {
-          "label": "Face-à-face",
-          "weight": 0.1,
-          "probs": {
-            "home": 24,
-            "draw": 10,
-            "away": 66
-          },
-          "favored": "away",
-          "detail": "1V 0N 4D (caché)"
-        },
-        "press": {
-          "label": "Presse",
-          "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
-        },
-        "social": {
-          "label": "Public",
-          "weight": 0.1,
-          "probs": {
-            "home": 46,
-            "draw": 26,
-            "away": 28
-          },
-          "favored": "home",
-          "detail": "X · 64789/39424 mentions"
-        }
-      },
-      "status": "finished",
-      "result": {
-        "home": 0,
-        "away": 2,
-        "outcome": "away"
-      }
-    },
     {
       "id": "1586077",
       "stage": "À venir",
@@ -240,6 +122,12 @@ window.WC_DATA = {
           "favored": "away",
           "detail": "X · 80914/81266 mentions"
         }
+      },
+      "status": "finished",
+      "result": {
+        "home": 1,
+        "away": 2,
+        "outcome": "away"
       }
     }
   ]
