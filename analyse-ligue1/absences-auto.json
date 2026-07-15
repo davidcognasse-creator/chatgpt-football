@@ -3,6 +3,14 @@
   "equipes": {
     "France": [
       {
+        "joueur": "Lamine Yamal",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Pedro Porro",
+        "raison": "blessé"
+      },
+      {
         "joueur": "William Saliba",
         "raison": "blessé"
       },

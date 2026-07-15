@@ -3,7 +3,9 @@
 Grille : **Loto Foot 15 N°54** · 30 équipes interrogées.
 
 ## France
-- **William Saliba** — _blessé_ · « Surgery on the cards? Concern for Arsenal as William Saliba forced out of France’s World Cup semi-final clash with Spain after struggling with long-standing injury » (Yardbarker)
+- **Lamine Yamal** — _blessé_ · « Spain suffer double injury scare ahead of potential England World Cup final » (Metro.co.uk)
+- **Pedro Porro** — _blessé_ · « Spain suffer double injury scare ahead of potential England World Cup final » (Metro.co.uk)
+- **William Saliba** — _blessé_ · « William Saliba injury latest as Arsenal star is forced off in France World Cup defeat to Spain » (Metro.co.uk)
 - **Contact Injury** — _blessé_ · « France Lose Star to Non-Contact Injury vs Spain at 2026 FIFA World Cup » (Newsweek)
 - **Peerless Pogacar** — _blessé_ · « Peerless Pogačar drains tension out of the Tour de France as Jonas Vingegaard's losing battle brings podium scramble into focus - GC analysis » (Cyclingnews)
 - **Jonas Vingegaard** — _blessé_ · « Peerless Pogačar drains tension out of the Tour de France as Jonas Vingegaard's losing battle brings podium scramble into focus - GC analysis » (Cyclingnews)
@@ -32,6 +34,14 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
 {
   "equipes": {
     "France": [
+      {
+        "joueur": "Lamine Yamal",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Pedro Porro",
+        "raison": "blessé"
+      },
       {
         "joueur": "William Saliba",
         "raison": "blessé"
