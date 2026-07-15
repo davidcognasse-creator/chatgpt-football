@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-14T21:17:42.516Z",
+  "updatedAt": "2026-07-15T09:07:29.350Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -135,7 +135,7 @@ window.WC_DATA = {
       "stage": "À venir",
       "projected": false,
       "datetime": "2026-07-15T19:00:00+00:00",
-      "venue": "",
+      "venue": "Mercedes-Benz Stadium",
       "home": {
         "name": "England",
         "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
@@ -147,16 +147,16 @@ window.WC_DATA = {
         "code": "ARG"
       },
       "probs": {
-        "home": 34,
-        "draw": 31,
-        "away": 35
+        "home": 38,
+        "draw": 30,
+        "away": 32
       },
       "predictedScore": {
-        "home": 1,
-        "away": 2
+        "home": 2,
+        "away": 1
       },
-      "confidence": 58,
-      "analysis": "Argentina part favori de justesse avec 35% de chances estimées. Les cotes, elles, penchent pour England (36%). La forme récente et le public vont dans le même sens.",
+      "confidence": 59,
+      "analysis": "England part favori de justesse avec 38% de chances estimées. Les cotes confirment (35%). La presse abonde aussi. À contre-courant du pronostic IA, la forme récente et le public penchent plutôt pour Argentina.",
       "scorers": {
         "home": [
           {
@@ -193,8 +193,8 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 36,
-            "draw": 32,
+            "home": 35,
+            "draw": 33,
             "away": 32
           },
           "favored": "home",
@@ -221,20 +221,24 @@ window.WC_DATA = {
         "press": {
           "label": "Presse",
           "weight": 0.12,
-          "probs": null,
-          "favored": null,
-          "detail": "indisponible"
+          "probs": {
+            "home": 57,
+            "draw": 26,
+            "away": 17
+          },
+          "favored": "home",
+          "detail": "16309 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 28,
+            "home": 36,
             "draw": 26,
-            "away": 46
+            "away": 38
           },
           "favored": "away",
-          "detail": "X · 68000/114529 mentions"
+          "detail": "X · 73560/79695 mentions"
         }
       }
     }
