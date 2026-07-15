@@ -1,4 +1,73 @@
 {
   "note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
-  "equipes": {}
+  "equipes": {
+    "France": [
+      {
+        "joueur": "William Saliba",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Contact Injury",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Peerless Pogacar",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jonas Vingegaard",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Le Lioran",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "William Saliba Injury",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Leaves Les Bleus",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Major Injury Early",
+        "raison": "blessé"
+      }
+    ],
+    "Argentine": [
+      {
+        "joueur": "Morocco Suffer Major",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Blow As Ismael",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Saibari Ruled Out",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Claudio Villamide",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Tottenham Hotspur",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Cristian Romero",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Lamine Yamal",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Lionel Messi",
+        "raison": "blessé"
+      }
+    ]
+  }
 }

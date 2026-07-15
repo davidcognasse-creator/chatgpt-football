@@ -2,36 +2,103 @@
 
 Grille : **Loto Foot 15 N°54** · 30 équipes interrogées.
 
-- ⚠️ France : HTTP Error 403: Forbidden
-- ⚠️ Espagne : HTTP Error 403: Forbidden
-- ⚠️ Levski Sofia : HTTP Error 403: Forbidden
-- ⚠️ Borac Banja Luka : HTTP Error 403: Forbidden
-- ⚠️ Gyor ETO FC : HTTP Error 403: Forbidden
-- ⚠️ Vikingur Reykjavik : HTTP Error 403: Forbidden
-- ⚠️ The New Saints : HTTP Error 403: Forbidden
-- ⚠️ Sabah FK : HTTP Error 403: Forbidden
-- ⚠️ KF Drita : HTTP Error 403: Forbidden
-- ⚠️ Kauno Zalgiris : HTTP Error 403: Forbidden
-- ⚠️ Riga FC : HTTP Error 403: Forbidden
-- ⚠️ Ararat Armenia : HTTP Error 403: Forbidden
-- ⚠️ Shamrock : HTTP Error 403: Forbidden
-- ⚠️ Floriana FC : HTTP Error 403: Forbidden
-- ⚠️ FC Larne : HTTP Error 403: Forbidden
-- ⚠️ Tre Fiori FC : HTTP Error 403: Forbidden
-- ⚠️ Atert Bissen : HTTP Error 403: Forbidden
-- ⚠️ KI Klaksvik : HTTP Error 403: Forbidden
-- ⚠️ Sutjeska : HTTP Error 403: Forbidden
-- ⚠️ Kairat Almaty : HTTP Error 403: Forbidden
-- ⚠️ KS Egnatia : HTTP Error 403: Forbidden
-- ⚠️ CS Petrocub : HTTP Error 403: Forbidden
-- ⚠️ Universitatea Craiova : HTTP Error 403: Forbidden
-- ⚠️ Maxline Rogachev : HTTP Error 403: Forbidden
-- ⚠️ Inter Escaldes : HTTP Error 403: Forbidden
-- ⚠️ Lincoln FC : HTTP Error 403: Forbidden
-- ⚠️ Iberia 1999 : HTTP Error 403: Forbidden
-- ⚠️ FC Flora : HTTP Error 403: Forbidden
-- ⚠️ Angleterre : HTTP Error 403: Forbidden
-- ⚠️ Argentine : HTTP Error 403: Forbidden
+## France
+- **William Saliba** — _blessé_ · « Surgery on the cards? Concern for Arsenal as William Saliba forced out of France’s World Cup semi-final clash with Spain after struggling with long-standing injury » (Yardbarker)
+- **Contact Injury** — _blessé_ · « France Lose Star to Non-Contact Injury vs Spain at 2026 FIFA World Cup » (Newsweek)
+- **Peerless Pogacar** — _blessé_ · « Peerless Pogačar drains tension out of the Tour de France as Jonas Vingegaard's losing battle brings podium scramble into focus - GC analysis » (Cyclingnews)
+- **Jonas Vingegaard** — _blessé_ · « Peerless Pogačar drains tension out of the Tour de France as Jonas Vingegaard's losing battle brings podium scramble into focus - GC analysis » (Cyclingnews)
+- **Le Lioran** — _blessé_ · « Peerless Pogačar drains tension out of the Tour de France as Jonas Vingegaard's losing battle brings podium scramble into focus - GC analysis » (Cyclingnews)
+- **William Saliba Injury** — _blessé_ · « France vs Spain: William Saliba Injury Leaves Les Bleus Facing Major World Cup Blow » (Heavy.)
+- **Leaves Les Bleus** — _blessé_ · « France vs Spain: William Saliba Injury Leaves Les Bleus Facing Major World Cup Blow » (Heavy.)
+- **Major Injury Early** — _blessé_ · « France Rocked by Major Injury Early in World Cup Semifinal vs. Spain » (Sports Illustrated)
+
+## Argentine
+- **Morocco Suffer Major** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
+- **Blow As Ismael** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
+- **Saibari Ruled Out** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
+- **Claudio Villamide** — _suspendu_ · « Argentine ex-navy commander convicted over 2017 sub disaster in which 44 sailors died » (The Straits Times)
+- **Tottenham Hotspur** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
+- **Cristian Romero** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
+- **Lamine Yamal** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
+- **Lionel Messi** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
+
 ---
 
-_Aucun absent détecté dans la presse — aucune correction appliquée._
+## 📋 Absents détectés → `absences-auto.json` (lu automatiquement par le moteur)
+
+Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt) par le moteur cotes ; un joueur sans note ⇒ 0 impact. Pour corriger/forcer, édite `absences.json` (prioritaire).
+
+```json
+{
+  "equipes": {
+    "France": [
+      {
+        "joueur": "William Saliba",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Contact Injury",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Peerless Pogacar",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jonas Vingegaard",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Le Lioran",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "William Saliba Injury",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Leaves Les Bleus",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Major Injury Early",
+        "raison": "blessé"
+      }
+    ],
+    "Argentine": [
+      {
+        "joueur": "Morocco Suffer Major",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Blow As Ismael",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Saibari Ruled Out",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Claudio Villamide",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Tottenham Hotspur",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Cristian Romero",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Lamine Yamal",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Lionel Messi",
+        "raison": "blessé"
+      }
+    ]
+  }
+}
+```
