@@ -3,6 +3,42 @@
   "equipes": {
     "France": [
       {
+        "joueur": "Edouard Mendy Left",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Pay Out",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "William Saliba",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Søren Wærenskjold",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Tadej Pogacar",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Australian Chris Harper",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "David Beckham",
+        "raison": "incertain"
+      },
+      {
+        "joueur": "What William Saliba",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Mikel Arteta",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Lamine Yamal",
         "raison": "blessé"
       },
@@ -11,35 +47,7 @@
         "raison": "blessé"
       },
       {
-        "joueur": "William Saliba",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Contact Injury",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Peerless Pogacar",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Jonas Vingegaard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Le Lioran",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "William Saliba Injury",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Leaves Les Bleus",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Major Injury Early",
+        "joueur": "Les Bleus",
         "raison": "blessé"
       }
     ],

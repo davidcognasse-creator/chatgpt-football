@@ -3,16 +3,18 @@
 Grille : **Loto Foot 15 N°54** · 30 équipes interrogées.
 
 ## France
+- **Edouard Mendy Left** — _blessé_ · « Senegal's Edouard Mendy Left to Pay Out of Pocket for World Cup Injury » (Yardbarker)
+- **Pay Out** — _blessé_ · « Senegal's Edouard Mendy Left to Pay Out of Pocket for World Cup Injury » (Yardbarker)
+- **William Saliba** — _blessé_ · « Saliba’s comment after being injured for France will have Arsenal worried » (Yardbarker)
+- **Søren Wærenskjold** — _blessé_ · « Waerenskjold wins fastest stage but Harper suffers exit » (PerthNow)
+- **Tadej Pogacar** — _blessé_ · « Waerenskjold wins fastest stage but Harper suffers exit » (PerthNow)
+- **Australian Chris Harper** — _blessé_ · « Waerenskjold wins fastest stage but Harper suffers exit » (PerthNow)
+- **David Beckham** — _incertain_ · « David Beckham cheers on Spain in semi-final clash with France » (Evening Standard)
+- **What William Saliba** — _blessé_ · « What William Saliba said before being subbed off early for France » (Sports Mole)
+- **Mikel Arteta** — _blessé_ · « What William Saliba said before being subbed off early for France » (Sports Mole)
 - **Lamine Yamal** — _blessé_ · « Spain suffer double injury scare ahead of potential England World Cup final » (Metro.co.uk)
 - **Pedro Porro** — _blessé_ · « Spain suffer double injury scare ahead of potential England World Cup final » (Metro.co.uk)
-- **William Saliba** — _blessé_ · « William Saliba injury latest as Arsenal star is forced off in France World Cup defeat to Spain » (Metro.co.uk)
-- **Contact Injury** — _blessé_ · « France Lose Star to Non-Contact Injury vs Spain at 2026 FIFA World Cup » (Newsweek)
-- **Peerless Pogacar** — _blessé_ · « Peerless Pogačar drains tension out of the Tour de France as Jonas Vingegaard's losing battle brings podium scramble into focus - GC analysis » (Cyclingnews)
-- **Jonas Vingegaard** — _blessé_ · « Peerless Pogačar drains tension out of the Tour de France as Jonas Vingegaard's losing battle brings podium scramble into focus - GC analysis » (Cyclingnews)
-- **Le Lioran** — _blessé_ · « Peerless Pogačar drains tension out of the Tour de France as Jonas Vingegaard's losing battle brings podium scramble into focus - GC analysis » (Cyclingnews)
-- **William Saliba Injury** — _blessé_ · « France vs Spain: William Saliba Injury Leaves Les Bleus Facing Major World Cup Blow » (Heavy.)
-- **Leaves Les Bleus** — _blessé_ · « France vs Spain: William Saliba Injury Leaves Les Bleus Facing Major World Cup Blow » (Heavy.)
-- **Major Injury Early** — _blessé_ · « France Rocked by Major Injury Early in World Cup Semifinal vs. Spain » (Sports Illustrated)
+- **Les Bleus** — _blessé_ · « William Saliba injury news: France, Arsenal defender subbed off in World Cup semifinal » (Nbc Sports)
 
 ## Argentine
 - **Morocco Suffer Major** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
@@ -35,6 +37,42 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
   "equipes": {
     "France": [
       {
+        "joueur": "Edouard Mendy Left",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Pay Out",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "William Saliba",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Søren Wærenskjold",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Tadej Pogacar",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Australian Chris Harper",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "David Beckham",
+        "raison": "incertain"
+      },
+      {
+        "joueur": "What William Saliba",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Mikel Arteta",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Lamine Yamal",
         "raison": "blessé"
       },
@@ -43,35 +81,7 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
         "raison": "blessé"
       },
       {
-        "joueur": "William Saliba",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Contact Injury",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Peerless Pogacar",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Jonas Vingegaard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Le Lioran",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "William Saliba Injury",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Leaves Les Bleus",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Major Injury Early",
+        "joueur": "Les Bleus",
         "raison": "blessé"
       }
     ],
