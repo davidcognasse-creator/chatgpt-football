@@ -3,15 +3,19 @@
   "equipes": {
     "France": [
       {
+        "joueur": "William Saliba",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Mikel Arteta",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Edouard Mendy Left",
         "raison": "blessé"
       },
       {
         "joueur": "Pay Out",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "William Saliba",
         "raison": "blessé"
       },
       {
@@ -35,19 +39,11 @@
         "raison": "blessé"
       },
       {
-        "joueur": "Mikel Arteta",
-        "raison": "blessé"
-      },
-      {
         "joueur": "Lamine Yamal",
         "raison": "blessé"
       },
       {
         "joueur": "Pedro Porro",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Les Bleus",
         "raison": "blessé"
       }
     ],

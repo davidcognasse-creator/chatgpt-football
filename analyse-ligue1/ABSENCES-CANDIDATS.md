@@ -3,18 +3,17 @@
 Grille : **Loto Foot 15 N°54** · 30 équipes interrogées.
 
 ## France
+- **William Saliba** — _blessé_ · « Arsenal news: How long William Saliba will miss 'revealed' after France injury creates Premier League worry for Mikel Arteta » (Sports Mole)
+- **Mikel Arteta** — _blessé_ · « Arsenal news: How long William Saliba will miss 'revealed' after France injury creates Premier League worry for Mikel Arteta » (Sports Mole)
 - **Edouard Mendy Left** — _blessé_ · « Senegal's Edouard Mendy Left to Pay Out of Pocket for World Cup Injury » (Yardbarker)
 - **Pay Out** — _blessé_ · « Senegal's Edouard Mendy Left to Pay Out of Pocket for World Cup Injury » (Yardbarker)
-- **William Saliba** — _blessé_ · « Saliba’s comment after being injured for France will have Arsenal worried » (Yardbarker)
 - **Søren Wærenskjold** — _blessé_ · « Waerenskjold wins fastest stage but Harper suffers exit » (PerthNow)
 - **Tadej Pogacar** — _blessé_ · « Waerenskjold wins fastest stage but Harper suffers exit » (PerthNow)
 - **Australian Chris Harper** — _blessé_ · « Waerenskjold wins fastest stage but Harper suffers exit » (PerthNow)
 - **David Beckham** — _incertain_ · « David Beckham cheers on Spain in semi-final clash with France » (Evening Standard)
 - **What William Saliba** — _blessé_ · « What William Saliba said before being subbed off early for France » (Sports Mole)
-- **Mikel Arteta** — _blessé_ · « What William Saliba said before being subbed off early for France » (Sports Mole)
 - **Lamine Yamal** — _blessé_ · « Spain suffer double injury scare ahead of potential England World Cup final » (Metro.co.uk)
 - **Pedro Porro** — _blessé_ · « Spain suffer double injury scare ahead of potential England World Cup final » (Metro.co.uk)
-- **Les Bleus** — _blessé_ · « William Saliba injury news: France, Arsenal defender subbed off in World Cup semifinal » (Nbc Sports)
 
 ## Argentine
 - **Morocco Suffer Major** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
@@ -37,15 +36,19 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
   "equipes": {
     "France": [
       {
+        "joueur": "William Saliba",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Mikel Arteta",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Edouard Mendy Left",
         "raison": "blessé"
       },
       {
         "joueur": "Pay Out",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "William Saliba",
         "raison": "blessé"
       },
       {
@@ -69,19 +72,11 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
         "raison": "blessé"
       },
       {
-        "joueur": "Mikel Arteta",
-        "raison": "blessé"
-      },
-      {
         "joueur": "Lamine Yamal",
         "raison": "blessé"
       },
       {
         "joueur": "Pedro Porro",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Les Bleus",
         "raison": "blessé"
       }
     ],
