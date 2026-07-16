@@ -1,6 +1,6 @@
 {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-16T09:10:01.761Z",
+  "updatedAt": "2026-07-16T17:01:38.215Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -126,6 +126,122 @@
         "home": 1,
         "away": 2,
         "outcome": "away"
+      }
+    },
+    {
+      "id": "1591865",
+      "stage": "À venir",
+      "projected": false,
+      "datetime": "2026-07-18T21:00:00+00:00",
+      "venue": "",
+      "home": {
+        "name": "France",
+        "flag": "🇫🇷",
+        "code": "FRA"
+      },
+      "away": {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "code": "ENG"
+      },
+      "probs": {
+        "home": 43,
+        "draw": 26,
+        "away": 31
+      },
+      "predictedScore": {
+        "home": 2,
+        "away": 1
+      },
+      "confidence": 60,
+      "analysis": "France part favori de justesse avec 43% de chances estimées. Les cotes confirment (50%). La forme récente et l'historique des confrontations vont dans le même sens. À contre-courant du pronostic IA, la presse et le public penchent plutôt pour England.",
+      "scorers": {
+        "home": [
+          {
+            "name": "Kylian Mbappé",
+            "prob": 16
+          },
+          {
+            "name": "Michael Olise",
+            "prob": 12
+          },
+          {
+            "name": "Ousmane Dembélé",
+            "prob": 9
+          }
+        ],
+        "away": [
+          {
+            "name": "Bukayo Saka",
+            "prob": 16
+          },
+          {
+            "name": "Jude Bellingham",
+            "prob": 8
+          },
+          {
+            "name": "Harry Kane",
+            "prob": 8
+          }
+        ],
+        "estimated": true
+      },
+      "sources": {
+        "betting": {
+          "label": "Paris",
+          "weight": 0.55,
+          "probs": {
+            "home": 50,
+            "draw": 25,
+            "away": 25
+          },
+          "favored": "home",
+          "detail": "13 bookmakers"
+        },
+        "form": {
+          "label": "Forme",
+          "weight": 0.13,
+          "probs": {
+            "home": 37,
+            "draw": 26,
+            "away": 37
+          },
+          "favored": "home",
+          "detail": "DVVVV vs DVVVV"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.1,
+          "probs": {
+            "home": 56,
+            "draw": 33,
+            "away": 10
+          },
+          "favored": "home",
+          "detail": "2V 1N 0D"
+        },
+        "press": {
+          "label": "Presse",
+          "weight": 0.12,
+          "probs": {
+            "home": 17,
+            "draw": 26,
+            "away": 57
+          },
+          "favored": "away",
+          "detail": "16461 articles"
+        },
+        "social": {
+          "label": "Public",
+          "weight": 0.1,
+          "probs": {
+            "home": 32,
+            "draw": 26,
+            "away": 42
+          },
+          "favored": "away",
+          "detail": "X · 98584/130665 mentions"
+        }
       }
     }
   ]

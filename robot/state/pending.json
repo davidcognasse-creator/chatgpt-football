@@ -1,4 +1,57 @@
 {
+  "1591865": {
+    "id": "1591865",
+    "datetime": "2026-07-18T21:00:00+00:00",
+    "home": {
+      "name": "France",
+      "flag": "🇫🇷",
+      "code": "FRA"
+    },
+    "away": {
+      "name": "England",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "code": "ENG"
+    },
+    "predicted": {
+      "probs": {
+        "home": 43,
+        "draw": 26,
+        "away": 31
+      },
+      "score": {
+        "home": 2,
+        "away": 1
+      },
+      "favored": "home"
+    },
+    "sources": {
+      "betting": {
+        "home": 50,
+        "draw": 25,
+        "away": 25
+      },
+      "form": {
+        "home": 37,
+        "draw": 26,
+        "away": 37
+      },
+      "h2h": {
+        "home": 56,
+        "draw": 33,
+        "away": 10
+      },
+      "press": {
+        "home": 17,
+        "draw": 26,
+        "away": 57
+      },
+      "social": {
+        "home": 32,
+        "draw": 26,
+        "away": 42
+      }
+    }
+  },
   "a4634eae056c18d705e3feffb347163f": {
     "id": "a4634eae056c18d705e3feffb347163f",
     "datetime": "2026-07-05T20:00:00Z",
