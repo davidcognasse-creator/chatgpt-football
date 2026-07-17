@@ -1,230 +1,230 @@
 {
-  "nom": "Loto Foot 15 N°54",
+  "nom": "Loto Foot 15 N°55",
   "matchs": [
     {
-      "dom": "France",
-      "ext": "Espagne",
-      "foule": {
-        "1": 52,
-        "N": 31,
-        "2": 17
-      },
-      "p": {
-        "1": 0.52,
-        "N": 0.31,
-        "2": 0.17
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Levski Sofia",
-      "ext": "Borac Banja Luka",
-      "foule": {
-        "1": 85,
-        "N": 10,
-        "2": 5
-      },
-      "p": {
-        "1": 0.85,
-        "N": 0.1,
-        "2": 0.05
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Gyor ETO FC",
-      "ext": "Vikingur Reykjavik",
-      "foule": {
-        "1": 56,
-        "N": 21,
-        "2": 23
-      },
-      "p": {
-        "1": 0.56,
-        "N": 0.21,
-        "2": 0.23
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "The New Saints",
-      "ext": "Sabah FK",
-      "foule": {
-        "1": 36,
-        "N": 21,
-        "2": 43
-      },
-      "p": {
-        "1": 0.36,
-        "N": 0.21,
-        "2": 0.43
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "KF Drita",
-      "ext": "Kauno Zalgiris",
-      "foule": {
-        "1": 50,
-        "N": 29,
-        "2": 21
-      },
-      "p": {
-        "1": 0.5,
-        "N": 0.29,
-        "2": 0.21
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Riga FC",
-      "ext": "Ararat Armenia",
-      "foule": {
-        "1": 61,
-        "N": 20,
-        "2": 19
-      },
-      "p": {
-        "1": 0.61,
-        "N": 0.2,
-        "2": 0.19
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Shamrock",
-      "ext": "Floriana FC",
-      "foule": {
-        "1": 83,
-        "N": 9,
-        "2": 8
-      },
-      "p": {
-        "1": 0.83,
-        "N": 0.09,
-        "2": 0.08
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "FC Larne",
-      "ext": "Tre Fiori FC",
-      "foule": {
-        "1": 90,
-        "N": 6,
-        "2": 4
-      },
-      "p": {
-        "1": 0.9,
-        "N": 0.06,
-        "2": 0.04
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Atert Bissen",
-      "ext": "KI Klaksvik",
-      "foule": {
-        "1": 45,
-        "N": 30,
-        "2": 25
-      },
-      "p": {
-        "1": 0.45,
-        "N": 0.3,
-        "2": 0.25
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Sutjeska",
-      "ext": "Kairat Almaty",
-      "foule": {
-        "1": 14,
-        "N": 18,
-        "2": 68
-      },
-      "p": {
-        "1": 0.14,
-        "N": 0.18,
-        "2": 0.68
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "KS Egnatia",
-      "ext": "CS Petrocub",
-      "foule": {
-        "1": 60,
-        "N": 24,
-        "2": 16
-      },
-      "p": {
-        "1": 0.6,
-        "N": 0.24,
-        "2": 0.16
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Universitatea Craiova",
-      "ext": "Maxline Rogachev",
-      "foule": {
-        "1": 91,
-        "N": 5,
-        "2": 4
-      },
-      "p": {
-        "1": 0.91,
-        "N": 0.05,
-        "2": 0.04
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Inter Escaldes",
-      "ext": "Lincoln FC",
-      "foule": {
-        "1": 46,
-        "N": 21,
-        "2": 33
-      },
-      "p": {
-        "1": 0.46,
-        "N": 0.21,
-        "2": 0.33
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Iberia 1999",
-      "ext": "FC Flora",
-      "foule": {
-        "1": 83,
-        "N": 10,
-        "2": 7
-      },
-      "p": {
-        "1": 0.83,
-        "N": 0.1,
-        "2": 0.07
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Angleterre",
+      "dom": "Espagne",
       "ext": "Argentine",
       "foule": {
-        "1": 39,
-        "N": 37,
-        "2": 24
+        "1": 38,
+        "N": 32,
+        "2": 30
       },
       "p": {
-        "1": 0.39,
-        "N": 0.37,
-        "2": 0.24
+        "1": 0.38212448656432557,
+        "N": 0.32201512748826877,
+        "2": 0.2958603859474056
+      },
+      "source": "cotes (12 books)"
+    },
+    {
+      "dom": "Pet.Ploiesti",
+      "ext": "DinamoBucarest",
+      "foule": {
+        "1": 18,
+        "N": 22,
+        "2": 60
+      },
+      "p": {
+        "1": 0.18,
+        "N": 0.22,
+        "2": 0.6
       },
       "source": "foule (non coté)"
+    },
+    {
+      "dom": "Universit Cluj",
+      "ext": "FC Constanta",
+      "foule": {
+        "1": 59,
+        "N": 21,
+        "2": 20
+      },
+      "p": {
+        "1": 0.59,
+        "N": 0.21,
+        "2": 0.2
+      },
+      "source": "foule (non coté)"
+    },
+    {
+      "dom": "Aluminij",
+      "ext": "NK Maribor",
+      "foule": {
+        "1": 24,
+        "N": 28,
+        "2": 48
+      },
+      "p": {
+        "1": 0.26376711574273726,
+        "N": 0.27400545489989836,
+        "2": 0.46222742935736433
+      },
+      "source": "cotes (11 books)"
+    },
+    {
+      "dom": "Halmstads",
+      "ext": "Häcken",
+      "foule": {
+        "1": 31,
+        "N": 25,
+        "2": 44
+      },
+      "p": {
+        "1": 0.31,
+        "N": 0.25,
+        "2": 0.44
+      },
+      "source": "foule (non coté)"
+    },
+    {
+      "dom": "Hammarby",
+      "ext": "Degerfors IF",
+      "foule": {
+        "1": 74,
+        "N": 15,
+        "2": 11
+      },
+      "p": {
+        "1": 0.4163377687777906,
+        "N": 0.4163377687777906,
+        "2": 0.16732446244441887
+      },
+      "source": "prédiction API"
+    },
+    {
+      "dom": "Elfsborg",
+      "ext": "IK Sirius FK",
+      "foule": {
+        "1": 49,
+        "N": 21,
+        "2": 30
+      },
+      "p": {
+        "1": 0.16732446244441887,
+        "N": 0.4163377687777906,
+        "2": 0.4163377687777906
+      },
+      "source": "prédiction API"
+    },
+    {
+      "dom": "FF Jaro",
+      "ext": "Inter Turku",
+      "foule": {
+        "1": 24,
+        "N": 25,
+        "2": 51
+      },
+      "p": {
+        "1": 0.24,
+        "N": 0.25,
+        "2": 0.51
+      },
+      "source": "foule (non coté)"
+    },
+    {
+      "dom": "FC Anyang",
+      "ext": "Gwangju FC",
+      "foule": {
+        "1": 48,
+        "N": 25,
+        "2": 27
+      },
+      "p": {
+        "1": 0.48,
+        "N": 0.25,
+        "2": 0.27
+      },
+      "source": "foule (non coté)"
+    },
+    {
+      "dom": "Bucheon FC",
+      "ext": "FC Seoul",
+      "foule": {
+        "1": 21,
+        "N": 27,
+        "2": 52
+      },
+      "p": {
+        "1": 0.16732446244441887,
+        "N": 0.4163377687777906,
+        "2": 0.4163377687777906
+      },
+      "source": "prédiction API"
+    },
+    {
+      "dom": "Queretaro FC",
+      "ext": "Club America",
+      "foule": {
+        "1": 37,
+        "N": 28,
+        "2": 35
+      },
+      "p": {
+        "1": 0.37,
+        "N": 0.28,
+        "2": 0.35
+      },
+      "source": "foule (non coté)"
+    },
+    {
+      "dom": "Monterrey",
+      "ext": "Santos Laguna",
+      "foule": {
+        "1": 74,
+        "N": 15,
+        "2": 11
+      },
+      "p": {
+        "1": 0.49999997969256177,
+        "N": 0.49999997969256177,
+        "2": 4.061487636873626e-08
+      },
+      "source": "prédiction API"
+    },
+    {
+      "dom": "UNAM Pumas",
+      "ext": "CF Pachuca",
+      "foule": {
+        "1": 55,
+        "N": 25,
+        "2": 20
+      },
+      "p": {
+        "1": 4.061487636873626e-08,
+        "N": 0.49999997969256177,
+        "2": 0.49999997969256177
+      },
+      "source": "prédiction API"
+    },
+    {
+      "dom": "LDU Quito",
+      "ext": "FC Leones",
+      "foule": {
+        "1": 64,
+        "N": 21,
+        "2": 15
+      },
+      "p": {
+        "1": 0.64,
+        "N": 0.21,
+        "2": 0.15
+      },
+      "source": "foule (non coté)"
+    },
+    {
+      "dom": "France",
+      "ext": "Angleterre",
+      "foule": {
+        "1": 42,
+        "N": 29,
+        "2": 29
+      },
+      "p": {
+        "1": 0.4318012835756029,
+        "N": 0.2818311796655379,
+        "2": 0.2863675367588592
+      },
+      "source": "cotes (13 books)"
     }
   ]
 }
