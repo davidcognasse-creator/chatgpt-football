@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-17T09:05:23.594Z",
+  "updatedAt": "2026-07-17T16:58:40.490Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -131,6 +131,93 @@ window.WC_DATA = {
       }
     },
     {
+      "id": "1586132",
+      "stage": "À venir",
+      "projected": false,
+      "datetime": "2026-07-18T12:00:00+00:00",
+      "venue": "Thai Nguyen Stadium",
+      "home": {
+        "name": "Vietnam",
+        "flag": "🏳️",
+        "code": "VIE"
+      },
+      "away": {
+        "name": "Myanmar",
+        "flag": "🏳️",
+        "code": "MYA"
+      },
+      "probs": {
+        "home": 70,
+        "draw": 19,
+        "away": 11
+      },
+      "predictedScore": {
+        "home": 3,
+        "away": 0
+      },
+      "confidence": 78,
+      "analysis": "Vietnam se détache avec 70% de chances estimées. Les cotes confirment (75%). La presse et le public vont dans le même sens.",
+      "scorers": {
+        "home": [
+          {
+            "name": "Cong Phuong Nguyen",
+            "prob": 61
+          }
+        ],
+        "away": [],
+        "estimated": true
+      },
+      "sources": {
+        "betting": {
+          "label": "Paris",
+          "weight": 0.55,
+          "probs": {
+            "home": 75,
+            "draw": 16,
+            "away": 9
+          },
+          "favored": "home",
+          "detail": "5 bookmakers"
+        },
+        "form": {
+          "label": "Forme",
+          "weight": 0.13,
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
+        },
+        "h2h": {
+          "label": "Face-à-face",
+          "weight": 0.1,
+          "probs": null,
+          "favored": null,
+          "detail": "indisponible"
+        },
+        "press": {
+          "label": "Presse",
+          "weight": 0.12,
+          "probs": {
+            "home": 53,
+            "draw": 26,
+            "away": 21
+          },
+          "favored": "home",
+          "detail": "269 articles"
+        },
+        "social": {
+          "label": "Public",
+          "weight": 0.1,
+          "probs": {
+            "home": 60,
+            "draw": 26,
+            "away": 14
+          },
+          "favored": "home",
+          "detail": "X · 161/37 mentions"
+        }
+      }
+    },
+    {
       "id": "1591865",
       "stage": "À venir",
       "projected": false,
@@ -194,7 +281,7 @@ window.WC_DATA = {
           "weight": 0.55,
           "probs": {
             "home": 50,
-            "draw": 24,
+            "draw": 25,
             "away": 25
           },
           "favored": "home",
@@ -231,18 +318,18 @@ window.WC_DATA = {
             "away": 57
           },
           "favored": "away",
-          "detail": "16548 articles"
+          "detail": "16570 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 28,
+            "home": 27,
             "draw": 26,
-            "away": 46
+            "away": 47
           },
           "favored": "away",
-          "detail": "X · 81096/133248 mentions"
+          "detail": "X · 79376/134446 mentions"
         }
       }
     },
@@ -263,9 +350,9 @@ window.WC_DATA = {
         "code": "ARG"
       },
       "probs": {
-        "home": 44,
+        "home": 43,
         "draw": 27,
-        "away": 29
+        "away": 30
       },
       "predictedScore": {
         "home": 2,
@@ -336,7 +423,7 @@ window.WC_DATA = {
             "away": 10
           },
           "favored": "home",
-          "detail": "1V 0N 0D"
+          "detail": "1V 0N 0D (caché)"
         },
         "press": {
           "label": "Presse",
@@ -347,7 +434,7 @@ window.WC_DATA = {
             "away": 36
           },
           "favored": "home",
-          "detail": "8597 articles"
+          "detail": "8650 articles"
         },
         "social": {
           "label": "Public",
@@ -358,7 +445,7 @@ window.WC_DATA = {
             "away": 45
           },
           "favored": "away",
-          "detail": "X · 89401/139152 mentions"
+          "detail": "X · 89447/141868 mentions"
         }
       }
     }
