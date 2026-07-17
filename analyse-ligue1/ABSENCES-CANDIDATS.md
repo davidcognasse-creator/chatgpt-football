@@ -3,7 +3,11 @@
 Grille : **Loto Foot 15 N°54** · 30 équipes interrogées.
 
 ## France
-- **William Saliba** — _blessé_ · « Arsenal news: How long William Saliba will miss 'revealed' after France injury creates Premier League worry for Mikel Arteta » (Sports Mole)
+- **William Saliba** — _blessé_ · « Arsenal files: William Saliba facing major injury worry, Leandro Trossard bags big contract and new documentary launched » (The Sun)
+- **Leandro Trossard** — _blessé_ · « Arsenal files: William Saliba facing major injury worry, Leandro Trossard bags big contract and new documentary launched » (The Sun)
+- **Minute Inclusion Boosts** — _blessé_ · « Jalibert's Last-Minute Inclusion Boosts France Squad Against Japan » (Devdiscourse)
+- **Matthieu Jalibert** — _blessé_ · « Jalibert's Last-Minute Inclusion Boosts France Squad Against Japan » (Devdiscourse)
+- **Nations Championship** — _blessé_ · « Jalibert's Last-Minute Inclusion Boosts France Squad Against Japan » (Devdiscourse)
 - **Mikel Arteta** — _blessé_ · « Arsenal news: How long William Saliba will miss 'revealed' after France injury creates Premier League worry for Mikel Arteta » (Sports Mole)
 - **Edouard Mendy Left** — _blessé_ · « Senegal's Edouard Mendy Left to Pay Out of Pocket for World Cup Injury » (Yardbarker)
 - **Pay Out** — _blessé_ · « Senegal's Edouard Mendy Left to Pay Out of Pocket for World Cup Injury » (Yardbarker)
@@ -11,9 +15,6 @@ Grille : **Loto Foot 15 N°54** · 30 équipes interrogées.
 - **Tadej Pogacar** — _blessé_ · « Waerenskjold wins fastest stage but Harper suffers exit » (PerthNow)
 - **Australian Chris Harper** — _blessé_ · « Waerenskjold wins fastest stage but Harper suffers exit » (PerthNow)
 - **David Beckham** — _incertain_ · « David Beckham cheers on Spain in semi-final clash with France » (Evening Standard)
-- **What William Saliba** — _blessé_ · « What William Saliba said before being subbed off early for France » (Sports Mole)
-- **Lamine Yamal** — _blessé_ · « Spain suffer double injury scare ahead of potential England World Cup final » (Metro.co.uk)
-- **Pedro Porro** — _blessé_ · « Spain suffer double injury scare ahead of potential England World Cup final » (Metro.co.uk)
 
 ## Argentine
 - **Morocco Suffer Major** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
@@ -37,6 +38,22 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
     "France": [
       {
         "joueur": "William Saliba",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Leandro Trossard",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Minute Inclusion Boosts",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Matthieu Jalibert",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Nations Championship",
         "raison": "blessé"
       },
       {
@@ -66,18 +83,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       {
         "joueur": "David Beckham",
         "raison": "incertain"
-      },
-      {
-        "joueur": "What William Saliba",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lamine Yamal",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Pedro Porro",
-        "raison": "blessé"
       }
     ],
     "Argentine": [
