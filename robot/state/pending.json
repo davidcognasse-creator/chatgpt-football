@@ -27,7 +27,7 @@
     "sources": {
       "betting": {
         "home": 50,
-        "draw": 25,
+        "draw": 24,
         "away": 25
       },
       "form": {
@@ -46,9 +46,62 @@
         "away": 57
       },
       "social": {
-        "home": 31,
+        "home": 28,
         "draw": 26,
-        "away": 43
+        "away": 46
+      }
+    }
+  },
+  "1591866": {
+    "id": "1591866",
+    "datetime": "2026-07-19T19:00:00+00:00",
+    "home": {
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "code": "ESP"
+    },
+    "away": {
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "code": "ARG"
+    },
+    "predicted": {
+      "probs": {
+        "home": 44,
+        "draw": 27,
+        "away": 29
+      },
+      "score": {
+        "home": 2,
+        "away": 1
+      },
+      "favored": "home"
+    },
+    "sources": {
+      "betting": {
+        "home": 42,
+        "draw": 31,
+        "away": 27
+      },
+      "form": {
+        "home": 37,
+        "draw": 26,
+        "away": 37
+      },
+      "h2h": {
+        "home": 79,
+        "draw": 10,
+        "away": 10
+      },
+      "press": {
+        "home": 38,
+        "draw": 26,
+        "away": 36
+      },
+      "social": {
+        "home": 29,
+        "draw": 26,
+        "away": 45
       }
     }
   },
