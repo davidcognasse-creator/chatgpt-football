@@ -79,6 +79,10 @@
     ],
     "France": [
       {
+        "joueur": "Lamine Yamal Injury",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Kylian Mbappe",
         "raison": "forfait"
       },
@@ -120,18 +124,6 @@
       },
       {
         "joueur": "Leandro Trossard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Minute Inclusion Boosts",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Matthieu Jalibert",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Nations Championship",
         "raison": "blessé"
       }
     ]

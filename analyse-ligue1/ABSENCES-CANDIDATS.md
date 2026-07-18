@@ -25,6 +25,7 @@ Grille : **Loto Foot 15 N°55** · 30 équipes interrogées.
 - **Daichi Kamada** — _blessé_ · « Japan turn to Kamada, Ito with Kubo sidelined for Tunisia clash » (The Straits Times)
 
 ## France
+- **Lamine Yamal Injury** — _blessé_ · « Lamine Yamal Injury: Spain Boss Provides Update for 2026 World Cup Final » (Sports Illustrated)
 - **Kylian Mbappe** — _forfait_ · « Kylian Mbappe ruled out of contention for 2026 Ballon d’Or as World Cup final-bound Lionel Messi puts himself in the mix for ninth Golden Ball » (Yardbarker)
 - **Lionel Messi** — _forfait_ · « Kylian Mbappe ruled out of contention for 2026 Ballon d’Or as World Cup final-bound Lionel Messi puts himself in the mix for ninth Golden Ball » (Yardbarker)
 - **Golden Ball** — _forfait_ · « Kylian Mbappe ruled out of contention for 2026 Ballon d’Or as World Cup final-bound Lionel Messi puts himself in the mix for ninth Golden Ball » (Yardbarker)
@@ -36,9 +37,6 @@ Grille : **Loto Foot 15 N°55** · 30 équipes interrogées.
 - **Lamine Yamal** — _blessé_ · « Lamine Yamal Skips Spain’s Drills Thursday, Raising Injury Concerns » (Forbes)
 - **William Saliba** — _blessé_ · « Arsenal files: William Saliba facing major injury worry, Leandro Trossard bags big contract and new documentary launched » (The Sun)
 - **Leandro Trossard** — _blessé_ · « Arsenal files: William Saliba facing major injury worry, Leandro Trossard bags big contract and new documentary launched » (The Sun)
-- **Minute Inclusion Boosts** — _blessé_ · « Jalibert's Last-Minute Inclusion Boosts France Squad Against Japan » (Devdiscourse)
-- **Matthieu Jalibert** — _blessé_ · « Jalibert's Last-Minute Inclusion Boosts France Squad Against Japan » (Devdiscourse)
-- **Nations Championship** — _blessé_ · « Jalibert's Last-Minute Inclusion Boosts France Squad Against Japan » (Devdiscourse)
 
 ---
 
@@ -127,6 +125,10 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
     ],
     "France": [
       {
+        "joueur": "Lamine Yamal Injury",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Kylian Mbappe",
         "raison": "forfait"
       },
@@ -168,18 +170,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       },
       {
         "joueur": "Leandro Trossard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Minute Inclusion Boosts",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Matthieu Jalibert",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Nations Championship",
         "raison": "blessé"
       }
     ]
