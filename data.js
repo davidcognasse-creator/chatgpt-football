@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-18T15:17:50.002Z",
+  "updatedAt": "2026-07-18T16:43:10.182Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -130,8 +130,8 @@ window.WC_DATA = {
         "home": 2,
         "away": 1
       },
-      "confidence": 59,
-      "analysis": "France part favori de justesse avec 43% de chances estimées. Les cotes confirment (50%). La forme récente et l'historique des confrontations vont dans le même sens. À contre-courant du pronostic IA, la presse et le public penchent plutôt pour England.",
+      "confidence": 60,
+      "analysis": "France part favori de justesse avec 43% de chances estimées. Les cotes confirment (51%). La forme récente et l'historique des confrontations vont dans le même sens. À contre-courant du pronostic IA, la presse et le public penchent plutôt pour England.",
       "scorers": {
         "home": [
           {
@@ -168,7 +168,7 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 50,
+            "home": 51,
             "draw": 24,
             "away": 25
           },
@@ -206,7 +206,7 @@ window.WC_DATA = {
             "away": 57
           },
           "favored": "away",
-          "detail": "16598 articles"
+          "detail": "16607 articles"
         },
         "social": {
           "label": "Public",
@@ -217,7 +217,7 @@ window.WC_DATA = {
             "away": 47
           },
           "favored": "away",
-          "detail": "X · 73520/131733 mentions"
+          "detail": "X · 73938/131108 mentions"
         }
       }
     },
@@ -238,8 +238,8 @@ window.WC_DATA = {
         "code": "ARG"
       },
       "probs": {
-        "home": 43,
-        "draw": 27,
+        "home": 42,
+        "draw": 28,
         "away": 30
       },
       "predictedScore": {
@@ -285,7 +285,7 @@ window.WC_DATA = {
           "weight": 0.55,
           "probs": {
             "home": 42,
-            "draw": 31,
+            "draw": 32,
             "away": 27
           },
           "favored": "home",
@@ -322,7 +322,7 @@ window.WC_DATA = {
             "away": 36
           },
           "favored": "home",
-          "detail": "8757 articles"
+          "detail": "8812 articles"
         },
         "social": {
           "label": "Public",
@@ -333,7 +333,7 @@ window.WC_DATA = {
             "away": 47
           },
           "favored": "away",
-          "detail": "X · 78640/138683 mentions"
+          "detail": "X · 79999/140180 mentions"
         }
       }
     }

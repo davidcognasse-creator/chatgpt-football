@@ -26,7 +26,7 @@
     },
     "sources": {
       "betting": {
-        "home": 50,
+        "home": 51,
         "draw": 24,
         "away": 25
       },
@@ -67,8 +67,8 @@
     },
     "predicted": {
       "probs": {
-        "home": 43,
-        "draw": 27,
+        "home": 42,
+        "draw": 28,
         "away": 30
       },
       "score": {
@@ -80,7 +80,7 @@
     "sources": {
       "betting": {
         "home": 42,
-        "draw": 31,
+        "draw": 32,
         "away": 27
       },
       "form": {
