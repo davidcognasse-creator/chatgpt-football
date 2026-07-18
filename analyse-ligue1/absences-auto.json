@@ -79,6 +79,30 @@
     ],
     "France": [
       {
+        "joueur": "Kylian Mbappe",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Lionel Messi",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Golden Ball",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Miami Stadium",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Fred Wright",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Tom Pidcock",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Lamine Yamal Skips",
         "raison": "blessé"
       },
@@ -108,30 +132,6 @@
       },
       {
         "joueur": "Nations Championship",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Mikel Arteta",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Edouard Mendy Left",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Pay Out",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Søren Wærenskjold",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Tadej Pogacar",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Australian Chris Harper",
         "raison": "blessé"
       }
     ]

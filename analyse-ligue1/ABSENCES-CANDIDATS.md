@@ -25,6 +25,12 @@ Grille : **Loto Foot 15 N°55** · 30 équipes interrogées.
 - **Daichi Kamada** — _blessé_ · « Japan turn to Kamada, Ito with Kubo sidelined for Tunisia clash » (The Straits Times)
 
 ## France
+- **Kylian Mbappe** — _forfait_ · « Kylian Mbappe ruled out of contention for 2026 Ballon d’Or as World Cup final-bound Lionel Messi puts himself in the mix for ninth Golden Ball » (Yardbarker)
+- **Lionel Messi** — _forfait_ · « Kylian Mbappe ruled out of contention for 2026 Ballon d’Or as World Cup final-bound Lionel Messi puts himself in the mix for ninth Golden Ball » (Yardbarker)
+- **Golden Ball** — _forfait_ · « Kylian Mbappe ruled out of contention for 2026 Ballon d’Or as World Cup final-bound Lionel Messi puts himself in the mix for ninth Golden Ball » (Yardbarker)
+- **Miami Stadium** — _suspendu_ · « England vs France could be forced into late move in another chaotic World Cup twist » (The Mirror)
+- **Fred Wright** — _blessé_ · « From 'freak' injury to another shot at that 'elusive' win - Fred Wright finally finds feet at Pinarello-Q36.5 at Tour de France » (Cyclingnews)
+- **Tom Pidcock** — _blessé_ · « From 'freak' injury to another shot at that 'elusive' win - Fred Wright finally finds feet at Pinarello-Q36.5 at Tour de France » (Cyclingnews)
 - **Lamine Yamal Skips** — _blessé_ · « Lamine Yamal Skips Spain’s Drills Thursday, Raising Injury Concerns » (Forbes)
 - **Raising Injury Concerns** — _blessé_ · « Lamine Yamal Skips Spain’s Drills Thursday, Raising Injury Concerns » (Forbes)
 - **Lamine Yamal** — _blessé_ · « Lamine Yamal Skips Spain’s Drills Thursday, Raising Injury Concerns » (Forbes)
@@ -33,12 +39,6 @@ Grille : **Loto Foot 15 N°55** · 30 équipes interrogées.
 - **Minute Inclusion Boosts** — _blessé_ · « Jalibert's Last-Minute Inclusion Boosts France Squad Against Japan » (Devdiscourse)
 - **Matthieu Jalibert** — _blessé_ · « Jalibert's Last-Minute Inclusion Boosts France Squad Against Japan » (Devdiscourse)
 - **Nations Championship** — _blessé_ · « Jalibert's Last-Minute Inclusion Boosts France Squad Against Japan » (Devdiscourse)
-- **Mikel Arteta** — _blessé_ · « Arsenal news: How long William Saliba will miss 'revealed' after France injury creates Premier League worry for Mikel Arteta » (Sports Mole)
-- **Edouard Mendy Left** — _blessé_ · « Senegal's Edouard Mendy Left to Pay Out of Pocket for World Cup Injury » (Yardbarker)
-- **Pay Out** — _blessé_ · « Senegal's Edouard Mendy Left to Pay Out of Pocket for World Cup Injury » (Yardbarker)
-- **Søren Wærenskjold** — _blessé_ · « Waerenskjold wins fastest stage but Harper suffers exit » (PerthNow)
-- **Tadej Pogacar** — _blessé_ · « Waerenskjold wins fastest stage but Harper suffers exit » (PerthNow)
-- **Australian Chris Harper** — _blessé_ · « Waerenskjold wins fastest stage but Harper suffers exit » (PerthNow)
 
 ---
 
@@ -127,6 +127,30 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
     ],
     "France": [
       {
+        "joueur": "Kylian Mbappe",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Lionel Messi",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Golden Ball",
+        "raison": "forfait"
+      },
+      {
+        "joueur": "Miami Stadium",
+        "raison": "suspendu"
+      },
+      {
+        "joueur": "Fred Wright",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Tom Pidcock",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Lamine Yamal Skips",
         "raison": "blessé"
       },
@@ -156,30 +180,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       },
       {
         "joueur": "Nations Championship",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Mikel Arteta",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Edouard Mendy Left",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Pay Out",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Søren Wærenskjold",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Tadej Pogacar",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Australian Chris Harper",
         "raison": "blessé"
       }
     ]
