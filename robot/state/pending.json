@@ -1,49 +1,4 @@
 {
-  "1586132": {
-    "id": "1586132",
-    "datetime": "2026-07-18T12:00:00+00:00",
-    "home": {
-      "name": "Vietnam",
-      "flag": "🏳️",
-      "code": "VIE"
-    },
-    "away": {
-      "name": "Myanmar",
-      "flag": "🏳️",
-      "code": "MYA"
-    },
-    "predicted": {
-      "probs": {
-        "home": 69,
-        "draw": 19,
-        "away": 12
-      },
-      "score": {
-        "home": 3,
-        "away": 0
-      },
-      "favored": "home"
-    },
-    "sources": {
-      "betting": {
-        "home": 75,
-        "draw": 16,
-        "away": 9
-      },
-      "form": null,
-      "h2h": null,
-      "press": {
-        "home": 53,
-        "draw": 26,
-        "away": 21
-      },
-      "social": {
-        "home": 60,
-        "draw": 26,
-        "away": 14
-      }
-    }
-  },
   "1591865": {
     "id": "1591865",
     "datetime": "2026-07-18T21:00:00+00:00",

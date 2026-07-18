@@ -1,7 +1,59 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_HISTORY = {
-  "updatedAt": "2026-07-18T08:46:13.440Z",
+  "updatedAt": "2026-07-18T15:17:49.999Z",
   "entries": [
+    {
+      "id": "1586132",
+      "datetime": "2026-07-18T12:00:00+00:00",
+      "home": {
+        "name": "Vietnam",
+        "flag": "🏳️",
+        "code": "VIE"
+      },
+      "away": {
+        "name": "Myanmar",
+        "flag": "🏳️",
+        "code": "MYA"
+      },
+      "predicted": {
+        "probs": {
+          "home": 69,
+          "draw": 19,
+          "away": 12
+        },
+        "score": {
+          "home": 3,
+          "away": 0
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 75,
+          "draw": 16,
+          "away": 9
+        },
+        "form": null,
+        "h2h": null,
+        "press": {
+          "home": 53,
+          "draw": 26,
+          "away": 21
+        },
+        "social": {
+          "home": 60,
+          "draw": 26,
+          "away": 14
+        }
+      },
+      "actual": {
+        "home": 4,
+        "away": 0,
+        "outcome": "home"
+      },
+      "correctOutcome": true,
+      "correctScore": false
+    },
     {
       "id": "1586077",
       "datetime": "2026-07-15T19:00:00+00:00",
