@@ -1,7 +1,72 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_HISTORY = {
-  "updatedAt": "2026-07-19T16:42:59.658Z",
+  "updatedAt": "2026-07-19T23:14:48.077Z",
   "entries": [
+    {
+      "id": "1591866",
+      "datetime": "2026-07-19T19:00:00+00:00",
+      "home": {
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "code": "ESP"
+      },
+      "away": {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "code": "ARG"
+      },
+      "predicted": {
+        "probs": {
+          "home": 43,
+          "draw": 28,
+          "away": 29
+        },
+        "score": {
+          "home": 2,
+          "away": 1
+        },
+        "favored": "home"
+      },
+      "sources": {
+        "betting": {
+          "home": 41,
+          "draw": 32,
+          "away": 27
+        },
+        "form": {
+          "home": 37,
+          "draw": 26,
+          "away": 37
+        },
+        "h2h": {
+          "home": 79,
+          "draw": 10,
+          "away": 10
+        },
+        "press": {
+          "home": 38,
+          "draw": 26,
+          "away": 36
+        },
+        "social": {
+          "home": 30,
+          "draw": 26,
+          "away": 44
+        }
+      },
+      "actual": {
+        "home": 0,
+        "away": 0,
+        "outcome": "draw",
+        "decidedBy": "aet",
+        "full": {
+          "home": 1,
+          "away": 0
+        }
+      },
+      "correctOutcome": false,
+      "correctScore": false
+    },
     {
       "id": "1591865",
       "datetime": "2026-07-18T21:00:00+00:00",
