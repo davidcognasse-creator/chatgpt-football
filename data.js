@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-07-18T23:13:48.708Z",
+  "updatedAt": "2026-07-19T09:03:04.271Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
@@ -151,16 +151,16 @@ window.WC_DATA = {
         "code": "ARG"
       },
       "probs": {
-        "home": 42,
+        "home": 43,
         "draw": 28,
-        "away": 30
+        "away": 29
       },
       "predictedScore": {
         "home": 2,
         "away": 1
       },
       "confidence": 60,
-      "analysis": "Spain part favori de justesse avec 43% de chances estimées. Les cotes confirment (42%). La forme récente, l'historique des confrontations et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Argentina.",
+      "analysis": "Spain part favori de justesse avec 43% de chances estimées. Les cotes confirment (41%). La forme récente, l'historique des confrontations et la presse vont dans le même sens. À contre-courant du pronostic IA, le public penche plutôt pour Argentina.",
       "scorers": {
         "home": [
           {
@@ -197,12 +197,12 @@ window.WC_DATA = {
           "label": "Paris",
           "weight": 0.55,
           "probs": {
-            "home": 42,
+            "home": 41,
             "draw": 32,
             "away": 27
           },
           "favored": "home",
-          "detail": "12 bookmakers"
+          "detail": "13 bookmakers"
         },
         "form": {
           "label": "Forme",
@@ -235,18 +235,18 @@ window.WC_DATA = {
             "away": 36
           },
           "favored": "home",
-          "detail": "8812 articles"
+          "detail": "9008 articles"
         },
         "social": {
           "label": "Public",
           "weight": 0.1,
           "probs": {
-            "home": 27,
+            "home": 30,
             "draw": 26,
-            "away": 47
+            "away": 44
           },
           "favored": "away",
-          "detail": "X · 79999/140180 mentions"
+          "detail": "X · 85626/128625 mentions"
         }
       }
     }
