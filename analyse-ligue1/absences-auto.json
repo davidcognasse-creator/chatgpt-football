@@ -79,51 +79,67 @@
     ],
     "France": [
       {
-        "joueur": "Lamine Yamal Injury",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kylian Mbappe",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Lionel Messi",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Golden Ball",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Miami Stadium",
-        "raison": "suspendu"
-      },
-      {
-        "joueur": "Fred Wright",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Tom Pidcock",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lamine Yamal Skips",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Raising Injury Concerns",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lamine Yamal",
-        "raison": "blessé"
-      },
-      {
         "joueur": "William Saliba",
         "raison": "blessé"
       },
       {
-        "joueur": "Leandro Trossard",
+        "joueur": "Didier Deschamps",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Harry Kane",
+        "raison": "absent"
+      },
+      {
+        "joueur": "Jude Bellingham",
+        "raison": "absent"
+      },
+      {
+        "joueur": "Thomas Tuchel",
+        "raison": "absent"
+      },
+      {
+        "joueur": "Kobbie Mainoo",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Three Lions",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Bronze Final",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Both European",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Kylian Mbappe",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Elizabeth Means",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Gilas Women",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Gilas Pilipinas Women",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Padres Daily",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Freddy Fermin",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Craig Stammen",
         "raison": "blessé"
       }
     ]

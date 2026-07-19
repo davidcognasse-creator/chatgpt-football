@@ -25,18 +25,22 @@ Grille : **Loto Foot 15 N°55** · 30 équipes interrogées.
 - **Daichi Kamada** — _blessé_ · « Japan turn to Kamada, Ito with Kubo sidelined for Tunisia clash » (The Straits Times)
 
 ## France
-- **Lamine Yamal Injury** — _blessé_ · « Lamine Yamal Injury: Spain Boss Provides Update for 2026 World Cup Final » (Sports Illustrated)
-- **Kylian Mbappe** — _forfait_ · « Kylian Mbappe ruled out of contention for 2026 Ballon d’Or as World Cup final-bound Lionel Messi puts himself in the mix for ninth Golden Ball » (Yardbarker)
-- **Lionel Messi** — _forfait_ · « Kylian Mbappe ruled out of contention for 2026 Ballon d’Or as World Cup final-bound Lionel Messi puts himself in the mix for ninth Golden Ball » (Yardbarker)
-- **Golden Ball** — _forfait_ · « Kylian Mbappe ruled out of contention for 2026 Ballon d’Or as World Cup final-bound Lionel Messi puts himself in the mix for ninth Golden Ball » (Yardbarker)
-- **Miami Stadium** — _suspendu_ · « England vs France could be forced into late move in another chaotic World Cup twist » (The Mirror)
-- **Fred Wright** — _blessé_ · « From 'freak' injury to another shot at that 'elusive' win - Fred Wright finally finds feet at Pinarello-Q36.5 at Tour de France » (Cyclingnews)
-- **Tom Pidcock** — _blessé_ · « From 'freak' injury to another shot at that 'elusive' win - Fred Wright finally finds feet at Pinarello-Q36.5 at Tour de France » (Cyclingnews)
-- **Lamine Yamal Skips** — _blessé_ · « Lamine Yamal Skips Spain’s Drills Thursday, Raising Injury Concerns » (Forbes)
-- **Raising Injury Concerns** — _blessé_ · « Lamine Yamal Skips Spain’s Drills Thursday, Raising Injury Concerns » (Forbes)
-- **Lamine Yamal** — _blessé_ · « Lamine Yamal Skips Spain’s Drills Thursday, Raising Injury Concerns » (Forbes)
-- **William Saliba** — _blessé_ · « Arsenal files: William Saliba facing major injury worry, Leandro Trossard bags big contract and new documentary launched » (The Sun)
-- **Leandro Trossard** — _blessé_ · « Arsenal files: William Saliba facing major injury worry, Leandro Trossard bags big contract and new documentary launched » (The Sun)
+- **William Saliba** — _blessé_ · « William Saliba injury latest as Didier Deschamps issues worrying news on Arsenal star » (talkSPORT.com)
+- **Didier Deschamps** — _blessé_ · « William Saliba injury latest as Didier Deschamps issues worrying news on Arsenal star » (talkSPORT.com)
+- **Harry Kane** — _absent_ · « Mbappe starts for France; England bench Kane, Bellingham for World Cup third-place playoff » (Malayala Manorama)
+- **Jude Bellingham** — _absent_ · « Mbappe starts for France; England bench Kane, Bellingham for World Cup third-place playoff » (Malayala Manorama)
+- **Thomas Tuchel** — _absent_ · « Mbappe starts for France; England bench Kane, Bellingham for World Cup third-place playoff » (Malayala Manorama)
+- **Kobbie Mainoo** — _blessé_ · « Kobbie Mainoo injured on England World Cup duty » (Yardbarker)
+- **Three Lions** — _blessé_ · « Kobbie Mainoo injured on England World Cup duty » (Yardbarker)
+- **Bronze Final** — _blessé_ · « Kobbie Mainoo injured on England World Cup duty » (Yardbarker)
+- **Both European** — _blessé_ · « France vs England FIFA World Cup 2026: Lineup, key players, prediction, team stats, injury news » (The Economic Times)
+- **Kylian Mbappe** — _blessé_ · « France vs England FIFA World Cup 2026: Lineup, key players, prediction, team stats, injury news » (The Economic Times)
+- **Elizabeth Means** — _blessé_ · « Shoulder injury to Elizabeth Means derails Gilas Women in 3x3 WS Jinan campaign » (Tiebreaker Times)
+- **Gilas Women** — _blessé_ · « Shoulder injury to Elizabeth Means derails Gilas Women in 3x3 WS Jinan campaign » (Tiebreaker Times)
+- **Gilas Pilipinas Women** — _blessé_ · « Shoulder injury to Elizabeth Means derails Gilas Women in 3x3 WS Jinan campaign » (Tiebreaker Times)
+- **Padres Daily** — _blessé_ · « Padres Daily: A loss that said a lot; Musgrove, Pivetta take another step; France, Andujar might provide good 2-3 punch » (San Diego Union-Tribune)
+- **Freddy Fermin** — _blessé_ · « Padres Daily: A loss that said a lot; Musgrove, Pivetta take another step; France, Andujar might provide good 2-3 punch » (San Diego Union-Tribune)
+- **Craig Stammen** — _blessé_ · « Padres Daily: A loss that said a lot; Musgrove, Pivetta take another step; France, Andujar might provide good 2-3 punch » (San Diego Union-Tribune)
 
 ---
 
@@ -125,51 +129,67 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
     ],
     "France": [
       {
-        "joueur": "Lamine Yamal Injury",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kylian Mbappe",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Lionel Messi",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Golden Ball",
-        "raison": "forfait"
-      },
-      {
-        "joueur": "Miami Stadium",
-        "raison": "suspendu"
-      },
-      {
-        "joueur": "Fred Wright",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Tom Pidcock",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lamine Yamal Skips",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Raising Injury Concerns",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lamine Yamal",
-        "raison": "blessé"
-      },
-      {
         "joueur": "William Saliba",
         "raison": "blessé"
       },
       {
-        "joueur": "Leandro Trossard",
+        "joueur": "Didier Deschamps",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Harry Kane",
+        "raison": "absent"
+      },
+      {
+        "joueur": "Jude Bellingham",
+        "raison": "absent"
+      },
+      {
+        "joueur": "Thomas Tuchel",
+        "raison": "absent"
+      },
+      {
+        "joueur": "Kobbie Mainoo",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Three Lions",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Bronze Final",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Both European",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Kylian Mbappe",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Elizabeth Means",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Gilas Women",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Gilas Pilipinas Women",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Padres Daily",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Freddy Fermin",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Craig Stammen",
         "raison": "blessé"
       }
     ]
