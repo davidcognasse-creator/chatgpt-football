@@ -10,9 +10,7 @@ Grille : **Loto Foot 15 N°55** · 15 matchs · source **API-Football**
 | 4 | Aluminij–NK Maribor | — | 24/28/48 | _non coté_ | 2 | — | — |
 | 5 | Halmstads–Häcken | — | 31/25/44 | _non coté_ | 2 | — | — |
 | 6 | Hammarby–Degerfors IF | 50/50/0 | 74/15/11 | **1** | 1 | préd. |  |
-  _(résolution Elfsborg–IK Sirius FK : API errors: {'rateLimit': 'Too many requests. You have exceeded the limit of requests per minute of your subscription.'})_
 | 7 | Elfsborg–IK Sirius FK | — | 49/21/30 | _non coté_ | 1 | — | — |
-  _(résolution FF Jaro–Inter Turku : API errors: {'rateLimit': 'Too many requests. You have exceeded the limit of requests per minute of your subscription.'})_
 | 8 | FF Jaro–Inter Turku | — | 24/25/51 | _non coté_ | 2 | — | — |
 | 9 | FC Anyang–Gwangju FC | — | 48/25/27 | _non coté_ | 1 | — | — |
 | 10 | Bucheon FC–FC Seoul | 17/42/42 | 21/27/52 | **N** | 2 | préd. | **+15%** |
