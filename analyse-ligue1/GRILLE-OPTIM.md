@@ -1,15 +1,15 @@
 # Optimiseur de grille Loto Foot
 
-Probas : **cotes (13 books)** · 15 matchs · mise unitaire 1 € · budgets 12, 24, 48 €
+Probas : **foule (non coté)** · 15 matchs · mise unitaire 1 € · budgets 12, 24, 48 €
 
 **Objectif : espérance de gain (€), pas seulement la probabilité de grille parfaite.**
 Rapports FDJ ESTIMÉS (modèle rareté-public, calibré sur du réel) :
 | Rang | Rapport estimé | P(public l'atteint) |
 |---|---|---|
-| 15/15 | ~300 086 € | 0.002 % |
-| 14/15 | ~9 352 € | 0.038 % |
-| 13/15 | ~630 € | 0.286 % |
-| 12/15 | ~69 € | 1.299 % |
+| 15/15 | ~250 728 € | 0.003 % |
+| 14/15 | ~8 010 € | 0.045 % |
+| 13/15 | ~553 € | 0.325 % |
+| 12/15 | ~62 € | 1.443 % |
 
 ## 🎯 Grille ≤ 12 €
 Combinaisons : **12** → coût **12 €** (≤ 12 €) · _plafond atteint_
@@ -21,7 +21,7 @@ Combinaisons : **12** → coût **12 €** (≤ 12 €) · _plafond atteint_
 | 3 | Universit Cluj–FC Constanta | simple | 1 | 59% |
 | 4 | Aluminij–NK Maribor | simple | 2 | 48% |
 | 5 | Halmstads–Häcken | simple | 2 | 44% |
-| 6 | Hammarby–Degerfors IF | DOUBLE | 1 / N | 83% |
+| 6 | Hammarby–Degerfors IF | DOUBLE | 1 / N | 100% |
 | 7 | Elfsborg–IK Sirius FK | simple | 1 | 49% |
 | 8 | FF Jaro–Inter Turku | simple | 2 | 51% |
 | 9 | FC Anyang–Gwangju FC | simple | 1 | 48% |
@@ -33,8 +33,8 @@ Combinaisons : **12** → coût **12 €** (≤ 12 €) · _plafond atteint_
 | 15 | France–Angleterre | simple | 1 | 42% |
 
 Répartition : 12 simples · **2 doubles** · **1 triples**
-- **P(profit)** (gain ≥ coût) : **7.6 %** → rembourse dès **12/15** (rapport ~69 €)
-- P(atteindre un rang, ≥ 12/15) : 7.6 % · espérance de gain (si modèle calibré) : ~121 €
+- **P(profit)** (gain ≥ coût) : **8.6 %** → rembourse dès **12/15** (rapport ~62 €)
+- P(atteindre un rang, ≥ 12/15) : 8.6 % · espérance de gain (si modèle calibré) : ~122 €
 
 ## 🎯 Grille ≤ 24 €
 Combinaisons : **24** → coût **24 €** (≤ 24 €) · _plafond atteint_
@@ -46,7 +46,7 @@ Combinaisons : **24** → coût **24 €** (≤ 24 €) · _plafond atteint_
 | 3 | Universit Cluj–FC Constanta | simple | 1 | 59% |
 | 4 | Aluminij–NK Maribor | simple | 2 | 48% |
 | 5 | Halmstads–Häcken | simple | 2 | 44% |
-| 6 | Hammarby–Degerfors IF | DOUBLE | 1 / N | 83% |
+| 6 | Hammarby–Degerfors IF | DOUBLE | 1 / N | 100% |
 | 7 | Elfsborg–IK Sirius FK | simple | 1 | 49% |
 | 8 | FF Jaro–Inter Turku | simple | 2 | 51% |
 | 9 | FC Anyang–Gwangju FC | simple | 1 | 48% |
@@ -58,8 +58,8 @@ Combinaisons : **24** → coût **24 €** (≤ 24 €) · _plafond atteint_
 | 15 | France–Angleterre | simple | 1 | 42% |
 
 Répartition : 11 simples · **3 doubles** · **1 triples**
-- **P(profit)** (gain ≥ coût) : **10.7 %** → rembourse dès **12/15** (rapport ~69 €)
-- P(atteindre un rang, ≥ 12/15) : 10.7 % · espérance de gain (si modèle calibré) : ~217 €
+- **P(profit)** (gain ≥ coût) : **12.1 %** → rembourse dès **12/15** (rapport ~62 €)
+- P(atteindre un rang, ≥ 12/15) : 12.1 % · espérance de gain (si modèle calibré) : ~219 €
 
 ## 🎯 Grille ≤ 48 €
 Combinaisons : **48** → coût **48 €** (≤ 48 €) · _plafond atteint_
@@ -71,7 +71,7 @@ Combinaisons : **48** → coût **48 €** (≤ 48 €) · _plafond atteint_
 | 3 | Universit Cluj–FC Constanta | simple | 1 | 59% |
 | 4 | Aluminij–NK Maribor | simple | 2 | 48% |
 | 5 | Halmstads–Häcken | DOUBLE | 2 / 1 | 75% |
-| 6 | Hammarby–Degerfors IF | DOUBLE | 1 / N | 83% |
+| 6 | Hammarby–Degerfors IF | DOUBLE | 1 / N | 100% |
 | 7 | Elfsborg–IK Sirius FK | simple | 1 | 49% |
 | 8 | FF Jaro–Inter Turku | simple | 2 | 51% |
 | 9 | FC Anyang–Gwangju FC | simple | 1 | 48% |
@@ -83,8 +83,8 @@ Combinaisons : **48** → coût **48 €** (≤ 48 €) · _plafond atteint_
 | 15 | France–Angleterre | simple | 1 | 42% |
 
 Répartition : 10 simples · **4 doubles** · **1 triples**
-- **P(profit)** (gain ≥ coût) : **14.2 %** → rembourse dès **12/15** (rapport ~69 €)
-- P(atteindre un rang, ≥ 12/15) : 14.2 % · espérance de gain (si modèle calibré) : ~356 €
+- **P(profit)** (gain ≥ coût) : **16.0 %** → rembourse dès **12/15** (rapport ~62 €)
+- P(atteindre un rang, ≥ 12/15) : 16.0 % · espérance de gain (si modèle calibré) : ~358 €
 
 ---
-_Répartition doubles/triples pour MAXIMISER l'espérance de gain (Σ P(rang)×rapport − coût), avec conscience du nul (🅽). Rapports estimés par le modèle rareté-public. **P(profit)** est la mesure fiable ; l'espérance € dépend de la calibration (#4). Probas = cotes (13 books) (via moteur-cotes → probas.json)._
+_Répartition doubles/triples pour MAXIMISER l'espérance de gain (Σ P(rang)×rapport − coût), avec conscience du nul (🅽). Rapports estimés par le modèle rareté-public. **P(profit)** est la mesure fiable ; l'espérance € dépend de la calibration (#4). Probas = foule (non coté) (via moteur-cotes → probas.json)._

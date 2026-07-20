@@ -3,6 +3,10 @@
   "equipes": {
     "Argentine": [
       {
+        "joueur": "Lisandro Martinez",
+        "raison": "blessé"
+      },
+      {
         "joueur": "Morocco Suffer Major",
         "raison": "blessé"
       },
@@ -79,11 +83,35 @@
     ],
     "France": [
       {
-        "joueur": "Thomas Tuchel",
+        "joueur": "Doping Tests Spark",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Tadej Pogacar",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jonas Vingegaard",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Evenepoel Triumphs",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Crash Shakes Tour",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Remco Evenepoel",
         "raison": "blessé"
       },
       {
         "joueur": "Kobbie Mainoo",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Thomas Tuchel",
         "raison": "blessé"
       },
       {
@@ -120,26 +148,6 @@
       },
       {
         "joueur": "Bronze Final",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Both European",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kylian Mbappe",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Elizabeth Means",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Gilas Women",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Gilas Pilipinas Women",
         "raison": "blessé"
       }
     ]

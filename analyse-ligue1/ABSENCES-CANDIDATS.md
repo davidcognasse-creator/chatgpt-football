@@ -3,6 +3,7 @@
 Grille : **Loto Foot 15 N°55** · 30 équipes interrogées.
 
 ## Argentine
+- **Lisandro Martinez** — _blessé_ · « Argentina’s Martinez forced out of FIFA World Cup final with apparent injury » (Tsn (The Sports Network))
 - **Morocco Suffer Major** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
 - **Blow As Ismael** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
 - **Saibari Ruled Out** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
@@ -25,8 +26,14 @@ Grille : **Loto Foot 15 N°55** · 30 équipes interrogées.
 - **Daichi Kamada** — _blessé_ · « Japan turn to Kamada, Ito with Kubo sidelined for Tunisia clash » (The Straits Times)
 
 ## France
-- **Thomas Tuchel** — _blessé_ · « Thomas Tuchel issues Kobbie Mainoo injury update after missing England World Cup win vs France » (Metro.co.uk)
-- **Kobbie Mainoo** — _blessé_ · « Thomas Tuchel issues Kobbie Mainoo injury update after missing England World Cup win vs France » (Metro.co.uk)
+- **Doping Tests Spark** — _blessé_ · « Night-time Doping Tests Spark Controversy at Tour de France » (Devdiscourse)
+- **Tadej Pogacar** — _blessé_ · « Night-time Doping Tests Spark Controversy at Tour de France » (Devdiscourse)
+- **Jonas Vingegaard** — _blessé_ · « Night-time Doping Tests Spark Controversy at Tour de France » (Devdiscourse)
+- **Evenepoel Triumphs** — _blessé_ · « Evenepoel Triumphs as Vingegaard's Crash Shakes Tour de France » (Devdiscourse)
+- **Crash Shakes Tour** — _blessé_ · « Evenepoel Triumphs as Vingegaard's Crash Shakes Tour de France » (Devdiscourse)
+- **Remco Evenepoel** — _blessé_ · « Evenepoel Triumphs as Vingegaard's Crash Shakes Tour de France » (Devdiscourse)
+- **Kobbie Mainoo** — _blessé_ · « Kobbie Mainoo injury issue explained amid England snub and Manchester United return date » (Manchester Evening News)
+- **Thomas Tuchel** — _blessé_ · « Thomas Tuchel explains Kobbie Mainoo injury after midfielder’s zero World Cup minutes » (The Independent)
 - **Kobbie Maino** — _blessé_ · « Thomas Tuchel issues Kobbie Mainoo injury update after missing England World Cup win vs France » (Metro.co.uk)
 - **Bukayo Saka** — _incertain_ · « England player ratings: Bukayo Saka has best England game of World Cup but Ivan Toney fails to take chance vs France » (The Sun)
 - **Ivan Toney** — _incertain_ · « England player ratings: Bukayo Saka has best England game of World Cup but Ivan Toney fails to take chance vs France » (The Sun)
@@ -36,11 +43,6 @@ Grille : **Loto Foot 15 N°55** · 30 équipes interrogées.
 - **Jude Bellingham** — _absent_ · « Mbappe starts for France; England bench Kane, Bellingham for World Cup third-place playoff » (Malayala Manorama)
 - **Three Lions** — _blessé_ · « Kobbie Mainoo injured on England World Cup duty » (Yardbarker)
 - **Bronze Final** — _blessé_ · « Kobbie Mainoo injured on England World Cup duty » (Yardbarker)
-- **Both European** — _blessé_ · « France vs England FIFA World Cup 2026: Lineup, key players, prediction, team stats, injury news » (The Economic Times)
-- **Kylian Mbappe** — _blessé_ · « France vs England FIFA World Cup 2026: Lineup, key players, prediction, team stats, injury news » (The Economic Times)
-- **Elizabeth Means** — _blessé_ · « Shoulder injury to Elizabeth Means derails Gilas Women in 3x3 WS Jinan campaign » (Tiebreaker Times)
-- **Gilas Women** — _blessé_ · « Shoulder injury to Elizabeth Means derails Gilas Women in 3x3 WS Jinan campaign » (Tiebreaker Times)
-- **Gilas Pilipinas Women** — _blessé_ · « Shoulder injury to Elizabeth Means derails Gilas Women in 3x3 WS Jinan campaign » (Tiebreaker Times)
 
 ---
 
@@ -52,6 +54,10 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
 {
   "equipes": {
     "Argentine": [
+      {
+        "joueur": "Lisandro Martinez",
+        "raison": "blessé"
+      },
       {
         "joueur": "Morocco Suffer Major",
         "raison": "blessé"
@@ -129,11 +135,35 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
     ],
     "France": [
       {
-        "joueur": "Thomas Tuchel",
+        "joueur": "Doping Tests Spark",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Tadej Pogacar",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jonas Vingegaard",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Evenepoel Triumphs",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Crash Shakes Tour",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Remco Evenepoel",
         "raison": "blessé"
       },
       {
         "joueur": "Kobbie Mainoo",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Thomas Tuchel",
         "raison": "blessé"
       },
       {
@@ -170,26 +200,6 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
       },
       {
         "joueur": "Bronze Final",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Both European",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kylian Mbappe",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Elizabeth Means",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Gilas Women",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Gilas Pilipinas Women",
         "raison": "blessé"
       }
     ]
