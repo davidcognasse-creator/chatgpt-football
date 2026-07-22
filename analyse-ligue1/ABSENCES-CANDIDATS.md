@@ -1,48 +1,34 @@
 # Sonde absences — candidats à VALIDER (presse GNews)
 
-Grille : **Loto Foot 15 N°55** · 30 équipes interrogées.
+Grille : **Loto Foot 15 N°56** · 30 équipes interrogées.
 
-## Argentine
-- **Lisandro Martinez** — _blessé_ · « Argentina’s Martinez forced out of FIFA World Cup final with apparent injury » (Tsn (The Sports Network))
-- **Morocco Suffer Major** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
-- **Blow As Ismael** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
-- **Saibari Ruled Out** — _blessé_ · « Morocco Suffer Major Blow As Ismael Saibari Ruled Out Of FIFA World Cup 2026 Quarter-Final Against France | Video » (Free Press Journal)
-- **Claudio Villamide** — _suspendu_ · « Argentine ex-navy commander convicted over 2017 sub disaster in which 44 sailors died » (The Straits Times)
-- **Tottenham Hotspur** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
-- **Cristian Romero** — _blessé_ · « MRI reports denied by FA chief amid injury to Tottenham star » (Yardbarker)
-- **Lamine Yamal** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
-- **Lionel Messi** — _blessé_ · « FIFA World Cup 2026: Impossible to surpass Messi, says Lamine Yamal praising Argentine legend » (The Economic Times)
+## Fenerbahce
+- **Mason Greenwood** — _suspendu_ · « Club chiefs travelling to finalise Mason Greenwood transfer » (Yardbarker)
+- **Man Utd** — _suspendu_ · « Club chiefs travelling to finalise Mason Greenwood transfer » (Yardbarker)
 
-## Monterrey
-- **Ronald Koeman** — _incertain_ · « FIFA WC: 'I'm going to reflect on my future,' says Netherlands coach Koeman after round of 32 exit » (Lokmat Times)
-- **Other Sports** — _incertain_ · « FIFA WC: 'I'm going to reflect on my future,' says Netherlands coach Koeman after round of 32 exit » (Lokmat Times)
-- **South Korea** — _suspendu_ · « South Korea leave Son on the bench, South Africa have to revamp midfield » (The Straits Times)
-- **South Africa** — _suspendu_ · « South Korea leave Son on the bench, South Africa have to revamp midfield » (The Straits Times)
-- **Son Heung** — _suspendu_ · « South Korea leave Son on the bench, South Africa have to revamp midfield » (The Straits Times)
-- **Hajime Moriyasu** — _blessé_ · « Soccer-Japan coach Moriyasu praises Kamada after standout performance in new role » (The Star)
-- **Takefusa Kubo** — _blessé_ · « Soccer-Japan coach Moriyasu praises Kamada after standout performance in new role » (The Star)
-- **Ayase Ueda** — _blessé_ · « Soccer-Japan's firepower comes to the fore as Ueda bags a double at World Cup » (The Star)
-- **Junya Ito** — _blessé_ · « Soccer-Japan turn to Kamada, Ito with Kubo sidelined for Tunisia clash » (The Star)
-- **Daichi Kamada** — _blessé_ · « Japan turn to Kamada, Ito with Kubo sidelined for Tunisia clash » (The Straits Times)
+## Hearts
+- **Eating Whatever Is** — _blessé_ · « 'Eating Whatever Is Left...' Madhya Pradesh Student's Simplicity & Humble Tiffin At Jantar Mantar Melts Hearts- VIDEO » (Free Press Journal)
+- **Madhya Pradesh Student** — _blessé_ · « 'Eating Whatever Is Left...' Madhya Pradesh Student's Simplicity & Humble Tiffin At Jantar Mantar Melts Hearts- VIDEO » (Free Press Journal)
+- **Humble Tiffin At** — _blessé_ · « 'Eating Whatever Is Left...' Madhya Pradesh Student's Simplicity & Humble Tiffin At Jantar Mantar Melts Hearts- VIDEO » (Free Press Journal)
+- **East Oakland** — _blessé_ · « Tiny oxygen mask, big hearts: Firefighters rescue smoke-stricken pigeon » (The Indian Express)
+- **Callum Osmand** — _blessé_ · « Callum Osmand cherishes Celtic he can't escape as he targets main man status » (Daily Record)
+- **Jacob Bethell Wins** — _blessé_ · « India Vs England, 2nd ODI: Jacob Bethell Wins Hearts With Heartwarming Gesture - Video » (Outlook India)
+- **Jacob Bethell** — _blessé_ · « India Vs England, 2nd ODI: Jacob Bethell Wins Hearts With Heartwarming Gesture - Video » (Outlook India)
+- **Joe Root** — _blessé_ · « India Vs England, 2nd ODI: Jacob Bethell Wins Hearts With Heartwarming Gesture - Video » (Outlook India)
+- **Shreyas Iyer** — _blessé_ · « Shreyas Iyer's shot hits a seagull during IND vs ENG 2nd ODI; Jacob Bethell's gesture wins hearts at Sophia Gardens » (Livemint)
+- **Sophia Gardens** — _blessé_ · « Shreyas Iyer's shot hits a seagull during IND vs ENG 2nd ODI; Jacob Bethell's gesture wins hearts at Sophia Gardens » (Livemint)
+- **Erling Haaland Reminds** — _incertain_ · « Erling Haaland Reminds Wayne Rooney Of Rowing Bet After Norway Reach World Cup Quarter-Finals » (Republic World)
+- **Wayne Rooney Of** — _incertain_ · « Erling Haaland Reminds Wayne Rooney Of Rowing Bet After Norway Reach World Cup Quarter-Finals » (Republic World)
+- **Rowing Bet After** — _incertain_ · « Erling Haaland Reminds Wayne Rooney Of Rowing Bet After Norway Reach World Cup Quarter-Finals » (Republic World)
+- **Mauricio Pochettino** — _suspendu_ · « Tricky questions for USMNT after World Cup 2026 went sideways » (New York Post)
+- **Folarin Balogun** — _suspendu_ · « Tricky questions for USMNT after World Cup 2026 went sideways » (New York Post)
+- **Craig Halkett** — _blessé_ · « Craig Halkett sets injury return timeline as Hearts star opens up on talks with new boss Wouter Vrancken » (Daily Record)
+- **Wouter Vrancken** — _blessé_ · « Craig Halkett sets injury return timeline as Hearts star opens up on talks with new boss Wouter Vrancken » (Daily Record)
+- **Folarin Balogun Wins** — _suspendu_ · « Folarin Balogun Wins Hearts With Class Act Despite Controversial Suspension at FIFA World Cup » (Essentially Sports)
+- **Act Despite Controversial** — _suspendu_ · « Folarin Balogun Wins Hearts With Class Act Despite Controversial Suspension at FIFA World Cup » (Essentially Sports)
 
-## France
-- **Doping Tests Spark** — _blessé_ · « Night-time Doping Tests Spark Controversy at Tour de France » (Devdiscourse)
-- **Tadej Pogacar** — _blessé_ · « Night-time Doping Tests Spark Controversy at Tour de France » (Devdiscourse)
-- **Jonas Vingegaard** — _blessé_ · « Night-time Doping Tests Spark Controversy at Tour de France » (Devdiscourse)
-- **Evenepoel Triumphs** — _blessé_ · « Evenepoel Triumphs as Vingegaard's Crash Shakes Tour de France » (Devdiscourse)
-- **Crash Shakes Tour** — _blessé_ · « Evenepoel Triumphs as Vingegaard's Crash Shakes Tour de France » (Devdiscourse)
-- **Remco Evenepoel** — _blessé_ · « Evenepoel Triumphs as Vingegaard's Crash Shakes Tour de France » (Devdiscourse)
-- **Kobbie Mainoo** — _blessé_ · « Kobbie Mainoo injury issue explained amid England snub and Manchester United return date » (Manchester Evening News)
-- **Thomas Tuchel** — _blessé_ · « Thomas Tuchel explains Kobbie Mainoo injury after midfielder’s zero World Cup minutes » (The Independent)
-- **Kobbie Maino** — _blessé_ · « Thomas Tuchel issues Kobbie Mainoo injury update after missing England World Cup win vs France » (Metro.co.uk)
-- **Bukayo Saka** — _incertain_ · « England player ratings: Bukayo Saka has best England game of World Cup but Ivan Toney fails to take chance vs France » (The Sun)
-- **Ivan Toney** — _incertain_ · « England player ratings: Bukayo Saka has best England game of World Cup but Ivan Toney fails to take chance vs France » (The Sun)
-- **William Saliba** — _blessé_ · « William Saliba injury latest as Didier Deschamps issues worrying news on Arsenal star » (talkSPORT.com)
-- **Didier Deschamps** — _blessé_ · « William Saliba injury latest as Didier Deschamps issues worrying news on Arsenal star » (talkSPORT.com)
-- **Harry Kane** — _absent_ · « Mbappe starts for France; England bench Kane, Bellingham for World Cup third-place playoff » (Malayala Manorama)
-- **Jude Bellingham** — _absent_ · « Mbappe starts for France; England bench Kane, Bellingham for World Cup third-place playoff » (Malayala Manorama)
-- **Three Lions** — _blessé_ · « Kobbie Mainoo injured on England World Cup duty » (Yardbarker)
-- **Bronze Final** — _blessé_ · « Kobbie Mainoo injured on England World Cup duty » (Yardbarker)
+## Shamrock
+- **Stephen Bradley** — _blessé_ · « Stephen Bradley posts John McGovern update ahead of Champions League tie » (Irish Mirror)
 
 ---
 
@@ -53,153 +39,97 @@ Le poids de chaque joueur est **calculé depuis sa note** (valeur Transfermarkt)
 ```json
 {
   "equipes": {
-    "Argentine": [
+    "Fenerbahce": [
       {
-        "joueur": "Lisandro Martinez",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Morocco Suffer Major",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Blow As Ismael",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Saibari Ruled Out",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Claudio Villamide",
+        "joueur": "Mason Greenwood",
         "raison": "suspendu"
       },
       {
-        "joueur": "Tottenham Hotspur",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Cristian Romero",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lamine Yamal",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lionel Messi",
-        "raison": "blessé"
+        "joueur": "Man Utd",
+        "raison": "suspendu"
       }
     ],
-    "Monterrey": [
+    "Hearts": [
       {
-        "joueur": "Ronald Koeman",
+        "joueur": "Eating Whatever Is",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Madhya Pradesh Student",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Humble Tiffin At",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "East Oakland",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Callum Osmand",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jacob Bethell Wins",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jacob Bethell",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Joe Root",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Shreyas Iyer",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Sophia Gardens",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Erling Haaland Reminds",
         "raison": "incertain"
       },
       {
-        "joueur": "Other Sports",
+        "joueur": "Wayne Rooney Of",
         "raison": "incertain"
       },
       {
-        "joueur": "South Korea",
+        "joueur": "Rowing Bet After",
+        "raison": "incertain"
+      },
+      {
+        "joueur": "Mauricio Pochettino",
         "raison": "suspendu"
       },
       {
-        "joueur": "South Africa",
+        "joueur": "Folarin Balogun",
         "raison": "suspendu"
       },
       {
-        "joueur": "Son Heung",
+        "joueur": "Craig Halkett",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Wouter Vrancken",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Folarin Balogun Wins",
         "raison": "suspendu"
       },
       {
-        "joueur": "Hajime Moriyasu",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Takefusa Kubo",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Ayase Ueda",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Junya Ito",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Daichi Kamada",
-        "raison": "blessé"
+        "joueur": "Act Despite Controversial",
+        "raison": "suspendu"
       }
     ],
-    "France": [
+    "Shamrock": [
       {
-        "joueur": "Doping Tests Spark",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Tadej Pogacar",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Jonas Vingegaard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Evenepoel Triumphs",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Crash Shakes Tour",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Remco Evenepoel",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kobbie Mainoo",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Thomas Tuchel",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kobbie Maino",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Bukayo Saka",
-        "raison": "incertain"
-      },
-      {
-        "joueur": "Ivan Toney",
-        "raison": "incertain"
-      },
-      {
-        "joueur": "William Saliba",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Didier Deschamps",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Harry Kane",
-        "raison": "absent"
-      },
-      {
-        "joueur": "Jude Bellingham",
-        "raison": "absent"
-      },
-      {
-        "joueur": "Three Lions",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Bronze Final",
+        "joueur": "Stephen Bradley",
         "raison": "blessé"
       }
     ]

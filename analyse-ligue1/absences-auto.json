@@ -1,153 +1,97 @@
 {
   "note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
   "equipes": {
-    "Argentine": [
+    "Fenerbahce": [
       {
-        "joueur": "Lisandro Martinez",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Morocco Suffer Major",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Blow As Ismael",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Saibari Ruled Out",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Claudio Villamide",
+        "joueur": "Mason Greenwood",
         "raison": "suspendu"
       },
       {
-        "joueur": "Tottenham Hotspur",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Cristian Romero",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lamine Yamal",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Lionel Messi",
-        "raison": "blessé"
+        "joueur": "Man Utd",
+        "raison": "suspendu"
       }
     ],
-    "Monterrey": [
+    "Hearts": [
       {
-        "joueur": "Ronald Koeman",
+        "joueur": "Eating Whatever Is",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Madhya Pradesh Student",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Humble Tiffin At",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "East Oakland",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Callum Osmand",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jacob Bethell Wins",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Jacob Bethell",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Joe Root",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Shreyas Iyer",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Sophia Gardens",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Erling Haaland Reminds",
         "raison": "incertain"
       },
       {
-        "joueur": "Other Sports",
+        "joueur": "Wayne Rooney Of",
         "raison": "incertain"
       },
       {
-        "joueur": "South Korea",
+        "joueur": "Rowing Bet After",
+        "raison": "incertain"
+      },
+      {
+        "joueur": "Mauricio Pochettino",
         "raison": "suspendu"
       },
       {
-        "joueur": "South Africa",
+        "joueur": "Folarin Balogun",
         "raison": "suspendu"
       },
       {
-        "joueur": "Son Heung",
+        "joueur": "Craig Halkett",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Wouter Vrancken",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Folarin Balogun Wins",
         "raison": "suspendu"
       },
       {
-        "joueur": "Hajime Moriyasu",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Takefusa Kubo",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Ayase Ueda",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Junya Ito",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Daichi Kamada",
-        "raison": "blessé"
+        "joueur": "Act Despite Controversial",
+        "raison": "suspendu"
       }
     ],
-    "France": [
+    "Shamrock": [
       {
-        "joueur": "Doping Tests Spark",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Tadej Pogacar",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Jonas Vingegaard",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Evenepoel Triumphs",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Crash Shakes Tour",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Remco Evenepoel",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kobbie Mainoo",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Thomas Tuchel",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Kobbie Maino",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Bukayo Saka",
-        "raison": "incertain"
-      },
-      {
-        "joueur": "Ivan Toney",
-        "raison": "incertain"
-      },
-      {
-        "joueur": "William Saliba",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Didier Deschamps",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Harry Kane",
-        "raison": "absent"
-      },
-      {
-        "joueur": "Jude Bellingham",
-        "raison": "absent"
-      },
-      {
-        "joueur": "Three Lions",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Bronze Final",
+        "joueur": "Stephen Bradley",
         "raison": "blessé"
       }
     ]
