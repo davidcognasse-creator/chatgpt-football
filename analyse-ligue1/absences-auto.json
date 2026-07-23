@@ -1,97 +1,39 @@
 {
   "note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
   "equipes": {
-    "Fenerbahce": [
+    "Besiktas": [
       {
-        "joueur": "Mason Greenwood",
-        "raison": "suspendu"
+        "joueur": "Prone Juventus Defender",
+        "raison": "blessé"
       },
       {
-        "joueur": "Man Utd",
-        "raison": "suspendu"
+        "joueur": "Juan Cabal",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Sky Sport",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Club Brugge",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Christos Tzolis",
+        "raison": "blessé"
+      },
+      {
+        "joueur": "Leandro Trossard",
+        "raison": "blessé"
       }
     ],
-    "Hearts": [
+    "Derry City": [
       {
-        "joueur": "Eating Whatever Is",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Madhya Pradesh Student",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Humble Tiffin At",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "East Oakland",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Callum Osmand",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Jacob Bethell Wins",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Jacob Bethell",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Joe Root",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Shreyas Iyer",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Sophia Gardens",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Erling Haaland Reminds",
-        "raison": "incertain"
-      },
-      {
-        "joueur": "Wayne Rooney Of",
-        "raison": "incertain"
-      },
-      {
-        "joueur": "Rowing Bet After",
-        "raison": "incertain"
-      },
-      {
-        "joueur": "Mauricio Pochettino",
+        "joueur": "Tiernan Lynch",
         "raison": "suspendu"
       },
       {
-        "joueur": "Folarin Balogun",
-        "raison": "suspendu"
-      },
-      {
-        "joueur": "Craig Halkett",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Wouter Vrancken",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Folarin Balogun Wins",
-        "raison": "suspendu"
-      },
-      {
-        "joueur": "Act Despite Controversial",
-        "raison": "suspendu"
-      }
-    ],
-    "Shamrock": [
-      {
-        "joueur": "Stephen Bradley",
+        "joueur": "Bishop Street",
         "raison": "blessé"
       }
     ]
