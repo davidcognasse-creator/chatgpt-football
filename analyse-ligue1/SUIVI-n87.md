@@ -9,7 +9,7 @@
 | 5 | FK Suduva–FK Transinvest | _à venir_ | 1 | · |
 | 6 | SK Super Nova–Ogre United | **2** (1-2) | 1 | ❌ |
 | 7 | CDUC Ecuador–Mushuc Runa | _à venir_ | 1/2 | · |
-| 8 | Keflavik–Fram Reykjavik | **N** (1-1) | 2 | ❌ |
+| 8 | Keflavik–Fram Reykjavik | **2** (1-5) | 2 | ✅ |
 
 **Matchs joués : 6/8**
-- **ref** : 4/6 corrects
+- **ref** : 5/6 corrects
