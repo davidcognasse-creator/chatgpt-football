@@ -1,9 +1,19 @@
 {
   "grilles": [
     {
-      "nom": "Loto Foot 15 N°56",
+      "nom": "Loto Foot 8 N°97",
       "file": "lotofoot.json",
       "statut": "ouvert"
+    },
+    {
+      "nom": "Loto Foot 15 N°57",
+      "file": "lotofoot-n57.json",
+      "statut": "ferme"
+    },
+    {
+      "nom": "Loto Foot 15 N°56",
+      "file": "lotofoot-n56.json",
+      "statut": "ferme"
     },
     {
       "nom": "Loto Foot 15 N°55",
