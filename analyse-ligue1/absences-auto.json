@@ -1,39 +1,9 @@
 {
   "note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
   "equipes": {
-    "Besiktas": [
+    "Rosenborg": [
       {
-        "joueur": "Prone Juventus Defender",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Juan Cabal",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Sky Sport",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Club Brugge",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Christos Tzolis",
-        "raison": "blessé"
-      },
-      {
-        "joueur": "Leandro Trossard",
-        "raison": "blessé"
-      }
-    ],
-    "Derry City": [
-      {
-        "joueur": "Tiernan Lynch",
-        "raison": "suspendu"
-      },
-      {
-        "joueur": "Bishop Street",
+        "joueur": "Michael Carrick",
         "raison": "blessé"
       }
     ]

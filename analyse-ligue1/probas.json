@@ -1,230 +1,125 @@
 {
-  "nom": "Loto Foot 15 N°57",
+  "nom": "Loto Foot 8 N°97",
   "matchs": [
     {
-      "dom": "Saint Gall",
-      "ext": "Benfica",
+      "dom": "Rosenborg",
+      "ext": "Fredrikstad",
       "foule": {
-        "1": 11,
-        "N": 17,
-        "2": 72
+        "1": 84,
+        "N": 11,
+        "2": 5
       },
       "p": {
-        "1": 0.11,
-        "N": 0.17,
-        "2": 0.72
+        "1": 0.4629934905164081,
+        "N": 0.2842063129122943,
+        "2": 0.2528001965712976
       },
-      "source": "foule (non coté)"
+      "source": "cotes (13 books)"
     },
     {
-      "dom": "Besiktas",
-      "ext": "Midtjylland",
+      "dom": "Randers FC",
+      "ext": "Silkeborg",
       "foule": {
-        "1": 65,
-        "N": 22,
-        "2": 13
-      },
-      "p": {
-        "1": 0.28174320860555524,
-        "N": 0.28678237115452204,
-        "2": 0.4314744202399227
-      },
-      "source": "cotes (12 books)"
-    },
-    {
-      "dom": "Twente",
-      "ext": "Ferencvaros",
-      "foule": {
-        "1": 50,
-        "N": 30,
-        "2": 20
-      },
-      "p": {
-        "1": 0.5,
-        "N": 0.3,
-        "2": 0.2
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Hajduk Split",
-      "ext": "Pafos FC",
-      "foule": {
-        "1": 52,
-        "N": 26,
+        "1": 47,
+        "N": 31,
         "2": 22
       },
       "p": {
-        "1": 0.27479905782514347,
-        "N": 0.2861658860410077,
-        "2": 0.43903505613384886
+        "1": 0.4516016362669907,
+        "N": 0.28329746379276677,
+        "2": 0.2651008999402425
       },
-      "source": "cotes (12 books)"
+      "source": "cotes (14 books)"
     },
     {
-      "dom": "Hammarby",
-      "ext": "Anderlecht",
+      "dom": "Häcken",
+      "ext": "AIK Solna",
       "foule": {
-        "1": 25,
+        "1": 51,
         "N": 28,
-        "2": 47
+        "2": 21
       },
       "p": {
-        "1": 0.3233919436867831,
-        "N": 0.2968861856528012,
-        "2": 0.3797218706604157
+        "1": 0.51,
+        "N": 0.28,
+        "2": 0.21
       },
-      "source": "cotes (12 books)"
+      "source": "foule (non coté)"
     },
     {
-      "dom": "Tromsø",
-      "ext": "Hradec Kralové",
+      "dom": "Breidablik",
+      "ext": "Vestmannaeyjar",
       "foule": {
-        "1": 74,
-        "N": 14,
+        "1": 69,
+        "N": 19,
         "2": 12
       },
       "p": {
-        "1": 0.74,
-        "N": 0.14,
+        "1": 0.4599464193607476,
+        "N": 0.2667890191101098,
+        "2": 0.2732645615291425
+      },
+      "source": "cotes (13 books)"
+    },
+    {
+      "dom": "KA Akureyri",
+      "ext": "Thor Akureyri",
+      "foule": {
+        "1": 58,
+        "N": 27,
+        "2": 15
+      },
+      "p": {
+        "1": 0.4587620321128848,
+        "N": 0.2696957395059331,
+        "2": 0.2715422283811821
+      },
+      "source": "cotes (13 books)"
+    },
+    {
+      "dom": "MTK Budapest",
+      "ext": "Zalaegerszeg",
+      "foule": {
+        "1": 62,
+        "N": 26,
+        "2": 12
+      },
+      "p": {
+        "1": 0.62,
+        "N": 0.26,
         "2": 0.12
       },
       "source": "foule (non coté)"
     },
     {
-      "dom": "SherifTiraspol",
-      "ext": "Mac.Tel Aviv",
+      "dom": "Zaglebie Lubin",
+      "ext": "Piast Gliwice",
       "foule": {
-        "1": 41,
-        "N": 30,
-        "2": 29
-      },
-      "p": {
-        "1": 0.41,
-        "N": 0.3,
-        "2": 0.29
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Dynamo Kiev",
-      "ext": "PAOK Salonique",
-      "foule": {
-        "1": 42,
-        "N": 31,
-        "2": 27
-      },
-      "p": {
-        "1": 0.42,
-        "N": 0.31,
-        "2": 0.27
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "HNK Rijeka",
-      "ext": "Derry City",
-      "foule": {
-        "1": 58,
-        "N": 20,
+        "1": 46,
+        "N": 32,
         "2": 22
       },
       "p": {
-        "1": 0.49999997969256177,
-        "N": 0.49999997969256177,
-        "2": 4.061487636873626e-08
+        "1": 0.3331494331906647,
+        "N": 0.3104180352484805,
+        "2": 0.35643253156085475
       },
-      "source": "prédiction API"
+      "source": "cotes (13 books)"
     },
     {
-      "dom": "Vojvodina",
-      "ext": "Ajax",
+      "dom": "FC Botosani",
+      "ext": "Rapid Bucarest",
       "foule": {
-        "1": 9,
-        "N": 9,
-        "2": 82
-      },
-      "p": {
-        "1": 4.061487636873626e-08,
-        "N": 0.49999997969256177,
-        "2": 0.49999997969256177
-      },
-      "source": "prédiction API"
-    },
-    {
-      "dom": "Paksi SE",
-      "ext": "Panathinaïkos",
-      "foule": {
-        "1": 14,
-        "N": 18,
-        "2": 68
-      },
-      "p": {
-        "1": 0.14,
-        "N": 0.18,
-        "2": 0.68
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Zhytomyr",
-      "ext": "FC Copenhague",
-      "foule": {
-        "1": 13,
-        "N": 16,
-        "2": 71
-      },
-      "p": {
-        "1": 0.13,
-        "N": 0.16,
-        "2": 0.71
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "LNZ Cherkasy",
-      "ext": "La Gantoise",
-      "foule": {
-        "1": 13,
-        "N": 20,
-        "2": 67
-      },
-      "p": {
-        "1": 0.13,
-        "N": 0.2,
-        "2": 0.67
-      },
-      "source": "foule (non coté)"
-    },
-    {
-      "dom": "Universit Cluj",
-      "ext": "SK Brann",
-      "foule": {
-        "1": 45,
+        "1": 31,
         "N": 29,
-        "2": 26
+        "2": 40
       },
       "p": {
-        "1": 0.3333333333333333,
-        "N": 0.3333333333333333,
-        "2": 0.3333333333333333
+        "1": 0.31988861783108596,
+        "N": 0.3100124268256351,
+        "2": 0.37009895534327886
       },
-      "source": "prédiction API"
-    },
-    {
-      "dom": "GAIS Göteborg",
-      "ext": "Nordsjaelland",
-      "foule": {
-        "1": 40,
-        "N": 31,
-        "2": 29
-      },
-      "p": {
-        "1": 0.23447692205264647,
-        "N": 0.27558387373791243,
-        "2": 0.48993920420944104
-      },
-      "source": "cotes (7 books)"
+      "source": "cotes (12 books)"
     }
   ]
 }
