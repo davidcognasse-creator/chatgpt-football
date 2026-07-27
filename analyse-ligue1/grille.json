@@ -3,13 +3,13 @@
   "note": "auto (playwright) — répartition public pronosoft LF8 n°97 (grille ouverte), clôture 27/07 18h55. foule = mises du public (1/N/2) ; probas raffinées par le moteur cotes (Actions). budget = € max.",
   "budget": 24,
   "matchs": [
-    {"dom": "Rosenborg",     "ext": "Fredrikstad",     "foule": {"1": 84, "N": 11, "2": 5}},
+    {"dom": "Rosenborg",     "ext": "Fredrikstad",     "foule": {"1": 85, "N": 10, "2": 5}},
     {"dom": "Randers FC",    "ext": "Silkeborg",       "foule": {"1": 47, "N": 31, "2": 22}},
-    {"dom": "Häcken",        "ext": "AIK Solna",       "foule": {"1": 51, "N": 28, "2": 21}},
-    {"dom": "Breidablik",    "ext": "Vestmannaeyjar",  "foule": {"1": 69, "N": 19, "2": 12}},
-    {"dom": "KA Akureyri",   "ext": "Thor Akureyri",   "foule": {"1": 58, "N": 27, "2": 15}},
-    {"dom": "MTK Budapest",  "ext": "Zalaegerszeg",    "foule": {"1": 62, "N": 26, "2": 12}},
+    {"dom": "Häcken",        "ext": "AIK Solna",       "foule": {"1": 50, "N": 29, "2": 21}},
+    {"dom": "Breidablik",    "ext": "Vestmannaeyjar",  "foule": {"1": 70, "N": 18, "2": 12}},
+    {"dom": "KA Akureyri",   "ext": "Thor Akureyri",   "foule": {"1": 60, "N": 27, "2": 13}},
+    {"dom": "MTK Budapest",  "ext": "Zalaegerszeg",    "foule": {"1": 60, "N": 28, "2": 12}},
     {"dom": "Zaglebie Lubin","ext": "Piast Gliwice",   "foule": {"1": 46, "N": 32, "2": 22}},
-    {"dom": "FC Botosani",   "ext": "Rapid Bucarest",  "foule": {"1": 31, "N": 29, "2": 40}}
+    {"dom": "FC Botosani",   "ext": "Rapid Bucarest",  "foule": {"1": 28, "N": 32, "2": 40}}
   ]
 }
