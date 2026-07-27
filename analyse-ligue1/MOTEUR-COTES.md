@@ -4,14 +4,14 @@ Grille : **Loto Foot 8 N°97** · 8 matchs · source **API-Football**
 
 | # | Match | Marché 1·N·2 | Foule 1·N·2 | Prono marché | Foule | Books | Écart |
 |---|---|---|---|---|---|---|---|
-| 1 | Rosenborg–Fredrikstad | 46/28/25 | 84/11/5 | **1** | 1 | 13 |  |
-| 2 | Randers FC–Silkeborg | 45/28/27 | 47/31/22 | **1** | 1 | 14 |  |
-| 3 | Häcken–AIK Solna | — | 51/28/21 | _non coté_ | 1 | — | — |
-| 4 | Breidablik–Vestmannaeyjar | 46/27/27 | 69/19/12 | **1** | 1 | 13 |  |
-| 5 | KA Akureyri–Thor Akureyri | 46/27/27 | 58/27/15 | **1** | 1 | 13 |  |
-| 6 | MTK Budapest–Zalaegerszeg | — | 62/26/12 | _non coté_ | 1 | — | — |
+| 1 | Rosenborg–Fredrikstad | 48/28/24 | 85/10/5 | **1** | 1 | 13 |  |
+| 2 | Randers FC–Silkeborg | 45/28/26 | 47/31/22 | **1** | 1 | 14 |  |
+| 3 | Häcken–AIK Solna | — | 50/29/21 | _non coté_ | 1 | — | — |
+| 4 | Breidablik–Vestmannaeyjar | 46/27/27 | 70/18/12 | **1** | 1 | 13 |  |
+| 5 | KA Akureyri–Thor Akureyri | 45/27/28 | 60/27/13 | **1** | 1 | 13 |  |
+| 6 | MTK Budapest–Zalaegerszeg | — | 60/28/12 | _non coté_ | 1 | — | — |
 | 7 | Zaglebie Lubin–Piast Gliwice | 33/31/36 | 46/32/22 | **2** | 1 | 13 | **+14%** |
-| 8 | FC Botosani–Rapid Bucarest | 32/31/37 | 31/29/40 | **2** | 2 | 12 |  |
+| 8 | FC Botosani–Rapid Bucarest | 31/31/38 | 28/32/40 | **2** | 2 | 13 |  |
 
 **Couverture marché : 6/8 matchs cotés.**
 _Aucun absent renseigné (absences.json) — probas = marché brut._
