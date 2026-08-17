@@ -4,21 +4,21 @@ Grille : **Loto Foot 8 N°97** · 8 matchs · source **API-Football**
 
 | # | Match | Marché 1·N·2 | Foule 1·N·2 | Prono marché | Foule | Books | Écart |
 |---|---|---|---|---|---|---|---|
-  _(résolution Rosenborg–Fredrikstad : API errors: {'plan': 'Free plans do not have access to the Next parameter.'})_
+  _(résolution Rosenborg–Fredrikstad : API errors: {'access': 'Your account is suspended, check on https://dashboard.api-football.com.'})_
 | 1 | Rosenborg–Fredrikstad | — | 85/10/5 | _non coté_ | 1 | — | — |
-  _(résolution Randers FC–Silkeborg : API errors: {'plan': 'Free plans do not have access to the Next parameter.'})_
+  _(résolution Randers FC–Silkeborg : API errors: {'access': 'Your account is suspended, check on https://dashboard.api-football.com.'})_
 | 2 | Randers FC–Silkeborg | — | 47/31/22 | _non coté_ | 1 | — | — |
-  _(résolution Häcken–AIK Solna : API errors: {'plan': 'Free plans do not have access to the Next parameter.'})_
+  _(résolution Häcken–AIK Solna : API errors: {'access': 'Your account is suspended, check on https://dashboard.api-football.com.'})_
 | 3 | Häcken–AIK Solna | — | 50/29/21 | _non coté_ | 1 | — | — |
-  _(résolution Breidablik–Vestmannaeyjar : API errors: {'plan': 'Free plans do not have access to the Next parameter.'})_
+  _(résolution Breidablik–Vestmannaeyjar : API errors: {'access': 'Your account is suspended, check on https://dashboard.api-football.com.'})_
 | 4 | Breidablik–Vestmannaeyjar | — | 70/18/12 | _non coté_ | 1 | — | — |
-  _(résolution KA Akureyri–Thor Akureyri : API errors: {'plan': 'Free plans do not have access to the Next parameter.'})_
+  _(résolution KA Akureyri–Thor Akureyri : API errors: {'access': 'Your account is suspended, check on https://dashboard.api-football.com.'})_
 | 5 | KA Akureyri–Thor Akureyri | — | 60/27/13 | _non coté_ | 1 | — | — |
-  _(résolution MTK Budapest–Zalaegerszeg : API errors: {'plan': 'Free plans do not have access to the Next parameter.'})_
+  _(résolution MTK Budapest–Zalaegerszeg : API errors: {'access': 'Your account is suspended, check on https://dashboard.api-football.com.'})_
 | 6 | MTK Budapest–Zalaegerszeg | — | 60/28/12 | _non coté_ | 1 | — | — |
-  _(résolution Zaglebie Lubin–Piast Gliwice : API errors: {'plan': 'Free plans do not have access to the Next parameter.'})_
+  _(résolution Zaglebie Lubin–Piast Gliwice : API errors: {'access': 'Your account is suspended, check on https://dashboard.api-football.com.'})_
 | 7 | Zaglebie Lubin–Piast Gliwice | — | 46/32/22 | _non coté_ | 1 | — | — |
-  _(résolution FC Botosani–Rapid Bucarest : API errors: {'plan': 'Free plans do not have access to the Next parameter.'})_
+  _(résolution FC Botosani–Rapid Bucarest : API errors: {'access': 'Your account is suspended, check on https://dashboard.api-football.com.'})_
 | 8 | FC Botosani–Rapid Bucarest | — | 28/32/40 | _non coté_ | 2 | — | — |
 
 **Couverture marché : 0/8 matchs cotés.**
