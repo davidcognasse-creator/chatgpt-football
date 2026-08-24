@@ -1,11 +1,4 @@
 {
   "note": "généré par sonde-absences.py (presse). Édite absences.json pour corriger.",
-  "equipes": {
-    "Rosenborg": [
-      {
-        "joueur": "Michael Carrick",
-        "raison": "blessé"
-      }
-    ]
-  }
+  "equipes": {}
 }
