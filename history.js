@@ -1,6 +1,6 @@
 // Généré automatiquement par robot/update.mjs — NE PAS éditer à la main.
 window.WC_HISTORY = {
-  "updatedAt": "2026-10-06T20:37:06.055Z",
+  "updatedAt": "2026-10-07T14:05:44.970Z",
   "entries": [
     {
       "id": "1591866",
