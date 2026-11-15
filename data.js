@@ -2,7 +2,7 @@
 // Miroir de data.json pour permettre l'ouverture du site en file://.
 window.WC_DATA = {
   "tournament": "Coupe du Monde 2026",
-  "updatedAt": "2026-11-14T20:11:22.089Z",
+  "updatedAt": "2026-11-15T14:26:25.524Z",
   "mode": "live",
   "weights": {
     "betting": 0.55,
